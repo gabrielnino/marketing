@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Persistence\Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Repositories\Abstract\CRUD\Create\CreateLabels.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CreateLabels.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Repositories\Abstract\CRUD\Delete\DeleteLabels.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DeleteLabels.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Repositories\Abstract\CRUD\Query\ReadId\ReadIdLabels.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReadIdLabels.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Repositories\Abstract\CRUD\Update\UpdateLabels.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UpdateLabels.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Repositories\Abstract\CRUD\Create\CreateLabels.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateLabels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Repositories\Abstract\CRUD\Delete\DeleteLabels.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DeleteLabels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Repositories\Abstract\CRUD\Query\ReadId\ReadIdLabels.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReadIdLabels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Repositories\Abstract\CRUD\Update\UpdateLabels.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UpdateLabels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
