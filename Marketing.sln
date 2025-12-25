@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Configuration", "01_Configuration", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -31,8 +31,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{E082B258-B779-44B6-964A-208238F3D78F}"
 	ProjectSection(SolutionItems) = preProject
-		ImprovePromp.json = ImprovePromp.json
+		00_ImprovePromp.json = 00_ImprovePromp.json
+		01_TestPromp.json = 01_TestPromp.json
+		02_TestPromp.json = 02_TestPromp.json
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_Testing", "06_Testing", "{97442D08-2C0C-443F-B48A-26062C0723DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketing.Tests", "Marketing.Tests\Marketing.Tests.csproj", "{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +78,10 @@ Global
 		{CE28F5A4-1603-4A07-A932-9683544F57F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE28F5A4-1603-4A07-A932-9683544F57F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE28F5A4-1603-4A07-A932-9683544F57F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +95,7 @@ Global
 		{C37CAC63-ABF5-474D-86F7-31001C71E516} = {BC189936-33B5-4AFD-9773-4620C30A7D23}
 		{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF} = {B628D088-366D-4455-8288-50279F5BEADF}
 		{CE28F5A4-1603-4A07-A932-9683544F57F2} = {333B38CF-0B9F-40EF-B7B7-776DF304C20C}
+		{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E} = {97442D08-2C0C-443F-B48A-26062C0723DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FE554F8-4450-41A9-A935-290C6D2308C3}

@@ -1,5 +1,9 @@
 
 
+=== FILE: F:\Marketing\architecture_review_code.cs ===
+
+
+
 === FILE: F:\Marketing\Application\Common\Pagination\PagedResult.cs ===
 
 ﻿namespace Application.Common.Pagination
@@ -52,7 +56,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -482,7 +486,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -685,7 +689,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -809,19 +813,6 @@ return null;
 }
 }
 
-=== FILE: F:\Marketing\Configuration\FilePathsConfig.cs ===
-
-﻿namespace Configuration
-{
-namespace Configuration
-{
-public class FilePathsConfig
-{
-public required string SearchUrlOutputFilePath { get; set; }
-}
-}
-}
-
 === FILE: F:\Marketing\Configuration\LlmProvider.cs ===
 
 ﻿namespace Configuration
@@ -882,7 +873,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1024,7 +1015,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1075,7 +1066,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1578,6 +1569,230 @@ return Operation<string>.Success(id, Message.GuidValidator.Success);
 }
 }
 
+=== FILE: F:\Marketing\Marketing.Tests\GuidValidatorTests.cs ===
+
+﻿using FluentAssertions;
+using Infrastructure.Utilities;
+using Xunit;
+namespace Marketing.Tests
+{
+public class GuidValidatorTests
+{
+[Theory]
+[InlineData("1b4e28ba-2fa1-11d2-883f-0016d3cca427")]
+[InlineData("6F9619FF-8B86-D011-B42D-00C04FC964FF")]
+public void HasGuid_When_valid_guid_returns_success(string id)
+{
+var op = GuidValidator.HasGuid(id);
+op.IsSuccessful.Should().BeTrue();
+op.Data.Should().Be(id);
+op.Message.Should().NotBeNullOrWhiteSpace();
+}
+[Theory]
+[InlineData("not-a-guid")]
+[InlineData("")]
+public void HasGuid_When_invalid_returns_business_failure(string id)
+{
+var op = GuidValidator.HasGuid(id);
+op.IsSuccessful.Should().BeFalse();
+op.Data.Should().BeNull();
+}
+}
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\OperationTests.cs ===
+
+﻿using Application.Result;
+using Application.Result.Error;
+using FluentAssertions;
+using Xunit;
+namespace Marketing.Tests
+{
+public class OperationTests
+{
+[Fact]
+public void Success_Should_set_success_fields()
+{
+var op = Operation<int>.Success(123, "ok");
+op.IsSuccessful.Should().BeTrue();
+op.Data.Should().Be(123);
+op.Message.Should().Be("ok");
+op.Type.Should().Be(ErrorTypes.None);
+}
+[Fact]
+public void Failure_Should_set_failure_fields()
+{
+var op = Operation<int>.Failure("boom", ErrorTypes.Unexpected);
+op.IsSuccessful.Should().BeFalse();
+op.Data.Should().Be(default);
+op.Message.Should().Be("boom");
+op.Type.Should().Be(ErrorTypes.Unexpected);
+}
+[Fact]
+public void AsType_When_success_should_throw()
+{
+var op = Operation<int>.Success(1, "ok");
+var act = () => op.AsType<string>();
+act.Should().Throw<Exception>();
+}
+[Fact]
+public void AsType_When_failure_should_map_message_and_type()
+{
+var op = Operation<int>.Failure("bad", ErrorTypes.BusinessValidation);
+var converted = op.AsType<string>();
+converted.IsSuccessful.Should().BeFalse();
+converted.Message.Should().Be("bad");
+converted.Type.Should().Be(ErrorTypes.BusinessValidation);
+}
+}
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\PagingTests.cs ===
+
+﻿using FluentAssertions;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Marketing.Tests.Integration.Db;
+using Persistence.CreateStructure.Constants.ColumnType;
+using Xunit;
+using Marketing.Tests.Integration.TestEntities;
+namespace Marketing.Tests
+{
+public class PagingTests
+{
+[Fact]
+public async Task Smoke_Can_create_db_and_insert()
+{
+using var conn = new SqliteConnection("DataSource=:memory:");
+conn.Open();
+var options = new DbContextOptionsBuilder()
+.UseSqlite(conn)
+.Options;
+IColumnTypes columnTypes = new TestColumnTypes();
+await using var ctx = new TestDataContext(options, columnTypes);
+await ctx.Database.EnsureCreatedAsync();
+ctx.Set<TestEntity>()
+.Add(new() { Id = "001", Active = true });
+await ctx.SaveChangesAsync();
+var count = await ctx.Set<TestEntity>().CountAsync();
+count.Should().Be(1);
+}
+}
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\SanityTests.cs ===
+
+﻿using FluentAssertions;
+using Xunit;
+namespace Marketing.Tests
+{
+public class SanityTests
+{
+[Fact]
+public void TestRunner_Works()
+{
+true.Should().BeTrue();
+}
+}
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\Integration\TestDataContext.cs ===
+
+﻿using Microsoft.EntityFrameworkCore;
+using Persistence.Context.Implementation;
+using Persistence.CreateStructure.Constants.ColumnType;
+using Marketing.Tests.Integration.TestEntities;
+namespace Marketing.Tests.Integration.Db;
+internal sealed class TestDataContext : DataContext
+{
+public TestDataContext(DbContextOptions options, IColumnTypes columnTypes)
+: base(options, columnTypes)
+{
+}
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+base.OnModelCreating(modelBuilder);
+modelBuilder.Entity<TestEntity>(b =>
+{
+b.ToTable("TestEntities");
+b.HasKey(x => x.Id);
+b.Property(x => x.Id).HasMaxLength(64);
+b.Property(x => x.Active);
+});
+}
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\Integration\Db\TestColumnTypes.cs ===
+
+﻿using Persistence.CreateStructure.Constants.ColumnType;
+namespace Marketing.Tests.Integration.Db;
+internal sealed class TestColumnTypes : IColumnTypes
+{
+public string Id => TypeVar64;
+public string Guid => TypeVar64;
+public string String => TypeVar;
+public string ShortString => TypeVar50;
+public string LongString => TypeVar;
+public string Bool => TypeBool;
+public string Int => Integer;
+public string Long => Integer;
+public string Decimal => "NUMERIC";
+public string DateTime => TypeDateTime;
+public string TypeBool => "INTEGER";
+public string TypeTime => "TEXT";
+public string TypeDateTime => "TEXT";
+public string TypeDateTimeOffset => "TEXT";
+public string TypeVar => "TEXT";
+public string TypeVar50 => "TEXT";
+public string TypeVar150 => "TEXT";
+public string TypeVar64 => "TEXT";
+public string TypeBlob => "BLOB";
+public string Integer => "INTEGER";
+public string Strategy => "SQLiteTest";
+public object? SqlStrategy => null;
+public string Name => "SQLiteTestColumnTypes";
+public object? Value => null;
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\Integration\TestEntities\TestEntity.cs ===
+
+﻿using Domain.Interfaces.Entity;
+namespace Marketing.Tests.Integration.TestEntities;
+internal sealed class TestEntity : IEntity
+{
+public string Id { get; set; } = default!;
+public bool Active { get; set; }
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v9.0", FrameworkDisplayName = ".NET 9.0")]
+
+=== FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\Marketing.Tests.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+175eafaa019d9ec5ad1a351cfcbfd1c67e7d67b8")]
+[assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\Marketing.Tests.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+global using global::Xunit;
+
 === FILE: F:\Marketing\Persistence\Class1.cs ===
 
 ﻿namespace Persistence
@@ -1854,7 +2069,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2704,7 +2919,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
