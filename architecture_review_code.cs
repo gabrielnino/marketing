@@ -486,7 +486,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902b50669068f541c9367c668c0936774d8da3e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1066,7 +1066,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902b50669068f541c9367c668c0936774d8da3e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1569,6 +1569,229 @@ return Operation<string>.Success(id, Message.GuidValidator.Success);
 }
 }
 
+=== FILE: F:\Marketing\Marketing.Tests\ErrorHandlerTests.cs ===
+
+﻿using System;
+using System.IO;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
+using Application.Result;
+using Application.Result.Error;
+using FluentAssertions;
+using Infrastructure.Result;
+using Xunit;
+namespace Marketing.Tests;
+public sealed class ErrorHandlerTests
+{
+private static string CreateTempMappingsFile(object mappings)
+{
+var path = Path.Combine(Path.GetTempPath(), $"ErrorMappings_{Guid.NewGuid():N}.json");
+File.WriteAllText(path, JsonSerializer.Serialize(mappings));
+return path;
+}
+private sealed class SpyErrorLogger : IErrorLogger
+{
+private readonly TaskCompletionSource<bool> _tcs = new(TaskCreationOptions.RunContinuationsAsynchronously);
+public int CallCount { get; private set; }
+public Exception? LastException { get; private set; }
+public Task WhenCalled => _tcs.Task;
+public Task LogAsync(Exception ex, CancellationToken cancellationToken = default)
+{
+CallCount++;
+LastException = ex;
+_tcs.TrySetResult(true);
+return Task.CompletedTask;
+}
+}
+private sealed class ThrowingErrorLogger : IErrorLogger
+{
+public Task LogAsync(Exception ex, CancellationToken cancellationToken = default)
+=> throw new InvalidOperationException("Logger failed");
+}
+private static void ResetStaticMappings()
+{
+var type = typeof(ErrorHandler);
+var field = type.GetField("ErrorMappings",
+System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+field.Should().NotBeNull("ErrorMappings static field must exist for test isolation.");
+var lazy = field!.GetValue(null);
+lazy.Should().NotBeNull();
+var valueProp = lazy!.GetType().GetProperty("Value");
+valueProp.Should().NotBeNull();
+var dict = valueProp!.GetValue(lazy);
+dict.Should().NotBeNull();
+var clearMethod = dict!.GetType().GetMethod("Clear");
+clearMethod.Should().NotBeNull();
+clearMethod!.Invoke(dict, null);
+}
+private static ErrorHandler CreateSut(IErrorLogger logger)
+=> new ErrorHandler(logger);
+[Fact]
+public void Ctor_When_logger_is_null_should_throw()
+{
+var act = () => new ErrorHandler(null!);
+act.Should().Throw<ArgumentNullException>();
+}
+[Fact]
+public void Fail_When_exception_is_null_should_return_NullExceptionStrategy_failure()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var op = sut.Fail<int>(null);
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.NullExceptionStrategy);
+op.Message.Should().Be("Exception is null.");
+}
+[Fact]
+public void Fail_When_mappings_not_loaded_should_return_NullExceptionStrategy_failure()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var op = sut.Fail<int>(new Exception("x"));
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.NullExceptionStrategy);
+op.Message.Should().Be("ErrorMappings is not loaded or empty.");
+}
+[Fact]
+public void Fail_When_exception_type_not_in_mappings_should_return_NullExceptionStrategy_failure()
+{
+ResetStaticMappings();
+var logger = new SpyErrorLogger();
+var sut = CreateSut(logger);
+var file = CreateTempMappingsFile(new { CustomException = "UnexpectedErrorStrategy" });
+sut.LoadErrorMappings(file);
+var op = sut.Fail<int>(new InvalidOperationException("not mapped"));
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.NullExceptionStrategy);
+op.Message.Should().StartWith("No strategy matches exception type:");
+logger.CallCount.Should().Be(0, "logging should not occur when no strategy matches");
+}
+[Fact]
+public async Task Fail_When_mapped_and_no_custom_message_should_use_strategy_description_and_log()
+{
+ResetStaticMappings();
+var logger = new SpyErrorLogger();
+var sut = CreateSut(logger);
+var file = CreateTempMappingsFile(new { CustomException = "UnexpectedErrorStrategy" });
+sut.LoadErrorMappings(file);
+var ex = new HttpRequestException("network");
+var op = sut.Fail<int>(ex);
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.Network);
+op.Message.Should().Be("Occurs due to a network connectivity issue.");
+await logger.WhenCalled.WaitAsync(TimeSpan.FromSeconds(2));
+logger.CallCount.Should().Be(1);
+logger.LastException.Should().BeSameAs(ex);
+}
+[Fact]
+public async Task Fail_When_mapped_and_custom_message_should_use_custom_message_and_log()
+{
+ResetStaticMappings();
+var logger = new SpyErrorLogger();
+var sut = CreateSut(logger);
+var file = CreateTempMappingsFile(new { CustomException = "UnexpectedErrorStrategy" });
+sut.LoadErrorMappings(file);
+var ex = new JsonException("bad json");
+var op = sut.Fail<int>(ex, "payload invalid");
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.InvalidData);
+op.Message.Should().Be("payload invalid");
+await logger.WhenCalled.WaitAsync(TimeSpan.FromSeconds(2));
+logger.CallCount.Should().Be(1);
+logger.LastException.Should().BeSameAs(ex);
+}
+[Fact]
+public void Fail_When_logger_throws_should_still_return_operation()
+{
+ResetStaticMappings();
+var sut = CreateSut(new ThrowingErrorLogger());
+var file = CreateTempMappingsFile(new { CustomException = "UnexpectedErrorStrategy" });
+sut.LoadErrorMappings(file);
+var ex = new HttpRequestException("network");
+var op = sut.Fail<int>(ex);
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.Network);
+}
+[Fact]
+public void Fail_When_mapping_points_to_unknown_strategy_should_fallback_to_Unexpected()
+{
+ResetStaticMappings();
+var logger = new SpyErrorLogger();
+var sut = CreateSut(logger);
+var file = CreateTempMappingsFile(new { InvalidOperationException = "DoesNotExistStrategy" });
+sut.LoadErrorMappings(file);
+var op = sut.Fail<int>(new InvalidOperationException("x"));
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.Unexpected);
+op.Message.Should().Be("Occurs for any unexpected or unclassified error.");
+}
+[Fact]
+public void Business_Should_return_BusinessValidation_failure_with_message()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var op = sut.Business<int>("invalid input");
+op.IsSuccessful.Should().BeFalse();
+op.Type.Should().Be(ErrorTypes.BusinessValidation);
+op.Message.Should().Be("invalid input");
+}
+[Fact]
+public void LoadErrorMappings_When_file_missing_should_throw_FileNotFoundException()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var act = () => sut.LoadErrorMappings(Path.Combine(Path.GetTempPath(), $"missing_{Guid.NewGuid():N}.json"));
+act.Should().Throw<FileNotFoundException>();
+}
+[Fact]
+public void LoadErrorMappings_When_json_invalid_should_throw_InvalidOperationException_with_inner_JsonException()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var path = Path.Combine(Path.GetTempPath(), $"badjson_{Guid.NewGuid():N}.json");
+File.WriteAllText(path, "{ not valid json }");
+var act = () => sut.LoadErrorMappings(path);
+act.Should().Throw<InvalidOperationException>()
+.WithMessage("ErrorMappings.json contains invalid JSON format.")
+.WithInnerException<JsonException>();
+}
+[Fact]
+public void LoadErrorMappings_When_json_empty_object_should_throw_wrapped_exception()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var file = CreateTempMappingsFile(new { });
+Action act = () => sut.LoadErrorMappings(file);
+act.Should()
+.Throw<Exception>()
+.WithMessage("An error occurred while loading error mappings.")
+.WithInnerException<InvalidOperationException>()
+.Which.Message.Should().Be("ErrorMappings.json is empty or invalid.");
+}
+[Fact]
+public void LoadErrorMappings_When_file_does_not_exist_should_throw_FileNotFoundException()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+var missingFile = Path.Combine(Path.GetTempPath(), $"missing_{Guid.NewGuid():N}.json");
+Action act = () => sut.LoadErrorMappings(missingFile);
+act.Should()
+.Throw<FileNotFoundException>()
+.WithMessage($"Error mappings file not found: {missingFile}");
+}
+[Fact]
+public void Any_Should_be_false_before_load_and_true_after_successful_load()
+{
+ResetStaticMappings();
+var sut = CreateSut(new SpyErrorLogger());
+sut.Any().Should().BeFalse();
+var file = CreateTempMappingsFile(new { CustomException = "UnexpectedErrorStrategy" });
+sut.LoadErrorMappings(file);
+sut.Any().Should().BeTrue();
+}
+}
+
 === FILE: F:\Marketing\Marketing.Tests\GuidValidatorTests.cs ===
 
 ﻿using FluentAssertions;
@@ -1602,48 +1825,132 @@ op.Data.Should().BeNull();
 
 === FILE: F:\Marketing\Marketing.Tests\OperationTests.cs ===
 
-﻿using Application.Result;
+﻿using System;
+using Application.Result;
 using Application.Result.Error;
+using Application.Result.Exceptions;
 using FluentAssertions;
 using Xunit;
-namespace Marketing.Tests
-{
+namespace Marketing.Tests;
 public class OperationTests
 {
 [Fact]
-public void Success_Should_set_success_fields()
+public void Success_When_message_is_null_should_normalize_to_empty_string()
 {
-var op = Operation<int>.Success(123, "ok");
+var op = Operation<int>.Success(10, null);
 op.IsSuccessful.Should().BeTrue();
-op.Data.Should().Be(123);
+op.Data.Should().Be(10);
+op.Message.Should().Be(string.Empty);
+op.Type.Should().Be(ErrorTypes.None);
+}
+[Fact]
+public void Success_When_message_is_omitted_should_default_to_empty_string()
+{
+var op = Operation<int>.Success(10);
+op.IsSuccessful.Should().BeTrue();
+op.Data.Should().Be(10);
+op.Message.Should().Be(string.Empty);
+op.Type.Should().Be(ErrorTypes.None);
+}
+[Fact]
+public void Success_When_data_is_null_should_still_be_success()
+{
+var op = Operation<string>.Success(null, "ok");
+op.IsSuccessful.Should().BeTrue();
+op.Data.Should().BeNull();
 op.Message.Should().Be("ok");
 op.Type.Should().Be(ErrorTypes.None);
 }
 [Fact]
-public void Failure_Should_set_failure_fields()
+public void Success_Should_allow_empty_message()
 {
-var op = Operation<int>.Failure("boom", ErrorTypes.Unexpected);
+var op = Operation<int>.Success(1, "");
+op.IsSuccessful.Should().BeTrue();
+op.Message.Should().Be(string.Empty);
+op.Type.Should().Be(ErrorTypes.None);
+}
+[Theory]
+[InlineData(ErrorTypes.Unexpected)]
+[InlineData(ErrorTypes.BusinessValidation)]
+[InlineData(ErrorTypes.Database)]
+public void Failure_Should_set_failure_fields(ErrorTypes type)
+{
+var op = Operation<int>.Failure("boom", type);
 op.IsSuccessful.Should().BeFalse();
-op.Data.Should().Be(default);
+op.Data.Should().Be(default(int));
 op.Message.Should().Be("boom");
+op.Type.Should().Be(type);
+}
+[Fact]
+public void Failure_Should_allow_null_message_and_preserve_it()
+{
+var op = Operation<int>.Failure(null!, ErrorTypes.Unexpected);
+op.IsSuccessful.Should().BeFalse();
+op.Message.Should().BeNull();
 op.Type.Should().Be(ErrorTypes.Unexpected);
 }
 [Fact]
-public void AsType_When_success_should_throw()
+public void AsType_When_called_on_success_should_throw_InvalidOperation_with_exact_message()
 {
 var op = Operation<int>.Success(1, "ok");
 var act = () => op.AsType<string>();
-act.Should().Throw<Exception>();
+act.Should()
+.Throw<InvalidOperation>()
+.WithMessage("This method can only be used if the value of IsSuccessful is false.");
 }
 [Fact]
-public void AsType_When_failure_should_map_message_and_type()
+public void ConvertTo_When_called_on_success_should_throw_same_InvalidOperation()
+{
+var op = Operation<int>.Success(1);
+var act = () => op.ConvertTo<string>();
+act.Should()
+.Throw<InvalidOperation>()
+.WithMessage("This method can only be used if the value of IsSuccessful is false.");
+}
+[Fact]
+public void AsType_When_called_on_failure_should_preserve_message_and_type_and_return_failure()
 {
 var op = Operation<int>.Failure("bad", ErrorTypes.BusinessValidation);
 var converted = op.AsType<string>();
 converted.IsSuccessful.Should().BeFalse();
+converted.Data.Should().BeNull();
 converted.Message.Should().Be("bad");
 converted.Type.Should().Be(ErrorTypes.BusinessValidation);
 }
+[Fact]
+public void AsType_When_called_on_failure_should_work_for_value_types()
+{
+var op = Operation<string>.Failure("bad", ErrorTypes.InvalidData);
+var converted = op.AsType<int>();
+converted.IsSuccessful.Should().BeFalse();
+converted.Data.Should().Be(default(int));
+converted.Message.Should().Be("bad");
+converted.Type.Should().Be(ErrorTypes.InvalidData);
+}
+[Fact]
+public void ConvertTo_Should_be_equivalent_to_AsType_for_failures()
+{
+var op = Operation<Guid>.Failure("x", ErrorTypes.Network);
+var a = op.AsType<int>();
+var b = op.ConvertTo<int>();
+b.IsSuccessful.Should().Be(a.IsSuccessful);
+b.Type.Should().Be(a.Type);
+b.Message.Should().Be(a.Message);
+b.Data.Should().Be(a.Data);
+}
+[Fact]
+public void Multiple_conversions_should_be_stable_and_not_mutate_original()
+{
+var original = Operation<int>.Failure("bad", ErrorTypes.Timeout);
+var c1 = original.AsType<string>();
+var c2 = original.AsType<Guid>();
+original.IsSuccessful.Should().BeFalse();
+original.Message.Should().Be("bad");
+original.Type.Should().Be(ErrorTypes.Timeout);
+c1.Message.Should().Be("bad");
+c1.Type.Should().Be(ErrorTypes.Timeout);
+c2.Message.Should().Be("bad");
+c2.Type.Should().Be(ErrorTypes.Timeout);
 }
 }
 
@@ -1696,6 +2003,226 @@ true.Should().BeTrue();
 }
 }
 
+=== FILE: F:\Marketing\Marketing.Tests\Integration\ReadRepositoryTests.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
+using Application.Common.Pagination;
+using Application.Result;
+using Domain.Interfaces.Entity;
+using FluentAssertions;
+using Infrastructure.Repositories.Abstract.CRUD.Query.Read;
+using Marketing.Tests.Integration.Db;
+using Marketing.Tests.Integration.TestEntities;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Moq;
+using Persistence.Context.Interface;
+using Persistence.CreateStructure.Constants.ColumnType;
+using Xunit;
+namespace Marketing.Tests.Integration;
+public sealed class ReadRepositoryTests
+{
+private sealed class TestReadRepo : ReadRepository<TestEntity>
+{
+public int ApplyCursorFilterCallCount { get; private set; }
+public TestReadRepo(IUnitOfWork uow, Func<IQueryable<TestEntity>, IOrderedQueryable<TestEntity>> orderBy)
+: base(uow, orderBy)
+{
+}
+protected override IQueryable<TestEntity> ApplyCursorFilter(IQueryable<TestEntity> query, string cursor)
+{
+ApplyCursorFilterCallCount++;
+return query.Where(x => string.CompareOrdinal(x.Id, cursor) > 0);
+}
+protected override string? BuildNextCursor(List<TestEntity> items, int size)
+{
+if (size <= 0) return null;
+return items.Count > size ? items[size - 1].Id : null;
+}
+}
+private static async Task<(SqliteConnection conn, TestDataContext ctx)> CreateContextAsync()
+{
+var conn = new SqliteConnection("DataSource=:memory:");
+await conn.OpenAsync();
+var options = new DbContextOptionsBuilder()
+.UseSqlite(conn)
+.Options;
+IColumnTypes columnTypes = new TestColumnTypes();
+var ctx = new TestDataContext(options, columnTypes);
+await ctx.Database.EnsureCreatedAsync();
+return (conn, ctx);
+}
+private static IUnitOfWork CreateUnitOfWork(TestDataContext ctx)
+{
+var uow = new Mock<IUnitOfWork>();
+uow.SetupGet(x => x.Context).Returns(ctx);
+return uow.Object;
+}
+private static async Task SeedAsync(TestDataContext ctx, params (string id, bool active)[] rows)
+{
+ctx.Set<TestEntity>().AddRange(rows.Select(r => new TestEntity { Id = r.id, Active = r.active }));
+await ctx.SaveChangesAsync();
+}
+private static Func<IQueryable<TestEntity>, IOrderedQueryable<TestEntity>> OrderByIdAsc()
+=> q => q.OrderBy(x => x.Id);
+[Fact]
+public async Task GetAllMembers_When_empty_returns_empty_items_next_null_total_0()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetAllMembers();
+op.IsSuccessful.Should().BeTrue();
+op.Data.Should().NotBeNull();
+op.Data!.Items.Should().BeEmpty();
+op.Data.NextCursor.Should().BeNull();
+op.Data.TotalCount.Should().Be(0);
+}
+[Fact]
+public async Task GetAllMembers_When_has_rows_returns_all_items_and_totalcount()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx,
+("003", true),
+("001", true),
+("002", false));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetAllMembers();
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(3);
+op.Data.NextCursor.Should().BeNull();
+op.Data.Items.Should().HaveCount(3);
+}
+[Fact]
+public async Task GetAllMembers_Should_use_AsNoTracking_no_tracked_entities_created_by_query()
+{
+var (conn, ctx1) = await CreateContextAsync();
+await using var __ = conn;
+await SeedAsync(ctx1, ("001", true), ("002", true));
+await ctx1.DisposeAsync();
+var options = new DbContextOptionsBuilder()
+.UseSqlite(conn)
+.Options;
+IColumnTypes columnTypes = new TestColumnTypes();
+await using var ctx2 = new TestDataContext(options, columnTypes);
+var repo = new TestReadRepo(CreateUnitOfWork(ctx2), OrderByIdAsc());
+ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+_ = await repo.GetAllMembers();
+ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+}
+[Fact]
+public async Task GetPageAsync_When_pageSize_less_than_total_returns_pageSize_items_and_next_cursor()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true), ("003", true), ("004", true), ("005", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(5);
+op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
+op.Data.NextCursor.Should().Be("002");
+}
+[Fact]
+public async Task GetPageAsync_When_pageSize_equals_total_returns_all_items_and_next_null()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true), ("003", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 3);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(3);
+op.Data.Items.Select(x => x.Id).Should().Equal("001", "002", "003");
+op.Data.NextCursor.Should().BeNull();
+}
+[Fact]
+public async Task GetPageAsync_When_pageSize_greater_than_total_returns_all_items_and_next_null()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 10);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(2);
+op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
+op.Data.NextCursor.Should().BeNull();
+}
+[Fact]
+public async Task GetPageAsync_When_empty_dataset_returns_empty_and_next_null_total_0()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(0);
+op.Data.Items.Should().BeEmpty();
+op.Data.NextCursor.Should().BeNull();
+}
+[Theory]
+[InlineData(null)]
+[InlineData("")]
+public async Task GetPageAsync_When_cursor_is_null_or_empty_should_not_apply_cursor_filter(string? cursor)
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true), ("003", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: cursor, pageSize: 2);
+repo.ApplyCursorFilterCallCount.Should().Be(0);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.Items.Select(x => x.Id).Should().Equal("001", "002");
+}
+[Fact]
+public async Task GetPageAsync_When_filter_is_provided_should_filter_items_and_TotalCount_reflects_filtered_count()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx,
+("001", true),
+("002", false),
+("003", true),
+("004", false),
+("005", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+Expression<Func<TestEntity, bool>> filter = x => x.Active;
+var op = await repo.GetPageAsync(filter, cursor: null, pageSize: 10);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(3);
+op.Data.Items.Select(x => x.Id).Should().Equal("001", "003", "005");
+op.Data.NextCursor.Should().BeNull();
+}
+[Fact]
+public async Task GetAllMembers_When_cancelled_should_throw_TaskCanceledException_or_OperationCanceledException()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+using var cts = new CancellationTokenSource();
+cts.Cancel();
+Func<Task> act = async () => await repo.GetAllMembers(cts.Token);
+await act.Should().ThrowAsync<OperationCanceledException>();
+}
+}
+
 === FILE: F:\Marketing\Marketing.Tests\Integration\TestDataContext.cs ===
 
 ﻿using Microsoft.EntityFrameworkCore;
@@ -1719,6 +2246,41 @@ b.HasKey(x => x.Id);
 b.Property(x => x.Id).HasMaxLength(64);
 b.Property(x => x.Active);
 });
+}
+}
+
+=== FILE: F:\Marketing\Marketing.Tests\Integration\TestDbContextFactory.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Marketing.Tests.Integration
+{
+using System.Threading.Tasks;
+using global::Marketing.Tests.Integration.Db;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Persistence.CreateStructure.Constants.ColumnType;
+internal static class TestDbContextFactory
+{
+public static async Task<(SqliteConnection Connection, TestDataContext Context)> CreateContextAsync()
+{
+var connection = new SqliteConnection("DataSource=:memory:");
+await connection.OpenAsync();
+connection.CreateFunction<string, string, int>(
+"StringCompareOrdinal",
+(a, b) => string.CompareOrdinal(a, b)
+);
+var options = new DbContextOptionsBuilder()
+.UseSqlite(connection)
+.Options;
+IColumnTypes columnTypes = new TestColumnTypes();
+var context = new TestDataContext(options, columnTypes);
+await context.Database.EnsureCreatedAsync();
+return (connection, context);
+}
 }
 }
 
@@ -1777,7 +2339,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+175eafaa019d9ec5ad1a351cfcbfd1c67e7d67b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902b50669068f541c9367c668c0936774d8da3e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

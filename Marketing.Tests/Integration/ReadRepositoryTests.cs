@@ -26,10 +26,6 @@ public sealed class ReadRepositoryTests
     // Test repository + entity
     // -------------------------
 
-    // TestEntity is in your test project (recommended) and mapped in TestDataContext.
-    // It implements IEntity (Id + Active).
-    // namespace Marketing.Tests.Integration.TestEntities
-
     private sealed class TestReadRepo : ReadRepository<TestEntity>
     {
         public int ApplyCursorFilterCallCount { get; private set; }
@@ -93,6 +89,9 @@ public sealed class ReadRepositoryTests
     private static Func<IQueryable<TestEntity>, IOrderedQueryable<TestEntity>> OrderByIdAsc()
         => q => q.OrderBy(x => x.Id);
 
+    private static Func<IQueryable<TestEntity>, IOrderedQueryable<TestEntity>> OrderByIdDesc()
+        => q => q.OrderByDescending(x => x.Id);
+
     // -------------------------
     // GetAllMembers
     // -------------------------
@@ -135,7 +134,7 @@ public sealed class ReadRepositoryTests
         op.Data!.TotalCount.Should().Be(3);
         op.Data.NextCursor.Should().BeNull();
 
-        // No explicit ordering in GetAllMembers (it uses Set<T>().AsNoTracking()) :contentReference[oaicite:1]{index=1}
+        // No explicit ordering in GetAllMembers (it uses Set<T>().AsNoTracking())
         op.Data.Items.Should().HaveCount(3);
     }
 
@@ -166,6 +165,25 @@ public sealed class ReadRepositoryTests
         ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
     }
 
+    [Fact]
+    public async Task GetAllMembers_When_cancelled_should_throw_OperationCanceledException()
+    {
+        var (conn, ctx) = await CreateContextAsync();
+        await using var _ = ctx;
+        await using var __ = conn;
+
+        await SeedAsync(ctx, ("001", true), ("002", true));
+
+        var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+
+        using var cts = new CancellationTokenSource();
+        cts.Cancel();
+
+        Func<Task> act = async () => await repo.GetAllMembers(cts.Token);
+
+        await act.Should().ThrowAsync<OperationCanceledException>();
+    }
+
     // -------------------------
     // GetPageAsync - paging + next cursor
     // -------------------------
@@ -184,7 +202,7 @@ public sealed class ReadRepositoryTests
         var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
 
         op.IsSuccessful.Should().BeTrue();
-        op.Data!.TotalCount.Should().Be(5); // count computed before cursor, after filter :contentReference[oaicite:2]{index=2}
+        op.Data!.TotalCount.Should().Be(5); // Count is computed before cursor, after filter
         op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
         op.Data.NextCursor.Should().Be("002"); // next cursor = items[pageSize-1] when more than pageSize
     }
@@ -244,6 +262,33 @@ public sealed class ReadRepositoryTests
         op.Data.NextCursor.Should().BeNull();
     }
 
+    [Fact]
+    public async Task GetPageAsync_Should_use_AsNoTracking_no_tracked_entities_created_by_query()
+    {
+        // Use a fresh context for the query to ensure ChangeTracker starts empty.
+        var (conn, ctx1) = await CreateContextAsync();
+        await using var __ = conn;
+
+        await SeedAsync(ctx1, ("001", true), ("002", true));
+        await ctx1.DisposeAsync();
+
+        var options = new DbContextOptionsBuilder()
+            .UseSqlite(conn)
+            .Options;
+
+        IColumnTypes columnTypes = new TestColumnTypes();
+        await using var ctx2 = new TestDataContext(options, columnTypes);
+
+        var repo = new TestReadRepo(CreateUnitOfWork(ctx2), OrderByIdAsc());
+
+        ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+
+        _ = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 1);
+
+        // AsNoTracking() should not create tracked entries
+        ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+    }
+
     // -------------------------
     // Cursor behavior
     // -------------------------
@@ -293,18 +338,87 @@ public sealed class ReadRepositoryTests
         var op = await repo.GetPageAsync(filter, cursor: null, pageSize: 10);
 
         op.IsSuccessful.Should().BeTrue();
-        op.Data!.TotalCount.Should().Be(3); // count after filter, before cursor :contentReference[oaicite:4]{index=4}
+        op.Data!.TotalCount.Should().Be(3); // count after filter, before cursor
         op.Data.Items.Select(x => x.Id).Should().Equal("001", "003", "005");
         op.Data.NextCursor.Should().BeNull();
     }
 
 
     // -------------------------
-    // Cancellation (GetAllMembers only)
+    // Ordering behavior
     // -------------------------
 
     [Fact]
-    public async Task GetAllMembers_When_cancelled_should_throw_TaskCanceledException_or_OperationCanceledException()
+    public async Task GetPageAsync_Should_apply_orderBy_before_taking_page()
+    {
+        var (conn, ctx) = await CreateContextAsync();
+        await using var _ = ctx;
+        await using var __ = conn;
+
+        // Seed intentionally out of order
+        await SeedAsync(ctx, ("003", true), ("001", true), ("002", true), ("005", true), ("004", true));
+
+        var repoAsc = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+        var opAsc = await repoAsc.GetPageAsync(filter: null, cursor: null, pageSize: 3);
+
+        opAsc.IsSuccessful.Should().BeTrue();
+        opAsc.Data!.Items.Select(x => x.Id).Should().Equal("001", "002", "003");
+        opAsc.Data.NextCursor.Should().Be("003");
+
+        var repoDesc = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdDesc());
+        var opDesc = await repoDesc.GetPageAsync(filter: null, cursor: null, pageSize: 3);
+
+        opDesc.IsSuccessful.Should().BeTrue();
+        opDesc.Data!.Items.Select(x => x.Id).Should().Equal("005", "004", "003");
+        opDesc.Data.NextCursor.Should().Be("003");
+    }
+
+    [Fact]
+    public async Task GetPageAsync_When_pageSize_is_negative_returns_empty_items_next_null_totalcount_is_count()
+    {
+        var (conn, ctx) = await CreateContextAsync();
+        await using var _ = ctx;
+        await using var __ = conn;
+
+        await SeedAsync(ctx, ("001", true), ("002", true), ("003", true));
+
+        var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+
+        var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: -1);
+
+        op.IsSuccessful.Should().BeTrue();
+        op.Data!.TotalCount.Should().Be(3);
+        op.Data.Items.Should().BeEmpty();
+        op.Data.NextCursor.Should().BeNull();
+    }
+
+    // -------------------------
+    // NextCursor correctness (boundary tests)
+    // -------------------------
+
+    [Fact]
+    public async Task GetPageAsync_When_more_items_exist_should_remove_extra_item_and_return_exact_pageSize()
+    {
+        var (conn, ctx) = await CreateContextAsync();
+        await using var _ = ctx;
+        await using var __ = conn;
+
+        await SeedAsync(ctx, ("001", true), ("002", true), ("003", true));
+
+        var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+
+        // pageSize=2, query takes 3 items. BuildNextCursor returns items[1]="002" (because items.Count > 2),
+        // then RemoveAt(2) removes the 3rd item.
+        var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
+
+        op.IsSuccessful.Should().BeTrue();
+        op.Data!.Items.Should().HaveCount(2);
+        op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
+        op.Data.NextCursor.Should().Be("002");
+    }
+
+    [Fact]
+    public async Task GetPageAsync_When_exact_pageSize_items_exist_should_not_remove_any_item_and_next_null()
     {
         var (conn, ctx) = await CreateContextAsync();
         await using var _ = ctx;
@@ -314,11 +428,11 @@ public sealed class ReadRepositoryTests
 
         var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
 
-        using var cts = new CancellationTokenSource();
-        cts.Cancel();
+        var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
 
-        Func<Task> act = async () => await repo.GetAllMembers(cts.Token);
-
-        await act.Should().ThrowAsync<OperationCanceledException>();
+        op.IsSuccessful.Should().BeTrue();
+        op.Data!.Items.Should().HaveCount(2);
+        op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
+        op.Data.NextCursor.Should().BeNull();
     }
 }

@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{E082B2
 		00_ImprovePromp.json = 00_ImprovePromp.json
 		01_TestPromp.json = 01_TestPromp.json
 		02_TestPromp.json = 02_TestPromp.json
+		03_TestPromp.json = 03_TestPromp.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_Testing", "06_Testing", "{97442D08-2C0C-443F-B48A-26062C0723DD}"
