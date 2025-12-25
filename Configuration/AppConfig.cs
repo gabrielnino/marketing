@@ -2,7 +2,7 @@
 {
     public class AppConfig
     {
-        public Credential LinkedInCredentials { get; set; }
+        public WhatsAppConfig WhatsApp { get; set; }
         public PathsConfig Paths { get; set; }
 
     }

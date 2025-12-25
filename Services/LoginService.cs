@@ -38,33 +38,11 @@ namespace Services
         public async Task LoginAsync()
         {
             _logger.LogInformation($"🔐 ID:{_executionOptions.TimeStamp} Attempting to login to LinkedIn...");
-            var url = "https://www.linkedin.com/login";
+            var url = _config.WhatsApp.URL;
             _driver.Navigate().GoToUrl(url);
-            await _capture.CaptureArtifactsAsync(FolderPath, $"Go to url{url}");
-            await Task.Delay(3000);
-            if (!IsOnLoginPage())
-            {
-                if (_securityCheck.IsSecurityCheck())
-                {
-                    await _securityCheck.TryStartPuzzle();
-                }
-            }
-            var emailInput = _driver.FindElement(By.Id("username"));
-            emailInput.SendKeys(_config.LinkedInCredentials.Email);
-            await Task.Delay(3000);
-            await _capture.CaptureArtifactsAsync(FolderPath, "Entered email");
-            var passwordInput = _driver.FindElement(By.Id("password"));
-            passwordInput.SendKeys(_config.LinkedInCredentials.Password + Keys.Enter);
-            await _capture.CaptureArtifactsAsync(FolderPath, "Entered password");
-            _logger.LogInformation($"✅ ID:{_executionOptions.TimeStamp} Successfully authenticated with LinkedIn");
+            
         }
 
-        private bool IsOnLoginPage()
-        {
-            var usernameElements = _driver.FindElements(By.Id("username"));
-            var passwordElements = _driver.FindElements(By.Id("password"));
-            var urlContainsLogin = _driver.Url.Contains("/login");
-            return usernameElements.Any() && passwordElements.Any() && urlContainsLogin;
-        }
+        
     }
 }

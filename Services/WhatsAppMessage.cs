@@ -9,26 +9,17 @@ using Services.Interfaces;
 
 namespace Services
 {
-    public class WhatsAppMessage(
-        AppConfig config,
-        IWebDriverFactory driverFactory,
-        ILogger<LoginService> logger,
-        ICaptureSnapshot capture,
-        ExecutionTracker executionOptions,
-        ISecurityCheck securityCheck,
-        IDirectoryCheck directoryCheck) : IWhatsAppMessage
+    public class WhatsAppMessage(ILogger<LoginService> logger,
+        ILoginService loginService) : IWhatsAppMessage
     {
-        public AppConfig Config { get; } = config;
-        public IWebDriverFactory DriverFactory { get; } = driverFactory;
         public ILogger<LoginService> Logger { get; } = logger;
-        public ICaptureSnapshot Capture { get; } = capture;
-        public ExecutionTracker ExecutionOptions { get; } = executionOptions;
-        public ISecurityCheck SecurityCheck { get; } = securityCheck;
-        public IDirectoryCheck DirectoryCheck { get; } = directoryCheck;
+        public ILoginService Login { get; } = loginService;
+        
 
-        public Task SendMessageAsync()
+
+        public async Task SendMessageAsync()
         {
-            throw new NotImplementedException();
+            await Login.LoginAsync();
         }
     }
 }
