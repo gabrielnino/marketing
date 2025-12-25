@@ -2,19 +2,11 @@
 {
     public class CommandArgs
     {
-        public const string search = "--search";
-        public const string prompt = "--prompt";
-        public const string invite = "--invite";
-        public const string load = "--load";
-        public const string chat = "--chat";
+        public const string WhatsApp = "--WhatsApp";
 
         private static readonly HashSet<string> ValidCommands = new(StringComparer.OrdinalIgnoreCase)
         {
-            search,
-            prompt,
-            invite,
-            load,
-            chat
+            WhatsApp
         };
 
         public string MainCommand { get; }

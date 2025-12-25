@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Services.Interfaces;
 
 
 namespace Commands
@@ -20,9 +21,9 @@ namespace Commands
 
             switch (_jobCommandArgs.MainCommand.ToLowerInvariant())
             {
-                //case CommandArgs.invite:
-                //    commands.Add(_serviceProvider.GetRequiredService<InviteCommand>());
-                //    break;
+                case CommandArgs.WhatsApp:
+                    commands.Add(_serviceProvider.GetRequiredService<WhatsAppCommand>());
+                    break;
                 default:
                     commands.Add(_serviceProvider.GetRequiredService<HelpCommand>());
                     break;
