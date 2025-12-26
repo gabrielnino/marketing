@@ -88,23 +88,22 @@
             if (!Directory.Exists(_outPath))
                 return null;
 
-            var folderRunning = $"{ExecutionRunningName}_*";
-            var pathRunning = Directory.GetDirectories(_outPath, folderRunning);
-            var folderTimeStamp = $"{pathRunning[0].Split("\\").Last().Split('_')[1]}_{pathRunning[0].Split("\\").Last().Split('_')[2]}";
-            var pathFinished = Directory.GetDirectories(_outPath, $"{ExecutionFinishedName}_{folderTimeStamp}");
-            if (pathFinished.Length != 0)
+            var lastRunning = Directory
+                .GetDirectories(_outPath, $"{ExecutionRunningName}_*")
+                .OrderByDescending(Path.GetFileName)
+                .FirstOrDefault();
+
+            if (lastRunning is null)
                 return null;
 
-            var last = pathRunning.OrderByDescending(d => d).FirstOrDefault();
-            if (last is null)
+            var timestamp = ExtractTimeStampFromFolder(lastRunning, ExecutionRunningName);
+            if (timestamp is null)
                 return null;
 
-            var name = Path.GetFileName(last);
-            if (name is null || !name.StartsWith($"{ExecutionRunningName}_"))
-                return null;
-
-            return name[(ExecutionRunningName.Length + 1)..];
+            var finishedPath = Path.Combine(_outPath, $"{ExecutionFinishedName}_{timestamp}");
+            return Directory.Exists(finishedPath) ? null : timestamp;
         }
+
 
         private static string? ExtractTimeStampFromFolder(string fullPath, string prefix)
         {
