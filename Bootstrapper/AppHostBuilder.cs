@@ -52,7 +52,15 @@ namespace Bootstrapper
 
                     services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
 
-                    services.AddScoped<IWebDriver>(sp => sp.GetRequiredService<IWebDriverFactory>().Create(false));
+                    //services.AddScoped<IWebDriver>(sp => sp.GetRequiredService<IWebDriverFactory>().Create(false));
+
+                    services.AddScoped<IWebDriver>(sp =>
+                    {
+                        var factory = sp.GetRequiredService<IWebDriverFactory>();
+                        return factory.Create(false);
+                    });
+
+                    services.AddHostedService<WebDriverLifetimeService>();
 
                     services.AddSingleton<ISecurityCheck, SecurityCheck>();
 
