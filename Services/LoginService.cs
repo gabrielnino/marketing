@@ -38,7 +38,7 @@ namespace Services
                 _executionOptions.TimeStamp
             );
 
-            var url = _config.WhatsApp.URL;
+            var url = _config.WhatsApp.Url;
 
             _logger.LogInformation(
                 "🌐 ID:{TimeStamp} Navigating to login URL: {Url}",
@@ -57,8 +57,8 @@ namespace Services
 
             // Wait until the user logs in (poll every 5 seconds)
             await WaitForWhatsAppLoginAsync(
-                pollInterval: TimeSpan.FromSeconds(5),
-                timeout: TimeSpan.FromMinutes(3),
+                pollInterval: _config.WhatsApp.LoginPollInterval,
+                timeout: _config.WhatsApp.LoginTimeout,
                 cancellationToken: cancellationToken
             );
 
