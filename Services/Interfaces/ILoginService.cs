@@ -2,6 +2,6 @@
 {
     public interface ILoginService
     {
-        Task LoginAsync();
+        Task LoginAsync(CancellationToken cancellationToken = default);
     }
 }
