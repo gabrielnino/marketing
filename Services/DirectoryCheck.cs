@@ -19,7 +19,7 @@ namespace Services
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
-                _logger.LogInformation($"📁 Created execution folder at: {_executionOptions.ExecutionFolder}");
+                _logger.LogInformation($"📁 Created execution folder at: {_executionOptions.ExecutionRunning}");
             }
         }
     }

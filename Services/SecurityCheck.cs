@@ -12,7 +12,7 @@ namespace Services
         private readonly ExecutionTracker _executionOptions;
         private readonly ILogger<SecurityCheck> _logger;
         private const string FolderName = "SecurityCheck";
-        private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
+        private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
         private readonly IDirectoryCheck _directoryCheck;
         public SecurityCheck(IWebDriver driver,
             ILogger<SecurityCheck> logger,

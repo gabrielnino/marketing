@@ -14,7 +14,7 @@ namespace Services
         private readonly ICaptureSnapshot _capture;
         private readonly ExecutionTracker _executionOptions;
         private const string FolderName = "Login";
-        private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
+        private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
         private readonly ISecurityCheck _securityCheck;
         private readonly IDirectoryCheck _directoryCheck;
         public LoginService(
@@ -61,6 +61,8 @@ namespace Services
                 "✅ ID:{TimeStamp} Login page loaded successfully.",
                 _executionOptions.TimeStamp
             );
+
+            _executionOptions.FinalizeByCopyThenDelete(true);
             await Task.CompletedTask;
         }
     }

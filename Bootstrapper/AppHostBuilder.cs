@@ -42,7 +42,7 @@ namespace Bootstrapper
 
                     // ExecutionTracker is "per execution", singleton is OK (no EF dependencies)
                     var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
-                    Directory.CreateDirectory(executionTracker.ExecutionFolder);
+                    Directory.CreateDirectory(executionTracker.ExecutionRunning);
                     services.AddSingleton(executionTracker);
 
                     services.AddSingleton(new CommandArgs(args));
@@ -88,7 +88,7 @@ namespace Bootstrapper
                 .UseSerilog((context, services, loggerConfig) =>
                 {
                     var execution = services.GetRequiredService<ExecutionTracker>();
-                    var logPath = Path.Combine(execution.ExecutionFolder, "Logs");
+                    var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
                     Directory.CreateDirectory(logPath);
 
                     loggerConfig.MinimumLevel.Debug()

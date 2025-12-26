@@ -13,7 +13,7 @@ namespace Services
         private readonly ExecutionTracker _executionOptions;
         private const string FolderName = "Page";
         private readonly ISecurityCheck _securityCheck;
-        private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
+        private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
         private readonly ICaptureSnapshot _capture;
         private readonly IDirectoryCheck _directoryCheck;
    
