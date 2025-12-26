@@ -41,7 +41,13 @@ namespace Bootstrapper
                     services.AddSingleton(appConfig);
 
                     // ExecutionTracker is "per execution", singleton is OK (no EF dependencies)
+
+
                     var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
+                    executionTracker.CleanupOrphanedRunningFolders();
+                    var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
+                    LogCleanupReport(cleanupReport);
+
                     Directory.CreateDirectory(executionTracker.ExecutionRunning);
                     services.AddSingleton(executionTracker);
 
@@ -87,10 +93,8 @@ namespace Bootstrapper
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {
-                    var execution = services.GetRequiredService<ExecutionTracker>();
-                    var cleanupReport = execution.CleanupOrphanedRunningFolders();
-                    LogCleanupReport(cleanupReport);
 
+                    var execution = services.GetRequiredService<ExecutionTracker>();
                     var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
                     Directory.CreateDirectory(logPath);
 

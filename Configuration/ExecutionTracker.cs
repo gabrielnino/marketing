@@ -119,18 +119,20 @@
                     return true;
                 }
 
-                File.SetAttributes(path, FileAttributes.Normal);
+                // Normaliza atributos en directorios
+                foreach (var dir in Directory.GetDirectories(path, "*", SearchOption.AllDirectories))
+                {
+                    try { File.SetAttributes(dir, FileAttributes.Normal); } catch { }
+                }
 
+                // Normaliza atributos en archivos
                 foreach (var file in Directory.GetFiles(path, "*", SearchOption.AllDirectories))
                 {
-                    try
-                    {
-                        var attr = File.GetAttributes(file);
-                        if ((attr & FileAttributes.ReadOnly) != 0)
-                            File.SetAttributes(file, attr & ~FileAttributes.ReadOnly);
-                    }
-                    catch { }
+                    try { File.SetAttributes(file, FileAttributes.Normal); } catch { }
                 }
+
+                // Directorio raíz
+                try { File.SetAttributes(path, FileAttributes.Normal); } catch { }
 
                 Directory.Delete(path, recursive: true);
                 error = null;
@@ -142,6 +144,7 @@
                 return false;
             }
         }
+
 
         private static void CopyDirectoryRecursive(string sourceDir, string destDir, FinalizeReport report)
         {
