@@ -398,6 +398,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
 using Persistence.Context.Interface;
@@ -425,13 +426,19 @@ config.AddEnvironmentVariables();
 hostingContext.Configuration.Bind(appConfig);
 services.AddSingleton(appConfig);
 var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
-Directory.CreateDirectory(executionTracker.ExecutionFolder);
+Directory.CreateDirectory(executionTracker.ExecutionRunning);
 services.AddSingleton(executionTracker);
 services.AddSingleton(new CommandArgs(args));
 services.AddSingleton<CommandFactory>();
 services.AddTransient<HelpCommand>();
 services.AddTransient<WhatsAppCommand>();
-services.AddSingleton<IWhatsAppMessage, WhatsAppMessage>();
+services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
+services.AddScoped<IWebDriver>(sp =>
+{
+var factory = sp.GetRequiredService<IWebDriverFactory>();
+return factory.Create(false);
+});
+services.AddHostedService<WebDriverLifetimeService>();
 services.AddSingleton<ISecurityCheck, SecurityCheck>();
 services.AddTransient<ILoginService, LoginService>();
 services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
@@ -449,12 +456,14 @@ services.AddSingleton<IColumnTypes, SQLite>();
 .UseSerilog((context, services, loggerConfig) =>
 {
 var execution = services.GetRequiredService<ExecutionTracker>();
-var logPath = Path.Combine(execution.ExecutionFolder, "Logs");
+var cleanupReport = execution.CleanupOrphanedRunningFolders();
+LogCleanupReport(cleanupReport);
+var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
 Directory.CreateDirectory(logPath);
 loggerConfig.MinimumLevel.Debug()
 .WriteTo.Console()
 .WriteTo.File(
-path: Path.Combine(logPath, "LiveNetwork-.log"),
+path: Path.Combine(logPath, "Marketing-.log"),
 rollingInterval: RollingInterval.Day,
 fileSizeLimitBytes: 5_000_000,
 retainedFileCountLimit: 7,
@@ -462,6 +471,37 @@ rollOnFileSizeLimit: true,
 outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}"
 );
 });
+}
+public static void LogCleanupReport(CleanupReport report)
+{
+if (report is null)
+{
+Log.Warning("The folder is clean");
+return;
+}
+foreach (var deleted in report.DeletedRunningFolders)
+{
+Log.Information(
+"Deleted orphaned execution folder: {FolderPath}",
+deleted);
+}
+foreach (var failure in report.DeleteFailures)
+{
+Log.Warning(
+failure.Exception,
+"Failed to delete orphaned execution folder: {FolderPath}",
+failure.Path);
+}
+if (report.IsClean)
+{
+Log.Information("Execution cleanup completed with no errors");
+}
+else
+{
+Log.Warning(
+"Execution cleanup completed with {FailureCount} failure(s)",
+report.DeleteFailures.Count);
+}
 }
 private static void AddDbContextSQLite(HostBuilderContext context, IServiceCollection services)
 {
@@ -496,7 +536,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -725,7 +765,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -785,41 +825,153 @@ public PathsConfig Paths { get; set; }
 {
 public class ExecutionTracker
 {
+private const string ExecutionRunningName = "ExecutionRunning";
+private const string ExecutionFinishedName = "ExecutionFinished";
 private readonly string _outPath;
 public ExecutionTracker(string outPath)
 {
 _outPath = outPath;
 TimeStamp = ActiveTimeStamp ?? DateTime.Now.ToString("yyyyMMdd_HHmmss");
 }
-public string ExecutionFolder => Path.Combine(_outPath, $"{FolderName}_{TimeStamp}");
-private static string FolderName => "Execution";
 public string TimeStamp { get; }
-private string? ActiveTimeStamp
+public string ExecutionRunning => BuildPath(ExecutionRunningName, TimeStamp);
+public FinalizeReport FinalizeByCopyThenDelete(bool overwriteFinishedIfExists = false)
 {
-get
+var runningPath = ExecutionRunning;
+var finishedPath = ExecutionFinished;
+if (!Directory.Exists(runningPath))
+throw new DirectoryNotFoundException($"Folder not found: {runningPath}");
+if (Directory.Exists(finishedPath))
 {
-return GetCurrentFolder(FolderName);
+if (!overwriteFinishedIfExists)
+throw new IOException($"Folder already exists: {finishedPath}");
+TryDeleteDirectory(finishedPath, out _);
 }
+Directory.CreateDirectory(finishedPath);
+var report = new FinalizeReport(runningPath, finishedPath);
+CopyDirectoryRecursive(runningPath, finishedPath, report);
+if (!TryDeleteDirectory(runningPath, out var deleteError) && deleteError is not null)
+report.DeleteFailures.Add(new Failure(runningPath, deleteError));
+return report;
 }
-public string? GetCurrentFolder(string folder)
+public CleanupReport CleanupOrphanedRunningFolders()
 {
-var current = _outPath;
-var pattern = $"{folder}_*";
-var directories = Directory.GetDirectories(current, $"{folder}_*");
-var lastDirectory = directories
-.OrderByDescending(dir => dir)
-.FirstOrDefault();
-if (lastDirectory == null)
+var report = new CleanupReport();
+if (!Directory.Exists(_outPath))
+return report;
+foreach (var runningDir in Directory.GetDirectories(_outPath, $"{ExecutionRunningName}_*"))
 {
+var ts = ExtractTimeStampFromFolder(runningDir, ExecutionRunningName);
+if (ts is null)
+continue;
+var finishedDir = BuildPath(ExecutionFinishedName, ts);
+if (!Directory.Exists(finishedDir))
+continue;
+if (!TryDeleteDirectory(runningDir, out var error) && error is not null)
+report.DeleteFailures.Add(new Failure(runningDir, error));
+else
+report.DeletedRunningFolders.Add(runningDir);
+}
+return report;
+}
+private string ExecutionFinished => BuildPath(ExecutionFinishedName, TimeStamp);
+private string? ActiveTimeStamp => GetLatestTimeStamp(ExecutionRunningName);
+private string BuildPath(string prefix, string timeStamp)
+=> Path.Combine(_outPath, $"{prefix}_{timeStamp}");
+private string? GetLatestTimeStamp(string prefix)
+{
+if (!Directory.Exists(_outPath))
 return null;
-}
-var folderName = Path.GetFileName(lastDirectory);
-if (folderName != null && folderName.StartsWith($"{folder}_"))
-{
-return folderName[(folder.Length + 1)..];
-}
+var dirs = Directory.GetDirectories(_outPath, $"{prefix}_*");
+var last = dirs.OrderByDescending(d => d).FirstOrDefault();
+if (last is null)
 return null;
+var name = Path.GetFileName(last);
+if (name is null || !name.StartsWith($"{prefix}_"))
+return null;
+return name[(prefix.Length + 1)..];
 }
+private static string? ExtractTimeStampFromFolder(string fullPath, string prefix)
+{
+var name = Path.GetFileName(fullPath);
+if (name is null || !name.StartsWith($"{prefix}_"))
+return null;
+return name[(prefix.Length + 1)..];
+}
+private static bool TryDeleteDirectory(string path, out Exception? error)
+{
+try
+{
+if (!Directory.Exists(path))
+{
+error = null;
+return true;
+}
+File.SetAttributes(path, FileAttributes.Normal);
+foreach (var file in Directory.GetFiles(path, "*", SearchOption.AllDirectories))
+{
+try
+{
+var attr = File.GetAttributes(file);
+if ((attr & FileAttributes.ReadOnly) != 0)
+File.SetAttributes(file, attr & ~FileAttributes.ReadOnly);
+}
+catch { }
+}
+Directory.Delete(path, recursive: true);
+error = null;
+return true;
+}
+catch (Exception ex)
+{
+error = ex;
+return false;
+}
+}
+private static void CopyDirectoryRecursive(string sourceDir, string destDir, FinalizeReport report)
+{
+foreach (var dir in Directory.GetDirectories(sourceDir, "*", SearchOption.AllDirectories))
+{
+var rel = Path.GetRelativePath(sourceDir, dir);
+var targetDir = Path.Combine(destDir, rel);
+try { Directory.CreateDirectory(targetDir); }
+catch (Exception ex) { report.CopyFailures.Add(new Failure(targetDir, ex)); }
+}
+foreach (var file in Directory.GetFiles(sourceDir, "*", SearchOption.AllDirectories))
+{
+var rel = Path.GetRelativePath(sourceDir, file);
+var targetFile = Path.Combine(destDir, rel);
+try
+{
+Directory.CreateDirectory(Path.GetDirectoryName(targetFile)!);
+File.Copy(file, targetFile, overwrite: true);
+}
+catch (Exception ex)
+{
+report.CopyFailures.Add(new Failure(file, ex));
+}
+}
+}
+public sealed record Failure(string Path, Exception Exception);
+}
+public sealed class FinalizeReport
+{
+public FinalizeReport(string runningPath, string finishedPath)
+{
+RunningPath = runningPath;
+FinishedPath = finishedPath;
+}
+public string RunningPath { get; }
+public string FinishedPath { get; }
+public List<ExecutionTracker.Failure> CopyFailures { get; } = [];
+public List<ExecutionTracker.Failure> DeleteFailures { get; } = [];
+public bool IsClean => CopyFailures.Count == 0 && DeleteFailures.Count == 0;
+}
+public sealed class CleanupReport
+{
+public List<string> DeletedRunningFolders { get; } = [];
+public List<ExecutionTracker.Failure> DeleteFailures { get; } = [];
+public bool IsClean => DeleteFailures.Count == 0;
 }
 }
 
@@ -829,9 +981,6 @@ return null;
 {
 public class PathsConfig
 {
-public string SearchUrlOutputFilePath { get; set; }
-public string DetailedProfilesOutputFilePath { get; set; }
-public string ConversationOutputFilePath { get; set; }
 public string OutFolder { get; set; }
 public string DownloadFolder { get; set; }
 }
@@ -860,7 +1009,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7dadff79e4e0a6df1d115ad3cecf0dc5d5cad10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2405,7 +2554,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2850,9 +2999,9 @@ public class CaptureSnapshot : ICaptureSnapshot
 {
 private readonly IWebDriver _driver;
 private readonly ILogger<CaptureSnapshot> _logger;
-public CaptureSnapshot(IWebDriverFactory driverFactory, ILogger<CaptureSnapshot> logger)
+public CaptureSnapshot(IWebDriver driver, ILogger<CaptureSnapshot> logger)
 {
-_driver = driverFactory.Create();
+_driver = driver;
 _logger = logger;
 }
 public async Task<string> CaptureArtifactsAsync(string executionFolder, string stage)
@@ -3020,7 +3169,7 @@ public void EnsureDirectoryExists(string path)
 if (!Directory.Exists(path))
 {
 Directory.CreateDirectory(path);
-_logger.LogInformation($"📁 Created execution folder at: {_executionOptions.ExecutionFolder}");
+_logger.LogInformation($"📁 Created execution folder at: {_executionOptions.ExecutionRunning}");
 }
 }
 }
@@ -3028,7 +3177,8 @@ _logger.LogInformation($"📁 Created execution folder at: {_executionOptions.Ex
 
 === FILE: F:\Marketing\Services\LoginService.cs ===
 
-﻿using Configuration;
+﻿using System.Text.RegularExpressions;
+using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.Interfaces;
@@ -3042,23 +3192,46 @@ private readonly ILogger<LoginService> _logger;
 private readonly ICaptureSnapshot _capture;
 private readonly ExecutionTracker _executionOptions;
 private const string FolderName = "Login";
-private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
+private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
 private readonly ISecurityCheck _securityCheck;
 private readonly IDirectoryCheck _directoryCheck;
 public LoginService(
 AppConfig config,
-IWebDriverFactory driverFactory,
-ILogger<LoginService> logger
+IWebDriver driver,
+ILogger<LoginService> logger,
+ICaptureSnapshot capture,
+ExecutionTracker executionOptions,
+ISecurityCheck securityCheck,
+IDirectoryCheck directoryCheck
 )
 {
 _config = config;
-_driver = driverFactory.Create();
+_driver = driver;
 _logger = logger;
+_capture = capture;
+_executionOptions = executionOptions;
+_securityCheck = securityCheck;
+_directoryCheck = directoryCheck;
+_directoryCheck.EnsureDirectoryExists(FolderPath);
 }
 public async Task LoginAsync()
 {
+_logger.LogInformation(
+"🔐 ID:{TimeStamp} Starting login process...",
+_executionOptions.TimeStamp
+);
 var url = _config.WhatsApp.URL;
+_logger.LogInformation(
+"🌐 ID:{TimeStamp} Navigating to login URL: {Url}",
+_executionOptions.TimeStamp,
+url
+);
 _driver.Navigate().GoToUrl(url);
+await _capture.CaptureArtifactsAsync(FolderPath, "Login_Page_Loaded");
+_logger.LogInformation(
+"✅ ID:{TimeStamp} Login page loaded successfully.",
+_executionOptions.TimeStamp
+);
 await Task.CompletedTask;
 }
 }
@@ -3079,9 +3252,9 @@ private readonly ICaptureSnapshot _capture;
 private readonly ExecutionTracker _executionOptions;
 private readonly ILogger<SecurityCheck> _logger;
 private const string FolderName = "SecurityCheck";
-private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
+private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
 private readonly IDirectoryCheck _directoryCheck;
-public SecurityCheck(IWebDriverFactory driverFactory,
+public SecurityCheck(IWebDriver driver,
 ILogger<SecurityCheck> logger,
 ICaptureSnapshot capture,
 ExecutionTracker executionOptions,
@@ -3091,7 +3264,7 @@ _logger = logger;
 _capture = capture;
 _executionOptions = executionOptions;
 _directoryCheck = directoryCheck;
-_driver = driverFactory.Create();
+_driver = driver;
 _directoryCheck.EnsureDirectoryExists(FolderPath);
 }
 public bool IsSecurityCheck()
@@ -3203,10 +3376,10 @@ private readonly ILogger<Util> _logger;
 private readonly ExecutionTracker _executionOptions;
 private const string FolderName = "Page";
 private readonly ISecurityCheck _securityCheck;
-private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
+private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
 private readonly ICaptureSnapshot _capture;
 private readonly IDirectoryCheck _directoryCheck;
-public Util(IWebDriverFactory driverFactory,
+public Util(IWebDriver driver,
 AppConfig config,
 ILogger<Util> logger,
 ExecutionTracker executionOptions,
@@ -3214,7 +3387,7 @@ ICaptureSnapshot capture,
 ISecurityCheck securityCheck,
 IDirectoryCheck directoryCheck)
 {
-_driver = driverFactory.Create();
+_driver = driver;
 _config = config;
 _logger = logger;
 _executionOptions = executionOptions;
@@ -3346,6 +3519,41 @@ _logger.LogError(ex, "❌ ID:{TimeStamp} Failed to scroll to the 'Experience' se
 }
 }
 
+=== FILE: F:\Marketing\Services\WebDriverLifetimeService.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
+using OpenQA.Selenium;
+namespace Services
+{
+public sealed class WebDriverLifetimeService : IHostedService
+{
+private readonly IWebDriver _driver;
+public WebDriverLifetimeService(IWebDriver driver)
+{
+_driver = driver;
+}
+public Task StartAsync(CancellationToken cancellationToken)
+=> Task.CompletedTask;
+public Task StopAsync(CancellationToken cancellationToken)
+{
+try
+{
+_driver.Quit();
+_driver.Dispose();
+}
+catch
+{
+}
+return Task.CompletedTask;
+}
+}
+}
+
 === FILE: F:\Marketing\Services\WhatsAppMessage.cs ===
 
 ﻿using System;
@@ -3359,13 +3567,53 @@ using Services.Interfaces;
 namespace Services
 {
 public class WhatsAppMessage(ILogger<LoginService> logger,
-ILoginService loginService) : IWhatsAppMessage
+ILoginService loginService, ExecutionTracker executionOption) : IWhatsAppMessage
 {
 public ILogger<LoginService> Logger { get; } = logger;
 public ILoginService Login { get; } = loginService;
+public ExecutionTracker ExecutionOption { get; } = executionOption;
 public async Task SendMessageAsync()
 {
 await Login.LoginAsync();
+var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
+LogFinalizeReport(finalizeReport);
+}
+public void LogFinalizeReport(FinalizeReport report)
+{
+if (report is null)
+{
+Logger.LogWarning("Finalize report is null");
+return;
+}
+Logger.LogInformation(
+"Finalizing execution from {RunningPath} to {FinishedPath}",
+report.RunningPath,
+report.FinishedPath);
+foreach (var failure in report.CopyFailures)
+{
+Logger.LogError(
+failure.Exception,
+"Copy failed during execution finalization: {Path}",
+failure.Path);
+}
+foreach (var failure in report.DeleteFailures)
+{
+Logger.LogWarning(
+failure.Exception,
+"Delete failed for running execution folder: {Path}",
+failure.Path);
+}
+if (report.IsClean)
+{
+Logger.LogInformation("Execution finalized successfully");
+}
+else
+{
+Logger.LogWarning(
+"Execution finalized with issues. CopyFailures={CopyFailures}, DeleteFailures={DeleteFailures}",
+report.CopyFailures.Count,
+report.DeleteFailures.Count);
+}
 }
 }
 }
@@ -3499,7 +3747,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3553,48 +3801,44 @@ public class Program
 {
 public static async Task Main(string[] args)
 {
-try
-{
-Log.Information("🚗 Executing booking at {Time}", DateTimeOffset.Now);
+Log.Information("🚀 Application started at {StartTime}", DateTimeOffset.Now);
 try
 {
 using var host = AppHostBuilder.Create(args).Build();
+Log.Information("Initializing database...");
 EnsureDatabaseInitialized(host.Services);
+Log.Information("Database initialized successfully");
 var commandFactory = host.Services.GetRequiredService<CommandFactory>();
 var commands = commandFactory.CreateCommand().ToList();
 var jobArgs = host.Services.GetRequiredService<CommandArgs>();
-Log.Information($"Starting processing {commands.Count} commands");
+Log.Information("Discovered {CommandCount} command(s) to execute", commands.Count);
 foreach (var command in commands)
 {
+var commandName = command.GetType().Name;
 try
 {
-Log.Information("Executing command...");
+Log.Information("▶ Executing command: {CommandName}", commandName);
 await command.ExecuteAsync(jobArgs.Arguments);
-Log.Information($"{command.GetType().Name} completed successfully");
+Log.Information("✔ Command completed successfully: {CommandName}", commandName);
 }
 catch (Exception ex)
 {
-Log.Error(ex, $"Execution failed for {command.GetType().Name}");
-throw new AggregateException($"Command {command.GetType().Name} failed", ex);
+Log.Error(ex, "✖ Command execution failed: {CommandName}", commandName);
+throw new AggregateException($"Command '{commandName}' failed", ex);
 }
 }
-Log.Information("✅ All commands processed successfully");
+Log.Information("✅ All commands executed successfully");
 }
 catch (Exception ex)
 {
-Log.Fatal(ex, "❌ Application terminated unexpectedly");
+Log.Fatal(ex, "❌ Application terminated due to an unrecoverable error");
 Environment.ExitCode = 1;
 }
 finally
 {
+Log.Information("🧹 Flushing logs and shutting down");
 await Log.CloseAndFlushAsync();
 }
-}
-catch (Exception ex)
-{
-Log.Error(ex, "❌ Error while booking road test");
-}
-Log.Information("⏱ Waiting 15 minutes before the next booking attempt...");
 }
 static void EnsureDatabaseInitialized(IServiceProvider services)
 {
@@ -3620,7 +3864,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

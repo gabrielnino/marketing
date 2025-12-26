@@ -88,6 +88,9 @@ namespace Bootstrapper
                 .UseSerilog((context, services, loggerConfig) =>
                 {
                     var execution = services.GetRequiredService<ExecutionTracker>();
+                    var cleanupReport = execution.CleanupOrphanedRunningFolders();
+                    LogCleanupReport(cleanupReport);
+
                     var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
                     Directory.CreateDirectory(logPath);
 
@@ -102,6 +105,41 @@ namespace Bootstrapper
                             outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}"
                         );
                 });
+        }
+
+        public static void LogCleanupReport(CleanupReport report)
+        {
+            if (report is null)
+            {
+                Log.Warning("The folder is clean");
+                return;
+            }
+
+            foreach (var deleted in report.DeletedRunningFolders)
+            {
+                Log.Information(
+                    "Deleted orphaned execution folder: {FolderPath}",
+                    deleted);
+            }
+
+            foreach (var failure in report.DeleteFailures)
+            {
+                Log.Warning(
+                    failure.Exception,
+                    "Failed to delete orphaned execution folder: {FolderPath}",
+                    failure.Path);
+            }
+
+            if (report.IsClean)
+            {
+                Log.Information("Execution cleanup completed with no errors");
+            }
+            else
+            {
+                Log.Warning(
+                    "Execution cleanup completed with {FailureCount} failure(s)",
+                    report.DeleteFailures.Count);
+            }
         }
 
         private static void AddDbContextSQLite(HostBuilderContext context, IServiceCollection services)

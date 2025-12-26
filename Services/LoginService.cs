@@ -62,7 +62,7 @@ namespace Services
                 _executionOptions.TimeStamp
             );
 
-            _executionOptions.FinalizeByCopyThenDelete(true);
+            
             await Task.CompletedTask;
         }
     }
