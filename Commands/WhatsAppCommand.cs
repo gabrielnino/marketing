@@ -9,7 +9,7 @@ using Services.Interfaces;
 
 namespace Commands
 {
-    internal class WhatsAppCommand : ICommand
+    public class WhatsAppCommand : ICommand
     {
         private readonly ILogger<WhatsAppCommand> _logger;
         private readonly IWhatsAppMessage _iWhatsAppMessage;

@@ -20,7 +20,6 @@ namespace Services
             AppConfig config, 
             IWebDriverFactory driverFactory, 
             ILogger<LoginService> logger, 
-            ICaptureSnapshot capture,
             ExecutionTracker executionOptions,
             ISecurityCheck securityCheck,
             IDirectoryCheck directoryCheck)
@@ -28,7 +27,6 @@ namespace Services
             _config = config;
             _driver = driverFactory.Create(true);
             _logger = logger;
-            _capture = capture;
             _executionOptions = executionOptions;
             _securityCheck = securityCheck;
             _directoryCheck = directoryCheck;
@@ -37,12 +35,29 @@ namespace Services
 
         public async Task LoginAsync()
         {
-            _logger.LogInformation($"🔐 ID:{_executionOptions.TimeStamp} Attempting to login to LinkedIn...");
+            _logger.LogInformation(
+                "🔐 ID:{TimeStamp} Starting login process...",
+                _executionOptions.TimeStamp
+            );
+
             var url = _config.WhatsApp.URL;
+
+            _logger.LogInformation(
+                "🌐 ID:{TimeStamp} Navigating to login URL: {Url}",
+                _executionOptions.TimeStamp,
+                url
+            );
+
             _driver.Navigate().GoToUrl(url);
-            
+
+            _logger.LogInformation(
+                "✅ ID:{TimeStamp} Login page loaded successfully.",
+                _executionOptions.TimeStamp
+            );
+
+            await Task.CompletedTask;
         }
 
-        
+
     }
 }

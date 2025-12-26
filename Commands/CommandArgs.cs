@@ -2,7 +2,7 @@
 {
     public class CommandArgs
     {
-        public const string WhatsApp = "--WhatsApp";
+        public const string WhatsApp = "--whatsapp";
 
         private static readonly HashSet<string> ValidCommands = new(StringComparer.OrdinalIgnoreCase)
         {

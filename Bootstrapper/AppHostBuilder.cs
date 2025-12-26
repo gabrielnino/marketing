@@ -14,6 +14,8 @@ using Persistence.Context.Interface;
 using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
+using Services;
+using Services.Interfaces;
 
 namespace Bootstrapper
 {
@@ -45,7 +47,22 @@ namespace Bootstrapper
                     services.AddSingleton(new CommandArgs(args));
                     services.AddSingleton<CommandFactory>();
                     services.AddTransient<HelpCommand>();
+                    services.AddTransient<WhatsAppCommand>();
 
+                    services.AddSingleton<IWhatsAppMessage, WhatsAppMessage>();
+
+
+
+                    services.AddSingleton<ISecurityCheck, SecurityCheck>();
+
+                    services.AddTransient<ILoginService, LoginService>();
+                    services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
+                    services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
+
+                    services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
+                    services.AddSingleton<IUtil, Util>();
+
+                    //
                     AddDbContextSQLite(hostingContext, services);
 
                     // EF-related types should be scoped
