@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Configuration;
+﻿using Configuration;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
 
@@ -32,11 +27,8 @@ namespace Services
             {
                 Logger.LogInformation("Opening chat for contact: {Contact}", contact);
                 await WhatsAppChatService.OpenContactChatAsync(contact);
-                //Logger.LogInformation("Sending message to contact: {Contact}", contact);
-                //await WhatsAppChatService.SendMessageAsync(Config.WhatsApp.Message);
-                //Logger.LogInformation("Message sent to contact: {Contact}", contact);
+                await WhatsAppChatService.SendMessageAsync("hola mundo");
             }
-            
         }
         public void LogFinalizeReport(FinalizeReport report)
         {

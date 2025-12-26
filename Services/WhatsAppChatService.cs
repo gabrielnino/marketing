@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -46,65 +47,65 @@ namespace Services
 
 
 
-public async Task TypeIntoSearchBoxAsync(
-    string text,
-    TimeSpan? timeout = null,
-    TimeSpan? pollInterval = null,
-    CancellationToken ct = default)
-    {
-        if (string.IsNullOrWhiteSpace(text))
-            throw new ArgumentException("Text cannot be empty.", nameof(text));
-
-        timeout ??= TimeSpan.FromSeconds(10);
-        pollInterval ??= TimeSpan.FromMilliseconds(200);
-
-        var deadline = DateTimeOffset.UtcNow + timeout.Value;
-
-        while (DateTimeOffset.UtcNow < deadline)
+        private async Task TypeIntoSearchBoxAsync(
+            string text,
+            TimeSpan? timeout = null,
+            TimeSpan? pollInterval = null,
+            CancellationToken ct = default)
         {
-            ct.ThrowIfCancellationRequested();
+            if (string.IsNullOrWhiteSpace(text))
+                throw new ArgumentException("Text cannot be empty.", nameof(text));
 
-            try
+            timeout ??= TimeSpan.FromSeconds(10);
+            pollInterval ??= TimeSpan.FromMilliseconds(200);
+
+            var deadline = DateTimeOffset.UtcNow + timeout.Value;
+
+            while (DateTimeOffset.UtcNow < deadline)
             {
-                var input = Driver
-                    .FindElements(By.CssSelector(
-                        "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']"
-                    ))
-                    .FirstOrDefault();
+                ct.ThrowIfCancellationRequested();
 
-                if (input is { Displayed: true, Enabled: true })
+                try
                 {
-                    input.Click();
+                    var input = Driver
+                        .FindElements(By.CssSelector(
+                            "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']"
+                        ))
+                        .FirstOrDefault();
 
-                    // Clear existing content
-                    input.SendKeys(Keys.Control + "a");
-                    input.SendKeys(Keys.Backspace);
+                    if (input is { Displayed: true, Enabled: true })
+                    {
+                        input.Click();
 
-                    input.SendKeys(text);
-                    input.SendKeys(Keys.Enter);
+                        // Clear existing content
+                        input.SendKeys(Keys.Control + "a");
+                        input.SendKeys(Keys.Backspace);
 
-                    return;
+                        input.SendKeys(text);
+                        input.SendKeys(Keys.Enter);
+
+                        return;
+                    }
                 }
-            }
-            catch (StaleElementReferenceException)
-            {
-                // DOM updated → retry
-            }
-            catch (InvalidElementStateException)
-            {
-                // Not ready yet → retry
+                catch (StaleElementReferenceException)
+                {
+                    // DOM updated → retry
+                }
+                catch (InvalidElementStateException)
+                {
+                    // Not ready yet → retry
+                }
+
+                await Task.Delay(pollInterval.Value, ct);
             }
 
-            await Task.Delay(pollInterval.Value, ct);
+            throw new WebDriverTimeoutException(
+                $"Search input textbox not available within {timeout.Value.TotalSeconds} seconds."
+            );
         }
 
-        throw new WebDriverTimeoutException(
-            $"Search input textbox not available within {timeout.Value.TotalSeconds} seconds."
-        );
-    }
 
-
-        public async Task ClickChatByTitleAsync(
+        private async Task ClickChatByTitleAsync(
             string chatTitle,
             TimeSpan? timeout = null,
             TimeSpan? pollInterval = null,
@@ -173,41 +174,11 @@ public async Task TypeIntoSearchBoxAsync(
             return "concat(" + string.Join(", \"'\", ", parts.Select(p => $"'{p}'")) + ")";
         }
 
-        //private async Task WaitForChatOrErrorAsync(TimeSpan timeout, CancellationToken ct)
-        //{
-        //    var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(_driver, timeout);
 
-        //    await Task.Run(() =>
-        //    {
-        //        wait.Until(d =>
-        //        {
-        //            ct.ThrowIfCancellationRequested();
-
-        //            // Chat ready
-        //            if (d.FindElements(By.CssSelector(
-        //                "div[role='textbox'][contenteditable='true']")
-        //            ).Count > 0)
-        //                return true;
-
-        //            // Error detection
-        //            var body = d.FindElements(By.TagName("body"))
-        //                        .FirstOrDefault()?.Text ?? string.Empty;
-
-        //            if (body.Contains("isn't on WhatsApp", StringComparison.OrdinalIgnoreCase) ||
-        //                body.Contains("invalid", StringComparison.OrdinalIgnoreCase))
-        //            {
-        //                throw new InvalidOperationException(
-        //                    "WhatsApp reports the number is invalid or unavailable."
-        //                );
-        //            }
-
-        //            return false;
-        //        });
-        //    }, ct);
-        //}
-
-
-        public Task SendMessageAsync(string message, CancellationToken ct = default)
+        public Task SendMessageAsync(string message,
+            TimeSpan? timeout = null,
+            TimeSpan? pollInterval = null,
+            CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(message))
                 throw new ArgumentException("Message cannot be empty.", nameof(message));
@@ -220,27 +191,6 @@ public async Task TypeIntoSearchBoxAsync(
             return Task.CompletedTask;
         }
 
-        private void WaitForChatOrError(TimeSpan timeout, CancellationToken ct)
-        {
-            var wait = new WebDriverWait(Driver, timeout);
-
-            wait.Until(d =>
-            {
-                ct.ThrowIfCancellationRequested();
-
-                // Compose textbox present => chat ready
-                if (d.FindElements(By.CssSelector("div[role='textbox'][contenteditable='true']")).Count > 0)
-                    return true;
-
-                // Basic error detection
-                var body = d.FindElements(By.TagName("body")).FirstOrDefault()?.Text ?? "";
-                if (body.Contains("isn't on WhatsApp", StringComparison.OrdinalIgnoreCase) ||
-                    body.Contains("invalid", StringComparison.OrdinalIgnoreCase))
-                    throw new InvalidOperationException("WhatsApp indicates the phone number is invalid or not available.");
-
-                return false;
-            });
-        }
 
         private IWebElement FindComposeBox()
         {
@@ -250,7 +200,5 @@ public async Task TypeIntoSearchBoxAsync(
             return boxes[^1]; // heuristic
         }
 
-        private static string NormalizeE164ToDigits(string e164)
-            => System.Text.RegularExpressions.Regex.Replace(e164, @"\D", "");
     }
 }
