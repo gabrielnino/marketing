@@ -17,7 +17,7 @@ namespace Services
         private readonly ICaptureSnapshot _capture;
         private readonly IDirectoryCheck _directoryCheck;
    
-        public Util(IWebDriverFactory driverFactory,
+        public Util(IWebDriver driver,
             AppConfig config,
             ILogger<Util> logger,
             ExecutionTracker executionOptions,
@@ -25,7 +25,7 @@ namespace Services
             ISecurityCheck securityCheck,
             IDirectoryCheck directoryCheck)
         {
-            _driver = driverFactory.Create();
+            _driver = driver;
             _config = config;
             _logger = logger;
             _executionOptions = executionOptions;

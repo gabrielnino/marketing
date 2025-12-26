@@ -56,7 +56,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -404,6 +404,8 @@ using Persistence.Context.Interface;
 using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
+using Services;
+using Services.Interfaces;
 namespace Bootstrapper
 {
 public static class AppHostBuilder
@@ -428,6 +430,14 @@ services.AddSingleton(executionTracker);
 services.AddSingleton(new CommandArgs(args));
 services.AddSingleton<CommandFactory>();
 services.AddTransient<HelpCommand>();
+services.AddTransient<WhatsAppCommand>();
+services.AddSingleton<IWhatsAppMessage, WhatsAppMessage>();
+services.AddSingleton<ISecurityCheck, SecurityCheck>();
+services.AddTransient<ILoginService, LoginService>();
+services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
+services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
+services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
+services.AddSingleton<IUtil, Util>();
 AddDbContextSQLite(hostingContext, services);
 services.AddScoped<IUnitOfWork, UnitOfWork>();
 services.AddScoped<IDataContext, DataContext>();
@@ -486,7 +496,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902b50669068f541c9367c668c0936774d8da3e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -579,18 +589,10 @@ global using global::System.Threading.Tasks;
 {
 public class CommandArgs
 {
-public const string search = "--search";
-public const string prompt = "--prompt";
-public const string invite = "--invite";
-public const string load = "--load";
-public const string chat = "--chat";
+public const string WhatsApp = "--whatsapp";
 private static readonly HashSet<string> ValidCommands = new(StringComparer.OrdinalIgnoreCase)
 {
-search,
-prompt,
-invite,
-load,
-chat
+WhatsApp
 };
 public string MainCommand { get; }
 public Dictionary<string, string> Arguments { get; }
@@ -616,6 +618,7 @@ private static bool IsArgument(string arg) => arg.Contains("=");
 === FILE: F:\Marketing\Commands\CommandFactory.cs ===
 
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Services.Interfaces;
 namespace Commands
 {
 public class CommandFactory
@@ -632,6 +635,9 @@ public IEnumerable<ICommand> CreateCommand()
 var commands = new List<ICommand>();
 switch (_jobCommandArgs.MainCommand.ToLowerInvariant())
 {
+case CommandArgs.WhatsApp:
+commands.Add(_serviceProvider.GetRequiredService<WhatsAppCommand>());
+break;
 default:
 commands.Add(_serviceProvider.GetRequiredService<HelpCommand>());
 break;
@@ -676,6 +682,36 @@ Task ExecuteAsync(Dictionary<string, string>? arguments=null);
 }
 }
 
+=== FILE: F:\Marketing\Commands\WhatsAppCommand.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Services;
+using Services.Interfaces;
+namespace Commands
+{
+public class WhatsAppCommand : ICommand
+{
+private readonly ILogger<WhatsAppCommand> _logger;
+private readonly IWhatsAppMessage _iWhatsAppMessage;
+public WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage)
+{
+_logger = logger ?? throw new ArgumentNullException(nameof(logger));
+_iWhatsAppMessage = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
+}
+public async Task ExecuteAsync(Dictionary<string, string>? arguments = null)
+{
+_logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
+await _iWhatsAppMessage.SendMessageAsync();
+_logger.LogInformation("InviteCommand: finished.");
+}
+}
+}
+
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
 using System;
@@ -689,7 +725,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -738,34 +774,8 @@ global using global::System.Threading.Tasks;
 {
 public class AppConfig
 {
-public Credential LinkedInCredentials { get; set; }
-public SearchConfiguration Search { get; set; }
-public Logging Logging { get; set; }
-public LlmProvider Llm { get; set; }
+public WhatsAppConfig WhatsApp { get; set; }
 public PathsConfig Paths { get; set; }
-public ExecutionOptions Options { get; set; }
-}
-}
-
-=== FILE: F:\Marketing\Configuration\Credential.cs ===
-
-﻿namespace Configuration
-{
-public class Credential
-{
-public string Email { get; set; }
-public string Password { get; set; }
-}
-}
-
-=== FILE: F:\Marketing\Configuration\ExecutionOptions.cs ===
-
-﻿namespace Configuration
-{
-public class ExecutionOptions
-{
-public bool EnableCustomMessages { get; set; }
-public int MaxInvites { get; set; }
 }
 }
 
@@ -813,28 +823,6 @@ return null;
 }
 }
 
-=== FILE: F:\Marketing\Configuration\LlmProvider.cs ===
-
-﻿namespace Configuration
-{
-public class LlmProvider
-{
-public string Url { get; set; }
-public string ApiKey { get; set; }
-}
-}
-
-=== FILE: F:\Marketing\Configuration\Logging.cs ===
-
-﻿namespace Configuration
-{
-public class Logging
-{
-public string LogFilePath { get; set; }
-public string FileLogLevel { get; set; }
-}
-}
-
 === FILE: F:\Marketing\Configuration\PathsConfig.cs ===
 
 ﻿namespace Configuration
@@ -849,14 +837,13 @@ public string DownloadFolder { get; set; }
 }
 }
 
-=== FILE: F:\Marketing\Configuration\SearchConfiguration.cs ===
+=== FILE: F:\Marketing\Configuration\WhatsAppConfig.cs ===
 
 ﻿namespace Configuration
 {
-public class SearchConfiguration
+public class WhatsAppConfig
 {
-public string SearchText { get; set; }
-public int MaxPages { get; set; }
+public required string URL { get; set; }
 }
 }
 
@@ -873,7 +860,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7dadff79e4e0a6df1d115ad3cecf0dc5d5cad10")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1015,7 +1002,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1066,7 +1053,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902b50669068f541c9367c668c0936774d8da3e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2070,6 +2057,8 @@ await ctx.SaveChangesAsync();
 }
 private static Func<IQueryable<TestEntity>, IOrderedQueryable<TestEntity>> OrderByIdAsc()
 => q => q.OrderBy(x => x.Id);
+private static Func<IQueryable<TestEntity>, IOrderedQueryable<TestEntity>> OrderByIdDesc()
+=> q => q.OrderByDescending(x => x.Id);
 [Fact]
 public async Task GetAllMembers_When_empty_returns_empty_items_next_null_total_0()
 {
@@ -2117,6 +2106,19 @@ var repo = new TestReadRepo(CreateUnitOfWork(ctx2), OrderByIdAsc());
 ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
 _ = await repo.GetAllMembers();
 ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+}
+[Fact]
+public async Task GetAllMembers_When_cancelled_should_throw_OperationCanceledException()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+using var cts = new CancellationTokenSource();
+cts.Cancel();
+Func<Task> act = async () => await repo.GetAllMembers(cts.Token);
+await act.Should().ThrowAsync<OperationCanceledException>();
 }
 [Fact]
 public async Task GetPageAsync_When_pageSize_less_than_total_returns_pageSize_items_and_next_cursor()
@@ -2173,6 +2175,23 @@ op.Data!.TotalCount.Should().Be(0);
 op.Data.Items.Should().BeEmpty();
 op.Data.NextCursor.Should().BeNull();
 }
+[Fact]
+public async Task GetPageAsync_Should_use_AsNoTracking_no_tracked_entities_created_by_query()
+{
+var (conn, ctx1) = await CreateContextAsync();
+await using var __ = conn;
+await SeedAsync(ctx1, ("001", true), ("002", true));
+await ctx1.DisposeAsync();
+var options = new DbContextOptionsBuilder()
+.UseSqlite(conn)
+.Options;
+IColumnTypes columnTypes = new TestColumnTypes();
+await using var ctx2 = new TestDataContext(options, columnTypes);
+var repo = new TestReadRepo(CreateUnitOfWork(ctx2), OrderByIdAsc());
+ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+_ = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 1);
+ctx2.ChangeTracker.Entries<TestEntity>().Should().BeEmpty();
+}
 [Theory]
 [InlineData(null)]
 [InlineData("")]
@@ -2209,17 +2228,64 @@ op.Data.Items.Select(x => x.Id).Should().Equal("001", "003", "005");
 op.Data.NextCursor.Should().BeNull();
 }
 [Fact]
-public async Task GetAllMembers_When_cancelled_should_throw_TaskCanceledException_or_OperationCanceledException()
+public async Task GetPageAsync_Should_apply_orderBy_before_taking_page()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("003", true), ("001", true), ("002", true), ("005", true), ("004", true));
+var repoAsc = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var opAsc = await repoAsc.GetPageAsync(filter: null, cursor: null, pageSize: 3);
+opAsc.IsSuccessful.Should().BeTrue();
+opAsc.Data!.Items.Select(x => x.Id).Should().Equal("001", "002", "003");
+opAsc.Data.NextCursor.Should().Be("003");
+var repoDesc = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdDesc());
+var opDesc = await repoDesc.GetPageAsync(filter: null, cursor: null, pageSize: 3);
+opDesc.IsSuccessful.Should().BeTrue();
+opDesc.Data!.Items.Select(x => x.Id).Should().Equal("005", "004", "003");
+opDesc.Data.NextCursor.Should().Be("003");
+}
+[Fact]
+public async Task GetPageAsync_When_pageSize_is_negative_returns_empty_items_next_null_totalcount_is_count()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true), ("003", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: -1);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.TotalCount.Should().Be(3);
+op.Data.Items.Should().BeEmpty();
+op.Data.NextCursor.Should().BeNull();
+}
+[Fact]
+public async Task GetPageAsync_When_more_items_exist_should_remove_extra_item_and_return_exact_pageSize()
+{
+var (conn, ctx) = await CreateContextAsync();
+await using var _ = ctx;
+await using var __ = conn;
+await SeedAsync(ctx, ("001", true), ("002", true), ("003", true));
+var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.Items.Should().HaveCount(2);
+op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
+op.Data.NextCursor.Should().Be("002");
+}
+[Fact]
+public async Task GetPageAsync_When_exact_pageSize_items_exist_should_not_remove_any_item_and_next_null()
 {
 var (conn, ctx) = await CreateContextAsync();
 await using var _ = ctx;
 await using var __ = conn;
 await SeedAsync(ctx, ("001", true), ("002", true));
 var repo = new TestReadRepo(CreateUnitOfWork(ctx), OrderByIdAsc());
-using var cts = new CancellationTokenSource();
-cts.Cancel();
-Func<Task> act = async () => await repo.GetAllMembers(cts.Token);
-await act.Should().ThrowAsync<OperationCanceledException>();
+var op = await repo.GetPageAsync(filter: null, cursor: null, pageSize: 2);
+op.IsSuccessful.Should().BeTrue();
+op.Data!.Items.Should().HaveCount(2);
+op.Data.Items.Select(x => x.Id).Should().Equal("001", "002");
+op.Data.NextCursor.Should().BeNull();
 }
 }
 
@@ -2339,7 +2405,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+902b50669068f541c9367c668c0936774d8da3e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2631,7 +2697,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2982,50 +3048,18 @@ private readonly IDirectoryCheck _directoryCheck;
 public LoginService(
 AppConfig config,
 IWebDriverFactory driverFactory,
-ILogger<LoginService> logger,
-ICaptureSnapshot capture,
-ExecutionTracker executionOptions,
-ISecurityCheck securityCheck,
-IDirectoryCheck directoryCheck)
+ILogger<LoginService> logger
+)
 {
 _config = config;
-_driver = driverFactory.Create(true);
+_driver = driverFactory.Create();
 _logger = logger;
-_capture = capture;
-_executionOptions = executionOptions;
-_securityCheck = securityCheck;
-_directoryCheck = directoryCheck;
-_directoryCheck.EnsureDirectoryExists(FolderPath);
 }
 public async Task LoginAsync()
 {
-_logger.LogInformation($"🔐 ID:{_executionOptions.TimeStamp} Attempting to login to LinkedIn...");
-var url = "https://www.linkedin.com/login";
+var url = _config.WhatsApp.URL;
 _driver.Navigate().GoToUrl(url);
-await _capture.CaptureArtifactsAsync(FolderPath, $"Go to url{url}");
-await Task.Delay(3000);
-if (!IsOnLoginPage())
-{
-if (_securityCheck.IsSecurityCheck())
-{
-await _securityCheck.TryStartPuzzle();
-}
-}
-var emailInput = _driver.FindElement(By.Id("username"));
-emailInput.SendKeys(_config.LinkedInCredentials.Email);
-await Task.Delay(3000);
-await _capture.CaptureArtifactsAsync(FolderPath, "Entered email");
-var passwordInput = _driver.FindElement(By.Id("password"));
-passwordInput.SendKeys(_config.LinkedInCredentials.Password + Keys.Enter);
-await _capture.CaptureArtifactsAsync(FolderPath, "Entered password");
-_logger.LogInformation($"✅ ID:{_executionOptions.TimeStamp} Successfully authenticated with LinkedIn");
-}
-private bool IsOnLoginPage()
-{
-var usernameElements = _driver.FindElements(By.Id("username"));
-var passwordElements = _driver.FindElements(By.Id("password"));
-var urlContainsLogin = _driver.Url.Contains("/login");
-return usernameElements.Any() && passwordElements.Any() && urlContainsLogin;
+await Task.CompletedTask;
 }
 }
 }
@@ -3312,6 +3346,30 @@ _logger.LogError(ex, "❌ ID:{TimeStamp} Failed to scroll to the 'Experience' se
 }
 }
 
+=== FILE: F:\Marketing\Services\WhatsAppMessage.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Configuration;
+using Microsoft.Extensions.Logging;
+using Services.Interfaces;
+namespace Services
+{
+public class WhatsAppMessage(ILogger<LoginService> logger,
+ILoginService loginService) : IWhatsAppMessage
+{
+public ILogger<LoginService> Logger { get; } = logger;
+public ILoginService Login { get; } = loginService;
+public async Task SendMessageAsync()
+{
+await Login.LoginAsync();
+}
+}
+}
+
 === FILE: F:\Marketing\Services\Interfaces\ICaptureSnapshot.cs ===
 
 ﻿namespace Services.Interfaces
@@ -3322,16 +3380,6 @@ Task<string> CaptureArtifactsAsync(string executionFolder, string stage);
 }
 }
 
-=== FILE: F:\Marketing\Services\Interfaces\IConnectionInfoCollector.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface IConnectionInfoCollector
-{
-Task LoadConnectionsAsync();
-}
-}
-
 === FILE: F:\Marketing\Services\Interfaces\IDirectoryCheck.cs ===
 
 ﻿namespace Services.Interfaces
@@ -3339,31 +3387,6 @@ Task LoadConnectionsAsync();
 public interface IDirectoryCheck
 {
 void EnsureDirectoryExists(string path);
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IInviteConnections.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface IInviteConnections
-{
-Task Invite();
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\ILinkedInChat.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Interfaces
-{
-public interface ILinkedInChat
-{
-Task SendMessageAsync();
 }
 }
 
@@ -3397,16 +3420,6 @@ Task GeneratPrompt();
 }
 }
 
-=== FILE: F:\Marketing\Services\Interfaces\IResumeDetailService.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface IResumeDetailService
-{
-Task RunResumeDetailProcessAsync();
-}
-}
-
 === FILE: F:\Marketing\Services\Interfaces\ISearch.cs ===
 
 ﻿namespace Services.Interfaces
@@ -3414,16 +3427,6 @@ Task RunResumeDetailProcessAsync();
 public interface ISearch
 {
 Task RunSearchAsync();
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\ISearchCoordinator.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface ISearchCoordinator
-{
-Task SearchConnectionAsync();
 }
 }
 
@@ -3468,6 +3471,21 @@ ChromeOptions GetDefaultOptions(string downloadFolder);
 }
 }
 
+=== FILE: F:\Marketing\Services\Interfaces\IWhatsAppMessage.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Interfaces
+{
+public interface IWhatsAppMessage
+{
+Task SendMessageAsync();
+}
+}
+
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
 using System;
@@ -3481,7 +3499,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96f2459ed1de2242502c93c7b5ad61c2056dcd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3515,6 +3533,99 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\Services.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\WhatsAppSender\Program.cs ===
+
+﻿using Bootstrapper;
+using Commands;
+using Microsoft.Extensions.DependencyInjection;
+using Persistence.Context.Implementation;
+using Serilog;
+public class Program
+{
+public static async Task Main(string[] args)
+{
+try
+{
+Log.Information("🚗 Executing booking at {Time}", DateTimeOffset.Now);
+try
+{
+using var host = AppHostBuilder.Create(args).Build();
+EnsureDatabaseInitialized(host.Services);
+var commandFactory = host.Services.GetRequiredService<CommandFactory>();
+var commands = commandFactory.CreateCommand().ToList();
+var jobArgs = host.Services.GetRequiredService<CommandArgs>();
+Log.Information($"Starting processing {commands.Count} commands");
+foreach (var command in commands)
+{
+try
+{
+Log.Information("Executing command...");
+await command.ExecuteAsync(jobArgs.Arguments);
+Log.Information($"{command.GetType().Name} completed successfully");
+}
+catch (Exception ex)
+{
+Log.Error(ex, $"Execution failed for {command.GetType().Name}");
+throw new AggregateException($"Command {command.GetType().Name} failed", ex);
+}
+}
+Log.Information("✅ All commands processed successfully");
+}
+catch (Exception ex)
+{
+Log.Fatal(ex, "❌ Application terminated unexpectedly");
+Environment.ExitCode = 1;
+}
+finally
+{
+await Log.CloseAndFlushAsync();
+}
+}
+catch (Exception ex)
+{
+Log.Error(ex, "❌ Error while booking road test");
+}
+Log.Information("⏱ Waiting 15 minutes before the next booking attempt...");
+}
+static void EnsureDatabaseInitialized(IServiceProvider services)
+{
+using var scope = services.CreateScope();
+var db = scope.ServiceProvider.GetRequiredService<DataContext>();
+if (!db.Initialize())
+{
+throw new Exception("Database initialization failed");
+}
+}
+}
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca76f4b5b308a043f5de7360b9ff4eca356ea3e")]
+[assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;

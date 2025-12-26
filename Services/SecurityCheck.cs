@@ -14,7 +14,7 @@ namespace Services
         private const string FolderName = "SecurityCheck";
         private string FolderPath => Path.Combine(_executionOptions.ExecutionFolder, FolderName);
         private readonly IDirectoryCheck _directoryCheck;
-        public SecurityCheck(IWebDriverFactory driverFactory,
+        public SecurityCheck(IWebDriver driver,
             ILogger<SecurityCheck> logger,
             ICaptureSnapshot capture,
             ExecutionTracker executionOptions,
@@ -24,7 +24,7 @@ namespace Services
             _capture = capture;
             _executionOptions = executionOptions;
             _directoryCheck = directoryCheck;
-            _driver = driverFactory.Create();
+            _driver = driver;
             _directoryCheck.EnsureDirectoryExists(FolderPath);
         }
 

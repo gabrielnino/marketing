@@ -1,4 +1,5 @@
-﻿using Configuration;
+﻿using System.Text.RegularExpressions;
+using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.Interfaces;
@@ -17,16 +18,19 @@ namespace Services
         private readonly ISecurityCheck _securityCheck;
         private readonly IDirectoryCheck _directoryCheck;
         public LoginService(
-            AppConfig config, 
-            IWebDriverFactory driverFactory, 
-            ILogger<LoginService> logger, 
+            AppConfig config,
+            IWebDriver driver,
+            ILogger<LoginService> logger,
+            ICaptureSnapshot capture,
             ExecutionTracker executionOptions,
             ISecurityCheck securityCheck,
-            IDirectoryCheck directoryCheck)
+            IDirectoryCheck directoryCheck
+            )
         {
             _config = config;
-            _driver = driverFactory.Create(true);
+            _driver = driver;
             _logger = logger;
+            _capture = capture;
             _executionOptions = executionOptions;
             _securityCheck = securityCheck;
             _directoryCheck = directoryCheck;
@@ -50,14 +54,14 @@ namespace Services
 
             _driver.Navigate().GoToUrl(url);
 
+            await _capture.CaptureArtifactsAsync(FolderPath, "Login_Page_Loaded");
+
+
             _logger.LogInformation(
                 "✅ ID:{TimeStamp} Login page loaded successfully.",
                 _executionOptions.TimeStamp
             );
-
             await Task.CompletedTask;
         }
-
-
     }
 }

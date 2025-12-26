@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
 using Persistence.Context.Interface;
@@ -49,9 +50,9 @@ namespace Bootstrapper
                     services.AddTransient<HelpCommand>();
                     services.AddTransient<WhatsAppCommand>();
 
-                    services.AddSingleton<IWhatsAppMessage, WhatsAppMessage>();
+                    services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
 
-
+                    services.AddScoped<IWebDriver>(sp => sp.GetRequiredService<IWebDriverFactory>().Create(false));
 
                     services.AddSingleton<ISecurityCheck, SecurityCheck>();
 
@@ -85,7 +86,7 @@ namespace Bootstrapper
                     loggerConfig.MinimumLevel.Debug()
                         .WriteTo.Console()
                         .WriteTo.File(
-                            path: Path.Combine(logPath, "LiveNetwork-.log"),
+                            path: Path.Combine(logPath, "Marketing-.log"),
                             rollingInterval: RollingInterval.Day,
                             fileSizeLimitBytes: 5_000_000,
                             retainedFileCountLimit: 7,

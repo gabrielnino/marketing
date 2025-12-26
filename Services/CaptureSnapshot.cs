@@ -9,9 +9,9 @@ namespace Services
         private readonly IWebDriver _driver;
         private readonly ILogger<CaptureSnapshot> _logger;
 
-        public CaptureSnapshot(IWebDriverFactory driverFactory, ILogger<CaptureSnapshot> logger)
+        public CaptureSnapshot(IWebDriver driver, ILogger<CaptureSnapshot> logger)
         {
-            _driver = driverFactory.Create();
+            _driver = driver;
             _logger = logger;
         }
 
