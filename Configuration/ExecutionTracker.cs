@@ -183,16 +183,10 @@
         public sealed record Failure(string Path, Exception Exception);
     }
 
-    public sealed class FinalizeReport
+    public sealed class FinalizeReport(string runningPath, string finishedPath)
     {
-        public FinalizeReport(string runningPath, string finishedPath)
-        {
-            RunningPath = runningPath;
-            FinishedPath = finishedPath;
-        }
-
-        public string RunningPath { get; }
-        public string FinishedPath { get; }
+        public string RunningPath { get; } = runningPath;
+        public string FinishedPath { get; } = finishedPath;
 
         public List<ExecutionTracker.Failure> CopyFailures { get; } = [];
         public List<ExecutionTracker.Failure> DeleteFailures { get; } = [];
