@@ -9,19 +9,34 @@ using Services.Interfaces;
 
 namespace Services
 {
-    public class WhatsAppMessage(ILogger<LoginService> logger,
-        ILoginService loginService, ExecutionTracker executionOption) : IWhatsAppMessage
+    public class WhatsAppMessage(
+        ILogger<LoginService> logger,
+        ILoginService loginService, 
+        ExecutionTracker executionOption,
+        IWhatsAppChatService whatsAppChatService,
+        AppConfig config
+        ) : IWhatsAppMessage
     {
         public ILogger<LoginService> Logger { get; } = logger;
         public ILoginService Login { get; } = loginService;
 
         public ExecutionTracker ExecutionOption { get; } = executionOption;
-
+        public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
+        private AppConfig Config { get; } = config;
         public async Task SendMessageAsync()
         {
             await Login.LoginAsync();
             var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
             LogFinalizeReport(finalizeReport);
+            foreach (var contact in Config.WhatsApp.AllowedChatTargets)
+            {
+                Logger.LogInformation("Opening chat for contact: {Contact}", contact);
+                await WhatsAppChatService.OpenContactChatAsync(contact);
+                //Logger.LogInformation("Sending message to contact: {Contact}", contact);
+                //await WhatsAppChatService.SendMessageAsync(Config.WhatsApp.Message);
+                //Logger.LogInformation("Message sent to contact: {Contact}", contact);
+            }
+            
         }
         public void LogFinalizeReport(FinalizeReport report)
         {

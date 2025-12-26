@@ -72,10 +72,9 @@ namespace Bootstrapper
                     services.AddTransient<ILoginService, LoginService>();
                     services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
                     services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
-
                     services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
                     services.AddSingleton<IUtil, Util>();
-
+                    services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
                     //
                     AddDbContextSQLite(hostingContext, services);
 
