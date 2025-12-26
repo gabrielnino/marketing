@@ -77,27 +77,33 @@
 
         // 6) Private properties
         private string ExecutionFinished => BuildPath(ExecutionFinishedName, TimeStamp);
-        private string? ActiveTimeStamp => GetLatestTimeStamp(ExecutionRunningName);
+        private string? ActiveTimeStamp => GetLatestTimeStamp();
 
         // 7) Private helpers
         private string BuildPath(string prefix, string timeStamp)
             => Path.Combine(_outPath, $"{prefix}_{timeStamp}");
 
-        private string? GetLatestTimeStamp(string prefix)
+        private string? GetLatestTimeStamp()
         {
             if (!Directory.Exists(_outPath))
                 return null;
 
-            var dirs = Directory.GetDirectories(_outPath, $"{prefix}_*");
-            var last = dirs.OrderByDescending(d => d).FirstOrDefault();
+            var folderRunning = $"{ExecutionRunningName}_*";
+            var pathRunning = Directory.GetDirectories(_outPath, folderRunning);
+            var folderTimeStamp = $"{pathRunning[0].Split("\\").Last().Split('_')[1]}_{pathRunning[0].Split("\\").Last().Split('_')[2]}";
+            var pathFinished = Directory.GetDirectories(_outPath, $"{ExecutionFinishedName}_{folderTimeStamp}");
+            if (pathFinished.Length != 0)
+                return null;
+
+            var last = pathRunning.OrderByDescending(d => d).FirstOrDefault();
             if (last is null)
                 return null;
 
             var name = Path.GetFileName(last);
-            if (name is null || !name.StartsWith($"{prefix}_"))
+            if (name is null || !name.StartsWith($"{ExecutionRunningName}_"))
                 return null;
 
-            return name[(prefix.Length + 1)..];
+            return name[(ExecutionRunningName.Length + 1)..];
         }
 
         private static string? ExtractTimeStampFromFolder(string fullPath, string prefix)

@@ -44,7 +44,6 @@ namespace Bootstrapper
 
 
                     var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
-                    executionTracker.CleanupOrphanedRunningFolders();
                     var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
                     LogCleanupReport(cleanupReport);
 
