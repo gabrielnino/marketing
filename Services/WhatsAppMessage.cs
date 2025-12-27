@@ -6,7 +6,7 @@ namespace Services
 {
     public class WhatsAppMessage(
         ILogger<LoginService> logger,
-        ILoginService loginService, 
+        ILoginService loginService,
         ExecutionTracker executionOption,
         IWhatsAppChatService whatsAppChatService,
         AppConfig config
@@ -18,18 +18,47 @@ namespace Services
         public ExecutionTracker ExecutionOption { get; } = executionOption;
         public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
         private AppConfig Config { get; } = config;
+
         public async Task SendMessageAsync()
         {
+            Logger.LogInformation("WhatsAppMessage execution started");
+
+            Logger.LogInformation("Starting WhatsApp login process");
             await Login.LoginAsync();
+            Logger.LogInformation("WhatsApp login completed successfully");
+
+            Logger.LogInformation("Finalizing execution folder");
             var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
             LogFinalizeReport(finalizeReport);
+
+            Logger.LogInformation(
+                "Beginning message dispatch. Total contacts: {ContactCount}",
+                Config.WhatsApp.AllowedChatTargets.Count);
+
             foreach (var contact in Config.WhatsApp.AllowedChatTargets)
             {
                 Logger.LogInformation("Opening chat for contact: {Contact}", contact);
-                await WhatsAppChatService.OpenContactChatAsync(contact);
-                await WhatsAppChatService.SendMessageAsync("hola mundo");
+
+                await WhatsAppChatService.OpenContactChatAsync(
+                    contact,
+                    Config.WhatsApp.LoginPollInterval,
+                    Config.WhatsApp.LoginTimeout);
+
+                Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
+
+                Logger.LogInformation("Sending message to contact: {Contact}", contact);
+
+                await WhatsAppChatService.SendMessageAsync(
+                    "hola mundo",
+                    Config.WhatsApp.LoginPollInterval,
+                    Config.WhatsApp.LoginTimeout);
+
+                Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
             }
+
+            Logger.LogInformation("WhatsAppMessage execution finished");
         }
+
         public void LogFinalizeReport(FinalizeReport report)
         {
             if (report is null)
@@ -71,9 +100,5 @@ namespace Services
                     report.DeleteFailures.Count);
             }
         }
-
-
     }
-
-
 }
