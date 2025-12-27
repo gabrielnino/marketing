@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics;
+using System.Text;
+using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
 
 namespace Services
@@ -17,8 +18,6 @@ namespace Services
         private const string CssSelectorToFindTextbox = "div[role='textbox'][contenteditable='true']";
         private const string XpathToFindAttachButton = "//button[@aria-label='Attach' and @type='button']";
         private const string FindPhotosAndVideosOption = "//li[@role='button']//span[normalize-space()='Photos & videos']/ancestor::li";
-        private const string XpathFindInputFile = "//input[@type='file']";
-        private const string XpathFindSend = "//div[@role='button' and @aria-label='Send']";
         private const string XpathFindCaption = "//div[@contenteditable='true'] | " + "//div[@role='textbox'] | " + "//textarea";
 
         // aria-label="Type a message"
@@ -124,13 +123,94 @@ namespace Services
                 throw;
             }
         }
+        private static void OpenFileDialogWithAutoIT(string imagePath)
+        {
+            if (string.IsNullOrWhiteSpace(imagePath))
+                throw new ArgumentException("imagePath is null/empty.", nameof(imagePath));
+
+            imagePath = Path.GetFullPath(imagePath);
+            if (!File.Exists(imagePath))
+                throw new FileNotFoundException("Image file not found.", imagePath);
+
+            var autoItExePath = @"C:\Program Files (x86)\AutoIt3\AutoIt3.exe";
+            if (!File.Exists(autoItExePath))
+                throw new FileNotFoundException("AutoIt3.exe not found.", autoItExePath);
+
+            // Escape for AutoIt string literal
+            // AutoIt uses " for strings, so we double it inside the path.
+            var escapedPath = imagePath.Replace("\"", "\"\"");
+
+            // Support both English and Spanish dialog titles (Open / Abrir)
+            // Use WinWaitActive with OR by checking one then the other.
+            var autoItScript = new StringBuilder()
+                .AppendLine("; AutoIt Script - whatsapp_upload.au3")
+                .AppendLine("Opt('WinTitleMatchMode', 2)") // partial match for safer title handling
+                .AppendLine("Local $timeout = 10")
+                .AppendLine("")
+                .AppendLine("If WinWaitActive('Open', '', $timeout) = 0 Then")
+                .AppendLine("    If WinWaitActive('Abrir', '', $timeout) = 0 Then")
+                .AppendLine("        Exit 1")
+                .AppendLine("    EndIf")
+                .AppendLine("EndIf")
+                .AppendLine("")
+                .AppendLine("Local $title = ''")
+                .AppendLine("If WinActive('Open') Then")
+                .AppendLine("    $title = 'Open'")
+                .AppendLine("ElseIf WinActive('Abrir') Then")
+                .AppendLine("    $title = 'Abrir'")
+                .AppendLine("Else")
+                .AppendLine("    Exit 2")
+                .AppendLine("EndIf")
+                .AppendLine("")
+                .AppendLine("; Set file path into File name edit box")
+                .AppendLine($"ControlSetText($title, '', '[CLASS:Edit; INSTANCE:1]', \"{escapedPath}\")")
+                .AppendLine("Sleep(300)")
+                .AppendLine("")
+                .AppendLine("; Prefer clicking the Open button; fallback to ENTER if click fails")
+                .AppendLine("If ControlClick($title, '', '[CLASS:Button; INSTANCE:1]') = 0 Then")
+                .AppendLine("    ControlSend($title, '', '[CLASS:Edit; INSTANCE:1]', '{ENTER}')")
+                .AppendLine("EndIf")
+                .AppendLine("")
+                .AppendLine("Exit 0")
+                .ToString();
+
+            var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
+            File.WriteAllText(scriptPath, autoItScript, Encoding.UTF8);
+
+            var psi = new ProcessStartInfo
+            {
+                FileName = autoItExePath,
+                Arguments = $"\"{scriptPath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+
+            using var proc = Process.Start(psi) ?? throw new InvalidOperationException("Failed to start AutoIt process.");
+            if (!proc.WaitForExit(15000))
+            {
+                try { proc.Kill(true); } catch { /* ignore */ }
+                throw new TimeoutException("AutoIt file upload script timed out.");
+            }
+
+            // Cleanup temp script (best effort)
+            try { File.Delete(scriptPath); } catch { /* ignore */ }
+
+            if (proc.ExitCode != 0)
+            {
+                var err = proc.StandardError.ReadToEnd();
+                throw new InvalidOperationException($"AutoIt script failed. ExitCode={proc.ExitCode}. {err}");
+            }
+        }
+
 
 
         public Task SendMessageAsync(
-            string message,
-            TimeSpan? timeout = null,
-            TimeSpan? pollInterval = null,
-            CancellationToken ct = default)
+                string message,
+                TimeSpan? timeout = null,
+                TimeSpan? pollInterval = null,
+                CancellationToken ct = default)
         {
             Logger.LogInformation("SendMessageAsync started.");
 
@@ -155,29 +235,17 @@ namespace Services
                 throw;
             }
 
-            DebugFileInputs(Driver);
 
-            //////////////////////////
-            ///
-            //var attachButton = FindAttachButton();
-            //attachButton.Click();
+            var attachButton = FindAttachButton();
+            attachButton.Click();
 
-            //var photoAndVideo = FindPhotosAndVideosOptionButton();
-            //photoAndVideo.Click();
+            var photoAndVideo = FindPhotosAndVideosOptionButton();
+            photoAndVideo.Click();
 
-
-            var inputFile = FindInputFile();
-            inputFile.SendKeys("E:\\Company\\whatappmessage\\superO.png");
-
-           
-
+            OpenFileDialogWithAutoIT("E:\\Company\\whatappmessage\\superO.png");
             var caption = FindCaption();
             caption.SendKeys("This is an automated message with image.");
             caption.SendKeys(Keys.Enter);
-
-            var sendButton = FindSend();
-            sendButton.Click();
-
             ct.ThrowIfCancellationRequested();
 
             Logger.LogInformation("Step 2/3: Focusing compose box...");
@@ -493,20 +561,7 @@ namespace Services
             throw new WebDriverTimeoutException($"Chat not found or not clickable: '{chatTitle}'.");
         }
 
-        private void DebugFileInputs(IWebDriver driver)
-        {
-            var inputs = driver.FindElements(By.XPath("//input[@type='file']"));
-            Console.WriteLine($"Found {inputs.Count} file inputs");
 
-            for (int i = 0; i < inputs.Count; i++)
-            {
-                var accept = inputs[i].GetAttribute("accept");
-                var multiple = inputs[i].GetAttribute("multiple");
-                Console.WriteLine($"[{i}] accept={accept ?? "(null)"} multiple={multiple ?? "(null)"}");
-                var messageText = inputs[i];
-                Console.WriteLine(messageText);
-            }
-        }
 
         private IWebElement FindAttachButton()
         {
@@ -520,19 +575,7 @@ namespace Services
             return photosAndVideosOption;
         }
 
-        private IWebElement FindInputFile()
-        {
-            var inputFile = Driver.FindElements(By.XPath(XpathFindInputFile)).FirstOrDefault();
-            return inputFile;
-        }
-        //XpathFindSemd
 
-        private IWebElement FindSend()
-        {
-            var send = Driver.FindElements(By.XPath(XpathFindSend)).FirstOrDefault();
-            return send;
-        }
-        //XpathFindCaption
 
         private IWebElement FindCaption()
         {
@@ -591,9 +634,6 @@ namespace Services
 
         private string EscapeXPathLiteral(string value)
         {
-            // NOTE:
-            // This is a pure helper. Logging is intentionally kept at DEBUG level
-            // and avoids logging the actual value to prevent leaking sensitive text.
 
             if (value is null)
             {
@@ -626,9 +666,8 @@ namespace Services
             // concat('a', "'", 'b')
             var parts = value.Split('\'');
 
-            var result = "concat(" +
-                         string.Join(", \"'\", ", parts.Select(p => $"'{p}'")) +
-                         ")";
+            var partsString = string.Join(", \"'\", ", parts.Select(p => $"'{p}'"));
+            var result = "concat(" + partsString + ")";
 
             Logger.LogDebug(
                 "EscapeXPathLiteral completed. partCount={PartCount}",
