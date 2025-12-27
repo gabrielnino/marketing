@@ -21,7 +21,6 @@ namespace Services
         private const string FindPhotosAndVideosOption = "//li[@role='button']//span[normalize-space()='Photos & videos']/ancestor::li";
         private const string XpathFindCaption = "//div[@role='textbox' and @contenteditable='true' and @aria-label='Type a message']";
 
-        // aria-label="Type a message"
         private IWebDriver Driver { get; } = driver;
         public ILogger<WhatsAppChatService> Logger { get; } = logger;
         private AppConfig Config { get; } = config;

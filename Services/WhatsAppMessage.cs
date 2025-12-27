@@ -33,27 +33,33 @@ namespace Services
             LogFinalizeReport(finalizeReport);
             int count = Config.WhatsApp.AllowedChatTargets.Count;
             Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
-            foreach (var contact in Config.WhatsApp.AllowedChatTargets)
-            { 
-                Logger.LogInformation("Opening chat for contact: {Contact}", contact);
-                await WhatAppOpenChat.OpenContactChatAsync(
-                    contact,
-                    Config.WhatsApp.LoginPollInterval,
-                    Config.WhatsApp.LoginTimeout);
-                Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
-                Logger.LogInformation("Sending message to contact: {Contact}", contact);
-                ImageMessagePayload imageMessagePayload = new() 
-                { 
-                    StoredImagePath = "E:\\Company\\whatappmessage\\superO.png", 
-                    Caption = "This is an automated message with image." 
-                };
-                await WhatsAppChatService.SendMessageAsync(
-                    imageMessagePayload,
-                    Config.WhatsApp.LoginPollInterval,
-                    Config.WhatsApp.LoginTimeout);
-                Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
+            List<string> allowedChatTargets = Config.WhatsApp.AllowedChatTargets;
+            foreach (var contact in allowedChatTargets)
+            {
+                await SendMessageToContact(contact);
             }
             Logger.LogInformation("WhatsAppMessage execution finished");
+        }
+
+        private async Task SendMessageToContact(string contact)
+        {
+            Logger.LogInformation("Opening chat for contact: {Contact}", contact);
+            await WhatAppOpenChat.OpenContactChatAsync(
+                contact,
+                Config.WhatsApp.LoginPollInterval,
+                Config.WhatsApp.LoginTimeout);
+            Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
+            Logger.LogInformation("Sending message to contact: {Contact}", contact);
+            ImageMessagePayload imageMessagePayload = new()
+            {
+                StoredImagePath = "E:\\Company\\whatappmessage\\superO.png",
+                Caption = "This is an automated message with image."
+            };
+            await WhatsAppChatService.SendMessageAsync(
+                imageMessagePayload,
+                Config.WhatsApp.LoginPollInterval,
+                Config.WhatsApp.LoginTimeout);
+            Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
         }
 
         public void LogFinalizeReport(FinalizeReport report)
