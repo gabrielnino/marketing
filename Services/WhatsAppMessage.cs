@@ -1,6 +1,7 @@
 ﻿using Configuration;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
+using Services.Messages;
 
 namespace Services
 {
@@ -9,7 +10,8 @@ namespace Services
         ILoginService loginService,
         ExecutionTracker executionOption,
         IWhatsAppChatService whatsAppChatService,
-        AppConfig config
+        AppConfig config,
+        IWhatAppOpenChat whatAppOpenChat
         ) : IWhatsAppMessage
     {
         public ILogger<LoginService> Logger { get; } = logger;
@@ -18,6 +20,7 @@ namespace Services
         public ExecutionTracker ExecutionOption { get; } = executionOption;
         public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
         private AppConfig Config { get; } = config;
+        private IWhatAppOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
 
         public async Task SendMessageAsync()
         {
@@ -36,10 +39,11 @@ namespace Services
                 Config.WhatsApp.AllowedChatTargets.Count);
 
             foreach (var contact in Config.WhatsApp.AllowedChatTargets)
-            {
+            { 
                 Logger.LogInformation("Opening chat for contact: {Contact}", contact);
 
-                await WhatsAppChatService.OpenContactChatAsync(
+                
+                await WhatAppOpenChat.OpenContactChatAsync(
                     contact,
                     Config.WhatsApp.LoginPollInterval,
                     Config.WhatsApp.LoginTimeout);
@@ -49,7 +53,7 @@ namespace Services
                 Logger.LogInformation("Sending message to contact: {Contact}", contact);
 
                 await WhatsAppChatService.SendMessageAsync(
-                    "hola mundo",
+                    new ImageMessagePayload() {StoredImagePath= "E:\\Company\\whatappmessage\\superO.png", Caption= "This is an automated message with image." },
                     Config.WhatsApp.LoginPollInterval,
                     Config.WhatsApp.LoginTimeout);
 

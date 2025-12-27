@@ -426,6 +426,8 @@ config.AddEnvironmentVariables();
 hostingContext.Configuration.Bind(appConfig);
 services.AddSingleton(appConfig);
 var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
+var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
+LogCleanupReport(cleanupReport);
 Directory.CreateDirectory(executionTracker.ExecutionRunning);
 services.AddSingleton(executionTracker);
 services.AddSingleton(new CommandArgs(args));
@@ -445,6 +447,8 @@ services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
 services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
 services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
 services.AddSingleton<IUtil, Util>();
+services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
+services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
 AddDbContextSQLite(hostingContext, services);
 services.AddScoped<IUnitOfWork, UnitOfWork>();
 services.AddScoped<IDataContext, DataContext>();
@@ -456,8 +460,6 @@ services.AddSingleton<IColumnTypes, SQLite>();
 .UseSerilog((context, services, loggerConfig) =>
 {
 var execution = services.GetRequiredService<ExecutionTracker>();
-var cleanupReport = execution.CleanupOrphanedRunningFolders();
-LogCleanupReport(cleanupReport);
 var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
 Directory.CreateDirectory(logPath);
 loggerConfig.MinimumLevel.Debug()
@@ -536,7 +538,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -765,7 +767,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -875,21 +877,24 @@ report.DeletedRunningFolders.Add(runningDir);
 return report;
 }
 private string ExecutionFinished => BuildPath(ExecutionFinishedName, TimeStamp);
-private string? ActiveTimeStamp => GetLatestTimeStamp(ExecutionRunningName);
+private string? ActiveTimeStamp => GetLatestTimeStamp();
 private string BuildPath(string prefix, string timeStamp)
 => Path.Combine(_outPath, $"{prefix}_{timeStamp}");
-private string? GetLatestTimeStamp(string prefix)
+private string? GetLatestTimeStamp()
 {
 if (!Directory.Exists(_outPath))
 return null;
-var dirs = Directory.GetDirectories(_outPath, $"{prefix}_*");
-var last = dirs.OrderByDescending(d => d).FirstOrDefault();
-if (last is null)
+var lastRunning = Directory
+.GetDirectories(_outPath, $"{ExecutionRunningName}_*")
+.OrderByDescending(Path.GetFileName)
+.FirstOrDefault();
+if (lastRunning is null)
 return null;
-var name = Path.GetFileName(last);
-if (name is null || !name.StartsWith($"{prefix}_"))
+var timestamp = ExtractTimeStampFromFolder(lastRunning, ExecutionRunningName);
+if (timestamp is null)
 return null;
-return name[(prefix.Length + 1)..];
+var finishedPath = Path.Combine(_outPath, $"{ExecutionFinishedName}_{timestamp}");
+return Directory.Exists(finishedPath) ? null : timestamp;
 }
 private static string? ExtractTimeStampFromFolder(string fullPath, string prefix)
 {
@@ -907,17 +912,15 @@ if (!Directory.Exists(path))
 error = null;
 return true;
 }
-File.SetAttributes(path, FileAttributes.Normal);
+foreach (var dir in Directory.GetDirectories(path, "*", SearchOption.AllDirectories))
+{
+try { File.SetAttributes(dir, FileAttributes.Normal); } catch { }
+}
 foreach (var file in Directory.GetFiles(path, "*", SearchOption.AllDirectories))
 {
-try
-{
-var attr = File.GetAttributes(file);
-if ((attr & FileAttributes.ReadOnly) != 0)
-File.SetAttributes(file, attr & ~FileAttributes.ReadOnly);
+try { File.SetAttributes(file, FileAttributes.Normal); } catch { }
 }
-catch { }
-}
+try { File.SetAttributes(path, FileAttributes.Normal); } catch { }
 Directory.Delete(path, recursive: true);
 error = null;
 return true;
@@ -954,15 +957,10 @@ report.CopyFailures.Add(new Failure(file, ex));
 }
 public sealed record Failure(string Path, Exception Exception);
 }
-public sealed class FinalizeReport
+public sealed class FinalizeReport(string runningPath, string finishedPath)
 {
-public FinalizeReport(string runningPath, string finishedPath)
-{
-RunningPath = runningPath;
-FinishedPath = finishedPath;
-}
-public string RunningPath { get; }
-public string FinishedPath { get; }
+public string RunningPath { get; } = runningPath;
+public string FinishedPath { get; } = finishedPath;
 public List<ExecutionTracker.Failure> CopyFailures { get; } = [];
 public List<ExecutionTracker.Failure> DeleteFailures { get; } = [];
 public bool IsClean => CopyFailures.Count == 0 && DeleteFailures.Count == 0;
@@ -992,7 +990,10 @@ public string DownloadFolder { get; set; }
 {
 public class WhatsAppConfig
 {
-public required string URL { get; set; }
+public required string Url { get; set; }
+public required TimeSpan LoginPollInterval { get; init; }
+public required TimeSpan LoginTimeout { get; init; }
+public required List<string> AllowedChatTargets { get; init; }
 }
 }
 
@@ -1009,7 +1010,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32273de97371b5b10633adbe050bd8aa6a602d0b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2554,7 +2555,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3184,55 +3185,118 @@ using OpenQA.Selenium;
 using Services.Interfaces;
 namespace Services
 {
-public class LoginService : ILoginService
-{
-private readonly AppConfig _config;
-private readonly IWebDriver _driver;
-private readonly ILogger<LoginService> _logger;
-private readonly ICaptureSnapshot _capture;
-private readonly ExecutionTracker _executionOptions;
-private const string FolderName = "Login";
-private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
-private readonly ISecurityCheck _securityCheck;
-private readonly IDirectoryCheck _directoryCheck;
-public LoginService(
+public class LoginService(
 AppConfig config,
 IWebDriver driver,
 ILogger<LoginService> logger,
 ICaptureSnapshot capture,
-ExecutionTracker executionOptions,
-ISecurityCheck securityCheck,
-IDirectoryCheck directoryCheck
-)
+ExecutionTracker executionOptions
+) : ILoginService
 {
-_config = config;
-_driver = driver;
-_logger = logger;
-_capture = capture;
-_executionOptions = executionOptions;
-_securityCheck = securityCheck;
-_directoryCheck = directoryCheck;
-_directoryCheck.EnsureDirectoryExists(FolderPath);
-}
-public async Task LoginAsync()
+private AppConfig Config { get; } = config;
+private IWebDriver Driver { get; } = driver;
+private ILogger<LoginService> Logger { get; } = logger;
+private ICaptureSnapshot Capture { get; } = capture;
+private ExecutionTracker ExecutionOptions { get; } = executionOptions;
+private const string FolderName = "Login";
+private string FolderPath => Path.Combine(ExecutionOptions.ExecutionRunning, FolderName);
+public async Task LoginAsync(CancellationToken cancellationToken = default)
 {
-_logger.LogInformation(
+Logger.LogInformation(
 "🔐 ID:{TimeStamp} Starting login process...",
-_executionOptions.TimeStamp
+ExecutionOptions.TimeStamp
 );
-var url = _config.WhatsApp.URL;
-_logger.LogInformation(
+var url = Config.WhatsApp.Url;
+Logger.LogInformation(
 "🌐 ID:{TimeStamp} Navigating to login URL: {Url}",
-_executionOptions.TimeStamp,
+ExecutionOptions.TimeStamp,
 url
 );
-_driver.Navigate().GoToUrl(url);
-await _capture.CaptureArtifactsAsync(FolderPath, "Login_Page_Loaded");
-_logger.LogInformation(
-"✅ ID:{TimeStamp} Login page loaded successfully.",
-_executionOptions.TimeStamp
+Driver.Navigate().GoToUrl(url);
+await Capture.CaptureArtifactsAsync(FolderPath, "Login_Page_Loaded");
+Logger.LogInformation(
+"📲 ID:{TimeStamp} Please open WhatsApp on your phone and complete login (scan QR / approve). Waiting for login...",
+ExecutionOptions.TimeStamp
+);
+await WaitForWhatsAppLoginAsync(
+pollInterval: Config.WhatsApp.LoginPollInterval,
+timeout: Config.WhatsApp.LoginTimeout,
+cancellationToken: cancellationToken
+);
+Logger.LogInformation(
+"✅ ID:{TimeStamp} WhatsApp Web is logged in. Continuing...",
+ExecutionOptions.TimeStamp
 );
 await Task.CompletedTask;
+}
+private async Task WaitForWhatsAppLoginAsync(
+TimeSpan pollInterval,
+TimeSpan timeout,
+CancellationToken cancellationToken)
+{
+var start = DateTimeOffset.UtcNow;
+while (true)
+{
+cancellationToken.ThrowIfCancellationRequested();
+var state = GetWhatsAppLoginState();
+if (state == WhatsAppLoginState.LoggedIn)
+{
+await Capture.CaptureArtifactsAsync(FolderPath, "Login_Success_LoggedIn");
+return;
+}
+if (state == WhatsAppLoginState.NeedsQrScan)
+{
+Logger.LogInformation(
+"⏳ ID:{TimeStamp} Still not logged in. Please scan the QR / approve on phone...",
+ExecutionOptions.TimeStamp
+);
+}
+else
+{
+Logger.LogInformation(
+"⏳ ID:{TimeStamp} Waiting for WhatsApp Web to be ready... state={State}",
+ExecutionOptions.TimeStamp,
+state
+);
+}
+if (DateTimeOffset.UtcNow - start > timeout)
+{
+await Capture.CaptureArtifactsAsync(FolderPath, "Login_Timeout");
+throw new TimeoutException($"WhatsApp login not completed within {timeout.TotalSeconds:N0} seconds.");
+}
+await Task.Delay(pollInterval, cancellationToken);
+}
+}
+private enum WhatsAppLoginState
+{
+LoggedIn,
+NeedsQrScan,
+Loading,
+Unknown
+}
+private WhatsAppLoginState GetWhatsAppLoginState()
+{
+try
+{
+if (Driver.FindElements(By.CssSelector("div[role='textbox'][contenteditable='true']")).Count > 0)
+return WhatsAppLoginState.LoggedIn;
+if (Driver.FindElements(By.CssSelector("div[role='grid'], div[role='application']")).Count > 0)
+return WhatsAppLoginState.LoggedIn;
+if (Driver.FindElements(By.CssSelector("canvas")).Count > 0)
+return WhatsAppLoginState.NeedsQrScan;
+var body = Driver.FindElements(By.TagName("body")).FirstOrDefault()?.Text ?? string.Empty;
+if (body.Contains("Log in", StringComparison.OrdinalIgnoreCase) ||
+body.Contains("Use WhatsApp", StringComparison.OrdinalIgnoreCase))
+return WhatsAppLoginState.NeedsQrScan;
+var ready = ((IJavaScriptExecutor)Driver).ExecuteScript("return document.readyState")?.ToString();
+if (!string.Equals(ready, "complete", StringComparison.OrdinalIgnoreCase))
+return WhatsAppLoginState.Loading;
+return WhatsAppLoginState.Unknown;
+}
+catch
+{
+return WhatsAppLoginState.Unknown;
+}
 }
 }
 }
@@ -3521,12 +3585,7 @@ _logger.LogError(ex, "❌ ID:{TimeStamp} Failed to scroll to the 'Experience' se
 
 === FILE: F:\Marketing\Services\WebDriverLifetimeService.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using OpenQA.Selenium;
 namespace Services
 {
@@ -3554,29 +3613,608 @@ return Task.CompletedTask;
 }
 }
 
-=== FILE: F:\Marketing\Services\WhatsAppMessage.cs ===
+=== FILE: F:\Marketing\Services\WhatAppOpenChat.cs ===
 
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Configuration;
+using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.Interfaces;
+namespace Services
+{
+public class WhatAppOpenChat(
+IWebDriver driver,
+ILogger<LoginService> logger
+) : IWhatAppOpenChat
+{
+private const string WhatAppMessage = "WhatsApp Web is not logged in. Call LoginAsync() before opening a chat.";
+private const string CssSelectorToFind = "div[role='textbox'][contenteditable='true']";
+private const string CssSelectorToFindSearchInput = "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']";
+private const string XpathToFindGridcell = "./ancestor::*[@role='gridcell' or @role='row' or @tabindex][1]";
+private const string CssSelectorToFindTextbox = "div[role='textbox'][contenteditable='true']";
+private const string XpathToFindAttachButton = "
+private const string FindPhotosAndVideosOption = "
+private const string XpathFindCaption = "
+private IWebDriver Driver { get; } = driver;
+public ILogger<LoginService> Logger { get; } = logger;
+public async Task OpenContactChatAsync(
+string chatIdentifier,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+Logger.LogInformation("OpenContactChatAsync started. chatIdentifier='{ChatIdentifier}'", chatIdentifier);
+ct.ThrowIfCancellationRequested();
+if (string.IsNullOrWhiteSpace(chatIdentifier))
+{
+Logger.LogWarning("OpenContactChatAsync aborted: chatIdentifier is null/empty/whitespace.");
+throw new ArgumentException("Chat identifier cannot be null, empty, or whitespace.", nameof(chatIdentifier));
+}
+Logger.LogInformation("Step 1/4: Checking WhatsApp Web login state...");
+if (!IsWhatsAppLoggedIn())
+{
+Logger.LogError("OpenContactChatAsync failed: WhatsApp Web is not logged in.");
+throw new InvalidOperationException(WhatAppMessage);
+}
+Logger.LogInformation("Step 1/4: Logged in confirmed.");
+var effectiveTimeout = timeout ?? TimeSpan.FromSeconds(10);
+var effectivePoll = pollInterval ?? TimeSpan.FromMilliseconds(200);
+if (effectiveTimeout <= TimeSpan.Zero)
+{
+Logger.LogWarning("Invalid timeout provided: {Timeout}.", effectiveTimeout);
+throw new ArgumentOutOfRangeException(nameof(timeout), "Timeout must be greater than zero.");
+}
+if (effectivePoll <= TimeSpan.Zero)
+{
+Logger.LogWarning("Invalid pollInterval provided: {PollInterval}.", effectivePoll);
+throw new ArgumentOutOfRangeException(nameof(pollInterval), "Poll interval must be greater than zero.");
+}
+if (effectivePoll > effectiveTimeout)
+{
+var adjusted = TimeSpan.FromMilliseconds(Math.Max(50, effectiveTimeout.TotalMilliseconds / 10));
+Logger.LogWarning(
+"PollInterval {PollInterval} > Timeout {Timeout}. Adjusting pollInterval to {AdjustedPollInterval}.",
+effectivePoll, effectiveTimeout, adjusted);
+effectivePoll = adjusted;
+}
+Logger.LogInformation(
+"Step 2/4: Using timeout={Timeout} pollInterval={PollInterval}.",
+effectiveTimeout, effectivePoll);
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 3/4: Typing chatIdentifier into WhatsApp search box...");
+try
+{
+await TypeIntoSearchBoxAsync(chatIdentifier, effectiveTimeout, effectivePoll )
+.ConfigureAwait(false);
+Logger.LogInformation("Step 3/4: Search input completed.");
+}
+catch (OperationCanceledException)
+{
+Logger.LogWarning("OpenContactChatAsync canceled during Step 3/4 (TypeIntoSearchBoxAsync).");
+throw;
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "OpenContactChatAsync failed during Step 3/4 (TypeIntoSearchBoxAsync).");
+throw;
+}
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 4/4: Clicking chat by title '{ChatIdentifier}'...", chatIdentifier);
+try
+{
+await ClickChatByTitleAsync(chatIdentifier, effectiveTimeout, effectivePoll )
+.ConfigureAwait(false);
+Logger.LogInformation("Step 4/4: Chat opened successfully. chatIdentifier='{ChatIdentifier}'", chatIdentifier);
+}
+catch (OperationCanceledException)
+{
+Logger.LogWarning("OpenContactChatAsync canceled during Step 4/4 (ClickChatByTitleAsync).");
+throw;
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "OpenContactChatAsync failed during Step 4/4 (ClickChatByTitleAsync).");
+throw;
+}
+}
+private bool IsWhatsAppLoggedIn()
+{
+Logger.LogDebug("IsWhatsAppLoggedIn: Checking WhatsApp Web login state...");
+try
+{
+var elements = Driver.FindElements(By.CssSelector(CssSelectorToFind));
+var isLoggedIn = elements.Count > 0;
+Logger.LogDebug(
+"IsWhatsAppLoggedIn: Selector '{Selector}' returned {Count} elements. LoggedIn={IsLoggedIn}.",
+CssSelectorToFind,
+elements.Count,
+isLoggedIn
+);
+return isLoggedIn;
+}
+catch (NoSuchElementException ex)
+{
+Logger.LogWarning(
+ex,
+"IsWhatsAppLoggedIn: Selector '{Selector}' not found. Assuming not logged in.",
+CssSelectorToFind
+);
+return false;
+}
+catch (WebDriverException ex)
+{
+Logger.LogError(
+ex,
+"IsWhatsAppLoggedIn: WebDriver error while checking login state."
+);
+return false;
+}
+catch (Exception ex)
+{
+Logger.LogError(
+ex,
+"IsWhatsAppLoggedIn: Unexpected error while checking login state."
+);
+return false;
+}
+}
+private async Task TypeIntoSearchBoxAsync(
+string text,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+Logger.LogInformation(
+"TypeIntoSearchBoxAsync started. textLength={TextLength}",
+text?.Length ?? 0
+);
+if (string.IsNullOrWhiteSpace(text))
+{
+Logger.LogWarning("TypeIntoSearchBoxAsync aborted: text is null or whitespace.");
+throw new ArgumentException("Text cannot be empty.", nameof(text));
+}
+timeout ??= TimeSpan.FromSeconds(10);
+pollInterval ??= TimeSpan.FromMilliseconds(200);
+Logger.LogInformation(
+"Using timeout={Timeout} pollInterval={PollInterval}.",
+timeout, pollInterval
+);
+var deadline = DateTimeOffset.UtcNow + timeout.Value;
+var attempt = 0;
+while (DateTimeOffset.UtcNow < deadline)
+{
+ct.ThrowIfCancellationRequested();
+attempt++;
+try
+{
+Logger.LogDebug(
+"Attempt {Attempt}: Locating search input using selector '{Selector}'.",
+attempt,
+CssSelectorToFindSearchInput
+);
+var input = Driver
+.FindElements(By.CssSelector(CssSelectorToFindSearchInput))
+.FirstOrDefault();
+if (input is { Displayed: true, Enabled: true })
+{
+Logger.LogInformation(
+"Search input found and ready on attempt {Attempt}. Focusing and typing...",
+attempt
+);
+input.Click();
+Logger.LogDebug("Clearing existing search input content.");
+input.SendKeys(Keys.Control + "a");
+input.SendKeys(Keys.Backspace);
+Logger.LogDebug("Typing search text and submitting.");
+input.SendKeys(text);
+input.SendKeys(Keys.Enter);
+Logger.LogInformation("TypeIntoSearchBoxAsync completed successfully.");
+return;
+}
+Logger.LogDebug(
+"Attempt {Attempt}: Search input not ready (null, hidden, or disabled).",
+attempt
+);
+}
+catch (StaleElementReferenceException)
+{
+Logger.LogDebug(
+"Attempt {Attempt}: StaleElementReferenceException encountered. Retrying...",
+attempt
+);
+}
+catch (InvalidElementStateException)
+{
+Logger.LogDebug(
+"Attempt {Attempt}: InvalidElementStateException encountered. Retrying...",
+attempt
+);
+}
+catch (Exception ex)
+{
+Logger.LogError(
+ex,
+"TypeIntoSearchBoxAsync failed unexpectedly on attempt {Attempt}.",
+attempt
+);
+throw;
+}
+await Task.Delay(pollInterval.Value, ct).ConfigureAwait(false);
+}
+Logger.LogError(
+"TypeIntoSearchBoxAsync timed out after {TimeoutSeconds} seconds.",
+timeout.Value.TotalSeconds
+);
+throw new WebDriverTimeoutException(
+$"Search input textbox not available within {timeout.Value.TotalSeconds} seconds."
+);
+}
+private string EscapeXPathLiteral(string value)
+{
+if (value is null)
+{
+throw new ArgumentNullException(nameof(value));
+}
+Logger.LogDebug(
+"EscapeXPathLiteral started. valueLength={ValueLength}",
+value.Length
+);
+if (!value.Contains("'"))
+{
+Logger.LogDebug("EscapeXPathLiteral: Using single-quoted XPath literal.");
+return $"'{value}'";
+}
+if (!value.Contains("\""))
+{
+Logger.LogDebug("EscapeXPathLiteral: Using double-quoted XPath literal.");
+return $"\"{value}\"";
+}
+Logger.LogDebug("EscapeXPathLiteral: Using concat() XPath literal strategy.");
+var parts = value.Split('\'');
+var partsString = string.Join(", \"'\", ", parts.Select(p => $"'{p}'"));
+var result = "concat(" + partsString + ")";
+Logger.LogDebug(
+"EscapeXPathLiteral completed. partCount={PartCount}",
+parts.Length
+);
+return result;
+}
+private string GetXpathToFind(string needle)
+{
+return $"
+}
+private async Task ClickChatByTitleAsync(
+string chatTitle,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+Logger.LogInformation(
+"ClickChatByTitleAsync started. chatTitleLength={ChatTitleLength}",
+chatTitle?.Length ?? 0
+);
+if (string.IsNullOrWhiteSpace(chatTitle))
+{
+Logger.LogWarning("ClickChatByTitleAsync aborted: chatTitle is null or whitespace.");
+throw new ArgumentException("Chat title cannot be empty.", nameof(chatTitle));
+}
+timeout ??= TimeSpan.FromSeconds(10);
+pollInterval ??= TimeSpan.FromMilliseconds(250);
+Logger.LogInformation(
+"Using timeout={Timeout} pollInterval={PollInterval}.",
+timeout, pollInterval
+);
+var needle = chatTitle.Trim().ToLowerInvariant();
+var end = DateTimeOffset.UtcNow + timeout.Value;
+Logger.LogDebug(
+"Normalized chat title for search. originalLength={OriginalLength} normalizedLength={NormalizedLength}",
+chatTitle.Length,
+needle.Length
+);
+var attempt = 0;
+while (DateTimeOffset.UtcNow < end)
+{
+ct.ThrowIfCancellationRequested();
+attempt++;
+try
+{
+var xpathToFind = GetXpathToFind(needle);
+Logger.LogDebug(
+"Attempt {Attempt}: Searching chat span using XPath: {XPath}",
+attempt,
+xpathToFind
+);
+var span = Driver.FindElements(By.XPath(xpathToFind)).FirstOrDefault();
+if (span is { Displayed: true })
+{
+Logger.LogInformation(
+"Attempt {Attempt}: Matching chat span found and displayed. Resolving clickable target...",
+attempt
+);
+var target = span.FindElements(By.XPath(XpathToFindGridcell)).FirstOrDefault() ?? span;
+Logger.LogDebug(
+"Attempt {Attempt}: Target resolved. targetDisplayed={Displayed} targetEnabled={Enabled}",
+attempt,
+target.Displayed,
+target.Enabled
+);
+if (target.Displayed && target.Enabled)
+{
+Logger.LogInformation("Attempt {Attempt}: Clicking chat target...", attempt);
+target.Click();
+Logger.LogInformation("ClickChatByTitleAsync completed successfully.");
+return;
+}
+Logger.LogDebug(
+"Attempt {Attempt}: Target found but not clickable (displayed/enabled check failed).",
+attempt
+);
+}
+else
+{
+Logger.LogDebug(
+"Attempt {Attempt}: No displayed span matched the chat title yet.",
+attempt
+);
+}
+}
+catch (StaleElementReferenceException)
+{
+Logger.LogDebug(
+"Attempt {Attempt}: StaleElementReferenceException encountered (DOM rerender). Retrying...",
+attempt
+);
+}
+catch (NoSuchElementException)
+{
+Logger.LogDebug(
+"Attempt {Attempt}: NoSuchElementException encountered (ancestor/target missing). Retrying...",
+attempt
+);
+}
+catch (Exception ex)
+{
+Logger.LogError(
+ex,
+"ClickChatByTitleAsync failed unexpectedly on attempt {Attempt}.",
+attempt
+);
+throw;
+}
+await Task.Delay(pollInterval.Value, ct).ConfigureAwait(false);
+}
+Logger.LogError(
+"ClickChatByTitleAsync timed out after {TimeoutSeconds} seconds. Chat not found/clickable. chatTitleLength={ChatTitleLength}",
+timeout.Value.TotalSeconds,
+chatTitle.Length
+);
+throw new WebDriverTimeoutException($"Chat not found or not clickable: '{chatTitle}'.");
+}
+}
+}
+
+=== FILE: F:\Marketing\Services\WhatsAppChatService.cs ===
+
+﻿using System.Diagnostics;
+using System.Text;
+using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.Interfaces;
+namespace Services
+{
+public sealed class WhatsAppChatService(
+IWebDriver driver,
+ILogger<LoginService> logger
+) : IWhatsAppChatService
+{
+private const string WhatAppMessage = "WhatsApp Web is not logged in. Call LoginAsync() before opening a chat.";
+private const string XpathToFindAttachButton = "
+private const string FindPhotosAndVideosOption = "
+private const string XpathFindCaption = "
+private IWebDriver Driver { get; } = driver;
+public ILogger<LoginService> Logger { get; } = logger;
+private static void OpenFileDialogWithAutoIT(string imagePath)
+{
+if (string.IsNullOrWhiteSpace(imagePath))
+throw new ArgumentException("imagePath is null/empty.", nameof(imagePath));
+imagePath = Path.GetFullPath(imagePath);
+if (!File.Exists(imagePath))
+throw new FileNotFoundException("Image file not found.", imagePath);
+var autoItExePath = @"C:\Program Files (x86)\AutoIt3\AutoIt3.exe";
+if (!File.Exists(autoItExePath))
+throw new FileNotFoundException("AutoIt3.exe not found.", autoItExePath);
+var escapedPath = imagePath.Replace("\"", "\"\"");
+var autoItScript = new StringBuilder()
+.AppendLine("; AutoIt Script - whatsapp_upload.au3")
+.AppendLine("Opt('WinTitleMatchMode', 2)")
+.AppendLine("Local $timeout = 10")
+.AppendLine("")
+.AppendLine("If WinWaitActive('Open', '', $timeout) = 0 Then")
+.AppendLine("    If WinWaitActive('Abrir', '', $timeout) = 0 Then")
+.AppendLine("        Exit 1")
+.AppendLine("    EndIf")
+.AppendLine("EndIf")
+.AppendLine("")
+.AppendLine("Local $title = ''")
+.AppendLine("If WinActive('Open') Then")
+.AppendLine("    $title = 'Open'")
+.AppendLine("ElseIf WinActive('Abrir') Then")
+.AppendLine("    $title = 'Abrir'")
+.AppendLine("Else")
+.AppendLine("    Exit 2")
+.AppendLine("EndIf")
+.AppendLine("")
+.AppendLine($"ControlSetText($title, '', '[CLASS:Edit; INSTANCE:1]', \"{escapedPath}\")")
+.AppendLine("Sleep(300)")
+.AppendLine("")
+.AppendLine("If ControlClick($title, '', '[CLASS:Button; INSTANCE:1]') = 0 Then")
+.AppendLine("    ControlSend($title, '', '[CLASS:Edit; INSTANCE:1]', '{ENTER}')")
+.AppendLine("EndIf")
+.AppendLine("")
+.AppendLine("Exit 0")
+.ToString();
+var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
+File.WriteAllText(scriptPath, autoItScript, Encoding.UTF8);
+var psi = new ProcessStartInfo
+{
+FileName = autoItExePath,
+Arguments = $"\"{scriptPath}\"",
+UseShellExecute = false,
+CreateNoWindow = true,
+RedirectStandardOutput = true,
+RedirectStandardError = true
+};
+using var proc = Process.Start(psi) ?? throw new InvalidOperationException("Failed to start AutoIt process.");
+if (!proc.WaitForExit(15000))
+{
+try { proc.Kill(true); } catch {  }
+throw new TimeoutException("AutoIt file upload script timed out.");
+}
+try { File.Delete(scriptPath); } catch {  }
+if (proc.ExitCode != 0)
+{
+var err = proc.StandardError.ReadToEnd();
+throw new InvalidOperationException($"AutoIt script failed. ExitCode={proc.ExitCode}. {err}");
+}
+}
+public Task SendMessageAsync(
+string message,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+Logger.LogInformation("SendMessageAsync started. messageLength={MessageLength}", message?.Length ?? 0);
+ct.ThrowIfCancellationRequested();
+if (string.IsNullOrWhiteSpace(message))
+{
+Logger.LogWarning("SendMessageAsync aborted: message is null or whitespace.");
+throw new ArgumentException("Message cannot be empty.", nameof(message));
+}
+Logger.LogInformation("Step 1/3: Locating WhatsApp compose box...");
+Logger.LogInformation("Locating attach button using XPath '{XPath}'...", XpathToFindAttachButton);
+var attachButton = FindAttachButton();
+if (attachButton is null)
+{
+Logger.LogError("Attach button not found. XPath='{XPath}'", XpathToFindAttachButton);
+throw new NoSuchElementException("Attach button not found.");
+}
+Logger.LogInformation("Clicking attach button...");
+attachButton.Click();
+Logger.LogInformation("Locating 'Photos & videos' option using XPath '{XPath}'...", FindPhotosAndVideosOption);
+var photoAndVideo = FindPhotosAndVideosOptionButton();
+if (photoAndVideo is null)
+{
+Logger.LogError("'Photos & videos' option not found. XPath='{XPath}'", FindPhotosAndVideosOption);
+throw new NoSuchElementException("'Photos & videos' option not found.");
+}
+Logger.LogInformation("Clicking 'Photos & videos' option...");
+photoAndVideo.Click();
+Logger.LogInformation("Opening file dialog via AutoIT...");
+try
+{
+OpenFileDialogWithAutoIT("E:\\Company\\whatappmessage\\superO.png");
+Logger.LogInformation("AutoIT completed file selection.");
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "AutoIT failed while selecting file.");
+throw;
+}
+Logger.LogInformation("Locating caption element using XPath '{XPath}'...", XpathFindCaption);
+var caption = FindCaption();
+if (caption is null)
+{
+Logger.LogError("Caption element not found. XPath='{XPath}'", XpathFindCaption);
+throw new NoSuchElementException("Caption element not found.");
+}
+Logger.LogInformation("Typing caption...");
+caption.SendKeys("This is an automated message with image.");
+Logger.LogInformation("Submitting caption (Enter)...");
+caption.SendKeys(Keys.Enter);
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 2/3: Focusing compose box...");
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 3/3: Sending message ({Length} chars) and submitting...", message.Length);
+Logger.LogInformation("SendMessageAsync completed successfully.");
+return Task.CompletedTask;
+}
+private IWebElement FindAttachButton()
+{
+Logger.LogDebug("FindAttachButton: Finding attach button. xpath='{XPath}'", XpathToFindAttachButton);
+var attachButton = Driver.FindElements(By.XPath(XpathToFindAttachButton)).FirstOrDefault();
+Logger.LogDebug("FindAttachButton: Found={Found}", attachButton is not null);
+return attachButton;
+}
+private IWebElement FindPhotosAndVideosOptionButton()
+{
+Logger.LogDebug("FindPhotosAndVideosOptionButton: Finding option. xpath='{XPath}'", FindPhotosAndVideosOption);
+var photosAndVideosOption = Driver.FindElements(By.XPath(FindPhotosAndVideosOption)).FirstOrDefault();
+Logger.LogDebug("FindPhotosAndVideosOptionButton: Found={Found}", photosAndVideosOption is not null);
+return photosAndVideosOption;
+}
+private IWebElement FindCaption()
+{
+Logger.LogDebug("FindCaption: Finding caption candidate(s). xpath='{XPath}'", XpathFindCaption);
+var send = Driver.FindElements(By.XPath(XpathFindCaption)).FirstOrDefault();
+Logger.LogDebug("FindCaption: Found={Found}", send is not null);
+return send;
+}
+}
+}
+
+=== FILE: F:\Marketing\Services\WhatsAppMessage.cs ===
+
+﻿using Configuration;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
 namespace Services
 {
-public class WhatsAppMessage(ILogger<LoginService> logger,
-ILoginService loginService, ExecutionTracker executionOption) : IWhatsAppMessage
+public class WhatsAppMessage(
+ILogger<LoginService> logger,
+ILoginService loginService,
+ExecutionTracker executionOption,
+IWhatsAppChatService whatsAppChatService,
+AppConfig config,
+IWhatAppOpenChat whatAppOpenChat
+) : IWhatsAppMessage
 {
 public ILogger<LoginService> Logger { get; } = logger;
 public ILoginService Login { get; } = loginService;
 public ExecutionTracker ExecutionOption { get; } = executionOption;
+public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
+private AppConfig Config { get; } = config;
+private IWhatAppOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
 public async Task SendMessageAsync()
 {
+Logger.LogInformation("WhatsAppMessage execution started");
+Logger.LogInformation("Starting WhatsApp login process");
 await Login.LoginAsync();
+Logger.LogInformation("WhatsApp login completed successfully");
+Logger.LogInformation("Finalizing execution folder");
 var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
 LogFinalizeReport(finalizeReport);
+Logger.LogInformation(
+"Beginning message dispatch. Total contacts: {ContactCount}",
+Config.WhatsApp.AllowedChatTargets.Count);
+foreach (var contact in Config.WhatsApp.AllowedChatTargets)
+{
+Logger.LogInformation("Opening chat for contact: {Contact}", contact);
+await WhatAppOpenChat.OpenContactChatAsync(
+contact,
+Config.WhatsApp.LoginPollInterval,
+Config.WhatsApp.LoginTimeout);
+Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
+Logger.LogInformation("Sending message to contact: {Contact}", contact);
+await WhatsAppChatService.SendMessageAsync(
+"hola mundo",
+Config.WhatsApp.LoginPollInterval,
+Config.WhatsApp.LoginTimeout);
+Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
+}
+Logger.LogInformation("WhatsAppMessage execution finished");
 }
 public void LogFinalizeReport(FinalizeReport report)
 {
@@ -3644,7 +4282,7 @@ void EnsureDirectoryExists(string path);
 {
 public interface ILoginService
 {
-Task LoginAsync();
+Task LoginAsync(CancellationToken cancellationToken = default);
 }
 }
 
@@ -3719,6 +4357,46 @@ ChromeOptions GetDefaultOptions(string downloadFolder);
 }
 }
 
+=== FILE: F:\Marketing\Services\Interfaces\IWhatAppOpenChat.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Interfaces
+{
+public interface IWhatAppOpenChat
+{
+Task OpenContactChatAsync(
+string chatIdentifier,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default
+);
+}
+}
+
+=== FILE: F:\Marketing\Services\Interfaces\IWhatsAppChatService.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Interfaces
+{
+public interface IWhatsAppChatService
+{
+Task SendMessageAsync(
+string message,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default
+);
+}
+}
+
 === FILE: F:\Marketing\Services\Interfaces\IWhatsAppMessage.cs ===
 
 ﻿using System;
@@ -3747,7 +4425,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3864,7 +4542,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e0c3ffc0816b8567f6b9d94c16aeaa6dc8e70c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

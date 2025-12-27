@@ -74,6 +74,10 @@ namespace Bootstrapper
                     services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
                     services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
                     services.AddSingleton<IUtil, Util>();
+
+
+                    
+                    services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
                     services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
                     //
                     AddDbContextSQLite(hostingContext, services);

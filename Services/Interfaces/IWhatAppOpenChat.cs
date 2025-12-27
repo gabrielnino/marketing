@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Services.Messages;
 
 namespace Services.Interfaces
 {
-    public interface IWhatsAppChatService
+    public interface IWhatAppOpenChat
     {
-        Task SendMessageAsync(
-            ImageMessagePayload imageMessagePayload,
+        Task OpenContactChatAsync(
+            string chatIdentifier,
             TimeSpan? timeout = null,
             TimeSpan? pollInterval = null,
             CancellationToken ct = default
