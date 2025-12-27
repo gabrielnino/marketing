@@ -123,6 +123,7 @@ namespace Services
                 throw;
             }
         }
+
         private static void OpenFileDialogWithAutoIT(string imagePath)
         {
             if (string.IsNullOrWhiteSpace(imagePath))
@@ -136,15 +137,11 @@ namespace Services
             if (!File.Exists(autoItExePath))
                 throw new FileNotFoundException("AutoIt3.exe not found.", autoItExePath);
 
-            // Escape for AutoIt string literal
-            // AutoIt uses " for strings, so we double it inside the path.
             var escapedPath = imagePath.Replace("\"", "\"\"");
 
-            // Support both English and Spanish dialog titles (Open / Abrir)
-            // Use WinWaitActive with OR by checking one then the other.
             var autoItScript = new StringBuilder()
                 .AppendLine("; AutoIt Script - whatsapp_upload.au3")
-                .AppendLine("Opt('WinTitleMatchMode', 2)") // partial match for safer title handling
+                .AppendLine("Opt('WinTitleMatchMode', 2)")
                 .AppendLine("Local $timeout = 10")
                 .AppendLine("")
                 .AppendLine("If WinWaitActive('Open', '', $timeout) = 0 Then")
@@ -162,11 +159,9 @@ namespace Services
                 .AppendLine("    Exit 2")
                 .AppendLine("EndIf")
                 .AppendLine("")
-                .AppendLine("; Set file path into File name edit box")
                 .AppendLine($"ControlSetText($title, '', '[CLASS:Edit; INSTANCE:1]', \"{escapedPath}\")")
                 .AppendLine("Sleep(300)")
                 .AppendLine("")
-                .AppendLine("; Prefer clicking the Open button; fallback to ENTER if click fails")
                 .AppendLine("If ControlClick($title, '', '[CLASS:Button; INSTANCE:1]') = 0 Then")
                 .AppendLine("    ControlSend($title, '', '[CLASS:Edit; INSTANCE:1]', '{ENTER}')")
                 .AppendLine("EndIf")
@@ -194,7 +189,6 @@ namespace Services
                 throw new TimeoutException("AutoIt file upload script timed out.");
             }
 
-            // Cleanup temp script (best effort)
             try { File.Delete(scriptPath); } catch { /* ignore */ }
 
             if (proc.ExitCode != 0)
@@ -204,15 +198,13 @@ namespace Services
             }
         }
 
-
-
         public Task SendMessageAsync(
                 string message,
                 TimeSpan? timeout = null,
                 TimeSpan? pollInterval = null,
                 CancellationToken ct = default)
         {
-            Logger.LogInformation("SendMessageAsync started.");
+            Logger.LogInformation("SendMessageAsync started. messageLength={MessageLength}", message?.Length ?? 0);
 
             ct.ThrowIfCancellationRequested();
 
@@ -227,7 +219,7 @@ namespace Services
             try
             {
                 box = FindComposeBox();
-                Logger.LogInformation("Step 1/3: Compose box found.");
+                Logger.LogInformation("Step 1/3: Compose box found. displayed={Displayed} enabled={Enabled}", box.Displayed, box.Enabled);
             }
             catch (Exception ex)
             {
@@ -235,17 +227,53 @@ namespace Services
                 throw;
             }
 
-
+            Logger.LogInformation("Locating attach button using XPath '{XPath}'...", XpathToFindAttachButton);
             var attachButton = FindAttachButton();
+            if (attachButton is null)
+            {
+                Logger.LogError("Attach button not found. XPath='{XPath}'", XpathToFindAttachButton);
+                throw new NoSuchElementException("Attach button not found.");
+            }
+
+            Logger.LogInformation("Clicking attach button...");
             attachButton.Click();
 
+            Logger.LogInformation("Locating 'Photos & videos' option using XPath '{XPath}'...", FindPhotosAndVideosOption);
             var photoAndVideo = FindPhotosAndVideosOptionButton();
+            if (photoAndVideo is null)
+            {
+                Logger.LogError("'Photos & videos' option not found. XPath='{XPath}'", FindPhotosAndVideosOption);
+                throw new NoSuchElementException("'Photos & videos' option not found.");
+            }
+
+            Logger.LogInformation("Clicking 'Photos & videos' option...");
             photoAndVideo.Click();
 
-            OpenFileDialogWithAutoIT("E:\\Company\\whatappmessage\\superO.png");
+            Logger.LogInformation("Opening file dialog via AutoIT...");
+            try
+            {
+                OpenFileDialogWithAutoIT("E:\\Company\\whatappmessage\\superO.png");
+                Logger.LogInformation("AutoIT completed file selection.");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "AutoIT failed while selecting file.");
+                throw;
+            }
+
+            Logger.LogInformation("Locating caption element using XPath '{XPath}'...", XpathFindCaption);
             var caption = FindCaption();
+            if (caption is null)
+            {
+                Logger.LogError("Caption element not found. XPath='{XPath}'", XpathFindCaption);
+                throw new NoSuchElementException("Caption element not found.");
+            }
+
+            Logger.LogInformation("Typing caption...");
             caption.SendKeys("This is an automated message with image.");
+            Logger.LogInformation("Submitting caption (Enter)...");
             caption.SendKeys(Keys.Enter);
+
             ct.ThrowIfCancellationRequested();
 
             Logger.LogInformation("Step 2/3: Focusing compose box...");
@@ -275,10 +303,9 @@ namespace Services
                 throw;
             }
 
+            Logger.LogInformation("SendMessageAsync completed successfully.");
             return Task.CompletedTask;
         }
-
-
 
         private bool IsWhatsAppLoggedIn()
         {
@@ -324,7 +351,6 @@ namespace Services
                 return false;
             }
         }
-
 
         private async Task TypeIntoSearchBoxAsync(
             string text,
@@ -433,7 +459,6 @@ namespace Services
                 $"Search input textbox not available within {timeout.Value.TotalSeconds} seconds."
             );
         }
-
 
         private async Task ClickChatByTitleAsync(
             string chatTitle,
@@ -561,25 +586,27 @@ namespace Services
             throw new WebDriverTimeoutException($"Chat not found or not clickable: '{chatTitle}'.");
         }
 
-
-
         private IWebElement FindAttachButton()
         {
+            Logger.LogDebug("FindAttachButton: Finding attach button. xpath='{XPath}'", XpathToFindAttachButton);
             var attachButton = Driver.FindElements(By.XPath(XpathToFindAttachButton)).FirstOrDefault();
+            Logger.LogDebug("FindAttachButton: Found={Found}", attachButton is not null);
             return attachButton;
         }
 
         private IWebElement FindPhotosAndVideosOptionButton()
         {
+            Logger.LogDebug("FindPhotosAndVideosOptionButton: Finding option. xpath='{XPath}'", FindPhotosAndVideosOption);
             var photosAndVideosOption = Driver.FindElements(By.XPath(FindPhotosAndVideosOption)).FirstOrDefault();
+            Logger.LogDebug("FindPhotosAndVideosOptionButton: Found={Found}", photosAndVideosOption is not null);
             return photosAndVideosOption;
         }
 
-
-
         private IWebElement FindCaption()
         {
+            Logger.LogDebug("FindCaption: Finding caption candidate(s). xpath='{XPath}'", XpathFindCaption);
             var send = Driver.FindElements(By.XPath(XpathFindCaption)).FirstOrDefault();
+            Logger.LogDebug("FindCaption: Found={Found}", send is not null);
             return send;
         }
 
@@ -587,7 +614,6 @@ namespace Services
         {
             return $"//span[contains(translate(@title,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'), {EscapeXPathLiteral(needle)})]";
         }
-
 
         private IWebElement FindComposeBox()
         {
@@ -634,10 +660,8 @@ namespace Services
 
         private string EscapeXPathLiteral(string value)
         {
-
             if (value is null)
             {
-                // Defensive: upstream callers should not pass null, but fail fast if they do
                 throw new ArgumentNullException(nameof(value));
             }
 
@@ -646,24 +670,20 @@ namespace Services
                 value.Length
             );
 
-            // Case 1: contains no single quotes → wrap in single quotes
             if (!value.Contains("'"))
             {
                 Logger.LogDebug("EscapeXPathLiteral: Using single-quoted XPath literal.");
                 return $"'{value}'";
             }
 
-            // Case 2: contains single quotes but no double quotes → wrap in double quotes
             if (!value.Contains("\""))
             {
                 Logger.LogDebug("EscapeXPathLiteral: Using double-quoted XPath literal.");
                 return $"\"{value}\"";
             }
 
-            // Case 3: contains both → use concat()
             Logger.LogDebug("EscapeXPathLiteral: Using concat() XPath literal strategy.");
 
-            // concat('a', "'", 'b')
             var parts = value.Split('\'');
 
             var partsString = string.Join(", \"'\", ", parts.Select(p => $"'{p}'"));
@@ -676,6 +696,5 @@ namespace Services
 
             return result;
         }
-
     }
 }
