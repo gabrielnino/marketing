@@ -25,41 +25,34 @@ namespace Services
         public async Task SendMessageAsync()
         {
             Logger.LogInformation("WhatsAppMessage execution started");
-
             Logger.LogInformation("Starting WhatsApp login process");
             await Login.LoginAsync();
             Logger.LogInformation("WhatsApp login completed successfully");
-
             Logger.LogInformation("Finalizing execution folder");
             var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
             LogFinalizeReport(finalizeReport);
-
-            Logger.LogInformation(
-                "Beginning message dispatch. Total contacts: {ContactCount}",
-                Config.WhatsApp.AllowedChatTargets.Count);
-
+            int count = Config.WhatsApp.AllowedChatTargets.Count;
+            Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
             foreach (var contact in Config.WhatsApp.AllowedChatTargets)
             { 
                 Logger.LogInformation("Opening chat for contact: {Contact}", contact);
-
-                
                 await WhatAppOpenChat.OpenContactChatAsync(
                     contact,
                     Config.WhatsApp.LoginPollInterval,
                     Config.WhatsApp.LoginTimeout);
-
                 Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
-
                 Logger.LogInformation("Sending message to contact: {Contact}", contact);
-
+                ImageMessagePayload imageMessagePayload = new() 
+                { 
+                    StoredImagePath = "E:\\Company\\whatappmessage\\superO.png", 
+                    Caption = "This is an automated message with image." 
+                };
                 await WhatsAppChatService.SendMessageAsync(
-                    new ImageMessagePayload() {StoredImagePath= "E:\\Company\\whatappmessage\\superO.png", Caption= "This is an automated message with image." },
+                    imageMessagePayload,
                     Config.WhatsApp.LoginPollInterval,
                     Config.WhatsApp.LoginTimeout);
-
                 Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
             }
-
             Logger.LogInformation("WhatsAppMessage execution finished");
         }
 

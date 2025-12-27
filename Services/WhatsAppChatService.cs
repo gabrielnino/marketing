@@ -1,7 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Text;
+using System.Threading;
+using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
 using Services.Messages;
 
@@ -9,18 +12,19 @@ namespace Services
 {
     public sealed class WhatsAppChatService(
         IWebDriver driver,
-        ILogger<LoginService> logger
+        ILogger<WhatsAppChatService> logger,
+        AppConfig config
         ) : IWhatsAppChatService
     {
 
         private const string XpathToFindAttachButton = "//button[@aria-label='Attach' and @type='button']";
         private const string FindPhotosAndVideosOption = "//li[@role='button']//span[normalize-space()='Photos & videos']/ancestor::li";
-        private const string XpathFindCaption = "//div[@contenteditable='true'] | " + "//div[@role='textbox'] | " + "//textarea";
+        private const string XpathFindCaption = "//div[@role='textbox' and @contenteditable='true' and @aria-label='Type a message']";
 
         // aria-label="Type a message"
         private IWebDriver Driver { get; } = driver;
-        public ILogger<LoginService> Logger { get; } = logger;
-
+        public ILogger<WhatsAppChatService> Logger { get; } = logger;
+        private AppConfig Config { get; } = config;
         private static void OpenFileDialogWithAutoIT(string imagePath)
         {
             if (string.IsNullOrWhiteSpace(imagePath))
@@ -114,7 +118,9 @@ namespace Services
             Logger.LogInformation("Step 1/3: Locating WhatsApp compose box...");
            
             Logger.LogInformation("Locating attach button using XPath '{XPath}'...", XpathToFindAttachButton);
-            var attachButton = FindAttachButton();
+            TimeSpan loginTimeout = Config.WhatsApp.LoginTimeout;
+            TimeSpan loginPollInterval = Config.WhatsApp.LoginPollInterval;
+            var attachButton = FindAttachButton(loginTimeout, loginPollInterval);
             if (attachButton is null)
             {
                 Logger.LogError("Attach button not found. XPath='{XPath}'", XpathToFindAttachButton);
@@ -125,7 +131,7 @@ namespace Services
             attachButton.Click();
 
             Logger.LogInformation("Locating 'Photos & videos' option using XPath '{XPath}'...", FindPhotosAndVideosOption);
-            var photoAndVideo = FindPhotosAndVideosOptionButton();
+            var photoAndVideo = FindPhotosAndVideosOptionButton(loginTimeout, loginPollInterval);
             if (photoAndVideo is null)
             {
                 Logger.LogError("'Photos & videos' option not found. XPath='{XPath}'", FindPhotosAndVideosOption);
@@ -148,7 +154,7 @@ namespace Services
             }
 
             Logger.LogInformation("Locating caption element using XPath '{XPath}'...", XpathFindCaption);
-            var caption = FindCaption();
+            var caption = FindCaption(loginTimeout, loginPollInterval);
             if (caption is null)
             {
                 Logger.LogError("Caption element not found. XPath='{XPath}'", XpathFindCaption);
@@ -172,28 +178,90 @@ namespace Services
             return Task.CompletedTask;
         }
 
-        
 
-        private IWebElement FindAttachButton()
+
+        private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
         {
+            var wait = new WebDriverWait(Driver, timeout)
+            {
+                PollingInterval = pollingInterval
+            };
+
             Logger.LogDebug("FindAttachButton: Finding attach button. xpath='{XPath}'", XpathToFindAttachButton);
-            var attachButton = Driver.FindElements(By.XPath(XpathToFindAttachButton)).FirstOrDefault();
+
+            wait.IgnoreExceptionTypes(
+                typeof(NoSuchElementException),
+                typeof(StaleElementReferenceException)
+                );
+
+            var attachButton = wait.Until(driver =>
+            {
+                var element = driver
+                    .FindElements(By.XPath(XpathToFindAttachButton))
+                    .FirstOrDefault();
+
+                if (element is null)
+                    return null;
+
+                return element.Displayed && element.Enabled ? element : null;
+            });
+
             Logger.LogDebug("FindAttachButton: Found={Found}", attachButton is not null);
             return attachButton;
         }
 
-        private IWebElement FindPhotosAndVideosOptionButton()
+        private IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval)
         {
+            var wait = new WebDriverWait(Driver, timeout)
+            {
+                PollingInterval = pollingInterval
+            };
+            wait.IgnoreExceptionTypes(
+                typeof(NoSuchElementException),
+                typeof(StaleElementReferenceException)
+                );
             Logger.LogDebug("FindPhotosAndVideosOptionButton: Finding option. xpath='{XPath}'", FindPhotosAndVideosOption);
-            var photosAndVideosOption = Driver.FindElements(By.XPath(FindPhotosAndVideosOption)).FirstOrDefault();
+
+            var photosAndVideosOption = wait.Until(driver =>
+            {
+                var element = driver
+                    .FindElements(By.XPath(FindPhotosAndVideosOption))
+                    .FirstOrDefault();
+
+                if (element is null)
+                    return null;
+
+                return element.Displayed && element.Enabled ? element : null;
+            });
+
+            //var photosAndVideosOption = Driver.FindElements(By.XPath(FindPhotosAndVideosOption)).FirstOrDefault();
             Logger.LogDebug("FindPhotosAndVideosOptionButton: Found={Found}", photosAndVideosOption is not null);
             return photosAndVideosOption;
         }
 
-        private IWebElement FindCaption()
+        private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
         {
+            var wait = new WebDriverWait(Driver, timeout)
+            {
+                PollingInterval = pollingInterval
+            };
+            wait.IgnoreExceptionTypes(
+                typeof(NoSuchElementException),
+                typeof(StaleElementReferenceException)
+                );
             Logger.LogDebug("FindCaption: Finding caption candidate(s). xpath='{XPath}'", XpathFindCaption);
-            var send = Driver.FindElements(By.XPath(XpathFindCaption)).FirstOrDefault();
+            //var send = Driver.FindElements(By.XPath(XpathFindCaption)).FirstOrDefault();
+            var send = wait.Until(driver =>
+            {
+                var element = driver
+                    .FindElements(By.XPath(XpathFindCaption))
+                    .FirstOrDefault();
+
+                if (element is null)
+                    return null;
+
+                return element.Displayed && element.Enabled ? element : null;
+            });
             Logger.LogDebug("FindCaption: Found={Found}", send is not null);
             return send;
         }

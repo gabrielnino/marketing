@@ -18,10 +18,7 @@ namespace Services
         private const string CssSelectorToFind = "div[role='textbox'][contenteditable='true']";
         private const string CssSelectorToFindSearchInput = "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']";
         private const string XpathToFindGridcell = "./ancestor::*[@role='gridcell' or @role='row' or @tabindex][1]";
-        private const string CssSelectorToFindTextbox = "div[role='textbox'][contenteditable='true']";
-        private const string XpathToFindAttachButton = "//button[@aria-label='Attach' and @type='button']";
-        private const string FindPhotosAndVideosOption = "//li[@role='button']//span[normalize-space()='Photos & videos']/ancestor::li";
-        private const string XpathFindCaption = "//div[@contenteditable='true'] | " + "//div[@role='textbox'] | " + "//textarea";
+
 
         // aria-label="Type a message"
         private IWebDriver Driver { get; } = driver;
