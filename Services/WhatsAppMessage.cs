@@ -56,7 +56,7 @@ namespace Services
             ImageMessagePayload imageMessagePayload = new()
             {
                 StoredImagePath = "E:\\Company\\whatappmessage\\superO.png",
-                Caption = "This is an automated message with image."
+                Caption = $"This is an automated message with image. Sent at {DateTimeOffset.Now:yyyy-MM-dd HH:mm:ss zzz}"
             };
             await WhatsAppChatService.SendMessageAsync(
                 imageMessagePayload,
