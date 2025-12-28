@@ -72,7 +72,6 @@ namespace Bootstrapper
                     {
                         services.AddSingleton(new CommandArgs(args));
                         services.AddSingleton<CommandFactory>();
-                        services.AddSingleton<CommandArgs>();
                         services.AddTransient<WhatsAppCommand>();
                         services.AddTransient<HelpCommand>();
                         services.AddHostedService<WebDriverLifetimeService>();
