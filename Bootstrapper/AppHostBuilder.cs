@@ -36,14 +36,11 @@ namespace Bootstrapper
                 })
                 .ConfigureServices((hostingContext, services) =>
                 {
-                    // Bind config first (so Paths.OutFolder exists before creating ExecutionTracker)
                     services.AddSingleton<IValidateOptions<SchedulerOptions>, SchedulerOptionsValidator>();
-
                     services.AddOptions<SchedulerOptions>()
                         .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
                         .PostConfigure(o =>
                         {
-                            // normalize: sort + distinct per day
                             foreach (var key in o.Weekly.Keys.ToList())
                             {
                                 var list = o.Weekly[key] ?? [];
@@ -78,6 +75,7 @@ namespace Bootstrapper
                         services.AddSingleton<CommandArgs>();
                         services.AddTransient<WhatsAppCommand>();
                         services.AddTransient<HelpCommand>();
+                        services.AddHostedService<WebDriverLifetimeService>();
                     }
                     services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
                     services.AddScoped<IWebDriver>(sp =>
@@ -85,8 +83,9 @@ namespace Bootstrapper
                         var factory = sp.GetRequiredService<IWebDriverFactory>();
                         return factory.Create(false);
                     });
+                    //
 
-                    services.AddHostedService<WebDriverLifetimeService>();
+
                     services.AddSingleton<ISecurityCheck, SecurityCheck>();
                     services.AddTransient<ILoginService, LoginService>();
                     services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();

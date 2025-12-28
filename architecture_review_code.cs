@@ -473,6 +473,7 @@ services.AddSingleton<CommandFactory>();
 services.AddSingleton<CommandArgs>();
 services.AddTransient<WhatsAppCommand>();
 services.AddTransient<HelpCommand>();
+services.AddHostedService<WebDriverLifetimeService>();
 }
 services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
 services.AddScoped<IWebDriver>(sp =>
@@ -480,7 +481,6 @@ services.AddScoped<IWebDriver>(sp =>
 var factory = sp.GetRequiredService<IWebDriverFactory>();
 return factory.Create(false);
 });
-services.AddHostedService<WebDriverLifetimeService>();
 services.AddSingleton<ISecurityCheck, SecurityCheck>();
 services.AddTransient<ILoginService, LoginService>();
 services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
@@ -567,12 +567,7 @@ services.AddMemoryCache();
 
 === FILE: F:\Marketing\Bootstrapper\ExecutionMode.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Bootstrapper
+﻿namespace Bootstrapper
 {
 public enum ExecutionMode
 {
@@ -594,7 +589,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94e1a471b9875dcb71d674cd5bee527643160ff7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -696,7 +691,9 @@ public string MainCommand { get; }
 public Dictionary<string, string> Arguments { get; }
 public CommandArgs(string[] args)
 {
-MainCommand = args.FirstOrDefault(IsCommand) ?? args.FirstOrDefault(IsArgument).Split("=").FirstOrDefault();
+var cmd = args.FirstOrDefault(IsCommand);
+var firstArg = args.FirstOrDefault(IsArgument);
+MainCommand = cmd ?? (firstArg is null ? string.Empty : firstArg.Split('=', 2)[0]);
 Arguments = args
 .Where(IsArgument)
 .Select(arg =>
@@ -799,6 +796,7 @@ private IWhatsAppMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw n
 public async Task ExecuteAsync(Dictionary<string, string>? arguments = null)
 {
 Logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
+await IWhatsAppMessage.LoginAsync();
 await IWhatsAppMessage.SendMessageAsync();
 Logger.LogInformation("InviteCommand: finished.");
 }
@@ -1041,7 +1039,7 @@ public string DownloadFolder { get; set; }
 {
 public sealed class SchedulerOptions
 {
-public const string SectionName = "Scheduler";
+public const string SectionName = "WhatsApp:Scheduler";
 public bool Enabled { get; init; } = true;
 public string TimeZoneId { get; init; } = "America/Vancouver";
 public Dictionary<string, List<string>> Weekly { get; init; } = new(StringComparer.OrdinalIgnoreCase);
@@ -4521,7 +4519,7 @@ public ExecutionTracker ExecutionOption { get; } = executionOption;
 public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
 private AppConfig Config { get; } = config;
 private IWhatAppOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
-public async Task SendMessageAsync()
+public async Task LoginAsync()
 {
 Logger.LogInformation("WhatsAppMessage execution started");
 Logger.LogInformation("Starting WhatsApp login process");
@@ -4530,6 +4528,9 @@ Logger.LogInformation("WhatsApp login completed successfully");
 Logger.LogInformation("Finalizing execution folder");
 var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
 LogFinalizeReport(finalizeReport);
+}
+public async Task SendMessageAsync()
+{
 int count = Config.WhatsApp.AllowedChatTargets.Count;
 Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
 List<string> allowedChatTargets = Config.WhatsApp.AllowedChatTargets;
@@ -4752,6 +4753,7 @@ namespace Services.Interfaces
 {
 public interface IWhatsAppMessage
 {
+Task LoginAsync();
 Task SendMessageAsync();
 }
 }
@@ -4849,6 +4851,9 @@ private readonly SemaphoreSlim _gate = new(1, 1);
 protected override async Task ExecuteAsync(CancellationToken stoppingToken)
 {
 Logger.LogInformation("WhatsAppSchedulerHostedService started.");
+using var scope = ScopeFactory.CreateScope();
+var sender = scope.ServiceProvider.GetRequiredService<IWhatsAppMessage>();
+await sender.LoginAsync();
 while (!stoppingToken.IsCancellationRequested)
 {
 var opt = Options.CurrentValue;
@@ -4878,8 +4883,6 @@ continue;
 }
 try
 {
-using var scope = ScopeFactory.CreateScope();
-var sender = scope.ServiceProvider.GetRequiredService<IWhatsAppMessage>();
 Logger.LogInformation("Scheduled run started.");
 await sender.SendMessageAsync();
 Logger.LogInformation("Scheduled run finished.");
@@ -4950,7 +4953,10 @@ return null;
 
 ﻿using Bootstrapper;
 using Commands;
+using Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Persistence.Context.Implementation;
 using Serilog;
 public class Program
@@ -4964,6 +4970,13 @@ using var host = AppHostBuilder.Create(args).Build();
 Log.Information("Initializing database...");
 EnsureDatabaseInitialized(host.Services);
 Log.Information("Database initialized successfully");
+var config = host.Services.GetRequiredService<AppConfig>();
+var executionMode = host.Services
+.GetRequiredService<IConfiguration>()
+.GetValue<ExecutionMode>("ExecutionMode");
+if (executionMode == ExecutionMode.Command)
+{
+Log.Information("🧭 ExecutionMode = Command");
 var commandFactory = host.Services.GetRequiredService<CommandFactory>();
 var commands = commandFactory.CreateCommand().ToList();
 var jobArgs = host.Services.GetRequiredService<CommandArgs>();
@@ -4984,6 +4997,11 @@ throw new AggregateException($"Command '{commandName}' failed", ex);
 }
 }
 Log.Information("✅ All commands executed successfully");
+return;
+}
+Log.Information("🧭 ExecutionMode = Scheduler");
+Log.Information("Starting host (scheduler mode)...");
+await host.RunAsync();
 }
 catch (Exception ex)
 {
@@ -5020,7 +5038,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94e1a471b9875dcb71d674cd5bee527643160ff7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
