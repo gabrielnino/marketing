@@ -9,22 +9,17 @@ using Services.Interfaces;
 
 namespace Commands
 {
-    public class WhatsAppCommand : ICommand
+    public class WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage) : ICommand
     {
-        private readonly ILogger<WhatsAppCommand> _logger;
-        private readonly IWhatsAppMessage _iWhatsAppMessage;
-
-        public WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage)
-        {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _iWhatsAppMessage = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
-        }
+        private ILogger<WhatsAppCommand> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
+        private IWhatsAppMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
 
         public async Task ExecuteAsync(Dictionary<string, string>? arguments = null)
         {
-            _logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
-            await _iWhatsAppMessage.SendMessageAsync();
-            _logger.LogInformation("InviteCommand: finished.");
+            Logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
+            await IWhatsAppMessage.LoginAsync();
+            await IWhatsAppMessage.SendMessageAsync();
+            Logger.LogInformation("InviteCommand: finished.");
         }
     }
 }

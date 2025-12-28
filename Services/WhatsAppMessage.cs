@@ -22,7 +22,7 @@ namespace Services
         private AppConfig Config { get; } = config;
         private IWhatAppOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
 
-        public async Task SendMessageAsync()
+        public async Task LoginAsync()
         {
             Logger.LogInformation("WhatsAppMessage execution started");
             Logger.LogInformation("Starting WhatsApp login process");
@@ -31,6 +31,9 @@ namespace Services
             Logger.LogInformation("Finalizing execution folder");
             var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
             LogFinalizeReport(finalizeReport);
+        }
+        public async Task SendMessageAsync()
+        {
             int count = Config.WhatsApp.AllowedChatTargets.Count;
             Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
             List<string> allowedChatTargets = Config.WhatsApp.AllowedChatTargets;

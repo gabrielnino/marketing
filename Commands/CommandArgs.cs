@@ -14,7 +14,9 @@
 
         public CommandArgs(string[] args)
         {
-            MainCommand = args.FirstOrDefault(IsCommand) ?? args.FirstOrDefault(IsArgument).Split("=").FirstOrDefault();
+            var cmd = args.FirstOrDefault(IsCommand);
+            var firstArg = args.FirstOrDefault(IsArgument);
+            MainCommand = cmd ?? (firstArg is null ? string.Empty : firstArg.Split('=', 2)[0]);
             Arguments = args
                 .Where(IsArgument)
                 .Select(arg =>

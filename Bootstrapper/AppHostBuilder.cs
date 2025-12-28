@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
@@ -36,29 +37,49 @@ namespace Bootstrapper
                 .ConfigureServices((hostingContext, services) =>
                 {
                     // Bind config first (so Paths.OutFolder exists before creating ExecutionTracker)
+                    services.AddSingleton<IValidateOptions<SchedulerOptions>, SchedulerOptionsValidator>();
+
+                    services.AddOptions<SchedulerOptions>()
+                        .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
+                        .PostConfigure(o =>
+                        {
+                            // normalize: sort + distinct per day
+                            foreach (var key in o.Weekly.Keys.ToList())
+                            {
+                                var list = o.Weekly[key] ?? [];
+                                List<string> value = [.. list
+                                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                                    .Select(x => x.Trim())
+                                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                                    .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+                                o.Weekly[key] = value;
+                            }
+                        })
+                        .ValidateOnStart();
                     hostingContext.Configuration.Bind(appConfig);
-
+                    var executionMode = hostingContext
+                    .Configuration
+                    .GetValue<ExecutionMode>("ExecutionMode");
+                    if (executionMode == ExecutionMode.Scheduler)
+                    {
+                        services.AddHostedService<ScheduledMessenger>();
+                    }
                     services.AddSingleton(appConfig);
-
-                    // ExecutionTracker is "per execution", singleton is OK (no EF dependencies)
-
-
                     var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
                     var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
                     LogCleanupReport(cleanupReport);
 
                     Directory.CreateDirectory(executionTracker.ExecutionRunning);
                     services.AddSingleton(executionTracker);
-
-                    services.AddSingleton(new CommandArgs(args));
-                    services.AddSingleton<CommandFactory>();
-                    services.AddTransient<HelpCommand>();
-                    services.AddTransient<WhatsAppCommand>();
-
+                    if (executionMode == ExecutionMode.Command)
+                    {
+                        services.AddSingleton(new CommandArgs(args));
+                        services.AddSingleton<CommandFactory>();
+                        services.AddSingleton<CommandArgs>();
+                        services.AddTransient<WhatsAppCommand>();
+                        services.AddTransient<HelpCommand>();
+                    }
                     services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
-
-                    //services.AddScoped<IWebDriver>(sp => sp.GetRequiredService<IWebDriverFactory>().Create(false));
-
                     services.AddScoped<IWebDriver>(sp =>
                     {
                         var factory = sp.GetRequiredService<IWebDriverFactory>();
@@ -66,31 +87,20 @@ namespace Bootstrapper
                     });
 
                     services.AddHostedService<WebDriverLifetimeService>();
-
                     services.AddSingleton<ISecurityCheck, SecurityCheck>();
-
                     services.AddTransient<ILoginService, LoginService>();
                     services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
                     services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
                     services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
                     services.AddSingleton<IUtil, Util>();
-
-
-                    
                     services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
                     services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
-                    //
                     AddDbContextSQLite(hostingContext, services);
-
-                    // EF-related types should be scoped
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<IDataContext, DataContext>();
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
-
-                    // FIX #1: do NOT register these as Singleton because they depend (directly/indirectly) on EF scoped services
                     services.AddScoped<IErrorHandler, ErrorHandler>();
                     services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
-
                     services.AddSingleton<IColumnTypes, SQLite>();
                 })
                 .UseSerilog((context, services, loggerConfig) =>
@@ -112,6 +122,8 @@ namespace Bootstrapper
                         );
                 });
         }
+
+
 
         public static void LogCleanupReport(CleanupReport report)
         {

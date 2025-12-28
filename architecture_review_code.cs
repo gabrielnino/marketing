@@ -4,6 +4,17 @@
 
 
 
+=== FILE: F:\Marketing\Application\Common\Messages\ImageMessagePayload.cs ===
+
+﻿namespace Application.Common.Messages
+{
+public sealed class ImageMessagePayload
+{
+public string StoredImagePath { get; init; } = default!;
+public string Caption { get; init; } = string.Empty;
+}
+}
+
 === FILE: F:\Marketing\Application\Common\Pagination\PagedResult.cs ===
 
 ﻿namespace Application.Common.Pagination
@@ -56,7 +67,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -398,6 +409,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
@@ -423,17 +435,45 @@ config.AddEnvironmentVariables();
 })
 .ConfigureServices((hostingContext, services) =>
 {
+services.AddSingleton<IValidateOptions<SchedulerOptions>, SchedulerOptionsValidator>();
+services.AddOptions<SchedulerOptions>()
+.Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
+.PostConfigure(o =>
+{
+foreach (var key in o.Weekly.Keys.ToList())
+{
+var list = o.Weekly[key] ?? [];
+List<string> value = [.. list
+.Where(x => !string.IsNullOrWhiteSpace(x))
+.Select(x => x.Trim())
+.Distinct(StringComparer.OrdinalIgnoreCase)
+.OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+o.Weekly[key] = value;
+}
+})
+.ValidateOnStart();
 hostingContext.Configuration.Bind(appConfig);
+var executionMode = hostingContext
+.Configuration
+.GetValue<ExecutionMode>("ExecutionMode");
+if (executionMode == ExecutionMode.Scheduler)
+{
+services.AddHostedService<ScheduledMessenger>();
+}
 services.AddSingleton(appConfig);
 var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
 var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
 LogCleanupReport(cleanupReport);
 Directory.CreateDirectory(executionTracker.ExecutionRunning);
 services.AddSingleton(executionTracker);
+if (executionMode == ExecutionMode.Command)
+{
 services.AddSingleton(new CommandArgs(args));
 services.AddSingleton<CommandFactory>();
-services.AddTransient<HelpCommand>();
+services.AddSingleton<CommandArgs>();
 services.AddTransient<WhatsAppCommand>();
+services.AddTransient<HelpCommand>();
+}
 services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
 services.AddScoped<IWebDriver>(sp =>
 {
@@ -525,6 +565,22 @@ services.AddMemoryCache();
 }
 }
 
+=== FILE: F:\Marketing\Bootstrapper\ExecutionMode.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Bootstrapper
+{
+public enum ExecutionMode
+{
+Scheduler,
+Command
+}
+}
+
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
 using System;
@@ -538,7 +594,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -736,20 +792,15 @@ using Services;
 using Services.Interfaces;
 namespace Commands
 {
-public class WhatsAppCommand : ICommand
+public class WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage) : ICommand
 {
-private readonly ILogger<WhatsAppCommand> _logger;
-private readonly IWhatsAppMessage _iWhatsAppMessage;
-public WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage)
-{
-_logger = logger ?? throw new ArgumentNullException(nameof(logger));
-_iWhatsAppMessage = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
-}
+private ILogger<WhatsAppCommand> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
+private IWhatsAppMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
 public async Task ExecuteAsync(Dictionary<string, string>? arguments = null)
 {
-_logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
-await _iWhatsAppMessage.SendMessageAsync();
-_logger.LogInformation("InviteCommand: finished.");
+Logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
+await IWhatsAppMessage.SendMessageAsync();
+Logger.LogInformation("InviteCommand: finished.");
 }
 }
 }
@@ -767,7 +818,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -984,6 +1035,61 @@ public string DownloadFolder { get; set; }
 }
 }
 
+=== FILE: F:\Marketing\Configuration\SchedulerOptions.cs ===
+
+﻿namespace Configuration
+{
+public sealed class SchedulerOptions
+{
+public const string SectionName = "Scheduler";
+public bool Enabled { get; init; } = true;
+public string TimeZoneId { get; init; } = "America/Vancouver";
+public Dictionary<string, List<string>> Weekly { get; init; } = new(StringComparer.OrdinalIgnoreCase);
+}
+}
+
+=== FILE: F:\Marketing\Configuration\SchedulerOptionsValidator.cs ===
+
+﻿using System.Globalization;
+using Microsoft.Extensions.Options;
+namespace Configuration
+{
+public sealed class SchedulerOptionsValidator : IValidateOptions<SchedulerOptions>
+{
+public ValidateOptionsResult Validate(string? name, SchedulerOptions options)
+{
+var errors = new List<string>();
+if (string.IsNullOrWhiteSpace(options.TimeZoneId))
+errors.Add("Scheduler:TimeZoneId is required.");
+if (!string.IsNullOrWhiteSpace(options.TimeZoneId))
+{
+try { TimeZoneInfo.FindSystemTimeZoneById(options.TimeZoneId); }
+catch (TimeZoneNotFoundException)
+{
+errors.Add($"Scheduler:TimeZoneId '{options.TimeZoneId}' not found on this OS.");
+}
+catch (InvalidTimeZoneException)
+{
+errors.Add($"Scheduler:TimeZoneId '{options.TimeZoneId}' is invalid.");
+}
+}
+foreach (var (day, times) in options.Weekly)
+{
+if (times is null) continue;
+for (var i = 0; i < times.Count; i++)
+{
+var value = times[i];
+if (!TimeSpan.TryParseExact(value, @"hh\:mm", CultureInfo.InvariantCulture, out _))
+errors.Add($"Scheduler:Weekly:{day}[{i}] value '{value}' must be HH:mm (24-hour).");
+}
+}
+return errors.Count == 0
+? ValidateOptionsResult.Success
+: ValidateOptionsResult.Fail(errors);
+}
+}
+}
+
 === FILE: F:\Marketing\Configuration\WhatsAppConfig.cs ===
 
 ﻿namespace Configuration
@@ -994,6 +1100,7 @@ public required string Url { get; set; }
 public required TimeSpan LoginPollInterval { get; init; }
 public required TimeSpan LoginTimeout { get; init; }
 public required List<string> AllowedChatTargets { get; init; }
+public required SchedulerOptions Scheduler { get; init; }
 }
 }
 
@@ -1010,7 +1117,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32273de97371b5b10633adbe050bd8aa6a602d0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1203,7 +1310,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2555,7 +2662,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3634,10 +3741,6 @@ private const string WhatAppMessage = "WhatsApp Web is not logged in. Call Login
 private const string CssSelectorToFind = "div[role='textbox'][contenteditable='true']";
 private const string CssSelectorToFindSearchInput = "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']";
 private const string XpathToFindGridcell = "./ancestor::*[@role='gridcell' or @role='row' or @tabindex][1]";
-private const string CssSelectorToFindTextbox = "div[role='textbox'][contenteditable='true']";
-private const string XpathToFindAttachButton = "
-private const string FindPhotosAndVideosOption = "
-private const string XpathFindCaption = "
 private IWebDriver Driver { get; } = driver;
 public ILogger<LoginService> Logger { get; } = logger;
 public async Task OpenContactChatAsync(
@@ -4000,33 +4103,52 @@ throw new WebDriverTimeoutException($"Chat not found or not clickable: '{chatTit
 
 ﻿using System.Diagnostics;
 using System.Text;
+using System.Threading;
+using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
+using Services.Messages;
 namespace Services
 {
 public sealed class WhatsAppChatService(
 IWebDriver driver,
-ILogger<LoginService> logger
+ILogger<WhatsAppChatService> logger,
+AppConfig config
 ) : IWhatsAppChatService
 {
-private const string WhatAppMessage = "WhatsApp Web is not logged in. Call LoginAsync() before opening a chat.";
 private const string XpathToFindAttachButton = "
 private const string FindPhotosAndVideosOption = "
 private const string XpathFindCaption = "
 private IWebDriver Driver { get; } = driver;
-public ILogger<LoginService> Logger { get; } = logger;
-private static void OpenFileDialogWithAutoIT(string imagePath)
+public ILogger<WhatsAppChatService> Logger { get; } = logger;
+private AppConfig Config { get; } = config;
+private void OpenFileDialogWithAutoIT(string imagePath)
 {
+Logger.LogInformation("OpenFileDialogWithAutoIT started.");
 if (string.IsNullOrWhiteSpace(imagePath))
+{
+Logger.LogError("OpenFileDialogWithAutoIT aborted: imagePath is null or whitespace.");
 throw new ArgumentException("imagePath is null/empty.", nameof(imagePath));
+}
 imagePath = Path.GetFullPath(imagePath);
+Logger.LogDebug("Resolved imagePath to '{ImagePath}'", imagePath);
 if (!File.Exists(imagePath))
+{
+Logger.LogError("Image file not found at path '{ImagePath}'", imagePath);
 throw new FileNotFoundException("Image file not found.", imagePath);
+}
 var autoItExePath = @"C:\Program Files (x86)\AutoIt3\AutoIt3.exe";
+Logger.LogDebug("Using AutoIt executable at '{AutoItExePath}'", autoItExePath);
 if (!File.Exists(autoItExePath))
+{
+Logger.LogError("AutoIt executable not found at '{AutoItExePath}'", autoItExePath);
 throw new FileNotFoundException("AutoIt3.exe not found.", autoItExePath);
+}
 var escapedPath = imagePath.Replace("\"", "\"\"");
+Logger.LogDebug("Escaped image path for AutoIt.");
+Logger.LogDebug("Building AutoIt script...");
 var autoItScript = new StringBuilder()
 .AppendLine("; AutoIt Script - whatsapp_upload.au3")
 .AppendLine("Opt('WinTitleMatchMode', 2)")
@@ -4057,6 +4179,7 @@ var autoItScript = new StringBuilder()
 .AppendLine("Exit 0")
 .ToString();
 var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
+Logger.LogDebug("Writing AutoIt script to '{ScriptPath}'", scriptPath);
 File.WriteAllText(scriptPath, autoItScript, Encoding.UTF8);
 var psi = new ProcessStartInfo
 {
@@ -4067,55 +4190,98 @@ CreateNoWindow = true,
 RedirectStandardOutput = true,
 RedirectStandardError = true
 };
+Logger.LogInformation("Starting AutoIt process...");
 using var proc = Process.Start(psi) ?? throw new InvalidOperationException("Failed to start AutoIt process.");
 if (!proc.WaitForExit(15000))
 {
+Logger.LogWarning("AutoIt process timeout exceeded. Attempting to kill process.");
 try { proc.Kill(true); } catch {  }
 throw new TimeoutException("AutoIt file upload script timed out.");
 }
-try { File.Delete(scriptPath); } catch {  }
+Logger.LogInformation("AutoIt process exited with code {ExitCode}", proc.ExitCode);
+try
+{
+File.Delete(scriptPath);
+Logger.LogDebug("Temporary AutoIt script deleted.");
+}
+catch
+{
+Logger.LogWarning("Failed to delete temporary AutoIt script at '{ScriptPath}'", scriptPath);
+}
 if (proc.ExitCode != 0)
 {
 var err = proc.StandardError.ReadToEnd();
+Logger.LogError(
+"AutoIt script failed. ExitCode={ExitCode}. Error={Error}",
+proc.ExitCode,
+err
+);
 throw new InvalidOperationException($"AutoIt script failed. ExitCode={proc.ExitCode}. {err}");
 }
+Logger.LogInformation("OpenFileDialogWithAutoIT completed successfully.");
 }
 public Task SendMessageAsync(
-string message,
+ImageMessagePayload imageMessagePayload,
 TimeSpan? timeout = null,
 TimeSpan? pollInterval = null,
 CancellationToken ct = default)
 {
-Logger.LogInformation("SendMessageAsync started. messageLength={MessageLength}", message?.Length ?? 0);
+Logger.LogInformation(
+"SendMessageAsync started. messageLength={MessageLength}",
+imageMessagePayload?.Caption?.Length ?? 0
+);
 ct.ThrowIfCancellationRequested();
-if (string.IsNullOrWhiteSpace(message))
+if (imageMessagePayload is null)
+{
+Logger.LogError("SendMessageAsync aborted: imageMessagePayload is null.");
+throw new ArgumentNullException(nameof(imageMessagePayload));
+}
+if (string.IsNullOrWhiteSpace(imageMessagePayload.Caption))
 {
 Logger.LogWarning("SendMessageAsync aborted: message is null or whitespace.");
-throw new ArgumentException("Message cannot be empty.", nameof(message));
+throw new ArgumentException("Message cannot be empty.", nameof(imageMessagePayload.Caption));
 }
 Logger.LogInformation("Step 1/3: Locating WhatsApp compose box...");
-Logger.LogInformation("Locating attach button using XPath '{XPath}'...", XpathToFindAttachButton);
-var attachButton = FindAttachButton();
+Logger.LogInformation(
+"Locating attach button using XPath '{XPath}'...",
+XpathToFindAttachButton
+);
+TimeSpan loginTimeout = Config.WhatsApp.LoginTimeout;
+TimeSpan loginPollInterval = Config.WhatsApp.LoginPollInterval;
+var attachButton = FindAttachButton(loginTimeout, loginPollInterval);
 if (attachButton is null)
 {
 Logger.LogError("Attach button not found. XPath='{XPath}'", XpathToFindAttachButton);
 throw new NoSuchElementException("Attach button not found.");
 }
+Logger.LogDebug(
+"Attach button found. displayed={Displayed}, enabled={Enabled}",
+attachButton.Displayed,
+attachButton.Enabled
+);
 Logger.LogInformation("Clicking attach button...");
 attachButton.Click();
-Logger.LogInformation("Locating 'Photos & videos' option using XPath '{XPath}'...", FindPhotosAndVideosOption);
-var photoAndVideo = FindPhotosAndVideosOptionButton();
+Logger.LogInformation(
+"Locating 'Photos & videos' option using XPath '{XPath}'...",
+FindPhotosAndVideosOption
+);
+var photoAndVideo = FindPhotosAndVideosOptionButton(loginTimeout, loginPollInterval);
 if (photoAndVideo is null)
 {
 Logger.LogError("'Photos & videos' option not found. XPath='{XPath}'", FindPhotosAndVideosOption);
 throw new NoSuchElementException("'Photos & videos' option not found.");
 }
+Logger.LogDebug(
+"'Photos & videos' option found. displayed={Displayed}, enabled={Enabled}",
+photoAndVideo.Displayed,
+photoAndVideo.Enabled
+);
 Logger.LogInformation("Clicking 'Photos & videos' option...");
 photoAndVideo.Click();
-Logger.LogInformation("Opening file dialog via AutoIT...");
+Logger.LogInformation("Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
 try
 {
-OpenFileDialogWithAutoIT("E:\\Company\\whatappmessage\\superO.png");
+OpenFileDialogWithAutoIT(imageMessagePayload.StoredImagePath);
 Logger.LogInformation("AutoIT completed file selection.");
 }
 catch (Exception ex)
@@ -4123,44 +4289,211 @@ catch (Exception ex)
 Logger.LogError(ex, "AutoIT failed while selecting file.");
 throw;
 }
-Logger.LogInformation("Locating caption element using XPath '{XPath}'...", XpathFindCaption);
-var caption = FindCaption();
+Logger.LogInformation(
+"Locating caption element using XPath '{XPath}'...",
+XpathFindCaption
+);
+var caption = FindCaption(loginTimeout, loginPollInterval);
 if (caption is null)
 {
 Logger.LogError("Caption element not found. XPath='{XPath}'", XpathFindCaption);
 throw new NoSuchElementException("Caption element not found.");
 }
+Logger.LogDebug(
+"Caption element found. displayed={Displayed}, enabled={Enabled}",
+caption.Displayed,
+caption.Enabled
+);
 Logger.LogInformation("Typing caption...");
-caption.SendKeys("This is an automated message with image.");
+caption.SendKeys(imageMessagePayload.Caption);
 Logger.LogInformation("Submitting caption (Enter)...");
 caption.SendKeys(Keys.Enter);
 ct.ThrowIfCancellationRequested();
 Logger.LogInformation("Step 2/3: Focusing compose box...");
 ct.ThrowIfCancellationRequested();
-Logger.LogInformation("Step 3/3: Sending message ({Length} chars) and submitting...", message.Length);
+Logger.LogInformation(
+"Step 3/3: Sending message ({Length} chars) and submitting...",
+imageMessagePayload.Caption.Length
+);
 Logger.LogInformation("SendMessageAsync completed successfully.");
 return Task.CompletedTask;
 }
-private IWebElement FindAttachButton()
+private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
 {
-Logger.LogDebug("FindAttachButton: Finding attach button. xpath='{XPath}'", XpathToFindAttachButton);
-var attachButton = Driver.FindElements(By.XPath(XpathToFindAttachButton)).FirstOrDefault();
-Logger.LogDebug("FindAttachButton: Found={Found}", attachButton is not null);
+Logger.LogDebug(
+"FindAttachButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
+timeout,
+pollingInterval,
+XpathToFindAttachButton
+);
+var wait = new WebDriverWait(Driver, timeout)
+{
+PollingInterval = pollingInterval
+};
+wait.IgnoreExceptionTypes(
+typeof(NoSuchElementException),
+typeof(StaleElementReferenceException)
+);
+IWebElement attachButton;
+try
+{
+attachButton = wait.Until(driver =>
+{
+var element = driver
+.FindElements(By.XPath(XpathToFindAttachButton))
+.FirstOrDefault();
+if (element is null)
+{
+Logger.LogTrace("FindAttachButton: Attach button not present yet.");
+return null;
+}
+if (!element.Displayed || !element.Enabled)
+{
+Logger.LogTrace(
+"FindAttachButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
+element.Displayed,
+element.Enabled
+);
+return null;
+}
+return element;
+});
+}
+catch (WebDriverTimeoutException ex)
+{
+Logger.LogError(
+ex,
+"FindAttachButton timed out after {Timeout}. xpath='{XPath}'",
+timeout,
+XpathToFindAttachButton
+);
+throw;
+}
+Logger.LogDebug(
+"FindAttachButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
+attachButton is not null,
+attachButton?.Displayed,
+attachButton?.Enabled
+);
 return attachButton;
 }
-private IWebElement FindPhotosAndVideosOptionButton()
+private IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval)
 {
-Logger.LogDebug("FindPhotosAndVideosOptionButton: Finding option. xpath='{XPath}'", FindPhotosAndVideosOption);
-var photosAndVideosOption = Driver.FindElements(By.XPath(FindPhotosAndVideosOption)).FirstOrDefault();
-Logger.LogDebug("FindPhotosAndVideosOptionButton: Found={Found}", photosAndVideosOption is not null);
+Logger.LogDebug(
+"FindPhotosAndVideosOptionButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
+timeout,
+pollingInterval,
+FindPhotosAndVideosOption
+);
+var wait = new WebDriverWait(Driver, timeout)
+{
+PollingInterval = pollingInterval
+};
+wait.IgnoreExceptionTypes(
+typeof(NoSuchElementException),
+typeof(StaleElementReferenceException)
+);
+IWebElement photosAndVideosOption;
+try
+{
+photosAndVideosOption = wait.Until(driver =>
+{
+var element = driver
+.FindElements(By.XPath(FindPhotosAndVideosOption))
+.FirstOrDefault();
+if (element is null)
+{
+Logger.LogTrace("FindPhotosAndVideosOptionButton: Option not present yet.");
+return null;
+}
+if (!element.Displayed || !element.Enabled)
+{
+Logger.LogTrace(
+"FindPhotosAndVideosOptionButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
+element.Displayed,
+element.Enabled
+);
+return null;
+}
+return element;
+});
+}
+catch (WebDriverTimeoutException ex)
+{
+Logger.LogError(
+ex,
+"FindPhotosAndVideosOptionButton timed out after {Timeout}. xpath='{XPath}'",
+timeout,
+FindPhotosAndVideosOption
+);
+throw;
+}
+Logger.LogDebug(
+"FindPhotosAndVideosOptionButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
+photosAndVideosOption is not null,
+photosAndVideosOption?.Displayed,
+photosAndVideosOption?.Enabled
+);
 return photosAndVideosOption;
 }
-private IWebElement FindCaption()
+private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
 {
-Logger.LogDebug("FindCaption: Finding caption candidate(s). xpath='{XPath}'", XpathFindCaption);
-var send = Driver.FindElements(By.XPath(XpathFindCaption)).FirstOrDefault();
-Logger.LogDebug("FindCaption: Found={Found}", send is not null);
-return send;
+Logger.LogDebug(
+"FindCaption started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
+timeout,
+pollingInterval,
+XpathFindCaption
+);
+var wait = new WebDriverWait(Driver, timeout)
+{
+PollingInterval = pollingInterval
+};
+wait.IgnoreExceptionTypes(
+typeof(NoSuchElementException),
+typeof(StaleElementReferenceException)
+);
+IWebElement caption;
+try
+{
+caption = wait.Until(driver =>
+{
+var element = driver
+.FindElements(By.XPath(XpathFindCaption))
+.FirstOrDefault();
+if (element is null)
+{
+Logger.LogTrace("FindCaption: Caption element not present yet.");
+return null;
+}
+if (!element.Displayed || !element.Enabled)
+{
+Logger.LogTrace(
+"FindCaption: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
+element.Displayed,
+element.Enabled
+);
+return null;
+}
+return element;
+});
+}
+catch (WebDriverTimeoutException ex)
+{
+Logger.LogError(
+ex,
+"FindCaption timed out after {Timeout}. xpath='{XPath}'",
+timeout,
+XpathFindCaption
+);
+throw;
+}
+Logger.LogDebug(
+"FindCaption completed. found={Found} displayed={Displayed} enabled={Enabled}",
+caption is not null,
+caption?.Displayed,
+caption?.Enabled
+);
+return caption;
 }
 }
 }
@@ -4170,6 +4503,7 @@ return send;
 ﻿using Configuration;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
+using Services.Messages;
 namespace Services
 {
 public class WhatsAppMessage(
@@ -4196,10 +4530,16 @@ Logger.LogInformation("WhatsApp login completed successfully");
 Logger.LogInformation("Finalizing execution folder");
 var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
 LogFinalizeReport(finalizeReport);
-Logger.LogInformation(
-"Beginning message dispatch. Total contacts: {ContactCount}",
-Config.WhatsApp.AllowedChatTargets.Count);
-foreach (var contact in Config.WhatsApp.AllowedChatTargets)
+int count = Config.WhatsApp.AllowedChatTargets.Count;
+Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
+List<string> allowedChatTargets = Config.WhatsApp.AllowedChatTargets;
+foreach (var contact in allowedChatTargets)
+{
+await SendMessageToContact(contact);
+}
+Logger.LogInformation("WhatsAppMessage execution finished");
+}
+private async Task SendMessageToContact(string contact)
 {
 Logger.LogInformation("Opening chat for contact: {Contact}", contact);
 await WhatAppOpenChat.OpenContactChatAsync(
@@ -4208,13 +4548,16 @@ Config.WhatsApp.LoginPollInterval,
 Config.WhatsApp.LoginTimeout);
 Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
 Logger.LogInformation("Sending message to contact: {Contact}", contact);
+ImageMessagePayload imageMessagePayload = new()
+{
+StoredImagePath = "E:\\Company\\whatappmessage\\superO.png",
+Caption = "This is an automated message with image."
+};
 await WhatsAppChatService.SendMessageAsync(
-"hola mundo",
+imageMessagePayload,
 Config.WhatsApp.LoginPollInterval,
 Config.WhatsApp.LoginTimeout);
 Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
-}
-Logger.LogInformation("WhatsAppMessage execution finished");
 }
 public void LogFinalizeReport(FinalizeReport report)
 {
@@ -4384,12 +4727,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Services.Messages;
 namespace Services.Interfaces
 {
 public interface IWhatsAppChatService
 {
 Task SendMessageAsync(
-string message,
+ImageMessagePayload imageMessagePayload,
 TimeSpan? timeout = null,
 TimeSpan? pollInterval = null,
 CancellationToken ct = default
@@ -4412,6 +4756,22 @@ Task SendMessageAsync();
 }
 }
 
+=== FILE: F:\Marketing\Services\Messages\ImageMessagePayload.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Messages
+{
+public sealed class ImageMessagePayload
+{
+public string StoredImagePath { get; init; } = default!;
+public string Caption { get; init; } = string.Empty;
+}
+}
+
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
 using System;
@@ -4425,7 +4785,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -4467,6 +4827,124 @@ global using global::System.Linq;
 global using global::System.Net.Http;
 global using global::System.Threading;
 global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Services\Scheduling\ScheduledMessenger.cs ===
+
+﻿using System.Globalization;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Configuration;
+using Services.Interfaces;
+public sealed class ScheduledMessenger(
+IServiceScopeFactory scopeFactory,
+IOptionsMonitor<SchedulerOptions> options,
+ILogger<ScheduledMessenger> logger) : BackgroundService
+{
+private IServiceScopeFactory ScopeFactory { get; } = scopeFactory;
+private IOptionsMonitor<SchedulerOptions> Options { get; } = options;
+private ILogger<ScheduledMessenger> Logger { get; } = logger;
+private readonly SemaphoreSlim _gate = new(1, 1);
+protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+{
+Logger.LogInformation("WhatsAppSchedulerHostedService started.");
+while (!stoppingToken.IsCancellationRequested)
+{
+var opt = Options.CurrentValue;
+if (!opt.Enabled)
+{
+Logger.LogInformation("Scheduler disabled. Sleeping 60s.");
+await Task.Delay(TimeSpan.FromSeconds(60), stoppingToken);
+continue;
+}
+var tz = ResolveTimeZone(opt.TimeZoneId);
+var nowLocal = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, tz);
+var next = FindNextOccurrence(nowLocal, tz, opt);
+if (next is null)
+{
+Logger.LogWarning("No schedule times found. Sleeping 10 minutes.");
+await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);
+continue;
+}
+var delay = next.Value - nowLocal;
+if (delay < TimeSpan.Zero) delay = TimeSpan.Zero;
+Logger.LogInformation("Next scheduled run at {NextLocal} (in {Delay}).", next.Value, delay);
+await Task.Delay(delay, stoppingToken);
+if (!await _gate.WaitAsync(0, stoppingToken))
+{
+Logger.LogWarning("Previous run still in progress. Skipping this occurrence.");
+continue;
+}
+try
+{
+using var scope = ScopeFactory.CreateScope();
+var sender = scope.ServiceProvider.GetRequiredService<IWhatsAppMessage>();
+Logger.LogInformation("Scheduled run started.");
+await sender.SendMessageAsync();
+Logger.LogInformation("Scheduled run finished.");
+}
+catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
+{
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "Scheduled run failed.");
+}
+finally
+{
+_gate.Release();
+}
+}
+Logger.LogInformation("WhatsAppSchedulerHostedService stopped.");
+}
+private static TimeZoneInfo ResolveTimeZone(string timeZoneId)
+{
+return TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
+}
+private static DateTimeOffset? FindNextOccurrence(
+DateTimeOffset nowLocal,
+TimeZoneInfo tz,
+SchedulerOptions opt)
+{
+for (var dayOffset = 0; dayOffset <= 7; dayOffset++)
+{
+var day = nowLocal.Date.AddDays(dayOffset);
+var dowName = day.DayOfWeek.ToString();
+if (!opt.Weekly.TryGetValue(dowName, out var times) || times is null || times.Count == 0)
+continue;
+foreach (var t in times
+.Select(ParseTime)
+.Where(x => x is not null)
+.Select(x => x!.Value)
+.OrderBy(x => x))
+{
+var localUnspecified = new DateTime(
+day.Year,
+day.Month,
+day.Day,
+t.Hours,
+t.Minutes,
+0,
+DateTimeKind.Unspecified
+);
+if(tz.IsInvalidTime(localUnspecified))
+continue;
+var offset = tz.GetUtcOffset(localUnspecified);
+var candidateLocal = new DateTimeOffset(localUnspecified, offset);
+if (candidateLocal > nowLocal)
+return candidateLocal;
+}
+}
+return null;
+}
+private static (int Hours, int Minutes)? ParseTime(string value)
+{
+if (TimeSpan.TryParseExact(value, @"hh\:mm", CultureInfo.InvariantCulture, out var ts))
+return ((int)ts.TotalHours, ts.Minutes);
+return null;
+}
+}
 
 === FILE: F:\Marketing\WhatsAppSender\Program.cs ===
 
@@ -4542,7 +5020,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

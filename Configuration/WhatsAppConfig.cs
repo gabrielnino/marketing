@@ -6,6 +6,6 @@
         public required TimeSpan LoginPollInterval { get; init; }
         public required TimeSpan LoginTimeout { get; init; }
         public required List<string> AllowedChatTargets { get; init; }
-
+        public required SchedulerOptions Scheduler { get; init; }
     }
 }

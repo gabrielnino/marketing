@@ -30,14 +30,5 @@
 	  <None Update="credentials.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Report\app.js">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="Report\index.html">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="Report\styles.css">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
 	</ItemGroup>
 </Project>
