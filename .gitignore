@@ -485,3 +485,12 @@ $RECYCLE.BIN/
 /TestPromp.json
 /02_TestPromp.json
 /WhatsAppSender/_publish_prod/WhatsAppSender.exe
+/WhatsAppSender/_publish_prod/Application.pdb
+/WhatsAppSender/_publish_prod/Bootstrapper.pdb
+/WhatsAppSender/_publish_prod/Commands.pdb
+/WhatsAppSender/_publish_prod/Configuration.pdb
+/WhatsAppSender/_publish_prod/Domain.pdb
+/WhatsAppSender/_publish_prod/Infrastructure.pdb
+/WhatsAppSender/_publish_prod/Persistence.pdb
+/WhatsAppSender/_publish_prod/Services.pdb
+/WhatsAppSender/_publish_prod/WhatsAppSender.pdb
