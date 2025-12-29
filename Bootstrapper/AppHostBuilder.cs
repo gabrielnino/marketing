@@ -1,4 +1,5 @@
-﻿using Application.Result;
+﻿using System.Configuration;
+using Application.Result;
 using Application.UseCases.Repository.UseCases.CRUD;
 using Commands;
 using Configuration;
@@ -53,10 +54,15 @@ namespace Bootstrapper
                             }
                         })
                         .ValidateOnStart();
+                    services.AddOptions<MessageConfig>()
+                    .Bind(hostingContext.Configuration.GetSection("WhatsApp:Message"))
+                    .Validate(o => 
+                    !string.IsNullOrWhiteSpace(o.ImageDirectory) &&
+                    !string.IsNullOrWhiteSpace(o.ImageFileName) &&
+                    !string.IsNullOrWhiteSpace(o.Caption),
+                    "WhatsApp:Message configuration is incomplete");
                     hostingContext.Configuration.Bind(appConfig);
-                    var executionMode = hostingContext
-                    .Configuration
-                    .GetValue<ExecutionMode>("ExecutionMode");
+                    var executionMode = hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
                     if (executionMode == ExecutionMode.Scheduler)
                     {
                         services.AddHostedService<ScheduledMessenger>();

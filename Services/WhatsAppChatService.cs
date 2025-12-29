@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
 using Services.Messages;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace Services
 {
@@ -239,11 +240,12 @@ namespace Services
                 caption.Enabled
             );
 
-            Logger.LogInformation("Typing caption...");
-            caption.SendKeys(imageMessagePayload.Caption);
 
-            Logger.LogInformation("Submitting caption (Enter)...");
-            caption.SendKeys(Keys.Enter);
+            Logger.LogInformation("Typing caption via execCommand (emoji-safe)...");
+            SetCaptionViaExecCommand(caption, imageMessagePayload.Caption ?? string.Empty);
+
+            Logger.LogInformation("Submitting caption...");
+            caption.SendKeys(OpenQA.Selenium.Keys.Enter);
 
             ct.ThrowIfCancellationRequested();
 
@@ -258,6 +260,25 @@ namespace Services
 
             Logger.LogInformation("SendMessageAsync completed successfully.");
             return Task.CompletedTask;
+        }
+        private void SetCaptionViaExecCommand(IWebElement element, string text)
+        {
+            if (Driver is not IJavaScriptExecutor js)
+                throw new NotSupportedException("Driver does not support JavaScript execution.");
+
+            js.ExecuteScript(@"
+        const el = arguments[0];
+        const value = arguments[1] ?? '';
+
+        el.focus();
+
+        // clear existing content
+        document.execCommand('selectAll', false, null);
+        document.execCommand('delete', false, null);
+
+        // insert text (this fires the right events in many React contenteditables)
+        document.execCommand('insertText', false, value);
+    ", element, text);
         }
         private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
         {

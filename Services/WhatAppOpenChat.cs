@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.Interfaces;
+using Keys = OpenQA.Selenium.Keys;
 
 namespace Services
 {

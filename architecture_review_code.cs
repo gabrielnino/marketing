@@ -399,7 +399,8 @@ Task<Operation<bool>> CreateInvoiceAsync(ErrorLog entity);
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
-﻿using Application.Result;
+﻿using System.Configuration;
+using Application.Result;
 using Application.UseCases.Repository.UseCases.CRUD;
 using Commands;
 using Configuration;
@@ -452,10 +453,15 @@ o.Weekly[key] = value;
 }
 })
 .ValidateOnStart();
+services.AddOptions<MessageConfig>()
+.Bind(hostingContext.Configuration.GetSection("WhatsApp:Message"))
+.Validate(o =>
+!string.IsNullOrWhiteSpace(o.ImageDirectory) &&
+!string.IsNullOrWhiteSpace(o.ImageFileName) &&
+!string.IsNullOrWhiteSpace(o.Caption),
+"WhatsApp:Message configuration is incomplete");
 hostingContext.Configuration.Bind(appConfig);
-var executionMode = hostingContext
-.Configuration
-.GetValue<ExecutionMode>("ExecutionMode");
+var executionMode = hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
 if (executionMode == ExecutionMode.Scheduler)
 {
 services.AddHostedService<ScheduledMessenger>();
@@ -470,7 +476,6 @@ if (executionMode == ExecutionMode.Command)
 {
 services.AddSingleton(new CommandArgs(args));
 services.AddSingleton<CommandFactory>();
-services.AddSingleton<CommandArgs>();
 services.AddTransient<WhatsAppCommand>();
 services.AddTransient<HelpCommand>();
 services.AddHostedService<WebDriverLifetimeService>();
@@ -589,7 +594,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94e1a471b9875dcb71d674cd5bee527643160ff7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -816,7 +821,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1022,6 +1027,18 @@ public bool IsClean => DeleteFailures.Count == 0;
 }
 }
 
+=== FILE: F:\Marketing\Configuration\MessageConfig.cs ===
+
+﻿namespace Configuration
+{
+public sealed class MessageConfig
+{
+public string ImageDirectory { get; init; } = null!;
+public string ImageFileName { get; init; } = null!;
+public string Caption { get; init; } = null!;
+}
+}
+
 === FILE: F:\Marketing\Configuration\PathsConfig.cs ===
 
 ﻿namespace Configuration
@@ -1099,6 +1116,7 @@ public required TimeSpan LoginPollInterval { get; init; }
 public required TimeSpan LoginTimeout { get; init; }
 public required List<string> AllowedChatTargets { get; init; }
 public required SchedulerOptions Scheduler { get; init; }
+public required MessageConfig Message { get; init; }
 }
 }
 
@@ -1115,7 +1133,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2660,7 +2678,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3728,6 +3746,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.Interfaces;
+using Keys = OpenQA.Selenium.Keys;
 namespace Services
 {
 public class WhatAppOpenChat(
@@ -4108,6 +4127,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
 using Services.Messages;
+using Keys = OpenQA.Selenium.Keys;
 namespace Services
 {
 public sealed class WhatsAppChatService(
@@ -4302,10 +4322,10 @@ Logger.LogDebug(
 caption.Displayed,
 caption.Enabled
 );
-Logger.LogInformation("Typing caption...");
-caption.SendKeys(imageMessagePayload.Caption);
-Logger.LogInformation("Submitting caption (Enter)...");
-caption.SendKeys(Keys.Enter);
+Logger.LogInformation("Typing caption via execCommand (emoji-safe)...");
+SetCaptionViaExecCommand(caption, imageMessagePayload.Caption ?? string.Empty);
+Logger.LogInformation("Submitting caption...");
+caption.SendKeys(OpenQA.Selenium.Keys.Enter);
 ct.ThrowIfCancellationRequested();
 Logger.LogInformation("Step 2/3: Focusing compose box...");
 ct.ThrowIfCancellationRequested();
@@ -4315,6 +4335,19 @@ imageMessagePayload.Caption.Length
 );
 Logger.LogInformation("SendMessageAsync completed successfully.");
 return Task.CompletedTask;
+}
+private void SetCaptionViaExecCommand(IWebElement element, string text)
+{
+if (Driver is not IJavaScriptExecutor js)
+throw new NotSupportedException("Driver does not support JavaScript execution.");
+js.ExecuteScript(@"
+const el = arguments[0];
+const value = arguments[1] ?? '';
+el.focus();
+document.execCommand('selectAll', false, null);
+document.execCommand('delete', false, null);
+document.execCommand('insertText', false, value);
+", element, text);
 }
 private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
 {
@@ -4548,14 +4581,15 @@ contact,
 Config.WhatsApp.LoginPollInterval,
 Config.WhatsApp.LoginTimeout);
 Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
-Logger.LogInformation("Sending message to contact: {Contact}", contact);
-ImageMessagePayload imageMessagePayload = new()
+var msg = Config.WhatsApp.Message;
+var imagePath = Path.Combine(msg.ImageDirectory, msg.ImageFileName);
+var payload = new ImageMessagePayload
 {
-StoredImagePath = "E:\\Company\\whatappmessage\\superO.png",
-Caption = "This is an automated message with image."
+StoredImagePath = imagePath,
+Caption = msg.Caption
 };
 await WhatsAppChatService.SendMessageAsync(
-imageMessagePayload,
+payload,
 Config.WhatsApp.LoginPollInterval,
 Config.WhatsApp.LoginTimeout);
 Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
@@ -4787,7 +4821,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+824c57be25fbd2217ad6312cf623c6356b3db7c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -4801,6 +4835,38 @@ global using global::System.Linq;
 global using global::System.Net.Http;
 global using global::System.Threading;
 global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0-windows\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0-windows\Services.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyProductAttribute("Services")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Services")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
+[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0-windows\Services.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.Drawing;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+global using global::System.Windows.Forms;
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -5038,7 +5104,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94e1a471b9875dcb71d674cd5bee527643160ff7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

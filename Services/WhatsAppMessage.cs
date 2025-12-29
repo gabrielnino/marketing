@@ -47,21 +47,30 @@ namespace Services
         private async Task SendMessageToContact(string contact)
         {
             Logger.LogInformation("Opening chat for contact: {Contact}", contact);
+
             await WhatAppOpenChat.OpenContactChatAsync(
                 contact,
                 Config.WhatsApp.LoginPollInterval,
                 Config.WhatsApp.LoginTimeout);
+
             Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
-            Logger.LogInformation("Sending message to contact: {Contact}", contact);
-            ImageMessagePayload imageMessagePayload = new()
+
+            // Use config instead of hardcoded strings
+            var msg = Config.WhatsApp.Message; // MessageConfig
+
+            var imagePath = Path.Combine(msg.ImageDirectory, msg.ImageFileName);
+
+            var payload = new ImageMessagePayload
             {
-                StoredImagePath = "E:\\Company\\whatappmessage\\superO.png",
-                Caption = $"This is an automated message with image. Sent at {DateTimeOffset.Now:yyyy-MM-dd HH:mm:ss zzz}"
+                StoredImagePath = imagePath,
+                Caption = msg.Caption
             };
+
             await WhatsAppChatService.SendMessageAsync(
-                imageMessagePayload,
+                payload,
                 Config.WhatsApp.LoginPollInterval,
                 Config.WhatsApp.LoginTimeout);
+
             Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
         }
 
