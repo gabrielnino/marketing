@@ -1,46 +1,43 @@
-<# 
+<#
 Install-WhatsAppSender.ps1
 
-Objetivo:
-- Preparar carpetas según appsettings.json
-- Copiar goku.png a WhatsApp:Message:ImageDirectory
-- Instalar AutoIt en modo silencioso (autoit-v3-setup.exe)
-- Logs: install.log (detallado) + step-by-step.log (paso a paso) + errors.jsonl (errores)
-- Barra de progreso + mensajes descriptivos
-- Reintentos + validación + rollback básico
+Production installer for WhatsAppSender deployment folder.
 
-Requisitos:
-- Ejecutar como Administrador (para instalación y carpetas en C:\)
-- Ejecutar desde la carpeta del paquete (_publish_prod) que contiene:
-  - appsettings.json
-  - autoit-v3-setup.exe
-  - goku.png
+Adds:
+- .NET 8 Desktop Runtime check/install (optional but recommended)
+- Google Chrome x64 check/install (NEW)
+- AutoIt silent install
+- Folder creation from appsettings.json
+- Copy goku.png to configured target
+- Logs: install.log, step-by-step.log, errors.jsonl
+- Basic rollback (files/empty dirs)
+
+Run as Administrator. Windows PowerShell 5.1 compatible.
 #>
 
 [CmdletBinding()]
 param(
-  [Parameter(Mandatory=$false)]
   [string]$PackageRoot = (Get-Location).Path,
-
-  [Parameter(Mandatory=$false)]
   [string]$AppSettingsPath = (Join-Path (Get-Location).Path "appsettings.json"),
-
-  [Parameter(Mandatory=$false)]
   [string]$LogsDir = (Join-Path (Get-Location).Path "logs"),
-
-  [Parameter(Mandatory=$false)]
   [int]$RetryCount = 3,
+  [int]$RetryDelaySeconds = 2,
 
-  [Parameter(Mandatory=$false)]
-  [int]$RetryDelaySeconds = 2
+  # If you already install .NET elsewhere, set to $false.
+  [bool]$EnsureDotNet8 = $true,
+
+  # NEW: ensure Chrome is present
+  [bool]$EnsureChrome = $true
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "Continue"
 
+try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 } catch { }
+
 # ---------------------------
-# Logging helpers
+# Helpers
 # ---------------------------
 function Ensure-Dir([string]$Path) {
   if ([string]::IsNullOrWhiteSpace($Path)) { throw "Ensure-Dir received empty path." }
@@ -74,12 +71,10 @@ function Write-ErrorRecord([string]$Step, [System.Exception]$Ex) {
 
 function Invoke-Retry([string]$Name, [scriptblock]$Action) {
   for ($i=1; $i -le $RetryCount; $i++) {
-    try {
-      return & $Action
-    }
+    try { return & $Action }
     catch {
       if ($i -ge $RetryCount) { throw }
-      Write-Step "WARN: '$Name' falló (intento $i/$RetryCount). Reintentando en $RetryDelaySeconds s. Error: $($_.Exception.Message)"
+      Write-Step "WARN: '$Name' failed (attempt $i/$RetryCount). Retrying in $RetryDelaySeconds s. Error: $($_.Exception.Message)"
       Start-Sleep -Seconds $RetryDelaySeconds
     }
   }
@@ -95,6 +90,8 @@ function Set-Progress([int]$Percent, [string]$Activity, [string]$Status) {
 $CreatedDirs = New-Object System.Collections.Generic.List[string]
 $CopiedFiles = New-Object System.Collections.Generic.List[string]
 $AutoItInstalledByScript = $false
+$DotNetInstalledByScript = $false
+$ChromeInstalledByScript = $false
 
 function Track-DirIfCreated([string]$Path) {
   if (-not (Test-Path -LiteralPath $Path)) {
@@ -104,66 +101,57 @@ function Track-DirIfCreated([string]$Path) {
 }
 
 function Rollback-Basic {
-  Write-Step "Rollback: iniciando rollback básico..."
-  # Remove copied files (only those created by this run)
+  Write-Step "Rollback: starting basic rollback..."
+
   foreach ($f in $CopiedFiles) {
     try {
       if (Test-Path -LiteralPath $f) {
         Remove-Item -LiteralPath $f -Force
-        Write-Step "Rollback: eliminado archivo copiado: $f"
+        Write-Step "Rollback: removed copied file: $f"
       }
     } catch {
-      Write-Step "Rollback WARN: no se pudo eliminar archivo $f. $($_.Exception.Message)"
+      Write-Step "Rollback WARN: could not remove file $f. $($_.Exception.Message)"
     }
   }
 
-  # Remove created dirs if empty
   foreach ($d in ($CreatedDirs | Sort-Object -Descending)) {
     try {
       if (Test-Path -LiteralPath $d) {
         $items = Get-ChildItem -LiteralPath $d -Force -ErrorAction SilentlyContinue
         if (-not $items -or $items.Count -eq 0) {
           Remove-Item -LiteralPath $d -Force
-          Write-Step "Rollback: eliminado directorio vacío creado: $d"
+          Write-Step "Rollback: removed empty created dir: $d"
         }
       }
     } catch {
-      Write-Step "Rollback WARN: no se pudo eliminar directorio $d. $($_.Exception.Message)"
+      Write-Step "Rollback WARN: could not remove dir $d. $($_.Exception.Message)"
     }
   }
 
-  if ($AutoItInstalledByScript) {
-    Write-Step "Rollback NOTE: AutoIt fue instalado por este script. Desinstalación automática no aplicada (depende del instalador)."
-    Write-Step "Rollback NOTE: Si necesitas revertir, desinstala AutoIt desde 'Apps & Features' o ejecuta el uninstaller de AutoIt."
-  }
+  if ($AutoItInstalledByScript)  { Write-Step "Rollback NOTE: AutoIt installed by script. Auto-uninstall not performed." }
+  if ($DotNetInstalledByScript)  { Write-Step "Rollback NOTE: .NET installed by script. Auto-uninstall not performed." }
+  if ($ChromeInstalledByScript)  { Write-Step "Rollback NOTE: Chrome installed by script. Auto-uninstall not performed." }
 }
 
 # ---------------------------
-# Preflight checks
+# Preflight
 # ---------------------------
 try {
-  Set-Progress 2 "Instalación WhatsAppSender" "Preflight checks..."
-  Write-Step "Inicio instalación. PackageRoot=$PackageRoot"
+  Set-Progress 2 "WhatsAppSender Install" "Preflight checks..."
+  Write-Step "Install start. PackageRoot=$PackageRoot"
   Write-Step "LogsDir=$LogsDir"
 
-  # Admin check
-  $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()
-    ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-  if (-not $isAdmin) { throw "Este script debe ejecutarse como Administrador." }
+  $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).
+    IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+  if (-not $isAdmin) { throw "This script must run as Administrator." }
 
-  if (-not (Test-Path -LiteralPath $AppSettingsPath)) {
-    throw "No se encontró appsettings.json en: $AppSettingsPath"
-  }
+  if (-not (Test-Path -LiteralPath $AppSettingsPath)) { throw "Missing appsettings.json: $AppSettingsPath" }
 
   $autoItSetup = Join-Path $PackageRoot "autoit-v3-setup.exe"
-  if (-not (Test-Path -LiteralPath $autoItSetup)) {
-    throw "No se encontró autoit-v3-setup.exe en: $autoItSetup"
-  }
+  if (-not (Test-Path -LiteralPath $autoItSetup)) { throw "Missing autoit-v3-setup.exe: $autoItSetup" }
 
   $gokuSource = Join-Path $PackageRoot "goku.png"
-  if (-not (Test-Path -LiteralPath $gokuSource)) {
-    throw "No se encontró goku.png en: $gokuSource"
-  }
+  if (-not (Test-Path -LiteralPath $gokuSource)) { throw "Missing goku.png: $gokuSource" }
 
   Write-Step "Preflight OK."
 }
@@ -172,14 +160,118 @@ catch {
   throw
 }
 
-# ---------------------------
-# Read config (appsettings.json)
-# ---------------------------
-# Nota: tomamos rutas desde el paquete (ej: OutFolder, DownloadFolder, DB, ImageDirectory). :contentReference[oaicite:0]{index=0}
-$config = $null
+Start-Transcript -LiteralPath $InstallLog -Append | Out-Null
+
 try {
-  Set-Progress 8 "Instalación WhatsAppSender" "Leyendo appsettings.json..."
-  Write-Step "Leyendo configuración desde: $AppSettingsPath"
+  # ------------------------------------------------------------
+  # Step 0: Ensure .NET 8 (Desktop Runtime recommended)
+  # ------------------------------------------------------------
+  if ($EnsureDotNet8) {
+    Set-Progress 5 "WhatsAppSender Install" "Checking .NET 8..."
+    Write-Step "Step 0: checking .NET 8..."
+
+    $dotnetExe = "C:\Program Files\dotnet\dotnet.exe"
+
+    function Test-DotNet8Installed {
+      if (Test-Path -LiteralPath $dotnetExe) {
+        try {
+          $r = & $dotnetExe --list-runtimes 2>$null
+          if ($r -match "Microsoft\.NETCore\.App\s+8\.") { return $true }
+        } catch { }
+      }
+      return $false
+    }
+
+    if (Test-DotNet8Installed) {
+      Write-Step ".NET 8 already installed."
+    } else {
+      # You requested this URL earlier; leaving it as-is.
+      $dotnetUrl  = "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.416/dotnet-sdk-8.0.416-win-x64.exe"
+      $dotnetPath = Join-Path $PackageRoot "dotnet-sdk-8.0.416-win-x64.exe"
+
+      Write-Step ".NET 8 not detected. Downloading + installing..."
+
+      Invoke-Retry "Download .NET 8" {
+        Invoke-WebRequest -Uri $dotnetUrl -OutFile $dotnetPath
+      } | Out-Null
+
+      if (-not (Test-Path -LiteralPath $dotnetPath)) { throw "Download failed: .NET installer not found at $dotnetPath" }
+
+      Invoke-Retry "Install .NET 8" {
+        $p = Start-Process -FilePath $dotnetPath -ArgumentList @("/install","/quiet","/norestart") -Wait -PassThru -WindowStyle Hidden
+        if ($p.ExitCode -ne 0) { throw "dotnet installer ExitCode=$($p.ExitCode)" }
+      } | Out-Null
+
+      if (Test-Path -LiteralPath $dotnetExe) { $env:PATH = "C:\Program Files\dotnet;$env:PATH" }
+
+      if (-not (Test-DotNet8Installed)) { throw ".NET install completed but .NET 8 runtime still not detected." }
+
+      $DotNetInstalledByScript = $true
+      Write-Step ".NET 8 installed successfully."
+    }
+  }
+
+  # ------------------------------------------------------------
+  # Step 0.5: Ensure Google Chrome (x64) - NEW
+  # ------------------------------------------------------------
+  if ($EnsureChrome) {
+    Set-Progress 12 "WhatsAppSender Install" "Checking Google Chrome..."
+    Write-Step "Step 0.5: checking Google Chrome..."
+
+    $chromeExe = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+    function Test-ChromeInstalled {
+      return (Test-Path -LiteralPath $chromeExe)
+    }
+
+    if (Test-ChromeInstalled) {
+      try {
+        $ver = & $chromeExe --version 2>$null
+        Write-Step "Chrome detected: $ver"
+      } catch {
+        Write-Step "Chrome detected (version not readable)."
+      }
+    } else {
+      Write-Step "Chrome not detected. Installing Chrome Enterprise x64..."
+
+      $chromeMsiUrl  = "https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi"
+      $chromeMsiPath = Join-Path $PackageRoot "googlechromestandaloneenterprise64.msi"
+
+      Invoke-Retry "Download Chrome MSI" {
+        Write-Step "Downloading Chrome MSI..."
+        Invoke-WebRequest -Uri $chromeMsiUrl -OutFile $chromeMsiPath
+      } | Out-Null
+
+      if (-not (Test-Path -LiteralPath $chromeMsiPath)) {
+        throw "Chrome MSI download failed: $chromeMsiPath not found."
+      }
+
+      Invoke-Retry "Install Chrome MSI" {
+        Write-Step "Installing Chrome (msiexec /i ... /qn)..."
+        $p = Start-Process -FilePath "msiexec.exe" -ArgumentList @("/i", "`"$chromeMsiPath`"", "/qn", "/norestart") -Wait -PassThru -WindowStyle Hidden
+        if ($p.ExitCode -ne 0) { throw "Chrome MSI install ExitCode=$($p.ExitCode)" }
+      } | Out-Null
+
+      if (-not (Test-ChromeInstalled)) {
+        throw "Chrome install completed but chrome.exe not found at expected path: $chromeExe"
+      }
+
+      try {
+        $ver = & $chromeExe --version 2>$null
+        Write-Step "Chrome installed successfully: $ver"
+      } catch {
+        Write-Step "Chrome installed successfully."
+      }
+
+      $ChromeInstalledByScript = $true
+    }
+  }
+
+  # ------------------------------------------------------------
+  # Read config (appsettings.json)
+  # ------------------------------------------------------------
+  Set-Progress 20 "WhatsAppSender Install" "Reading appsettings.json..."
+  Write-Step "Reading config: $AppSettingsPath"
 
   $raw = Get-Content -LiteralPath $AppSettingsPath -Raw -Encoding UTF8
   $config = $raw | ConvertFrom-Json
@@ -187,7 +279,6 @@ try {
   $outFolder      = $config.Paths.OutFolder
   $downloadFolder = $config.Paths.DownloadFolder
 
-  # Parse DB path from connection string (Data Source=...;)
   $conn = $config.ConnectionStrings.DefaultConnection
   $dbPath = $null
   if ($conn -match "Data Source\s*=\s*([^;]+)") { $dbPath = $Matches[1].Trim() }
@@ -195,76 +286,50 @@ try {
   $imageDir = $config.WhatsApp.Message.ImageDirectory
   $imageFileName = $config.WhatsApp.Message.ImageFileName
 
-  if ([string]::IsNullOrWhiteSpace($outFolder))      { throw "Paths:OutFolder está vacío." }
-  if ([string]::IsNullOrWhiteSpace($downloadFolder)) { throw "Paths:DownloadFolder está vacío." }
-  if ([string]::IsNullOrWhiteSpace($dbPath))         { throw "No se pudo extraer Data Source del DefaultConnection." }
-  if ([string]::IsNullOrWhiteSpace($imageDir))       { throw "WhatsApp:Message:ImageDirectory está vacío." }
-  if ([string]::IsNullOrWhiteSpace($imageFileName))  { throw "WhatsApp:Message:ImageFileName está vacío." }
+  if ([string]::IsNullOrWhiteSpace($outFolder))      { throw "Paths:OutFolder is empty." }
+  if ([string]::IsNullOrWhiteSpace($downloadFolder)) { throw "Paths:DownloadFolder is empty." }
+  if ([string]::IsNullOrWhiteSpace($dbPath))         { throw "Could not parse DB path from DefaultConnection (Data Source=...;)." }
+  if ([string]::IsNullOrWhiteSpace($imageDir))       { throw "WhatsApp:Message:ImageDirectory is empty." }
+  if ([string]::IsNullOrWhiteSpace($imageFileName))  { throw "WhatsApp:Message:ImageFileName is empty." }
 
   Write-Step "Config OK: OutFolder=$outFolder; DownloadFolder=$downloadFolder; DbPath=$dbPath; ImageDir=$imageDir; ImageFileName=$imageFileName"
-}
-catch {
-  Write-ErrorRecord "ReadConfig" $_.Exception
-  throw
-}
 
-# ---------------------------
-# Start transcript (detailed install log)
-# ---------------------------
-Start-Transcript -LiteralPath $InstallLog -Append | Out-Null
+  # ------------------------------------------------------------
+  # Step A: Create folder structure
+  # ------------------------------------------------------------
+  Set-Progress 35 "WhatsAppSender Install" "Creating folder structure..."
+  Write-Step "Step A: creating/validating folders..."
 
-try {
-  # ---------------------------
-  # Step A: Ensure directory structure
-  # ---------------------------
-  Set-Progress 20 "Instalación WhatsAppSender" "Creando estructura de carpetas..."
-  Write-Step "Paso A: creando/validando carpetas..."
-
-  Invoke-Retry "Create OutFolder" {
-    Track-DirIfCreated $outFolder
-  } | Out-Null
-
-  Invoke-Retry "Create DownloadFolder" {
-    Track-DirIfCreated $downloadFolder
-  } | Out-Null
+  Invoke-Retry "Create OutFolder"      { Track-DirIfCreated $outFolder } | Out-Null
+  Invoke-Retry "Create DownloadFolder" { Track-DirIfCreated $downloadFolder } | Out-Null
 
   $dbDir = Split-Path -Parent $dbPath
-  Invoke-Retry "Create DbFolder" {
-    Track-DirIfCreated $dbDir
-  } | Out-Null
+  Invoke-Retry "Create DbFolder"       { Track-DirIfCreated $dbDir } | Out-Null
 
-  Invoke-Retry "Create ImageDirectory" {
-    Track-DirIfCreated $imageDir
-  } | Out-Null
+  Invoke-Retry "Create ImageDirectory" { Track-DirIfCreated $imageDir } | Out-Null
 
-  Write-Step "Paso A OK."
+  Write-Step "Step A OK."
 
-  # ---------------------------
+  # ------------------------------------------------------------
   # Step B: Copy image
-  # ---------------------------
-  Set-Progress 40 "Instalación WhatsAppSender" "Copiando imagen goku.png..."
-  Write-Step "Paso B: copiando imagen..."
+  # ------------------------------------------------------------
+  Set-Progress 50 "WhatsAppSender Install" "Copying goku.png..."
+  Write-Step "Step B: copying image..."
 
   $gokuDest = Join-Path $imageDir $imageFileName
-  Invoke-Retry "Copy goku.png" {
-    Copy-Item -LiteralPath $gokuSource -Destination $gokuDest -Force
-  } | Out-Null
-
+  Invoke-Retry "Copy goku.png" { Copy-Item -LiteralPath $gokuSource -Destination $gokuDest -Force } | Out-Null
   $CopiedFiles.Add($gokuDest) | Out-Null
 
-  if (-not (Test-Path -LiteralPath $gokuDest)) {
-    throw "Validación falló: no existe la imagen en destino: $gokuDest"
-  }
-  Write-Step "Paso B OK: imagen copiada a $gokuDest"
+  if (-not (Test-Path -LiteralPath $gokuDest)) { throw "Validation failed: image not found at destination: $gokuDest" }
+  Write-Step "Step B OK: image copied to $gokuDest"
 
-  # ---------------------------
+  # ------------------------------------------------------------
   # Step C: Install AutoIt silently (if not installed)
-  # ---------------------------
-  Set-Progress 60 "Instalación WhatsAppSender" "Verificando/instalando AutoIt..."
-  Write-Step "Paso C: verificación/instalación AutoIt..."
+  # ------------------------------------------------------------
+  Set-Progress 65 "WhatsAppSender Install" "Checking/installing AutoIt..."
+  Write-Step "Step C: AutoIt check/install..."
 
   function Test-AutoItInstalled {
-    # Heurística: buscar AutoIt en registro
     $regPaths = @(
       "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*",
       "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
@@ -273,11 +338,14 @@ try {
     foreach ($p in $regPaths) {
       $apps = Get-ItemProperty -Path $p -ErrorAction SilentlyContinue
       foreach ($a in $apps) {
-        if ($a.DisplayName -and $a.DisplayName -match "AutoIt") { return $true }
+        $dnProp = $a.PSObject.Properties["DisplayName"]
+        if ($null -ne $dnProp) {
+          $dn = [string]$dnProp.Value
+          if ($dn -match "AutoIt") { return $true }
+        }
       }
     }
 
-    # Fallback: exe typical paths
     $candidates = @(
       "$env:ProgramFiles\AutoIt3\AutoIt3.exe",
       "${env:ProgramFiles(x86)}\AutoIt3\AutoIt3.exe"
@@ -285,55 +353,63 @@ try {
     return ($candidates | Where-Object { Test-Path -LiteralPath $_ } | Measure-Object).Count -gt 0
   }
 
-  $autoItAlready = Test-AutoItInstalled
-  if ($autoItAlready) {
-    Write-Step "AutoIt ya está instalado. Se omite instalación."
+  if (Test-AutoItInstalled) {
+    Write-Step "AutoIt already installed. Skipping."
   } else {
-    Write-Step "AutoIt no detectado. Instalando en modo silencioso..."
+    Write-Step "AutoIt not detected. Installing silently (argument fallback)..."
 
-    # Nota: muchos installers de AutoIt aceptan /S (silencioso). Si tu build requiere otro switch, ajústalo aquí.
-    # Probables switches: /S, /silent, /verysilent. Se usa /S por defecto.
-    $args = "/S"
+    $installArgsCandidates = @(
+      @("/S"),
+      @("/silent"),
+      @("/verysilent"),
+      @("/SILENT"),
+      @("/VERYSILENT")
+    )
 
-    Invoke-Retry "Install AutoIt" {
-      $p = Start-Process -FilePath $autoItSetup -ArgumentList $args -Wait -PassThru -WindowStyle Hidden
-      if ($p.ExitCode -ne 0) {
-        throw "AutoIt installer retornó ExitCode=$($p.ExitCode)"
+    $installed = $false
+    foreach ($candidate in $installArgsCandidates) {
+      try {
+        Write-Step "Trying AutoIt install args: $($candidate -join ' ')"
+        $p = Start-Process -FilePath $autoItSetup -ArgumentList $candidate -Wait -PassThru -WindowStyle Hidden
+        if ($p.ExitCode -ne 0) { throw "ExitCode=$($p.ExitCode)" }
+
+        Start-Sleep -Seconds 2
+        if (Test-AutoItInstalled) { $installed = $true; break }
       }
-    } | Out-Null
+      catch {
+        Write-Step "WARN: install attempt with '$($candidate -join ' ')' failed: $($_.Exception.Message)"
+      }
+    }
 
-    Start-Sleep -Seconds 2
-
-    if (-not (Test-AutoItInstalled)) {
-      throw "Validación falló: AutoIt no quedó instalado (no se detecta en registro ni en Program Files)."
+    if (-not $installed) {
+      throw "AutoIt silent install failed with all tested switches."
     }
 
     $AutoItInstalledByScript = $true
-    Write-Step "AutoIt instalado correctamente."
+    Write-Step "AutoIt installed successfully."
   }
 
-  # ---------------------------
-  # Step D: Validate final state
-  # ---------------------------
-  Set-Progress 85 "Instalación WhatsAppSender" "Validando estado final..."
-  Write-Step "Paso D: validación final..."
+  # ------------------------------------------------------------
+  # Step D: Final validation + Chrome presence
+  # ------------------------------------------------------------
+  Set-Progress 90 "WhatsAppSender Install" "Final validation..."
+  Write-Step "Step D: final validation..."
 
-  # Check essential paths exist
   foreach ($p in @($outFolder, $downloadFolder, $dbDir, $imageDir)) {
-    if (-not (Test-Path -LiteralPath $p)) { throw "Validación falló: carpeta requerida no existe: $p" }
+    if (-not (Test-Path -LiteralPath $p)) { throw "Validation failed: required folder missing: $p" }
   }
-  if (-not (Test-Path -LiteralPath $gokuDest)) { throw "Validación falló: imagen no existe: $gokuDest" }
+  if (-not (Test-Path -LiteralPath $gokuDest)) { throw "Validation failed: image missing: $gokuDest" }
 
-  Write-Step "Paso D OK."
+  if ($EnsureChrome) {
+    $chromeExe = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    if (-not (Test-Path -LiteralPath $chromeExe)) {
+      throw "Validation failed: Chrome not found at: $chromeExe"
+    }
+  }
 
-  Set-Progress 100 "Instalación WhatsAppSender" "Instalación completada."
-  Write-Step "Instalación completada OK."
-
-  Write-Host ""
-  Write-Host "Siguientes pasos (manuales):"
-  Write-Host "1) Copiar toda la carpeta del publish a la máquina de producción (misma estructura)."
-  Write-Host "2) Ejecutar este script en producción como Administrador."
-  Write-Host "3) Crear la tarea programada (lo hacemos en el siguiente paso)."
+  Write-Step "Step D OK."
+  Set-Progress 100 "WhatsAppSender Install" "Install completed."
+  Write-Step "Install completed OK."
 }
 catch {
   Write-ErrorRecord "InstallFlow" $_.Exception
@@ -342,18 +418,13 @@ catch {
   throw
 }
 finally {
-  Stop-Transcript | Out-Null
-  Write-Progress -Activity "Instalación WhatsAppSender" -Completed
+  try { Stop-Transcript | Out-Null } catch { }
+  Write-Progress -Activity "WhatsAppSender Install" -Completed
 }
 
-<# 
-LOGS generados:
-- logs\install.log        -> transcript detallado (stdout/stderr y acciones)
-- logs\step-by-step.log   -> pasos ejecutados + warnings
-- logs\errors.jsonl       -> errores estructurados (1 JSON por línea)
-
-Rollback básico:
-- elimina archivos copiados por este script
-- elimina directorios creados por este script si quedan vacíos
-- no desinstala AutoIt automáticamente (por seguridad); deja instrucción
+<#
+Logs:
+- logs\install.log
+- logs\step-by-step.log
+- logs\errors.jsonl
 #>

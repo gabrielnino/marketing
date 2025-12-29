@@ -67,12 +67,40 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 === FILE: F:\Marketing\Application\obj\Debug\net8.0\Application.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Application\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Application\obj\Release\net8.0\Application.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyProductAttribute("Application")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Application")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Application\obj\Release\net8.0\Application.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;
@@ -594,7 +622,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -658,6 +686,28 @@ global using global::System.Threading.Tasks;
 using System;
 using System.Reflection;
 [assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\Bootstrapper.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\Bootstrapper.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\Console.Bootstrapper.AssemblyInfo.cs ===
 
@@ -821,7 +871,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -849,7 +899,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f7b61cc657b6b85a6c4b54e1aee2477c28bbe28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1133,7 +1183,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1161,7 +1211,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f7b61cc657b6b85a6c4b54e1aee2477c28bbe28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1275,12 +1325,40 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 === FILE: F:\Marketing\Domain\obj\Debug\net8.0\Domain.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Domain\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Domain\obj\Release\net8.0\Domain.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyProductAttribute("Domain")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Domain\obj\Release\net8.0\Domain.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;
@@ -1326,12 +1404,40 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2889c604867e086d29f73bae138892e6e430cba5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\Infrastructure.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\Infrastructure.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\Infrastructure.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;
@@ -2678,7 +2784,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2970,12 +3076,40 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f69044b1c8e17b1586ebe3470a52fa586c2ee1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 === FILE: F:\Marketing\Persistence\obj\Debug\net8.0\Persistence.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Persistence\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Persistence\obj\Release\net8.0\Persistence.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Persistence\obj\Release\net8.0\Persistence.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;
@@ -3148,7 +3282,8 @@ return timestamp;
 
 === FILE: F:\Marketing\Services\ChromeDriverFactory.cs ===
 
-﻿using System.Collections.Concurrent;
+﻿
+using System.Collections.Concurrent;
 using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
@@ -3160,113 +3295,151 @@ public sealed class ChromeDriverFactory : IWebDriverFactory, IDisposable
 {
 private readonly ILogger<ChromeDriverFactory> _logger;
 private readonly AppConfig _appConfig;
-private readonly ChromeDriverService _driverService;
 private readonly ConcurrentBag<IWebDriver> _createdDrivers = new();
 private bool _disposed;
 public ChromeDriverFactory(ILogger<ChromeDriverFactory> logger, AppConfig appConfig)
 {
 _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 _appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
-_driverService = ChromeDriverService.CreateDefaultService();
-_driverService.HideCommandPromptWindow = true;
 }
 public IWebDriver Create(bool hide = false)
 {
 ThrowIfDisposed();
 var downloadFolder = EnsureDownloadFolder();
 var options = hide
-? GetHeadlessOptions(downloadFolder)
-: GetDefaultOptions(downloadFolder);
+? BuildHeadlessOptions(downloadFolder)
+: BuildDefaultOptions(downloadFolder);
 return CreateDriver(options);
 }
 public IWebDriver Create(Action<ChromeOptions> configureOptions)
 {
 ThrowIfDisposed();
-if (configureOptions is null) throw new ArgumentNullException(nameof(configureOptions));
+if (configureOptions is null)
+throw new ArgumentNullException(nameof(configureOptions));
 var downloadFolder = EnsureDownloadFolder();
-var options = GetDefaultOptions(downloadFolder);
+var options = BuildDefaultOptions(downloadFolder);
 configureOptions(options);
 return CreateDriver(options);
 }
 public ChromeOptions GetDefaultOptions(string downloadFolder)
 {
-if (string.IsNullOrWhiteSpace(downloadFolder))
-throw new ArgumentNullException(nameof(downloadFolder));
-var options = new ChromeOptions();
-options.AddArguments("--start-maximized");
-options.AddExcludedArgument("enable-automation");
-options.AddAdditionalOption("useAutomationExtension", false);
-ConfigureDownloads(downloadFolder, options);
-return options;
-}
-private static ChromeOptions GetHeadlessOptions(string downloadFolder)
-{
-if (string.IsNullOrWhiteSpace(downloadFolder))
-throw new ArgumentNullException(nameof(downloadFolder));
-var options = new ChromeOptions();
-options.AddArguments("--headless=new");
-options.AddArguments("--disable-gpu");
-options.AddArguments("--window-size=1920,1080");
-options.AddArguments("--start-maximized");
-options.AddExcludedArgument("enable-automation");
-options.AddAdditionalOption("useAutomationExtension", false);
-ConfigureDownloads(downloadFolder, options);
-return options;
+ThrowIfDisposed();
+return BuildDefaultOptions(downloadFolder);
 }
 private IWebDriver CreateDriver(ChromeOptions options)
 {
+var baseDir = AppContext.BaseDirectory;
+var service = ChromeDriverService.CreateDefaultService(baseDir);
+service.HideCommandPromptWindow = true;
+service.SuppressInitialDiagnosticInformation = false;
+var logsRoot = Path.Combine(
+Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+"WhatsAppSender",
+"chromedriver-logs"
+);
+Directory.CreateDirectory(logsRoot);
+var logPath = Path.Combine(
+logsRoot,
+$"chromedriver_{DateTime.UtcNow:yyyyMMdd_HHmmss_fff}_{Environment.ProcessId}.log"
+);
 try
 {
-_logger.LogInformation("Creating new ChromeDriver instance");
-var driver = new ChromeDriver(_driverService, options);
-SetTimeouts(driver);
+service.EnableVerboseLogging = true;
+service.LogPath = logPath;
+}
+catch (Exception ex)
+{
+_logger.LogWarning(ex, "Unable to enable ChromeDriver verbose logging.");
+}
+_logger.LogInformation("Creating ChromeDriver. BaseDir={BaseDir}", baseDir);
+_logger.LogInformation("ChromeDriver log: {LogPath}", logPath);
+try
+{
+var driver = new ChromeDriver(service, options);
+driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(60);
+driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
 _createdDrivers.Add(driver);
 return driver;
 }
 catch (Exception ex)
 {
-_logger.LogError(ex, "Failed to create ChromeDriver");
+_logger.LogError(ex, "Failed to create ChromeDriver. See log: {LogPath}", logPath);
 throw new WebDriverException("Failed to initialize ChromeDriver", ex);
 }
 }
-private static void SetTimeouts(IWebDriver driver)
+private ChromeOptions BuildDefaultOptions(string downloadFolder)
 {
-driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
-driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(10);
-}
-private string EnsureDownloadFolder()
-{
-var downloadFolder = _appConfig?.Paths?.DownloadFolder;
 if (string.IsNullOrWhiteSpace(downloadFolder))
-throw new InvalidOperationException("AppConfig.Paths.DownloadFolder is missing or empty.");
-Directory.CreateDirectory(downloadFolder);
-return downloadFolder;
+throw new ArgumentNullException(nameof(downloadFolder));
+var options = new ChromeOptions();
+var userDataDir = CreateFreshUserDataDir();
+options.AddArgument($"--user-data-dir={userDataDir}");
+options.AddArgument("--no-first-run");
+options.AddArgument("--no-default-browser-check");
+options.AddArgument("--disable-extensions");
+options.AddArgument("--disable-notifications");
+options.AddArgument("--disable-popup-blocking");
+options.AddArgument("--disable-gpu");
+options.AddArgument("--disable-dev-shm-usage");
+options.AddArgument("--no-sandbox");
+options.AddArgument("--remote-allow-origins=*");
+options.AddExcludedArgument("enable-automation");
+options.AddAdditionalOption("useAutomationExtension", false);
+ConfigureDownloads(downloadFolder, options);
+options.SetLoggingPreference(LogType.Browser, OpenQA.Selenium.LogLevel.All);
+options.SetLoggingPreference(LogType.Driver, OpenQA.Selenium.LogLevel.All);
+options.SetLoggingPreference(LogType.Performance, OpenQA.Selenium.LogLevel.All);
+return options;
+}
+private ChromeOptions BuildHeadlessOptions(string downloadFolder)
+{
+var options = BuildDefaultOptions(downloadFolder);
+options.AddArgument("--headless=new");
+options.AddArgument("--window-size=1280,900");
+return options;
 }
 private static void ConfigureDownloads(string downloadFolder, ChromeOptions options)
 {
+Directory.CreateDirectory(downloadFolder);
 options.AddUserProfilePreference("download.default_directory", downloadFolder);
 options.AddUserProfilePreference("download.prompt_for_download", false);
-options.AddUserProfilePreference("profile.default_content_settings.popups", 0);
+options.AddUserProfilePreference("download.directory_upgrade", true);
 options.AddUserProfilePreference("safebrowsing.enabled", true);
-options.AddUserProfilePreference("plugins.always_open_pdf_externally", true);
+}
+private string EnsureDownloadFolder()
+{
+var configured = _appConfig?.Paths?.DownloadFolder;
+var folder = string.IsNullOrWhiteSpace(configured)
+? Path.Combine(
+Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+"WhatsAppSender",
+"downloads")
+: configured;
+Directory.CreateDirectory(folder);
+return folder;
+}
+private static string CreateFreshUserDataDir()
+{
+var root = Path.Combine(Path.GetTempPath(), "WhatsAppSender", "chrome-profiles");
+Directory.CreateDirectory(root);
+var dir = Path.Combine(root, Guid.NewGuid().ToString("N"));
+Directory.CreateDirectory(dir);
+return dir;
+}
+private void ThrowIfDisposed()
+{
+if (_disposed)
+throw new ObjectDisposedException(nameof(ChromeDriverFactory));
 }
 public void Dispose()
 {
 if (_disposed) return;
 _disposed = true;
-while (_createdDrivers.TryTake(out var driver))
+while (_createdDrivers.TryTake(out var d))
 {
-try { driver.Quit(); } catch {  }
-try { driver.Dispose(); } catch {  }
-}
-try { _driverService.Dispose(); } catch {  }
-}
-private void ThrowIfDisposed()
-{
-if (_disposed)
-{
-throw new ObjectDisposedException(nameof(ChromeDriverFactory));
+try { d.Quit(); } catch {  }
+try { d.Dispose(); } catch {  }
 }
 }
 }
@@ -4821,7 +4994,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -4881,7 +5054,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f7b61cc657b6b85a6c4b54e1aee2477c28bbe28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -5104,12 +5277,68 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a35f9d168c66b495994185cfcaec0673196ed14f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\WhatsAppSender.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fb3be0dd9a043a8eda3c9eb229cb31d9c15e5b0")]
+[assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\WhatsAppSender.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\win-x64\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\win-x64\WhatsAppSender.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\win-x64\WhatsAppSender.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;

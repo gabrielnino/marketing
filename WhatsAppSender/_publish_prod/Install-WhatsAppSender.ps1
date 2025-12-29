@@ -1,22 +1,18 @@
 <#
 Install-WhatsAppSender.ps1
 
-End-to-end installer for production "raw" deployment folder.
+Production installer for WhatsAppSender deployment folder.
 
-What it does:
-1) Checks/installs .NET 8 SDK x64 (from builds.dotnet.microsoft.com) if missing
-2) Reads appsettings.json to get folder paths and image target
-3) Creates required directories
-4) Copies goku.png to configured ImageDirectory/ImageFileName
-5) Installs AutoIt silently (autoit-v3-setup.exe) if missing
-6) Writes logs:
-   - logs\install.log        (full transcript)
-   - logs\step-by-step.log   (step trace)
-   - logs\errors.jsonl       (structured errors)
-7) Basic rollback (copied files + empty created dirs)
+Adds:
+- .NET 8 Desktop Runtime check/install (optional but recommended)
+- Google Chrome x64 check/install (NEW)
+- AutoIt silent install
+- Folder creation from appsettings.json
+- Copy goku.png to configured target
+- Logs: install.log, step-by-step.log, errors.jsonl
+- Basic rollback (files/empty dirs)
 
-Run as Administrator.
-Tested for Windows PowerShell 5.1 compatibility (ASCII-only, no smart quotes).
+Run as Administrator. Windows PowerShell 5.1 compatible.
 #>
 
 [CmdletBinding()]
@@ -25,20 +21,23 @@ param(
   [string]$AppSettingsPath = (Join-Path (Get-Location).Path "appsettings.json"),
   [string]$LogsDir = (Join-Path (Get-Location).Path "logs"),
   [int]$RetryCount = 3,
-  [int]$RetryDelaySeconds = 2
+  [int]$RetryDelaySeconds = 2,
+
+  # If you already install .NET elsewhere, set to $false.
+  [bool]$EnsureDotNet8 = $true,
+
+  # NEW: ensure Chrome is present
+  [bool]$EnsureChrome = $true
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "Continue"
 
-# Ensure TLS 1.2 for downloads on WinPS 5.1
-try {
-  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-} catch { }
+try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 } catch { }
 
 # ---------------------------
-# Helpers: filesystem
+# Helpers
 # ---------------------------
 function Ensure-Dir([string]$Path) {
   if ([string]::IsNullOrWhiteSpace($Path)) { throw "Ensure-Dir received empty path." }
@@ -47,9 +46,6 @@ function Ensure-Dir([string]$Path) {
   }
 }
 
-# ---------------------------
-# Helpers: logging
-# ---------------------------
 Ensure-Dir $LogsDir
 $InstallLog = Join-Path $LogsDir "install.log"
 $StepLog    = Join-Path $LogsDir "step-by-step.log"
@@ -95,6 +91,7 @@ $CreatedDirs = New-Object System.Collections.Generic.List[string]
 $CopiedFiles = New-Object System.Collections.Generic.List[string]
 $AutoItInstalledByScript = $false
 $DotNetInstalledByScript = $false
+$ChromeInstalledByScript = $false
 
 function Track-DirIfCreated([string]$Path) {
   if (-not (Test-Path -LiteralPath $Path)) {
@@ -131,12 +128,9 @@ function Rollback-Basic {
     }
   }
 
-  if ($AutoItInstalledByScript) {
-    Write-Step "Rollback NOTE: AutoIt was installed by this script. Uninstall is not performed automatically."
-  }
-  if ($DotNetInstalledByScript) {
-    Write-Step "Rollback NOTE: .NET SDK was installed by this script. Uninstall is not performed automatically."
-  }
+  if ($AutoItInstalledByScript)  { Write-Step "Rollback NOTE: AutoIt installed by script. Auto-uninstall not performed." }
+  if ($DotNetInstalledByScript)  { Write-Step "Rollback NOTE: .NET installed by script. Auto-uninstall not performed." }
+  if ($ChromeInstalledByScript)  { Write-Step "Rollback NOTE: Chrome installed by script. Auto-uninstall not performed." }
 }
 
 # ---------------------------
@@ -170,73 +164,113 @@ Start-Transcript -LiteralPath $InstallLog -Append | Out-Null
 
 try {
   # ------------------------------------------------------------
-  # Step 0: Check & Install .NET 8 (SDK) x64 if missing
+  # Step 0: Ensure .NET 8 (Desktop Runtime recommended)
   # ------------------------------------------------------------
-  Set-Progress 5 "WhatsAppSender Install" "Checking .NET 8..."
-  Write-Step "Step 0: checking .NET 8 installation..."
+  if ($EnsureDotNet8) {
+    Set-Progress 5 "WhatsAppSender Install" "Checking .NET 8..."
+    Write-Step "Step 0: checking .NET 8..."
 
-  $dotnetExe = "C:\Program Files\dotnet\dotnet.exe"
+    $dotnetExe = "C:\Program Files\dotnet\dotnet.exe"
 
-  function Test-DotNet8Installed {
-    if (Test-Path -LiteralPath $dotnetExe) {
-      try {
-        $r = & $dotnetExe --list-runtimes 2>$null
-        if ($r -match "Microsoft\.NETCore\.App\s+8\.") { return $true }
-      } catch { }
+    function Test-DotNet8Installed {
+      if (Test-Path -LiteralPath $dotnetExe) {
+        try {
+          $r = & $dotnetExe --list-runtimes 2>$null
+          if ($r -match "Microsoft\.NETCore\.App\s+8\.") { return $true }
+        } catch { }
+      }
+      return $false
     }
 
-    # Fallback: PATH lookup
-    try {
-      $cmd = Get-Command dotnet -ErrorAction SilentlyContinue
-      if ($null -ne $cmd) {
-        $r2 = & $cmd.Source --list-runtimes 2>$null
-        if ($r2 -match "Microsoft\.NETCore\.App\s+8\.") { return $true }
-      }
-    } catch { }
+    if (Test-DotNet8Installed) {
+      Write-Step ".NET 8 already installed."
+    } else {
+      # You requested this URL earlier; leaving it as-is.
+      $dotnetUrl  = "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.416/dotnet-sdk-8.0.416-win-x64.exe"
+      $dotnetPath = Join-Path $PackageRoot "dotnet-sdk-8.0.416-win-x64.exe"
 
-    return $false
+      Write-Step ".NET 8 not detected. Downloading + installing..."
+
+      Invoke-Retry "Download .NET 8" {
+        Invoke-WebRequest -Uri $dotnetUrl -OutFile $dotnetPath
+      } | Out-Null
+
+      if (-not (Test-Path -LiteralPath $dotnetPath)) { throw "Download failed: .NET installer not found at $dotnetPath" }
+
+      Invoke-Retry "Install .NET 8" {
+        $p = Start-Process -FilePath $dotnetPath -ArgumentList @("/install","/quiet","/norestart") -Wait -PassThru -WindowStyle Hidden
+        if ($p.ExitCode -ne 0) { throw "dotnet installer ExitCode=$($p.ExitCode)" }
+      } | Out-Null
+
+      if (Test-Path -LiteralPath $dotnetExe) { $env:PATH = "C:\Program Files\dotnet;$env:PATH" }
+
+      if (-not (Test-DotNet8Installed)) { throw ".NET install completed but .NET 8 runtime still not detected." }
+
+      $DotNetInstalledByScript = $true
+      Write-Step ".NET 8 installed successfully."
+    }
   }
 
-  if (Test-DotNet8Installed) {
-    Write-Step ".NET 8 already installed."
-  } else {
-    Write-Step ".NET 8 not detected. Installing .NET 8 SDK x64 silently..."
+  # ------------------------------------------------------------
+  # Step 0.5: Ensure Google Chrome (x64) - NEW
+  # ------------------------------------------------------------
+  if ($EnsureChrome) {
+    Set-Progress 12 "WhatsAppSender Install" "Checking Google Chrome..."
+    Write-Step "Step 0.5: checking Google Chrome..."
 
-    $dotnetUrl  = "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.416/dotnet-sdk-8.0.416-win-x64.exe"
-    $dotnetPath = Join-Path $PackageRoot "dotnet-sdk-8.0.416-win-x64.exe"
+    $chromeExe = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-    Invoke-Retry "Download .NET 8 SDK" {
-      Write-Step "Downloading: $dotnetUrl"
-      Invoke-WebRequest -Uri $dotnetUrl -OutFile $dotnetPath
-    } | Out-Null
-
-    if (-not (Test-Path -LiteralPath $dotnetPath)) {
-      throw "Download failed: .NET installer not found at $dotnetPath"
+    function Test-ChromeInstalled {
+      return (Test-Path -LiteralPath $chromeExe)
     }
 
-    Invoke-Retry "Install .NET 8 SDK" {
-      Write-Step "Installing .NET 8 SDK (silent)..."
-      $p = Start-Process -FilePath $dotnetPath -ArgumentList @("/install","/quiet","/norestart") -Wait -PassThru -WindowStyle Hidden
-      if ($p.ExitCode -ne 0) { throw "dotnet installer ExitCode=$($p.ExitCode)" }
-    } | Out-Null
+    if (Test-ChromeInstalled) {
+      try {
+        $ver = & $chromeExe --version 2>$null
+        Write-Step "Chrome detected: $ver"
+      } catch {
+        Write-Step "Chrome detected (version not readable)."
+      }
+    } else {
+      Write-Step "Chrome not detected. Installing Chrome Enterprise x64..."
 
-    # Ensure PATH for current session
-    if (Test-Path -LiteralPath $dotnetExe) {
-      $env:PATH = "C:\Program Files\dotnet;$env:PATH"
+      $chromeMsiUrl  = "https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi"
+      $chromeMsiPath = Join-Path $PackageRoot "googlechromestandaloneenterprise64.msi"
+
+      Invoke-Retry "Download Chrome MSI" {
+        Write-Step "Downloading Chrome MSI..."
+        Invoke-WebRequest -Uri $chromeMsiUrl -OutFile $chromeMsiPath
+      } | Out-Null
+
+      if (-not (Test-Path -LiteralPath $chromeMsiPath)) {
+        throw "Chrome MSI download failed: $chromeMsiPath not found."
+      }
+
+      Invoke-Retry "Install Chrome MSI" {
+        Write-Step "Installing Chrome (msiexec /i ... /qn)..."
+        $p = Start-Process -FilePath "msiexec.exe" -ArgumentList @("/i", "`"$chromeMsiPath`"", "/qn", "/norestart") -Wait -PassThru -WindowStyle Hidden
+        if ($p.ExitCode -ne 0) { throw "Chrome MSI install ExitCode=$($p.ExitCode)" }
+      } | Out-Null
+
+      if (-not (Test-ChromeInstalled)) {
+        throw "Chrome install completed but chrome.exe not found at expected path: $chromeExe"
+      }
+
+      try {
+        $ver = & $chromeExe --version 2>$null
+        Write-Step "Chrome installed successfully: $ver"
+      } catch {
+        Write-Step "Chrome installed successfully."
+      }
+
+      $ChromeInstalledByScript = $true
     }
-
-    if (-not (Test-DotNet8Installed)) {
-      throw ".NET install completed but .NET 8 runtime still not detected."
-    }
-
-    $DotNetInstalledByScript = $true
-    Write-Step ".NET 8 installed successfully."
   }
 
   # ------------------------------------------------------------
   # Read config (appsettings.json)
   # ------------------------------------------------------------
-  Set-Progress 10 "WhatsAppSender Install" "Reading appsettings.json..."
+  Set-Progress 20 "WhatsAppSender Install" "Reading appsettings.json..."
   Write-Step "Reading config: $AppSettingsPath"
 
   $raw = Get-Content -LiteralPath $AppSettingsPath -Raw -Encoding UTF8
@@ -263,7 +297,7 @@ try {
   # ------------------------------------------------------------
   # Step A: Create folder structure
   # ------------------------------------------------------------
-  Set-Progress 25 "WhatsAppSender Install" "Creating folder structure..."
+  Set-Progress 35 "WhatsAppSender Install" "Creating folder structure..."
   Write-Step "Step A: creating/validating folders..."
 
   Invoke-Retry "Create OutFolder"      { Track-DirIfCreated $outFolder } | Out-Null
@@ -279,7 +313,7 @@ try {
   # ------------------------------------------------------------
   # Step B: Copy image
   # ------------------------------------------------------------
-  Set-Progress 45 "WhatsAppSender Install" "Copying goku.png..."
+  Set-Progress 50 "WhatsAppSender Install" "Copying goku.png..."
   Write-Step "Step B: copying image..."
 
   $gokuDest = Join-Path $imageDir $imageFileName
@@ -356,7 +390,7 @@ try {
   }
 
   # ------------------------------------------------------------
-  # Step D: Final validation
+  # Step D: Final validation + Chrome presence
   # ------------------------------------------------------------
   Set-Progress 90 "WhatsAppSender Install" "Final validation..."
   Write-Step "Step D: final validation..."
@@ -365,6 +399,13 @@ try {
     if (-not (Test-Path -LiteralPath $p)) { throw "Validation failed: required folder missing: $p" }
   }
   if (-not (Test-Path -LiteralPath $gokuDest)) { throw "Validation failed: image missing: $gokuDest" }
+
+  if ($EnsureChrome) {
+    $chromeExe = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    if (-not (Test-Path -LiteralPath $chromeExe)) {
+      throw "Validation failed: Chrome not found at: $chromeExe"
+    }
+  }
 
   Write-Step "Step D OK."
   Set-Progress 100 "WhatsAppSender Install" "Install completed."
