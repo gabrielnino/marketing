@@ -622,7 +622,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -871,7 +871,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2784,7 +2784,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3282,166 +3282,86 @@ return timestamp;
 
 === FILE: F:\Marketing\Services\ChromeDriverFactory.cs ===
 
-﻿
-using System.Collections.Concurrent;
-using Configuration;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Services.Interfaces;
-namespace Services
-{
-public sealed class ChromeDriverFactory : IWebDriverFactory, IDisposable
+using System;
+using System.IO;
+namespace Services;
+public sealed class ChromeDriverFactory : IWebDriverFactory
 {
 private readonly ILogger<ChromeDriverFactory> _logger;
-private readonly AppConfig _appConfig;
-private readonly ConcurrentBag<IWebDriver> _createdDrivers = new();
-private bool _disposed;
-public ChromeDriverFactory(ILogger<ChromeDriverFactory> logger, AppConfig appConfig)
+public ChromeDriverFactory(ILogger<ChromeDriverFactory> logger)
 {
-_logger = logger ?? throw new ArgumentNullException(nameof(logger));
-_appConfig = appConfig ?? throw new ArgumentNullException(nameof(appConfig));
+_logger = logger;
 }
-public IWebDriver Create(bool hide = false)
+public IWebDriver Create(bool hide)
 {
-ThrowIfDisposed();
-var downloadFolder = EnsureDownloadFolder();
-var options = hide
-? BuildHeadlessOptions(downloadFolder)
-: BuildDefaultOptions(downloadFolder);
+var options = BuildDefaultOptions(hide);
 return CreateDriver(options);
 }
-public IWebDriver Create(Action<ChromeOptions> configureOptions)
+public IWebDriver Create(Action<ChromeOptions> configure)
 {
-ThrowIfDisposed();
-if (configureOptions is null)
-throw new ArgumentNullException(nameof(configureOptions));
-var downloadFolder = EnsureDownloadFolder();
-var options = BuildDefaultOptions(downloadFolder);
-configureOptions(options);
+var options = BuildDefaultOptions(hide: false);
+configure?.Invoke(options);
 return CreateDriver(options);
 }
-public ChromeOptions GetDefaultOptions(string downloadFolder)
+public ChromeOptions GetDefaultOptions(string mode)
 {
-ThrowIfDisposed();
-return BuildDefaultOptions(downloadFolder);
+var hide = mode.Equals("headless", StringComparison.OrdinalIgnoreCase);
+return BuildDefaultOptions(hide);
 }
 private IWebDriver CreateDriver(ChromeOptions options)
 {
-var baseDir = AppContext.BaseDirectory;
-var service = ChromeDriverService.CreateDefaultService(baseDir);
-service.HideCommandPromptWindow = true;
-service.SuppressInitialDiagnosticInformation = false;
-var logsRoot = Path.Combine(
+try
+{
+var logDir = Path.Combine(
 Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
 "WhatsAppSender",
 "chromedriver-logs"
 );
-Directory.CreateDirectory(logsRoot);
-var logPath = Path.Combine(
-logsRoot,
-$"chromedriver_{DateTime.UtcNow:yyyyMMdd_HHmmss_fff}_{Environment.ProcessId}.log"
+Directory.CreateDirectory(logDir);
+var logFile = Path.Combine(
+logDir,
+$"chromedriver_{DateTime.UtcNow:yyyyMMdd_HHmmss}_{Environment.ProcessId}.log"
 );
-try
-{
+var service = ChromeDriverService.CreateDefaultService();
 service.EnableVerboseLogging = true;
-service.LogPath = logPath;
-}
-catch (Exception ex)
-{
-_logger.LogWarning(ex, "Unable to enable ChromeDriver verbose logging.");
-}
-_logger.LogInformation("Creating ChromeDriver. BaseDir={BaseDir}", baseDir);
-_logger.LogInformation("ChromeDriver log: {LogPath}", logPath);
-try
-{
-var driver = new ChromeDriver(service, options);
+service.LogPath = logFile;
+service.HideCommandPromptWindow = true;
+_logger.LogInformation(
+"Creating ChromeDriver (Selenium Manager). Log={LogFile}",
+logFile
+);
+var driver = new ChromeDriver(service, options, TimeSpan.FromSeconds(60));
 driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
 driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(60);
-driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
-_createdDrivers.Add(driver);
+driver.Manage().Timeouts().ImplicitWait = TimeSpan.Zero;
 return driver;
 }
 catch (Exception ex)
 {
-_logger.LogError(ex, "Failed to create ChromeDriver. See log: {LogPath}", logPath);
-throw new WebDriverException("Failed to initialize ChromeDriver", ex);
+_logger.LogError(ex, "Failed to create ChromeDriver");
+throw;
 }
 }
-private ChromeOptions BuildDefaultOptions(string downloadFolder)
+private static ChromeOptions BuildDefaultOptions(bool hide)
 {
-if (string.IsNullOrWhiteSpace(downloadFolder))
-throw new ArgumentNullException(nameof(downloadFolder));
 var options = new ChromeOptions();
-var userDataDir = CreateFreshUserDataDir();
-options.AddArgument($"--user-data-dir={userDataDir}");
-options.AddArgument("--no-first-run");
-options.AddArgument("--no-default-browser-check");
-options.AddArgument("--disable-extensions");
 options.AddArgument("--disable-notifications");
+options.AddArgument("--disable-extensions");
 options.AddArgument("--disable-popup-blocking");
 options.AddArgument("--disable-gpu");
 options.AddArgument("--disable-dev-shm-usage");
 options.AddArgument("--no-sandbox");
 options.AddArgument("--remote-allow-origins=*");
-options.AddExcludedArgument("enable-automation");
-options.AddAdditionalOption("useAutomationExtension", false);
-ConfigureDownloads(downloadFolder, options);
-options.SetLoggingPreference(LogType.Browser, OpenQA.Selenium.LogLevel.All);
-options.SetLoggingPreference(LogType.Driver, OpenQA.Selenium.LogLevel.All);
-options.SetLoggingPreference(LogType.Performance, OpenQA.Selenium.LogLevel.All);
-return options;
-}
-private ChromeOptions BuildHeadlessOptions(string downloadFolder)
+if (hide)
 {
-var options = BuildDefaultOptions(downloadFolder);
 options.AddArgument("--headless=new");
-options.AddArgument("--window-size=1280,900");
+options.AddArgument("--window-size=1920,1080");
+}
 return options;
-}
-private static void ConfigureDownloads(string downloadFolder, ChromeOptions options)
-{
-Directory.CreateDirectory(downloadFolder);
-options.AddUserProfilePreference("download.default_directory", downloadFolder);
-options.AddUserProfilePreference("download.prompt_for_download", false);
-options.AddUserProfilePreference("download.directory_upgrade", true);
-options.AddUserProfilePreference("safebrowsing.enabled", true);
-}
-private string EnsureDownloadFolder()
-{
-var configured = _appConfig?.Paths?.DownloadFolder;
-var folder = string.IsNullOrWhiteSpace(configured)
-? Path.Combine(
-Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-"WhatsAppSender",
-"downloads")
-: configured;
-Directory.CreateDirectory(folder);
-return folder;
-}
-private static string CreateFreshUserDataDir()
-{
-var root = Path.Combine(Path.GetTempPath(), "WhatsAppSender", "chrome-profiles");
-Directory.CreateDirectory(root);
-var dir = Path.Combine(root, Guid.NewGuid().ToString("N"));
-Directory.CreateDirectory(dir);
-return dir;
-}
-private void ThrowIfDisposed()
-{
-if (_disposed)
-throw new ObjectDisposedException(nameof(ChromeDriverFactory));
-}
-public void Dispose()
-{
-if (_disposed) return;
-_disposed = true;
-while (_createdDrivers.TryTake(out var d))
-{
-try { d.Quit(); } catch {  }
-try { d.Dispose(); } catch {  }
-}
-}
 }
 }
 
@@ -4994,7 +4914,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -5277,7 +5197,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
