@@ -1,19 +1,18 @@
 ﻿<#
 Build-Installer.ps1
 
-Creates a clean installer folder from a dotnet publish output.
+Goal (as requested):
+- Delete unnecessary files from the installer output.
+- Specifically remove: appsettings.json, credentials.json (and any appsettings.*.json)
+- Keep only what is typically required to run YOUR current published output (based on your screenshot):
+    - WhatsAppSender.exe (detected automatically)
+    - selenium-manager\ (folder)
+    - e_sqlite3.dll (native dependency)
+    - run.cmd (convenience)
 
-Features
-- dotnet publish (single-file, framework-dependent)
-- Step-by-step console messages
-- Progress bar (Write-Progress)
-- Explicit cleanup of unnecessary files
-- Explicit deletion of highlighted *.pdb files
-- Canonical appsettings.json handling (resolved relative to .csproj folder + publish fallback)
-- run.cmd generation
-- Full execution log (transcript)
-- Dedicated error log
-- Summary log
+Important:
+- This script uses an "allowlist" approach: it deletes EVERYTHING not explicitly allowed.
+- If your app later needs more files (e.g., other native dlls, extra folders), add them to -KeepFiles/-KeepFolders.
 
 Logs:
   .\_installer\_logs\
@@ -29,39 +28,29 @@ param(
     [string]$PublishDir = ".\_publish_prod",
     [string]$InstallerRoot = ".\_installer",
 
-    # appsettings handling (can be relative or absolute; relative is resolved against .csproj directory)
-    [string]$AppSettingsFile = ".\appsettings.json",
-    [string]$AppSettingsProductionFile = ".\appsettings.Production.json",
-    [bool]$IncludeProductionSettingsIfExists = $true,
+    # Allowlist controls (add more if your app needs them)
+    [string[]]$KeepFolders = @("selenium-manager"),
+    [string[]]$KeepFiles = @("e_sqlite3.dll"), # exe is auto-kept; run.cmd is auto-kept
 
-    # generic cleanup
-    [string[]]$RemoveExtensions = @(".pdb",".xml",".dbg",".dSYM"),
-    [string[]]$RemovePatterns = @(
-        "appsettings.Development.json",
-        "appsettings.*.Development.json",
-        "*.deps.json"
-    ),
+    # Files to explicitly delete (even if present)
+    [string[]]$DeleteFiles = @("appsettings.json", "credentials.json"),
+    [string[]]$DeletePatterns = @("appsettings.*.json", "*.pdb", "*.xml", "*.dbg", "*.dSYM"),
+
+    # Optional: keep deps.json if it appears (framework-dependent sometimes needs it)
     [bool]$KeepDepsJson = $true
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-# -------------------------------
-# helpers
-# -------------------------------
 function New-Timestamp { (Get-Date).ToString("yyyyMMdd_HHmmss") }
 
 function Ensure-Dir([string]$Path) {
-    if (-not (Test-Path $Path)) {
-        New-Item -ItemType Directory -Path $Path | Out-Null
-    }
+    if (-not (Test-Path $Path)) { New-Item -ItemType Directory -Path $Path | Out-Null }
 }
 
 function Remove-IfExists([string]$Path) {
-    if (Test-Path $Path) {
-        Remove-Item -LiteralPath $Path -Recurse -Force
-    }
+    if (Test-Path $Path) { Remove-Item -LiteralPath $Path -Recurse -Force }
 }
 
 function Step([int]$Index, [int]$Total, [string]$Title, [string]$Detail) {
@@ -71,24 +60,7 @@ function Step([int]$Index, [int]$Total, [string]$Title, [string]$Detail) {
     Write-Host ("[{0}] Step {1}/{2}: {3} - {4}" -f $ts, $Index, $Total, $Title, $Detail)
 }
 
-function Resolve-SettingsPath([string]$path, [string]$baseDir) {
-    if ([string]::IsNullOrWhiteSpace($path)) { return $null }
-
-    # Absolute path
-    if ([IO.Path]::IsPathRooted($path)) {
-        return (Test-Path -LiteralPath $path) ? $path : $null
-    }
-
-    # Relative path: support ".\file.json" and "sub\file.json"
-    $rel = ($path -replace '^[.\\\/]+','')   # remove leading .\ or ./ or slashes
-    $candidate = Join-Path $baseDir $rel
-    if (Test-Path -LiteralPath $candidate) { return $candidate }
-
-    # fallback: try current directory as-is
-    if (Test-Path -LiteralPath $path) { return $path }
-
-    return $null
-}
+function Normalize-Name([string]$s) { $s.Trim().ToLowerInvariant() }
 
 # -------------------------------
 # init + logging
@@ -108,17 +80,13 @@ $installerPath = $null
 $success = $false
 
 try {
-    $TOTAL_STEPS = 11
+    $TOTAL_STEPS = 10
     $i = 0
 
     $i++; Step $i $TOTAL_STEPS "Initialize" "Validating inputs"
-    if (-not (Test-Path -LiteralPath $ProjectPath)) {
-        throw "Project file not found: $ProjectPath"
-    }
+    if (-not (Test-Path -LiteralPath $ProjectPath)) { throw "Project file not found: $ProjectPath" }
 
-    $projectDir = Split-Path -Parent (Resolve-Path -LiteralPath $ProjectPath)
-
-    Write-Host "ProjectDir     : $projectDir"
+    Write-Host "ProjectPath    : $ProjectPath"
     Write-Host "PublishDir     : $PublishDir"
     Write-Host "InstallerRoot  : $InstallerRoot"
     Write-Host "TranscriptLog  : $transcriptPath"
@@ -144,15 +112,11 @@ try {
 
     Write-Host "dotnet $($publishArgs -join ' ')"
     & dotnet @publishArgs
-    if ($LASTEXITCODE -ne 0) {
-        throw "dotnet publish failed with exit code $LASTEXITCODE"
-    }
+    if ($LASTEXITCODE -ne 0) { throw "dotnet publish failed with exit code $LASTEXITCODE" }
 
     $i++; Step $i $TOTAL_STEPS "Publish" "Detecting executable"
     $exe = Get-ChildItem -Path $PublishDir -Filter "*.exe" -File | Select-Object -First 1
-    if (-not $exe) {
-        throw "No executable found in publish output: $PublishDir"
-    }
+    if (-not $exe) { throw "No executable found in publish output: $PublishDir" }
 
     $appName = [IO.Path]::GetFileNameWithoutExtension($exe.Name)
     $installerPath = Join-Path $InstallerRoot ("{0}_{1}" -f $appName, $ts)
@@ -163,84 +127,70 @@ try {
     $i++; Step $i $TOTAL_STEPS "Installer" "Copying published files"
     Copy-Item -Path (Join-Path $PublishDir "*") -Destination $installerPath -Recurse -Force
 
-    $i++; Step $i $TOTAL_STEPS "Cleanup" "Removing files by extension / pattern"
-    if ($KeepDepsJson -and ($RemovePatterns -contains "*.deps.json")) {
-        $RemovePatterns = $RemovePatterns | Where-Object { $_ -ne "*.deps.json" }
-    }
-
-    foreach ($ext in $RemoveExtensions) {
-        Get-ChildItem -Path $installerPath -Recurse -File |
-            Where-Object { $_.Extension -ieq $ext } |
-            ForEach-Object {
-                Write-Host "Deleting $($_.FullName)"
-                Remove-Item -LiteralPath $_.FullName -Force
-            }
-    }
-
-    foreach ($pattern in $RemovePatterns) {
-        Get-ChildItem -Path $installerPath -Recurse -File -Filter $pattern -ErrorAction SilentlyContinue |
-            ForEach-Object {
-                Write-Host "Deleting $($_.FullName)"
-                Remove-Item -LiteralPath $_.FullName -Force
-            }
-    }
-
-    $i++; Step $i $TOTAL_STEPS "Cleanup" "Deleting highlighted PDB files explicitly"
-    $HighlightedFilesToDelete = @(
-        "WhatsAppSender.pdb",
-        "Bootstrapper.pdb",
-        "Commands.pdb",
-        "Infrastructure.pdb",
-        "Application.pdb",
-        "Persistence.pdb",
-        "Services.pdb",
-        "Configuration.pdb",
-        "Domain.pdb"
-    )
-
-    foreach ($name in $HighlightedFilesToDelete) {
-        $candidate = Join-Path $installerPath $name
-        if (Test-Path -LiteralPath $candidate) {
-            Write-Host "Deleting highlighted file: $candidate"
-            Remove-Item -LiteralPath $candidate -Force
-        }
-    }
-
-    $i++; Step $i $TOTAL_STEPS "Config" "Copying appsettings.json"
-
-    # Resolve appsettings relative to project directory (robust to current working dir)
-    $resolvedAppSettings  = Resolve-SettingsPath $AppSettingsFile $projectDir
-    $resolvedProdSettings = Resolve-SettingsPath $AppSettingsProductionFile $projectDir
-
-    $destAppSettings = Join-Path $installerPath "appsettings.json"
-
-    # If source isn't found, fallback to the already-copied published appsettings.json
-    if (-not $resolvedAppSettings) {
-        Write-Host "WARNING: Source appsettings.json not found at '$AppSettingsFile' (resolved against: $projectDir)."
-        Write-Host "WARNING: Using published appsettings.json if present in installer folder."
-        if (-not (Test-Path -LiteralPath $destAppSettings)) {
-            throw "No appsettings.json found in installer folder either. Provide -AppSettingsFile with the correct path."
-        }
-    }
-    else {
-        if (Test-Path -LiteralPath $destAppSettings) {
-            Remove-Item -LiteralPath $destAppSettings -Force
-        }
-
-        Write-Host "Copying appsettings from: $resolvedAppSettings"
-        Copy-Item -LiteralPath $resolvedAppSettings -Destination $destAppSettings -Force
-    }
-
-    if ($IncludeProductionSettingsIfExists -and $resolvedProdSettings) {
-        Write-Host "Copying appsettings.Production.json from: $resolvedProdSettings"
-        Copy-Item -LiteralPath $resolvedProdSettings `
-            -Destination (Join-Path $installerPath "appsettings.Production.json") -Force
-    }
-
+    # Create run.cmd now (so it's included in allowlist)
     $i++; Step $i $TOTAL_STEPS "Convenience" "Creating run.cmd"
     $runCmd = Join-Path $installerPath "run.cmd"
     $runContent = "@echo off`r`ncd /d %~dp0`r`n`"%~dp0$($exe.Name)`"`r`n"
     Set-Content -LiteralPath $runCmd -Value $runContent -Encoding ASCII
+
+    $i++; Step $i $TOTAL_STEPS "Cleanup" "Deleting known-unnecessary files (patterns + explicit)"
+    # explicit deletes
+    foreach ($name in $DeleteFiles) {
+        $p = Join-Path $installerPath $name
+        if (Test-Path -LiteralPath $p) {
+            Write-Host "Deleting explicit: $p"
+            Remove-Item -LiteralPath $p -Force
+        }
+    }
+
+    # pattern deletes
+    foreach ($pattern in $DeletePatterns) {
+        Get-ChildItem -Path $installerPath -Recurse -File -Filter $pattern -ErrorAction SilentlyContinue |
+            ForEach-Object {
+                Write-Host "Deleting by pattern ($pattern): $($_.FullName)"
+                Remove-Item -LiteralPath $_.FullName -Force
+            }
+    }
+
+    $i++; Step $i $TOTAL_STEPS "Cleanup" "Allowlist cleanup (delete everything NOT required)"
+
+    # Build allowlists (case-insensitive by normalizing)
+    $keepFileNames = New-Object 'System.Collections.Generic.HashSet[string]'
+    $keepFolderNames = New-Object 'System.Collections.Generic.HashSet[string]'
+
+    # Always keep the detected exe + run.cmd
+    $null = $keepFileNames.Add((Normalize-Name $exe.Name))
+    $null = $keepFileNames.Add("run.cmd")
+
+    # User-specified keep files
+    foreach ($f in $KeepFiles) { if ($f) { $null = $keepFileNames.Add((Normalize-Name $f)) } }
+
+    # deps.json handling (if present)
+    if ($KeepDepsJson) {
+        Get-ChildItem -Path $installerPath -File -Filter "*.deps.json" -ErrorAction SilentlyContinue |
+            ForEach-Object { $null = $keepFileNames.Add((Normalize-Name $_.Name)) }
+    }
+
+    # Keep folders
+    foreach ($d in $KeepFolders) { if ($d) { $null = $keepFolderNames.Add((Normalize-Name $d)) } }
+
+    # Delete folders not in allowlist (top-level only)
+    Get-ChildItem -Path $installerPath -Directory | ForEach-Object {
+        $nameNorm = Normalize-Name $_.Name
+        if (-not $keepFolderNames.Contains($nameNorm)) {
+            Write-Host "Deleting folder (not required): $($_.FullName)"
+            Remove-Item -LiteralPath $_.FullName -Recurse -Force
+        }
+    }
+
+    # Delete files not in allowlist (top-level only)
+    Get-ChildItem -Path $installerPath -File | ForEach-Object {
+        $nameNorm = Normalize-Name $_.Name
+        if (-not $keepFileNames.Contains($nameNorm)) {
+            Write-Host "Deleting file (not required): $($_.FullName)"
+            Remove-Item -LiteralPath $_.FullName -Force
+        }
+    }
 
     $i++; Step $i $TOTAL_STEPS "Summary" "Collecting stats"
     $files = Get-ChildItem -Path $installerPath -Recurse -File
@@ -254,11 +204,13 @@ try {
         "InstallerPath : $installerPath",
         "Files         : $($files.Count)",
         "Size (MB)     : $sizeMB",
+        "KeptFolders   : $($KeepFolders -join ', ')",
+        "KeptFiles     : $($KeepFiles -join ', ')",
+        "DeletedFiles  : $($DeleteFiles -join ', ')",
         "TranscriptLog : $transcriptPath",
         "ErrorLog      : $errorPath",
         "SummaryLog    : $summaryPath"
     )
-
     Set-Content -LiteralPath $summaryPath -Value ($summary -join "`r`n") -Encoding UTF8
 
     Write-Progress -Activity "Completed" -Status "Done" -PercentComplete 100
