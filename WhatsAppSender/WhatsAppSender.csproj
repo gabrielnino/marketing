@@ -6,7 +6,17 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RunArguments>--WhatsApp</RunArguments>
+		<ApplicationManifest>Build-Installer.ps1</ApplicationManifest>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="_installer\**" />
+	  <Compile Remove="_publish_prod\**" />
+	  <EmbeddedResource Remove="_installer\**" />
+	  <EmbeddedResource Remove="_publish_prod\**" />
+	  <None Remove="_installer\**" />
+	  <None Remove="_publish_prod\**" />
+	</ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Bootstrapper\Bootstrapper.csproj" />

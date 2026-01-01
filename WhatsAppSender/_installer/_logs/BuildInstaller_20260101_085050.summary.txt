@@ -1,0 +1,10 @@
+Build Installer Summary
+Timestamp     : 20260101_085050
+Project       : .\WhatsAppSender.csproj
+Executable    : WhatsAppSender.exe
+InstallerPath : .\_installer\WhatsAppSender_20260101_085050
+Files         : 8
+Size (MB)     : 38.15
+TranscriptLog : .\_installer\_logs\BuildInstaller_20260101_085050.transcript.log
+ErrorLog      : .\_installer\_logs\BuildInstaller_20260101_085050.errors.log
+SummaryLog    : .\_installer\_logs\BuildInstaller_20260101_085050.summary.txt
