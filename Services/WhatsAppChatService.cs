@@ -89,7 +89,8 @@ namespace Services
 
             var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
             Logger.LogDebug("Writing AutoIt script to '{ScriptPath}'", scriptPath);
-            File.WriteAllText(scriptPath, autoItScript, Encoding.UTF8);
+            File.WriteAllText(scriptPath, autoItScript, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+
 
             var psi = new ProcessStartInfo
             {
