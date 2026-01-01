@@ -27,115 +27,56 @@ namespace Services
         private AppConfig Config { get; } = config;
         private void OpenFileDialogWithAutoIT(string imagePath)
         {
-            Logger.LogInformation("OpenFileDialogWithAutoIT started.");
-
-            if (string.IsNullOrWhiteSpace(imagePath))
-            {
-                Logger.LogError("OpenFileDialogWithAutoIT aborted: imagePath is null or whitespace.");
-                throw new ArgumentException("imagePath is null/empty.", nameof(imagePath));
-            }
-
             imagePath = Path.GetFullPath(imagePath);
-            Logger.LogDebug("Resolved imagePath to '{ImagePath}'", imagePath);
 
-            if (!File.Exists(imagePath))
-            {
-                Logger.LogError("Image file not found at path '{ImagePath}'", imagePath);
-                throw new FileNotFoundException("Image file not found.", imagePath);
-            }
+            var autoItExe = @"C:\Program Files (x86)\AutoIt3\AutoIt3.exe";
+            var scriptPath = Path.Combine(
+                Path.GetTempPath(),
+                $"whatsapp_upload_{Guid.NewGuid():N}.au3"
+            );
 
-            var autoItExePath = @"C:\Program Files (x86)\AutoIt3\AutoIt3.exe";
-            Logger.LogDebug("Using AutoIt executable at '{AutoItExePath}'", autoItExePath);
-
-            if (!File.Exists(autoItExePath))
-            {
-                Logger.LogError("AutoIt executable not found at '{AutoItExePath}'", autoItExePath);
-                throw new FileNotFoundException("AutoIt3.exe not found.", autoItExePath);
-            }
-
-            var escapedPath = imagePath.Replace("\"", "\"\"");
-            Logger.LogDebug("Escaped image path for AutoIt.");
-
-            Logger.LogDebug("Building AutoIt script...");
-            var autoItScript = new StringBuilder()
-                .AppendLine("; AutoIt Script - whatsapp_upload.au3")
-                .AppendLine("Opt('WinTitleMatchMode', 2)")
-                .AppendLine("Local $timeout = 10")
-                .AppendLine("")
-                .AppendLine("If WinWaitActive('Open', '', $timeout) = 0 Then")
-                .AppendLine("    If WinWaitActive('Abrir', '', $timeout) = 0 Then")
-                .AppendLine("        Exit 1")
-                .AppendLine("    EndIf")
-                .AppendLine("EndIf")
-                .AppendLine("")
-                .AppendLine("Local $title = ''")
-                .AppendLine("If WinActive('Open') Then")
-                .AppendLine("    $title = 'Open'")
-                .AppendLine("ElseIf WinActive('Abrir') Then")
-                .AppendLine("    $title = 'Abrir'")
-                .AppendLine("Else")
-                .AppendLine("    Exit 2")
-                .AppendLine("EndIf")
-                .AppendLine("")
-                .AppendLine($"ControlSetText($title, '', '[CLASS:Edit; INSTANCE:1]', \"{escapedPath}\")")
-                .AppendLine("Sleep(300)")
-                .AppendLine("")
-                .AppendLine("If ControlClick($title, '', '[CLASS:Button; INSTANCE:1]') = 0 Then")
-                .AppendLine("    ControlSend($title, '', '[CLASS:Edit; INSTANCE:1]', '{ENTER}')")
-                .AppendLine("EndIf")
-                .AppendLine("")
-                .AppendLine("Exit 0")
-                .ToString();
-
-            var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
-            Logger.LogDebug("Writing AutoIt script to '{ScriptPath}'", scriptPath);
-            File.WriteAllText(scriptPath, autoItScript, Encoding.UTF8);
+            File.WriteAllText(scriptPath, GetFixedAutoItScript());
 
             var psi = new ProcessStartInfo
             {
-                FileName = autoItExePath,
-                Arguments = $"\"{scriptPath}\"",
+                FileName = autoItExe,
+                Arguments = $"\"{scriptPath}\" \"{imagePath}\"",
                 UseShellExecute = false,
-                CreateNoWindow = true,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true
+                CreateNoWindow = true
             };
 
-            Logger.LogInformation("Starting AutoIt process...");
-            using var proc = Process.Start(psi) ?? throw new InvalidOperationException("Failed to start AutoIt process.");
+            using var proc = Process.Start(psi)
+                ?? throw new InvalidOperationException("Failed to start AutoIt");
 
-            if (!proc.WaitForExit(15000))
+            if (!proc.WaitForExit(120_000))
             {
-                Logger.LogWarning("AutoIt process timeout exceeded. Attempting to kill process.");
-                try { proc.Kill(true); } catch { /* ignore */ }
-                throw new TimeoutException("AutoIt file upload script timed out.");
-            }
-
-            Logger.LogInformation("AutoIt process exited with code {ExitCode}", proc.ExitCode);
-
-            try
-            {
-                File.Delete(scriptPath);
-                Logger.LogDebug("Temporary AutoIt script deleted.");
-            }
-            catch
-            {
-                Logger.LogWarning("Failed to delete temporary AutoIt script at '{ScriptPath}'", scriptPath);
+                proc.Kill(true);
+                throw new TimeoutException("AutoIt timed out");
             }
 
             if (proc.ExitCode != 0)
-            {
-                var err = proc.StandardError.ReadToEnd();
-                Logger.LogError(
-                    "AutoIt script failed. ExitCode={ExitCode}. Error={Error}",
-                    proc.ExitCode,
-                    err
-                );
-                throw new InvalidOperationException($"AutoIt script failed. ExitCode={proc.ExitCode}. {err}");
-            }
-
-            Logger.LogInformation("OpenFileDialogWithAutoIT completed successfully.");
+                throw new InvalidOperationException($"AutoIt failed. ExitCode={proc.ExitCode}");
         }
+
+        private static string GetFixedAutoItScript() => @"
+Opt('WinTitleMatchMode', 2)
+Local $timeout = 60
+Local $filePath = $CmdLine[1]
+
+If WinWait('[CLASS:#32770]', '', $timeout) = 0 Then Exit 1
+
+WinActivate('[CLASS:#32770]')
+Sleep(500)
+
+ControlSetText('[CLASS:#32770]', '', 'Edit1', $filePath)
+Sleep(300)
+
+If ControlClick('[CLASS:#32770]', '', 'Button1') = 0 Then
+    ControlSend('[CLASS:#32770]', '', 'Edit1', '{ENTER}')
+EndIf
+
+Exit 0
+";
 
 
         public Task SendMessageAsync(
