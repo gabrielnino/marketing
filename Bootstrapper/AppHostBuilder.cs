@@ -29,23 +29,21 @@ namespace Bootstrapper
         public static IHostBuilder Create(string[] args)
         {
             var appConfig = new AppConfig();
-
+            var basePath = Directory.GetCurrentDirectory();
+            var appSettingsPath = Path.Combine(basePath, AppSettingsFileName);
+            if (!File.Exists(appSettingsPath))
+            {
+                var configMessage = $"Required configuration file '{AppSettingsFileName}' was not found.";
+                Log.Warning(configMessage);
+                throw new FileNotFoundException(configMessage, appSettingsPath);
+            }
+            Log.Information($"The configuration file '{AppSettingsFileName}' was found.");
             return Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    var basePath = Directory.GetCurrentDirectory();
                     config.SetBasePath(basePath);
-
-                    var appSettingsPath = Path.Combine(basePath, AppSettingsFileName);
-
                     // 🔴 HARD FAIL – explicit, early, deterministic
-                    if (!File.Exists(appSettingsPath))
-                    {
-                        throw new FileNotFoundException(
-                            $"Required configuration file '{AppSettingsFileName}' was not found.",
-                            appSettingsPath
-                        );
-                    }
+                    
 
                     config.AddJsonFile(
                         path: AppSettingsFileName,
