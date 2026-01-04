@@ -45,7 +45,7 @@ function Log([string]$Message, [string]$Level = "INF") {
     $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $line = "[$ts] [$Level] $Message"
     Write-Host $line
-    Add-Content -LiteralPath $logFile -Value $line
+    $line | Out-File $logFile -Append -Encoding UTF8
 }
 
 # -------------------------------
