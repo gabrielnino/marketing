@@ -59,6 +59,7 @@ function Assert-InsideAppDir {
     }
 }
 
+
 function Remove-FileIfExists {
     param([Parameter(Mandatory=$true)][string]$FilePath)
 
@@ -185,12 +186,47 @@ if ($IncludeAppSettings) {
 }
 
 # -------------------------------
-# 9. Cleanup (delete Bootstrapper.pdb from app root)
+# 9. Cleanup (delete *.pdb from app root)
 # -------------------------------
 Log "Step 9: Delete *.pdb from app root"
 
+$bootstrapperPdb = Join-Path $appDir "Application.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Application.pdb from app root"
+
+
 $bootstrapperPdb = Join-Path $appDir "Bootstrapper.pdb"
 Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Bootstrapper.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "Commands.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Commands.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "Configuration.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Configuration.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "Domain.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Domain.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "Infrastructure.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Infrastructure.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "Persistence.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Persistence.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "Services.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete Services.pdb from app root"
+
+$bootstrapperPdb = Join-Path $appDir "WhatsAppSender.pdb"
+Remove-FileIfExists -FilePath $bootstrapperPdb
+Log "Delete WhatsAppSender.pdb from app root"
+
 
 # -------------------------------
 # Done
