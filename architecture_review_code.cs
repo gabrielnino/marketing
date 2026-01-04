@@ -67,7 +67,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -95,7 +95,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -622,7 +622,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -694,7 +694,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -871,7 +871,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -899,7 +899,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1183,7 +1183,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1211,7 +1211,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1325,7 +1325,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1353,7 +1353,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1404,7 +1404,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1432,7 +1432,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2784,7 +2784,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3076,7 +3076,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3104,7 +3104,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -4291,7 +4291,7 @@ var autoItScript = new StringBuilder()
 .ToString();
 var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
 Logger.LogDebug("Writing AutoIt script to '{ScriptPath}'", scriptPath);
-File.WriteAllText(scriptPath, autoItScript, Encoding.UTF8);
+File.WriteAllText(scriptPath, autoItScript, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
 var psi = new ProcessStartInfo
 {
 FileName = autoItExePath,
@@ -4505,60 +4505,70 @@ private IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan p
 {
 Logger.LogDebug(
 "FindPhotosAndVideosOptionButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-timeout,
-pollingInterval,
-FindPhotosAndVideosOption
+timeout, pollingInterval, FindPhotosAndVideosOption
 );
 var wait = new WebDriverWait(Driver, timeout)
 {
 PollingInterval = pollingInterval
 };
-wait.IgnoreExceptionTypes(
-typeof(NoSuchElementException),
-typeof(StaleElementReferenceException)
-);
-IWebElement photosAndVideosOption;
+wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
 try
 {
-photosAndVideosOption = wait.Until(driver =>
+return wait.Until(driver =>
 {
-var element = driver
-.FindElements(By.XPath(FindPhotosAndVideosOption))
-.FirstOrDefault();
-if (element is null)
+var candidates = driver.FindElements(By.XPath(FindPhotosAndVideosOption))
+.Where(e => e.Displayed && e.Enabled)
+.ToList();
+if (candidates.Count == 0)
 {
-Logger.LogTrace("FindPhotosAndVideosOptionButton: Option not present yet.");
+Logger.LogTrace("FindPhotosAndVideosOptionButton: no displayed/enabled candidates yet.");
 return null;
 }
-if (!element.Displayed || !element.Enabled)
+foreach (var c in candidates)
 {
-Logger.LogTrace(
-"FindPhotosAndVideosOptionButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
-element.Displayed,
-element.Enabled
+IWebElement clickable = c;
+var tag = (clickable.TagName ?? string.Empty).ToLowerInvariant();
+if (tag == "span" || tag == "div")
+{
+var parentButton = TryFindAncestorClickable(clickable);
+if (parentButton != null)
+clickable = parentButton;
+}
+if (clickable.Displayed && clickable.Enabled)
+{
+Logger.LogDebug(
+"FindPhotosAndVideosOptionButton: selected candidate tag={Tag} aria-label={AriaLabel} title={Title}",
+clickable.TagName,
+clickable.GetAttribute("aria-label"),
+clickable.GetAttribute("title")
 );
-return null;
+return clickable;
 }
-return element;
+}
+return null;
 });
 }
 catch (WebDriverTimeoutException ex)
 {
-Logger.LogError(
-ex,
+Logger.LogError(ex,
 "FindPhotosAndVideosOptionButton timed out after {Timeout}. xpath='{XPath}'",
-timeout,
-FindPhotosAndVideosOption
+timeout, FindPhotosAndVideosOption
 );
 throw;
 }
-Logger.LogDebug(
-"FindPhotosAndVideosOptionButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
-photosAndVideosOption is not null,
-photosAndVideosOption?.Displayed,
-photosAndVideosOption?.Enabled
-);
-return photosAndVideosOption;
+}
+private IWebElement? TryFindAncestorClickable(IWebElement element)
+{
+try
+{
+return element.FindElement(By.XPath(
+"ancestor::*[self::button or @role='button' or @role='menuitem'][1]"
+));
+}
+catch
+{
+return null;
+}
 }
 private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
 {
@@ -4914,7 +4924,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -4974,7 +4984,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -5197,7 +5207,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+907df3c7e0ff475f3967e0ceee351809fb7982c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -5253,7 +5263,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c21c1f77c9ff85f82e425755e1ac4a0999af30ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1905649d5531291858478991420c9d7cf2260289")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

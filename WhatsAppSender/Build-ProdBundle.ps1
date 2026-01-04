@@ -1,12 +1,17 @@
 ﻿<#
 Build-ProdBundle.ps1
 Genera un bundle instalable de WhatsAppSender listo para Scheduler
+- Publica (dotnet publish)
+- Copia artefactos al bundle
+- Incluye appsettings.json desde \file\appsettings.json hacia app\file\
+- Limpia artefactos no deseados del app folder (PDB, selenium-manager, appsettings/credentials en raíz)
 #>
 
 param(
     [string]$Configuration = "Release",
     [string]$Runtime = "win-x64",
-    [switch]$IncludeAppSettings = $true
+    [switch]$IncludeAppSettings = $true,
+    [switch]$CleanPublishedArtifacts = $true
 )
 
 $ErrorActionPreference = "Stop"
@@ -28,122 +33,162 @@ $logDir     = Join-Path $bundleDir "logs"
 $logFile    = Join-Path $logDir "BuildProdBundle.log"
 
 # -------------------------------
-# 🔑 CREATE FOLDERS FIRST
+# Logging helpers
 # -------------------------------
-New-Item $bundleRoot -ItemType Directory -Force | Out-Null
-New-Item $bundleDir  -ItemType Directory -Force | Out-Null
-New-Item $appDir     -ItemType Directory -Force | Out-Null
-New-Item $fileDir    -ItemType Directory -Force | Out-Null
-New-Item $logDir     -ItemType Directory -Force | Out-Null
+function Ensure-Dir([string]$Path) {
+    if (-not (Test-Path -LiteralPath $Path)) {
+        New-Item -ItemType Directory -Path $Path -Force | Out-Null
+    }
+}
+
+function Log([string]$Message, [string]$Level = "INF") {
+    $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $line = "[$ts] [$Level] $Message"
+    Write-Host $line
+    Add-Content -LiteralPath $logFile -Value $line
+}
 
 # -------------------------------
-# Logging helper (SAFE NOW)
+# Safety helpers for deletions
 # -------------------------------
-function Log($msg) {
-    $line = "[{0}] {1}" -f (Get-Date -Format "yyyy-MM-dd HH:mm:ss"), $msg
-    Write-Host $line
-    $line | Out-File $logFile -Append -Encoding UTF8
+function Assert-InsidePath {
+    param(
+        [Parameter(Mandatory=$true)][string]$BasePath,
+        [Parameter(Mandatory=$true)][string]$TargetPath
+    )
+
+    $baseResolved = (Resolve-Path -LiteralPath $BasePath).Path.TrimEnd('\') + '\'
+    $targetResolved = (Resolve-Path -LiteralPath $TargetPath).Path
+
+    if (-not $targetResolved.StartsWith($baseResolved, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "Safety check failed: '$targetResolved' is not inside '$baseResolved'"
+    }
+}
+
+function Remove-IfExists {
+    param([Parameter(Mandatory=$true)][string]$PathToRemove)
+
+    if (Test-Path -LiteralPath $PathToRemove) {
+        Assert-InsidePath -BasePath $appDir -TargetPath $PathToRemove
+        Remove-Item -LiteralPath $PathToRemove -Recurse -Force -ErrorAction Stop
+        Log "Deleted: $PathToRemove"
+    } else {
+        Log "Skip delete (not found): $PathToRemove"
+    }
 }
 
 # -------------------------------
 # Start
 # -------------------------------
-Log "=== Build Production Bundle START ==="
+Ensure-Dir $bundleRoot
+Ensure-Dir $logDir
+
+Log "=== Build Production Bundle STARTED ==="
 Log "Root: $root"
+Log "Configuration: $Configuration"
+Log "Runtime: $Runtime"
+Log "IncludeAppSettings: $IncludeAppSettings"
+Log "CleanPublishedArtifacts: $CleanPublishedArtifacts"
+Log "PublishDir: $publishDir"
+Log "BundleDir: $bundleDir"
 
 # -------------------------------
-# 1. Cleanup
+# Step 1: Validate inputs
 # -------------------------------
-Log "Step 1: Cleanup"
-Remove-Item $publishDir -Recurse -Force -ErrorAction SilentlyContinue
+Log "Step 1/5: Validating inputs"
 
-# -------------------------------
-# 2. dotnet publish
-# -------------------------------
-Log "Step 2: dotnet publish"
-
-dotnet publish `
-    "$root\WhatsAppSender.csproj" `
-    -c $Configuration `
-    -r $Runtime `
-    --self-contained false `
-    -p:PublishSingleFile=true `
-    -p:PublishTrimmed=false `
-    -o $publishDir `
-    >> $logFile 2>&1
-
-if ($LASTEXITCODE -ne 0) {
-    throw "dotnet publish failed"
+$csproj = Get-ChildItem -Path $root -Filter *.csproj -File -ErrorAction SilentlyContinue | Select-Object -First 1
+if (-not $csproj) {
+    throw "No .csproj found in script directory: $root"
 }
+Log "Project: $($csproj.FullName)"
 
-# -------------------------------
-# 3. Copy published output
-# -------------------------------
-Log "Step 3: Copy published output"
-Copy-Item "$publishDir\*" $appDir -Recurse -Force
-
-# -------------------------------
-# 4. Config handling
-# -------------------------------
-Log "Step 4: Config handling"
+# FIX: appsettings.json is located in $root\file\appsettings.json (not $root\appsettings.json)
+$appSettingsSrc = Join-Path (Join-Path $root "file") "appsettings.json"
 
 if ($IncludeAppSettings) {
-
-    $srcAppSettings = Join-Path $root "file\appsettings.json"
-    $srcCreds       = Join-Path $root "file\credentials.json"
-
-    if (!(Test-Path $srcAppSettings)) {
-        throw "IncludeAppSettings=true but file/appsettings.json not found"
+    if (-not (Test-Path -LiteralPath $appSettingsSrc)) {
+        throw "IncludeAppSettings is enabled, but appsettings.json not found at: $appSettingsSrc"
     }
-
-    Copy-Item $srcAppSettings $fileDir -Force
-    Log "Copied appsettings.json"
-
-    if (Test-Path $srcCreds) {
-        Copy-Item $srcCreds $fileDir -Force
-        Log "Copied credentials.json"
-    }
+    Log "appsettings.json found: $appSettingsSrc"
 }
 
 # -------------------------------
-# 5. Selenium Manager (optional)
+# Step 2: dotnet publish
 # -------------------------------
-Log "Step 5: Selenium Manager"
+Log "Step 2/5: Publishing project"
 
-$seleniumManager = Join-Path $root "selenium-manager"
-if (Test-Path $seleniumManager) {
-    Copy-Item $seleniumManager (Join-Path $appDir "selenium-manager") -Recurse -Force
-    Log "Selenium manager copied"
-} else {
-    Log "Selenium manager not found (skipped)"
+if (Test-Path -LiteralPath $publishDir) {
+    Log "Cleaning previous publish folder: $publishDir"
+    Remove-Item -LiteralPath $publishDir -Recurse -Force
 }
+Ensure-Dir $publishDir
 
-# -------------------------------
-# 6. run.cmd (Scheduler entrypoint)
-# -------------------------------
-Log "Step 6: Creating run.cmd"
+$publishArgs = @(
+    "publish", $csproj.FullName,
+    "-c", $Configuration,
+    "-r", $Runtime,
+    "--self-contained", "false",
+    "-o", $publishDir
+)
 
-@"
-@echo off
-set BASEDIR=%~dp0
-cd /d %BASEDIR%\app
-WhatsAppSender.exe
-"@ | Out-File (Join-Path $bundleDir "run.cmd") -Encoding ASCII
+Log "Running: dotnet $($publishArgs -join ' ')"
+& dotnet @publishArgs 2>&1 | ForEach-Object { Log $_ "DOTNET" }
 
-# -------------------------------
-# 7. Validation
-# -------------------------------
-Log "Step 7: Validation"
-
-$exe = Join-Path $appDir "WhatsAppSender.exe"
-if (!(Test-Path $exe)) {
-    throw "WhatsAppSender.exe not found in bundle"
+# Basic sanity check
+$exe = Get-ChildItem -Path $publishDir -Filter *.exe -File -ErrorAction SilentlyContinue | Select-Object -First 1
+if (-not $exe) {
+    throw "Publish did not produce an .exe in: $publishDir"
 }
+Log "Publish OK. EXE: $($exe.Name)"
 
+# -------------------------------
+# Step 3: Create bundle structure
+# -------------------------------
+Log "Step 3/5: Creating bundle structure"
+
+Ensure-Dir $bundleDir
+Ensure-Dir $appDir
+Ensure-Dir $fileDir
+Ensure-Dir $logDir
+
+# -------------------------------
+# Step 4: Copy published app into bundle
+# -------------------------------
+Log "Step 4/5: Copying published output to bundle/app"
+
+Copy-Item -Path (Join-Path $publishDir "*") -Destination $appDir -Recurse -Force
+
+# Include appsettings.json into app\file\ (runtime config location)
 if ($IncludeAppSettings) {
-    if (!(Test-Path (Join-Path $fileDir "appsettings.json"))) {
+    $appSettingsDst = Join-Path $fileDir "appsettings.json"
+    Copy-Item -LiteralPath $appSettingsSrc -Destination $appSettingsDst -Force
+    Log "Copied appsettings.json to: $appSettingsDst"
+
+    if (-not (Test-Path -LiteralPath $appSettingsDst)) {
         throw "appsettings.json missing in bundle/file"
     }
+}
+
+# -------------------------------
+# Step 5: Cleanup published artifacts (matches your screenshot)
+# -------------------------------
+if ($CleanPublishedArtifacts) {
+    Log "Step 5/5: Cleanup published artifacts (PDBs, selenium-manager, root appsettings/credentials)"
+
+    # Delete all .pdb files anywhere under app
+    $pdbs = Get-ChildItem -Path $appDir -Filter *.pdb -Recurse -File -ErrorAction SilentlyContinue
+    foreach ($pdb in $pdbs) {
+        Remove-IfExists -PathToRemove $pdb.FullName
+    }
+
+    # Delete selenium-manager folder (if present)
+    Remove-IfExists -PathToRemove (Join-Path $appDir "selenium-manager")
+
+    # Delete root-level appsettings.json and credentials.json (if present)
+    # NOTE: This does NOT delete app\file\appsettings.json
+    Remove-IfExists -PathToRemove (Join-Path $appDir "appsettings.json")
+    Remove-IfExists -PathToRemove (Join-Path $appDir "credentials.json")
 }
 
 # -------------------------------

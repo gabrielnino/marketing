@@ -24,6 +24,8 @@ namespace Bootstrapper
 {
     public static class AppHostBuilder
     {
+        private const string AppSettingsFileName = "appsettings.json";
+
         public static IHostBuilder Create(string[] args)
         {
             var appConfig = new AppConfig();
@@ -31,13 +33,32 @@ namespace Bootstrapper
             return Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    config.SetBasePath(Directory.GetCurrentDirectory());
-                    config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                    var basePath = Directory.GetCurrentDirectory();
+                    config.SetBasePath(basePath);
+
+                    var appSettingsPath = Path.Combine(basePath, AppSettingsFileName);
+
+                    // 🔴 HARD FAIL – explicit, early, deterministic
+                    if (!File.Exists(appSettingsPath))
+                    {
+                        throw new FileNotFoundException(
+                            $"Required configuration file '{AppSettingsFileName}' was not found.",
+                            appSettingsPath
+                        );
+                    }
+
+                    config.AddJsonFile(
+                        path: AppSettingsFileName,
+                        optional: false,
+                        reloadOnChange: true
+                    );
+
                     config.AddEnvironmentVariables();
                 })
                 .ConfigureServices((hostingContext, services) =>
                 {
                     services.AddSingleton<IValidateOptions<SchedulerOptions>, SchedulerOptionsValidator>();
+
                     services.AddOptions<SchedulerOptions>()
                         .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
                         .PostConfigure(o =>
@@ -45,35 +66,47 @@ namespace Bootstrapper
                             foreach (var key in o.Weekly.Keys.ToList())
                             {
                                 var list = o.Weekly[key] ?? [];
-                                List<string> value = [.. list
-                                    .Where(x => !string.IsNullOrWhiteSpace(x))
-                                    .Select(x => x.Trim())
-                                    .Distinct(StringComparer.OrdinalIgnoreCase)
-                                    .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+                                List<string> value =
+                                [
+                                    .. list
+                                        .Where(x => !string.IsNullOrWhiteSpace(x))
+                                        .Select(x => x.Trim())
+                                        .Distinct(StringComparer.OrdinalIgnoreCase)
+                                        .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
+                                ];
                                 o.Weekly[key] = value;
                             }
                         })
                         .ValidateOnStart();
+
                     services.AddOptions<MessageConfig>()
-                    .Bind(hostingContext.Configuration.GetSection("WhatsApp:Message"))
-                    .Validate(o => 
-                    !string.IsNullOrWhiteSpace(o.ImageDirectory) &&
-                    !string.IsNullOrWhiteSpace(o.ImageFileName) &&
-                    !string.IsNullOrWhiteSpace(o.Caption),
-                    "WhatsApp:Message configuration is incomplete");
+                        .Bind(hostingContext.Configuration.GetSection("WhatsApp:Message"))
+                        .Validate(o =>
+                            !string.IsNullOrWhiteSpace(o.ImageDirectory) &&
+                            !string.IsNullOrWhiteSpace(o.ImageFileName) &&
+                            !string.IsNullOrWhiteSpace(o.Caption),
+                            "WhatsApp:Message configuration is incomplete"
+                        );
+
                     hostingContext.Configuration.Bind(appConfig);
-                    var executionMode = hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
+
+                    var executionMode =
+                        hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
+
                     if (executionMode == ExecutionMode.Scheduler)
                     {
                         services.AddHostedService<ScheduledMessenger>();
                     }
+
                     services.AddSingleton(appConfig);
+
                     var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
                     var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
                     LogCleanupReport(cleanupReport);
 
                     Directory.CreateDirectory(executionTracker.ExecutionRunning);
                     services.AddSingleton(executionTracker);
+
                     if (executionMode == ExecutionMode.Command)
                     {
                         services.AddSingleton(new CommandArgs(args));
@@ -82,14 +115,13 @@ namespace Bootstrapper
                         services.AddTransient<HelpCommand>();
                         services.AddHostedService<WebDriverLifetimeService>();
                     }
+
                     services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
                     services.AddScoped<IWebDriver>(sp =>
                     {
                         var factory = sp.GetRequiredService<IWebDriverFactory>();
                         return factory.Create(false);
                     });
-                    //
-
 
                     services.AddSingleton<ISecurityCheck, SecurityCheck>();
                     services.AddTransient<ILoginService, LoginService>();
@@ -99,7 +131,9 @@ namespace Bootstrapper
                     services.AddSingleton<IUtil, Util>();
                     services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
                     services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
+
                     AddDbContextSQLite(hostingContext, services);
+
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<IDataContext, DataContext>();
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
@@ -109,12 +143,12 @@ namespace Bootstrapper
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {
-
                     var execution = services.GetRequiredService<ExecutionTracker>();
                     var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
                     Directory.CreateDirectory(logPath);
 
-                    loggerConfig.MinimumLevel.Debug()
+                    loggerConfig
+                        .MinimumLevel.Debug()
                         .WriteTo.Console()
                         .WriteTo.File(
                             path: Path.Combine(logPath, "Marketing-.log"),
@@ -122,12 +156,11 @@ namespace Bootstrapper
                             fileSizeLimitBytes: 5_000_000,
                             retainedFileCountLimit: 7,
                             rollOnFileSizeLimit: true,
-                            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}"
+                            outputTemplate:
+                                "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}"
                         );
                 });
         }
-
-
 
         public static void LogCleanupReport(CleanupReport report)
         {
@@ -139,9 +172,7 @@ namespace Bootstrapper
 
             foreach (var deleted in report.DeletedRunningFolders)
             {
-                Log.Information(
-                    "Deleted orphaned execution folder: {FolderPath}",
-                    deleted);
+                Log.Information("Deleted orphaned execution folder: {FolderPath}", deleted);
             }
 
             foreach (var failure in report.DeleteFailures)
@@ -149,7 +180,8 @@ namespace Bootstrapper
                 Log.Warning(
                     failure.Exception,
                     "Failed to delete orphaned execution folder: {FolderPath}",
-                    failure.Path);
+                    failure.Path
+                );
             }
 
             if (report.IsClean)
@@ -160,23 +192,35 @@ namespace Bootstrapper
             {
                 Log.Warning(
                     "Execution cleanup completed with {FailureCount} failure(s)",
-                    report.DeleteFailures.Count);
+                    report.DeleteFailures.Count
+                );
             }
         }
 
-        private static void AddDbContextSQLite(HostBuilderContext context, IServiceCollection services)
+        private static void AddDbContextSQLite(
+            HostBuilderContext context,
+            IServiceCollection services
+        )
         {
-            var connectionString = context.Configuration.GetConnectionString("DefaultConnection");
+            var connectionString =
+                context.Configuration.GetConnectionString("DefaultConnection");
+
             if (string.IsNullOrWhiteSpace(connectionString))
-                throw new ArgumentNullException(nameof(connectionString),
-                    "Connection string 'DefaultConnection' is missing or empty.");
+            {
+                throw new ArgumentNullException(
+                    nameof(connectionString),
+                    "Connection string 'DefaultConnection' is missing or empty."
+                );
+            }
 
             services.AddDbContext<DataContext>(options =>
             {
                 options
                     .UseSqlite(connectionString, sqlite =>
                     {
-                        sqlite.MigrationsAssembly(typeof(DataContext).Assembly.GetName().Name);
+                        sqlite.MigrationsAssembly(
+                            typeof(DataContext).Assembly.GetName().Name
+                        );
                     })
                     .AddInterceptors(new SqliteFunctionInterceptor());
             });

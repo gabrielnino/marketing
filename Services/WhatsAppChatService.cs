@@ -18,8 +18,8 @@ namespace Services
         ) : IWhatsAppChatService
     {
 
-        private const string XpathToFindAttachButton = "//button[@aria-label='Attach' and @type='button']";
-        private const string FindPhotosAndVideosOption = "//li[@role='button']//span[normalize-space()='Photos & videos']/ancestor::li";
+        private const string XpathToFindAttachButton = "//button[@aria-label='Attach' or @title='Attach' or @data-testid='attach-button' or .//span[@data-icon='clip' or @data-icon='plus']]";
+        private const string FindPhotosAndVideosOption = "//*[@role='button' or @role='menuitem' or self::button]" + "[@aria-label='Photos & videos' or title='Photos & videos' or @data-testid='attach-photos' or .//span[normalize-space(.)='Photos & videos']]";
         private const string XpathFindCaption = "//div[@role='textbox' and @contenteditable='true' and @aria-label='Type a message']";
 
         private IWebDriver Driver { get; } = driver;
@@ -354,69 +354,84 @@ namespace Services
         {
             Logger.LogDebug(
                 "FindPhotosAndVideosOptionButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-                timeout,
-                pollingInterval,
-                FindPhotosAndVideosOption
+                timeout, pollingInterval, FindPhotosAndVideosOption
             );
 
             var wait = new WebDriverWait(Driver, timeout)
             {
                 PollingInterval = pollingInterval
             };
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
 
-            wait.IgnoreExceptionTypes(
-                typeof(NoSuchElementException),
-                typeof(StaleElementReferenceException)
-            );
-
-            IWebElement photosAndVideosOption;
             try
             {
-                photosAndVideosOption = wait.Until(driver =>
+                return wait.Until(driver =>
                 {
-                    var element = driver
-                        .FindElements(By.XPath(FindPhotosAndVideosOption))
-                        .FirstOrDefault();
+                    // Get ALL candidates and filter to the ones that are actually clickable.
+                    var candidates = driver.FindElements(By.XPath(FindPhotosAndVideosOption))
+                                           .Where(e => e.Displayed && e.Enabled)
+                                           .ToList();
 
-                    if (element is null)
+                    if (candidates.Count == 0)
                     {
-                        Logger.LogTrace("FindPhotosAndVideosOptionButton: Option not present yet.");
+                        Logger.LogTrace("FindPhotosAndVideosOptionButton: no displayed/enabled candidates yet.");
                         return null;
                     }
 
-                    if (!element.Displayed || !element.Enabled)
+                    // If XPath matched a <span>, climb to the nearest clickable container.
+                    foreach (var c in candidates)
                     {
-                        Logger.LogTrace(
-                            "FindPhotosAndVideosOptionButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
-                            element.Displayed,
-                            element.Enabled
-                        );
-                        return null;
+                        IWebElement clickable = c;
+
+                        // If it's a span or non-interactive node, climb up to a button/role=button/menuitem.
+                        var tag = (clickable.TagName ?? string.Empty).ToLowerInvariant();
+                        if (tag == "span" || tag == "div")
+                        {
+                            var parentButton = TryFindAncestorClickable(clickable);
+                            if (parentButton != null)
+                                clickable = parentButton;
+                        }
+
+                        if (clickable.Displayed && clickable.Enabled)
+                        {
+                            Logger.LogDebug(
+                                "FindPhotosAndVideosOptionButton: selected candidate tag={Tag} aria-label={AriaLabel} title={Title}",
+                                clickable.TagName,
+                                clickable.GetAttribute("aria-label"),
+                                clickable.GetAttribute("title")
+                            );
+                            return clickable;
+                        }
                     }
 
-                    return element;
+                    return null;
                 });
             }
             catch (WebDriverTimeoutException ex)
             {
-                Logger.LogError(
-                    ex,
+                Logger.LogError(ex,
                     "FindPhotosAndVideosOptionButton timed out after {Timeout}. xpath='{XPath}'",
-                    timeout,
-                    FindPhotosAndVideosOption
+                    timeout, FindPhotosAndVideosOption
                 );
                 throw;
             }
-
-            Logger.LogDebug(
-                "FindPhotosAndVideosOptionButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
-                photosAndVideosOption is not null,
-                photosAndVideosOption?.Displayed,
-                photosAndVideosOption?.Enabled
-            );
-
-            return photosAndVideosOption;
         }
+
+        private IWebElement? TryFindAncestorClickable(IWebElement element)
+        {
+            try
+            {
+                // nearest ancestor that is a real clickable option
+                return element.FindElement(By.XPath(
+                    "ancestor::*[self::button or @role='button' or @role='menuitem'][1]"
+                ));
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
 
 
         private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
