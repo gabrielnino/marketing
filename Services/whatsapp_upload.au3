@@ -2,6 +2,7 @@
 ; whatsapp_upload.au3
 ; Static, defensive AutoIt script for file upload
 ; Method: OpenFileDialogWithAutoIT (static version)
+; PARAMETRIC: receives <file_to_upload> <log_file>
 ; ============================================================
 
 Opt("WinTitleMatchMode", 2)
@@ -9,13 +10,54 @@ Opt("WinWaitDelay", 100)
 Opt("SendKeyDelay", 30)
 Opt("MouseClickDelay", 50)
 
-Global Const $LOG_FILE = @ScriptDir & "\whatsapp_upload.log"
-Global Const $FILE_TO_UPLOAD = "C:\WhatsAppSender\file\document.pdf"
 Global Const $OPEN_DIALOG_TIMEOUT = 15 ; seconds
 
+; Will be set from command-line parameters
+Global $LOG_FILE = ""
+Global $FILE_TO_UPLOAD = ""
+
+; ------------------------------------------------------------
+; BOOTSTRAP: Parse + validate parameters
+; ------------------------------------------------------------
+_LogRaw("============================================================")
+_LogRaw("BOOT - Parsing command-line arguments")
+_LogRaw("CmdLineCount=" & $CmdLine[0])
+
+If $CmdLine[0] < 2 Then
+    _FailRaw("Missing parameters. Usage: whatsapp_upload.exe <file_to_upload> <log_file>")
+EndIf
+
+$FILE_TO_UPLOAD = $CmdLine[1]
+$LOG_FILE       = $CmdLine[2]
+
+_LogRaw("BOOT - FILE_TO_UPLOAD=" & $FILE_TO_UPLOAD)
+_LogRaw("BOOT - LOG_FILE=" & $LOG_FILE)
+
+If StringStripWS($FILE_TO_UPLOAD, 3) = "" Then
+    _FailRaw("FILE_TO_UPLOAD is empty")
+EndIf
+
+If StringStripWS($LOG_FILE, 3) = "" Then
+    _FailRaw("LOG_FILE is empty")
+EndIf
+
+If Not FileExists($FILE_TO_UPLOAD) Then
+    _FailRaw("File to upload does not exist: " & $FILE_TO_UPLOAD)
+EndIf
+
+; Ensure log directory exists
+Local $logDir = _GetDirName($LOG_FILE)
+If $logDir <> "" And Not FileExists($logDir) Then
+    DirCreate($logDir)
+EndIf
+
+; ------------------------------------------------------------
+; SCRIPT START
+; ------------------------------------------------------------
 _Log("============================================================")
 _Log("SCRIPT STARTED")
 _Log("Target file: " & $FILE_TO_UPLOAD)
+_Log("Log file: " & $LOG_FILE)
 _Log("Open dialog timeout: " & $OPEN_DIALOG_TIMEOUT & "s")
 _Log("============================================================")
 
@@ -120,9 +162,25 @@ Func _Log($msg)
         @HOUR & ":" & @MIN & ":" & @SEC & "] " & $msg)
 EndFunc
 
+; Logging usable before $LOG_FILE is set (bootstrap stage)
+Func _LogRaw($msg)
+    ConsoleWrite("[BOOT] " & $msg & @CRLF)
+EndFunc
+
 Func _Fail($reason)
     _Log("ERROR - " & $reason)
     _Log("SCRIPT TERMINATED WITH ERROR")
     _Log("============================================================")
     Exit 1
+EndFunc
+
+Func _FailRaw($reason)
+    ConsoleWrite("[BOOT][ERROR] " & $reason & @CRLF)
+    Exit 1
+EndFunc
+
+Func _GetDirName($fullPath)
+    Local $pos = StringInStr($fullPath, "\", 0, -1)
+    If $pos <= 0 Then Return ""
+    Return StringLeft($fullPath, $pos - 1)
 EndFunc
