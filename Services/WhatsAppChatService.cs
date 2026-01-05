@@ -14,7 +14,8 @@ namespace Services
     public sealed class WhatsAppChatService(
         IWebDriver driver,
         ILogger<WhatsAppChatService> logger,
-        AppConfig config
+        AppConfig config,
+        IAutoItRunner autoItRunner
         ) : IWhatsAppChatService
     {
 
@@ -25,6 +26,7 @@ namespace Services
         private IWebDriver Driver { get; } = driver;
         public ILogger<WhatsAppChatService> Logger { get; } = logger;
         private AppConfig Config { get; } = config;
+        private IAutoItRunner AutoItRunner { get; } = autoItRunner;
         private void OpenFileDialogWithAutoIT(string imagePath)
         {
             Logger.LogInformation("OpenFileDialogWithAutoIT started.");
@@ -139,7 +141,7 @@ namespace Services
         }
 
 
-        public Task SendMessageAsync(
+        public async Task SendMessageAsync(
         ImageMessagePayload imageMessagePayload,
         TimeSpan? timeout = null,
         TimeSpan? pollInterval = null,
@@ -214,6 +216,12 @@ namespace Services
             Logger.LogInformation("Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
             try
             {
+                //var autoItRunnerResult = await AutoItRunner.RunAsync(
+                //    timeout: TimeSpan.FromSeconds(30),
+                //    imagePath: imageMessagePayload.StoredImagePath,
+                //    useAutoItInterpreter: true,
+                //    cancellationToken: ct
+                //);
                 OpenFileDialogWithAutoIT(imageMessagePayload.StoredImagePath);
                 Logger.LogInformation("AutoIT completed file selection.");
             }
@@ -260,7 +268,6 @@ namespace Services
             );
 
             Logger.LogInformation("SendMessageAsync completed successfully.");
-            return Task.CompletedTask;
         }
         private void SetCaptionViaExecCommand(IWebElement element, string text)
         {
