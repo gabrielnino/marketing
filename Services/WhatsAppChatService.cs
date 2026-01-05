@@ -16,29 +16,34 @@ namespace Services
         ILogger<WhatsAppChatService> logger,
         AppConfig config,
         IAutoItRunner autoItRunner
-        ) : IWhatsAppChatService
+    ) : IWhatsAppChatService
     {
+        private const string XpathToFindAttachButton =
+            "//button[@aria-label='Attach' or @title='Attach' or @data-testid='attach-button' or .//span[@data-icon='clip' or @data-icon='plus']]";
 
-        private const string XpathToFindAttachButton = "//button[@aria-label='Attach' or @title='Attach' or @data-testid='attach-button' or .//span[@data-icon='clip' or @data-icon='plus']]";
-        private const string FindPhotosAndVideosOption = "//*[@role='button' or @role='menuitem' or self::button]" + "[@aria-label='Photos & videos' or title='Photos & videos' or @data-testid='attach-photos' or .//span[normalize-space(.)='Photos & videos']]";
-        private const string XpathFindCaption = "//div[@role='textbox' and @contenteditable='true' and @aria-label='Type a message']";
+        private const string FindPhotosAndVideosOption =
+            "//*[@role='button' or @role='menuitem' or self::button]" +
+            "[@aria-label='Photos & videos' or title='Photos & videos' or @data-testid='attach-photos' or .//span[normalize-space(.)='Photos & videos']]";
+
+        private const string XpathFindCaption =
+            "//div[@role='textbox' and @contenteditable='true' and @aria-label='Type a message']";
 
         private IWebDriver Driver { get; } = driver;
         public ILogger<WhatsAppChatService> Logger { get; } = logger;
         private AppConfig Config { get; } = config;
         private IAutoItRunner AutoItRunner { get; } = autoItRunner;
-        
-
 
         public async Task SendMessageAsync(
-        ImageMessagePayload imageMessagePayload,
-        TimeSpan? timeout = null,
-        TimeSpan? pollInterval = null,
-        CancellationToken ct = default)
+            ImageMessagePayload imageMessagePayload,
+            TimeSpan? timeout = null,
+            TimeSpan? pollInterval = null,
+            CancellationToken ct = default)
         {
             Logger.LogInformation(
-                "SendMessageAsync started. messageLength={MessageLength}",
-                imageMessagePayload?.Caption?.Length ?? 0
+                "SendMessageAsync started. hasPayload={HasPayload} messageLength={MessageLength} storedImagePath='{StoredImagePath}'",
+                imageMessagePayload is not null,
+                imageMessagePayload?.Caption?.Length ?? 0,
+                imageMessagePayload?.StoredImagePath
             );
 
             ct.ThrowIfCancellationRequested();
@@ -51,19 +56,36 @@ namespace Services
 
             if (string.IsNullOrWhiteSpace(imageMessagePayload.Caption))
             {
-                Logger.LogWarning("SendMessageAsync aborted: message is null or whitespace.");
+                Logger.LogWarning("SendMessageAsync aborted: Caption is null/empty/whitespace.");
                 throw new ArgumentException("Message cannot be empty.", nameof(imageMessagePayload.Caption));
             }
 
-            Logger.LogInformation("Step 1/3: Locating WhatsApp compose box...");
+            if (string.IsNullOrWhiteSpace(imageMessagePayload.StoredImagePath))
+            {
+                Logger.LogError("SendMessageAsync aborted: StoredImagePath is null/empty.");
+                throw new ArgumentException("StoredImagePath cannot be empty.", nameof(imageMessagePayload.StoredImagePath));
+            }
+
+            if (!File.Exists(imageMessagePayload.StoredImagePath))
+            {
+                Logger.LogError("SendMessageAsync aborted: StoredImagePath does not exist. path='{Path}'", imageMessagePayload.StoredImagePath);
+                throw new FileNotFoundException("Image file not found.", imageMessagePayload.StoredImagePath);
+            }
+
+            TimeSpan loginTimeout = timeout ?? Config.WhatsApp.LoginTimeout;
+            TimeSpan loginPollInterval = pollInterval ?? Config.WhatsApp.LoginPollInterval;
+
+            Logger.LogInformation(
+                "Using timeouts. timeout={Timeout} pollInterval={PollInterval}",
+                loginTimeout, loginPollInterval
+            );
+
+            Logger.LogInformation("Step 1/3: Locating attach button...");
 
             Logger.LogInformation(
                 "Locating attach button using XPath '{XPath}'...",
                 XpathToFindAttachButton
             );
-
-            TimeSpan loginTimeout = Config.WhatsApp.LoginTimeout;
-            TimeSpan loginPollInterval = Config.WhatsApp.LoginPollInterval;
 
             var attachButton = FindAttachButton(loginTimeout, loginPollInterval);
             if (attachButton is null)
@@ -73,13 +95,17 @@ namespace Services
             }
 
             Logger.LogDebug(
-                "Attach button found. displayed={Displayed}, enabled={Enabled}",
+                "Attach button found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel} title={Title}",
+                attachButton.TagName,
                 attachButton.Displayed,
-                attachButton.Enabled
+                attachButton.Enabled,
+                attachButton.GetAttribute("aria-label"),
+                attachButton.GetAttribute("title")
             );
 
             Logger.LogInformation("Clicking attach button...");
             attachButton.Click();
+            Logger.LogDebug("Attach button clicked.");
 
             Logger.LogInformation(
                 "Locating 'Photos & videos' option using XPath '{XPath}'...",
@@ -94,29 +120,64 @@ namespace Services
             }
 
             Logger.LogDebug(
-                "'Photos & videos' option found. displayed={Displayed}, enabled={Enabled}",
+                "'Photos & videos' option found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel} title={Title}",
+                photoAndVideo.TagName,
                 photoAndVideo.Displayed,
-                photoAndVideo.Enabled
+                photoAndVideo.Enabled,
+                photoAndVideo.GetAttribute("aria-label"),
+                photoAndVideo.GetAttribute("title")
             );
 
             Logger.LogInformation("Clicking 'Photos & videos' option...");
             photoAndVideo.Click();
+            Logger.LogDebug("'Photos & videos' option clicked.");
 
-            Logger.LogInformation("Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
+            Logger.LogInformation(
+                "Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}' useInterpreter={UseInterpreter}",
+                imageMessagePayload.StoredImagePath,
+                true
+            );
+
+            Domain.WhatsApp.AutoItRunnerResult autoItRunnerResult;
             try
             {
-                var autoItRunnerResult = await AutoItRunner.RunAsync(
-                    timeout: Config.WhatsApp.LoginTimeout,
+                autoItRunnerResult = await AutoItRunner.RunAsync(
+                    timeout: loginTimeout,
                     imagePath: imageMessagePayload.StoredImagePath,
                     useAutoItInterpreter: true,
                     cancellationToken: ct
                 );
-     
-                Logger.LogInformation("AutoIT completed file selection.");
+
+                Logger.LogInformation(
+                    "AutoIT finished. exitCode={ExitCode} timedOut={TimedOut} duration={Duration} logFilePath='{LogFilePath}'",
+                    autoItRunnerResult.ExitCode,
+                    autoItRunnerResult.TimedOut,
+                    autoItRunnerResult.Duration,
+                    autoItRunnerResult.LogFilePath
+                );
+
+                if (autoItRunnerResult.TimedOut)
+                {
+                    Logger.LogError("AutoIT timed out. duration={Duration} logFilePath='{LogFilePath}'",
+                        autoItRunnerResult.Duration, autoItRunnerResult.LogFilePath);
+                    throw new TimeoutException("AutoIT timed out while selecting file.");
+                }
+
+                if (autoItRunnerResult.ExitCode != 0)
+                {
+                    Logger.LogError(
+                        "AutoIT failed. exitCode={ExitCode} stderrLength={StdErrLength} stdoutLength={StdOutLength} logFilePath='{LogFilePath}'",
+                        autoItRunnerResult.ExitCode,
+                        autoItRunnerResult.StdErr?.Length ?? 0,
+                        autoItRunnerResult.StdOut?.Length ?? 0,
+                        autoItRunnerResult.LogFilePath
+                    );
+                    throw new InvalidOperationException($"AutoIT failed with exit code {autoItRunnerResult.ExitCode}.");
+                }
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex, "AutoIT failed while selecting file.");
+                Logger.LogError(ex, "AutoIT failed while selecting file. storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
                 throw;
             }
 
@@ -133,50 +194,72 @@ namespace Services
             }
 
             Logger.LogDebug(
-                "Caption element found. displayed={Displayed}, enabled={Enabled}",
+                "Caption element found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel}",
+                caption.TagName,
                 caption.Displayed,
-                caption.Enabled
+                caption.Enabled,
+                caption.GetAttribute("aria-label")
             );
 
+            Logger.LogInformation("Typing caption via execCommand (emoji-safe)... captionLength={Length}", imageMessagePayload.Caption.Length);
 
-            Logger.LogInformation("Typing caption via execCommand (emoji-safe)...");
-            SetCaptionViaExecCommand(caption, imageMessagePayload.Caption ?? string.Empty);
+            try
+            {
+                SetCaptionViaExecCommand(caption, imageMessagePayload.Caption ?? string.Empty);
+                Logger.LogDebug("Caption text injected via execCommand.");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Failed while setting caption via execCommand.");
+                throw;
+            }
 
-            Logger.LogInformation("Submitting caption...");
+            Logger.LogInformation("Submitting caption (Enter)...");
             caption.SendKeys(OpenQA.Selenium.Keys.Enter);
+            Logger.LogDebug("Enter sent to caption element.");
 
             ct.ThrowIfCancellationRequested();
 
             Logger.LogInformation("Step 2/3: Focusing compose box...");
+            // (No-op in current implementation; log kept as stage marker)
 
             ct.ThrowIfCancellationRequested();
 
             Logger.LogInformation(
-                "Step 3/3: Sending message ({Length} chars) and submitting...",
+                "Step 3/3: Sending message completed. length={Length}",
                 imageMessagePayload.Caption.Length
             );
 
             Logger.LogInformation("SendMessageAsync completed successfully.");
         }
+
         private void SetCaptionViaExecCommand(IWebElement element, string text)
         {
+            Logger.LogDebug("SetCaptionViaExecCommand started. textLength={Length}", text?.Length ?? 0);
+
             if (Driver is not IJavaScriptExecutor js)
+            {
+                Logger.LogError("Driver does not support JavaScript execution. driverType={DriverType}", Driver.GetType().FullName);
                 throw new NotSupportedException("Driver does not support JavaScript execution.");
+            }
 
             js.ExecuteScript(@"
-        const el = arguments[0];
-        const value = arguments[1] ?? '';
+                const el = arguments[0];
+                const value = arguments[1] ?? '';
 
-        el.focus();
+                el.focus();
 
-        // clear existing content
-        document.execCommand('selectAll', false, null);
-        document.execCommand('delete', false, null);
+                // clear existing content
+                document.execCommand('selectAll', false, null);
+                document.execCommand('delete', false, null);
 
-        // insert text (this fires the right events in many React contenteditables)
-        document.execCommand('insertText', false, value);
-    ", element, text);
+                // insert text (this fires the right events in many React contenteditables)
+                document.execCommand('insertText', false, value);
+            ", element, text);
+
+            Logger.LogDebug("SetCaptionViaExecCommand completed.");
         }
+
         private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
         {
             Logger.LogDebug(
@@ -245,7 +328,6 @@ namespace Services
             return attachButton;
         }
 
-
         private IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval)
         {
             Logger.LogDebug(
@@ -257,16 +339,16 @@ namespace Services
             {
                 PollingInterval = pollingInterval
             };
+
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
 
             try
             {
-                return wait.Until(driver =>
+                var result = wait.Until(driver =>
                 {
-                    // Get ALL candidates and filter to the ones that are actually clickable.
                     var candidates = driver.FindElements(By.XPath(FindPhotosAndVideosOption))
-                                           .Where(e => e.Displayed && e.Enabled)
-                                           .ToList();
+                        .Where(e => e.Displayed && e.Enabled)
+                        .ToList();
 
                     if (candidates.Count == 0)
                     {
@@ -274,18 +356,24 @@ namespace Services
                         return null;
                     }
 
-                    // If XPath matched a <span>, climb to the nearest clickable container.
                     foreach (var c in candidates)
                     {
                         IWebElement clickable = c;
 
-                        // If it's a span or non-interactive node, climb up to a button/role=button/menuitem.
                         var tag = (clickable.TagName ?? string.Empty).ToLowerInvariant();
                         if (tag == "span" || tag == "div")
                         {
                             var parentButton = TryFindAncestorClickable(clickable);
                             if (parentButton != null)
+                            {
+                                Logger.LogTrace("FindPhotosAndVideosOptionButton: climbed from tag={Tag} to ancestor tag={AncestorTag}",
+                                    c.TagName, parentButton.TagName);
                                 clickable = parentButton;
+                            }
+                            else
+                            {
+                                Logger.LogTrace("FindPhotosAndVideosOptionButton: no clickable ancestor found for tag={Tag}", c.TagName);
+                            }
                         }
 
                         if (clickable.Displayed && clickable.Enabled)
@@ -302,6 +390,9 @@ namespace Services
 
                     return null;
                 });
+
+                Logger.LogDebug("FindPhotosAndVideosOptionButton completed. found={Found}", result is not null);
+                return result;
             }
             catch (WebDriverTimeoutException ex)
             {
@@ -317,18 +408,16 @@ namespace Services
         {
             try
             {
-                // nearest ancestor that is a real clickable option
                 return element.FindElement(By.XPath(
                     "ancestor::*[self::button or @role='button' or @role='menuitem'][1]"
                 ));
             }
-            catch
+            catch (Exception ex)
             {
+                Logger.LogTrace(ex, "TryFindAncestorClickable: no clickable ancestor found.");
                 return null;
             }
         }
-
-
 
         private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
         {
@@ -397,6 +486,5 @@ namespace Services
 
             return caption;
         }
-
     }
 }
