@@ -27,12 +27,10 @@ namespace Services
             return File.ReadAllText(scriptTemplete);
         }
 
-        private string WriteScript(string autoItScript)
+        private void WriteScript(string scriptPath,string autoItScript)
         {
-            var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
             Logger.LogInformation("Writing AutoIt script to {ScriptPath}", scriptPath);
             File.WriteAllText(scriptPath, autoItScript, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
-            return scriptPath;
         }
 
         public async Task<AutoItRunnerResult> RunAsync(
@@ -67,7 +65,10 @@ namespace Services
             var autoItScript = ReadTemplete(scriptTemplete);
            
             var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
-            var scriptAutoIt = WriteScript(autoItScript);
+            var scriptAutoIt = scriptPath;
+
+            autoItScript = autoItScript.Replace("__FILE_TO_UPLOAD__", imagePath);
+          
             var autoItInterpreterPath = Config.Paths.AutoItInterpreterPath;
 
             var autoItLogDir = Path.Combine(Config.Paths.OutFolder, "AutoItLog");
@@ -90,6 +91,7 @@ namespace Services
             var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             var logFilePath = Path.Combine(autoItLogDir, $"AutoItRunner_{timestamp}.log");
             autoItScript = autoItScript.Replace("__AUTOIT_LOG_FILE__", logFilePath);
+            WriteScript(scriptAutoIt, autoItScript);
             Logger.LogInformation("logFilePath={LogFilePath}", logFilePath);
 
             // ------------------------------------------------------------

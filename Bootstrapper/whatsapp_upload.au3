@@ -15,8 +15,8 @@ Global Const $OPEN_DIALOG_TIMEOUT = 15 ; seconds
 ; ------------------------------------------------------------
 ; FIXED CONFIGURATION
 ; ------------------------------------------------------------
-Global Const $LOG_FILE       = "E:\Marketing-Logs\AutoItLog\autoItLog.log"
-Global Const $FILE_TO_UPLOAD = "E:\imagenes\goku.png"
+Global Const $LOG_FILE       = "__AUTOIT_LOG_FILE__"
+Global Const $FILE_TO_UPLOAD = "__FILE_TO_UPLOAD__"
 
 ; ------------------------------------------------------------
 ; BOOTSTRAP: Validate fixed configuration
