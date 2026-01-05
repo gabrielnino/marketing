@@ -119,7 +119,7 @@ namespace Services
                 // AutoIt3.exe "C:\path\script.au3" <args>
                 fileName = autoItInterpreterPath!;
                 // NOTE: Keeping original behavior; if you intended to pass imagePath, change this line accordingly.
-                arguments = Quote(scriptOrExePath) + (string.IsNullOrWhiteSpace(imagePath) ? "" : " " + autoItLogDir);
+                arguments = scriptOrExePath;
 
                 Logger.LogInformation("Mode=Interpreter. fileName={FileName}", fileName);
                 Logger.LogInformation("Mode=Interpreter. script={Script}", scriptOrExePath);
@@ -314,9 +314,6 @@ namespace Services
                 LogFilePath = logFilePath
             };
         }
-
-        private static string Quote(string s)
-            => s.Contains(' ') || s.Contains('"') ? "\"" + s.Replace("\"", "\\\"") + "\"" : s;
 
         private static void TryKillProcessTree(Process proc)
         {

@@ -2,7 +2,7 @@
 ; whatsapp_upload.au3
 ; Static, defensive AutoIt script for file upload
 ; Method: OpenFileDialogWithAutoIT (static version)
-; PARAMETRIC: receives <file_to_upload> <log_file>
+; FIXED PATHS (no command-line parameters)
 ; ============================================================
 
 Opt("WinTitleMatchMode", 2)
@@ -12,26 +12,19 @@ Opt("MouseClickDelay", 50)
 
 Global Const $OPEN_DIALOG_TIMEOUT = 15 ; seconds
 
-; Will be set from command-line parameters
-Global $LOG_FILE = ""
-Global $FILE_TO_UPLOAD = ""
+; ------------------------------------------------------------
+; FIXED CONFIGURATION
+; ------------------------------------------------------------
+Global Const $LOG_FILE       = "E:\Marketing-Logs\AutoItLog\autoItLog.log"
+Global Const $FILE_TO_UPLOAD = "E:\imagenes\goku.png"
 
 ; ------------------------------------------------------------
-; BOOTSTRAP: Parse + validate parameters
+; BOOTSTRAP: Validate fixed configuration
 ; ------------------------------------------------------------
 _LogRaw("============================================================")
-_LogRaw("BOOT - Parsing command-line arguments")
-_LogRaw("CmdLineCount=" & $CmdLine[0])
-
-If $CmdLine[0] < 2 Then
-    _FailRaw("Missing parameters. Usage: whatsapp_upload.exe <file_to_upload> <log_file>")
-EndIf
-
-$FILE_TO_UPLOAD = $CmdLine[1]
-$LOG_FILE       = $CmdLine[2]
-
-_LogRaw("BOOT - FILE_TO_UPLOAD=" & $FILE_TO_UPLOAD)
-_LogRaw("BOOT - LOG_FILE=" & $LOG_FILE)
+_LogRaw("BOOT - Static configuration mode")
+_LogRaw("FILE_TO_UPLOAD=" & $FILE_TO_UPLOAD)
+_LogRaw("LOG_FILE=" & $LOG_FILE)
 
 If StringStripWS($FILE_TO_UPLOAD, 3) = "" Then
     _FailRaw("FILE_TO_UPLOAD is empty")

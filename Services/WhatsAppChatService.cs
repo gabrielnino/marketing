@@ -216,12 +216,12 @@ namespace Services
             Logger.LogInformation("Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
             try
             {
-                //var autoItRunnerResult = await AutoItRunner.RunAsync(
-                //    timeout: TimeSpan.FromSeconds(30),
-                //    imagePath: imageMessagePayload.StoredImagePath,
-                //    useAutoItInterpreter: true,
-                //    cancellationToken: ct
-                //);
+                var autoItRunnerResult = await AutoItRunner.RunAsync(
+                    timeout: Config.WhatsApp.LoginTimeout,
+                    imagePath: imageMessagePayload.StoredImagePath,
+                    useAutoItInterpreter: true,
+                    cancellationToken: ct
+                );
                 OpenFileDialogWithAutoIT(imageMessagePayload.StoredImagePath);
                 Logger.LogInformation("AutoIT completed file selection.");
             }
