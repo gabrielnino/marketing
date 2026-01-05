@@ -16,6 +16,25 @@ namespace Services
         private AppConfig Config { get; } = config;
         private ILogger<AutoItRunner> Logger { get; } = logger;
 
+        private string ReadTemplete(string scriptTemplete)
+        {
+            if (!File.Exists(scriptTemplete))
+            {
+                Logger.LogError("AutoIt script template not found at {TemplatePath}", scriptTemplete);
+                throw new FileNotFoundException("AutoIt script template not found.", scriptTemplete);
+            }
+            Logger.LogInformation("Reading AutoIt script template from {TemplatePath}", scriptTemplete);
+            return File.ReadAllText(scriptTemplete);
+        }
+
+        private string WriteScript(string autoItScript)
+        {
+            var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
+            Logger.LogInformation("Writing AutoIt script to {ScriptPath}", scriptPath);
+            File.WriteAllText(scriptPath, autoItScript, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+            return scriptPath;
+        }
+
         public async Task<AutoItRunnerResult> RunAsync(
             TimeSpan timeout,
             string imagePath,
@@ -44,12 +63,17 @@ namespace Services
             LogStep("Resolving base paths and log folder.");
 
             var basePath = Directory.GetCurrentDirectory();
-            var scriptOrExePath = Path.Combine(basePath, "whatsapp_upload.au3");
+            var scriptTemplete = Path.Combine(basePath, "whatsapp_upload.au3");
+            var autoItScript = ReadTemplete(scriptTemplete);
+           
+            var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
+            var scriptAutoIt = WriteScript(autoItScript);
             var autoItInterpreterPath = Config.Paths.AutoItInterpreterPath;
 
             var autoItLogDir = Path.Combine(Config.Paths.OutFolder, "AutoItLog");
+             
             Logger.LogInformation("basePath={BasePath}", basePath);
-            Logger.LogInformation("scriptOrExePath={ScriptOrExePath}", scriptOrExePath);
+            Logger.LogInformation("scriptOrExePath={ScriptOrExePath}", scriptAutoIt);
             Logger.LogInformation("autoItInterpreterPath={AutoItInterpreterPath}", autoItInterpreterPath);
             Logger.LogInformation("autoItLogDir={AutoItLogDir}", autoItLogDir);
 
@@ -65,6 +89,7 @@ namespace Services
 
             var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             var logFilePath = Path.Combine(autoItLogDir, $"AutoItRunner_{timestamp}.log");
+            autoItScript = autoItScript.Replace("__AUTOIT_LOG_FILE__", logFilePath);
             Logger.LogInformation("logFilePath={LogFilePath}", logFilePath);
 
             // ------------------------------------------------------------
@@ -72,16 +97,16 @@ namespace Services
             // ------------------------------------------------------------
             LogStep("Validating inputs and required files.");
 
-            if (string.IsNullOrWhiteSpace(scriptOrExePath))
+            if (string.IsNullOrWhiteSpace(scriptAutoIt))
             {
                 Logger.LogError("Validation failed: scriptOrExePath is null/empty.");
-                throw new ArgumentException("scriptOrExePath is required.", nameof(scriptOrExePath));
+                throw new ArgumentException("scriptOrExePath is required.", nameof(scriptAutoIt));
             }
 
-            if (!File.Exists(scriptOrExePath))
+            if (!File.Exists(scriptAutoIt))
             {
-                Logger.LogError("Validation failed: AutoIt script/exe not found at {Path}", scriptOrExePath);
-                throw new FileNotFoundException("AutoIt script/exe not found.", scriptOrExePath);
+                Logger.LogError("Validation failed: AutoIt script/exe not found at {Path}", scriptAutoIt);
+                throw new FileNotFoundException("AutoIt script/exe not found.", scriptAutoIt);
             }
 
             if (useAutoItInterpreter)
@@ -119,16 +144,16 @@ namespace Services
                 // AutoIt3.exe "C:\path\script.au3" <args>
                 fileName = autoItInterpreterPath!;
                 // NOTE: Keeping original behavior; if you intended to pass imagePath, change this line accordingly.
-                arguments = scriptOrExePath;
+                arguments = scriptAutoIt;
 
                 Logger.LogInformation("Mode=Interpreter. fileName={FileName}", fileName);
-                Logger.LogInformation("Mode=Interpreter. script={Script}", scriptOrExePath);
+                Logger.LogInformation("Mode=Interpreter. script={Script}", scriptAutoIt);
                 Logger.LogInformation("Mode=Interpreter. arguments={Arguments}", arguments);
             }
             else
             {
                 // Compiled AutoIt executable
-                fileName = scriptOrExePath;
+                fileName = scriptAutoIt;
                 arguments = imagePath ?? string.Empty;
 
                 Logger.LogInformation("Mode=Direct. fileName={FileName}", fileName);
