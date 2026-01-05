@@ -4,36 +4,43 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Configuration;
+using Domain.WhatsApp;
+using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.Interfaces;
 
 namespace Services
 {
-    public sealed class AutoItRunnerResult
+
+    public sealed class AutoItRunner(AppConfig config,
+        ILogger<AutoItRunner> logger) : IAutoItRunner
     {
-        public required int ExitCode { get; init; }
-        public required bool TimedOut { get; init; }
-        public required string StdOut { get; init; }
-        public required string StdErr { get; init; }
-        public required TimeSpan Duration { get; init; }
-        public string? LogFilePath { get; init; }
-    }
-    public sealed class AutoItRunner
-    {
-        /// <summary>
-        /// Runs AutoIt OUT-OF-PROCESS with a hard timeout.
-        /// Works with:
-        ///  - compiled script: myScript.exe (autoit compiled)
-        ///  - or AutoIt3.exe + script.au3 (when useAutoItInterpreter=true)
-        /// </summary>
+        private AppConfig Config { get; } = config;
+        private ILogger<AutoItRunner> Logger { get; } = logger;
+
         public async Task<AutoItRunnerResult> RunAsync(
-            string scriptOrExePath,
-            string? autoItInterpreterPath,        // e.g. C:\Program Files (x86)\AutoIt3\AutoIt3.exe
-            string scriptArguments,               // arguments passed to script/exe (optional)
             TimeSpan timeout,
-            string? workingDirectory = null,
-            string? logFilePath = null,
+            string imagePath,
             bool useAutoItInterpreter = false,
-            CancellationToken cancellationToken = default)
+            CancellationToken cancellationToken = default) 
         {
+            var basePath = Directory.GetCurrentDirectory();
+            var scriptOrExePath = Path.Combine(basePath, "whatsapp_upload.au3");
+            var autoItInterpreterPath = Config.Paths.AutoItInterpreterPath;
+            var autoItLog = Path.Combine(Config.Paths.OutFolder, "AutoItLog");
+            if(!Directory.Exists(autoItLog))
+            {
+                Directory.CreateDirectory(autoItLog);
+            }
+
+            var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            var logFilePath = Path.Combine(
+                autoItLog,
+                $"AutoItRunner_{timestamp}.log"
+            );
+
+
             if (string.IsNullOrWhiteSpace(scriptOrExePath))
                 throw new ArgumentException("scriptOrExePath is required.", nameof(scriptOrExePath));
 
@@ -48,7 +55,7 @@ namespace Services
                     throw new FileNotFoundException("AutoIt interpreter not found.", autoItInterpreterPath);
             }
 
-            workingDirectory ??= Path.GetDirectoryName(scriptOrExePath) ?? Environment.CurrentDirectory;
+
 
             // Build process start info
             string fileName;
@@ -58,20 +65,20 @@ namespace Services
             {
                 // AutoIt3.exe "C:\path\script.au3" <args>
                 fileName = autoItInterpreterPath!;
-                arguments = Quote(scriptOrExePath) + (string.IsNullOrWhiteSpace(scriptArguments) ? "" : " " + scriptArguments);
+                arguments = Quote(scriptOrExePath) + (string.IsNullOrWhiteSpace(imagePath) ? "" : " " + autoItLog);
             }
             else
             {
                 // Compiled AutoIt executable
                 fileName = scriptOrExePath;
-                arguments = scriptArguments ?? string.Empty;
+                arguments = imagePath ?? string.Empty;
             }
 
             var psi = new ProcessStartInfo
             {
                 FileName = fileName,
                 Arguments = arguments,
-                WorkingDirectory = workingDirectory,
+                WorkingDirectory = scriptOrExePath,
                 UseShellExecute = false,
                 CreateNoWindow = true,
                 RedirectStandardOutput = true,

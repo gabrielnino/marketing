@@ -55,8 +55,6 @@ namespace Bootstrapper
                 })
                 .ConfigureServices((hostingContext, services) =>
                 {
-                    services.AddSingleton<IValidateOptions<SchedulerOptions>, SchedulerOptionsValidator>();
-
                     services.AddOptions<SchedulerOptions>()
                         .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
                         .PostConfigure(o =>
@@ -129,7 +127,7 @@ namespace Bootstrapper
                     services.AddSingleton<IUtil, Util>();
                     services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
                     services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
-
+                    services.AddTransient<IAutoItRunner, AutoItRunner>();
                     AddDbContextSQLite(hostingContext, services);
 
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
