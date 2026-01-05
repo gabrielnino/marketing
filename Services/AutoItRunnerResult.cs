@@ -23,14 +23,18 @@ namespace Services
                 Logger.LogError("AutoIt script template not found at {TemplatePath}", scriptTemplete);
                 throw new FileNotFoundException("AutoIt script template not found.", scriptTemplete);
             }
+
             Logger.LogInformation("Reading AutoIt script template from {TemplatePath}", scriptTemplete);
-            return File.ReadAllText(scriptTemplete);
+            var content = File.ReadAllText(scriptTemplete);
+            Logger.LogDebug("AutoIt template size={Length} chars", content.Length);
+            return content;
         }
 
-        private void WriteScript(string scriptPath,string autoItScript)
+        private void WriteScript(string scriptPath, string autoItScript)
         {
             Logger.LogInformation("Writing AutoIt script to {ScriptPath}", scriptPath);
-            File.WriteAllText(scriptPath, autoItScript, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+            File.WriteAllText(scriptPath, autoItScript, new UTF8Encoding(false));
+            Logger.LogInformation("AutoIt script written successfully. Size={Length} chars", autoItScript.Length);
         }
 
         public async Task<AutoItRunnerResult> RunAsync(
@@ -39,103 +43,77 @@ namespace Services
             bool useAutoItInterpreter = false,
             CancellationToken cancellationToken = default)
         {
-            // ------------------------------------------------------------
-            // Step helper (same pattern: step-by-step logs)
-            // ------------------------------------------------------------
             int step = 0;
-            void LogStep(string message, params object[] args)
+            void LogStep(string message)
             {
                 step++;
-                Logger.LogInformation("Step {Step}: " + message, step, args);
+                Logger.LogInformation("Step {Step}: {Message}", step, message);
             }
 
             Logger.LogInformation("============================================================");
             Logger.LogInformation("AutoItRunner START");
-            Logger.LogInformation("timeout={Timeout} imagePath={ImagePath} useAutoItInterpreter={UseAutoItInterpreter} cancellationRequested={CancellationRequested}",
+            Logger.LogInformation(
+                "timeout={Timeout} imagePath={ImagePath} useAutoItInterpreter={UseAutoItInterpreter} cancellationRequested={CancellationRequested}",
                 timeout, imagePath, useAutoItInterpreter, cancellationToken.IsCancellationRequested);
             Logger.LogInformation("============================================================");
 
-            // ------------------------------------------------------------
-            // STEP 1: Resolve paths / folders
-            // ------------------------------------------------------------
-            LogStep("Resolving base paths and log folder.");
+            // STEP 1
+            LogStep("Resolving base paths and preparing AutoIt script.");
 
             var basePath = Directory.GetCurrentDirectory();
+            Logger.LogDebug("CurrentDirectory={BasePath}", basePath);
+
             var scriptTemplete = Path.Combine(basePath, "whatsapp_upload.au3");
             var autoItScript = ReadTemplete(scriptTemplete);
-           
+
             var scriptPath = Path.Combine(Path.GetTempPath(), $"whatsapp_upload_{Guid.NewGuid():N}.au3");
-            var scriptAutoIt = scriptPath;
+            Logger.LogInformation("Generated temp AutoIt script path {ScriptPath}", scriptPath);
 
+            Logger.LogDebug("Replacing __FILE_TO_UPLOAD__ with {ImagePath}", imagePath);
             autoItScript = autoItScript.Replace("__FILE_TO_UPLOAD__", imagePath);
-          
-            var autoItInterpreterPath = Config.Paths.AutoItInterpreterPath;
 
+            var autoItInterpreterPath = Config.Paths.AutoItInterpreterPath;
             var autoItLogDir = Path.Combine(Config.Paths.OutFolder, "AutoItLog");
-             
-            Logger.LogInformation("basePath={BasePath}", basePath);
-            Logger.LogInformation("scriptOrExePath={ScriptOrExePath}", scriptAutoIt);
+
             Logger.LogInformation("autoItInterpreterPath={AutoItInterpreterPath}", autoItInterpreterPath);
             Logger.LogInformation("autoItLogDir={AutoItLogDir}", autoItLogDir);
 
             if (!Directory.Exists(autoItLogDir))
             {
-                Logger.LogInformation("AutoItLog directory does not exist. Creating: {AutoItLogDir}", autoItLogDir);
+                Logger.LogInformation("AutoItLog directory does not exist. Creating.");
                 Directory.CreateDirectory(autoItLogDir);
-            }
-            else
-            {
-                Logger.LogInformation("AutoItLog directory exists.");
             }
 
             var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             var logFilePath = Path.Combine(autoItLogDir, $"AutoItRunner_{timestamp}.log");
+
+            Logger.LogDebug("Replacing __AUTOIT_LOG_FILE__ with {LogFilePath}", logFilePath);
             autoItScript = autoItScript.Replace("__AUTOIT_LOG_FILE__", logFilePath);
-            WriteScript(scriptAutoIt, autoItScript);
-            Logger.LogInformation("logFilePath={LogFilePath}", logFilePath);
 
-            // ------------------------------------------------------------
-            // STEP 2: Validate inputs
-            // ------------------------------------------------------------
-            LogStep("Validating inputs and required files.");
+            WriteScript(scriptPath, autoItScript);
 
-            if (string.IsNullOrWhiteSpace(scriptAutoIt))
+            // STEP 2
+            LogStep("Validating generated script and execution mode.");
+
+            if (!File.Exists(scriptPath))
             {
-                Logger.LogError("Validation failed: scriptOrExePath is null/empty.");
-                throw new ArgumentException("scriptOrExePath is required.", nameof(scriptAutoIt));
+                Logger.LogError("Generated AutoIt script missing at {ScriptPath}", scriptPath);
+                throw new FileNotFoundException("Generated AutoIt script not found.", scriptPath);
             }
 
-            if (!File.Exists(scriptAutoIt))
+            if (!useAutoItInterpreter)
             {
-                Logger.LogError("Validation failed: AutoIt script/exe not found at {Path}", scriptAutoIt);
-                throw new FileNotFoundException("AutoIt script/exe not found.", scriptAutoIt);
+                Logger.LogWarning(
+                    "useAutoItInterpreter=false but script is .au3. Execution depends on file association.");
             }
 
-            if (useAutoItInterpreter)
+            if (useAutoItInterpreter && !File.Exists(autoItInterpreterPath))
             {
-                Logger.LogInformation("useAutoItInterpreter=true. Validating interpreter path.");
-                if (string.IsNullOrWhiteSpace(autoItInterpreterPath))
-                {
-                    Logger.LogError("Validation failed: autoItInterpreterPath is null/empty while useAutoItInterpreter=true.");
-                    throw new ArgumentException(
-                        "autoItInterpreterPath is required when useAutoItInterpreter=true.",
-                        nameof(autoItInterpreterPath));
-                }
-
-                if (!File.Exists(autoItInterpreterPath))
-                {
-                    Logger.LogError("Validation failed: AutoIt interpreter not found at {Path}", autoItInterpreterPath);
-                    throw new FileNotFoundException("AutoIt interpreter not found.", autoItInterpreterPath);
-                }
-            }
-            else
-            {
-                Logger.LogInformation("useAutoItInterpreter=false. Will run compiled script/exe directly (or .au3 if supported by environment).");
+                Logger.LogError("AutoIt interpreter not found at {Path}", autoItInterpreterPath);
+                throw new FileNotFoundException("AutoIt interpreter not found.", autoItInterpreterPath);
             }
 
-            // ------------------------------------------------------------
-            // STEP 3: Build command line
-            // ------------------------------------------------------------
+            // STEP 3
             LogStep("Building process command line.");
 
             string fileName;
@@ -143,35 +121,24 @@ namespace Services
 
             if (useAutoItInterpreter)
             {
-                // AutoIt3.exe "C:\path\script.au3" <args>
                 fileName = autoItInterpreterPath!;
-                // NOTE: Keeping original behavior; if you intended to pass imagePath, change this line accordingly.
-                arguments = scriptAutoIt;
-
-                Logger.LogInformation("Mode=Interpreter. fileName={FileName}", fileName);
-                Logger.LogInformation("Mode=Interpreter. script={Script}", scriptAutoIt);
-                Logger.LogInformation("Mode=Interpreter. arguments={Arguments}", arguments);
+                arguments = scriptPath;
+                Logger.LogInformation("Interpreter mode. FileName={FileName} Args={Arguments}", fileName, arguments);
             }
             else
             {
-                // Compiled AutoIt executable
-                fileName = scriptAutoIt;
+                fileName = scriptPath;
                 arguments = imagePath ?? string.Empty;
-
-                Logger.LogInformation("Mode=Direct. fileName={FileName}", fileName);
-                Logger.LogInformation("Mode=Direct. arguments={Arguments}", arguments);
+                Logger.LogInformation("Direct mode. FileName={FileName} Args={Arguments}", fileName, arguments);
             }
 
-            // ------------------------------------------------------------
-            // STEP 4: Build ProcessStartInfo
-            // ------------------------------------------------------------
+            // STEP 4
             LogStep("Creating ProcessStartInfo.");
 
             var psi = new ProcessStartInfo
             {
                 FileName = fileName,
                 Arguments = arguments,
-                // NOTE: Keeping original behavior; WorkingDirectory typically should be a directory, not a file path.
                 WorkingDirectory = autoItLogDir,
                 UseShellExecute = false,
                 CreateNoWindow = true,
@@ -179,29 +146,21 @@ namespace Services
                 RedirectStandardError = true
             };
 
-            Logger.LogInformation("ProcessStartInfo: FileName={FileName}", psi.FileName);
-            Logger.LogInformation("ProcessStartInfo: Arguments={Arguments}", psi.Arguments);
-            Logger.LogInformation("ProcessStartInfo: WorkingDirectory={WorkingDirectory}", psi.WorkingDirectory);
-            Logger.LogInformation("ProcessStartInfo: UseShellExecute={UseShellExecute} CreateNoWindow={CreateNoWindow} RedirectStdOut={RedirectStdOut} RedirectStdErr={RedirectStdErr}",
-                psi.UseShellExecute, psi.CreateNoWindow, psi.RedirectStandardOutput, psi.RedirectStandardError);
-
             var stdout = new StringBuilder();
             var stderr = new StringBuilder();
 
             using var proc = new Process { StartInfo = psi, EnableRaisingEvents = true };
             var tcsExit = new TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously);
 
-            // ------------------------------------------------------------
-            // STEP 5: Attach handlers
-            // ------------------------------------------------------------
-            LogStep("Attaching process output/error/exit handlers.");
+            // STEP 5
+            LogStep("Attaching process event handlers.");
 
             proc.OutputDataReceived += (_, e) =>
             {
                 if (e.Data != null)
                 {
                     stdout.AppendLine(e.Data);
-                    Logger.LogDebug("AutoIt STDOUT: {Line}", e.Data);
+                    Logger.LogDebug("STDOUT: {Line}", e.Data);
                 }
             };
 
@@ -210,45 +169,19 @@ namespace Services
                 if (e.Data != null)
                 {
                     stderr.AppendLine(e.Data);
-                    Logger.LogDebug("AutoIt STDERR: {Line}", e.Data);
+                    Logger.LogWarning("STDERR: {Line}", e.Data);
                 }
             };
 
             proc.Exited += (_, __) =>
             {
-                try
-                {
-                    Logger.LogInformation("Process exited. ExitCode={ExitCode}", proc.ExitCode);
-                    tcsExit.TrySetResult(proc.ExitCode);
-                }
-                catch (Exception ex)
-                {
-                    Logger.LogWarning(ex, "Exited handler failed to read ExitCode. Returning -1.");
-                    tcsExit.TrySetResult(-1);
-                }
+                Logger.LogInformation("Process exited. ExitCode={ExitCode}", proc.ExitCode);
+                tcsExit.TrySetResult(proc.ExitCode);
             };
 
-            // ------------------------------------------------------------
-            // STEP 6: Write start log file + start process
-            // ------------------------------------------------------------
-            LogStep("Writing start record to log file and starting process.");
+            // STEP 6
+            LogStep("Starting AutoIt process.");
 
-            var start = DateTimeOffset.UtcNow;
-
-            try
-            {
-                Directory.CreateDirectory(Path.GetDirectoryName(logFilePath) ?? ".");
-                File.AppendAllText(
-                    logFilePath,
-                    $"[{DateTimeOffset.Now:yyyy-MM-dd HH:mm:ss}] START AutoIt: {fileName} {arguments}{Environment.NewLine}");
-                Logger.LogInformation("Wrote START line to log file: {LogFilePath}", logFilePath);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogWarning(ex, "Failed to write START line to log file: {LogFilePath}", logFilePath);
-            }
-
-            Logger.LogInformation("Starting process...");
             if (!proc.Start())
             {
                 Logger.LogError("Process.Start() returned false.");
@@ -256,14 +189,11 @@ namespace Services
             }
 
             Logger.LogInformation("Process started. PID={Pid}", proc.Id);
-
             proc.BeginOutputReadLine();
             proc.BeginErrorReadLine();
 
-            // ------------------------------------------------------------
-            // STEP 7: Wait for completion or timeout/cancel
-            // ------------------------------------------------------------
-            LogStep("Waiting for process completion or timeout/cancellation.");
+            // STEP 7
+            LogStep("Waiting for process completion.");
 
             using var timeoutCts = new CancellationTokenSource(timeout);
             using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, timeoutCts.Token);
@@ -273,63 +203,43 @@ namespace Services
 
             try
             {
-                Logger.LogInformation("Wait started. timeout={Timeout} cancellationRequested={CancellationRequested}",
-                    timeout, cancellationToken.IsCancellationRequested);
-
                 var completed = await Task.WhenAny(
-                        tcsExit.Task,
-                        Task.Delay(Timeout.Infinite, linkedCts.Token))
-                    .ConfigureAwait(false);
+                    tcsExit.Task,
+                    Task.Delay(Timeout.Infinite, linkedCts.Token));
 
                 if (completed == tcsExit.Task)
                 {
-                    Logger.LogInformation("Process completed before timeout/cancel.");
-                    exitCode = await tcsExit.Task.ConfigureAwait(false);
+                    exitCode = await tcsExit.Task;
                 }
                 else
                 {
                     timedOut = timeoutCts.IsCancellationRequested && !cancellationToken.IsCancellationRequested;
 
-                    Logger.LogWarning("Wait interrupted. timedOut={TimedOut} externalCancel={ExternalCancelRequested}",
+                    Logger.LogWarning(
+                        "Process interrupted. TimedOut={TimedOut} ExternalCancel={ExternalCancel}",
                         timedOut, cancellationToken.IsCancellationRequested);
 
-                    // Kill hard (includes child processes)
-                    LogStep("Killing process tree due to timeout/cancellation.");
+                    Logger.LogWarning("Killing AutoIt process tree.");
                     TryKillProcessTree(proc);
 
-                    // Wait briefly to allow Exited event to fire / resources release
-                    LogStep("Waiting briefly for exit code after kill.");
-                    exitCode = await SafeWaitForExitCodeAsync(tcsExit, TimeSpan.FromSeconds(3)).ConfigureAwait(false);
+                    exitCode = await SafeWaitForExitCodeAsync(tcsExit, TimeSpan.FromSeconds(3));
+                    if (exitCode == -1)
+                        Logger.LogWarning("Exit code unresolved after forced termination.");
                 }
             }
             finally
             {
-                // Ensure process is not left running
-                LogStep("Final cleanup: ensuring process is not left running.");
+                Logger.LogDebug("Final cleanup: ensuring process is terminated.");
                 TryKillProcessTree(proc);
             }
 
-            // ------------------------------------------------------------
-            // STEP 8: Finalize and persist END line
-            // ------------------------------------------------------------
-            LogStep("Finalizing result and writing END record.");
+            // STEP 8
+            LogStep("Finalizing execution.");
 
-            var duration = DateTimeOffset.UtcNow - start;
-
-            Logger.LogInformation("AutoItRunner END. ExitCode={ExitCode} TimedOut={TimedOut} Duration={Duration}",
+            var duration = DateTimeOffset.UtcNow - DateTimeOffset.UtcNow.Add(-timeout);
+            Logger.LogInformation(
+                "AutoItRunner END. ExitCode={ExitCode} TimedOut={TimedOut} Duration={Duration}",
                 exitCode, timedOut, duration);
-
-            try
-            {
-                File.AppendAllText(
-                    logFilePath,
-                    $"[{DateTimeOffset.Now:yyyy-MM-dd HH:mm:ss}] END AutoIt: ExitCode={exitCode} TimedOut={timedOut} Duration={duration}{Environment.NewLine}");
-                Logger.LogInformation("Wrote END line to log file: {LogFilePath}", logFilePath);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogWarning(ex, "Failed to write END line to log file: {LogFilePath}", logFilePath);
-            }
 
             return new AutoItRunnerResult
             {
@@ -347,29 +257,18 @@ namespace Services
             try
             {
                 if (proc.HasExited) return;
-
-                // .NET 5+ supports Kill(entireProcessTree: true)
                 proc.Kill(entireProcessTree: true);
             }
             catch
             {
-                // swallow: we only want best-effort cleanup
+                // best-effort cleanup
             }
         }
 
         private static async Task<int> SafeWaitForExitCodeAsync(TaskCompletionSource<int> tcs, TimeSpan maxWait)
         {
-            try
-            {
-                var completed = await Task.WhenAny(tcs.Task, Task.Delay(maxWait)).ConfigureAwait(false);
-                if (completed == tcs.Task) return await tcs.Task.ConfigureAwait(false);
-            }
-            catch
-            {
-                // ignore
-            }
-
-            return -1;
+            var completed = await Task.WhenAny(tcs.Task, Task.Delay(maxWait));
+            return completed == tcs.Task ? await tcs.Task : -1;
         }
     }
 }
