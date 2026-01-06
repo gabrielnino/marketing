@@ -3,14 +3,9 @@ using OpenQA.Selenium;
 
 namespace Services
 {
-    public sealed class WebDriverLifetimeService : IHostedService
+    public sealed class WebDriverLifetimeService(IWebDriver driver) : IHostedService
     {
-        private readonly IWebDriver _driver;
-
-        public WebDriverLifetimeService(IWebDriver driver)
-        {
-            _driver = driver;
-        }
+        private readonly IWebDriver _driver = driver;
 
         public Task StartAsync(CancellationToken cancellationToken)
             => Task.CompletedTask;

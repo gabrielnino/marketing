@@ -4,15 +4,10 @@ using Services.Interfaces;
 
 namespace Services
 {
-    public class DirectoryCheck : IDirectoryCheck
+    public class DirectoryCheck(ILogger<DirectoryCheck> logger, ExecutionTracker executionOptions) : IDirectoryCheck
     {
-        private readonly ILogger<DirectoryCheck> _logger;
-        private readonly ExecutionTracker _executionOptions;
-        public DirectoryCheck(ILogger<DirectoryCheck> logger, ExecutionTracker executionOptions)
-        {
-            _logger = logger;
-            _executionOptions = executionOptions;
-        }
+        private readonly ILogger<DirectoryCheck> _logger = logger;
+        private readonly ExecutionTracker _executionOptions = executionOptions;
 
         public void EnsureDirectoryExists(string path)
         {

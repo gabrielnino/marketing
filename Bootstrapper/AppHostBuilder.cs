@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using Application.Result;
+﻿using Application.Result;
 using Application.UseCases.Repository.UseCases.CRUD;
 using Commands;
 using Configuration;
@@ -9,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;

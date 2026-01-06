@@ -7,14 +7,9 @@ using System.IO;
 
 namespace Services;
 
-public sealed class ChromeDriverFactory : IWebDriverFactory
+public sealed class ChromeDriverFactory(ILogger<ChromeDriverFactory> logger) : IWebDriverFactory
 {
-    private readonly ILogger<ChromeDriverFactory> _logger;
-
-    public ChromeDriverFactory(ILogger<ChromeDriverFactory> logger)
-    {
-        _logger = logger;
-    }
+    private readonly ILogger<ChromeDriverFactory> _logger = logger;
 
     // ============================================================
     // IWebDriverFactory
