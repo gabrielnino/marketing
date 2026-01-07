@@ -82,31 +82,39 @@ EndIf
 _Log("STEP 1 OK - Dialog detected. Handle=" & $hDialog)
 
 ; ------------------------------------------------------------
-; STEP 2: Ensure dialog is active (diagnostic + fallback)
+; STEP 2: Try to activate dialog (NON-FATAL) + diagnostics
 ; ------------------------------------------------------------
-_Log("STEP 2 - Activating Open File dialog (diagnostic)")
+_Log("STEP 2 - Activating Open File dialog (diagnostic, non-fatal)")
 
 Local $dlg = "[HANDLE:" & $hDialog & "]"
-_DumpWindowInfo($dlg, "STEP 2 BEFORE")
 
-; Try a more defensive activation sequence
+; Baseline info about dialog
+Local $dlgTitle = WinGetTitle($dlg)
+Local $dlgState = WinGetState($dlg)
+Local $dlgPID   = WinGetProcess($dlg)
+_Log("STEP 2 BEFORE - Title='" & $dlgTitle & "' State=" & $dlgState & " PID=" & $dlgPID)
+
+; Try a defensive activation sequence (but do not fail if it can't be foreground)
 WinSetState($dlg, "", @SW_RESTORE)
 Sleep(200)
 
 Local $act = WinActivate($dlg)
-_Log("STEP 2 INFO - WinActivate returned=" & $act & " @error=" & @error)
+Local $actErr = @error
+_Log("STEP 2 INFO - WinActivate returned=" & $act & " @error=" & $actErr)
 Sleep(300)
 
-; Wait briefly to confirm it became active
-WinWaitActive($dlg, "", 2)
+; Snapshot what is actually active now
+Local $hActive = WinGetHandle("[ACTIVE]")
+Local $activeTitle = WinGetTitle("[ACTIVE]")
+Local $activeClass = WinGetClassList("[ACTIVE]")
+_Log("STEP 2 ACTIVE WINDOW (after WinActivate) - ACTIVE Title='" & $activeTitle & "' ClassList=" & $activeClass)
 
-If Not WinActive($dlg) Then
-    _DumpActiveWindow("STEP 2 ACTIVE WINDOW (after WinActivate)")
-    _DumpWindowInfo($dlg, "STEP 2 AFTER")
-    _Fail("STEP 2 FAILED - Unable to activate dialog. Handle=" & $hDialog)
+; Log whether dialog got foreground, but do not stop execution.
+If $hActive <> $hDialog Then
+    _Log("STEP 2 WARN - Dialog is NOT the active window. ExpectedHandle=" & $hDialog & " ActiveHandle=" & $hActive)
+Else
+    _Log("STEP 2 OK - Dialog is active.")
 EndIf
-
-_Log("STEP 2 OK - Dialog activated")
 
 ; ------------------------------------------------------------
 ; STEP 3: Validate File name input control
@@ -126,6 +134,7 @@ _Log("STEP 3 OK - File input control found. Handle=" & $hEdit)
 ; ------------------------------------------------------------
 _Log("STEP 4 - Setting file path in Edit1")
 
+; Focus the edit control directly; this may work even if the dialog is not the active window.
 ControlFocus($hDialog, "", $hEdit)
 Sleep(100)
 
@@ -157,6 +166,7 @@ EndIf
 
 _Log("STEP 5 INFO - Open button handle: " & $hOpenBtn)
 
+; Use ControlClick. It usually works even if window is not active.
 If Not ControlClick($hDialog, "", $hOpenBtn) Then
     _Fail("STEP 5 FAILED - Unable to click Open button")
 EndIf
@@ -211,9 +221,7 @@ Func _FindBestOpenDialog($timeoutSec)
             If $h = 0 Then ContinueLoop
 
             Local $w = "[HANDLE:" & $h & "]"
-            ; skip invisible/disabled dialogs quickly
             Local $state = WinGetState($w)
-            ; If window doesn't exist anymore, continue
             If @error Then ContinueLoop
 
             ; Must have the "File name" Edit control
@@ -224,7 +232,6 @@ Func _FindBestOpenDialog($timeoutSec)
             Local $hBtn = ControlGetHandle($w, "", "Button1")
             If $hBtn = "" Then ContinueLoop
 
-            ; Found a good candidate
             _Log("STEP 1 INFO - Candidate dialog: Handle=" & $h & " State=" & $state & " Title='" & WinGetTitle($w) & "'")
             Return $h
         Next
@@ -245,7 +252,6 @@ Func _DumpAllCommonDialogs()
     Next
 EndFunc
 
-
 ; ------------------------------------------------------------
 ; Logging helpers
 ; ------------------------------------------------------------
@@ -253,14 +259,12 @@ Func _Log($msg)
     Local $line = "[" & @YEAR & "-" & StringFormat("%02d", @MON) & "-" & StringFormat("%02d", @MDAY) & " " & _
                   StringFormat("%02d", @HOUR) & ":" & StringFormat("%02d", @MIN) & ":" & StringFormat("%02d", @SEC) & "] " & $msg
 
-    ; Write to file
     Local $h = FileOpen($LOG_FILE, 1)
     If $h <> -1 Then
         FileWriteLine($h, $line)
         FileClose($h)
     EndIf
 
-    ; Also to stdout (captured by runner)
     ConsoleWrite($line & @CRLF)
 EndFunc
 
