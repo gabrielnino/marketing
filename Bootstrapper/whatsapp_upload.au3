@@ -19,33 +19,44 @@ Global Const $LOG_FILE       = "__AUTOIT_LOG_FILE__"
 Global Const $FILE_TO_UPLOAD = "__FILE_TO_UPLOAD__"
 
 ; ------------------------------------------------------------
-; BOOTSTRAP: Validate fixed configuration
+; Ensure log folder exists
 ; ------------------------------------------------------------
-_LogRaw("============================================================")
-_LogRaw("BOOT - Static configuration mode")
-_LogRaw("FILE_TO_UPLOAD=" & $FILE_TO_UPLOAD)
-_LogRaw("LOG_FILE=" & $LOG_FILE)
-
-If StringStripWS($FILE_TO_UPLOAD, 3) = "" Then
-    _FailRaw("FILE_TO_UPLOAD is empty")
-EndIf
-
-If StringStripWS($LOG_FILE, 3) = "" Then
-    _FailRaw("LOG_FILE is empty")
-EndIf
-
-If Not FileExists($FILE_TO_UPLOAD) Then
-    _FailRaw("File to upload does not exist: " & $FILE_TO_UPLOAD)
-EndIf
-
-; Ensure log directory exists
 Local $logDir = _GetDirName($LOG_FILE)
 If $logDir <> "" And Not FileExists($logDir) Then
     DirCreate($logDir)
 EndIf
 
 ; ------------------------------------------------------------
-; SCRIPT START
+; FOCUS GUARD - Close Windows Backup / OneDrive prompt if present
+; ------------------------------------------------------------
+Func _CloseBackupPopupIfPresent()
+    Local $popupTitle = "Turn On Windows Backup"
+    If WinExists($popupTitle) Then
+        _Log("FOCUS GUARD - Popup detected: '" & $popupTitle & "' -> attempting to close.")
+        WinActivate($popupTitle)
+        Sleep(200)
+
+        WinClose($popupTitle)
+        Sleep(500)
+
+        If WinExists($popupTitle) Then
+            _Log("FOCUS GUARD - Popup still present after WinClose -> sending Alt+F4.")
+            Send("!{F4}")
+            Sleep(500)
+        EndIf
+
+        If WinExists($popupTitle) Then
+            _Log("FOCUS GUARD - Popup STILL present. Will continue but focus may be affected.")
+        Else
+            _Log("FOCUS GUARD - Popup closed successfully.")
+        EndIf
+    Else
+        _Log("FOCUS GUARD - No Windows Backup popup detected.")
+    EndIf
+EndFunc
+
+; ------------------------------------------------------------
+; Start log
 ; ------------------------------------------------------------
 _Log("============================================================")
 _Log("SCRIPT STARTED")
@@ -54,29 +65,47 @@ _Log("Log file: " & $LOG_FILE)
 _Log("Open dialog timeout: " & $OPEN_DIALOG_TIMEOUT & "s")
 _Log("============================================================")
 
+_CloseBackupPopupIfPresent()
+
 ; ------------------------------------------------------------
 ; STEP 1: Wait for Open File dialog
 ; ------------------------------------------------------------
-_Log("STEP 1 - Waiting for Open File dialog [CLASS:#32770]")
+_Log("STEP 1 - Waiting for Open File dialog [CLASS:#32770] (smart match)")
 
-Local $hDialog = WinWait("[CLASS:#32770]", "", $OPEN_DIALOG_TIMEOUT)
+Local $hDialog = _FindBestOpenDialog($OPEN_DIALOG_TIMEOUT)
 
 If $hDialog = 0 Then
-    _Fail("STEP 1 FAILED - Open File dialog not detected within timeout")
+    _DumpAllCommonDialogs()
+    _Fail("STEP 1 FAILED - Open File dialog not detected within timeout (smart match)")
 EndIf
 
 _Log("STEP 1 OK - Dialog detected. Handle=" & $hDialog)
 
 ; ------------------------------------------------------------
-; STEP 2: Ensure dialog is active
+; STEP 2: Ensure dialog is active (diagnostic + fallback)
 ; ------------------------------------------------------------
-_Log("STEP 2 - Activating Open File dialog")
+_Log("STEP 2 - Activating Open File dialog (diagnostic)")
 
-If Not WinActivate($hDialog) Then
+Local $dlg = "[HANDLE:" & $hDialog & "]"
+_DumpWindowInfo($dlg, "STEP 2 BEFORE")
+
+; Try a more defensive activation sequence
+WinSetState($dlg, "", @SW_RESTORE)
+Sleep(200)
+
+Local $act = WinActivate($dlg)
+_Log("STEP 2 INFO - WinActivate returned=" & $act & " @error=" & @error)
+Sleep(300)
+
+; Wait briefly to confirm it became active
+WinWaitActive($dlg, "", 2)
+
+If Not WinActive($dlg) Then
+    _DumpActiveWindow("STEP 2 ACTIVE WINDOW (after WinActivate)")
+    _DumpWindowInfo($dlg, "STEP 2 AFTER")
     _Fail("STEP 2 FAILED - Unable to activate dialog. Handle=" & $hDialog)
 EndIf
 
-Sleep(300)
 _Log("STEP 2 OK - Dialog activated")
 
 ; ------------------------------------------------------------
@@ -93,71 +122,146 @@ EndIf
 _Log("STEP 3 OK - File input control found. Handle=" & $hEdit)
 
 ; ------------------------------------------------------------
-; STEP 4: Set file path directly
+; STEP 4: Set the file path in Edit1 (direct)
 ; ------------------------------------------------------------
-_Log("STEP 4 - Setting file path into input control")
-_Log("STEP 4 INFO - Path=" & $FILE_TO_UPLOAD)
+_Log("STEP 4 - Setting file path in Edit1")
 
-ControlSetText($hDialog, "", $hEdit, $FILE_TO_UPLOAD)
-Sleep(200)
+ControlFocus($hDialog, "", $hEdit)
+Sleep(100)
 
-; Validate text was set
-Local $sCheck = ControlGetText($hDialog, "", $hEdit)
-If $sCheck <> $FILE_TO_UPLOAD Then
-    _Fail("STEP 4 FAILED - File path mismatch. Current value=[" & $sCheck & "]")
+If Not ControlSetText($hDialog, "", $hEdit, $FILE_TO_UPLOAD) Then
+    _Fail("STEP 4 FAILED - Unable to set text into file input control")
 EndIf
 
-_Log("STEP 4 OK - File path set correctly")
+Sleep(200)
+
+Local $currentText = ControlGetText($hDialog, "", $hEdit)
+_Log("STEP 4 INFO - Edit1 now contains: " & $currentText)
+
+If StringStripWS($currentText, 3) = "" Then
+    _Fail("STEP 4 FAILED - Edit1 text appears empty after setting file path")
+EndIf
+
+_Log("STEP 4 OK - File path set")
 
 ; ------------------------------------------------------------
-; STEP 5: Click Open button
+; STEP 5: Click Open button (Button1)
 ; ------------------------------------------------------------
-_Log("STEP 5 - Locating Open button (Button1)")
+_Log("STEP 5 - Clicking Open button (Button1)")
 
 Local $hOpenBtn = ControlGetHandle($hDialog, "", "Button1")
 
 If $hOpenBtn = "" Then
-    _Fail("STEP 5 FAILED - Open button not found")
+    _Fail("STEP 5 FAILED - Open button (Button1) not found")
 EndIf
 
-_Log("STEP 5 INFO - Open button handle=" & $hOpenBtn)
-_Log("STEP 5 - Clicking Open button")
+_Log("STEP 5 INFO - Open button handle: " & $hOpenBtn)
 
-ControlClick($hDialog, "", $hOpenBtn)
+If Not ControlClick($hDialog, "", $hOpenBtn) Then
+    _Fail("STEP 5 FAILED - Unable to click Open button")
+EndIf
 
-_Log("STEP 5 OK - Open button clicked")
+_Log("STEP 5 OK - Open clicked")
 
 ; ------------------------------------------------------------
-; STEP 6: Wait for dialog to close
+; STEP 6: Verify dialog closes
 ; ------------------------------------------------------------
 _Log("STEP 6 - Waiting for dialog to close")
 
-If Not WinWaitClose($hDialog, "", 10) Then
+Local $closed = WinWaitClose($dlg, "", 10)
+If $closed = 0 Then
+    _DumpWindowInfo($dlg, "STEP 6 DIAG - dialog still present")
     _Fail("STEP 6 FAILED - Dialog did not close after clicking Open")
 EndIf
 
-_Log("STEP 6 OK - Dialog closed")
+_Log("STEP 6 OK - Dialog closed. Upload should proceed")
 
-; ------------------------------------------------------------
-; SCRIPT COMPLETED
-; ------------------------------------------------------------
+_Log("============================================================")
 _Log("SCRIPT COMPLETED SUCCESSFULLY")
 _Log("============================================================")
 Exit 0
 
-; ============================================================
-; Helper functions
-; ============================================================
 
-Func _Log($msg)
-    FileWriteLine($LOG_FILE, _
-        "[" & @YEAR & "-" & @MON & "-" & @MDAY & " " & _
-        @HOUR & ":" & @MIN & ":" & @SEC & "] " & $msg)
+; ------------------------------------------------------------
+; Diagnostic helpers
+; ------------------------------------------------------------
+Func _DumpWindowInfo($wnd, $label)
+    Local $t = WinGetTitle($wnd)
+    Local $s = WinGetState($wnd)
+    Local $p = WinGetProcess($wnd)
+    _Log($label & " - Title='" & $t & "' State=" & $s & " PID=" & $p)
 EndFunc
 
-; Logging usable before $LOG_FILE is set (bootstrap stage)
-Func _LogRaw($msg)
-    ConsoleWrite("[BOOT] " & $msg & @CRLF)
+Func _DumpActiveWindow($label)
+    Local $t = WinGetTitle("[ACTIVE]")
+    Local $cls = WinGetClassList("[ACTIVE]")
+    _Log($label & " - ACTIVE Title='" & $t & "' ClassList=" & $cls)
+EndFunc
+
+; Try to pick the correct Open File dialog when there are multiple #32770 windows.
+; Heuristic: must have Edit1 (File name) and Button1 (Open).
+Func _FindBestOpenDialog($timeoutSec)
+    Local $t0 = TimerInit()
+
+    While (TimerDiff($t0) < ($timeoutSec * 1000))
+        Local $wl = WinList("[CLASS:#32770]")
+        ; wl[0][0] = count
+        For $i = 1 To $wl[0][0]
+            Local $h = $wl[$i][1]
+            If $h = 0 Then ContinueLoop
+
+            Local $w = "[HANDLE:" & $h & "]"
+            ; skip invisible/disabled dialogs quickly
+            Local $state = WinGetState($w)
+            ; If window doesn't exist anymore, continue
+            If @error Then ContinueLoop
+
+            ; Must have the "File name" Edit control
+            Local $hEdit = ControlGetHandle($w, "", "Edit1")
+            If $hEdit = "" Then ContinueLoop
+
+            ; Must have an "Open" button (often Button1)
+            Local $hBtn = ControlGetHandle($w, "", "Button1")
+            If $hBtn = "" Then ContinueLoop
+
+            ; Found a good candidate
+            _Log("STEP 1 INFO - Candidate dialog: Handle=" & $h & " State=" & $state & " Title='" & WinGetTitle($w) & "'")
+            Return $h
+        Next
+
+        Sleep(200)
+    WEnd
+
+    Return 0
+EndFunc
+
+Func _DumpAllCommonDialogs()
+    _Log("DIAG - Dumping all [CLASS:#32770] windows found right now:")
+    Local $wl = WinList("[CLASS:#32770]")
+    For $i = 1 To $wl[0][0]
+        Local $h = $wl[$i][1]
+        Local $w = "[HANDLE:" & $h & "]"
+        _Log("DIAG - #32770 Handle=" & $h & " Title='" & WinGetTitle($w) & "' State=" & WinGetState($w) & " PID=" & WinGetProcess($w))
+    Next
+EndFunc
+
+
+; ------------------------------------------------------------
+; Logging helpers
+; ------------------------------------------------------------
+Func _Log($msg)
+    Local $line = "[" & @YEAR & "-" & StringFormat("%02d", @MON) & "-" & StringFormat("%02d", @MDAY) & " " & _
+                  StringFormat("%02d", @HOUR) & ":" & StringFormat("%02d", @MIN) & ":" & StringFormat("%02d", @SEC) & "] " & $msg
+
+    ; Write to file
+    Local $h = FileOpen($LOG_FILE, 1)
+    If $h <> -1 Then
+        FileWriteLine($h, $line)
+        FileClose($h)
+    EndIf
+
+    ; Also to stdout (captured by runner)
+    ConsoleWrite($line & @CRLF)
 EndFunc
 
 Func _Fail($reason)
