@@ -1,13 +1,9 @@
-﻿using System.Diagnostics;
-using System.Text;
-using System.Threading;
-using Configuration;
+﻿using Configuration;
+using Domain.WhatsApp;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
-using Services.Messages;
-using Keys = OpenQA.Selenium.Keys;
 
 namespace Services
 {

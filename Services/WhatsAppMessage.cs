@@ -1,7 +1,7 @@
 ﻿using Configuration;
+using Domain.WhatsApp;
 using Microsoft.Extensions.Logging;
 using Services.Interfaces;
-using Services.Messages;
 
 namespace Services
 {

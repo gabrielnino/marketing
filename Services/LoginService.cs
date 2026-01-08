@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using Configuration;
+﻿using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.Interfaces;
