@@ -4,8 +4,9 @@ using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
+using Services.WhatsApp.Interfaces;
 
-namespace Services
+namespace Services.WhatsApp
 {
     public sealed class WhatsAppChatService(
         IWebDriver driver,

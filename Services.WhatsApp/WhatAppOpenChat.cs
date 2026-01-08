@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
-using Services.Interfaces;
+using Services.WhatsApp.Interfaces;
 using Keys = OpenQA.Selenium.Keys;
 
-namespace Services
+namespace Services.WhatsApp
 {
     public class WhatAppOpenChat(
         IWebDriver driver,

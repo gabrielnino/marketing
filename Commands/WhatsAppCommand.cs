@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Services;
-using Services.Interfaces;
+using Services.WhatsApp.Interfaces;
 
 namespace Commands
 {

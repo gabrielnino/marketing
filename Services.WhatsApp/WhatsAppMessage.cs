@@ -1,9 +1,9 @@
 ﻿using Configuration;
 using Domain.WhatsApp;
 using Microsoft.Extensions.Logging;
-using Services.Interfaces;
+using Services.WhatsApp.Interfaces;
 
-namespace Services
+namespace Services.WhatsApp
 {
     public class WhatsAppMessage(
         ILogger<LoginService> logger,

@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.WhatsApp", "Domain.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketing.Services.Test", "Marketing.Services.Test\Marketing.Services.Test.csproj", "{2EB58012-62C9-48A5-ABCD-8647CA2C468F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.WhatsApp", "Services.WhatsApp\Services.WhatsApp.csproj", "{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{2EB58012-62C9-48A5-ABCD-8647CA2C468F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EB58012-62C9-48A5-ABCD-8647CA2C468F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EB58012-62C9-48A5-ABCD-8647CA2C468F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030} = {B628D088-366D-4455-8288-50279F5BEADF}
 		{A10AD4E0-9CD3-4978-A045-07A96B129989} = {BC189936-33B5-4AFD-9773-4620C30A7D23}
 		{2EB58012-62C9-48A5-ABCD-8647CA2C468F} = {97442D08-2C0C-443F-B48A-26062C0723DD}
+		{8AF0B5D3-9404-4541-8EB6-829D463DB9F8} = {333B38CF-0B9F-40EF-B7B7-776DF304C20C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FE554F8-4450-41A9-A935-290C6D2308C3}

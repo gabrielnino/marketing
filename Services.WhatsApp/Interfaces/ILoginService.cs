@@ -1,4 +1,4 @@
-﻿namespace Services.Interfaces
+﻿namespace Services.WhatsApp.Interfaces
 {
     public interface ILoginService
     {
