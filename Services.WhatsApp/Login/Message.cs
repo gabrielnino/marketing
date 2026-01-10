@@ -6,22 +6,22 @@ using Services.WhatsApp.Abstractions.OpenChat;
 
 namespace Services.WhatsApp.Login
 {
-    public class WhatsAppMessage(
+    public class Message(
         ILogger<LoginService> logger,
         ILoginService loginService,
         ExecutionTracker executionOption,
-        IWhatsAppChatService whatsAppChatService,
+        IChatService whatsAppChatService,
         AppConfig config,
-        IWhatAppOpenChat whatAppOpenChat
-        ) : IWhatsAppMessage
+        IOpenChat whatAppOpenChat
+        ) : IMessage
     {
         public ILogger<LoginService> Logger { get; } = logger;
         public ILoginService Login { get; } = loginService;
 
         public ExecutionTracker ExecutionOption { get; } = executionOption;
-        public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
+        public IChatService WhatsAppChatService { get; } = whatsAppChatService;
         private AppConfig Config { get; } = config;
-        private IWhatAppOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
+        private IOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
 
         public async Task LoginAsync()
         {

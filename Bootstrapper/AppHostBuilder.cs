@@ -19,8 +19,10 @@ using Services;
 using Services.Interfaces;
 using Services.WhatsApp.Abstractions.Login;
 using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Search;
 using Services.WhatsApp.Login;
 using Services.WhatsApp.OpenChat;
+using Services.WhatsApp.Selector;
 using Services.WhatsApp.WhatsApp;
 
 namespace Bootstrapper
@@ -115,7 +117,7 @@ namespace Bootstrapper
                         services.AddHostedService<WebDriverLifetimeService>();
                     }
 
-                    services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
+                    services.AddScoped<IMessage, Message>();
                     services.AddScoped<IWebDriver>(sp =>
                     {
                         var factory = sp.GetRequiredService<IWebDriverFactory>();
@@ -127,8 +129,9 @@ namespace Bootstrapper
                     services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
                     services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
                     services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
-                    services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
-                    services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
+                    services.AddTransient<IOpenChat, OpenChat>();
+                    services.AddTransient<IChatService, ChatService>();
+                    services.AddTransient<IAttachments, Attachments>();
                     services.AddTransient<IAutoItRunner, AutoItRunner>();
                     AddDbContextSQLite(hostingContext, services);
 

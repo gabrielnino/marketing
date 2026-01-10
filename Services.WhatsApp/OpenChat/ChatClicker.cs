@@ -8,11 +8,11 @@ using Services.WhatsApp.Login;
 
 namespace Services.WhatsApp.OpenChat
 {
-    internal sealed class WhatsAppChatClicker(
+    internal sealed class ChatClicker(
             IWebDriverFacade driver,
-            IWhatsAppSelectors selectors,
+            ISelectors selectors,
             IChatXPathBuilder xpathBuilder,
-            ILogger<LoginService> logger) : IWhatsAppChatClicker
+            ILogger<LoginService> logger) : IClicker
     {
         public async Task ClickChatByTitleAsync(
             string chatTitle,

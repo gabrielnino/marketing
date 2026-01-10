@@ -7,10 +7,10 @@ using Services.WhatsApp.Login;
 
 namespace Services.WhatsApp.Search
 {
-    internal sealed class WhatsAppSearchBoxTyper(
+    internal sealed class SearchBoxTyper(
            IWebDriverFacade driver,
-           IWhatsAppSelectors selectors,
-           ILogger<LoginService> logger) : IWhatsAppSearchBoxTyper
+           ISelectors selectors,
+           ILogger<LoginService> logger) : ISearchBoxTyper
     {
         public async Task TypeIntoSearchBoxAsync(
             string text,

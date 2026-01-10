@@ -1,6 +1,6 @@
 ﻿namespace Services.WhatsApp.Abstractions.Login
 {
-    public interface IWhatsAppMessage
+    public interface IMessage
     {
         Task LoginAsync();
         Task SendMessageAsync();

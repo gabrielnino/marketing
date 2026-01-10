@@ -1,6 +1,6 @@
 ﻿namespace Services.WhatsApp.Abstractions.OpenChat
 {
-    public interface IWhatsAppChatClicker
+    public interface IClicker
     {
         Task ClickChatByTitleAsync(
             string chatTitle,

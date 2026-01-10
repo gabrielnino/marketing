@@ -1,6 +1,6 @@
 ﻿namespace Services.WhatsApp.Abstractions.Login
 {
-    public interface IWhatsAppLoginStateChecker
+    public interface ILoginStateChecker
     {
         bool IsWhatsAppLoggedIn();
     }

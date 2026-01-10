@@ -9,10 +9,10 @@ using Services.WhatsApp.Abstractions.Login;
 
 namespace Commands
 {
-    public class WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage) : ICommand
+    public class WhatsAppCommand(ILogger<WhatsAppCommand> logger, IMessage iWhatsAppMessage) : ICommand
     {
         private ILogger<WhatsAppCommand> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
-        private IWhatsAppMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
+        private IMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
 
         public async Task ExecuteAsync(Dictionary<string, string>? arguments = null)
         {

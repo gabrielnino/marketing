@@ -6,10 +6,10 @@ using Services.WhatsApp.Abstractions.Selenium;
 
 namespace Services.WhatsApp.Login
 {
-    internal sealed class WhatsAppLoginStateChecker(
+    internal sealed class LoginStateChecker(
            IWebDriverFacade driver,
-           IWhatsAppSelectors selectors,
-           ILogger<LoginService> logger) : IWhatsAppLoginStateChecker
+           ISelectors selectors,
+           ILogger<LoginService> logger) : ILoginStateChecker
     {
         public bool IsWhatsAppLoggedIn()
         {

@@ -1,6 +1,6 @@
 ﻿namespace Services.WhatsApp.Abstractions.Selector
 {
-    public interface IWhatsAppSelectors
+    public interface ISelectors
     {
         string CssSelectorToFindLoggedInMarker { get; }
         string CssSelectorToFindSearchInput { get; }

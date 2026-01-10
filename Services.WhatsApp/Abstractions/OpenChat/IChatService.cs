@@ -3,7 +3,7 @@
 
 namespace Services.WhatsApp.Abstractions.OpenChat
 {
-    public interface IWhatsAppChatService
+    public interface IChatService
     {
         Task SendMessageAsync(
             ImageMessagePayload imageMessagePayload,

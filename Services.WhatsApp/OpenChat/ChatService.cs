@@ -5,30 +5,29 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
 using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Search;
 
 namespace Services.WhatsApp.OpenChat
 {
-    public sealed class WhatsAppChatService(
+    public sealed class ChatService(
         IWebDriver driver,
-        ILogger<WhatsAppChatService> logger,
+        ILogger<ChatService> logger,
         AppConfig config,
-        IAutoItRunner autoItRunner
-    ) : IWhatsAppChatService
+        IAutoItRunner autoItRunner,
+        IAttachments controls
+    ) : IChatService
     {
-        private const string XpathToFindAttachButton =
-            "//button[@aria-label='Attach' or @title='Attach' or @data-testid='attach-button' or .//span[@data-icon='clip' or @data-icon='plus']]";
+  
 
-        private const string FindPhotosAndVideosOption =
-            "//*[@role='button' or @role='menuitem' or self::button]" +
-            "[@aria-label='Photos & videos' or title='Photos & videos' or @data-testid='attach-photos' or .//span[normalize-space(.)='Photos & videos']]";
 
         private const string XpathFindCaption =
             "//div[@role='textbox' and @contenteditable='true' and @aria-label='Type a message']";
 
         private IWebDriver Driver { get; } = driver;
-        public ILogger<WhatsAppChatService> Logger { get; } = logger;
+        public ILogger<ChatService> Logger { get; } = logger;
         private AppConfig Config { get; } = config;
         private IAutoItRunner AutoItRunner { get; } = autoItRunner;
+        private IAttachments Controls { get; } = controls;
 
         public async Task SendMessageAsync(
             ImageMessagePayload imageMessagePayload,
@@ -78,16 +77,9 @@ namespace Services.WhatsApp.OpenChat
             );
 
             Logger.LogInformation("Step 1/3: Locating attach button...");
-
-            Logger.LogInformation(
-                "Locating attach button using XPath '{XPath}'...",
-                XpathToFindAttachButton
-            );
-
-            var attachButton = FindAttachButton(loginTimeout, loginPollInterval);
+            var attachButton = Controls.FindAttachButton(loginTimeout, loginPollInterval);
             if (attachButton is null)
             {
-                Logger.LogError("Attach button not found. XPath='{XPath}'", XpathToFindAttachButton);
                 throw new NoSuchElementException("Attach button not found.");
             }
 
@@ -104,15 +96,10 @@ namespace Services.WhatsApp.OpenChat
             attachButton.Click();
             Logger.LogDebug("Attach button clicked.");
 
-            Logger.LogInformation(
-                "Locating 'Photos & videos' option using XPath '{XPath}'...",
-                FindPhotosAndVideosOption
-            );
 
-            var photoAndVideo = FindPhotosAndVideosOptionButton(loginTimeout, loginPollInterval);
+            var photoAndVideo = controls.FindPhotosAndVideosOptionButton(loginTimeout, loginPollInterval);
             if (photoAndVideo is null)
             {
-                Logger.LogError("'Photos & videos' option not found. XPath='{XPath}'", FindPhotosAndVideosOption);
                 throw new NoSuchElementException("'Photos & videos' option not found.");
             }
 
@@ -257,164 +244,11 @@ namespace Services.WhatsApp.OpenChat
             Logger.LogDebug("SetCaptionViaExecCommand completed.");
         }
 
-        private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
-        {
-            Logger.LogDebug(
-                "FindAttachButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-                timeout,
-                pollingInterval,
-                XpathToFindAttachButton
-            );
+        
 
-            var wait = new WebDriverWait(Driver, timeout)
-            {
-                PollingInterval = pollingInterval
-            };
 
-            wait.IgnoreExceptionTypes(
-                typeof(NoSuchElementException),
-                typeof(StaleElementReferenceException)
-            );
 
-            IWebElement attachButton;
-            try
-            {
-                attachButton = wait.Until(driver =>
-                {
-                    var element = driver
-                        .FindElements(By.XPath(XpathToFindAttachButton))
-                        .FirstOrDefault();
 
-                    if (element is null)
-                    {
-                        Logger.LogTrace("FindAttachButton: Attach button not present yet.");
-                        return null;
-                    }
-
-                    if (!element.Displayed || !element.Enabled)
-                    {
-                        Logger.LogTrace(
-                            "FindAttachButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
-                            element.Displayed,
-                            element.Enabled
-                        );
-                        return null;
-                    }
-
-                    return element;
-                });
-            }
-            catch (WebDriverTimeoutException ex)
-            {
-                Logger.LogError(
-                    ex,
-                    "FindAttachButton timed out after {Timeout}. xpath='{XPath}'",
-                    timeout,
-                    XpathToFindAttachButton
-                );
-                throw;
-            }
-
-            Logger.LogDebug(
-                "FindAttachButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
-                attachButton is not null,
-                attachButton?.Displayed,
-                attachButton?.Enabled
-            );
-
-            return attachButton;
-        }
-
-        private IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval)
-        {
-            Logger.LogDebug(
-                "FindPhotosAndVideosOptionButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-                timeout, pollingInterval, FindPhotosAndVideosOption
-            );
-
-            var wait = new WebDriverWait(Driver, timeout)
-            {
-                PollingInterval = pollingInterval
-            };
-
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-
-            try
-            {
-                var result = wait.Until(driver =>
-                {
-                    var candidates = driver.FindElements(By.XPath(FindPhotosAndVideosOption))
-                        .Where(e => e.Displayed && e.Enabled)
-                        .ToList();
-
-                    if (candidates.Count == 0)
-                    {
-                        Logger.LogTrace("FindPhotosAndVideosOptionButton: no displayed/enabled candidates yet.");
-                        return null;
-                    }
-
-                    foreach (var c in candidates)
-                    {
-                        IWebElement clickable = c;
-
-                        var tag = (clickable.TagName ?? string.Empty).ToLowerInvariant();
-                        if (tag == "span" || tag == "div")
-                        {
-                            var parentButton = TryFindAncestorClickable(clickable);
-                            if (parentButton != null)
-                            {
-                                Logger.LogTrace("FindPhotosAndVideosOptionButton: climbed from tag={Tag} to ancestor tag={AncestorTag}",
-                                    c.TagName, parentButton.TagName);
-                                clickable = parentButton;
-                            }
-                            else
-                            {
-                                Logger.LogTrace("FindPhotosAndVideosOptionButton: no clickable ancestor found for tag={Tag}", c.TagName);
-                            }
-                        }
-
-                        if (clickable.Displayed && clickable.Enabled)
-                        {
-                            Logger.LogDebug(
-                                "FindPhotosAndVideosOptionButton: selected candidate tag={Tag} aria-label={AriaLabel} title={Title}",
-                                clickable.TagName,
-                                clickable.GetAttribute("aria-label"),
-                                clickable.GetAttribute("title")
-                            );
-                            return clickable;
-                        }
-                    }
-
-                    return null;
-                });
-
-                Logger.LogDebug("FindPhotosAndVideosOptionButton completed. found={Found}", result is not null);
-                return result;
-            }
-            catch (WebDriverTimeoutException ex)
-            {
-                Logger.LogError(ex,
-                    "FindPhotosAndVideosOptionButton timed out after {Timeout}. xpath='{XPath}'",
-                    timeout, FindPhotosAndVideosOption
-                );
-                throw;
-            }
-        }
-
-        private IWebElement? TryFindAncestorClickable(IWebElement element)
-        {
-            try
-            {
-                return element.FindElement(By.XPath(
-                    "ancestor::*[self::button or @role='button' or @role='menuitem'][1]"
-                ));
-            }
-            catch (Exception ex)
-            {
-                Logger.LogTrace(ex, "TryFindAncestorClickable: no clickable ancestor found.");
-                return null;
-            }
-        }
 
         private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
         {

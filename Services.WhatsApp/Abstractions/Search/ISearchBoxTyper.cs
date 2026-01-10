@@ -1,6 +1,6 @@
 ﻿namespace Services.WhatsApp.Abstractions.Search
 {
-    public interface IWhatsAppSearchBoxTyper
+    public interface ISearchBoxTyper
     {
         Task TypeIntoSearchBoxAsync(
             string text,

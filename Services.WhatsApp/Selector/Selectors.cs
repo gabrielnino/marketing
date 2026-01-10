@@ -2,7 +2,7 @@
 
 namespace Services.WhatsApp.Selector
 {
-    internal sealed class WhatsAppSelectors : IWhatsAppSelectors
+    internal sealed class Selectors : ISelectors
     {
         // Original constants preserved verbatim
         public string CssSelectorToFindLoggedInMarker => "div[role='textbox'][contenteditable='true']";

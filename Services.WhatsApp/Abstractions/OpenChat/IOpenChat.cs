@@ -1,6 +1,6 @@
 ﻿namespace Services.WhatsApp.Abstractions.OpenChat
 {
-    public interface IWhatAppOpenChat
+    public interface IOpenChat
     {
         Task OpenContactChatAsync(
             string chatIdentifier,

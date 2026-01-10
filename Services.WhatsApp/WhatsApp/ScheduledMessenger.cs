@@ -23,7 +23,7 @@ namespace Services.WhatsApp.WhatsApp
         {
             Logger.LogInformation("WhatsAppSchedulerHostedService started.");
             using var scope = ScopeFactory.CreateScope();
-            var sender = scope.ServiceProvider.GetRequiredService<IWhatsAppMessage>();
+            var sender = scope.ServiceProvider.GetRequiredService<IMessage>();
             await sender.LoginAsync();
             while (!stoppingToken.IsCancellationRequested)
             {

@@ -12,31 +12,31 @@ using Services.WhatsApp.XPath;
 namespace Services.WhatsApp.OpenChat
 {
 
-    public class WhatAppOpenChat : IWhatAppOpenChat
+    public class OpenChat : IOpenChat
     {
         private const string WhatAppMessage = "WhatsApp Web is not logged in. Call LoginAsync() before opening a chat.";
 
         // Keep original logger type/category to avoid changing logging category semantics.
         public ILogger<LoginService> Logger { get; }
 
-        private readonly IWhatsAppLoginStateChecker _loginChecker;
-        private readonly IWhatsAppSearchBoxTyper _searchTyper;
-        private readonly IWhatsAppChatClicker _chatClicker;
+        private readonly ILoginStateChecker _loginChecker;
+        private readonly ISearchBoxTyper _searchTyper;
+        private readonly IClicker _chatClicker;
 
         // Backward-compatible constructor (same signature as original).
-        public WhatAppOpenChat(IWebDriver driver, ILogger<LoginService> logger)
+        public OpenChat(IWebDriver driver, ILogger<LoginService> logger)
             : this(
-                loginChecker: new WhatsAppLoginStateChecker(
-                    driver: new SeleniumWebDriverFacade(driver),
-                    selectors: new WhatsAppSelectors(),
+                loginChecker: new LoginStateChecker(
+                    driver: new WebDriverFacade(driver),
+                    selectors: new Selectors(),
                     logger: logger),
-                searchTyper: new WhatsAppSearchBoxTyper(
-                    driver: new SeleniumWebDriverFacade(driver),
-                    selectors: new WhatsAppSelectors(),
+                searchTyper: new SearchBoxTyper(
+                    driver: new WebDriverFacade(driver),
+                    selectors: new Selectors(),
                     logger: logger),
-                chatClicker: new WhatsAppChatClicker(
-                    driver: new SeleniumWebDriverFacade(driver),
-                    selectors: new WhatsAppSelectors(),
+                chatClicker: new ChatClicker(
+                    driver: new WebDriverFacade(driver),
+                    selectors: new Selectors(),
                     xpathBuilder: new ChatXPathBuilder(new XPathLiteralEscaper(logger)),
                     logger: logger),
                 logger: logger)
@@ -44,10 +44,10 @@ namespace Services.WhatsApp.OpenChat
         }
 
         // Injectable constructor for testing/DI (DIP).
-        public WhatAppOpenChat(
-            IWhatsAppLoginStateChecker loginChecker,
-            IWhatsAppSearchBoxTyper searchTyper,
-            IWhatsAppChatClicker chatClicker,
+        public OpenChat(
+            ILoginStateChecker loginChecker,
+            ISearchBoxTyper searchTyper,
+            IClicker chatClicker,
             ILogger<LoginService> logger)
         {
             _loginChecker = loginChecker ?? throw new ArgumentNullException(nameof(loginChecker));
