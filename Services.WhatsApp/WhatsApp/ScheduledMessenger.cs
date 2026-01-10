@@ -4,9 +4,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Configuration;
-using Services.WhatsApp.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
 
-namespace Services.WhatsApp
+namespace Services.WhatsApp.WhatsApp
 {
     public sealed class ScheduledMessenger(
     IServiceScopeFactory scopeFactory,

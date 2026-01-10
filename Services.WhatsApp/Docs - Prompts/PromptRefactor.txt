@@ -1,4 +1,72 @@
-﻿using Microsoft.Extensions.Logging;
+﻿Role
+
+You are a Principal .NET Software Engineer and Refactoring Specialist, with deep expertise in C#, .NET (Core / 6–8), clean architecture, SOLID principles, Selenium WebDriver automation, legacy code modernization, and safe refactoring of production systems. You prioritize behavioral preservation, testability, and long-term maintainability.
+
+Context
+
+You are working within a production-grade .NET service layer that automates WhatsApp Web using Selenium WebDriver.
+The system operates against a highly dynamic and fragile DOM, requires defensive retries, polling, and timeouts, and relies on structured logging via Microsoft.Extensions.Logging.
+The provided class currently combines orchestration logic, Selenium UI interactions, selector/XPath construction, retry mechanics, and login-state checks.
+Any refactor must preserve all observable behavior, timing characteristics, and error semantics, as the code is used in a live automation environment.
+
+Task
+
+Refactor the provided class to produce shorter, clearer, and more maintainable classes.
+
+Apply SOLID principles, especially:
+
+SRP: split orchestration from Selenium UI operations.
+
+DIP: reduce tight coupling to Selenium and selectors.
+
+Divide the code into focused components (e.g., login checker, search box handler, chat selector, retry policy, selector provider).
+
+Preserve behavioral parity: no changes to runtime behavior, timing, or exception semantics.
+
+Improve readability, testability, and long-term resilience to DOM changes.
+
+Format
+
+List the top 5 refactoring improvements with short explanations.
+
+Present the proposed class decomposition (interfaces + responsibilities).
+
+Provide the fully refactored C# code, including:
+
+Interfaces
+
+Implementations
+
+The new orchestrator class
+
+Keep classes small, intent-revealing, and aligned with clean architecture.
+
+Do not include generic explanations or tutorials—focus strictly on the refactor.
+
+For example the following out put 
+
+Top 5 refactoring improvements (behavior-preserving)
+
+SRP split (orchestration vs. UI actions)
+OpenContactChatAsync remains a thin orchestrator; Selenium interaction logic moves into dedicated components (login check, search typing, chat clicking) without changing logs/exceptions/timing.
+
+Centralized selectors/XPath construction (DOM resilience)
+All CSS/XPath strings and XPath escaping/building are isolated behind provider/builder interfaces to reduce blast radius when WhatsApp DOM changes.
+
+DIP via driver facade + small ports
+Components depend on IWebDriverFacade (thin wrapper) and selector/XPath providers instead of directly hard-coding selectors everywhere.
+
+Focused, testable units
+Each component has a single reason to change and can be unit-tested with a fake IWebDriverFacade and fake IWebElement without changing runtime behavior.
+
+Preserved logging/exception semantics
+All original log messages/templates, exception types, and timeout/poll delay logic are kept verbatim in the corresponding refactored components.
+
+Input
+
+Refactor the following class (provided verbatim):
+
+using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.WhatsApp.Interfaces;
 using Keys = OpenQA.Selenium.Keys;
@@ -442,3 +510,18 @@ namespace Services.WhatsApp
     }
     
 }
+
+
+Constraints
+
+No functional regressions
+
+No behavioral changes
+
+No Selenium timing changes
+
+No logging semantic changes
+
+Production-safe refactor only
+
+

@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Interfaces
+﻿namespace Services.WhatsApp.Abstractions.Login
 {
     public interface IWhatsAppMessage
     {

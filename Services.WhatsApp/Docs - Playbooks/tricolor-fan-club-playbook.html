@@ -1,0 +1,745 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Playbook — Tricolor Fan Club (WhatsApp-first)</title>
+    <meta name="color-scheme" content="dark" />
+    <style>
+        :root {
+            --bg0: #070b14;
+            --bg1: #0b1220;
+            --text: #e8eefc;
+            --muted: #9fb0d4;
+            --line: rgba(255,255,255,.10);
+            --accent: #7c5cff;
+            --accent2: #2dd4ff;
+            --good: #3ddc97;
+            --warn: #ffcc66;
+            --bad: #ff5c7a;
+            --shadow2: 0 10px 30px rgba(0,0,0,.35);
+            --r: 18px;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+            --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--sans);
+            color: var(--text);
+            line-height: 1.45;
+            overflow-x: hidden;
+            background: radial-gradient(1200px 600px at 18% 8%, rgba(124,92,255,.18), transparent 60%), radial-gradient(900px 500px at 82% 18%, rgba(45,212,255,.12), transparent 60%), radial-gradient(900px 700px at 50% 100%, rgba(61,220,151,.08), transparent 62%), linear-gradient(180deg, var(--bg0), var(--bg1) 32%, #0a1020);
+        }
+
+        .mono {
+            font-family: var(--mono)
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 22px auto;
+            padding: 0 18px 54px;
+            display: grid;
+            gap: 16px
+        }
+
+        .top {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            background: rgba(0,0,0,.14);
+            box-shadow: var(--shadow2);
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,212,255,.95));
+            box-shadow: 0 14px 40px rgba(124,92,255,.20);
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            letter-spacing: .6px;
+            user-select: none;
+        }
+
+        h1 {
+            font-size: 15px;
+            margin: 0
+        }
+
+        .subtitle {
+            margin: 2px 0 0;
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            font-size: 11px;
+            color: var(--muted);
+            background: rgba(255,255,255,.03);
+            white-space: nowrap;
+        }
+
+            .tag.accent {
+                border-color: rgba(124,92,255,.50);
+                color: rgba(232,238,252,.92);
+                background: rgba(124,92,255,.10)
+            }
+
+            .tag.good {
+                border-color: rgba(61,220,151,.35);
+                color: rgba(61,220,151,.95);
+                background: rgba(61,220,151,.08)
+            }
+
+            .tag.warn {
+                border-color: rgba(255,204,102,.35);
+                color: rgba(255,204,102,.95);
+                background: rgba(255,204,102,.08)
+            }
+
+            .tag.bad {
+                border-color: rgba(255,92,122,.35);
+                color: rgba(255,92,122,.95);
+                background: rgba(255,92,122,.10)
+            }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            background: rgba(0,0,0,.12);
+            box-shadow: var(--shadow2);
+            overflow: hidden;
+        }
+
+        .card-h {
+            padding: 14px 14px 10px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(0,0,0,.10);
+        }
+
+            .card-h h2 {
+                margin: 0;
+                font-size: 13px;
+                letter-spacing: .2px
+            }
+
+            .card-h small {
+                color: var(--muted);
+                font-size: 12px
+            }
+
+        .card-b {
+            padding: 14px
+        }
+
+        .note {
+            border-left: 3px solid rgba(124,92,255,.75);
+            padding: 10px 12px;
+            background: rgba(124,92,255,.10);
+            border-radius: 14px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .sep {
+            height: 1px;
+            background: var(--line);
+            margin: 12px 0
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        @media (max-width: 860px) {
+            .grid2 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .pill {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 12px;
+            background: rgba(0,0,0,.10);
+        }
+
+            .pill h3 {
+                margin: 0 0 8px;
+                font-size: 12px;
+                letter-spacing: .2px
+            }
+
+            .pill p {
+                margin: 8px 0;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .pill ul {
+                margin: 8px 0 0 18px;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .pill li {
+                margin: 6px 0
+            }
+
+        details {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(0,0,0,.10);
+            overflow: hidden;
+        }
+
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            user-select: none;
+        }
+
+            summary::-webkit-details-marker {
+                display: none
+            }
+
+        .sum-title {
+            display: flex;
+            flex-direction: column;
+            gap: 2px
+        }
+
+            .sum-title b {
+                font-size: 12px
+            }
+
+            .sum-title span {
+                font-size: 12px;
+                color: var(--muted)
+            }
+
+        .sum-ico {
+            width: 24px;
+            height: 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.14);
+            background: rgba(255,255,255,.04);
+            display: grid;
+            place-items: center;
+            color: var(--muted);
+            flex: 0 0 auto;
+        }
+
+        details[open] .sum-ico {
+            color: var(--text);
+            border-color: rgba(124,92,255,.60);
+            background: rgba(124,92,255,.10)
+        }
+
+        .body {
+            padding: 0 12px 12px
+        }
+
+            .body p {
+                margin: 10px 0;
+                color: var(--text);
+                font-size: 13px
+            }
+
+            .body ul {
+                margin: 8px 0 0 18px;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .body li {
+                margin: 6px 0
+            }
+
+        .kbd {
+            font-size: 11px;
+            color: var(--muted);
+            border: 1px solid rgba(255,255,255,.16);
+            padding: 3px 7px;
+            border-radius: 10px;
+            background: rgba(0,0,0,.18);
+            font-family: var(--mono);
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .check {
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 16px;
+            padding: 12px;
+            background: rgba(0,0,0,.14);
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+            .check b {
+                color: var(--text)
+            }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(0,0,0,.10);
+        }
+
+        th, td {
+            padding: 10px 10px;
+            font-size: 12px;
+            color: var(--muted);
+            border-bottom: 1px solid var(--line);
+            vertical-align: top
+        }
+
+        th {
+            color: var(--text);
+            text-align: left;
+            background: rgba(0,0,0,.10)
+        }
+
+        tr:last-child td {
+            border-bottom: 0
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+            padding: 12px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="top">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">LN</div>
+                <div>
+                    <h1>Playbook — Tricolor Fan Club (WhatsApp-first)</h1>
+                    <p class="subtitle">Operación diaria: segmentación, ritmo, guardrails, plantillas, medición y escalamiento</p>
+                </div>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+                <span class="tag accent">Execution</span>
+                <span class="tag good">2 NEWS → 1 PROMO</span>
+                <span class="tag warn">WhatsApp-first</span>
+            </div>
+        </header>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>0) Objetivo y KPI (lo que NO se negocia)</h2>
+                    <small>Si mides lo equivocado, optimizas spam</small>
+                </div>
+                <span class="tag bad">ANTI-SPAM</span>
+            </div>
+            <div class="card-b">
+                <div class="note">
+                    <b>Objetivo real:</b> generar conversación y respuesta. La compra es consecuencia, no el “evento principal”.
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>KPI correctos</h3>
+                        <ul>
+                            <li>% de mensajes con respuesta (por grupo y 1:1)</li>
+                            <li>Tiempo hasta primera respuesta</li>
+                            <li>Personas que reaparecen (recurrencia)</li>
+                            <li>Preguntas directas de compra (pull) vs empuje (push)</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>KPI incorrectos</h3>
+                        <ul>
+                            <li>Mensajes enviados</li>
+                            <li>Clics sin conversación</li>
+                            <li>Promos por semana</li>
+                            <li>“Alcance” sin interacción</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>1) Segmentación mínima (para no colapsar)</h2>
+                    <small>WhatsApp escala solo con reglas</small>
+                </div>
+                <span class="tag accent">SEGMENT</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Grupos (COMMUNITY)</h3>
+                        <p>Objetivo: que el grupo hable entre sí.</p>
+                        <ul>
+                            <li>Temas: watch parties, lugares, horarios, ambiente.</li>
+                            <li>Regla: 1–2 mensajes/día.</li>
+                            <li>Promo: solo después de 2 news con respuesta.</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>1:1 (IDENTITY / CURRENT)</h3>
+                        <p>Objetivo: conversación personal y contexto (memoria).</p>
+                        <ul>
+                            <li>Temas: nostalgia, debate, preferencias (talla, estilo).</li>
+                            <li>Ritmo: 1 mensaje cada 24–72h si no responde.</li>
+                            <li>Promo: como respuesta a una pregunta real.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="note">
+                    <b>Hecho operativo:</b> sin segmentación, todo se siente “anuncio para todos” y muere el canal.
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>2) Guardrails (reglas que evitan spam)</h2>
+                    <small>Diseñadas para proteger reputación</small>
+                </div>
+                <span class="tag good">GUARDRAILS</span>
+            </div>
+            <div class="card-b">
+                <table aria-label="Reglas de guardrail">
+                    <thead>
+                        <tr>
+                            <th style="width:28%">Regla</th>
+                            <th style="width:42%">Cómo se aplica</th>
+                            <th style="width:30%">Si se viola</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tag good">2 NEWS → 1 PROMO</span></td>
+                            <td>Por grupo/persona: NEWS, NEWS, luego PROMO (si hubo señales de vida).</td>
+                            <td>Sube rechazo. Aplica reset con <span class="tag accent">IDENTITY</span>.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag warn">Ritmo</span></td>
+                            <td>Grupos: 1–2/día. 1:1: 24–72h si no hay respuesta.</td>
+                            <td>Silencios, “mute”, abandono del grupo.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag accent">Voz humana</span></td>
+                            <td>Preguntas abiertas; cero “copy publicitario”; nada de urgencia falsa.</td>
+                            <td>Se percibe como marketing y cae conversación.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag bad">No doble promo</span></td>
+                            <td>Nunca dos PROMO seguidas, ni aunque haya stock.</td>
+                            <td>Percepción de spam inmediato.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag accent">Promo como respuesta</span></td>
+                            <td>“Para los que preguntan…” / “Si quieres, dime talla…”</td>
+                            <td>Parece empuje; baja confianza.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="sep"></div>
+
+                <div class="check">
+                    <b>Checklist antes de enviar</b><br />
+                    1) ¿Esto abre conversación? <br />
+                    2) ¿Refuerza identidad o comunidad? <br />
+                    3) Si es promo: ¿hubo 2 news con respuestas antes? <br />
+                    4) ¿Suena a amigo, no a anuncio?
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>3) Calendario operativo (simple y repetible)</h2>
+                    <small>Para ejecutar sin improvisar</small>
+                </div>
+                <span class="tag accent">RUTINA</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Diario (15–25 min)</h3>
+                        <ul>
+                            <li>1 prompt <span class="tag accent">IDENTITY</span> o <span class="tag accent">CURRENT</span></li>
+                            <li>Responder 1:1 a quienes contesten (memoria)</li>
+                            <li>Registrar señales (respuestas, preguntas, tallas)</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Semanal (45–60 min)</h3>
+                        <ul>
+                            <li>1 invitación <span class="tag accent">COMMUNITY</span> (watch party / lugar)</li>
+                            <li>1 PROMO (si hubo 2 NEWS con vida)</li>
+                            <li>Revisar métricas: respuesta, recurrencia, pull</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="note">
+                    <b>Regla:</b> si no hay respuestas, no “compensas” con más mensajes. Cambias el prompt (IDENTITY).
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>4) Plantillas listas (copiar/pegar)</h2>
+                    <small>Evita inventar cada vez</small>
+                </div>
+                <span class="tag accent">TEMPLATES</span>
+            </div>
+            <div class="card-b">
+                <details open>
+                    <summary>
+                        <div class="sum-title">
+                            <b>IDENTITY</b>
+                            <span>Nostalgia y símbolos compartidos</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <ul>
+                            <li>“¿Cuál fue tu camiseta más inolvidable (año/torneo)?”</li>
+                            <li>“¿Qué gol de Colombia te hizo gritar más?”</li>
+                            <li>“Si pudieras revivir un partido, ¿cuál eliges y por qué?”</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>CURRENT</b>
+                            <span>Debate que divide sin pelear</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <ul>
+                            <li>“Si hoy hubiera partido, ¿a quién pones de 9?”</li>
+                            <li>“¿Prefieres juventud o experiencia en la convocatoria?”</li>
+                            <li>“¿Qué línea necesita más: defensa, medio o ataque?”</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>COMMUNITY</b>
+                            <span>Localización + encuentro</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <ul>
+                            <li>“Vancouver/BC: ¿en qué zona te queda mejor un watch party?”</li>
+                            <li>“¿Cuál es el mejor lugar para ver fútbol con ambiente colombiano?”</li>
+                            <li>“Si armamos encuentro, ¿qué día/hora te funciona?”</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>PROMO</b>
+                            <span>CTA natural (respuesta, no anuncio)</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <ul>
+                            <li>“Para los que preguntan 👕: hay camisetas con entrega esta semana…”</li>
+                            <li>“Si quieres, dime talla + ciudad y te digo disponibilidad.”</li>
+                            <li>“Si la necesitas antes del partido, te confirmo tiempos.”</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>5) Memoria vital (lo mínimo para escalar)</h2>
+                    <small>Sin memoria, repites y te vuelves spam</small>
+                </div>
+                <span class="tag warn">MEMORY</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Por persona (1:1)</h3>
+                        <ul>
+                            <li>Último tema que enganchó (nostalgia/debate)</li>
+                            <li>Preferencia de camiseta (retro/2024) y talla</li>
+                            <li>Última respuesta (sí/no) + fecha</li>
+                            <li>Contador de PROMO (para no exceder)</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Por grupo</h3>
+                        <ul>
+                            <li>Zona/ciudad (Vancouver, Burnaby, Surrey…)</li>
+                            <li>Temas que generan conversación</li>
+                            <li>Ritmo: última publicación + reacción</li>
+                            <li>Cuándo fue la última PROMO (cooldown)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="note">
+                    <b>Regla de supervivencia:</b> si no puedes recordar 3 cosas de una persona, no puedes venderle sin parecer genérico.
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>6) Señales y acciones (qué hacer cuando algo va mal)</h2>
+                    <small>Diagnóstico rápido</small>
+                </div>
+                <span class="tag good">HEALTH</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Señales sanas</h3>
+                        <ul>
+                            <li>Respuestas espontáneas</li>
+                            <li>Miembros se responden entre sí</li>
+                            <li>Preguntas sobre tallas/envíos (pull)</li>
+                            <li>Recurrencia semanal</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Alarmas</h3>
+                        <ul>
+                            <li>Visto sin respuestas + PROMO</li>
+                            <li>Solo 👍 y luego silencio</li>
+                            <li>Desaparición tras promo</li>
+                            <li>“Mute”/salidas del grupo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="check">
+                    <b>Play de recuperación (cuando hay alarma)</b><br />
+                    1) Pausa promo 7–10 días <br />
+                    2) Reset con <span class="tag accent">IDENTITY</span> (nostalgia fuerte) <br />
+                    3) Pregunta simple (1 línea) <br />
+                    4) Responde 1:1 a quien conteste (memoria) <br />
+                    5) Solo retoma PROMO después de 2 NEWS con vida
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>7) WhatsApp-first: riesgos y mitigación</h2>
+                    <small>Operación sin romper reputación</small>
+                </div>
+                <span class="tag warn">RISK</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Riesgo operativo</h3>
+                        <p>Automatización (Selenium/AutoIt) es frágil.</p>
+                        <ul>
+                            <li>Mitigación: contenido y reglas primero, bot después.</li>
+                            <li>Mitigación: fallbacks manuales; logs; límites.</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Riesgo reputación</h3>
+                        <p>Si pareces spam, el canal muere.</p>
+                        <ul>
+                            <li>Mitigación: 2→1, ritmo, promo como respuesta.</li>
+                            <li>Mitigación: segmentar; no “broadcast” indiscriminado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer">
+            <span class="kbd">Nota</span> Este playbook es operativo (ejecución). El storytelling vive en su documento separado.
+        </div>
+    </div>
+</body>
+</html>

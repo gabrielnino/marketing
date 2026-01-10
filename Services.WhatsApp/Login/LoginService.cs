@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using Services.Interfaces;
-using Services.WhatsApp.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
 
-namespace Services.WhatsApp
+namespace Services.WhatsApp.Login
 {
     public class LoginService(
         AppConfig config,

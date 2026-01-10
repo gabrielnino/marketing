@@ -4,9 +4,9 @@ using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
-using Services.WhatsApp.Interfaces;
+using Services.WhatsApp.Abstractions.OpenChat;
 
-namespace Services.WhatsApp
+namespace Services.WhatsApp.OpenChat
 {
     public sealed class WhatsAppChatService(
         IWebDriver driver,
@@ -135,7 +135,7 @@ namespace Services.WhatsApp
                 true
             );
 
-            Domain.WhatsApp.AutoItRunnerResult autoItRunnerResult;
+            AutoItRunnerResult autoItRunnerResult;
             try
             {
                 autoItRunnerResult = await AutoItRunner.RunAsync(
@@ -212,7 +212,7 @@ namespace Services.WhatsApp
             }
 
             Logger.LogInformation("Submitting caption (Enter)...");
-            caption.SendKeys(OpenQA.Selenium.Keys.Enter);
+            caption.SendKeys(Keys.Enter);
             Logger.LogDebug("Enter sent to caption element.");
 
             ct.ThrowIfCancellationRequested();

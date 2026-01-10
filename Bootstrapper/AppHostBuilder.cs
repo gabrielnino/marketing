@@ -17,8 +17,11 @@ using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
 using Services;
 using Services.Interfaces;
-using Services.WhatsApp;
-using Services.WhatsApp.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Login;
+using Services.WhatsApp.OpenChat;
+using Services.WhatsApp.WhatsApp;
 
 namespace Bootstrapper
 {

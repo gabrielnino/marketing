@@ -1,9 +1,10 @@
 ﻿using Configuration;
 using Domain.WhatsApp;
 using Microsoft.Extensions.Logging;
-using Services.WhatsApp.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenChat;
 
-namespace Services.WhatsApp
+namespace Services.WhatsApp.Login
 {
     public class WhatsAppMessage(
         ILogger<LoginService> logger,
