@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
+using Services.WhatsApp.Abstractions.OpenChat;
 using Services.WhatsApp.Abstractions.Selector;
 using Services.WhatsApp.Abstractions.Selenium;
 using Services.WhatsApp.Abstractions.XPath;

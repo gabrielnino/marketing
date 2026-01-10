@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.XPath
+﻿namespace Services.WhatsApp.Abstractions.OpenChat
 {
     public interface IWhatsAppChatClicker
     {

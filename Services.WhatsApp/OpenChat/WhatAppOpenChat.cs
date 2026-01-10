@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using Services.WhatsApp.Abstractions.Login;
 using Services.WhatsApp.Abstractions.OpenChat;
 using Services.WhatsApp.Abstractions.Search;
-using Services.WhatsApp.Abstractions.XPath;
 using Services.WhatsApp.Login;
 using Services.WhatsApp.Search;
 using Services.WhatsApp.Selector;
