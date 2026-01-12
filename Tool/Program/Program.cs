@@ -1,12 +1,9 @@
-﻿using Bootstrapper;
+﻿
+using Bootstrapper;
 using Commands;
-using Configuration;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Persistence.Context.Implementation;
 using Serilog;
-
+using Configuration;
+using Persistence.Context.Implementation;
 public class Program
 {
     public static async Task Main(string[] args)

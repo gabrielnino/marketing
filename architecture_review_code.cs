@@ -1829,45 +1829,116 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\directorychecktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\directorychecktests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\directorycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\directorycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\crud\\errorlogcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\crud\\errorlogcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\testprompt.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\testprompt.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|f:\\marketing\\infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|solutionrelative:infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|f:\\marketing\\application.whatsapp\\usecases\\repository\\crud\\itrackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|solutionrelative:application.whatsapp\\usecases\\repository\\crud\\itrackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\capturesnapshottests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\capturesnapshottests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|f:\\marketing\\application.whatsapp\\usecases\\repository\\crud\\itrackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|solutionrelative:application.whatsapp\\usecases\\repository\\crud\\itrackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\autoitrunnertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\autoitrunnertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\repositories\\repositorycreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\repositorycreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\whatsapp_upload.au3||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\whatsapp_upload.au3||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|f:\\marketing\\application.whatsapp\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|solutionrelative:application.whatsapp\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\nuget.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{DFA0E257-9F59-4956-A365-A47E03A6F425}|Domain\\Domain.csproj|f:\\marketing\\domain\\errorlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFA0E257-9F59-4956-A365-A47E03A6F425}|Domain\\Domain.csproj|solutionrelative:domain\\errorlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.FallbackLocation.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.Offline.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}|Marketing.Tests\\Marketing.Tests.csproj|f:\\marketing\\marketing.tests\\guidvalidatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}|Marketing.Tests\\Marketing.Tests.csproj|solutionrelative:marketing.tests\\guidvalidatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openchat\\openchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openchat\\openchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openchat\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openchat\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openchat\\chatclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openchat\\chatclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\login\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\login\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\login\\loginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\login\\loginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\login\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\login\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selenium\\webdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selenium\\webdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\login\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\login\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\login\\iloginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\login\\iloginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\iclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\iclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\iopenchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\iopenchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\search\\isearchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\search\\isearchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\selenium\\iwebdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\selenium\\iwebdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -1877,8 +1948,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 29,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ErrorLogCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:50:58.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITrackedLinkCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "RelativeDocumentMoniker": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "ToolTip": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "RelativeToolTip": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:25:33.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RepositoryCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Repositories\\RepositoryCreate.cs",
+              "RelativeDocumentMoniker": "Persistence\\Repositories\\RepositoryCreate.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Repositories\\RepositoryCreate.cs",
+              "RelativeToolTip": "Persistence\\Repositories\\RepositoryCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:24:09.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITrackedLinkUpdate.cs",
+              "DocumentMoniker": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "RelativeDocumentMoniker": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "ToolTip": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "RelativeToolTip": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:03:23.013Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -1933,139 +2056,314 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DirectoryCheckTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\DirectoryCheckTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\DirectoryCheckTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\DirectoryCheckTests.cs*",
-              "RelativeToolTip": "Marketing.Services.Test\\DirectoryCheckTests.cs*",
-              "ViewState": "AgIAAEwAAAAAAAAAAAD4v04AAAADAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "F:\\marketing\\Application.WhatsApp\\Class1.cs",
+              "RelativeDocumentMoniker": "Application.WhatsApp\\Class1.cs",
+              "ToolTip": "F:\\marketing\\Application.WhatsApp\\Class1.cs",
+              "RelativeToolTip": "Application.WhatsApp\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T15:44:58.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DirectoryCheck.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\DirectoryCheck.cs",
-              "RelativeDocumentMoniker": "Services\\DirectoryCheck.cs",
-              "ToolTip": "F:\\marketing\\Services\\DirectoryCheck.cs",
-              "RelativeToolTip": "Services\\DirectoryCheck.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAwwAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T15:41:57.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChromeDriverFactory.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\ChromeDriverFactory.cs",
-              "RelativeDocumentMoniker": "Services\\ChromeDriverFactory.cs",
-              "ToolTip": "F:\\marketing\\Services\\ChromeDriverFactory.cs",
-              "RelativeToolTip": "Services\\ChromeDriverFactory.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T15:34:20.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CaptureSnapshotTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "RelativeToolTip": "Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAnwIQAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T14:30:24.032Z",
+              "WhenOpened": "2026-01-11T00:59:01.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TestPrompt.json",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\TestPrompt.json",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\TestPrompt.json",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\TestPrompt.json",
-              "RelativeToolTip": "Marketing.Services.Test\\TestPrompt.json",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAwJ4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-07T14:21:11.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AutoItRunnerTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "RelativeToolTip": "Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAMwLcAAAAmAAAAAAAAAA==",
+              "Title": "TrackedLinkCreate.cs",
+              "DocumentMoniker": "F:\\Marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ToolTip": "F:\\Marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeToolTip": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T04:54:32.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "whatsapp_upload.au3",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\whatsapp_upload.au3",
-              "RelativeDocumentMoniker": "Bootstrapper\\whatsapp_upload.au3",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\whatsapp_upload.au3",
-              "RelativeToolTip": "Bootstrapper\\whatsapp_upload.au3",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAmwEMAAAAcAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI5SURBVDhPrZJLTxNRGIafzumcaScQCgqhtgVJQVAkARLvt5DCwkRNWGlc8Av8Kf4A966MO9wYIAQNMVETJU0AURKIjhe8pNDOtJ3OtMcFdGh1qV9yct6cfO\u002BTN28O/MsopQL9YXNztFgsKscpKttxlG07qmDbqlCwVb5gK8uyFpaXl80mAKDVRVgIdF1HlzpSlw23REqdaDSa6evrm11cXGyCBAClFApAwYFqGt/3EUJkenp6Zufm5qL19yZA3ey6LqViiVK5RKVSAUAaEXQpibV3ZJKp1Lm/AYDnediFAp\u002B/7/Fi1eLV\u002BhdyeQfHdpBSxzRNTNPEMCJ1G\u002BG68D0vUiyVeLT0jpfrXw8XhMb05QEunU4QiUQJhULQUH6QIBaL3Xv6eiswT473cmYwjl\u002Bt8fjZBu\u002BtHK5bBpo70gByuZxOKDT9PGsBMNbfRWa8lzsTQyQ7WwFYWvlIrVYDpRoD7AOy2WyX62OWKz6xFoPbEyd5OL/K/JttZqaGCQuNH3ulfTMcNNYASKfTv6TAk2HBzNQwq9s/uXE\u002BzZWRFPEjLdy8kKa9xQhMjQnCAMlksryzs7Nwdqj7\u002BoMnK1RrCqEF9aBQ3M2cIqSJQ\u002BfBBFv5fP7\u002BrYv9HO9uo1pTVPxqcK6OpBhLdyKlhD9KDNXF2tr6aCKReFvxKmx82mXr2y660Bg\u002BfpR4h4k0Igixn8CyrInBEwNLNCbwfI\u002BaUmiaoD/eyuRokmsjx\u002BhsM9BEGN/3cV0X13WD3/lf5jfEGPWWIF5U7wAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-01-07T04:49:20.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Microsoft.VisualStudio.Offline.config",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.Offline.config",
-              "ToolTip": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.Offline.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-07T04:45:07.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Microsoft.VisualStudio.FallbackLocation.config",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-              "ToolTip": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-07T04:45:03.694Z",
+              "WhenOpened": "2026-01-11T00:54:03.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "nuget.config",
-              "DocumentMoniker": "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\nuget.config",
-              "ToolTip": "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\nuget.config",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAowCMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-07T04:44:50.668Z",
+              "Title": "ErrorLog.cs",
+              "DocumentMoniker": "F:\\marketing\\Domain\\ErrorLog.cs",
+              "RelativeDocumentMoniker": "Domain\\ErrorLog.cs",
+              "ToolTip": "F:\\marketing\\Domain\\ErrorLog.cs",
+              "RelativeToolTip": "Domain\\ErrorLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T00:18:08.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginService.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Login\\LoginService.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:41:28.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ILoginService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:41:25.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginStateChecker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:24:39.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ILoginStateChecker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:24:14.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IMessage.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:24:07.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IChatService.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:23:57.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IOpenChat.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:23:36.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ISelectors.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:23:09.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Attachments.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Attachments.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Selector\\Attachments.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAADwv14AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:52:02.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAkwJMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:51:30.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAAwAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:48:13.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IWebDriverFacade.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:37:55.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ChatClicker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:23:47.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Message.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Login\\Message.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\Message.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Login\\Message.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Login\\Message.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAkwAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:23:44.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OpenChat.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAADgvw4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:23:18.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "GuidValidatorTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Tests\\GuidValidatorTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Tests\\GuidValidatorTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Tests\\GuidValidatorTests.cs",
-              "RelativeToolTip": "Marketing.Tests\\GuidValidatorTests.cs",
+              "Title": "SearchBoxTyper.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAQwAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:21:11.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ISearchBoxTyper.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:21:03.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ScheduledMessenger.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeToolTip": "Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T04:40:04.548Z",
+              "WhenOpened": "2026-01-10T06:20:45.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "WebDriverFacade.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:20:44.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Selectors.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Selectors.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Selector\\Selectors.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:14:42.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IClicker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:07:17.205Z",
               "EditorCaption": ""
             }
           ]
@@ -2082,41 +2380,116 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\directorycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\directorycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\testprompt.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\testprompt.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\crud\\errorlogcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\crud\\errorlogcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|f:\\marketing\\infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|solutionrelative:infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\capturesnapshottests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\capturesnapshottests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|f:\\marketing\\application.whatsapp\\usecases\\repository\\crud\\itrackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|solutionrelative:application.whatsapp\\usecases\\repository\\crud\\itrackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|f:\\marketing\\marketing.services.test\\autoitrunnertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EB58012-62C9-48A5-ABCD-8647CA2C468F}|Marketing.Services.Test\\Marketing.Services.Test.csproj|solutionrelative:marketing.services.test\\autoitrunnertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|f:\\marketing\\application.whatsapp\\usecases\\repository\\crud\\itrackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|solutionrelative:application.whatsapp\\usecases\\repository\\crud\\itrackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\whatsapp_upload.au3||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\whatsapp_upload.au3||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\repositories\\repositorycreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\repositorycreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\nuget.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|f:\\marketing\\application.whatsapp\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F}|Application.WhatsApp\\Application.WhatsApp.csproj|solutionrelative:application.whatsapp\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.FallbackLocation.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{DFA0E257-9F59-4956-A365-A47E03A6F425}|Domain\\Domain.csproj|f:\\marketing\\domain\\errorlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFA0E257-9F59-4956-A365-A47E03A6F425}|Domain\\Domain.csproj|solutionrelative:domain\\errorlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.Offline.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}|Marketing.Tests\\Marketing.Tests.csproj|f:\\marketing\\marketing.tests\\guidvalidatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3A6D591-AAE0-5E13-E3C3-B0FB0C134B3E}|Marketing.Tests\\Marketing.Tests.csproj|solutionrelative:marketing.tests\\guidvalidatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openchat\\openchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openchat\\openchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openchat\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openchat\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openchat\\chatclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openchat\\chatclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\login\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\login\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\login\\loginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\login\\loginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\login\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\login\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selenium\\webdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selenium\\webdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\login\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\login\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\login\\iloginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\login\\iloginstatechecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\iclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\iclicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\iopenchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\iopenchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\search\\isearchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\search\\isearchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\selenium\\iwebdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\selenium\\iwebdriverfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -2126,8 +2499,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 29,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ErrorLogCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\CRUD\\ErrorLogCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:50:58.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITrackedLinkCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "RelativeDocumentMoniker": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "ToolTip": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "RelativeToolTip": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:25:33.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RepositoryCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Repositories\\RepositoryCreate.cs",
+              "RelativeDocumentMoniker": "Persistence\\Repositories\\RepositoryCreate.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Repositories\\RepositoryCreate.cs",
+              "RelativeToolTip": "Persistence\\Repositories\\RepositoryCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:24:09.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ITrackedLinkUpdate.cs",
+              "DocumentMoniker": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "RelativeDocumentMoniker": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "ToolTip": "F:\\marketing\\Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "RelativeToolTip": "Application.WhatsApp\\UseCases\\Repository\\CRUD\\ITrackedLinkUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T01:03:23.013Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -2182,126 +2607,314 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DirectoryCheck.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\DirectoryCheck.cs",
-              "RelativeDocumentMoniker": "Services\\DirectoryCheck.cs",
-              "ToolTip": "F:\\marketing\\Services\\DirectoryCheck.cs",
-              "RelativeToolTip": "Services\\DirectoryCheck.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAwwAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "F:\\marketing\\Application.WhatsApp\\Class1.cs",
+              "RelativeDocumentMoniker": "Application.WhatsApp\\Class1.cs",
+              "ToolTip": "F:\\marketing\\Application.WhatsApp\\Class1.cs",
+              "RelativeToolTip": "Application.WhatsApp\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T15:41:57.17Z",
+              "WhenOpened": "2026-01-11T00:59:01.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ChromeDriverFactory.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\ChromeDriverFactory.cs",
-              "RelativeDocumentMoniker": "Services\\ChromeDriverFactory.cs",
-              "ToolTip": "F:\\marketing\\Services\\ChromeDriverFactory.cs",
-              "RelativeToolTip": "Services\\ChromeDriverFactory.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "TrackedLinkCreate.cs",
+              "DocumentMoniker": "F:\\Marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ToolTip": "F:\\Marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeToolTip": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T15:34:20.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CaptureSnapshotTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "RelativeToolTip": "Marketing.Services.Test\\CaptureSnapshotTests.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAnwIQAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T14:30:24.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TestPrompt.json",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\TestPrompt.json",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\TestPrompt.json",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\TestPrompt.json",
-              "RelativeToolTip": "Marketing.Services.Test\\TestPrompt.json",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAwJ4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-07T14:21:11.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutoItRunnerTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "RelativeToolTip": "Marketing.Services.Test\\AutoItRunnerTests.cs",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAMwLcAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T04:54:32.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "whatsapp_upload.au3",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\whatsapp_upload.au3",
-              "RelativeDocumentMoniker": "Bootstrapper\\whatsapp_upload.au3",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\whatsapp_upload.au3",
-              "RelativeToolTip": "Bootstrapper\\whatsapp_upload.au3",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAmwEMAAAAcAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI5SURBVDhPrZJLTxNRGIafzumcaScQCgqhtgVJQVAkARLvt5DCwkRNWGlc8Av8Kf4A966MO9wYIAQNMVETJU0AURKIjhe8pNDOtJ3OtMcFdGh1qV9yct6cfO\u002BTN28O/MsopQL9YXNztFgsKscpKttxlG07qmDbqlCwVb5gK8uyFpaXl80mAKDVRVgIdF1HlzpSlw23REqdaDSa6evrm11cXGyCBAClFApAwYFqGt/3EUJkenp6Zufm5qL19yZA3ey6LqViiVK5RKVSAUAaEXQpibV3ZJKp1Lm/AYDnediFAp\u002B/7/Fi1eLV\u002BhdyeQfHdpBSxzRNTNPEMCJ1G\u002BG68D0vUiyVeLT0jpfrXw8XhMb05QEunU4QiUQJhULQUH6QIBaL3Xv6eiswT473cmYwjl\u002Bt8fjZBu\u002BtHK5bBpo70gByuZxOKDT9PGsBMNbfRWa8lzsTQyQ7WwFYWvlIrVYDpRoD7AOy2WyX62OWKz6xFoPbEyd5OL/K/JttZqaGCQuNH3ulfTMcNNYASKfTv6TAk2HBzNQwq9s/uXE\u002BzZWRFPEjLdy8kKa9xQhMjQnCAMlksryzs7Nwdqj7\u002BoMnK1RrCqEF9aBQ3M2cIqSJQ\u002BfBBFv5fP7\u002BrYv9HO9uo1pTVPxqcK6OpBhLdyKlhD9KDNXF2tr6aCKReFvxKmx82mXr2y660Bg\u002BfpR4h4k0Igixn8CyrInBEwNLNCbwfI\u002BaUmiaoD/eyuRokmsjx\u002BhsM9BEGN/3cV0X13WD3/lf5jfEGPWWIF5U7wAAAABJRU5ErkJggg==",
-              "WhenOpened": "2026-01-07T04:49:20.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Microsoft.VisualStudio.Offline.config",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.Offline.config",
-              "ToolTip": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.Offline.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-07T04:45:07.722Z",
+              "WhenOpened": "2026-01-11T00:54:03.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Microsoft.VisualStudio.FallbackLocation.config",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-              "ToolTip": "C:\\Program Files (x86)\\Nuget\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-07T04:45:03.694Z",
+              "Title": "ErrorLog.cs",
+              "DocumentMoniker": "F:\\marketing\\Domain\\ErrorLog.cs",
+              "RelativeDocumentMoniker": "Domain\\ErrorLog.cs",
+              "ToolTip": "F:\\marketing\\Domain\\ErrorLog.cs",
+              "RelativeToolTip": "Domain\\ErrorLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T00:18:08.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "nuget.config",
-              "DocumentMoniker": "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\nuget.config",
-              "ToolTip": "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\nuget.config",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAowCMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-01-07T04:44:50.668Z",
+              "DocumentIndex": 16,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginService.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Login\\LoginService.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:41:28.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ILoginService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Login\\ILoginService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:41:25.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginStateChecker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Login\\LoginStateChecker.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:24:39.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ILoginStateChecker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Login\\ILoginStateChecker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:24:14.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IMessage.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Login\\IMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:24:07.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IChatService.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:23:57.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IOpenChat.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:23:36.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ISelectors.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T23:23:09.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "GuidValidatorTests.cs",
-              "DocumentMoniker": "F:\\marketing\\Marketing.Tests\\GuidValidatorTests.cs",
-              "RelativeDocumentMoniker": "Marketing.Tests\\GuidValidatorTests.cs",
-              "ToolTip": "F:\\marketing\\Marketing.Tests\\GuidValidatorTests.cs",
-              "RelativeToolTip": "Marketing.Tests\\GuidValidatorTests.cs",
+              "Title": "Attachments.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Attachments.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Selector\\Attachments.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAADwv14AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:52:02.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAkwIoAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:51:30.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenChat\\ChatService.cs",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAAwAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T15:48:13.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IWebDriverFacade.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Selenium\\IWebDriverFacade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:37:55.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ChatClicker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenChat\\ChatClicker.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:23:47.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Message.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Login\\Message.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\Message.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Login\\Message.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Login\\Message.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAkwAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:23:44.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OpenChat.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenChat\\OpenChat.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAADgvw4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:23:18.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SearchBoxTyper.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAQwAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:21:11.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ISearchBoxTyper.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:21:03.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ScheduledMessenger.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeToolTip": "Services.WhatsApp\\WhatsApp\\ScheduledMessenger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T04:40:04.548Z",
+              "WhenOpened": "2026-01-10T06:20:45.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "WebDriverFacade.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:20:44.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Selectors.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Selectors.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Selector\\Selectors.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:14:42.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IClicker.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T06:07:17.205Z",
               "EditorCaption": ""
             }
           ]
@@ -2459,17 +3072,17 @@ public const string ForNameOrDescription = "For name or description, null, empty
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Application\\Application.csproj": {}
+    "F:\\Marketing\\Application\\Application.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Application\\Application.csproj": {
+    "F:\\Marketing\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Application\\Application.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "F:\\marketing\\Application\\Application.csproj",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Application\\obj\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2489,8 +3102,8 @@ public const string ForNameOrDescription = "For name or description, null, empty
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
           }
@@ -2510,14 +3123,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -2536,19 +3141,14 @@ public const string ForNameOrDescription = "For name or description, null, empty
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -2587,14 +3187,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -2613,11 +3205,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     }
   }
@@ -2629,30 +3216,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
   "version": 3,
   "targets": {
     "net8.0": {
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2666,57 +3229,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
     }
   },
   "libraries": {
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -2725,8 +3237,7 @@ public const string ForNameOrDescription = "For name or description, null, empty
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Domain >= 1.0.0",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17"
+      "Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2736,9 +3247,9 @@ public const string ForNameOrDescription = "For name or description, null, empty
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Application\\Application.csproj",
+      "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "F:\\marketing\\Application\\Application.csproj",
+      "projectPath": "F:\\Marketing\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
       "outputPath": "F:\\marketing\\Application\\obj\\",
       "projectStyle": "PackageReference",
@@ -2760,8 +3271,8 @@ public const string ForNameOrDescription = "For name or description, null, empty
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Domain\\Domain.csproj": {
-              "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+            "F:\\Marketing\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
             }
           }
         }
@@ -2781,14 +3292,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-        "dependencies": {
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -2807,11 +3310,6 @@ public const string ForNameOrDescription = "For name or description, null, empty
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -2829,7 +3327,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2846,7 +3344,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application\obj\Debug\net8.0\Application.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1c4a99574b58f109b5036a0c60abd6a2fa42b6a5/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Application\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -3191,24 +3689,608 @@ namespace Application.UseCases.Repository.UseCases.CRUD
 {
 public interface IErrorLogCreate
 {
-Task<Operation<bool>> CreateInvoiceAsync(ErrorLog entity);
+Task<Operation<bool>> CreateAsync(ErrorLog entity);
+}
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\Class1.cs ===
+
+﻿namespace Application.WhatsApp
+{
+public class Class1
+{
+}
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\bin\Debug\net8.0\Application.WhatsApp.deps.json ===
+
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Application.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "runtime": {
+          "Application.WhatsApp.dll": {}
+        }
+      },
+      "Application/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Domain.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\obj\Application.WhatsApp.csproj.nuget.dgspec.json ===
+
+{
+  "format": 1,
+  "restore": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {}
+  },
+  "projects": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "projectName": "Application.WhatsApp",
+        "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\obj\project.assets.json ===
+
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
+      "msbuildProject": "../Domain.WhatsApp/Domain.WhatsApp.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Application >= 1.0.0",
+      "Domain.WhatsApp >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\luisg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+      "projectName": "Application.WhatsApp",
+      "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+      "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+      "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "F:\\Marketing\\Application\\Application.csproj": {
+              "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+            },
+            "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\Application.WhatsApp.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Application.WhatsApp")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyProductAttribute("Application.WhatsApp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Application.WhatsApp")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\Application.WhatsApp.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\Application.WhatsApp.sourcelink.json ===
+
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+
+=== FILE: F:\Marketing\Application.WhatsApp\UseCases\Repository\CRUD\ITrackedLinkCreate.cs ===
+
+﻿using Application.Result;
+using Domain.WhatsApp.Redirect;
+namespace Application.WhatsApp.UseCases.Repository.CRUD
+{
+public interface ITrackedLinkCreate
+{
+Task<Operation<bool>> CreateAsync(TrackedLink entity);
+}
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\UseCases\Repository\CRUD\ITrackedLinkRead.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Application.Result;
+using Domain.WhatsApp.Redirect;
+namespace Application.WhatsApp.UseCases.Repository.CRUD
+{
+public interface ITrackedLinkRead
+{
+Task<Operation<List<TrackedLink>>> ReadAsync(string id);
+}
+}
+
+=== FILE: F:\Marketing\Application.WhatsApp\UseCases\Repository\CRUD\ITrackedLinkUpdate.cs ===
+
+﻿using Application.Result;
+using Domain.WhatsApp.Redirect;
+namespace Application.WhatsApp.UseCases.Repository.CRUD
+{
+public interface ITrackedLinkUpdate
+{
+Task<Operation<bool>> UpdateAsync(TrackedLink entity);
 }
 }
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
-﻿using System.Configuration;
-using Application.Result;
+﻿using Application.Result;
 using Application.UseCases.Repository.UseCases.CRUD;
+using Application.WhatsApp.UseCases.Repository.CRUD;
 using Commands;
 using Configuration;
+using Domain.WhatsApp.Redirect;
 using Infrastructure.Repositories.CRUD;
 using Infrastructure.Result;
+using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
@@ -3218,6 +4300,13 @@ using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
 using Services;
 using Services.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Search;
+using Services.WhatsApp.Login;
+using Services.WhatsApp.OpenChat;
+using Services.WhatsApp.Selector;
+using Services.WhatsApp.WhatsApp;
 namespace Bootstrapper
 {
 public static class AppHostBuilder
@@ -3296,7 +4385,7 @@ services.AddTransient<WhatsAppCommand>();
 services.AddTransient<HelpCommand>();
 services.AddHostedService<WebDriverLifetimeService>();
 }
-services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
+services.AddScoped<IMessage, Message>();
 services.AddScoped<IWebDriver>(sp =>
 {
 var factory = sp.GetRequiredService<IWebDriverFactory>();
@@ -3307,9 +4396,9 @@ services.AddTransient<ILoginService, LoginService>();
 services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
 services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
 services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
-services.AddSingleton<IUtil, Util>();
-services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
-services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
+services.AddTransient<IOpenChat, OpenChat>();
+services.AddTransient<IChatService, ChatService>();
+services.AddTransient<IAttachments, Attachments>();
 services.AddTransient<IAutoItRunner, AutoItRunner>();
 AddDbContextSQLite(hostingContext, services);
 services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -3318,6 +4407,9 @@ services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
 services.AddScoped<IErrorHandler, ErrorHandler>();
 services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
 services.AddSingleton<IColumnTypes, SQLite>();
+services.AddSingleton<ITrackedLinkCreate, TrackedLinkCreate>();
+services.AddSingleton<ITrackedLinkRead, TrackedLinkRead>();
+services.AddSingleton<ITrackedLinkUpdate, TrackedLinkUpdate>();
 })
 .UseSerilog((context, services, loggerConfig) =>
 {
@@ -3485,21 +4577,6 @@ services.AddMemoryCache();
 }
 
 
-=== FILE: F:\Marketing\Bootstrapper\credentials.json ===
-
-{
-    "installed": {
-        "client_id": "1069127382975-mmh863pobp5qls8gad1mmrj5nlg3puv2.apps.googleusercontent.com",
-        "project_id": "bookaroadtest",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret": "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",
-        "redirect_uris": [ "http://localhost" ]
-    }
-}
-
-
 === FILE: F:\Marketing\Bootstrapper\ExecutionMode.cs ===
 
 ﻿namespace Bootstrapper
@@ -3612,6 +4689,7 @@ Command
           "Application": "1.0.0",
           "Commands": "1.0.0",
           "Infrastructure": "1.0.0",
+          "Infrastructure.WhatsApp": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Hosting": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
@@ -4651,13 +5729,26 @@ Command
           }
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "runtime": {
+          "Application.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Commands/1.0.0": {
         "dependencies": {
           "Configuration": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
           "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
+          "Services": "1.0.0",
+          "Services.WhatsApp": "1.0.0"
         },
         "runtime": {
           "Commands.dll": {
@@ -4686,6 +5777,9 @@ Command
         }
       },
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -4696,12 +5790,26 @@ Command
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
         "runtime": {
           "Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infrastructure.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain.WhatsApp": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Infrastructure.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -4738,6 +5846,30 @@ Command
         },
         "runtime": {
           "Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Services.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "Services.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -5260,6 +6392,11 @@ Command
       "serviceable": false,
       "sha512": ""
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Commands/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -5285,6 +6422,11 @@ Command
       "serviceable": false,
       "sha512": ""
     },
+    "Infrastructure.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Persistence/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -5294,24 +6436,14 @@ Command
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Services.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
-
-=== FILE: F:\Marketing\Bootstrapper\bin\Debug\net8.0\credentials.json ===
-
-{
-    "installed": {
-        "client_id": "1069127382975-mmh863pobp5qls8gad1mmrj5nlg3puv2.apps.googleusercontent.com",
-        "project_id": "bookaroadtest",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret": "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",
-        "redirect_uris": [ "http://localhost" ]
-    }
-}
-
 
 === FILE: F:\Marketing\Bootstrapper\bin\Release\net8.0\appsettings.json ===
 
@@ -7129,17 +8261,17 @@ Command
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj": {}
+    "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Application\\Application.csproj": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "F:\\marketing\\Application\\Application.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "projectName": "Application.WhatsApp",
+        "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Application\\obj\\",
+        "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7159,8 +8291,11 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               }
             }
           }
@@ -7180,14 +8315,6 @@ Command
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -7206,21 +8333,16 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj": {
+    "F:\\Marketing\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
-        "projectName": "Bootstrapper",
-        "projectPath": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Bootstrapper\\obj\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7240,17 +8362,88 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+        "projectName": "Bootstrapper",
+        "projectPath": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Bootstrapper\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
-              "F:\\marketing\\Commands\\Commands.csproj": {
-                "projectPath": "F:\\marketing\\Commands\\Commands.csproj"
+              "F:\\Marketing\\Commands\\Commands.csproj": {
+                "projectPath": "F:\\Marketing\\Commands\\Commands.csproj"
               },
-              "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj"
+              "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -7287,12 +8480,6 @@ Command
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -7328,21 +8515,16 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Commands\\Commands.csproj": {
+    "F:\\Marketing\\Commands\\Commands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Commands\\Commands.csproj",
+        "projectUniqueName": "F:\\Marketing\\Commands\\Commands.csproj",
         "projectName": "Commands",
-        "projectPath": "F:\\marketing\\Commands\\Commands.csproj",
+        "projectPath": "F:\\Marketing\\Commands\\Commands.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Commands\\obj\\",
+        "outputPath": "F:\\Marketing\\Commands\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7362,11 +8544,14 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Services\\Services.csproj": {
-                "projectPath": "F:\\marketing\\Services\\Services.csproj"
+              "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -7395,12 +8580,6 @@ Command
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -7424,19 +8603,14 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -7479,12 +8653,6 @@ Command
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[9.0.6, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -7505,21 +8673,16 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7538,7 +8701,11 @@ Command
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -7556,14 +8723,6 @@ Command
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -7582,19 +8741,14 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -7633,14 +8787,6 @@ Command
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -7659,21 +8805,16 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
+    "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
+        "projectName": "Infrastructure.WhatsApp",
+        "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Infrastructure\\obj\\",
+        "outputPath": "F:\\Marketing\\Infrastructure.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7693,14 +8834,91 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               },
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -7721,12 +8939,6 @@ Command
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -7750,21 +8962,16 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Persistence\\Persistence.csproj": {
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Persistence\\obj\\",
+        "outputPath": "F:\\Marketing\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7784,8 +8991,8 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
           }
@@ -7813,12 +9020,6 @@ Command
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.4, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -7839,21 +9040,16 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Services\\Services.csproj": {
+    "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
-        "projectName": "Services",
-        "projectPath": "F:\\marketing\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
+        "projectName": "Services.WhatsApp",
+        "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Services\\obj\\",
+        "outputPath": "F:\\Marketing\\Services.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7873,11 +9069,14 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-                "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -7922,12 +9121,6 @@ Command
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -7967,10 +9160,122 @@ Command
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "F:\\Marketing\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FuzzySharp": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.70.0, )"
+            },
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.70.0.3833, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.12.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.33.0, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
@@ -8830,12 +10135,6 @@ Command
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -9486,6 +10785,20 @@ Command
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        }
+      },
       "Commands/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -9494,7 +10807,8 @@ Command
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
           "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
+          "Services": "1.0.0",
+          "Services.WhatsApp": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Commands.dll": {}
@@ -9527,1504 +10841,12 @@ Command
         }
       },
       "Domain.WhatsApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        }
-      },
-      "Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Application": "1.0.0",
-          "Domain": "1.0.0",
-          "Newtonsoft.Json": "13.0.3",
-          "Persistence": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Infrastructure.dll": {}
-        }
-      },
-      "Persistence/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
-        },
-        "compile": {
-          "bin/placeholder/Persistence.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Persistence.dll": {}
-        }
-      },
-      "Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Configuration": "1.0.0",
-          "Domain.WhatsApp": "1.0.0",
-          "FuzzySharp": "2.0.2",
-          "Google.Apis.Auth": "1.70.0",
-          "Google.Apis.Gmail.v1": "1.70.0.3833",
-          "HtmlAgilityPack": "1.12.1",
-          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Newtonsoft.Json": "13.0.3",
-          "PDFsharp": "6.2.0",
-          "Selenium.WebDriver": "4.33.0",
-          "System.Diagnostics.PerformanceCounter": "9.0.6",
-          "System.Reactive": "6.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Services.dll": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "FuzzySharp/2.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        }
-      },
-      "Google.Apis/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Core": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Core": "1.70.0",
-          "System.Management": "7.0.2"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Core/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Gmail.v1/1.70.0.3833": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Auth": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "HtmlAgilityPack/1.12.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        }
-      },
-      "Microsoft.Data.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
-        "type": "package"
-      },
-      "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/_._": {}
-        },
-        "runtime": {
-          "lib/net8.0/_._": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Caching.Memory/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Caching.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Options": "9.0.4",
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Binder/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.Binder.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.CommandLine/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.EnvironmentVariables/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.FileExtensions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Physical": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Json/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.FileExtensions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "System.Text.Json": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.UserSecrets/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Json": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Physical": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.props": {},
-          "buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.targets": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "9.0.4",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Diagnostics/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileProviders.Physical/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileSystemGlobbing": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Physical.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Physical.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileSystemGlobbing/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Hosting/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Binder": "9.0.6",
-          "Microsoft.Extensions.Configuration.CommandLine": "9.0.6",
-          "Microsoft.Extensions.Configuration.EnvironmentVariables": "9.0.6",
-          "Microsoft.Extensions.Configuration.FileExtensions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Json": "9.0.6",
-          "Microsoft.Extensions.Configuration.UserSecrets": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Diagnostics": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Physical": "9.0.6",
-          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Configuration": "9.0.6",
-          "Microsoft.Extensions.Logging.Console": "9.0.6",
-          "Microsoft.Extensions.Logging.Debug": "9.0.6",
-          "Microsoft.Extensions.Logging.EventLog": "9.0.6",
-          "Microsoft.Extensions.Logging.EventSource": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Configuration/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Binder": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Console/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Configuration": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Text.Json": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Debug/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Debug.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Debug.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.EventLog/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Diagnostics.EventLog": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.EventSource/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6",
-          "System.Text.Json": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Binder": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PDFsharp/6.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.1"
-        },
-        "compile": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        }
-      },
-      "Selenium.WebDriver/4.33.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Selenium.WebDriver.targets": {}
-        }
-      },
-      "Serilog/3.1.1": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Serilog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Serilog.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.AspNetCore/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "5.0.0",
-          "Microsoft.Extensions.Logging": "5.0.0",
-          "Serilog": "2.10.0",
-          "Serilog.Extensions.Hosting": "4.2.0",
-          "Serilog.Formatting.Compact": "1.1.0",
-          "Serilog.Settings.Configuration": "3.3.0",
-          "Serilog.Sinks.Console": "4.0.1",
-          "Serilog.Sinks.Debug": "2.0.0",
-          "Serilog.Sinks.File": "5.0.0"
-        },
-        "compile": {
-          "lib/net5.0/Serilog.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Serilog.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Serilog.Extensions.Hosting/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Serilog": "3.1.1",
-          "Serilog.Extensions.Logging": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/Serilog.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Extensions.Logging/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.0",
-          "Serilog": "3.1.1"
-        },
-        "compile": {
-          "lib/net8.0/Serilog.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Formatting.Compact/1.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.8.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Serilog.Formatting.Compact.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Serilog.Formatting.Compact.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Settings.Configuration/3.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "3.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.0",
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Serilog.Settings.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Serilog.Settings.Configuration.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Sinks.Console/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/net5.0/Serilog.Sinks.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Serilog.Sinks.Console.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Sinks.Debug/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/Serilog.Sinks.Debug.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.1/Serilog.Sinks.Debug.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Sinks.File/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/net5.0/Serilog.Sinks.File.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Serilog.Sinks.File.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/e_sqlite3.dll": {}
-        },
-        "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
-        }
-      },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        }
-      },
-      "System.CodeDom/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Configuration.ConfigurationManager/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.EventLog": "9.0.6",
-          "System.Security.Cryptography.ProtectedData": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.EventLog/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {},
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.PerformanceCounter/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.IO.Pipelines/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Management/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.CodeDom": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Reactive/6.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.Pkcs/8.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Text.Encodings.Web/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Text.Json/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.IO.Pipelines": "9.0.6",
-          "System.Text.Encodings.Web": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/System.Text.Json.targets": {}
-        }
-      },
-      "Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Application.dll": {}
-        }
-      },
-      "Commands/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Commands.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Commands.dll": {}
-        }
-      },
-      "Configuration/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "bin/placeholder/Configuration.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Configuration.dll": {}
-        }
-      },
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      },
-      "Domain.WhatsApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
           "bin/placeholder/Domain.WhatsApp.dll": {}
         },
         "runtime": {
@@ -11036,7 +10858,9 @@ Command
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
@@ -11045,6 +10869,20 @@ Command
         },
         "runtime": {
           "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
+      "Infrastructure.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain.WhatsApp": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.WhatsApp.dll": {}
         }
       },
       "Persistence/1.0.0": {
@@ -11085,6 +10923,32 @@ Command
         },
         "runtime": {
           "bin/placeholder/Services.dll": {}
+        }
+      },
+      "Services.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Services.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.WhatsApp.dll": {}
         }
       }
     }
@@ -12273,57 +12137,6 @@ Command
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -13190,6 +13003,11 @@ Command
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Application.WhatsApp/Application.WhatsApp.csproj",
+      "msbuildProject": "../Application.WhatsApp/Application.WhatsApp.csproj"
+    },
     "Commands/1.0.0": {
       "type": "project",
       "path": "../Commands/Commands.csproj",
@@ -13215,6 +13033,11 @@ Command
       "path": "../Infrastructure/Infrastructure.csproj",
       "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     },
+    "Infrastructure.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure.WhatsApp/Infrastructure.WhatsApp.csproj",
+      "msbuildProject": "../Infrastructure.WhatsApp/Infrastructure.WhatsApp.csproj"
+    },
     "Persistence/1.0.0": {
       "type": "project",
       "path": "../Persistence/Persistence.csproj",
@@ -13224,6 +13047,11 @@ Command
       "type": "project",
       "path": "../Services/Services.csproj",
       "msbuildProject": "../Services/Services.csproj"
+    },
+    "Services.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Services.WhatsApp/Services.WhatsApp.csproj",
+      "msbuildProject": "../Services.WhatsApp/Services.WhatsApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13231,11 +13059,11 @@ Command
       "Application >= 1.0.0",
       "Commands >= 1.0.0",
       "Infrastructure >= 1.0.0",
+      "Infrastructure.WhatsApp >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 9.0.6",
       "Microsoft.Extensions.Hosting >= 9.0.6",
       "Microsoft.Extensions.Logging >= 9.0.6",
       "Microsoft.Extensions.Logging.Abstractions >= 9.0.6",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17",
       "Persistence >= 1.0.0",
       "Serilog.AspNetCore >= 5.0.0",
       "Serilog.Extensions.Hosting >= 8.0.0",
@@ -13250,11 +13078,11 @@ Command
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
+      "projectUniqueName": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
       "projectName": "Bootstrapper",
-      "projectPath": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
+      "projectPath": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Bootstrapper\\obj\\",
+      "outputPath": "F:\\Marketing\\Bootstrapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -13274,17 +13102,20 @@ Command
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Application\\Application.csproj": {
-              "projectPath": "F:\\marketing\\Application\\Application.csproj"
+            "F:\\Marketing\\Application\\Application.csproj": {
+              "projectPath": "F:\\Marketing\\Application\\Application.csproj"
             },
-            "F:\\marketing\\Commands\\Commands.csproj": {
-              "projectPath": "F:\\marketing\\Commands\\Commands.csproj"
+            "F:\\Marketing\\Commands\\Commands.csproj": {
+              "projectPath": "F:\\Marketing\\Commands\\Commands.csproj"
             },
-            "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj"
+            "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj"
             },
-            "F:\\marketing\\Persistence\\Persistence.csproj": {
-              "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+            "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+            },
+            "F:\\Marketing\\Persistence\\Persistence.csproj": {
+              "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
             }
           }
         }
@@ -13321,12 +13152,6 @@ Command
             "target": "Package",
             "version": "[9.0.6, )"
           },
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          },
           "Serilog.AspNetCore": {
             "target": "Package",
             "version": "[5.0.0, )"
@@ -13362,11 +13187,6 @@ Command
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -13384,7 +13204,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -13401,7 +13221,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -13545,13 +13365,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Services;
-using Services.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
 namespace Commands
 {
-public class WhatsAppCommand(ILogger<WhatsAppCommand> logger, IWhatsAppMessage iWhatsAppMessage) : ICommand
+public class WhatsAppCommand(ILogger<WhatsAppCommand> logger, IMessage iWhatsAppMessage) : ICommand
 {
 private ILogger<WhatsAppCommand> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
-private IWhatsAppMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
+private IMessage IWhatsAppMessage { get; } = iWhatsAppMessage ?? throw new ArgumentNullException(nameof(WhatsAppCommand));
 public async Task ExecuteAsync(Dictionary<string, string>? arguments = null)
 {
 Logger.LogInformation("InviteCommand: starting. args={@Args}", arguments);
@@ -13578,7 +13398,8 @@ Logger.LogInformation("InviteCommand: finished.");
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
           "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
+          "Services": "1.0.0",
+          "Services.WhatsApp": "1.0.0"
         },
         "runtime": {
           "Commands.dll": {}
@@ -13952,7 +13773,18 @@ Logger.LogInformation("InviteCommand: finished.");
           }
         }
       },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -13978,6 +13810,30 @@ Logger.LogInformation("InviteCommand: finished.");
         },
         "runtime": {
           "Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Services.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "Services.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -14192,12 +14048,22 @@ Logger.LogInformation("InviteCommand: finished.");
       "serviceable": false,
       "sha512": ""
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services.WhatsApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -14862,17 +14728,17 @@ Logger.LogInformation("InviteCommand: finished.");
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Commands\\Commands.csproj": {}
+    "F:\\Marketing\\Commands\\Commands.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Commands\\Commands.csproj": {
+    "F:\\Marketing\\Commands\\Commands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Commands\\Commands.csproj",
+        "projectUniqueName": "F:\\Marketing\\Commands\\Commands.csproj",
         "projectName": "Commands",
-        "projectPath": "F:\\marketing\\Commands\\Commands.csproj",
+        "projectPath": "F:\\Marketing\\Commands\\Commands.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Commands\\obj\\",
+        "outputPath": "F:\\Marketing\\Commands\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -14892,11 +14758,14 @@ Logger.LogInformation("InviteCommand: finished.");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Services\\Services.csproj": {
-                "projectPath": "F:\\marketing\\Services\\Services.csproj"
+              "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -14925,12 +14794,6 @@ Logger.LogInformation("InviteCommand: finished.");
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -14954,19 +14817,14 @@ Logger.LogInformation("InviteCommand: finished.");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -15009,12 +14867,6 @@ Logger.LogInformation("InviteCommand: finished.");
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[9.0.6, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -15035,21 +14887,84 @@ Logger.LogInformation("InviteCommand: finished.");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
-        "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -15086,14 +15001,6 @@ Logger.LogInformation("InviteCommand: finished.");
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -15112,21 +15019,16 @@ Logger.LogInformation("InviteCommand: finished.");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Services\\Services.csproj": {
+    "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
-        "projectName": "Services",
-        "projectPath": "F:\\marketing\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
+        "projectName": "Services.WhatsApp",
+        "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Services\\obj\\",
+        "outputPath": "F:\\Marketing\\Services.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -15146,11 +15048,14 @@ Logger.LogInformation("InviteCommand: finished.");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-                "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -15195,12 +15100,6 @@ Logger.LogInformation("InviteCommand: finished.");
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -15240,10 +15139,122 @@ Logger.LogInformation("InviteCommand: finished.");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "F:\\Marketing\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FuzzySharp": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.70.0, )"
+            },
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.70.0.3833, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.12.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.33.0, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
@@ -15539,12 +15550,6 @@ Logger.LogInformation("InviteCommand: finished.");
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -15834,9 +15839,22 @@ Logger.LogInformation("InviteCommand: finished.");
           "bin/placeholder/Configuration.dll": {}
         }
       },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "Domain.WhatsApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.WhatsApp.dll": {}
         },
@@ -15868,571 +15886,8 @@ Logger.LogInformation("InviteCommand: finished.");
         "runtime": {
           "bin/placeholder/Services.dll": {}
         }
-      }
-    },
-    "net8.0/win-x64": {
-      "FuzzySharp/2.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        }
       },
-      "Google.Apis/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Core": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Core": "1.70.0",
-          "System.Management": "7.0.2"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Core/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Gmail.v1/1.70.0.3833": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Auth": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "HtmlAgilityPack/1.12.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PDFsharp/6.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.1"
-        },
-        "compile": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        }
-      },
-      "Selenium.WebDriver/4.33.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Selenium.WebDriver.targets": {}
-        }
-      },
-      "System.CodeDom/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Configuration.ConfigurationManager/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.EventLog": "9.0.6",
-          "System.Security.Cryptography.ProtectedData": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.EventLog/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {},
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.PerformanceCounter/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Management/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.CodeDom": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Reactive/6.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.Pkcs/8.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Configuration/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "bin/placeholder/Configuration.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Configuration.dll": {}
-        }
-      },
-      "Domain.WhatsApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        }
-      },
-      "Services/1.0.0": {
+      "Services.WhatsApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -16447,14 +15902,15 @@ Logger.LogInformation("InviteCommand: finished.");
           "Newtonsoft.Json": "13.0.3",
           "PDFsharp": "6.2.0",
           "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
           "System.Diagnostics.PerformanceCounter": "9.0.6",
           "System.Reactive": "6.0.1"
         },
         "compile": {
-          "bin/placeholder/Services.dll": {}
+          "bin/placeholder/Services.WhatsApp.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Services.dll": {}
+          "bin/placeholder/Services.WhatsApp.dll": {}
         }
       }
     }
@@ -16960,57 +16416,6 @@ Logger.LogInformation("InviteCommand: finished.");
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -17434,6 +16839,11 @@ Logger.LogInformation("InviteCommand: finished.");
       "path": "../Configuration/Configuration.csproj",
       "msbuildProject": "../Configuration/Configuration.csproj"
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
@@ -17443,6 +16853,11 @@ Logger.LogInformation("InviteCommand: finished.");
       "type": "project",
       "path": "../Services/Services.csproj",
       "msbuildProject": "../Services/Services.csproj"
+    },
+    "Services.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Services.WhatsApp/Services.WhatsApp.csproj",
+      "msbuildProject": "../Services.WhatsApp/Services.WhatsApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -17450,9 +16865,9 @@ Logger.LogInformation("InviteCommand: finished.");
       "Configuration >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 9.0.6",
       "Microsoft.Extensions.Logging >= 9.0.6",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17",
       "Newtonsoft.Json >= 13.0.3",
-      "Services >= 1.0.0"
+      "Services >= 1.0.0",
+      "Services.WhatsApp >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -17462,11 +16877,11 @@ Logger.LogInformation("InviteCommand: finished.");
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Commands\\Commands.csproj",
+      "projectUniqueName": "F:\\Marketing\\Commands\\Commands.csproj",
       "projectName": "Commands",
-      "projectPath": "F:\\marketing\\Commands\\Commands.csproj",
+      "projectPath": "F:\\Marketing\\Commands\\Commands.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Commands\\obj\\",
+      "outputPath": "F:\\Marketing\\Commands\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -17486,11 +16901,14 @@ Logger.LogInformation("InviteCommand: finished.");
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Configuration\\Configuration.csproj": {
-              "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+            "F:\\Marketing\\Configuration\\Configuration.csproj": {
+              "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
             },
-            "F:\\marketing\\Services\\Services.csproj": {
-              "projectPath": "F:\\marketing\\Services\\Services.csproj"
+            "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj"
+            },
+            "F:\\Marketing\\Services\\Services.csproj": {
+              "projectPath": "F:\\Marketing\\Services\\Services.csproj"
             }
           }
         }
@@ -17519,12 +16937,6 @@ Logger.LogInformation("InviteCommand: finished.");
             "target": "Package",
             "version": "[9.0.6, )"
           },
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -17548,11 +16960,6 @@ Logger.LogInformation("InviteCommand: finished.");
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -17570,7 +16977,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -17587,7 +16994,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -18005,15 +17412,15 @@ public required MessageConfig Message { get; init; }
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Configuration\\Configuration.csproj": {}
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -18056,12 +17463,6 @@ public required MessageConfig Message { get; init; }
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[9.0.6, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -18081,11 +17482,6 @@ public required MessageConfig Message { get; init; }
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }
@@ -18148,72 +17544,6 @@ public required MessageConfig Message { get; init; }
         },
         "build": {
           "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       }
     }
@@ -18321,63 +17651,11 @@ public required MessageConfig Message { get; init; }
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Microsoft.Extensions.Options >= 9.0.6",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17"
+      "Microsoft.Extensions.Options >= 9.0.6"
     ]
   },
   "packageFolders": {
@@ -18432,12 +17710,6 @@ public required MessageConfig Message { get; init; }
           "Microsoft.Extensions.Options": {
             "target": "Package",
             "version": "[9.0.6, )"
-          },
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
           }
         },
         "imports": [
@@ -18458,11 +17730,6 @@ public required MessageConfig Message { get; init; }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -18480,7 +17747,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -18497,7 +17764,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Configuration\obj\Debug\net8.0\Configuration.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1c4a99574b58f109b5036a0c60abd6a2fa42b6a5/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/da4fbd62157475e898a53e5be9573d8458814972/*"}}
 
 === FILE: F:\Marketing\Configuration\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -18685,15 +17952,15 @@ string Id { get; }
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Domain\\Domain.csproj": {}
+    "F:\\Marketing\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -18732,14 +17999,6 @@ string Id { get; }
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -18758,11 +18017,6 @@ string Id { get; }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     }
   }
@@ -18773,80 +18027,11 @@ string Id { get; }
 {
   "version": 3,
   "targets": {
-    "net8.0": {
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      }
-    }
+    "net8.0": {}
   },
-  "libraries": {
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net8.0": [
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17"
-    ]
+    "net8.0": []
   },
   "packageFolders": {
     "C:\\Users\\luisg\\.nuget\\packages\\": {},
@@ -18896,14 +18081,6 @@ string Id { get; }
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-        "dependencies": {
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -18922,11 +18099,6 @@ string Id { get; }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -18944,7 +18116,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -18961,7 +18133,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Domain\obj\Debug\net8.0\Domain.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1c4a99574b58f109b5036a0c60abd6a2fa42b6a5/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/da4fbd62157475e898a53e5be9573d8458814972/*"}}
 
 === FILE: F:\Marketing\Domain\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -19010,6 +18182,17 @@ public string? LogFilePath { get; init; }
 }
 }
 
+=== FILE: F:\Marketing\Domain.WhatsApp\ImageMessagePayload.cs ===
+
+﻿namespace Domain.WhatsApp
+{
+public sealed class ImageMessagePayload
+{
+public string StoredImagePath { get; init; } = default!;
+public string Caption { get; init; } = string.Empty;
+}
+}
+
 === FILE: F:\Marketing\Domain.WhatsApp\bin\Debug\net8.0\Domain.WhatsApp.deps.json ===
 
 {
@@ -19021,14 +18204,30 @@ public string? LogFilePath { get; init; }
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -19078,17 +18277,85 @@ public string? LogFilePath { get; init; }
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {}
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -19125,14 +18392,6 @@ public string? LogFilePath { get; init; }
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -19151,11 +18410,6 @@ public string? LogFilePath { get; init; }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     }
   }
@@ -19167,78 +18421,28 @@ public string? LogFilePath { get; init; }
   "version": 3,
   "targets": {
     "net8.0": {
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17"
+      "Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -19248,11 +18452,11 @@ public string? LogFilePath { get; init; }
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+      "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
       "projectName": "Domain.WhatsApp",
-      "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+      "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+      "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -19271,7 +18475,11 @@ public string? LogFilePath { get; init; }
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "F:\\Marketing\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -19289,14 +18497,6 @@ public string? LogFilePath { get; init; }
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-        "dependencies": {
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -19315,11 +18515,6 @@ public string? LogFilePath { get; init; }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -19337,7 +18532,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -19354,7 +18549,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Domain.WhatsApp\obj\Debug\net8.0\Domain.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1c4a99574b58f109b5036a0c60abd6a2fa42b6a5/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Domain.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -19388,12 +18583,24 @@ global using global::System.Threading.Tasks;
 
 {"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
 
-=== FILE: F:\Marketing\Infrastructure\Class1.cs ===
+=== FILE: F:\Marketing\Domain.WhatsApp\Redirect\TrackedLink.cs ===
 
-﻿namespace Infrastructure
+﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+namespace Domain.WhatsApp.Redirect
 {
-public class Class1
+[method: SetsRequiredMembers]
+public sealed class TrackedLink(string id, string targeUrl) : Entity(id)
 {
+[Required(ErrorMessage = "A destination URL is required.")]
+[MinLength(5, ErrorMessage = "The destination URL is too short.")]
+[MaxLength(150, ErrorMessage = "The destination URL is too long (maximum 150 characters).")]
+public required string TargetUrl { get; init; } = targeUrl;
+public long VisitCount { get; private set; }
+public void RegisterVisit()
+{
+VisitCount++;
+}
 }
 }
 
@@ -19410,7 +18617,9 @@ public class Class1
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
@@ -19816,9 +19025,32 @@ public class Class1
           }
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "runtime": {
+          "Application.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Domain/1.0.0": {
         "runtime": {
           "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -20039,7 +19271,17 @@ public class Class1
       "serviceable": false,
       "sha512": ""
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -20735,17 +19977,17 @@ public const string Success = "Success";
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {}
+    "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Application\\Application.csproj": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "F:\\marketing\\Application\\Application.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "projectName": "Application.WhatsApp",
+        "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Application\\obj\\",
+        "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -20765,8 +20007,11 @@ public const string Success = "Success";
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               }
             }
           }
@@ -20786,14 +20031,6 @@ public const string Success = "Success";
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -20812,19 +20049,150 @@ public const string Success = "Success";
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "F:\\Marketing\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -20863,14 +20231,6 @@ public const string Success = "Success";
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -20889,21 +20249,16 @@ public const string Success = "Success";
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
+    "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Infrastructure\\obj\\",
+        "outputPath": "F:\\Marketing\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -20923,14 +20278,20 @@ public const string Success = "Success";
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj"
               },
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -20951,12 +20312,6 @@ public const string Success = "Success";
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -20980,21 +20335,16 @@ public const string Success = "Success";
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Persistence\\Persistence.csproj": {
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Persistence\\obj\\",
+        "outputPath": "F:\\Marketing\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -21014,8 +20364,8 @@ public const string Success = "Success";
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
           }
@@ -21043,12 +20393,6 @@ public const string Success = "Success";
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.4, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -21068,11 +20412,6 @@ public const string Success = "Success";
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }
@@ -21393,12 +20732,6 @@ public const string Success = "Success";
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -21643,6 +20976,20 @@ public const string Success = "Success";
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -21653,500 +21000,17 @@ public const string Success = "Success";
           "bin/placeholder/Domain.dll": {}
         }
       },
-      "Persistence/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
-        },
-        "compile": {
-          "bin/placeholder/Persistence.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Persistence.dll": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "Microsoft.Data.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
-        "type": "package"
-      },
-      "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/_._": {}
-        },
-        "runtime": {
-          "lib/net8.0/_._": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Caching.Memory/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Caching.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Options": "9.0.4",
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "9.0.4",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.4",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Options": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "System.Diagnostics.DiagnosticSource": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/e_sqlite3.dll": {}
-        },
-        "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
-        }
-      },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.IO.Pipelines/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Text.Encodings.Web/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Text.Json/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "System.IO.Pipelines": "9.0.4",
-          "System.Text.Encodings.Web": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/System.Text.Json.targets": {}
-        }
-      },
-      "Application/1.0.0": {
+      "Domain.WhatsApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Application.dll": {}
+          "bin/placeholder/Domain.WhatsApp.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Application.dll": {}
-        }
-      },
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Domain.WhatsApp.dll": {}
         }
       },
       "Persistence/1.0.0": {
@@ -22621,57 +21485,6 @@ public const string Success = "Success";
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -22978,10 +21791,20 @@ public const string Success = "Success";
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Application.WhatsApp/Application.WhatsApp.csproj",
+      "msbuildProject": "../Application.WhatsApp/Application.WhatsApp.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
+      "msbuildProject": "../Domain.WhatsApp/Domain.WhatsApp.csproj"
     },
     "Persistence/1.0.0": {
       "type": "project",
@@ -22992,8 +21815,9 @@ public const string Success = "Success";
   "projectFileDependencyGroups": {
     "net8.0": [
       "Application >= 1.0.0",
+      "Application.WhatsApp >= 1.0.0",
       "Domain >= 1.0.0",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17",
+      "Domain.WhatsApp >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "Persistence >= 1.0.0"
     ]
@@ -23005,11 +21829,11 @@ public const string Success = "Success";
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Infrastructure\\obj\\",
+      "outputPath": "F:\\Marketing\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -23029,14 +21853,20 @@ public const string Success = "Success";
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Application\\Application.csproj": {
-              "projectPath": "F:\\marketing\\Application\\Application.csproj"
+            "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj"
             },
-            "F:\\marketing\\Domain\\Domain.csproj": {
-              "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+            "F:\\Marketing\\Application\\Application.csproj": {
+              "projectPath": "F:\\Marketing\\Application\\Application.csproj"
             },
-            "F:\\marketing\\Persistence\\Persistence.csproj": {
-              "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+            "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            },
+            "F:\\Marketing\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+            },
+            "F:\\Marketing\\Persistence\\Persistence.csproj": {
+              "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
             }
           }
         }
@@ -23057,12 +21887,6 @@ public const string Success = "Success";
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -23086,11 +21910,6 @@ public const string Success = "Success";
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -23108,7 +21927,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -23125,7 +21944,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1c4a99574b58f109b5036a0c60abd6a2fa42b6a5/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -23528,7 +22347,7 @@ namespace Infrastructure.Repositories.CRUD
 using ErrorLog = Domain.ErrorLog;
 public class ErrorLogCreate(IUnitOfWork unitOfWork) : CreateRepository<ErrorLog>(unitOfWork), IErrorLogCreate
 {
-public async Task<Operation<bool>> CreateInvoiceAsync(ErrorLog entity)
+public async Task<Operation<bool>> CreateAsync(ErrorLog entity)
 {
 return await CreateEntity(entity);
 }
@@ -23643,6 +22462,2832 @@ var invalidGuidMessage = Message.GuidValidator.InvalidGuid;
 return OperationStrategy<string>.Fail(invalidGuidMessage, business);
 }
 return Operation<string>.Success(id, Message.GuidValidator.Success);
+}
+}
+}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\bin\Debug\net8.0\Infrastructure.WhatsApp.deps.json ===
+
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Infrastructure.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain.WhatsApp": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Infrastructure.WhatsApp.dll": {}
+        }
+      },
+      "Microsoft.Data.Sqlite.Core/9.0.4": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.10"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.425.16310"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore/9.0.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.425.16310"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.425.16310"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {},
+      "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.425.16310"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "Microsoft.Extensions.DependencyModel": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
+          "SQLitePCLRaw.core": "2.1.10",
+          "System.Text.Json": "9.0.4"
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "Microsoft.Extensions.DependencyModel": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4",
+          "SQLitePCLRaw.core": "2.1.10",
+          "System.Text.Json": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.425.16310"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Memory/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "9.0.4",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Options": "9.0.4",
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.4": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/9.0.4": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "9.0.4",
+          "System.Text.Json": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "assemblyVersion": "9.0.0.4",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Options": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "System.Diagnostics.DiagnosticSource": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/9.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/9.0.4": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
+        "dependencies": {
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {
+            "assemblyVersion": "2.1.10.2445",
+            "fileVersion": "2.1.10.2445"
+          }
+        }
+      },
+      "SQLitePCLRaw.core/2.1.10": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
+            "assemblyVersion": "2.1.10.2445",
+            "fileVersion": "2.1.10.2445"
+          }
+        }
+      },
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+        "runtimeTargets": {
+          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
+            "rid": "browser-wasm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libe_sqlite3.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libe_sqlite3.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-armel/native/libe_sqlite3.so": {
+            "rid": "linux-armel",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-mips64/native/libe_sqlite3.so": {
+            "rid": "linux-mips64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm/native/libe_sqlite3.so": {
+            "rid": "linux-musl-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm64/native/libe_sqlite3.so": {
+            "rid": "linux-musl-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-s390x/native/libe_sqlite3.so": {
+            "rid": "linux-musl-s390x",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
+            "rid": "linux-ppc64le",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-s390x/native/libe_sqlite3.so": {
+            "rid": "linux-s390x",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libe_sqlite3.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x86/native/libe_sqlite3.so": {
+            "rid": "linux-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib": {
+            "rid": "maccatalyst-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {
+            "rid": "maccatalyst-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libe_sqlite3.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libe_sqlite3.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm/native/e_sqlite3.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/e_sqlite3.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/e_sqlite3.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/e_sqlite3.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.10"
+        },
+        "runtime": {
+          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {
+            "assemblyVersion": "2.1.10.2445",
+            "fileVersion": "2.1.10.2445"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/9.0.4": {
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "System.IO.Pipelines/9.0.4": {
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "System.Memory/4.5.3": {},
+      "System.Text.Encodings.Web/9.0.4": {
+        "runtime": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
+            "rid": "browser",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "System.Text.Json/9.0.4": {
+        "dependencies": {
+          "System.IO.Pipelines": "9.0.4",
+          "System.Text.Encodings.Web": "9.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "Application/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Application.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "runtime": {
+          "Application.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Domain.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
+          "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Persistence": "1.0.0"
+        },
+        "runtime": {
+          "Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Persistence/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
+        },
+        "runtime": {
+          "Persistence.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Infrastructure.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Data.Sqlite.Core/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rnVGier1R0w9YEAzxOlUl8koFwq4QLwuYKiJN6NFqbCNCPrRLGW3f7x0OtL/Sp1KBMVhgffUIP6jWPppzhpa2Q==",
+      "path": "microsoft.data.sqlite.core/9.0.4",
+      "hashPath": "microsoft.data.sqlite.core.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+5IAX0aicQYCRfN4pAjad+JPwdEYoVEM3Z1Cl8/EiEv3FVHQHdd8TJQpQIslQDDQS/UsUMb0MsOXwqOh+TJtRw==",
+      "path": "microsoft.entityframeworkcore/9.0.4",
+      "hashPath": "microsoft.entityframeworkcore.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E0pkWzI0liqu2ogqJ1kohk2eGkYRhf5tI75HGF6IQDARsshY/0w+prGyLvNuUeV7B8I7vYQZ4CzAKYKxw7b9gQ==",
+      "path": "microsoft.entityframeworkcore.abstractions/9.0.4",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cMsm1O7g9X5qbB2wjHf3BVVvGwkG+zeXQ+M91I1Bm6RfylFMImqBPzs0+vmuef7fPxr2yOzPhIfJ2wQJfmtaSw==",
+      "path": "microsoft.entityframeworkcore.analyzers/9.0.4",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OjJ+xh/wQff5b0wiC3SPvoQqTA2boZeJQf+15+3+OJPtjBKzvxuwr25QRIu1p1t+K8ryQ8pzaoZ7eOpXfNzVGA==",
+      "path": "microsoft.entityframeworkcore.relational/9.0.4",
+      "hashPath": "microsoft.entityframeworkcore.relational.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YruNASPuiCjLOVxO09lpQT4e2OYvpsoD0e5NGEQKOcPCu143RDzWTNlpzcxhArBgAS0FPwQ+OEGZOWhwgWHvOA==",
+      "path": "microsoft.entityframeworkcore.sqlite/9.0.4",
+      "hashPath": "microsoft.entityframeworkcore.sqlite.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-96NFbmjcZsO9HkSdWAwh5tn/7LKIu7cLW+zubyGV1BR1w8xpcqPXZcTW4S/0eA0d9BxyFnH8tSDRjUerWGoU/Q==",
+      "path": "microsoft.entityframeworkcore.sqlite.core/9.0.4",
+      "hashPath": "microsoft.entityframeworkcore.sqlite.core.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-imcZ5BGhBw5mNsWLepBbqqumWaFe0GtvyCvne2/2wsDIBRa2+Lhx4cU/pKt/4BwOizzUEOls2k1eOJQXHGMalg==",
+      "path": "microsoft.extensions.caching.abstractions/9.0.4",
+      "hashPath": "microsoft.extensions.caching.abstractions.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Memory/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G5rEq1Qez5VJDTEyRsRUnewAspKjaY57VGsdZ8g8Ja6sXXzoiI3PpTd1t43HjHqNWD5A06MQveb2lscn+2CU+w==",
+      "path": "microsoft.extensions.caching.memory/9.0.4",
+      "hashPath": "microsoft.extensions.caching.memory.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0LN/DiIKvBrkqp7gkF3qhGIeZk6/B63PthAHjQsxymJfIBcz0kbf4/p/t4lMgggVxZ+flRi5xvTwlpPOoZk8fg==",
+      "path": "microsoft.extensions.configuration.abstractions/9.0.4",
+      "hashPath": "microsoft.extensions.configuration.abstractions.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f2MTUaS2EQ3lX4325ytPAISZqgBfXmY0WvgD80ji6Z20AoDNiCESxsqo6mFRwHJD/jfVKRw9FsW6+86gNre3ug==",
+      "path": "microsoft.extensions.dependencyinjection/9.0.4",
+      "hashPath": "microsoft.extensions.dependencyinjection.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UI0TQPVkS78bFdjkTodmkH0Fe8lXv9LnhGFKgKrsgUJ5a5FVdFRcgjIkBVLbGgdRhxWirxH/8IXUtEyYJx6GQg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.4",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyModel/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ACtnvl3H3M/f8Z42980JxsNu7V9PPbzys4vBs83ZewnsgKd7JeYK18OMPo0g+MxAHrpgMrjmlinXDiaSRPcVnA==",
+      "path": "microsoft.extensions.dependencymodel/9.0.4",
+      "hashPath": "microsoft.extensions.dependencymodel.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xW6QPYsqhbuWBO9/1oA43g/XPKbohJx+7G8FLQgQXIriYvY7s+gxr2wjQJfRoPO900dvvv2vVH7wZovG+M1m6w==",
+      "path": "microsoft.extensions.logging/9.0.4",
+      "hashPath": "microsoft.extensions.logging.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0MXlimU4Dud6t+iNi5NEz3dO2w1HXdhoOLaYFuLPCjAsvlPQGwOT6V2KZRMLEhCAm/stSZt1AUv0XmDdkjvtbw==",
+      "path": "microsoft.extensions.logging.abstractions/9.0.4",
+      "hashPath": "microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fiFI2+58kicqVZyt/6obqoFwHiab7LC4FkQ3mmiBJ28Yy4fAvy2+v9MRnSvvlOO8chTOjKsdafFl/K9veCPo5g==",
+      "path": "microsoft.extensions.options/9.0.4",
+      "hashPath": "microsoft.extensions.options.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SPFyMjyku1nqTFFJ928JAMd0QnRe4xjE7KeKnZMWXf3xk+6e0WiOZAluYtLdbJUXtsl2cCRSi8cBquJ408k8RA==",
+      "path": "microsoft.extensions.primitives/9.0.4",
+      "hashPath": "microsoft.extensions.primitives.9.0.4.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UxWuisvZ3uVcVOLJQv7urM/JiQH+v3TmaJc1BLKl5Dxfm/nTzTUrqswCqg/INiYLi61AXnHo1M1JPmPqqLnAdg==",
+      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.10",
+      "hashPath": "sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512"
+    },
+    "SQLitePCLRaw.core/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ii8JCbC7oiVclaE/mbDEK000EFIJ+ShRPwAvvV89GOZhQ+ZLtlnSWl6ksCNMKu/VGXA4Nfi2B7LhN/QFN9oBcw==",
+      "path": "sqlitepclraw.core/2.1.10",
+      "hashPath": "sqlitepclraw.core.2.1.10.nupkg.sha512"
+    },
+    "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mAr69tDbnf3QJpRy2nJz8Qdpebdil00fvycyByR58Cn9eARvR+UiG2Vzsp+4q1tV3ikwiYIjlXCQFc12GfebbA==",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.1.10",
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512"
+    },
+    "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uZVTi02C1SxqzgT0HqTWatIbWGb40iIkfc3FpFCpE/r7g6K0PqzDUeefL6P6HPhDtc6BacN3yQysfzP7ks+wSQ==",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.1.10",
+      "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Be0emq8bRmcK4eeJIFUt9+vYPf7kzuQrFs8Ef1CdGvXpq/uSve22PTSkRF09bF/J7wmYJ2DHf2v7GaT3vMXnwQ==",
+      "path": "system.diagnostics.diagnosticsource/9.0.4",
+      "hashPath": "system.diagnostics.diagnosticsource.9.0.4.nupkg.sha512"
+    },
+    "System.IO.Pipelines/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-luF2Xba+lTe2GOoNQdZLe8q7K6s7nSpWZl9jIwWNMszN4/Yv0lmxk9HISgMmwdyZ83i3UhAGXaSY9o6IJBUuuA==",
+      "path": "system.io.pipelines/9.0.4",
+      "hashPath": "system.io.pipelines.9.0.4.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V+5cCPpk1S2ngekUs9nDrQLHGiWFZMg8BthADQr+Fwi59a8DdHFu26S2oi9Bfgv+d67bqmkPqctJXMEXiimXUg==",
+      "path": "system.text.encodings.web/9.0.4",
+      "hashPath": "system.text.encodings.web.9.0.4.nupkg.sha512"
+    },
+    "System.Text.Json/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pYtmpcO6R3Ef1XilZEHgXP2xBPVORbYEzRP7dl0IAAbN8Dm+kfwio8aCKle97rAWXOExr292MuxWYurIuwN62g==",
+      "path": "system.text.json/9.0.4",
+      "hashPath": "system.text.json.9.0.4.nupkg.sha512"
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Infrastructure.WhatsApp.csproj.nuget.dgspec.json ===
+
+{
+  "format": 1,
+  "restore": {
+    "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {}
+  },
+  "projects": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "projectName": "Application.WhatsApp",
+        "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
+        "projectName": "Infrastructure.WhatsApp",
+        "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Infrastructure.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
+        "projectName": "Persistence",
+        "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\obj\project.assets.json ===
+
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Microsoft.Data.Sqlite.Core/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.10"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
+        "type": "package"
+      },
+      "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "Microsoft.Extensions.DependencyModel": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
+          "SQLitePCLRaw.core": "2.1.10",
+          "System.Text.Json": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/_._": {}
+        },
+        "runtime": {
+          "lib/net8.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
+          "Microsoft.Extensions.Caching.Memory": "9.0.4",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
+          "Microsoft.Extensions.DependencyModel": "9.0.4",
+          "Microsoft.Extensions.Logging": "9.0.4",
+          "SQLitePCLRaw.core": "2.1.10",
+          "System.Text.Json": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Caching.Memory/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "9.0.4",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Options": "9.0.4",
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "9.0.4",
+          "System.Text.Json": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "9.0.4",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Options": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "System.Diagnostics.DiagnosticSource": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Options/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Primitives": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+        },
+        "compile": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/2.1.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
+            "assetType": "native",
+            "rid": "browser-wasm"
+          },
+          "runtimes/linux-arm/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-armel/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-armel"
+          },
+          "runtimes/linux-mips64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-mips64"
+          },
+          "runtimes/linux-musl-arm/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-arm"
+          },
+          "runtimes/linux-musl-arm64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-arm64"
+          },
+          "runtimes/linux-musl-s390x/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-s390x"
+          },
+          "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-ppc64le"
+          },
+          "runtimes/linux-s390x/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-s390x"
+          },
+          "runtimes/linux-x64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x86/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "linux-x86"
+          },
+          "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "maccatalyst-arm64"
+          },
+          "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "maccatalyst-x64"
+          },
+          "runtimes/osx-arm64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libe_sqlite3.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm64/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.10"
+        },
+        "compile": {
+          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.IO.Pipelines/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Text.Encodings.Web/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll": {
+            "assetType": "runtime",
+            "rid": "browser"
+          }
+        }
+      },
+      "System.Text.Json/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "9.0.4",
+          "System.Text.Encodings.Web": "9.0.4"
+        },
+        "compile": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/System.Text.Json.targets": {}
+        }
+      },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Application.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
+          "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
+      "Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
+        },
+        "compile": {
+          "bin/placeholder/Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Persistence.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Data.Sqlite.Core/9.0.4": {
+      "sha512": "rnVGier1R0w9YEAzxOlUl8koFwq4QLwuYKiJN6NFqbCNCPrRLGW3f7x0OtL/Sp1KBMVhgffUIP6jWPppzhpa2Q==",
+      "type": "package",
+      "path": "microsoft.data.sqlite.core/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net6.0/Microsoft.Data.Sqlite.dll",
+        "lib/net6.0/Microsoft.Data.Sqlite.xml",
+        "lib/net8.0/Microsoft.Data.Sqlite.dll",
+        "lib/net8.0/Microsoft.Data.Sqlite.xml",
+        "lib/netstandard2.0/Microsoft.Data.Sqlite.dll",
+        "lib/netstandard2.0/Microsoft.Data.Sqlite.xml",
+        "microsoft.data.sqlite.core.9.0.4.nupkg.sha512",
+        "microsoft.data.sqlite.core.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore/9.0.4": {
+      "sha512": "+5IAX0aicQYCRfN4pAjad+JPwdEYoVEM3Z1Cl8/EiEv3FVHQHdd8TJQpQIslQDDQS/UsUMb0MsOXwqOh+TJtRw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.xml",
+        "microsoft.entityframeworkcore.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
+      "sha512": "E0pkWzI0liqu2ogqJ1kohk2eGkYRhf5tI75HGF6IQDARsshY/0w+prGyLvNuUeV7B8I7vYQZ4CzAKYKxw7b9gQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.abstractions/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
+        "microsoft.entityframeworkcore.abstractions.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
+      "sha512": "cMsm1O7g9X5qbB2wjHf3BVVvGwkG+zeXQ+M91I1Bm6RfylFMImqBPzs0+vmuef7fPxr2yOzPhIfJ2wQJfmtaSw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.analyzers/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
+        "docs/PACKAGE.md",
+        "microsoft.entityframeworkcore.analyzers.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
+      "sha512": "OjJ+xh/wQff5b0wiC3SPvoQqTA2boZeJQf+15+3+OJPtjBKzvxuwr25QRIu1p1t+K8ryQ8pzaoZ7eOpXfNzVGA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.xml",
+        "microsoft.entityframeworkcore.relational.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
+      "sha512": "YruNASPuiCjLOVxO09lpQT4e2OYvpsoD0e5NGEQKOcPCu143RDzWTNlpzcxhArBgAS0FPwQ+OEGZOWhwgWHvOA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlite/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/_._",
+        "microsoft.entityframeworkcore.sqlite.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlite.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
+      "sha512": "96NFbmjcZsO9HkSdWAwh5tn/7LKIu7cLW+zubyGV1BR1w8xpcqPXZcTW4S/0eA0d9BxyFnH8tSDRjUerWGoU/Q==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlite.core/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.xml",
+        "microsoft.entityframeworkcore.sqlite.core.9.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlite.core.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
+      "sha512": "imcZ5BGhBw5mNsWLepBbqqumWaFe0GtvyCvne2/2wsDIBRa2+Lhx4cU/pKt/4BwOizzUEOls2k1eOJQXHGMalg==",
+      "type": "package",
+      "path": "microsoft.extensions.caching.abstractions/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Caching.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Caching.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.xml",
+        "microsoft.extensions.caching.abstractions.9.0.4.nupkg.sha512",
+        "microsoft.extensions.caching.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Caching.Memory/9.0.4": {
+      "sha512": "G5rEq1Qez5VJDTEyRsRUnewAspKjaY57VGsdZ8g8Ja6sXXzoiI3PpTd1t43HjHqNWD5A06MQveb2lscn+2CU+w==",
+      "type": "package",
+      "path": "microsoft.extensions.caching.memory/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Caching.Memory.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Caching.Memory.targets",
+        "lib/net462/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net462/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net8.0/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/net9.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/net9.0/Microsoft.Extensions.Caching.Memory.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.xml",
+        "microsoft.extensions.caching.memory.9.0.4.nupkg.sha512",
+        "microsoft.extensions.caching.memory.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/9.0.4": {
+      "sha512": "0LN/DiIKvBrkqp7gkF3qhGIeZk6/B63PthAHjQsxymJfIBcz0kbf4/p/t4lMgggVxZ+flRi5xvTwlpPOoZk8fg==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.9.0.4.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection/9.0.4": {
+      "sha512": "f2MTUaS2EQ3lX4325ytPAISZqgBfXmY0WvgD80ji6Z20AoDNiCESxsqo6mFRwHJD/jfVKRw9FsW6+86gNre3ug==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.9.0.4.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.4": {
+      "sha512": "UI0TQPVkS78bFdjkTodmkH0Fe8lXv9LnhGFKgKrsgUJ5a5FVdFRcgjIkBVLbGgdRhxWirxH/8IXUtEyYJx6GQg==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyModel/9.0.4": {
+      "sha512": "ACtnvl3H3M/f8Z42980JxsNu7V9PPbzys4vBs83ZewnsgKd7JeYK18OMPo0g+MxAHrpgMrjmlinXDiaSRPcVnA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencymodel/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyModel.targets",
+        "lib/net462/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net462/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
+        "microsoft.extensions.dependencymodel.9.0.4.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Logging/9.0.4": {
+      "sha512": "xW6QPYsqhbuWBO9/1oA43g/XPKbohJx+7G8FLQgQXIriYvY7s+gxr2wjQJfRoPO900dvvv2vVH7wZovG+M1m6w==",
+      "type": "package",
+      "path": "microsoft.extensions.logging/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.targets",
+        "lib/net462/Microsoft.Extensions.Logging.dll",
+        "lib/net462/Microsoft.Extensions.Logging.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Logging.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Logging.xml",
+        "microsoft.extensions.logging.9.0.4.nupkg.sha512",
+        "microsoft.extensions.logging.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
+      "sha512": "0MXlimU4Dud6t+iNi5NEz3dO2w1HXdhoOLaYFuLPCjAsvlPQGwOT6V2KZRMLEhCAm/stSZt1AUv0XmDdkjvtbw==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options/9.0.4": {
+      "sha512": "fiFI2+58kicqVZyt/6obqoFwHiab7LC4FkQ3mmiBJ28Yy4fAvy2+v9MRnSvvlOO8chTOjKsdafFl/K9veCPo5g==",
+      "type": "package",
+      "path": "microsoft.extensions.options/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "buildTransitive/net461/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Options.targets",
+        "lib/net462/Microsoft.Extensions.Options.dll",
+        "lib/net462/Microsoft.Extensions.Options.xml",
+        "lib/net8.0/Microsoft.Extensions.Options.dll",
+        "lib/net8.0/Microsoft.Extensions.Options.xml",
+        "lib/net9.0/Microsoft.Extensions.Options.dll",
+        "lib/net9.0/Microsoft.Extensions.Options.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
+        "microsoft.extensions.options.9.0.4.nupkg.sha512",
+        "microsoft.extensions.options.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Primitives/9.0.4": {
+      "sha512": "SPFyMjyku1nqTFFJ928JAMd0QnRe4xjE7KeKnZMWXf3xk+6e0WiOZAluYtLdbJUXtsl2cCRSi8cBquJ408k8RA==",
+      "type": "package",
+      "path": "microsoft.extensions.primitives/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
+        "lib/net462/Microsoft.Extensions.Primitives.dll",
+        "lib/net462/Microsoft.Extensions.Primitives.xml",
+        "lib/net8.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net8.0/Microsoft.Extensions.Primitives.xml",
+        "lib/net9.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net9.0/Microsoft.Extensions.Primitives.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
+        "microsoft.extensions.primitives.9.0.4.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
+      "sha512": "UxWuisvZ3uVcVOLJQv7urM/JiQH+v3TmaJc1BLKl5Dxfm/nTzTUrqswCqg/INiYLi61AXnHo1M1JPmPqqLnAdg==",
+      "type": "package",
+      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid90/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net461/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.xml",
+        "lib/net6.0-ios14.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll",
+        "lib/net6.0-tvos10.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll",
+        "lib/xamarinios10/SQLitePCLRaw.batteries_v2.dll",
+        "sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
+        "sqlitepclraw.bundle_e_sqlite3.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.core/2.1.10": {
+      "sha512": "Ii8JCbC7oiVclaE/mbDEK000EFIJ+ShRPwAvvV89GOZhQ+ZLtlnSWl6ksCNMKu/VGXA4Nfi2B7LhN/QFN9oBcw==",
+      "type": "package",
+      "path": "sqlitepclraw.core/2.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/SQLitePCLRaw.core.dll",
+        "sqlitepclraw.core.2.1.10.nupkg.sha512",
+        "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "sha512": "mAr69tDbnf3QJpRy2nJz8Qdpebdil00fvycyByR58Cn9eARvR+UiG2Vzsp+4q1tV3ikwiYIjlXCQFc12GfebbA==",
+      "type": "package",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "buildTransitive/net461/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net6.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "buildTransitive/net9.0/SQLitePCLRaw.lib.e_sqlite3.targets",
+        "lib/net461/_._",
+        "lib/netstandard2.0/_._",
+        "runtimes/browser-wasm/nativeassets/net6.0/e_sqlite3.a",
+        "runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a",
+        "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a",
+        "runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a",
+        "runtimes/linux-arm/native/libe_sqlite3.so",
+        "runtimes/linux-arm64/native/libe_sqlite3.so",
+        "runtimes/linux-armel/native/libe_sqlite3.so",
+        "runtimes/linux-mips64/native/libe_sqlite3.so",
+        "runtimes/linux-musl-arm/native/libe_sqlite3.so",
+        "runtimes/linux-musl-arm64/native/libe_sqlite3.so",
+        "runtimes/linux-musl-s390x/native/libe_sqlite3.so",
+        "runtimes/linux-musl-x64/native/libe_sqlite3.so",
+        "runtimes/linux-ppc64le/native/libe_sqlite3.so",
+        "runtimes/linux-s390x/native/libe_sqlite3.so",
+        "runtimes/linux-x64/native/libe_sqlite3.so",
+        "runtimes/linux-x86/native/libe_sqlite3.so",
+        "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib",
+        "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib",
+        "runtimes/osx-arm64/native/libe_sqlite3.dylib",
+        "runtimes/osx-x64/native/libe_sqlite3.dylib",
+        "runtimes/win-arm/native/e_sqlite3.dll",
+        "runtimes/win-arm64/native/e_sqlite3.dll",
+        "runtimes/win-x64/native/e_sqlite3.dll",
+        "runtimes/win-x86/native/e_sqlite3.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/e_sqlite3.dll",
+        "runtimes/win10-arm64/nativeassets/uap10.0/e_sqlite3.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/e_sqlite3.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/e_sqlite3.dll",
+        "sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
+        "sqlitepclraw.lib.e_sqlite3.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "sha512": "uZVTi02C1SxqzgT0HqTWatIbWGb40iIkfc3FpFCpE/r7g6K0PqzDUeefL6P6HPhDtc6BacN3yQysfzP7ks+wSQ==",
+      "type": "package",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll",
+        "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll",
+        "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll",
+        "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
+        "sqlitepclraw.provider.e_sqlite3.nuspec"
+      ]
+    },
+    "System.Diagnostics.DiagnosticSource/9.0.4": {
+      "sha512": "Be0emq8bRmcK4eeJIFUt9+vYPf7kzuQrFs8Ef1CdGvXpq/uSve22PTSkRF09bF/J7wmYJ2DHf2v7GaT3vMXnwQ==",
+      "type": "package",
+      "path": "system.diagnostics.diagnosticsource/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
+        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
+        "system.diagnostics.diagnosticsource.9.0.4.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.IO.Pipelines/9.0.4": {
+      "sha512": "luF2Xba+lTe2GOoNQdZLe8q7K6s7nSpWZl9jIwWNMszN4/Yv0lmxk9HISgMmwdyZ83i3UhAGXaSY9o6IJBUuuA==",
+      "type": "package",
+      "path": "system.io.pipelines/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Pipelines.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Pipelines.targets",
+        "lib/net462/System.IO.Pipelines.dll",
+        "lib/net462/System.IO.Pipelines.xml",
+        "lib/net8.0/System.IO.Pipelines.dll",
+        "lib/net8.0/System.IO.Pipelines.xml",
+        "lib/net9.0/System.IO.Pipelines.dll",
+        "lib/net9.0/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.9.0.4.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Encodings.Web/9.0.4": {
+      "sha512": "V+5cCPpk1S2ngekUs9nDrQLHGiWFZMg8BthADQr+Fwi59a8DdHFu26S2oi9Bfgv+d67bqmkPqctJXMEXiimXUg==",
+      "type": "package",
+      "path": "system.text.encodings.web/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Text.Encodings.Web.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Text.Encodings.Web.targets",
+        "lib/net462/System.Text.Encodings.Web.dll",
+        "lib/net462/System.Text.Encodings.Web.xml",
+        "lib/net8.0/System.Text.Encodings.Web.dll",
+        "lib/net8.0/System.Text.Encodings.Web.xml",
+        "lib/net9.0/System.Text.Encodings.Web.dll",
+        "lib/net9.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net8.0/System.Text.Encodings.Web.xml",
+        "runtimes/browser/lib/net9.0/System.Text.Encodings.Web.dll",
+        "runtimes/browser/lib/net9.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.9.0.4.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Json/9.0.4": {
+      "sha512": "pYtmpcO6R3Ef1XilZEHgXP2xBPVORbYEzRP7dl0IAAbN8Dm+kfwio8aCKle97rAWXOExr292MuxWYurIuwN62g==",
+      "type": "package",
+      "path": "system.text.json/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net8.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net8.0/System.Text.Json.dll",
+        "lib/net8.0/System.Text.Json.xml",
+        "lib/net9.0/System.Text.Json.dll",
+        "lib/net9.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.9.0.4.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Application.WhatsApp/Application.WhatsApp.csproj",
+      "msbuildProject": "../Application.WhatsApp/Application.WhatsApp.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
+      "msbuildProject": "../Domain.WhatsApp/Domain.WhatsApp.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    },
+    "Persistence/1.0.0": {
+      "type": "project",
+      "path": "../Persistence/Persistence.csproj",
+      "msbuildProject": "../Persistence/Persistence.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Domain.WhatsApp >= 1.0.0",
+      "Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\luisg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
+      "projectName": "Infrastructure.WhatsApp",
+      "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
+      "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+      "outputPath": "F:\\Marketing\\Infrastructure.WhatsApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            },
+            "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Debug\net8.0\Infrastructure.WhatsApp.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure.WhatsApp")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyProductAttribute("Infrastructure.WhatsApp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure.WhatsApp")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Debug\net8.0\Infrastructure.WhatsApp.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Debug\net8.0\Infrastructure.WhatsApp.sourcelink.json ===
+
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\Repositories\CRUD\TrackedLinkCreate.cs ===
+
+﻿using Application.Result;
+using Application.UseCases.Repository.UseCases.CRUD;
+using Application.WhatsApp.UseCases.Repository.CRUD;
+using Domain;
+using Domain.WhatsApp.Redirect;
+using Infrastructure.Repositories.Abstract.CRUD.Create;
+using Persistence.Context.Interface;
+namespace Infrastructure.WhatsApp.Repositories.CRUD
+{
+public class TrackedLinkCreate(IUnitOfWork unitOfWork) : CreateRepository<TrackedLink>(unitOfWork), ITrackedLinkCreate
+{
+public async Task<Operation<bool>> CreateAsync(TrackedLink entity)
+{
+return await CreateEntity(entity);
+}
+}
+}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\Repositories\CRUD\TrackedLinkRead.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Application.Result;
+using Application.Result.Error;
+using Application.WhatsApp.UseCases.Repository.CRUD;
+using Domain.WhatsApp.Redirect;
+using Microsoft.EntityFrameworkCore;
+using Persistence.Context.Interface;
+using Persistence.Repositories;
+namespace Infrastructure.WhatsApp.Repositories.CRUD
+{
+public class TrackedLinkRead(IUnitOfWork unitOfWork) :Read<TrackedLink>(unitOfWork), ITrackedLinkRead
+{
+public async Task<Operation<List<TrackedLink>>> ReadAsync(string id)
+{
+if (string.IsNullOrWhiteSpace(id))
+return Operation<List<TrackedLink>>.Failure(
+"Id cannot be null, empty, or whitespace.",
+ErrorTypes.UserInput
+);
+var query = await ReadFilter(t => t.Id == id);
+var items = await query.AsNoTracking().ToListAsync();
+return Operation<List<TrackedLink>>.Success(items);
+}
+}
+}
+
+=== FILE: F:\Marketing\Infrastructure.WhatsApp\Repositories\CRUD\TrackedLinkUpdate.cs ===
+
+﻿using Application.Result;
+using Application.WhatsApp.UseCases.Repository.CRUD;
+using Domain.WhatsApp.Redirect;
+using Infrastructure.Repositories.Abstract.CRUD.Create;
+using Persistence.Context.Interface;
+namespace Infrastructure.WhatsApp.Repositories.CRUD
+{
+public class TrackedLinkUpdate(IUnitOfWork unitOfWork) : CreateRepository<TrackedLink>(unitOfWork), ITrackedLinkUpdate
+{
+public async Task<Operation<bool>> UpdateAsync(TrackedLink entity)
+{
+return await UpdateAsync(entity);
 }
 }
 }
@@ -24851,7 +26496,18 @@ times
           }
         }
       },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -25189,6 +26845,11 @@ times
       "serviceable": false,
       "sha512": ""
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -25222,15 +26883,15 @@ times
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj": {}
+    "F:\\Marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -25295,14 +26956,82 @@ times
         }
       }
     },
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25359,14 +27088,14 @@ times
         }
       }
     },
-    "F:\\marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj": {
+    "F:\\Marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
+        "projectUniqueName": "F:\\Marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
         "projectName": "Marketing.Services.Test",
-        "projectPath": "F:\\marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
+        "projectPath": "F:\\Marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Marketing.Services.Test\\obj\\",
+        "outputPath": "F:\\Marketing\\Marketing.Services.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25386,8 +27115,8 @@ times
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Services\\Services.csproj": {
-                "projectPath": "F:\\marketing\\Services\\Services.csproj"
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -25453,14 +27182,14 @@ times
         }
       }
     },
-    "F:\\marketing\\Services\\Services.csproj": {
+    "F:\\Marketing\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "F:\\marketing\\Services\\Services.csproj",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Services\\obj\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25480,11 +27209,11 @@ times
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-                "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               }
             }
           }
@@ -26542,9 +28271,22 @@ times
           "bin/placeholder/Configuration.dll": {}
         }
       },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "Domain.WhatsApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.WhatsApp.dll": {}
         },
@@ -28107,6 +29849,11 @@ times
       "path": "../Configuration/Configuration.csproj",
       "msbuildProject": "../Configuration/Configuration.csproj"
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
@@ -28136,11 +29883,11 @@ times
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
+      "projectUniqueName": "F:\\Marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
       "projectName": "Marketing.Services.Test",
-      "projectPath": "F:\\marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
+      "projectPath": "F:\\Marketing\\Marketing.Services.Test\\Marketing.Services.Test.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Marketing.Services.Test\\obj\\",
+      "outputPath": "F:\\Marketing\\Marketing.Services.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -28160,8 +29907,8 @@ times
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Services\\Services.csproj": {
-              "projectPath": "F:\\marketing\\Services\\Services.csproj"
+            "F:\\Marketing\\Services\\Services.csproj": {
+              "projectPath": "F:\\Marketing\\Services\\Services.csproj"
             }
           }
         }
@@ -28242,7 +29989,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -28260,7 +30007,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\ErrorHandlerTests.cs ===
 
@@ -29684,6 +31431,18 @@ true.Should().BeTrue();
           }
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "runtime": {
+          "Application.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -29704,6 +31463,9 @@ true.Should().BeTrue();
         }
       },
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -29714,7 +31476,9 @@ true.Should().BeTrue();
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
@@ -30194,6 +31958,11 @@ true.Should().BeTrue();
       "serviceable": false,
       "sha512": ""
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -30650,17 +32419,17 @@ public bool Active { get; set; }
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Marketing.Tests\\Marketing.Tests.csproj": {}
+    "F:\\Marketing\\Marketing.Tests\\Marketing.Tests.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Application\\Application.csproj": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "F:\\marketing\\Application\\Application.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "projectName": "Application.WhatsApp",
+        "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Application\\obj\\",
+        "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30680,8 +32449,11 @@ public bool Active { get; set; }
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               }
             }
           }
@@ -30721,12 +32493,80 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -30791,14 +32631,14 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30817,7 +32657,11 @@ public bool Active { get; set; }
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -30855,12 +32699,12 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -30919,14 +32763,14 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
+    "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Infrastructure\\obj\\",
+        "outputPath": "F:\\Marketing\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30946,14 +32790,20 @@ public bool Active { get; set; }
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj"
               },
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -30999,14 +32849,14 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Marketing.Tests\\Marketing.Tests.csproj": {
+    "F:\\Marketing\\Marketing.Tests\\Marketing.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Marketing.Tests\\Marketing.Tests.csproj",
+        "projectUniqueName": "F:\\Marketing\\Marketing.Tests\\Marketing.Tests.csproj",
         "projectName": "Marketing.Tests",
-        "projectPath": "F:\\marketing\\Marketing.Tests\\Marketing.Tests.csproj",
+        "projectPath": "F:\\Marketing\\Marketing.Tests\\Marketing.Tests.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Marketing.Tests\\obj\\",
+        "outputPath": "F:\\Marketing\\Marketing.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31026,20 +32876,20 @@ public bool Active { get; set; }
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               },
-              "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj"
+              "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               },
-              "F:\\marketing\\Services\\Services.csproj": {
-                "projectPath": "F:\\marketing\\Services\\Services.csproj"
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -31105,14 +32955,14 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Persistence\\Persistence.csproj": {
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Persistence\\obj\\",
+        "outputPath": "F:\\Marketing\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31132,8 +32982,8 @@ public bool Active { get; set; }
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
           }
@@ -31183,14 +33033,14 @@ public bool Active { get; set; }
         }
       }
     },
-    "F:\\marketing\\Services\\Services.csproj": {
+    "F:\\Marketing\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "F:\\marketing\\Services\\Services.csproj",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Services\\obj\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31210,11 +33060,11 @@ public bool Active { get; set; }
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-                "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               }
             }
           }
@@ -32634,6 +34484,20 @@ public bool Active { get; set; }
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -32660,6 +34524,9 @@ public bool Active { get; set; }
       "Domain.WhatsApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.WhatsApp.dll": {}
         },
@@ -32672,7 +34539,9 @@ public bool Active { get; set; }
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
@@ -34555,6 +36424,11 @@ public bool Active { get; set; }
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Application.WhatsApp/Application.WhatsApp.csproj",
+      "msbuildProject": "../Application.WhatsApp/Application.WhatsApp.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -34608,11 +36482,11 @@ public bool Active { get; set; }
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Marketing.Tests\\Marketing.Tests.csproj",
+      "projectUniqueName": "F:\\Marketing\\Marketing.Tests\\Marketing.Tests.csproj",
       "projectName": "Marketing.Tests",
-      "projectPath": "F:\\marketing\\Marketing.Tests\\Marketing.Tests.csproj",
+      "projectPath": "F:\\Marketing\\Marketing.Tests\\Marketing.Tests.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Marketing.Tests\\obj\\",
+      "outputPath": "F:\\Marketing\\Marketing.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -34632,20 +36506,20 @@ public bool Active { get; set; }
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "F:\\marketing\\Application\\Application.csproj": {
-              "projectPath": "F:\\marketing\\Application\\Application.csproj"
+            "F:\\Marketing\\Application\\Application.csproj": {
+              "projectPath": "F:\\Marketing\\Application\\Application.csproj"
             },
-            "F:\\marketing\\Domain\\Domain.csproj": {
-              "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+            "F:\\Marketing\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
             },
-            "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj"
+            "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
             },
-            "F:\\marketing\\Persistence\\Persistence.csproj": {
-              "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+            "F:\\Marketing\\Persistence\\Persistence.csproj": {
+              "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
             },
-            "F:\\marketing\\Services\\Services.csproj": {
-              "projectPath": "F:\\marketing\\Services\\Services.csproj"
+            "F:\\Marketing\\Services\\Services.csproj": {
+              "projectPath": "F:\\Marketing\\Services\\Services.csproj"
             }
           }
         }
@@ -34726,7 +36600,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -34744,7 +36618,7 @@ global using global::Xunit;
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\Marketing.Tests.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\Persistence\Class1.cs ===
 
@@ -36233,15 +38107,15 @@ public object? Value => null;
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Persistence\\Persistence.csproj": {}
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -36280,14 +38154,6 @@ public object? Value => null;
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -36306,21 +38172,16 @@ public object? Value => null;
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Persistence\\Persistence.csproj": {
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Persistence\\obj\\",
+        "outputPath": "F:\\Marketing\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -36340,8 +38201,8 @@ public object? Value => null;
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
           }
@@ -36369,12 +38230,6 @@ public object? Value => null;
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.4, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -36394,11 +38249,6 @@ public object? Value => null;
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }
@@ -36719,12 +38569,6 @@ public object? Value => null;
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
         "type": "package",
         "dependencies": {
@@ -36921,461 +38765,6 @@ public object? Value => null;
             "assetType": "runtime",
             "rid": "browser"
           }
-        }
-      },
-      "System.Text.Json/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "System.IO.Pipelines": "9.0.4",
-          "System.Text.Encodings.Web": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/System.Text.Json.targets": {}
-        }
-      },
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "Microsoft.Data.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
-        "type": "package"
-      },
-      "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/_._": {}
-        },
-        "runtime": {
-          "lib/net8.0/_._": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Caching.Memory/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Caching.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Options": "9.0.4",
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "9.0.4",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.4",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Options": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "System.Diagnostics.DiagnosticSource": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/e_sqlite3.dll": {}
-        },
-        "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
-        }
-      },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.IO.Pipelines/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Text.Encodings.Web/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
         }
       },
       "System.Text.Json/9.0.4": {
@@ -37865,57 +39254,6 @@ public object? Value => null;
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
       "sha512": "UxWuisvZ3uVcVOLJQv7urM/JiQH+v3TmaJc1BLKl5Dxfm/nTzTUrqswCqg/INiYLi61AXnHo1M1JPmPqqLnAdg==",
       "type": "package",
@@ -38197,8 +39535,7 @@ public object? Value => null;
     "net8.0": [
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.4",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17"
+      "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.4"
     ]
   },
   "packageFolders": {
@@ -38208,9 +39545,9 @@ public object? Value => null;
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj",
+      "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
       "outputPath": "F:\\marketing\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
@@ -38232,8 +39569,8 @@ public object? Value => null;
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Domain\\Domain.csproj": {
-              "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+            "F:\\Marketing\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
             }
           }
         }
@@ -38261,12 +39598,6 @@ public object? Value => null;
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[9.0.4, )"
-          },
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
           }
         },
         "imports": [
@@ -38287,11 +39618,6 @@ public object? Value => null;
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -38309,7 +39635,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -38326,7 +39652,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1c4a99574b58f109b5036a0c60abd6a2fa42b6a5/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/da4fbd62157475e898a53e5be9573d8458814972/*"}}
 
 === FILE: F:\Marketing\Persistence\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -38489,12 +39815,8 @@ unitOfWork.Context.Entry(entity).State = EntityState.Modified;
 
 === FILE: F:\Marketing\Services\AutoItRunnerResult.cs ===
 
-﻿using System;
-using System.Diagnostics;
-using System.IO;
+﻿using System.Diagnostics;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Configuration;
 using Domain.WhatsApp;
 using Microsoft.Extensions.Logging;
@@ -38747,8 +40069,6 @@ return timestamp;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Services.Interfaces;
-using System;
-using System.IO;
 namespace Services;
 public sealed class ChromeDriverFactory : IWebDriverFactory
 {
@@ -38848,131 +40168,6 @@ if (!Directory.Exists(path))
 {
 Directory.CreateDirectory(path);
 _logger.LogInformation($"📁 Created execution folder at: {_executionOptions.ExecutionRunning}");
-}
-}
-}
-}
-
-=== FILE: F:\Marketing\Services\LoginService.cs ===
-
-﻿using System.Text.RegularExpressions;
-using Configuration;
-using Microsoft.Extensions.Logging;
-using OpenQA.Selenium;
-using Services.Interfaces;
-namespace Services
-{
-public class LoginService(
-AppConfig config,
-IWebDriver driver,
-ILogger<LoginService> logger,
-ICaptureSnapshot capture,
-ExecutionTracker executionOptions
-) : ILoginService
-{
-private AppConfig Config { get; } = config;
-private IWebDriver Driver { get; } = driver;
-private ILogger<LoginService> Logger { get; } = logger;
-private ICaptureSnapshot Capture { get; } = capture;
-private ExecutionTracker ExecutionOptions { get; } = executionOptions;
-private const string FolderName = "Login";
-private string FolderPath => Path.Combine(ExecutionOptions.ExecutionRunning, FolderName);
-public async Task LoginAsync(CancellationToken cancellationToken = default)
-{
-Logger.LogInformation(
-"🔐 ID:{TimeStamp} Starting login process...",
-ExecutionOptions.TimeStamp
-);
-var url = Config.WhatsApp.Url;
-Logger.LogInformation(
-"🌐 ID:{TimeStamp} Navigating to login URL: {Url}",
-ExecutionOptions.TimeStamp,
-url
-);
-Driver.Navigate().GoToUrl(url);
-await Capture.CaptureArtifactsAsync(FolderPath, "Login_Page_Loaded");
-Logger.LogInformation(
-"📲 ID:{TimeStamp} Please open WhatsApp on your phone and complete login (scan QR / approve). Waiting for login...",
-ExecutionOptions.TimeStamp
-);
-await WaitForWhatsAppLoginAsync(
-pollInterval: Config.WhatsApp.LoginPollInterval,
-timeout: Config.WhatsApp.LoginTimeout,
-cancellationToken: cancellationToken
-);
-Logger.LogInformation(
-"✅ ID:{TimeStamp} WhatsApp Web is logged in. Continuing...",
-ExecutionOptions.TimeStamp
-);
-await Task.CompletedTask;
-}
-private async Task WaitForWhatsAppLoginAsync(
-TimeSpan pollInterval,
-TimeSpan timeout,
-CancellationToken cancellationToken)
-{
-var start = DateTimeOffset.UtcNow;
-while (true)
-{
-cancellationToken.ThrowIfCancellationRequested();
-var state = GetWhatsAppLoginState();
-if (state == WhatsAppLoginState.LoggedIn)
-{
-await Capture.CaptureArtifactsAsync(FolderPath, "Login_Success_LoggedIn");
-return;
-}
-if (state == WhatsAppLoginState.NeedsQrScan)
-{
-Logger.LogInformation(
-"⏳ ID:{TimeStamp} Still not logged in. Please scan the QR / approve on phone...",
-ExecutionOptions.TimeStamp
-);
-}
-else
-{
-Logger.LogInformation(
-"⏳ ID:{TimeStamp} Waiting for WhatsApp Web to be ready... state={State}",
-ExecutionOptions.TimeStamp,
-state
-);
-}
-if (DateTimeOffset.UtcNow - start > timeout)
-{
-await Capture.CaptureArtifactsAsync(FolderPath, "Login_Timeout");
-throw new TimeoutException($"WhatsApp login not completed within {timeout.TotalSeconds:N0} seconds.");
-}
-await Task.Delay(pollInterval, cancellationToken);
-}
-}
-private enum WhatsAppLoginState
-{
-LoggedIn,
-NeedsQrScan,
-Loading,
-Unknown
-}
-private WhatsAppLoginState GetWhatsAppLoginState()
-{
-try
-{
-if (Driver.FindElements(By.CssSelector("div[role='textbox'][contenteditable='true']")).Count > 0)
-return WhatsAppLoginState.LoggedIn;
-if (Driver.FindElements(By.CssSelector("div[role='grid'], div[role='application']")).Count > 0)
-return WhatsAppLoginState.LoggedIn;
-if (Driver.FindElements(By.CssSelector("canvas")).Count > 0)
-return WhatsAppLoginState.NeedsQrScan;
-var body = Driver.FindElements(By.TagName("body")).FirstOrDefault()?.Text ?? string.Empty;
-if (body.Contains("Log in", StringComparison.OrdinalIgnoreCase) ||
-body.Contains("Use WhatsApp", StringComparison.OrdinalIgnoreCase))
-return WhatsAppLoginState.NeedsQrScan;
-var ready = ((IJavaScriptExecutor)Driver).ExecuteScript("return document.readyState")?.ToString();
-if (!string.Equals(ready, "complete", StringComparison.OrdinalIgnoreCase))
-return WhatsAppLoginState.Loading;
-return WhatsAppLoginState.Unknown;
-}
-catch
-{
-return WhatsAppLoginState.Unknown;
 }
 }
 }
@@ -39101,178 +40296,15 @@ Console.WriteLine("╚═══════════════════�
 }
 }
 
-=== FILE: F:\Marketing\Services\Util.cs ===
-
-﻿using Configuration;
-using Microsoft.Extensions.Logging;
-using OpenQA.Selenium;
-using Services.Interfaces;
-namespace Services
-{
-public class Util: IUtil
-{
-private readonly IWebDriver _driver;
-private readonly AppConfig _config;
-private readonly ILogger<Util> _logger;
-private readonly ExecutionTracker _executionOptions;
-private const string FolderName = "Page";
-private readonly ISecurityCheck _securityCheck;
-private string FolderPath => Path.Combine(_executionOptions.ExecutionRunning, FolderName);
-private readonly ICaptureSnapshot _capture;
-private readonly IDirectoryCheck _directoryCheck;
-public Util(IWebDriver driver,
-AppConfig config,
-ILogger<Util> logger,
-ExecutionTracker executionOptions,
-ICaptureSnapshot capture,
-ISecurityCheck securityCheck,
-IDirectoryCheck directoryCheck)
-{
-_driver = driver;
-_config = config;
-_logger = logger;
-_executionOptions = executionOptions;
-_capture = capture;
-_securityCheck = securityCheck;
-_directoryCheck = directoryCheck;
-_directoryCheck.EnsureDirectoryExists(FolderPath);
-}
-public async Task<bool> WaitForPageLoadAsync(int timeoutInSeconds = 30)
-{
-try
-{
-string xpath = "
-var nextButton = _driver.FindElements(By.XPath(xpath))
-.FirstOrDefault(b => b.Enabled);
-if (nextButton == null)
-{
-_logger.LogInformation($"⏹️ ID:{_executionOptions.TimeStamp} No 'Next' pagination button found. Pagination completed.");
-return false;
-}
-_logger.LogDebug($"⏭️ ID:{_executionOptions.TimeStamp} Clicking 'Next' button to go to next results page...");
-nextButton.Click();
-await Task.Delay(3000);
-if (_securityCheck.IsSecurityCheck())
-{
-await _securityCheck.HandleSecurityPage();
-throw new InvalidOperationException(
-$"❌ ID:{_executionOptions.TimeStamp} LinkedIn requires manual security verification. Please complete it in the browser.");
-}
-var container = _driver.FindElements(By.XPath("
-if (container == null)
-{
-await _securityCheck.HandleUnexpectedPage();
-throw new InvalidOperationException(
-$"❌ ID:{_executionOptions.TimeStamp} Failed to load next page. Current URL: {_driver.Url}");
-}
-_logger.LogInformation($"✅ ID:{_executionOptions.TimeStamp} Successfully navigated to the next page.");
-return true;
-}
-catch (Exception ex)
-{
-_logger.LogWarning(ex, $"⚠️ ID:{_executionOptions.TimeStamp} Exception during next-page navigation.");
-return false;
-}
-}
-public async Task<bool> NavigateToNextPageAsync()
-{
-try
-{
-string xpath = "
-var nextButton = _driver.FindElements(By.XPath(xpath))
-.FirstOrDefault(b => b.Enabled);
-if (nextButton == null)
-{
-_logger.LogInformation($"⏹️ ID:{_executionOptions.TimeStamp} No 'Next' pagination button found. Pagination completed.");
-return false;
-}
-_logger.LogDebug($"⏭️ ID:{_executionOptions.TimeStamp} Clicking 'Next' button to go to next results page...");
-nextButton.Click();
-await Task.Delay(3000);
-if (_securityCheck.IsSecurityCheck())
-{
-await _securityCheck.HandleSecurityPage();
-throw new InvalidOperationException(
-$"❌ ID:{_executionOptions.TimeStamp} LinkedIn requires manual security verification. Please complete it in the browser.");
-}
-var container = _driver.FindElements(By.XPath("
-if (container == null)
-{
-await _securityCheck.HandleUnexpectedPage();
-throw new InvalidOperationException(
-$"❌ ID:{_executionOptions.TimeStamp} Failed to load next page. Current URL: {_driver.Url}");
-}
-_logger.LogInformation($"✅ ID:{_executionOptions.TimeStamp} Successfully navigated to the next page.");
-return true;
-}
-catch (Exception ex)
-{
-_logger.LogWarning(ex, $"⚠️ ID:{_executionOptions.TimeStamp} Exception during next-page navigation.");
-return false;
-}
-}
-public void ScrollMove()
-{
-var jsExecutor = (IJavaScriptExecutor)_driver;
-const int stepSize = 500;
-const int delayMs = 800;
-long totalHeight = (long)jsExecutor.ExecuteScript("return document.body.scrollHeight");
-long currentPosition = 0;
-_logger.LogInformation("⬇️ ID:{TimeStamp} Starting step-by-step scroll on LinkedIn...", _executionOptions.TimeStamp);
-while (currentPosition < totalHeight)
-{
-jsExecutor.ExecuteScript($"window.scrollTo(0, {currentPosition});");
-Thread.Sleep(delayMs);
-currentPosition += stepSize;
-totalHeight = (long)jsExecutor.ExecuteScript("return document.body.scrollHeight");
-_logger.LogDebug("🔁 ID:{TimeStamp} Scrolled to: {CurrentPosition}/{TotalHeight}", _executionOptions.TimeStamp, currentPosition, totalHeight);
-}
-_logger.LogInformation("✅ ID:{TimeStamp} Step-by-step scroll completed.", _executionOptions.TimeStamp);
-}
-public void ScrollToTop()
-{
-var jsExecutor = (IJavaScriptExecutor)_driver;
-_logger.LogInformation("⬆️ ID:{TimeStamp} Scrolling to the top of the page...", _executionOptions.TimeStamp);
-jsExecutor.ExecuteScript("window.scrollTo(0, 0);");
-Thread.Sleep(1000);
-_logger.LogInformation("✅ ID:{TimeStamp} Scroll to top completed.", _executionOptions.TimeStamp);
-}
-public void ScrollToExperienceSection()
-{
-try
-{
-_logger.LogInformation("🔍 ID:{TimeStamp} Scrolling to the 'Experience' section...", _executionOptions.TimeStamp);
-var jsExecutor = (IJavaScriptExecutor)_driver;
-var experienceSection = _driver.FindElement(By.CssSelector("section[data-section='experience']"));
-jsExecutor.ExecuteScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'start' });", experienceSection);
-Thread.Sleep(1000);
-_logger.LogInformation("✅ ID:{TimeStamp} Successfully scrolled to the 'Experience' section.", _executionOptions.TimeStamp);
-}
-catch (NoSuchElementException)
-{
-_logger.LogWarning("⚠️ ID:{TimeStamp} 'Experience' section not found using [data-section='experience'].", _executionOptions.TimeStamp);
-}
-catch (Exception ex)
-{
-_logger.LogError(ex, "❌ ID:{TimeStamp} Failed to scroll to the 'Experience' section.", _executionOptions.TimeStamp);
-}
-}
-}
-}
-
 === FILE: F:\Marketing\Services\WebDriverLifetimeService.cs ===
 
 ﻿using Microsoft.Extensions.Hosting;
 using OpenQA.Selenium;
 namespace Services
 {
-public sealed class WebDriverLifetimeService : IHostedService
+public sealed class WebDriverLifetimeService(IWebDriver driver) : IHostedService
 {
-private readonly IWebDriver _driver;
-public WebDriverLifetimeService(IWebDriver driver)
-{
-_driver = driver;
-}
+private readonly IWebDriver _driver = driver;
 public Task StartAsync(CancellationToken cancellationToken)
 => Task.CompletedTask;
 public Task StopAsync(CancellationToken cancellationToken)
@@ -39286,908 +40318,6 @@ catch
 {
 }
 return Task.CompletedTask;
-}
-}
-}
-
-=== FILE: F:\Marketing\Services\WhatAppOpenChat.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using OpenQA.Selenium;
-using Services.Interfaces;
-using Keys = OpenQA.Selenium.Keys;
-namespace Services
-{
-public class WhatAppOpenChat(
-IWebDriver driver,
-ILogger<LoginService> logger
-) : IWhatAppOpenChat
-{
-private const string WhatAppMessage = "WhatsApp Web is not logged in. Call LoginAsync() before opening a chat.";
-private const string CssSelectorToFind = "div[role='textbox'][contenteditable='true']";
-private const string CssSelectorToFindSearchInput = "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']";
-private const string XpathToFindGridcell = "./ancestor::*[@role='gridcell' or @role='row' or @tabindex][1]";
-private IWebDriver Driver { get; } = driver;
-public ILogger<LoginService> Logger { get; } = logger;
-public async Task OpenContactChatAsync(
-string chatIdentifier,
-TimeSpan? timeout = null,
-TimeSpan? pollInterval = null,
-CancellationToken ct = default)
-{
-Logger.LogInformation("OpenContactChatAsync started. chatIdentifier='{ChatIdentifier}'", chatIdentifier);
-ct.ThrowIfCancellationRequested();
-if (string.IsNullOrWhiteSpace(chatIdentifier))
-{
-Logger.LogWarning("OpenContactChatAsync aborted: chatIdentifier is null/empty/whitespace.");
-throw new ArgumentException("Chat identifier cannot be null, empty, or whitespace.", nameof(chatIdentifier));
-}
-Logger.LogInformation("Step 1/4: Checking WhatsApp Web login state...");
-if (!IsWhatsAppLoggedIn())
-{
-Logger.LogError("OpenContactChatAsync failed: WhatsApp Web is not logged in.");
-throw new InvalidOperationException(WhatAppMessage);
-}
-Logger.LogInformation("Step 1/4: Logged in confirmed.");
-var effectiveTimeout = timeout ?? TimeSpan.FromSeconds(10);
-var effectivePoll = pollInterval ?? TimeSpan.FromMilliseconds(200);
-if (effectiveTimeout <= TimeSpan.Zero)
-{
-Logger.LogWarning("Invalid timeout provided: {Timeout}.", effectiveTimeout);
-throw new ArgumentOutOfRangeException(nameof(timeout), "Timeout must be greater than zero.");
-}
-if (effectivePoll <= TimeSpan.Zero)
-{
-Logger.LogWarning("Invalid pollInterval provided: {PollInterval}.", effectivePoll);
-throw new ArgumentOutOfRangeException(nameof(pollInterval), "Poll interval must be greater than zero.");
-}
-if (effectivePoll > effectiveTimeout)
-{
-var adjusted = TimeSpan.FromMilliseconds(Math.Max(50, effectiveTimeout.TotalMilliseconds / 10));
-Logger.LogWarning(
-"PollInterval {PollInterval} > Timeout {Timeout}. Adjusting pollInterval to {AdjustedPollInterval}.",
-effectivePoll, effectiveTimeout, adjusted);
-effectivePoll = adjusted;
-}
-Logger.LogInformation(
-"Step 2/4: Using timeout={Timeout} pollInterval={PollInterval}.",
-effectiveTimeout, effectivePoll);
-ct.ThrowIfCancellationRequested();
-Logger.LogInformation("Step 3/4: Typing chatIdentifier into WhatsApp search box...");
-try
-{
-await TypeIntoSearchBoxAsync(chatIdentifier, effectiveTimeout, effectivePoll )
-.ConfigureAwait(false);
-Logger.LogInformation("Step 3/4: Search input completed.");
-}
-catch (OperationCanceledException)
-{
-Logger.LogWarning("OpenContactChatAsync canceled during Step 3/4 (TypeIntoSearchBoxAsync).");
-throw;
-}
-catch (Exception ex)
-{
-Logger.LogError(ex, "OpenContactChatAsync failed during Step 3/4 (TypeIntoSearchBoxAsync).");
-throw;
-}
-ct.ThrowIfCancellationRequested();
-Logger.LogInformation("Step 4/4: Clicking chat by title '{ChatIdentifier}'...", chatIdentifier);
-try
-{
-await ClickChatByTitleAsync(chatIdentifier, effectiveTimeout, effectivePoll )
-.ConfigureAwait(false);
-Logger.LogInformation("Step 4/4: Chat opened successfully. chatIdentifier='{ChatIdentifier}'", chatIdentifier);
-}
-catch (OperationCanceledException)
-{
-Logger.LogWarning("OpenContactChatAsync canceled during Step 4/4 (ClickChatByTitleAsync).");
-throw;
-}
-catch (Exception ex)
-{
-Logger.LogError(ex, "OpenContactChatAsync failed during Step 4/4 (ClickChatByTitleAsync).");
-throw;
-}
-}
-private bool IsWhatsAppLoggedIn()
-{
-Logger.LogDebug("IsWhatsAppLoggedIn: Checking WhatsApp Web login state...");
-try
-{
-var elements = Driver.FindElements(By.CssSelector(CssSelectorToFind));
-var isLoggedIn = elements.Count > 0;
-Logger.LogDebug(
-"IsWhatsAppLoggedIn: Selector '{Selector}' returned {Count} elements. LoggedIn={IsLoggedIn}.",
-CssSelectorToFind,
-elements.Count,
-isLoggedIn
-);
-return isLoggedIn;
-}
-catch (NoSuchElementException ex)
-{
-Logger.LogWarning(
-ex,
-"IsWhatsAppLoggedIn: Selector '{Selector}' not found. Assuming not logged in.",
-CssSelectorToFind
-);
-return false;
-}
-catch (WebDriverException ex)
-{
-Logger.LogError(
-ex,
-"IsWhatsAppLoggedIn: WebDriver error while checking login state."
-);
-return false;
-}
-catch (Exception ex)
-{
-Logger.LogError(
-ex,
-"IsWhatsAppLoggedIn: Unexpected error while checking login state."
-);
-return false;
-}
-}
-private async Task TypeIntoSearchBoxAsync(
-string text,
-TimeSpan? timeout = null,
-TimeSpan? pollInterval = null,
-CancellationToken ct = default)
-{
-Logger.LogInformation(
-"TypeIntoSearchBoxAsync started. textLength={TextLength}",
-text?.Length ?? 0
-);
-if (string.IsNullOrWhiteSpace(text))
-{
-Logger.LogWarning("TypeIntoSearchBoxAsync aborted: text is null or whitespace.");
-throw new ArgumentException("Text cannot be empty.", nameof(text));
-}
-timeout ??= TimeSpan.FromSeconds(10);
-pollInterval ??= TimeSpan.FromMilliseconds(200);
-Logger.LogInformation(
-"Using timeout={Timeout} pollInterval={PollInterval}.",
-timeout, pollInterval
-);
-var deadline = DateTimeOffset.UtcNow + timeout.Value;
-var attempt = 0;
-while (DateTimeOffset.UtcNow < deadline)
-{
-ct.ThrowIfCancellationRequested();
-attempt++;
-try
-{
-Logger.LogDebug(
-"Attempt {Attempt}: Locating search input using selector '{Selector}'.",
-attempt,
-CssSelectorToFindSearchInput
-);
-var input = Driver
-.FindElements(By.CssSelector(CssSelectorToFindSearchInput))
-.FirstOrDefault();
-if (input is { Displayed: true, Enabled: true })
-{
-Logger.LogInformation(
-"Search input found and ready on attempt {Attempt}. Focusing and typing...",
-attempt
-);
-input.Click();
-Logger.LogDebug("Clearing existing search input content.");
-input.SendKeys(Keys.Control + "a");
-input.SendKeys(Keys.Backspace);
-Logger.LogDebug("Typing search text and submitting.");
-input.SendKeys(text);
-input.SendKeys(Keys.Enter);
-Logger.LogInformation("TypeIntoSearchBoxAsync completed successfully.");
-return;
-}
-Logger.LogDebug(
-"Attempt {Attempt}: Search input not ready (null, hidden, or disabled).",
-attempt
-);
-}
-catch (StaleElementReferenceException)
-{
-Logger.LogDebug(
-"Attempt {Attempt}: StaleElementReferenceException encountered. Retrying...",
-attempt
-);
-}
-catch (InvalidElementStateException)
-{
-Logger.LogDebug(
-"Attempt {Attempt}: InvalidElementStateException encountered. Retrying...",
-attempt
-);
-}
-catch (Exception ex)
-{
-Logger.LogError(
-ex,
-"TypeIntoSearchBoxAsync failed unexpectedly on attempt {Attempt}.",
-attempt
-);
-throw;
-}
-await Task.Delay(pollInterval.Value, ct).ConfigureAwait(false);
-}
-Logger.LogError(
-"TypeIntoSearchBoxAsync timed out after {TimeoutSeconds} seconds.",
-timeout.Value.TotalSeconds
-);
-throw new WebDriverTimeoutException(
-$"Search input textbox not available within {timeout.Value.TotalSeconds} seconds."
-);
-}
-private string EscapeXPathLiteral(string value)
-{
-if (value is null)
-{
-throw new ArgumentNullException(nameof(value));
-}
-Logger.LogDebug(
-"EscapeXPathLiteral started. valueLength={ValueLength}",
-value.Length
-);
-if (!value.Contains("'"))
-{
-Logger.LogDebug("EscapeXPathLiteral: Using single-quoted XPath literal.");
-return $"'{value}'";
-}
-if (!value.Contains("\""))
-{
-Logger.LogDebug("EscapeXPathLiteral: Using double-quoted XPath literal.");
-return $"\"{value}\"";
-}
-Logger.LogDebug("EscapeXPathLiteral: Using concat() XPath literal strategy.");
-var parts = value.Split('\'');
-var partsString = string.Join(", \"'\", ", parts.Select(p => $"'{p}'"));
-var result = "concat(" + partsString + ")";
-Logger.LogDebug(
-"EscapeXPathLiteral completed. partCount={PartCount}",
-parts.Length
-);
-return result;
-}
-private string GetXpathToFind(string needle)
-{
-return $"
-}
-private async Task ClickChatByTitleAsync(
-string chatTitle,
-TimeSpan? timeout = null,
-TimeSpan? pollInterval = null,
-CancellationToken ct = default)
-{
-Logger.LogInformation(
-"ClickChatByTitleAsync started. chatTitleLength={ChatTitleLength}",
-chatTitle?.Length ?? 0
-);
-if (string.IsNullOrWhiteSpace(chatTitle))
-{
-Logger.LogWarning("ClickChatByTitleAsync aborted: chatTitle is null or whitespace.");
-throw new ArgumentException("Chat title cannot be empty.", nameof(chatTitle));
-}
-timeout ??= TimeSpan.FromSeconds(10);
-pollInterval ??= TimeSpan.FromMilliseconds(250);
-Logger.LogInformation(
-"Using timeout={Timeout} pollInterval={PollInterval}.",
-timeout, pollInterval
-);
-var needle = chatTitle.Trim().ToLowerInvariant();
-var end = DateTimeOffset.UtcNow + timeout.Value;
-Logger.LogDebug(
-"Normalized chat title for search. originalLength={OriginalLength} normalizedLength={NormalizedLength}",
-chatTitle.Length,
-needle.Length
-);
-var attempt = 0;
-while (DateTimeOffset.UtcNow < end)
-{
-ct.ThrowIfCancellationRequested();
-attempt++;
-try
-{
-var xpathToFind = GetXpathToFind(needle);
-Logger.LogDebug(
-"Attempt {Attempt}: Searching chat span using XPath: {XPath}",
-attempt,
-xpathToFind
-);
-var span = Driver.FindElements(By.XPath(xpathToFind)).FirstOrDefault();
-if (span is { Displayed: true })
-{
-Logger.LogInformation(
-"Attempt {Attempt}: Matching chat span found and displayed. Resolving clickable target...",
-attempt
-);
-var target = span.FindElements(By.XPath(XpathToFindGridcell)).FirstOrDefault() ?? span;
-Logger.LogDebug(
-"Attempt {Attempt}: Target resolved. targetDisplayed={Displayed} targetEnabled={Enabled}",
-attempt,
-target.Displayed,
-target.Enabled
-);
-if (target.Displayed && target.Enabled)
-{
-Logger.LogInformation("Attempt {Attempt}: Clicking chat target...", attempt);
-target.Click();
-Logger.LogInformation("ClickChatByTitleAsync completed successfully.");
-return;
-}
-Logger.LogDebug(
-"Attempt {Attempt}: Target found but not clickable (displayed/enabled check failed).",
-attempt
-);
-}
-else
-{
-Logger.LogDebug(
-"Attempt {Attempt}: No displayed span matched the chat title yet.",
-attempt
-);
-}
-}
-catch (StaleElementReferenceException)
-{
-Logger.LogDebug(
-"Attempt {Attempt}: StaleElementReferenceException encountered (DOM rerender). Retrying...",
-attempt
-);
-}
-catch (NoSuchElementException)
-{
-Logger.LogDebug(
-"Attempt {Attempt}: NoSuchElementException encountered (ancestor/target missing). Retrying...",
-attempt
-);
-}
-catch (Exception ex)
-{
-Logger.LogError(
-ex,
-"ClickChatByTitleAsync failed unexpectedly on attempt {Attempt}.",
-attempt
-);
-throw;
-}
-await Task.Delay(pollInterval.Value, ct).ConfigureAwait(false);
-}
-Logger.LogError(
-"ClickChatByTitleAsync timed out after {TimeoutSeconds} seconds. Chat not found/clickable. chatTitleLength={ChatTitleLength}",
-timeout.Value.TotalSeconds,
-chatTitle.Length
-);
-throw new WebDriverTimeoutException($"Chat not found or not clickable: '{chatTitle}'.");
-}
-}
-}
-
-=== FILE: F:\Marketing\Services\WhatsAppChatService.cs ===
-
-﻿using System.Diagnostics;
-using System.Text;
-using System.Threading;
-using Configuration;
-using Microsoft.Extensions.Logging;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using Services.Interfaces;
-using Services.Messages;
-using Keys = OpenQA.Selenium.Keys;
-namespace Services
-{
-public sealed class WhatsAppChatService(
-IWebDriver driver,
-ILogger<WhatsAppChatService> logger,
-AppConfig config,
-IAutoItRunner autoItRunner
-) : IWhatsAppChatService
-{
-private const string XpathToFindAttachButton =
-"
-private const string FindPhotosAndVideosOption =
-"
-"[@aria-label='Photos & videos' or title='Photos & videos' or @data-testid='attach-photos' or .
-private const string XpathFindCaption =
-"
-private IWebDriver Driver { get; } = driver;
-public ILogger<WhatsAppChatService> Logger { get; } = logger;
-private AppConfig Config { get; } = config;
-private IAutoItRunner AutoItRunner { get; } = autoItRunner;
-public async Task SendMessageAsync(
-ImageMessagePayload imageMessagePayload,
-TimeSpan? timeout = null,
-TimeSpan? pollInterval = null,
-CancellationToken ct = default)
-{
-Logger.LogInformation(
-"SendMessageAsync started. hasPayload={HasPayload} messageLength={MessageLength} storedImagePath='{StoredImagePath}'",
-imageMessagePayload is not null,
-imageMessagePayload?.Caption?.Length ?? 0,
-imageMessagePayload?.StoredImagePath
-);
-ct.ThrowIfCancellationRequested();
-if (imageMessagePayload is null)
-{
-Logger.LogError("SendMessageAsync aborted: imageMessagePayload is null.");
-throw new ArgumentNullException(nameof(imageMessagePayload));
-}
-if (string.IsNullOrWhiteSpace(imageMessagePayload.Caption))
-{
-Logger.LogWarning("SendMessageAsync aborted: Caption is null/empty/whitespace.");
-throw new ArgumentException("Message cannot be empty.", nameof(imageMessagePayload.Caption));
-}
-if (string.IsNullOrWhiteSpace(imageMessagePayload.StoredImagePath))
-{
-Logger.LogError("SendMessageAsync aborted: StoredImagePath is null/empty.");
-throw new ArgumentException("StoredImagePath cannot be empty.", nameof(imageMessagePayload.StoredImagePath));
-}
-if (!File.Exists(imageMessagePayload.StoredImagePath))
-{
-Logger.LogError("SendMessageAsync aborted: StoredImagePath does not exist. path='{Path}'", imageMessagePayload.StoredImagePath);
-throw new FileNotFoundException("Image file not found.", imageMessagePayload.StoredImagePath);
-}
-TimeSpan loginTimeout = timeout ?? Config.WhatsApp.LoginTimeout;
-TimeSpan loginPollInterval = pollInterval ?? Config.WhatsApp.LoginPollInterval;
-Logger.LogInformation(
-"Using timeouts. timeout={Timeout} pollInterval={PollInterval}",
-loginTimeout, loginPollInterval
-);
-Logger.LogInformation("Step 1/3: Locating attach button...");
-Logger.LogInformation(
-"Locating attach button using XPath '{XPath}'...",
-XpathToFindAttachButton
-);
-var attachButton = FindAttachButton(loginTimeout, loginPollInterval);
-if (attachButton is null)
-{
-Logger.LogError("Attach button not found. XPath='{XPath}'", XpathToFindAttachButton);
-throw new NoSuchElementException("Attach button not found.");
-}
-Logger.LogDebug(
-"Attach button found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel} title={Title}",
-attachButton.TagName,
-attachButton.Displayed,
-attachButton.Enabled,
-attachButton.GetAttribute("aria-label"),
-attachButton.GetAttribute("title")
-);
-Logger.LogInformation("Clicking attach button...");
-attachButton.Click();
-Logger.LogDebug("Attach button clicked.");
-Logger.LogInformation(
-"Locating 'Photos & videos' option using XPath '{XPath}'...",
-FindPhotosAndVideosOption
-);
-var photoAndVideo = FindPhotosAndVideosOptionButton(loginTimeout, loginPollInterval);
-if (photoAndVideo is null)
-{
-Logger.LogError("'Photos & videos' option not found. XPath='{XPath}'", FindPhotosAndVideosOption);
-throw new NoSuchElementException("'Photos & videos' option not found.");
-}
-Logger.LogDebug(
-"'Photos & videos' option found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel} title={Title}",
-photoAndVideo.TagName,
-photoAndVideo.Displayed,
-photoAndVideo.Enabled,
-photoAndVideo.GetAttribute("aria-label"),
-photoAndVideo.GetAttribute("title")
-);
-Logger.LogInformation("Clicking 'Photos & videos' option...");
-photoAndVideo.Click();
-Logger.LogDebug("'Photos & videos' option clicked.");
-Logger.LogInformation(
-"Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}' useInterpreter={UseInterpreter}",
-imageMessagePayload.StoredImagePath,
-true
-);
-Domain.WhatsApp.AutoItRunnerResult autoItRunnerResult;
-try
-{
-autoItRunnerResult = await AutoItRunner.RunAsync(
-timeout: loginTimeout,
-imagePath: imageMessagePayload.StoredImagePath,
-useAutoItInterpreter: true,
-cancellationToken: ct
-);
-Logger.LogInformation(
-"AutoIT finished. exitCode={ExitCode} timedOut={TimedOut} duration={Duration} logFilePath='{LogFilePath}'",
-autoItRunnerResult.ExitCode,
-autoItRunnerResult.TimedOut,
-autoItRunnerResult.Duration,
-autoItRunnerResult.LogFilePath
-);
-if (autoItRunnerResult.TimedOut)
-{
-Logger.LogError("AutoIT timed out. duration={Duration} logFilePath='{LogFilePath}'",
-autoItRunnerResult.Duration, autoItRunnerResult.LogFilePath);
-throw new TimeoutException("AutoIT timed out while selecting file.");
-}
-if (autoItRunnerResult.ExitCode != 0)
-{
-Logger.LogError(
-"AutoIT failed. exitCode={ExitCode} stderrLength={StdErrLength} stdoutLength={StdOutLength} logFilePath='{LogFilePath}'",
-autoItRunnerResult.ExitCode,
-autoItRunnerResult.StdErr?.Length ?? 0,
-autoItRunnerResult.StdOut?.Length ?? 0,
-autoItRunnerResult.LogFilePath
-);
-throw new InvalidOperationException($"AutoIT failed with exit code {autoItRunnerResult.ExitCode}.");
-}
-}
-catch (Exception ex)
-{
-Logger.LogError(ex, "AutoIT failed while selecting file. storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
-throw;
-}
-Logger.LogInformation(
-"Locating caption element using XPath '{XPath}'...",
-XpathFindCaption
-);
-var caption = FindCaption(loginTimeout, loginPollInterval);
-if (caption is null)
-{
-Logger.LogError("Caption element not found. XPath='{XPath}'", XpathFindCaption);
-throw new NoSuchElementException("Caption element not found.");
-}
-Logger.LogDebug(
-"Caption element found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel}",
-caption.TagName,
-caption.Displayed,
-caption.Enabled,
-caption.GetAttribute("aria-label")
-);
-Logger.LogInformation("Typing caption via execCommand (emoji-safe)... captionLength={Length}", imageMessagePayload.Caption.Length);
-try
-{
-SetCaptionViaExecCommand(caption, imageMessagePayload.Caption ?? string.Empty);
-Logger.LogDebug("Caption text injected via execCommand.");
-}
-catch (Exception ex)
-{
-Logger.LogError(ex, "Failed while setting caption via execCommand.");
-throw;
-}
-Logger.LogInformation("Submitting caption (Enter)...");
-caption.SendKeys(OpenQA.Selenium.Keys.Enter);
-Logger.LogDebug("Enter sent to caption element.");
-ct.ThrowIfCancellationRequested();
-Logger.LogInformation("Step 2/3: Focusing compose box...");
-ct.ThrowIfCancellationRequested();
-Logger.LogInformation(
-"Step 3/3: Sending message completed. length={Length}",
-imageMessagePayload.Caption.Length
-);
-Logger.LogInformation("SendMessageAsync completed successfully.");
-}
-private void SetCaptionViaExecCommand(IWebElement element, string text)
-{
-Logger.LogDebug("SetCaptionViaExecCommand started. textLength={Length}", text?.Length ?? 0);
-if (Driver is not IJavaScriptExecutor js)
-{
-Logger.LogError("Driver does not support JavaScript execution. driverType={DriverType}", Driver.GetType().FullName);
-throw new NotSupportedException("Driver does not support JavaScript execution.");
-}
-js.ExecuteScript(@"
-const el = arguments[0];
-const value = arguments[1] ?? '';
-el.focus();
-document.execCommand('selectAll', false, null);
-document.execCommand('delete', false, null);
-document.execCommand('insertText', false, value);
-", element, text);
-Logger.LogDebug("SetCaptionViaExecCommand completed.");
-}
-private IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
-{
-Logger.LogDebug(
-"FindAttachButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-timeout,
-pollingInterval,
-XpathToFindAttachButton
-);
-var wait = new WebDriverWait(Driver, timeout)
-{
-PollingInterval = pollingInterval
-};
-wait.IgnoreExceptionTypes(
-typeof(NoSuchElementException),
-typeof(StaleElementReferenceException)
-);
-IWebElement attachButton;
-try
-{
-attachButton = wait.Until(driver =>
-{
-var element = driver
-.FindElements(By.XPath(XpathToFindAttachButton))
-.FirstOrDefault();
-if (element is null)
-{
-Logger.LogTrace("FindAttachButton: Attach button not present yet.");
-return null;
-}
-if (!element.Displayed || !element.Enabled)
-{
-Logger.LogTrace(
-"FindAttachButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
-element.Displayed,
-element.Enabled
-);
-return null;
-}
-return element;
-});
-}
-catch (WebDriverTimeoutException ex)
-{
-Logger.LogError(
-ex,
-"FindAttachButton timed out after {Timeout}. xpath='{XPath}'",
-timeout,
-XpathToFindAttachButton
-);
-throw;
-}
-Logger.LogDebug(
-"FindAttachButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
-attachButton is not null,
-attachButton?.Displayed,
-attachButton?.Enabled
-);
-return attachButton;
-}
-private IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval)
-{
-Logger.LogDebug(
-"FindPhotosAndVideosOptionButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-timeout, pollingInterval, FindPhotosAndVideosOption
-);
-var wait = new WebDriverWait(Driver, timeout)
-{
-PollingInterval = pollingInterval
-};
-wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
-try
-{
-var result = wait.Until(driver =>
-{
-var candidates = driver.FindElements(By.XPath(FindPhotosAndVideosOption))
-.Where(e => e.Displayed && e.Enabled)
-.ToList();
-if (candidates.Count == 0)
-{
-Logger.LogTrace("FindPhotosAndVideosOptionButton: no displayed/enabled candidates yet.");
-return null;
-}
-foreach (var c in candidates)
-{
-IWebElement clickable = c;
-var tag = (clickable.TagName ?? string.Empty).ToLowerInvariant();
-if (tag == "span" || tag == "div")
-{
-var parentButton = TryFindAncestorClickable(clickable);
-if (parentButton != null)
-{
-Logger.LogTrace("FindPhotosAndVideosOptionButton: climbed from tag={Tag} to ancestor tag={AncestorTag}",
-c.TagName, parentButton.TagName);
-clickable = parentButton;
-}
-else
-{
-Logger.LogTrace("FindPhotosAndVideosOptionButton: no clickable ancestor found for tag={Tag}", c.TagName);
-}
-}
-if (clickable.Displayed && clickable.Enabled)
-{
-Logger.LogDebug(
-"FindPhotosAndVideosOptionButton: selected candidate tag={Tag} aria-label={AriaLabel} title={Title}",
-clickable.TagName,
-clickable.GetAttribute("aria-label"),
-clickable.GetAttribute("title")
-);
-return clickable;
-}
-}
-return null;
-});
-Logger.LogDebug("FindPhotosAndVideosOptionButton completed. found={Found}", result is not null);
-return result;
-}
-catch (WebDriverTimeoutException ex)
-{
-Logger.LogError(ex,
-"FindPhotosAndVideosOptionButton timed out after {Timeout}. xpath='{XPath}'",
-timeout, FindPhotosAndVideosOption
-);
-throw;
-}
-}
-private IWebElement? TryFindAncestorClickable(IWebElement element)
-{
-try
-{
-return element.FindElement(By.XPath(
-"ancestor::*[self::button or @role='button' or @role='menuitem'][1]"
-));
-}
-catch (Exception ex)
-{
-Logger.LogTrace(ex, "TryFindAncestorClickable: no clickable ancestor found.");
-return null;
-}
-}
-private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
-{
-Logger.LogDebug(
-"FindCaption started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
-timeout,
-pollingInterval,
-XpathFindCaption
-);
-var wait = new WebDriverWait(Driver, timeout)
-{
-PollingInterval = pollingInterval
-};
-wait.IgnoreExceptionTypes(
-typeof(NoSuchElementException),
-typeof(StaleElementReferenceException)
-);
-IWebElement caption;
-try
-{
-caption = wait.Until(driver =>
-{
-var element = driver
-.FindElements(By.XPath(XpathFindCaption))
-.FirstOrDefault();
-if (element is null)
-{
-Logger.LogTrace("FindCaption: Caption element not present yet.");
-return null;
-}
-if (!element.Displayed || !element.Enabled)
-{
-Logger.LogTrace(
-"FindCaption: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
-element.Displayed,
-element.Enabled
-);
-return null;
-}
-return element;
-});
-}
-catch (WebDriverTimeoutException ex)
-{
-Logger.LogError(
-ex,
-"FindCaption timed out after {Timeout}. xpath='{XPath}'",
-timeout,
-XpathFindCaption
-);
-throw;
-}
-Logger.LogDebug(
-"FindCaption completed. found={Found} displayed={Displayed} enabled={Enabled}",
-caption is not null,
-caption?.Displayed,
-caption?.Enabled
-);
-return caption;
-}
-}
-}
-
-=== FILE: F:\Marketing\Services\WhatsAppMessage.cs ===
-
-﻿using Configuration;
-using Microsoft.Extensions.Logging;
-using Services.Interfaces;
-using Services.Messages;
-namespace Services
-{
-public class WhatsAppMessage(
-ILogger<LoginService> logger,
-ILoginService loginService,
-ExecutionTracker executionOption,
-IWhatsAppChatService whatsAppChatService,
-AppConfig config,
-IWhatAppOpenChat whatAppOpenChat
-) : IWhatsAppMessage
-{
-public ILogger<LoginService> Logger { get; } = logger;
-public ILoginService Login { get; } = loginService;
-public ExecutionTracker ExecutionOption { get; } = executionOption;
-public IWhatsAppChatService WhatsAppChatService { get; } = whatsAppChatService;
-private AppConfig Config { get; } = config;
-private IWhatAppOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
-public async Task LoginAsync()
-{
-Logger.LogInformation("WhatsAppMessage execution started");
-Logger.LogInformation("Starting WhatsApp login process");
-await Login.LoginAsync();
-Logger.LogInformation("WhatsApp login completed successfully");
-Logger.LogInformation("Finalizing execution folder");
-var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
-LogFinalizeReport(finalizeReport);
-}
-public async Task SendMessageAsync()
-{
-int count = Config.WhatsApp.AllowedChatTargets.Count;
-Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
-List<string> allowedChatTargets = Config.WhatsApp.AllowedChatTargets;
-foreach (var contact in allowedChatTargets)
-{
-await SendMessageToContact(contact);
-}
-Logger.LogInformation("WhatsAppMessage execution finished");
-}
-private async Task SendMessageToContact(string contact)
-{
-Logger.LogInformation("Opening chat for contact: {Contact}", contact);
-await WhatAppOpenChat.OpenContactChatAsync(
-contact,
-Config.WhatsApp.LoginPollInterval,
-Config.WhatsApp.LoginTimeout);
-Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
-var msg = Config.WhatsApp.Message;
-var imagePath = Path.Combine(msg.ImageDirectory, msg.ImageFileName);
-var payload = new ImageMessagePayload
-{
-StoredImagePath = imagePath,
-Caption = msg.Caption
-};
-await WhatsAppChatService.SendMessageAsync(
-payload,
-Config.WhatsApp.LoginPollInterval,
-Config.WhatsApp.LoginTimeout);
-Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
-}
-public void LogFinalizeReport(FinalizeReport report)
-{
-if (report is null)
-{
-Logger.LogWarning("Finalize report is null");
-return;
-}
-Logger.LogInformation(
-"Finalizing execution from {RunningPath} to {FinishedPath}",
-report.RunningPath,
-report.FinishedPath);
-foreach (var failure in report.CopyFailures)
-{
-Logger.LogError(
-failure.Exception,
-"Copy failed during execution finalization: {Path}",
-failure.Path);
-}
-foreach (var failure in report.DeleteFailures)
-{
-Logger.LogWarning(
-failure.Exception,
-"Delete failed for running execution folder: {Path}",
-failure.Path);
-}
-if (report.IsClean)
-{
-Logger.LogInformation("Execution finalized successfully");
-}
-else
-{
-Logger.LogWarning(
-"Execution finalized with issues. CopyFailures={CopyFailures}, DeleteFailures={DeleteFailures}",
-report.CopyFailures.Count,
-report.DeleteFailures.Count);
-}
 }
 }
 }
@@ -40590,7 +40720,18 @@ report.DeleteFailures.Count);
           }
         }
       },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -40803,6 +40944,11 @@ report.DeleteFailures.Count);
       "hashPath": "system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
     },
     "Configuration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -41487,46 +41633,6 @@ void EnsureDirectoryExists(string path);
 }
 }
 
-=== FILE: F:\Marketing\Services\Interfaces\ILoginService.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface ILoginService
-{
-Task LoginAsync(CancellationToken cancellationToken = default);
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IProcessor.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface IProcessor
-{
-Task ProcessAllPagesAsync();
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IPromptGenerator.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface IPromptGenerator
-{
-Task GeneratPrompt();
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\ISearch.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface ISearch
-{
-Task RunSearchAsync();
-}
-}
-
 === FILE: F:\Marketing\Services\Interfaces\ISecurityCheck.cs ===
 
 ﻿namespace Services.Interfaces
@@ -41537,20 +41643,6 @@ bool IsSecurityCheck();
 Task TryStartPuzzle();
 Task HandleSecurityPage();
 Task HandleUnexpectedPage();
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IUtil.cs ===
-
-﻿namespace Services.Interfaces
-{
-public interface IUtil
-{
-Task<bool> WaitForPageLoadAsync(int timeoutInSeconds = 30);
-void ScrollMove();
-void ScrollToTop();
-void ScrollToExperienceSection();
-Task<bool> NavigateToNextPageAsync();
 }
 }
 
@@ -41565,79 +41657,6 @@ public interface IWebDriverFactory
 IWebDriver Create(bool hide = false);
 IWebDriver Create(Action<ChromeOptions> configureOptions);
 ChromeOptions GetDefaultOptions(string downloadFolder);
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IWhatAppOpenChat.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Interfaces
-{
-public interface IWhatAppOpenChat
-{
-Task OpenContactChatAsync(
-string chatIdentifier,
-TimeSpan? timeout = null,
-TimeSpan? pollInterval = null,
-CancellationToken ct = default
-);
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IWhatsAppChatService.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Services.Messages;
-namespace Services.Interfaces
-{
-public interface IWhatsAppChatService
-{
-Task SendMessageAsync(
-ImageMessagePayload imageMessagePayload,
-TimeSpan? timeout = null,
-TimeSpan? pollInterval = null,
-CancellationToken ct = default
-);
-}
-}
-
-=== FILE: F:\Marketing\Services\Interfaces\IWhatsAppMessage.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Interfaces
-{
-public interface IWhatsAppMessage
-{
-Task LoginAsync();
-Task SendMessageAsync();
-}
-}
-
-=== FILE: F:\Marketing\Services\Messages\ImageMessagePayload.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Messages
-{
-public sealed class ImageMessagePayload
-{
-public string StoredImagePath { get; init; } = default!;
-public string Caption { get; init; } = string.Empty;
 }
 }
 
@@ -41930,12 +41949,6 @@ public string Caption { get; init; } = string.Empty;
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -42225,572 +42238,22 @@ public string Caption { get; init; } = string.Empty;
           "bin/placeholder/Configuration.dll": {}
         }
       },
-      "Domain.WhatsApp/1.0.0": {
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "FuzzySharp/2.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        }
-      },
-      "Google.Apis/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Core": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Core": "1.70.0",
-          "System.Management": "7.0.2"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Core/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Gmail.v1/1.70.0.3833": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Auth": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "HtmlAgilityPack/1.12.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PDFsharp/6.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.1"
-        },
-        "compile": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        }
-      },
-      "Selenium.WebDriver/4.33.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Selenium.WebDriver.targets": {}
-        }
-      },
-      "System.CodeDom/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Configuration.ConfigurationManager/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.EventLog": "9.0.6",
-          "System.Security.Cryptography.ProtectedData": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.EventLog/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {},
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.PerformanceCounter/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Management/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.CodeDom": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Reactive/6.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.Pkcs/8.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Configuration/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "bin/placeholder/Configuration.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Configuration.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       },
       "Domain.WhatsApp/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Domain.WhatsApp.dll": {}
         },
@@ -43301,54 +42764,3207 @@ public string Caption { get; init; } = string.Empty;
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "PDFsharp/6.2.0": {
+      "sha512": "5Q6gn8qFiaFpJz1QcvXO6q5QTvLPlqlOxI7XVtyRB3PIAIZIarc5qH3TDKcGUifxrhcYxMNBzz008qdKWlQhVw==",
+      "type": "package",
+      "path": "pdfsharp/6.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "images/PDFsharp-128x128.png",
+        "lib/net6.0/PdfSharp.BarCodes.dll",
+        "lib/net6.0/PdfSharp.BarCodes.pdb",
+        "lib/net6.0/PdfSharp.BarCodes.xml",
+        "lib/net6.0/PdfSharp.Charting.dll",
+        "lib/net6.0/PdfSharp.Charting.pdb",
+        "lib/net6.0/PdfSharp.Charting.xml",
+        "lib/net6.0/PdfSharp.Cryptography.dll",
+        "lib/net6.0/PdfSharp.Cryptography.pdb",
+        "lib/net6.0/PdfSharp.Cryptography.xml",
+        "lib/net6.0/PdfSharp.Quality.dll",
+        "lib/net6.0/PdfSharp.Quality.pdb",
+        "lib/net6.0/PdfSharp.Quality.xml",
+        "lib/net6.0/PdfSharp.Shared.dll",
+        "lib/net6.0/PdfSharp.Shared.pdb",
+        "lib/net6.0/PdfSharp.Shared.xml",
+        "lib/net6.0/PdfSharp.Snippets.dll",
+        "lib/net6.0/PdfSharp.Snippets.pdb",
+        "lib/net6.0/PdfSharp.System.dll",
+        "lib/net6.0/PdfSharp.System.pdb",
+        "lib/net6.0/PdfSharp.System.xml",
+        "lib/net6.0/PdfSharp.WPFonts.dll",
+        "lib/net6.0/PdfSharp.WPFonts.pdb",
+        "lib/net6.0/PdfSharp.WPFonts.xml",
+        "lib/net6.0/PdfSharp.dll",
+        "lib/net6.0/PdfSharp.pdb",
+        "lib/net6.0/PdfSharp.xml",
+        "lib/net8.0/PdfSharp.BarCodes.dll",
+        "lib/net8.0/PdfSharp.BarCodes.pdb",
+        "lib/net8.0/PdfSharp.BarCodes.xml",
+        "lib/net8.0/PdfSharp.Charting.dll",
+        "lib/net8.0/PdfSharp.Charting.pdb",
+        "lib/net8.0/PdfSharp.Charting.xml",
+        "lib/net8.0/PdfSharp.Cryptography.dll",
+        "lib/net8.0/PdfSharp.Cryptography.pdb",
+        "lib/net8.0/PdfSharp.Cryptography.xml",
+        "lib/net8.0/PdfSharp.Quality.dll",
+        "lib/net8.0/PdfSharp.Quality.pdb",
+        "lib/net8.0/PdfSharp.Quality.xml",
+        "lib/net8.0/PdfSharp.Shared.dll",
+        "lib/net8.0/PdfSharp.Shared.pdb",
+        "lib/net8.0/PdfSharp.Shared.xml",
+        "lib/net8.0/PdfSharp.Snippets.dll",
+        "lib/net8.0/PdfSharp.Snippets.pdb",
+        "lib/net8.0/PdfSharp.System.dll",
+        "lib/net8.0/PdfSharp.System.pdb",
+        "lib/net8.0/PdfSharp.System.xml",
+        "lib/net8.0/PdfSharp.WPFonts.dll",
+        "lib/net8.0/PdfSharp.WPFonts.pdb",
+        "lib/net8.0/PdfSharp.WPFonts.xml",
+        "lib/net8.0/PdfSharp.dll",
+        "lib/net8.0/PdfSharp.pdb",
+        "lib/net8.0/PdfSharp.xml",
+        "lib/netstandard2.0/PdfSharp.BarCodes.dll",
+        "lib/netstandard2.0/PdfSharp.BarCodes.pdb",
+        "lib/netstandard2.0/PdfSharp.BarCodes.xml",
+        "lib/netstandard2.0/PdfSharp.Charting.dll",
+        "lib/netstandard2.0/PdfSharp.Charting.pdb",
+        "lib/netstandard2.0/PdfSharp.Charting.xml",
+        "lib/netstandard2.0/PdfSharp.Cryptography.dll",
+        "lib/netstandard2.0/PdfSharp.Cryptography.pdb",
+        "lib/netstandard2.0/PdfSharp.Cryptography.xml",
+        "lib/netstandard2.0/PdfSharp.Quality.dll",
+        "lib/netstandard2.0/PdfSharp.Quality.pdb",
+        "lib/netstandard2.0/PdfSharp.Quality.xml",
+        "lib/netstandard2.0/PdfSharp.Shared.dll",
+        "lib/netstandard2.0/PdfSharp.Shared.pdb",
+        "lib/netstandard2.0/PdfSharp.Shared.xml",
+        "lib/netstandard2.0/PdfSharp.Snippets.dll",
+        "lib/netstandard2.0/PdfSharp.Snippets.pdb",
+        "lib/netstandard2.0/PdfSharp.System.dll",
+        "lib/netstandard2.0/PdfSharp.System.pdb",
+        "lib/netstandard2.0/PdfSharp.System.xml",
+        "lib/netstandard2.0/PdfSharp.WPFonts.dll",
+        "lib/netstandard2.0/PdfSharp.WPFonts.pdb",
+        "lib/netstandard2.0/PdfSharp.WPFonts.xml",
+        "lib/netstandard2.0/PdfSharp.dll",
+        "lib/netstandard2.0/PdfSharp.pdb",
+        "lib/netstandard2.0/PdfSharp.xml",
+        "pdfsharp.6.2.0.nupkg.sha512",
+        "pdfsharp.nuspec"
+      ]
+    },
+    "Selenium.WebDriver/4.33.0": {
+      "sha512": "5dzwA1cMorwYWudX46zyeUqyZn48TZeCHbSERxbpKezGxZ8hMBpcL12XwG4RGUuQKGH8FiEOJOFK4eCE//uNpQ==",
+      "type": "package",
+      "path": "selenium.webdriver/4.33.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Selenium.WebDriver.targets",
+        "buildTransitive/Selenium.WebDriver.targets",
+        "icon.png",
+        "lib/net8.0/WebDriver.dll",
+        "lib/net8.0/WebDriver.xml",
+        "lib/netstandard2.0/WebDriver.dll",
+        "lib/netstandard2.0/WebDriver.xml",
+        "manager/linux/selenium-manager",
+        "manager/macos/selenium-manager",
+        "manager/windows/selenium-manager.exe",
+        "selenium.webdriver.4.33.0.nupkg.sha512",
+        "selenium.webdriver.nuspec"
+      ]
+    },
+    "System.CodeDom/7.0.0": {
+      "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "type": "package",
+      "path": "system.codedom/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
-        "Sdk/Sdk.props",
         "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
+        "buildTransitive/net461/System.CodeDom.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
+        "lib/net462/System.CodeDom.dll",
+        "lib/net462/System.CodeDom.xml",
+        "lib/net6.0/System.CodeDom.dll",
+        "lib/net6.0/System.CodeDom.xml",
+        "lib/net7.0/System.CodeDom.dll",
+        "lib/net7.0/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.7.0.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/9.0.6": {
+      "sha512": "GQYhl3XCSGhxQvbRCjQiuGbJjm1tlq2lu98SGItjeingM7D+uKNnmKlK0MMuAU1asT7YtJ8uoT83WnGCuna9Qg==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
+        "lib/net462/System.Configuration.ConfigurationManager.dll",
+        "lib/net462/System.Configuration.ConfigurationManager.xml",
+        "lib/net8.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net8.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net9.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net9.0/System.Configuration.ConfigurationManager.xml",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.9.0.6.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Diagnostics.DiagnosticSource/9.0.6": {
+      "sha512": "nikkwAKqpwWUvV5J8S9fnOPYg8k75Lf9fAI4bd6pyhyqNma0Py9kt+zcqXbe4TjJ4sTPcdYpPg81shYTrXnUZQ==",
+      "type": "package",
+      "path": "system.diagnostics.diagnosticsource/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
+        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net8.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
+        "system.diagnostics.diagnosticsource.9.0.6.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Diagnostics.EventLog/9.0.6": {
+      "sha512": "lum+Dv+8S4gqN5H1C576UcQe0M2buoRjEUVs4TctXRSWjBH3ay3w2KyQrOo1yPdRs1I+xK69STz+4mjIisFI5w==",
+      "type": "package",
+      "path": "system.diagnostics.eventlog/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.EventLog.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
+        "lib/net462/System.Diagnostics.EventLog.dll",
+        "lib/net462/System.Diagnostics.EventLog.xml",
+        "lib/net8.0/System.Diagnostics.EventLog.dll",
+        "lib/net8.0/System.Diagnostics.EventLog.xml",
+        "lib/net9.0/System.Diagnostics.EventLog.dll",
+        "lib/net9.0/System.Diagnostics.EventLog.xml",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.9.0.6.nupkg.sha512",
+        "system.diagnostics.eventlog.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Diagnostics.PerformanceCounter/9.0.6": {
+      "sha512": "CrOJB8Iw+XsgD5Tt+PETBdZzWpLEw0FgobKESfcyrn4kxcg9FNz3r1cP5n1c35cTrZNbYCbOnk/xB/0AL1UtLw==",
+      "type": "package",
+      "path": "system.diagnostics.performancecounter/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.PerformanceCounter.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.PerformanceCounter.targets",
+        "lib/net462/System.Diagnostics.PerformanceCounter.dll",
+        "lib/net462/System.Diagnostics.PerformanceCounter.xml",
+        "lib/net8.0/System.Diagnostics.PerformanceCounter.dll",
+        "lib/net8.0/System.Diagnostics.PerformanceCounter.xml",
+        "lib/net9.0/System.Diagnostics.PerformanceCounter.dll",
+        "lib/net9.0/System.Diagnostics.PerformanceCounter.xml",
+        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll",
+        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.xml",
+        "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.xml",
+        "runtimes/win/lib/net9.0/System.Diagnostics.PerformanceCounter.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.PerformanceCounter.xml",
+        "system.diagnostics.performancecounter.9.0.6.nupkg.sha512",
+        "system.diagnostics.performancecounter.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Management/7.0.2": {
+      "sha512": "/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
+      "type": "package",
+      "path": "system.management/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Management.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.Management.dll",
+        "lib/net6.0/System.Management.xml",
+        "lib/net7.0/System.Management.dll",
+        "lib/net7.0/System.Management.xml",
+        "lib/netstandard2.0/System.Management.dll",
+        "lib/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net6.0/System.Management.dll",
+        "runtimes/win/lib/net6.0/System.Management.xml",
+        "runtimes/win/lib/net7.0/System.Management.dll",
+        "runtimes/win/lib/net7.0/System.Management.xml",
+        "system.management.7.0.2.nupkg.sha512",
+        "system.management.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Reactive/6.0.1": {
+      "sha512": "rHaWtKDwCi9qJ3ObKo8LHPMuuwv33YbmQi7TcUK1C264V3MFnOr5Im7QgCTdLniztP3GJyeiSg5x8NqYJFqRmg==",
+      "type": "package",
+      "path": "system.reactive/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net6.0-windows10.0.19041/_._",
+        "build/net6.0/_._",
+        "buildTransitive/net6.0-windows10.0.19041/_._",
+        "buildTransitive/net6.0/_._",
+        "icon.png",
+        "lib/net472/System.Reactive.dll",
+        "lib/net472/System.Reactive.xml",
+        "lib/net6.0-windows10.0.19041/System.Reactive.dll",
+        "lib/net6.0-windows10.0.19041/System.Reactive.xml",
+        "lib/net6.0/System.Reactive.dll",
+        "lib/net6.0/System.Reactive.xml",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.18362/System.Reactive.dll",
+        "lib/uap10.0.18362/System.Reactive.pri",
+        "lib/uap10.0.18362/System.Reactive.xml",
+        "readme.md",
+        "system.reactive.6.0.1.nupkg.sha512",
+        "system.reactive.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "sha512": "CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
+      "type": "package",
+      "path": "system.security.cryptography.pkcs/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
+        "system.security.cryptography.pkcs.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.ProtectedData/9.0.6": {
+      "sha512": "yErfw/3pZkJE/VKza/Cm5idTpIKOy/vsmVi59Ta5SruPVtubzxb8CtnE8tyUpzs5pr0Y28GUFfSVzAhCLN3F/Q==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.ProtectedData.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.ProtectedData.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net462/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net9.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net9.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "system.security.cryptography.protecteddata.9.0.6.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Configuration/1.0.0": {
+      "type": "project",
+      "path": "../Configuration/Configuration.csproj",
+      "msbuildProject": "../Configuration/Configuration.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
+      "msbuildProject": "../Domain.WhatsApp/Domain.WhatsApp.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Configuration >= 1.0.0",
+      "Domain.WhatsApp >= 1.0.0",
+      "FuzzySharp >= 2.0.2",
+      "Google.Apis.Auth >= 1.70.0",
+      "Google.Apis.Gmail.v1 >= 1.70.0.3833",
+      "HtmlAgilityPack >= 1.12.1",
+      "Microsoft.Extensions.Hosting.Abstractions >= 9.0.6",
+      "Microsoft.Extensions.Logging >= 9.0.6",
+      "Newtonsoft.Json >= 13.0.3",
+      "PDFsharp >= 6.2.0",
+      "Selenium.WebDriver >= 4.33.0",
+      "System.Diagnostics.PerformanceCounter >= 9.0.6",
+      "System.Reactive >= 6.0.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\luisg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
+      "projectName": "Services",
+      "projectPath": "F:\\Marketing\\Services\\Services.csproj",
+      "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+      "outputPath": "F:\\Marketing\\Services\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "F:\\Marketing\\Configuration\\Configuration.csproj": {
+              "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
+            },
+            "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "FuzzySharp": {
+            "target": "Package",
+            "version": "[2.0.2, )"
+          },
+          "Google.Apis.Auth": {
+            "target": "Package",
+            "version": "[1.70.0, )"
+          },
+          "Google.Apis.Gmail.v1": {
+            "target": "Package",
+            "version": "[1.70.0.3833, )"
+          },
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.12.1, )"
+          },
+          "Microsoft.Extensions.Hosting.Abstractions": {
+            "target": "Package",
+            "version": "[9.0.6, )"
+          },
+          "Microsoft.Extensions.Logging": {
+            "target": "Package",
+            "version": "[9.0.6, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
+          "PDFsharp": {
+            "target": "Package",
+            "version": "[6.2.0, )"
+          },
+          "Selenium.WebDriver": {
+            "target": "Package",
+            "version": "[4.33.0, )"
+          },
+          "System.Diagnostics.PerformanceCounter": {
+            "target": "Package",
+            "version": "[9.0.6, )"
+          },
+          "System.Reactive": {
+            "target": "Package",
+            "version": "[6.0.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Services\obj\Services.csproj.nuget.dgspec.json ===
+
+{
+  "format": 1,
+  "restore": {
+    "F:\\Marketing\\Services\\Services.csproj": {}
+  },
+  "projects": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
+        "projectName": "Configuration",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\marketing\\Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FuzzySharp": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.70.0, )"
+            },
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.70.0.3833, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.12.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.33.0, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyProductAttribute("Services")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Services")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
+
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+
+=== FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Services\obj\Release\net8.0\Services.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyProductAttribute("Services")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Services")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Services\obj\Release\net8.0\Services.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Services\obj\Release\net8.0\Services.sourcelink.json ===
+
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Login\ILoginService.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.Login
+{
+public interface ILoginService
+{
+Task LoginAsync(CancellationToken cancellationToken = default);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Login\ILoginStateChecker.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.Login
+{
+public interface ILoginStateChecker
+{
+bool IsWhatsAppLoggedIn();
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Login\IMessage.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.Login
+{
+public interface IMessage
+{
+Task LoginAsync();
+Task SendMessageAsync();
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenChat\IChatService.cs ===
+
+﻿using Domain.WhatsApp;
+namespace Services.WhatsApp.Abstractions.OpenChat
+{
+public interface IChatService
+{
+Task SendMessageAsync(
+ImageMessagePayload imageMessagePayload,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default
+);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenChat\IClicker.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.OpenChat
+{
+public interface IClicker
+{
+Task ClickChatByTitleAsync(
+string chatTitle,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenChat\IOpenChat.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.OpenChat
+{
+public interface IOpenChat
+{
+Task OpenContactChatAsync(
+string chatIdentifier,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default
+);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Search\IAttachments.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OpenQA.Selenium;
+namespace Services.WhatsApp.Abstractions.Search
+{
+public interface IAttachments
+{
+IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval);
+IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Search\ISearchBoxTyper.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.Search
+{
+public interface ISearchBoxTyper
+{
+Task TypeIntoSearchBoxAsync(
+string text,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Selector\ISelectors.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.Selector
+{
+public interface ISelectors
+{
+string CssSelectorToFindLoggedInMarker { get; }
+string CssSelectorToFindSearchInput { get; }
+string XpathToFindGridcellAncestor { get; }
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\Selenium\IWebDriverFacade.cs ===
+
+﻿using OpenQA.Selenium;
+namespace Services.WhatsApp.Abstractions.Selenium
+{
+public interface IWebDriverFacade
+{
+IReadOnlyCollection<IWebElement> FindElements(By by);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\XPath\IChatXPathBuilder.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.XPath
+{
+public interface IChatXPathBuilder
+{
+string GetXpathToFind(string needleLowerInvariant);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\XPath\IXPathLiteralEscaper.cs ===
+
+﻿namespace Services.WhatsApp.Abstractions.XPath
+{
+public interface IXPathLiteralEscaper
+{
+string EscapeXPathLiteral(string value);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\bin\Debug\net8.0\Services.WhatsApp.deps.json ===
+
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Services.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "Services.WhatsApp.dll": {}
+        }
+      },
+      "FuzzySharp/2.0.2": {
+        "runtime": {
+          "lib/netcoreapp2.1/FuzzySharp.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "Google.Apis/1.70.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.70.0"
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.dll": {
+            "assemblyVersion": "1.70.0.0",
+            "fileVersion": "1.70.0.0"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.70.0": {
+        "dependencies": {
+          "Google.Apis": "1.70.0",
+          "Google.Apis.Core": "1.70.0",
+          "System.Management": "7.0.2"
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
+            "assemblyVersion": "1.70.0.0",
+            "fileVersion": "1.70.0.0"
+          }
+        }
+      },
+      "Google.Apis.Core/1.70.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.70.0.0",
+            "fileVersion": "1.70.0.0"
+          }
+        }
+      },
+      "Google.Apis.Gmail.v1/1.70.0.3833": {
+        "dependencies": {
+          "Google.Apis": "1.70.0",
+          "Google.Apis.Auth": "1.70.0"
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
+            "assemblyVersion": "1.70.0.3833",
+            "fileVersion": "1.70.0.3833"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.12.1": {
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.12.1.0",
+            "fileVersion": "1.12.1.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6",
+          "System.Diagnostics.DiagnosticSource": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
+          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "9.0.6",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "System.Diagnostics.DiagnosticSource": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Primitives": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/9.0.6": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "PDFsharp/6.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/PdfSharp.BarCodes.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.Charting.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.Cryptography.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.Quality.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.Shared.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.Snippets.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.System.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.WPFonts.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          },
+          "lib/net8.0/PdfSharp.dll": {
+            "assemblyVersion": "6.2.0.0",
+            "fileVersion": "6.2.0.7443"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.33.0": {
+        "runtime": {
+          "lib/net8.0/WebDriver.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "System.CodeDom/7.0.0": {
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/9.0.6": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "9.0.6",
+          "System.Security.Cryptography.ProtectedData": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/9.0.6": {
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/9.0.6": {
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "System.Diagnostics.PerformanceCounter/9.0.6": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "9.0.6"
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "System.Management/7.0.2": {
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Management.dll": {
+            "assemblyVersion": "7.0.0.2",
+            "fileVersion": "7.0.723.27404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.2",
+            "fileVersion": "7.0.723.27404"
+          }
+        }
+      },
+      "System.Reactive/6.0.1": {
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1.7420"
+          }
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/9.0.6": {
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Configuration/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "runtime": {
+          "Configuration.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Domain.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Services/1.0.0": {
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Services.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FuzzySharp/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sBKqWxw3g//peYxDZ8JipRlyPbIyBtgzqBVA5GqwHVeqtIrw75maGXAllztf+1aJhchD+drcQIgf2mFho8ZV8A==",
+      "path": "fuzzysharp/2.0.2",
+      "hashPath": "fuzzysharp.2.0.2.nupkg.sha512"
+    },
+    "Google.Apis/1.70.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K6VKPkHRN1P7pMb84eZu1rFyoie7LIYYsjTPvTnEH2lbscU1sBLR1C1MtsCoSJzgDIjr0yVGmSKnIC4D73ro1g==",
+      "path": "google.apis/1.70.0",
+      "hashPath": "google.apis.1.70.0.nupkg.sha512"
+    },
+    "Google.Apis.Auth/1.70.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2gnpcYUaD5WS2/2922J+ji1tEKcNtxu+aQoiNVWhfcGwDqgcc5vk6ND6591M2UaGzJn0EdH325rsNHzi/MvA/A==",
+      "path": "google.apis.auth/1.70.0",
+      "hashPath": "google.apis.auth.1.70.0.nupkg.sha512"
+    },
+    "Google.Apis.Core/1.70.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R7Mbea2iB/TN+3BA1LPCqb1eT2HxnILJ+ASl5pdhHHc8uSe95JTTnM2DEVbVBQ3vo9/FpbBxWBRjP1ed9QK9CQ==",
+      "path": "google.apis.core/1.70.0",
+      "hashPath": "google.apis.core.1.70.0.nupkg.sha512"
+    },
+    "Google.Apis.Gmail.v1/1.70.0.3833": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gh3ziWCiCGdEqGkBLp5PzK811YPARjoB+PRnMeBEZ3K2dFgdqVJGZoZfZp8C6BiWMEIFtyvAnO4rPm0oKsRD5w==",
+      "path": "google.apis.gmail.v1/1.70.0.3833",
+      "hashPath": "google.apis.gmail.v1.1.70.0.3833.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.12.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SP6/2Y26CXtxjXn0Wwsom9Ek35SNWKHEu/IWhNEFejBSSVWWXPRSlpqpBSYWv1SQhYFnwMO01xVbEdK3iRR4hg==",
+      "path": "htmlagilitypack/1.12.1",
+      "hashPath": "htmlagilitypack.1.12.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3GgMIi2jP8g1fBW93Z9b9Unamc0SIsgyhiCmC91gq4loTixK9vQMuxxUsfJ1kRGwn+/FqLKwOHqmn0oYWn3Fvw==",
+      "path": "microsoft.extensions.configuration.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.configuration.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vS65HMo5RS10DD543fknsyVDxihMcVxVn3/hNaILgBxWYnOLxWIeCIO9X0QFuCvPRNjClvXe9Aj8KaQNx7vFkQ==",
+      "path": "microsoft.extensions.dependencyinjection/9.0.6",
+      "hashPath": "microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Zn6nR/6g+90MxskZyOOMPQvnPnrrGu6bytPwkV+azDcTtCSuQ1+GJUrg8Klmnrjk1i6zMpw2lXijl+tw7Q3kA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GIoXX7VDcTEsNM6yvffTBaOwnPQELGI5dzExR7L2O7AUkDsHBYIZawUbuwfq3cYzz8dIAAJotQYJMzH7qy27Ng==",
+      "path": "microsoft.extensions.diagnostics.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.diagnostics.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q9FPkSGVA9ipI255p3PBAvWNXas5Tzjyp/DwYSwT+46mIFw9fWZahsF6vHpoxLt5/vtANotH2sAm7HunuFIx9g==",
+      "path": "microsoft.extensions.fileproviders.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G9T95JbcG/wQpeVIzg0IMwxI+uTywDmbxWUWN2P0mdna35rmuTqgTrZ4SU5rcfUT3EJfbI9N4K8UyCAAc6QK8Q==",
+      "path": "microsoft.extensions.hosting.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.hosting.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XBzjitTFaQhF8EbJ645vblZezV1p52ePTxKHoVkRidHF11Xkjxg94qr0Rvp2qyxK2vBJ4OIZ41NB15YUyxTGMQ==",
+      "path": "microsoft.extensions.logging/9.0.6",
+      "hashPath": "microsoft.extensions.logging.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LFnyBNK7WtFmKdnHu3v0HOYQ8BcjYuy0jdC9pgCJ/rbLKoJEG9/dBzSKMEeeWDbDeoWS0TIxOC8a9CM5ufca3A==",
+      "path": "microsoft.extensions.logging.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.logging.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wUPhNM1zsI58Dy10xRdF2+pnsisiUuETg5ZBncyAEEUm/CQ9Q1vmivyUWH8RDbAlqyixf2dJNQ2XZb7HsKUEQw==",
+      "path": "microsoft.extensions.options/9.0.6",
+      "hashPath": "microsoft.extensions.options.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BHniU24QV67qp1pJknqYSofAPYGmijGI8D+ci9yfw33iuFdyOeB9lWTg78ThyYLyQwZw3s0vZ36VMb0MqbUuLw==",
+      "path": "microsoft.extensions.primitives/9.0.6",
+      "hashPath": "microsoft.extensions.primitives.9.0.6.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "PDFsharp/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5Q6gn8qFiaFpJz1QcvXO6q5QTvLPlqlOxI7XVtyRB3PIAIZIarc5qH3TDKcGUifxrhcYxMNBzz008qdKWlQhVw==",
+      "path": "pdfsharp/6.2.0",
+      "hashPath": "pdfsharp.6.2.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/4.33.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5dzwA1cMorwYWudX46zyeUqyZn48TZeCHbSERxbpKezGxZ8hMBpcL12XwG4RGUuQKGH8FiEOJOFK4eCE//uNpQ==",
+      "path": "selenium.webdriver/4.33.0",
+      "hashPath": "selenium.webdriver.4.33.0.nupkg.sha512"
+    },
+    "System.CodeDom/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "path": "system.codedom/7.0.0",
+      "hashPath": "system.codedom.7.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GQYhl3XCSGhxQvbRCjQiuGbJjm1tlq2lu98SGItjeingM7D+uKNnmKlK0MMuAU1asT7YtJ8uoT83WnGCuna9Qg==",
+      "path": "system.configuration.configurationmanager/9.0.6",
+      "hashPath": "system.configuration.configurationmanager.9.0.6.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nikkwAKqpwWUvV5J8S9fnOPYg8k75Lf9fAI4bd6pyhyqNma0Py9kt+zcqXbe4TjJ4sTPcdYpPg81shYTrXnUZQ==",
+      "path": "system.diagnostics.diagnosticsource/9.0.6",
+      "hashPath": "system.diagnostics.diagnosticsource.9.0.6.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lum+Dv+8S4gqN5H1C576UcQe0M2buoRjEUVs4TctXRSWjBH3ay3w2KyQrOo1yPdRs1I+xK69STz+4mjIisFI5w==",
+      "path": "system.diagnostics.eventlog/9.0.6",
+      "hashPath": "system.diagnostics.eventlog.9.0.6.nupkg.sha512"
+    },
+    "System.Diagnostics.PerformanceCounter/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CrOJB8Iw+XsgD5Tt+PETBdZzWpLEw0FgobKESfcyrn4kxcg9FNz3r1cP5n1c35cTrZNbYCbOnk/xB/0AL1UtLw==",
+      "path": "system.diagnostics.performancecounter/9.0.6",
+      "hashPath": "system.diagnostics.performancecounter.9.0.6.nupkg.sha512"
+    },
+    "System.Management/7.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
+      "path": "system.management/7.0.2",
+      "hashPath": "system.management.7.0.2.nupkg.sha512"
+    },
+    "System.Reactive/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHaWtKDwCi9qJ3ObKo8LHPMuuwv33YbmQi7TcUK1C264V3MFnOr5Im7QgCTdLniztP3GJyeiSg5x8NqYJFqRmg==",
+      "path": "system.reactive/6.0.1",
+      "hashPath": "system.reactive.6.0.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
+      "path": "system.security.cryptography.pkcs/8.0.1",
+      "hashPath": "system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yErfw/3pZkJE/VKza/Cm5idTpIKOy/vsmVi59Ta5SruPVtubzxb8CtnE8tyUpzs5pr0Y28GUFfSVzAhCLN3F/Q==",
+      "path": "system.security.cryptography.protecteddata/9.0.6",
+      "hashPath": "system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
+    },
+    "Configuration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Login\LoginService.cs ===
+
+﻿using Configuration;
+using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
+namespace Services.WhatsApp.Login
+{
+public class LoginService(
+AppConfig config,
+IWebDriver driver,
+ILogger<LoginService> logger,
+ICaptureSnapshot capture,
+ExecutionTracker executionOptions
+) : ILoginService
+{
+private AppConfig Config { get; } = config;
+private IWebDriver Driver { get; } = driver;
+private ILogger<LoginService> Logger { get; } = logger;
+private ICaptureSnapshot Capture { get; } = capture;
+private ExecutionTracker ExecutionOptions { get; } = executionOptions;
+private const string FolderName = "Login";
+private string FolderPath => Path.Combine(ExecutionOptions.ExecutionRunning, FolderName);
+public async Task LoginAsync(CancellationToken cancellationToken = default)
+{
+Logger.LogInformation(
+"🔐 ID:{TimeStamp} Starting login process...",
+ExecutionOptions.TimeStamp
+);
+var url = Config.WhatsApp.Url;
+Logger.LogInformation(
+"🌐 ID:{TimeStamp} Navigating to login URL: {Url}",
+ExecutionOptions.TimeStamp,
+url
+);
+Driver.Navigate().GoToUrl(url);
+await Capture.CaptureArtifactsAsync(FolderPath, "Login_Page_Loaded");
+Logger.LogInformation(
+"📲 ID:{TimeStamp} Please open WhatsApp on your phone and complete login (scan QR / approve). Waiting for login...",
+ExecutionOptions.TimeStamp
+);
+await WaitForWhatsAppLoginAsync(
+pollInterval: Config.WhatsApp.LoginPollInterval,
+timeout: Config.WhatsApp.LoginTimeout,
+cancellationToken: cancellationToken
+);
+Logger.LogInformation(
+"✅ ID:{TimeStamp} WhatsApp Web is logged in. Continuing...",
+ExecutionOptions.TimeStamp
+);
+await Task.CompletedTask;
+}
+private async Task WaitForWhatsAppLoginAsync(
+TimeSpan pollInterval,
+TimeSpan timeout,
+CancellationToken cancellationToken)
+{
+var start = DateTimeOffset.UtcNow;
+while (true)
+{
+cancellationToken.ThrowIfCancellationRequested();
+var state = GetWhatsAppLoginState();
+if (state == WhatsAppLoginState.LoggedIn)
+{
+await Capture.CaptureArtifactsAsync(FolderPath, "Login_Success_LoggedIn");
+return;
+}
+if (state == WhatsAppLoginState.NeedsQrScan)
+{
+Logger.LogInformation(
+"⏳ ID:{TimeStamp} Still not logged in. Please scan the QR / approve on phone...",
+ExecutionOptions.TimeStamp
+);
+}
+else
+{
+Logger.LogInformation(
+"⏳ ID:{TimeStamp} Waiting for WhatsApp Web to be ready... state={State}",
+ExecutionOptions.TimeStamp,
+state
+);
+}
+if (DateTimeOffset.UtcNow - start > timeout)
+{
+await Capture.CaptureArtifactsAsync(FolderPath, "Login_Timeout");
+throw new TimeoutException($"WhatsApp login not completed within {timeout.TotalSeconds:N0} seconds.");
+}
+await Task.Delay(pollInterval, cancellationToken);
+}
+}
+private enum WhatsAppLoginState
+{
+LoggedIn,
+NeedsQrScan,
+Loading,
+Unknown
+}
+private WhatsAppLoginState GetWhatsAppLoginState()
+{
+try
+{
+if (Driver.FindElements(By.CssSelector("div[role='textbox'][contenteditable='true']")).Count > 0)
+return WhatsAppLoginState.LoggedIn;
+if (Driver.FindElements(By.CssSelector("div[role='grid'], div[role='application']")).Count > 0)
+return WhatsAppLoginState.LoggedIn;
+if (Driver.FindElements(By.CssSelector("canvas")).Count > 0)
+return WhatsAppLoginState.NeedsQrScan;
+var body = Driver.FindElements(By.TagName("body")).FirstOrDefault()?.Text ?? string.Empty;
+if (body.Contains("Log in", StringComparison.OrdinalIgnoreCase) ||
+body.Contains("Use WhatsApp", StringComparison.OrdinalIgnoreCase))
+return WhatsAppLoginState.NeedsQrScan;
+var ready = ((IJavaScriptExecutor)Driver).ExecuteScript("return document.readyState")?.ToString();
+if (!string.Equals(ready, "complete", StringComparison.OrdinalIgnoreCase))
+return WhatsAppLoginState.Loading;
+return WhatsAppLoginState.Unknown;
+}
+catch
+{
+return WhatsAppLoginState.Unknown;
+}
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Login\LoginStateChecker.cs ===
+
+﻿using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.Selector;
+using Services.WhatsApp.Abstractions.Selenium;
+namespace Services.WhatsApp.Login
+{
+internal sealed class LoginStateChecker(
+IWebDriverFacade driver,
+ISelectors selectors,
+ILogger<LoginService> logger) : ILoginStateChecker
+{
+public bool IsWhatsAppLoggedIn()
+{
+logger.LogDebug("IsWhatsAppLoggedIn: Checking WhatsApp Web login state...");
+try
+{
+var elements = driver.FindElements(By.CssSelector(selectors.CssSelectorToFindLoggedInMarker));
+var isLoggedIn = elements.Count > 0;
+logger.LogDebug(
+"IsWhatsAppLoggedIn: Selector '{Selector}' returned {Count} elements. LoggedIn={IsLoggedIn}.",
+selectors.CssSelectorToFindLoggedInMarker,
+elements.Count,
+isLoggedIn
+);
+return isLoggedIn;
+}
+catch (NoSuchElementException ex)
+{
+logger.LogWarning(
+ex,
+"IsWhatsAppLoggedIn: Selector '{Selector}' not found. Assuming not logged in.",
+selectors.CssSelectorToFindLoggedInMarker
+);
+return false;
+}
+catch (WebDriverException ex)
+{
+logger.LogError(
+ex,
+"IsWhatsAppLoggedIn: WebDriver error while checking login state."
+);
+return false;
+}
+catch (Exception ex)
+{
+logger.LogError(
+ex,
+"IsWhatsAppLoggedIn: Unexpected error while checking login state."
+);
+return false;
+}
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Login\Message.cs ===
+
+﻿using Configuration;
+using Domain.WhatsApp;
+using Microsoft.Extensions.Logging;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenChat;
+namespace Services.WhatsApp.Login
+{
+public class Message(
+ILogger<LoginService> logger,
+ILoginService loginService,
+ExecutionTracker executionOption,
+IChatService whatsAppChatService,
+AppConfig config,
+IOpenChat whatAppOpenChat
+) : IMessage
+{
+public ILogger<LoginService> Logger { get; } = logger;
+public ILoginService Login { get; } = loginService;
+public ExecutionTracker ExecutionOption { get; } = executionOption;
+public IChatService WhatsAppChatService { get; } = whatsAppChatService;
+private AppConfig Config { get; } = config;
+private IOpenChat WhatAppOpenChat { get; } = whatAppOpenChat;
+public async Task LoginAsync()
+{
+Logger.LogInformation("WhatsAppMessage execution started");
+Logger.LogInformation("Starting WhatsApp login process");
+await Login.LoginAsync();
+Logger.LogInformation("WhatsApp login completed successfully");
+Logger.LogInformation("Finalizing execution folder");
+var finalizeReport = ExecutionOption.FinalizeByCopyThenDelete(true);
+LogFinalizeReport(finalizeReport);
+}
+public async Task SendMessageAsync()
+{
+int count = Config.WhatsApp.AllowedChatTargets.Count;
+Logger.LogInformation("Beginning message dispatch. Total contacts: {ContactCount}", count);
+List<string> allowedChatTargets = Config.WhatsApp.AllowedChatTargets;
+foreach (var contact in allowedChatTargets)
+{
+await SendMessageToContact(contact);
+}
+Logger.LogInformation("WhatsAppMessage execution finished");
+}
+private async Task SendMessageToContact(string contact)
+{
+Logger.LogInformation("Opening chat for contact: {Contact}", contact);
+await WhatAppOpenChat.OpenContactChatAsync(
+contact,
+Config.WhatsApp.LoginPollInterval,
+Config.WhatsApp.LoginTimeout);
+Logger.LogInformation("Chat opened successfully for contact: {Contact}", contact);
+var msg = Config.WhatsApp.Message;
+var imagePath = Path.Combine(msg.ImageDirectory, msg.ImageFileName);
+var payload = new ImageMessagePayload
+{
+StoredImagePath = imagePath,
+Caption = msg.Caption
+};
+await WhatsAppChatService.SendMessageAsync(
+payload,
+Config.WhatsApp.LoginPollInterval,
+Config.WhatsApp.LoginTimeout);
+Logger.LogInformation("Message sent successfully to contact: {Contact}", contact);
+}
+public void LogFinalizeReport(FinalizeReport report)
+{
+if (report is null)
+{
+Logger.LogWarning("Finalize report is null");
+return;
+}
+Logger.LogInformation(
+"Finalizing execution from {RunningPath} to {FinishedPath}",
+report.RunningPath,
+report.FinishedPath);
+foreach (var failure in report.CopyFailures)
+{
+Logger.LogError(
+failure.Exception,
+"Copy failed during execution finalization: {Path}",
+failure.Path);
+}
+foreach (var failure in report.DeleteFailures)
+{
+Logger.LogWarning(
+failure.Exception,
+"Delete failed for running execution folder: {Path}",
+failure.Path);
+}
+if (report.IsClean)
+{
+Logger.LogInformation("Execution finalized successfully");
+}
+else
+{
+Logger.LogWarning(
+"Execution finalized with issues. CopyFailures={CopyFailures}, DeleteFailures={DeleteFailures}",
+report.CopyFailures.Count,
+report.DeleteFailures.Count);
+}
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\obj\project.assets.json ===
+
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "FuzzySharp/2.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/FuzzySharp.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/FuzzySharp.dll": {}
+        }
+      },
+      "Google.Apis/1.70.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis.Core": "1.70.0"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.70.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.70.0",
+          "Google.Apis.Core": "1.70.0",
+          "System.Management": "7.0.2"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis.Core/1.70.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis.Gmail.v1/1.70.0.3833": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.70.0",
+          "Google.Apis.Auth": "1.70.0"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.12.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6",
+          "System.Diagnostics.DiagnosticSource": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
+          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "9.0.6",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "System.Diagnostics.DiagnosticSource": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Options/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Primitives": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/9.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PDFsharp/6.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "8.0.1",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/PdfSharp.BarCodes.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Charting.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Cryptography.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Quality.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Shared.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Snippets.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0/PdfSharp.System.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.WPFonts.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.dll": {
+            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/PdfSharp.BarCodes.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Charting.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Cryptography.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Quality.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Shared.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.Snippets.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0/PdfSharp.System.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.WPFonts.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0/PdfSharp.dll": {
+            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
+          }
+        }
+      },
+      "Selenium.WebDriver/4.33.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/WebDriver.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/WebDriver.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Selenium.WebDriver.targets": {}
+        }
+      },
+      "System.CodeDom/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "9.0.6",
+          "System.Security.Cryptography.ProtectedData": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/9.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Diagnostics.EventLog/9.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          },
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Diagnostics.PerformanceCounter/9.0.6": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "9.0.6"
+        },
+        "compile": {
+          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Management/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Reactive/6.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/9.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Configuration/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "compile": {
+          "bin/placeholder/Configuration.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Configuration.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FuzzySharp/2.0.2": {
+      "sha512": "sBKqWxw3g//peYxDZ8JipRlyPbIyBtgzqBVA5GqwHVeqtIrw75maGXAllztf+1aJhchD+drcQIgf2mFho8ZV8A==",
+      "type": "package",
+      "path": "fuzzysharp/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fuzzysharp.2.0.2.nupkg.sha512",
+        "fuzzysharp.nuspec",
+        "lib/net45/FuzzySharp.dll",
+        "lib/net46/FuzzySharp.dll",
+        "lib/net461/FuzzySharp.dll",
+        "lib/netcoreapp2.0/FuzzySharp.dll",
+        "lib/netcoreapp2.1/FuzzySharp.dll",
+        "lib/netstandard1.6/FuzzySharp.dll",
+        "lib/netstandard2.0/FuzzySharp.dll",
+        "lib/netstandard2.1/FuzzySharp.dll"
+      ]
+    },
+    "Google.Apis/1.70.0": {
+      "sha512": "K6VKPkHRN1P7pMb84eZu1rFyoie7LIYYsjTPvTnEH2lbscU1sBLR1C1MtsCoSJzgDIjr0yVGmSKnIC4D73ro1g==",
+      "type": "package",
+      "path": "google.apis/1.70.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.1.70.0.nupkg.sha512",
+        "google.apis.nuspec",
+        "lib/net462/Google.Apis.dll",
+        "lib/net462/Google.Apis.pdb",
+        "lib/net462/Google.Apis.xml",
+        "lib/net6.0/Google.Apis.dll",
+        "lib/net6.0/Google.Apis.pdb",
+        "lib/net6.0/Google.Apis.xml",
+        "lib/netstandard2.0/Google.Apis.dll",
+        "lib/netstandard2.0/Google.Apis.pdb",
+        "lib/netstandard2.0/Google.Apis.xml"
+      ]
+    },
+    "Google.Apis.Auth/1.70.0": {
+      "sha512": "2gnpcYUaD5WS2/2922J+ji1tEKcNtxu+aQoiNVWhfcGwDqgcc5vk6ND6591M2UaGzJn0EdH325rsNHzi/MvA/A==",
+      "type": "package",
+      "path": "google.apis.auth/1.70.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.auth.1.70.0.nupkg.sha512",
+        "google.apis.auth.nuspec",
+        "lib/net462/Google.Apis.Auth.dll",
+        "lib/net462/Google.Apis.Auth.pdb",
+        "lib/net462/Google.Apis.Auth.xml",
+        "lib/net6.0/Google.Apis.Auth.dll",
+        "lib/net6.0/Google.Apis.Auth.pdb",
+        "lib/net6.0/Google.Apis.Auth.xml",
+        "lib/netstandard2.0/Google.Apis.Auth.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.pdb",
+        "lib/netstandard2.0/Google.Apis.Auth.xml"
+      ]
+    },
+    "Google.Apis.Core/1.70.0": {
+      "sha512": "R7Mbea2iB/TN+3BA1LPCqb1eT2HxnILJ+ASl5pdhHHc8uSe95JTTnM2DEVbVBQ3vo9/FpbBxWBRjP1ed9QK9CQ==",
+      "type": "package",
+      "path": "google.apis.core/1.70.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.core.1.70.0.nupkg.sha512",
+        "google.apis.core.nuspec",
+        "lib/net462/Google.Apis.Core.dll",
+        "lib/net462/Google.Apis.Core.pdb",
+        "lib/net462/Google.Apis.Core.xml",
+        "lib/net6.0/Google.Apis.Core.dll",
+        "lib/net6.0/Google.Apis.Core.pdb",
+        "lib/net6.0/Google.Apis.Core.xml",
+        "lib/netstandard2.0/Google.Apis.Core.dll",
+        "lib/netstandard2.0/Google.Apis.Core.pdb",
+        "lib/netstandard2.0/Google.Apis.Core.xml"
+      ]
+    },
+    "Google.Apis.Gmail.v1/1.70.0.3833": {
+      "sha512": "Gh3ziWCiCGdEqGkBLp5PzK811YPARjoB+PRnMeBEZ3K2dFgdqVJGZoZfZp8C6BiWMEIFtyvAnO4rPm0oKsRD5w==",
+      "type": "package",
+      "path": "google.apis.gmail.v1/1.70.0.3833",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.gmail.v1.1.70.0.3833.nupkg.sha512",
+        "google.apis.gmail.v1.nuspec",
+        "lib/net462/Google.Apis.Gmail.v1.dll",
+        "lib/net462/Google.Apis.Gmail.v1.pdb",
+        "lib/net462/Google.Apis.Gmail.v1.xml",
+        "lib/net6.0/Google.Apis.Gmail.v1.dll",
+        "lib/net6.0/Google.Apis.Gmail.v1.pdb",
+        "lib/net6.0/Google.Apis.Gmail.v1.xml",
+        "lib/netstandard2.0/Google.Apis.Gmail.v1.dll",
+        "lib/netstandard2.0/Google.Apis.Gmail.v1.pdb",
+        "lib/netstandard2.0/Google.Apis.Gmail.v1.xml"
+      ]
+    },
+    "HtmlAgilityPack/1.12.1": {
+      "sha512": "SP6/2Y26CXtxjXn0Wwsom9Ek35SNWKHEu/IWhNEFejBSSVWWXPRSlpqpBSYWv1SQhYFnwMO01xVbEdK3iRR4hg==",
+      "type": "package",
+      "path": "htmlagilitypack/1.12.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "htmlagilitypack.1.12.1.nupkg.sha512",
+        "htmlagilitypack.nuspec",
+        "lib/Net35/HtmlAgilityPack.dll",
+        "lib/Net35/HtmlAgilityPack.pdb",
+        "lib/Net35/HtmlAgilityPack.xml",
+        "lib/Net40-client/HtmlAgilityPack.dll",
+        "lib/Net40-client/HtmlAgilityPack.pdb",
+        "lib/Net40-client/HtmlAgilityPack.xml",
+        "lib/Net40/HtmlAgilityPack.XML",
+        "lib/Net40/HtmlAgilityPack.dll",
+        "lib/Net40/HtmlAgilityPack.pdb",
+        "lib/Net45/HtmlAgilityPack.XML",
+        "lib/Net45/HtmlAgilityPack.dll",
+        "lib/Net45/HtmlAgilityPack.pdb",
+        "lib/NetCore45/HtmlAgilityPack.XML",
+        "lib/NetCore45/HtmlAgilityPack.dll",
+        "lib/NetCore45/HtmlAgilityPack.pdb",
+        "lib/net8.0/HtmlAgilityPack.deps.json",
+        "lib/net8.0/HtmlAgilityPack.dll",
+        "lib/net8.0/HtmlAgilityPack.pdb",
+        "lib/net8.0/HtmlAgilityPack.xml",
+        "lib/netstandard2.0/HtmlAgilityPack.deps.json",
+        "lib/netstandard2.0/HtmlAgilityPack.dll",
+        "lib/netstandard2.0/HtmlAgilityPack.pdb",
+        "lib/netstandard2.0/HtmlAgilityPack.xml",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.XML",
+        "lib/uap10.0/HtmlAgilityPack.dll",
+        "lib/uap10.0/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.pri",
+        "readme.md"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
+      "sha512": "3GgMIi2jP8g1fBW93Z9b9Unamc0SIsgyhiCmC91gq4loTixK9vQMuxxUsfJ1kRGwn+/FqLKwOHqmn0oYWn3Fvw==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.9.0.6.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection/9.0.6": {
+      "sha512": "vS65HMo5RS10DD543fknsyVDxihMcVxVn3/hNaILgBxWYnOLxWIeCIO9X0QFuCvPRNjClvXe9Aj8KaQNx7vFkQ==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
+      "sha512": "0Zn6nR/6g+90MxskZyOOMPQvnPnrrGu6bytPwkV+azDcTtCSuQ1+GJUrg8Klmnrjk1i6zMpw2lXijl+tw7Q3kA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
+      "sha512": "GIoXX7VDcTEsNM6yvffTBaOwnPQELGI5dzExR7L2O7AUkDsHBYIZawUbuwfq3cYzz8dIAAJotQYJMzH7qy27Ng==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.abstractions/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Diagnostics.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Diagnostics.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "microsoft.extensions.diagnostics.abstractions.9.0.6.nupkg.sha512",
+        "microsoft.extensions.diagnostics.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
+      "sha512": "q9FPkSGVA9ipI255p3PBAvWNXas5Tzjyp/DwYSwT+46mIFw9fWZahsF6vHpoxLt5/vtANotH2sAm7HunuFIx9g==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.abstractions/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "microsoft.extensions.fileproviders.abstractions.9.0.6.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
+      "sha512": "G9T95JbcG/wQpeVIzg0IMwxI+uTywDmbxWUWN2P0mdna35rmuTqgTrZ4SU5rcfUT3EJfbI9N4K8UyCAAc6QK8Q==",
+      "type": "package",
+      "path": "microsoft.extensions.hosting.abstractions/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Hosting.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Hosting.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "microsoft.extensions.hosting.abstractions.9.0.6.nupkg.sha512",
+        "microsoft.extensions.hosting.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Logging/9.0.6": {
+      "sha512": "XBzjitTFaQhF8EbJ645vblZezV1p52ePTxKHoVkRidHF11Xkjxg94qr0Rvp2qyxK2vBJ4OIZ41NB15YUyxTGMQ==",
+      "type": "package",
+      "path": "microsoft.extensions.logging/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.targets",
+        "lib/net462/Microsoft.Extensions.Logging.dll",
+        "lib/net462/Microsoft.Extensions.Logging.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Logging.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Logging.xml",
+        "microsoft.extensions.logging.9.0.6.nupkg.sha512",
+        "microsoft.extensions.logging.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
+      "sha512": "LFnyBNK7WtFmKdnHu3v0HOYQ8BcjYuy0jdC9pgCJ/rbLKoJEG9/dBzSKMEeeWDbDeoWS0TIxOC8a9CM5ufca3A==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.9.0.6.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options/9.0.6": {
+      "sha512": "wUPhNM1zsI58Dy10xRdF2+pnsisiUuETg5ZBncyAEEUm/CQ9Q1vmivyUWH8RDbAlqyixf2dJNQ2XZb7HsKUEQw==",
+      "type": "package",
+      "path": "microsoft.extensions.options/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "buildTransitive/net461/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Options.targets",
+        "lib/net462/Microsoft.Extensions.Options.dll",
+        "lib/net462/Microsoft.Extensions.Options.xml",
+        "lib/net8.0/Microsoft.Extensions.Options.dll",
+        "lib/net8.0/Microsoft.Extensions.Options.xml",
+        "lib/net9.0/Microsoft.Extensions.Options.dll",
+        "lib/net9.0/Microsoft.Extensions.Options.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
+        "microsoft.extensions.options.9.0.6.nupkg.sha512",
+        "microsoft.extensions.options.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Primitives/9.0.6": {
+      "sha512": "BHniU24QV67qp1pJknqYSofAPYGmijGI8D+ci9yfw33iuFdyOeB9lWTg78ThyYLyQwZw3s0vZ36VMb0MqbUuLw==",
+      "type": "package",
+      "path": "microsoft.extensions.primitives/9.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
+        "lib/net462/Microsoft.Extensions.Primitives.dll",
+        "lib/net462/Microsoft.Extensions.Primitives.xml",
+        "lib/net8.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net8.0/Microsoft.Extensions.Primitives.xml",
+        "lib/net9.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net9.0/Microsoft.Extensions.Primitives.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
+        "microsoft.extensions.primitives.9.0.6.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -43775,10 +46391,20 @@ public string Caption { get; init; } = string.Empty;
       "path": "../Configuration/Configuration.csproj",
       "msbuildProject": "../Configuration/Configuration.csproj"
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
       "msbuildProject": "../Domain.WhatsApp/Domain.WhatsApp.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -43791,10 +46417,10 @@ public string Caption { get; init; } = string.Empty;
       "HtmlAgilityPack >= 1.12.1",
       "Microsoft.Extensions.Hosting.Abstractions >= 9.0.6",
       "Microsoft.Extensions.Logging >= 9.0.6",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17",
       "Newtonsoft.Json >= 13.0.3",
       "PDFsharp >= 6.2.0",
       "Selenium.WebDriver >= 4.33.0",
+      "Services >= 1.0.0",
       "System.Diagnostics.PerformanceCounter >= 9.0.6",
       "System.Reactive >= 6.0.1"
     ]
@@ -43806,11 +46432,11 @@ public string Caption { get; init; } = string.Empty;
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
-      "projectName": "Services",
-      "projectPath": "F:\\marketing\\Services\\Services.csproj",
+      "projectUniqueName": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
+      "projectName": "Services.WhatsApp",
+      "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Services\\obj\\",
+      "outputPath": "F:\\Marketing\\Services.WhatsApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43830,11 +46456,14 @@ public string Caption { get; init; } = string.Empty;
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Configuration\\Configuration.csproj": {
-              "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+            "F:\\Marketing\\Configuration\\Configuration.csproj": {
+              "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
             },
-            "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-              "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            },
+            "F:\\Marketing\\Services\\Services.csproj": {
+              "projectPath": "F:\\Marketing\\Services\\Services.csproj"
             }
           }
         }
@@ -43879,12 +46508,6 @@ public string Caption { get; init; } = string.Empty;
             "target": "Package",
             "version": "[9.0.6, )"
           },
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -43924,29 +46547,24 @@ public string Caption { get; init; } = string.Empty;
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
 
-=== FILE: F:\Marketing\Services\obj\Services.csproj.nuget.dgspec.json ===
+=== FILE: F:\Marketing\Services.WhatsApp\obj\Services.WhatsApp.csproj.nuget.dgspec.json ===
 
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\Services\\Services.csproj": {}
+    "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -43989,12 +46607,6 @@ public string Caption { get; init; } = string.Empty;
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[9.0.6, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -44015,21 +46627,84 @@ public string Caption { get; init; } = string.Empty;
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
-        "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44066,14 +46741,6 @@ public string Caption { get; init; } = string.Empty;
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -44092,21 +46759,16 @@ public string Caption { get; init; } = string.Empty;
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Services\\Services.csproj": {
+    "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
-        "projectName": "Services",
-        "projectPath": "F:\\marketing\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
+        "projectName": "Services.WhatsApp",
+        "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Services\\obj\\",
+        "outputPath": "F:\\Marketing\\Services.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44126,11 +46788,14 @@ public string Caption { get; init; } = string.Empty;
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-                "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -44175,11 +46840,122 @@ public string Caption { get; init; } = string.Empty;
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
+              "version": "[13.0.3, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.33.0, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FuzzySharp": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.70.0, )"
+            },
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.70.0.3833, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.12.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.6, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -44220,35 +46996,30 @@ public string Caption { get; init; } = string.Empty;
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     }
   }
 }
 
-=== FILE: F:\Marketing\Services\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
 using System;
 using System.Reflection;
 [assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
 
-=== FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.AssemblyInfo.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.AssemblyInfo.cs ===
 
 using System;
 using System.Reflection;
-[assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
-[assembly: System.Reflection.AssemblyProductAttribute("Services")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Services")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyProductAttribute("Services.WhatsApp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
-=== FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.GlobalUsings.g.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.GlobalUsings.g.cs ===
 
 global using global::System;
 global using global::System.Collections.Generic;
@@ -44258,43 +47029,832 @@ global using global::System.Net.Http;
 global using global::System.Threading;
 global using global::System.Threading.Tasks;
 
-=== FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
+=== FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
-=== FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\OpenChat\ChatClicker.cs ===
 
-using System;
-using System.Reflection;
-[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+﻿using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Selector;
+using Services.WhatsApp.Abstractions.Selenium;
+using Services.WhatsApp.Abstractions.XPath;
+using Services.WhatsApp.Login;
+namespace Services.WhatsApp.OpenChat
+{
+internal sealed class ChatClicker(
+IWebDriverFacade driver,
+ISelectors selectors,
+IChatXPathBuilder xpathBuilder,
+ILogger<LoginService> logger) : IClicker
+{
+public async Task ClickChatByTitleAsync(
+string chatTitle,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+logger.LogInformation(
+"ClickChatByTitleAsync started. chatTitleLength={ChatTitleLength}",
+chatTitle?.Length ?? 0
+);
+if (string.IsNullOrWhiteSpace(chatTitle))
+{
+logger.LogWarning("ClickChatByTitleAsync aborted: chatTitle is null or whitespace.");
+throw new ArgumentException("Chat title cannot be empty.", nameof(chatTitle));
+}
+timeout ??= TimeSpan.FromSeconds(10);
+pollInterval ??= TimeSpan.FromMilliseconds(250);
+logger.LogInformation(
+"Using timeout={Timeout} pollInterval={PollInterval}.",
+timeout, pollInterval
+);
+var needle = chatTitle.Trim().ToLowerInvariant();
+var end = DateTimeOffset.UtcNow + timeout.Value;
+logger.LogDebug(
+"Normalized chat title for search. originalLength={OriginalLength} normalizedLength={NormalizedLength}",
+chatTitle.Length,
+needle.Length
+);
+var attempt = 0;
+while (DateTimeOffset.UtcNow < end)
+{
+ct.ThrowIfCancellationRequested();
+attempt++;
+try
+{
+var xpathToFind = xpathBuilder.GetXpathToFind(needle);
+logger.LogDebug(
+"Attempt {Attempt}: Searching chat span using XPath: {XPath}",
+attempt,
+xpathToFind
+);
+var span = driver.FindElements(By.XPath(xpathToFind)).FirstOrDefault();
+if (span is { Displayed: true })
+{
+logger.LogInformation(
+"Attempt {Attempt}: Matching chat span found and displayed. Resolving clickable target...",
+attempt
+);
+var target = span.FindElements(By.XPath(selectors.XpathToFindGridcellAncestor)).FirstOrDefault() ?? span;
+logger.LogDebug(
+"Attempt {Attempt}: Target resolved. targetDisplayed={Displayed} targetEnabled={Enabled}",
+attempt,
+target.Displayed,
+target.Enabled
+);
+if (target.Displayed && target.Enabled)
+{
+logger.LogInformation("Attempt {Attempt}: Clicking chat target...", attempt);
+target.Click();
+logger.LogInformation("ClickChatByTitleAsync completed successfully.");
+return;
+}
+logger.LogDebug(
+"Attempt {Attempt}: Target found but not clickable (displayed/enabled check failed).",
+attempt
+);
+}
+else
+{
+logger.LogDebug(
+"Attempt {Attempt}: No displayed span matched the chat title yet.",
+attempt
+);
+}
+}
+catch (StaleElementReferenceException)
+{
+logger.LogDebug(
+"Attempt {Attempt}: StaleElementReferenceException encountered (DOM rerender). Retrying...",
+attempt
+);
+}
+catch (NoSuchElementException)
+{
+logger.LogDebug(
+"Attempt {Attempt}: NoSuchElementException encountered (ancestor/target missing). Retrying...",
+attempt
+);
+}
+catch (Exception ex)
+{
+logger.LogError(
+ex,
+"ClickChatByTitleAsync failed unexpectedly on attempt {Attempt}.",
+attempt
+);
+throw;
+}
+await Task.Delay(pollInterval.Value, ct).ConfigureAwait(false);
+}
+logger.LogError(
+"ClickChatByTitleAsync timed out after {TimeoutSeconds} seconds. Chat not found/clickable. chatTitleLength={ChatTitleLength}",
+timeout.Value.TotalSeconds,
+chatTitle.Length
+);
+throw new WebDriverTimeoutException($"Chat not found or not clickable: '{chatTitle}'.");
+}
+}
+}
 
-=== FILE: F:\Marketing\Services\obj\Release\net8.0\Services.AssemblyInfo.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\OpenChat\ChatService.cs ===
 
-using System;
-using System.Reflection;
-[assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
-[assembly: System.Reflection.AssemblyProductAttribute("Services")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Services")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+﻿using Configuration;
+using Domain.WhatsApp;
+using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using Services.Interfaces;
+using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Search;
+namespace Services.WhatsApp.OpenChat
+{
+public sealed class ChatService(
+IWebDriver driver,
+ILogger<ChatService> logger,
+AppConfig config,
+IAutoItRunner autoItRunner,
+IAttachments controls
+) : IChatService
+{
+private const string XpathFindCaption =
+"
+private IWebDriver Driver { get; } = driver;
+public ILogger<ChatService> Logger { get; } = logger;
+private AppConfig Config { get; } = config;
+private IAutoItRunner AutoItRunner { get; } = autoItRunner;
+private IAttachments Controls { get; } = controls;
+public async Task SendMessageAsync(
+ImageMessagePayload imageMessagePayload,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+Logger.LogInformation(
+"SendMessageAsync started. hasPayload={HasPayload} messageLength={MessageLength} storedImagePath='{StoredImagePath}'",
+imageMessagePayload is not null,
+imageMessagePayload?.Caption?.Length ?? 0,
+imageMessagePayload?.StoredImagePath
+);
+ct.ThrowIfCancellationRequested();
+if (imageMessagePayload is null)
+{
+Logger.LogError("SendMessageAsync aborted: imageMessagePayload is null.");
+throw new ArgumentNullException(nameof(imageMessagePayload));
+}
+if (string.IsNullOrWhiteSpace(imageMessagePayload.Caption))
+{
+Logger.LogWarning("SendMessageAsync aborted: Caption is null/empty/whitespace.");
+throw new ArgumentException("Message cannot be empty.", nameof(imageMessagePayload.Caption));
+}
+if (string.IsNullOrWhiteSpace(imageMessagePayload.StoredImagePath))
+{
+Logger.LogError("SendMessageAsync aborted: StoredImagePath is null/empty.");
+throw new ArgumentException("StoredImagePath cannot be empty.", nameof(imageMessagePayload.StoredImagePath));
+}
+if (!File.Exists(imageMessagePayload.StoredImagePath))
+{
+Logger.LogError("SendMessageAsync aborted: StoredImagePath does not exist. path='{Path}'", imageMessagePayload.StoredImagePath);
+throw new FileNotFoundException("Image file not found.", imageMessagePayload.StoredImagePath);
+}
+TimeSpan loginTimeout = timeout ?? Config.WhatsApp.LoginTimeout;
+TimeSpan loginPollInterval = pollInterval ?? Config.WhatsApp.LoginPollInterval;
+Logger.LogInformation(
+"Using timeouts. timeout={Timeout} pollInterval={PollInterval}",
+loginTimeout, loginPollInterval
+);
+Logger.LogInformation("Step 1/3: Locating attach button...");
+var attachButton = Controls.FindAttachButton(loginTimeout, loginPollInterval);
+if (attachButton is null)
+{
+throw new NoSuchElementException("Attach button not found.");
+}
+Logger.LogDebug(
+"Attach button found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel} title={Title}",
+attachButton.TagName,
+attachButton.Displayed,
+attachButton.Enabled,
+attachButton.GetAttribute("aria-label"),
+attachButton.GetAttribute("title")
+);
+Logger.LogInformation("Clicking attach button...");
+attachButton.Click();
+Logger.LogDebug("Attach button clicked.");
+var photoAndVideo = controls.FindPhotosAndVideosOptionButton(loginTimeout, loginPollInterval);
+if (photoAndVideo is null)
+{
+throw new NoSuchElementException("'Photos & videos' option not found.");
+}
+Logger.LogDebug(
+"'Photos & videos' option found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel} title={Title}",
+photoAndVideo.TagName,
+photoAndVideo.Displayed,
+photoAndVideo.Enabled,
+photoAndVideo.GetAttribute("aria-label"),
+photoAndVideo.GetAttribute("title")
+);
+Logger.LogInformation("Clicking 'Photos & videos' option...");
+photoAndVideo.Click();
+Logger.LogDebug("'Photos & videos' option clicked.");
+Logger.LogInformation(
+"Opening file dialog via AutoIT... storedImagePath='{StoredImagePath}' useInterpreter={UseInterpreter}",
+imageMessagePayload.StoredImagePath,
+true
+);
+AutoItRunnerResult autoItRunnerResult;
+try
+{
+autoItRunnerResult = await AutoItRunner.RunAsync(
+timeout: loginTimeout,
+imagePath: imageMessagePayload.StoredImagePath,
+useAutoItInterpreter: true,
+cancellationToken: ct
+);
+Logger.LogInformation(
+"AutoIT finished. exitCode={ExitCode} timedOut={TimedOut} duration={Duration} logFilePath='{LogFilePath}'",
+autoItRunnerResult.ExitCode,
+autoItRunnerResult.TimedOut,
+autoItRunnerResult.Duration,
+autoItRunnerResult.LogFilePath
+);
+if (autoItRunnerResult.TimedOut)
+{
+Logger.LogError("AutoIT timed out. duration={Duration} logFilePath='{LogFilePath}'",
+autoItRunnerResult.Duration, autoItRunnerResult.LogFilePath);
+throw new TimeoutException("AutoIT timed out while selecting file.");
+}
+if (autoItRunnerResult.ExitCode != 0)
+{
+Logger.LogError(
+"AutoIT failed. exitCode={ExitCode} stderrLength={StdErrLength} stdoutLength={StdOutLength} logFilePath='{LogFilePath}'",
+autoItRunnerResult.ExitCode,
+autoItRunnerResult.StdErr?.Length ?? 0,
+autoItRunnerResult.StdOut?.Length ?? 0,
+autoItRunnerResult.LogFilePath
+);
+throw new InvalidOperationException($"AutoIT failed with exit code {autoItRunnerResult.ExitCode}.");
+}
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "AutoIT failed while selecting file. storedImagePath='{StoredImagePath}'", imageMessagePayload.StoredImagePath);
+throw;
+}
+Logger.LogInformation(
+"Locating caption element using XPath '{XPath}'...",
+XpathFindCaption
+);
+var caption = FindCaption(loginTimeout, loginPollInterval);
+if (caption is null)
+{
+Logger.LogError("Caption element not found. XPath='{XPath}'", XpathFindCaption);
+throw new NoSuchElementException("Caption element not found.");
+}
+Logger.LogDebug(
+"Caption element found. tag={Tag} displayed={Displayed}, enabled={Enabled} aria-label={AriaLabel}",
+caption.TagName,
+caption.Displayed,
+caption.Enabled,
+caption.GetAttribute("aria-label")
+);
+Logger.LogInformation("Typing caption via execCommand (emoji-safe)... captionLength={Length}", imageMessagePayload.Caption.Length);
+try
+{
+SetCaptionViaExecCommand(caption, imageMessagePayload.Caption ?? string.Empty);
+Logger.LogDebug("Caption text injected via execCommand.");
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "Failed while setting caption via execCommand.");
+throw;
+}
+Logger.LogInformation("Submitting caption (Enter)...");
+caption.SendKeys(Keys.Enter);
+Logger.LogDebug("Enter sent to caption element.");
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 2/3: Focusing compose box...");
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation(
+"Step 3/3: Sending message completed. length={Length}",
+imageMessagePayload.Caption.Length
+);
+Logger.LogInformation("SendMessageAsync completed successfully.");
+}
+private void SetCaptionViaExecCommand(IWebElement element, string text)
+{
+Logger.LogDebug("SetCaptionViaExecCommand started. textLength={Length}", text?.Length ?? 0);
+if (Driver is not IJavaScriptExecutor js)
+{
+Logger.LogError("Driver does not support JavaScript execution. driverType={DriverType}", Driver.GetType().FullName);
+throw new NotSupportedException("Driver does not support JavaScript execution.");
+}
+js.ExecuteScript(@"
+const el = arguments[0];
+const value = arguments[1] ?? '';
+el.focus();
+document.execCommand('selectAll', false, null);
+document.execCommand('delete', false, null);
+document.execCommand('insertText', false, value);
+", element, text);
+Logger.LogDebug("SetCaptionViaExecCommand completed.");
+}
+private IWebElement FindCaption(TimeSpan timeout, TimeSpan pollingInterval)
+{
+Logger.LogDebug(
+"FindCaption started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
+timeout,
+pollingInterval,
+XpathFindCaption
+);
+var wait = new WebDriverWait(Driver, timeout)
+{
+PollingInterval = pollingInterval
+};
+wait.IgnoreExceptionTypes(
+typeof(NoSuchElementException),
+typeof(StaleElementReferenceException)
+);
+IWebElement caption;
+try
+{
+caption = wait.Until(driver =>
+{
+var element = driver
+.FindElements(By.XPath(XpathFindCaption))
+.FirstOrDefault();
+if (element is null)
+{
+Logger.LogTrace("FindCaption: Caption element not present yet.");
+return null;
+}
+if (!element.Displayed || !element.Enabled)
+{
+Logger.LogTrace(
+"FindCaption: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
+element.Displayed,
+element.Enabled
+);
+return null;
+}
+return element;
+});
+}
+catch (WebDriverTimeoutException ex)
+{
+Logger.LogError(
+ex,
+"FindCaption timed out after {Timeout}. xpath='{XPath}'",
+timeout,
+XpathFindCaption
+);
+throw;
+}
+Logger.LogDebug(
+"FindCaption completed. found={Found} displayed={Displayed} enabled={Enabled}",
+caption is not null,
+caption?.Displayed,
+caption?.Enabled
+);
+return caption;
+}
+}
+}
 
-=== FILE: F:\Marketing\Services\obj\Release\net8.0\Services.GlobalUsings.g.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\OpenChat\OpenChat.cs ===
 
-global using global::System;
-global using global::System.Collections.Generic;
-global using global::System.IO;
-global using global::System.Linq;
-global using global::System.Net.Http;
-global using global::System.Threading;
-global using global::System.Threading.Tasks;
+﻿using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Search;
+using Services.WhatsApp.Login;
+using Services.WhatsApp.Search;
+using Services.WhatsApp.Selector;
+using Services.WhatsApp.Selenium;
+using Services.WhatsApp.XPath;
+namespace Services.WhatsApp.OpenChat
+{
+public class OpenChat : IOpenChat
+{
+private const string WhatAppMessage = "WhatsApp Web is not logged in. Call LoginAsync() before opening a chat.";
+public ILogger<LoginService> Logger { get; }
+private readonly ILoginStateChecker _loginChecker;
+private readonly ISearchBoxTyper _searchTyper;
+private readonly IClicker _chatClicker;
+public OpenChat(IWebDriver driver, ILogger<LoginService> logger)
+: this(
+loginChecker: new LoginStateChecker(
+driver: new WebDriverFacade(driver),
+selectors: new Selectors(),
+logger: logger),
+searchTyper: new SearchBoxTyper(
+driver: new WebDriverFacade(driver),
+selectors: new Selectors(),
+logger: logger),
+chatClicker: new ChatClicker(
+driver: new WebDriverFacade(driver),
+selectors: new Selectors(),
+xpathBuilder: new ChatXPathBuilder(new XPathLiteralEscaper(logger)),
+logger: logger),
+logger: logger)
+{
+}
+public OpenChat(
+ILoginStateChecker loginChecker,
+ISearchBoxTyper searchTyper,
+IClicker chatClicker,
+ILogger<LoginService> logger)
+{
+_loginChecker = loginChecker ?? throw new ArgumentNullException(nameof(loginChecker));
+_searchTyper = searchTyper ?? throw new ArgumentNullException(nameof(searchTyper));
+_chatClicker = chatClicker ?? throw new ArgumentNullException(nameof(chatClicker));
+Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
+public async Task OpenContactChatAsync(
+string chatIdentifier,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+Logger.LogInformation("OpenContactChatAsync started. chatIdentifier='{ChatIdentifier}'", chatIdentifier);
+ct.ThrowIfCancellationRequested();
+if (string.IsNullOrWhiteSpace(chatIdentifier))
+{
+Logger.LogWarning("OpenContactChatAsync aborted: chatIdentifier is null/empty/whitespace.");
+throw new ArgumentException("Chat identifier cannot be null, empty, or whitespace.", nameof(chatIdentifier));
+}
+Logger.LogInformation("Step 1/4: Checking WhatsApp Web login state...");
+if (!_loginChecker.IsWhatsAppLoggedIn())
+{
+Logger.LogError("OpenContactChatAsync failed: WhatsApp Web is not logged in.");
+throw new InvalidOperationException(WhatAppMessage);
+}
+Logger.LogInformation("Step 1/4: Logged in confirmed.");
+var effectiveTimeout = timeout ?? TimeSpan.FromSeconds(10);
+var effectivePoll = pollInterval ?? TimeSpan.FromMilliseconds(200);
+if (effectiveTimeout <= TimeSpan.Zero)
+{
+Logger.LogWarning("Invalid timeout provided: {Timeout}.", effectiveTimeout);
+throw new ArgumentOutOfRangeException(nameof(timeout), "Timeout must be greater than zero.");
+}
+if (effectivePoll <= TimeSpan.Zero)
+{
+Logger.LogWarning("Invalid pollInterval provided: {PollInterval}.", effectivePoll);
+throw new ArgumentOutOfRangeException(nameof(pollInterval), "Poll interval must be greater than zero.");
+}
+if (effectivePoll > effectiveTimeout)
+{
+var adjusted = TimeSpan.FromMilliseconds(Math.Max(50, effectiveTimeout.TotalMilliseconds / 10));
+Logger.LogWarning(
+"PollInterval {PollInterval} > Timeout {Timeout}. Adjusting pollInterval to {AdjustedPollInterval}.",
+effectivePoll, effectiveTimeout, adjusted);
+effectivePoll = adjusted;
+}
+Logger.LogInformation(
+"Step 2/4: Using timeout={Timeout} pollInterval={PollInterval}.",
+effectiveTimeout, effectivePoll);
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 3/4: Typing chatIdentifier into WhatsApp search box...");
+try
+{
+await _searchTyper.TypeIntoSearchBoxAsync(chatIdentifier, effectiveTimeout, effectivePoll )
+.ConfigureAwait(false);
+Logger.LogInformation("Step 3/4: Search input completed.");
+}
+catch (OperationCanceledException)
+{
+Logger.LogWarning("OpenContactChatAsync canceled during Step 3/4 (TypeIntoSearchBoxAsync).");
+throw;
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "OpenContactChatAsync failed during Step 3/4 (TypeIntoSearchBoxAsync).");
+throw;
+}
+ct.ThrowIfCancellationRequested();
+Logger.LogInformation("Step 4/4: Clicking chat by title '{ChatIdentifier}'...", chatIdentifier);
+try
+{
+await _chatClicker.ClickChatByTitleAsync(chatIdentifier, effectiveTimeout, effectivePoll )
+.ConfigureAwait(false);
+Logger.LogInformation("Step 4/4: Chat opened successfully. chatIdentifier='{ChatIdentifier}'", chatIdentifier);
+}
+catch (OperationCanceledException)
+{
+Logger.LogWarning("OpenContactChatAsync canceled during Step 4/4 (ClickChatByTitleAsync).");
+throw;
+}
+catch (Exception ex)
+{
+Logger.LogError(ex, "OpenContactChatAsync failed during Step 4/4 (ClickChatByTitleAsync).");
+throw;
+}
+}
+}
+}
 
-=== FILE: F:\Marketing\Services\obj\Release\net8.0\Services.sourcelink.json ===
+=== FILE: F:\Marketing\Services.WhatsApp\Search\SearchBoxTyper.cs ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+﻿using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using Services.WhatsApp.Abstractions.Search;
+using Services.WhatsApp.Abstractions.Selector;
+using Services.WhatsApp.Abstractions.Selenium;
+using Services.WhatsApp.Login;
+namespace Services.WhatsApp.Search
+{
+internal sealed class SearchBoxTyper(
+IWebDriverFacade driver,
+ISelectors selectors,
+ILogger<LoginService> logger) : ISearchBoxTyper
+{
+public async Task TypeIntoSearchBoxAsync(
+string text,
+TimeSpan? timeout = null,
+TimeSpan? pollInterval = null,
+CancellationToken ct = default)
+{
+logger.LogInformation(
+"TypeIntoSearchBoxAsync started. textLength={TextLength}",
+text?.Length ?? 0
+);
+if (string.IsNullOrWhiteSpace(text))
+{
+logger.LogWarning("TypeIntoSearchBoxAsync aborted: text is null or whitespace.");
+throw new ArgumentException("Text cannot be empty.", nameof(text));
+}
+timeout ??= TimeSpan.FromSeconds(10);
+pollInterval ??= TimeSpan.FromMilliseconds(200);
+logger.LogInformation(
+"Using timeout={Timeout} pollInterval={PollInterval}.",
+timeout, pollInterval
+);
+var deadline = DateTimeOffset.UtcNow + timeout.Value;
+var attempt = 0;
+while (DateTimeOffset.UtcNow < deadline)
+{
+ct.ThrowIfCancellationRequested();
+attempt++;
+try
+{
+logger.LogDebug(
+"Attempt {Attempt}: Locating search input using selector '{Selector}'.",
+attempt,
+selectors.CssSelectorToFindSearchInput
+);
+var input = driver
+.FindElements(By.CssSelector(selectors.CssSelectorToFindSearchInput))
+.FirstOrDefault();
+if (input is { Displayed: true, Enabled: true })
+{
+logger.LogInformation(
+"Search input found and ready on attempt {Attempt}. Focusing and typing...",
+attempt
+);
+input.Click();
+logger.LogDebug("Clearing existing search input content.");
+input.SendKeys(Keys.Control + "a");
+input.SendKeys(Keys.Backspace);
+logger.LogDebug("Typing search text and submitting.");
+input.SendKeys(text);
+input.SendKeys(Keys.Enter);
+logger.LogInformation("TypeIntoSearchBoxAsync completed successfully.");
+return;
+}
+logger.LogDebug(
+"Attempt {Attempt}: Search input not ready (null, hidden, or disabled).",
+attempt
+);
+}
+catch (StaleElementReferenceException)
+{
+logger.LogDebug(
+"Attempt {Attempt}: StaleElementReferenceException encountered. Retrying...",
+attempt
+);
+}
+catch (InvalidElementStateException)
+{
+logger.LogDebug(
+"Attempt {Attempt}: InvalidElementStateException encountered. Retrying...",
+attempt
+);
+}
+catch (Exception ex)
+{
+logger.LogError(
+ex,
+"TypeIntoSearchBoxAsync failed unexpectedly on attempt {Attempt}.",
+attempt
+);
+throw;
+}
+await Task.Delay(pollInterval.Value, ct).ConfigureAwait(false);
+}
+logger.LogError(
+"TypeIntoSearchBoxAsync timed out after {TimeoutSeconds} seconds.",
+timeout.Value.TotalSeconds
+);
+throw new WebDriverTimeoutException(
+$"Search input textbox not available within {timeout.Value.TotalSeconds} seconds."
+);
+}
+}
+}
 
-=== FILE: F:\Marketing\Services\Scheduling\ScheduledMessenger.cs ===
+=== FILE: F:\Marketing\Services.WhatsApp\Selector\Attachments.cs ===
+
+﻿using Microsoft.Extensions.Logging;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using Services.WhatsApp.Abstractions.Search;
+namespace Services.WhatsApp.Selector
+{
+public class Attachments(IWebDriver driver, ILogger<Attachments> logger) : IAttachments
+{
+private IWebDriver Driver { get; } = driver;
+public ILogger<Attachments> Logger { get; } = logger;
+private const string XpathToFindAttachButton =
+"
+private const string FindPhotosAndVideosOption =
+"
+"[@aria-label='Photos & videos' or title='Photos & videos' or @data-testid='attach-photos' or .
+public IWebElement FindAttachButton(TimeSpan timeout, TimeSpan pollingInterval)
+{
+Logger.LogDebug(
+"FindAttachButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
+timeout,
+pollingInterval,
+XpathToFindAttachButton
+);
+var wait = new WebDriverWait(Driver, timeout)
+{
+PollingInterval = pollingInterval
+};
+wait.IgnoreExceptionTypes(
+typeof(NoSuchElementException),
+typeof(StaleElementReferenceException)
+);
+IWebElement attachButton;
+try
+{
+attachButton = wait.Until(driver =>
+{
+var element = driver
+.FindElements(By.XPath(XpathToFindAttachButton))
+.FirstOrDefault();
+if (element is null)
+{
+Logger.LogTrace("FindAttachButton: Attach button not present yet.");
+return null;
+}
+if (!element.Displayed || !element.Enabled)
+{
+Logger.LogTrace(
+"FindAttachButton: Element found but not ready. displayed={Displayed}, enabled={Enabled}",
+element.Displayed,
+element.Enabled
+);
+return null;
+}
+return element;
+});
+}
+catch (WebDriverTimeoutException ex)
+{
+Logger.LogError(
+ex,
+"FindAttachButton timed out after {Timeout}. xpath='{XPath}'",
+timeout,
+XpathToFindAttachButton
+);
+throw;
+}
+Logger.LogDebug(
+"FindAttachButton completed. found={Found} displayed={Displayed} enabled={Enabled}",
+attachButton is not null,
+attachButton?.Displayed,
+attachButton?.Enabled
+);
+return attachButton;
+}
+public IWebElement FindPhotosAndVideosOptionButton(TimeSpan timeout, TimeSpan pollingInterval)
+{
+Logger.LogInformation(
+"Locating 'Photos & videos' option using XPath '{XPath}'...",
+FindPhotosAndVideosOption
+);
+Logger.LogDebug(
+"FindPhotosAndVideosOptionButton started. timeout={Timeout} pollingInterval={PollingInterval} xpath='{XPath}'",
+timeout, pollingInterval, FindPhotosAndVideosOption
+);
+var wait = new WebDriverWait(Driver, timeout)
+{
+PollingInterval = pollingInterval
+};
+wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+try
+{
+var result = wait.Until(driver =>
+{
+var candidates = driver.FindElements(By.XPath(FindPhotosAndVideosOption))
+.Where(e => e.Displayed && e.Enabled)
+.ToList();
+if (candidates.Count == 0)
+{
+Logger.LogTrace("FindPhotosAndVideosOptionButton: no displayed/enabled candidates yet.");
+return null;
+}
+foreach (var c in candidates)
+{
+IWebElement clickable = c;
+var tag = (clickable.TagName ?? string.Empty).ToLowerInvariant();
+if (tag == "span" || tag == "div")
+{
+var parentButton = TryFindAncestorClickable(clickable);
+if (parentButton != null)
+{
+Logger.LogTrace("FindPhotosAndVideosOptionButton: climbed from tag={Tag} to ancestor tag={AncestorTag}",
+c.TagName, parentButton.TagName);
+clickable = parentButton;
+}
+else
+{
+Logger.LogTrace("FindPhotosAndVideosOptionButton: no clickable ancestor found for tag={Tag}", c.TagName);
+}
+}
+if (clickable.Displayed && clickable.Enabled)
+{
+Logger.LogDebug(
+"FindPhotosAndVideosOptionButton: selected candidate tag={Tag} aria-label={AriaLabel} title={Title}",
+clickable.TagName,
+clickable.GetAttribute("aria-label"),
+clickable.GetAttribute("title")
+);
+return clickable;
+}
+}
+return null;
+});
+Logger.LogDebug("FindPhotosAndVideosOptionButton completed. found={Found}", result is not null);
+return result;
+}
+catch (WebDriverTimeoutException ex)
+{
+Logger.LogError(ex,
+"FindPhotosAndVideosOptionButton timed out after {Timeout}. xpath='{XPath}'",
+timeout, FindPhotosAndVideosOption
+);
+throw;
+}
+}
+private IWebElement? TryFindAncestorClickable(IWebElement element)
+{
+try
+{
+return element.FindElement(By.XPath(
+"ancestor::*[self::button or @role='button' or @role='menuitem'][1]"
+));
+}
+catch (Exception ex)
+{
+Logger.LogTrace(ex, "TryFindAncestorClickable: no clickable ancestor found.");
+return null;
+}
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Selector\Selectors.cs ===
+
+﻿using Services.WhatsApp.Abstractions.Selector;
+namespace Services.WhatsApp.Selector
+{
+internal sealed class Selectors : ISelectors
+{
+public string CssSelectorToFindLoggedInMarker => "div[role='textbox'][contenteditable='true']";
+public string CssSelectorToFindSearchInput => "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']";
+public string XpathToFindGridcellAncestor => "./ancestor::*[@role='gridcell' or @role='row' or @tabindex][1]";
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Selenium\WebDriverFacade.cs ===
+
+﻿using OpenQA.Selenium;
+using Services.WhatsApp.Abstractions.Selenium;
+namespace Services.WhatsApp.Selenium
+{
+internal sealed class WebDriverFacade(IWebDriver driver) : IWebDriverFacade
+{
+public IReadOnlyCollection<IWebElement> FindElements(By by)
+=> driver.FindElements(by);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\WhatsApp\ScheduledMessenger.cs ===
 
 ﻿using System.Globalization;
 using Microsoft.Extensions.DependencyInjection;
@@ -44302,7 +47862,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Configuration;
-using Services.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
+namespace Services.WhatsApp.WhatsApp
+{
 public sealed class ScheduledMessenger(
 IServiceScopeFactory scopeFactory,
 IOptionsMonitor<SchedulerOptions> options,
@@ -44316,7 +47878,7 @@ protected override async Task ExecuteAsync(CancellationToken stoppingToken)
 {
 Logger.LogInformation("WhatsAppSchedulerHostedService started.");
 using var scope = ScopeFactory.CreateScope();
-var sender = scope.ServiceProvider.GetRequiredService<IWhatsAppMessage>();
+var sender = scope.ServiceProvider.GetRequiredService<IMessage>();
 await sender.LoginAsync();
 while (!stoppingToken.IsCancellationRequested)
 {
@@ -44395,7 +47957,7 @@ t.Minutes,
 0,
 DateTimeKind.Unspecified
 );
-if(tz.IsInvalidTime(localUnspecified))
+if (tz.IsInvalidTime(localUnspecified))
 continue;
 var offset = tz.GetUtcOffset(localUnspecified);
 var candidateLocal = new DateTimeOffset(localUnspecified, offset);
@@ -44410,6 +47972,63 @@ private static (int Hours, int Minutes)? ParseTime(string value)
 if (TimeSpan.TryParseExact(value, @"hh\:mm", CultureInfo.InvariantCulture, out var ts))
 return ((int)ts.TotalHours, ts.Minutes);
 return null;
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\XPath\ChatXPathBuilder.cs ===
+
+﻿using Services.WhatsApp.Abstractions.XPath;
+namespace Services.WhatsApp.XPath
+{
+internal sealed class ChatXPathBuilder(IXPathLiteralEscaper escaper) : IChatXPathBuilder
+{
+public string GetXpathToFind(string needleLowerInvariant)
+{
+return $"
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\XPath\XPathLiteralEscaper.cs ===
+
+﻿using Microsoft.Extensions.Logging;
+using Services.WhatsApp.Abstractions.XPath;
+using Services.WhatsApp.Login;
+namespace Services.WhatsApp.XPath
+{
+internal sealed class XPathLiteralEscaper(ILogger<LoginService> logger) : IXPathLiteralEscaper
+{
+public string EscapeXPathLiteral(string value)
+{
+if (value is null)
+{
+throw new ArgumentNullException(nameof(value));
+}
+logger.LogDebug(
+"EscapeXPathLiteral started. valueLength={ValueLength}",
+value.Length
+);
+if (!value.Contains("'"))
+{
+logger.LogDebug("EscapeXPathLiteral: Using single-quoted XPath literal.");
+return $"'{value}'";
+}
+if (!value.Contains("\""))
+{
+logger.LogDebug("EscapeXPathLiteral: Using double-quoted XPath literal.");
+return $"\"{value}\"";
+}
+logger.LogDebug("EscapeXPathLiteral: Using concat() XPath literal strategy.");
+var parts = value.Split('\'');
+var partsString = string.Join(", \"'\", ", parts.Select(p => $"'{p}'"));
+var result = "concat(" + partsString + ")";
+logger.LogDebug(
+"EscapeXPathLiteral completed. partCount={PartCount}",
+parts.Length
+);
+return result;
+}
 }
 }
 
@@ -44571,21 +48190,6 @@ throw new Exception("Database initialization failed");
             "ImageFileName": "goku.png",
             "Caption": "🇨🇴¡Hola, soy Goku! 🖐️💥🇨🇴\n\n¡Oigan, amigos de Vancouver! ¡Siento un ki impresionante por aquí! 🇨🇴✨\n\n¿Están buscando la camiseta de la Selección? ⚽ ¡No se queden atrás, el torneo apenas comienza! El Tricolor Fan Club ya elevó su poder al máximo.\n\nEscuchen bien:\n\n✅ ¡Son camisetas con una calidad asombrosa, de verdad!\n\n✅ ¡Tenemos stock justo aquí, incluso las versiones Centenario y Mariposas! Nada de envíos lentos que tardan una eternidad... ¡eso es para las tortugas y nosotros necesitamos velocidad de Teletransportación! 🐢🚫\n\n✅ ¡La entrega es rapidísima en toda el área metropolitana! ¡Ziuuum! ⚡\n\n¡Venga! Apoyen este emprendimiento local y atrapen su camiseta antes de que desaparezcan. ¡Hagan click aquí abajo! 👇\n\n🔗 https://www.instagram.com/tricolorfanclub/\n\n¡Espero que su pasión sea tan grande como una Genkidama! ¡Nos vemos! 🐉🔥"
         }
-    }
-}
-
-
-=== FILE: F:\Marketing\WhatsAppSender\bin\Debug\net8.0\credentials.json ===
-
-{
-    "installed": {
-        "client_id": "1069127382975-mmh863pobp5qls8gad1mmrj5nlg3puv2.apps.googleusercontent.com",
-        "project_id": "bookaroadtest",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret": "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",
-        "redirect_uris": [ "http://localhost" ]
     }
 }
 
@@ -45633,11 +49237,24 @@ throw new Exception("Database initialization failed");
           }
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "runtime": {
+          "Application.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Bootstrapper/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
           "Commands": "1.0.0",
           "Infrastructure": "1.0.0",
+          "Infrastructure.WhatsApp": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Hosting": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
@@ -45661,7 +49278,8 @@ throw new Exception("Database initialization failed");
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
           "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
+          "Services": "1.0.0",
+          "Services.WhatsApp": "1.0.0"
         },
         "runtime": {
           "Commands.dll": {
@@ -45690,6 +49308,9 @@ throw new Exception("Database initialization failed");
         }
       },
       "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "runtime": {
           "Domain.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -45700,12 +49321,26 @@ throw new Exception("Database initialization failed");
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
         "runtime": {
           "Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Infrastructure.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain.WhatsApp": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "Infrastructure.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -45742,6 +49377,30 @@ throw new Exception("Database initialization failed");
         },
         "runtime": {
           "Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Services.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "Services.WhatsApp.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -46264,6 +49923,11 @@ throw new Exception("Database initialization failed");
       "serviceable": false,
       "sha512": ""
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Bootstrapper/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -46294,12 +49958,22 @@ throw new Exception("Database initialization failed");
       "serviceable": false,
       "sha512": ""
     },
+    "Infrastructure.WhatsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Persistence/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services.WhatsApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -50684,12 +54358,6 @@ throw new Exception("Database initialization failed");
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -51340,6 +55008,20 @@ throw new Exception("Database initialization failed");
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Application.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Domain.WhatsApp": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.WhatsApp.dll": {}
+        }
+      },
       "Bootstrapper/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -51347,6 +55029,7 @@ throw new Exception("Database initialization failed");
           "Application": "1.0.0",
           "Commands": "1.0.0",
           "Infrastructure": "1.0.0",
+          "Infrastructure.WhatsApp": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Hosting": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
@@ -51372,7 +55055,8 @@ throw new Exception("Database initialization failed");
           "Microsoft.Extensions.DependencyInjection": "9.0.6",
           "Microsoft.Extensions.Logging": "9.0.6",
           "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
+          "Services": "1.0.0",
+          "Services.WhatsApp": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Commands.dll": {}
@@ -51405,1528 +55089,12 @@ throw new Exception("Database initialization failed");
         }
       },
       "Domain.WhatsApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.WhatsApp.dll": {}
-        }
-      },
-      "Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Application": "1.0.0",
-          "Domain": "1.0.0",
-          "Newtonsoft.Json": "13.0.3",
-          "Persistence": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Infrastructure.dll": {}
-        }
-      },
-      "Persistence/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
-        },
-        "compile": {
-          "bin/placeholder/Persistence.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Persistence.dll": {}
-        }
-      },
-      "Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Configuration": "1.0.0",
-          "Domain.WhatsApp": "1.0.0",
-          "FuzzySharp": "2.0.2",
-          "Google.Apis.Auth": "1.70.0",
-          "Google.Apis.Gmail.v1": "1.70.0.3833",
-          "HtmlAgilityPack": "1.12.1",
-          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Newtonsoft.Json": "13.0.3",
-          "PDFsharp": "6.2.0",
-          "Selenium.WebDriver": "4.33.0",
-          "System.Diagnostics.PerformanceCounter": "9.0.6",
-          "System.Reactive": "6.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Services.dll": {}
-        }
-      }
-    },
-    "net8.0/win-x64": {
-      "FuzzySharp/2.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        }
-      },
-      "Google.Apis/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis.Core": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Core": "1.70.0",
-          "System.Management": "7.0.2"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Auth.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Core/1.70.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Core.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Google.Apis.Gmail.v1/1.70.0.3833": {
-        "type": "package",
-        "dependencies": {
-          "Google.Apis": "1.70.0",
-          "Google.Apis.Auth": "1.70.0"
-        },
-        "compile": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Google.Apis.Gmail.v1.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "HtmlAgilityPack/1.12.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/HtmlAgilityPack.dll": {
-            "related": ".deps.json;.pdb;.xml"
-          }
-        }
-      },
-      "Microsoft.Data.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Analyzers": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Abstractions/9.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Analyzers/9.0.4": {
-        "type": "package"
-      },
-      "Microsoft.EntityFrameworkCore.Relational/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Sqlite.Core": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/_._": {}
-        },
-        "runtime": {
-          "lib/net8.0/_._": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Sqlite.Core/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.Sqlite.Core": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Relational": "9.0.4",
-          "Microsoft.Extensions.Caching.Memory": "9.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyModel": "9.0.4",
-          "Microsoft.Extensions.Logging": "9.0.4",
-          "SQLitePCLRaw.core": "2.1.10",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.Extensions.Caching.Abstractions/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Caching.Memory/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Caching.Abstractions": "9.0.4",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
-          "Microsoft.Extensions.Options": "9.0.4",
-          "Microsoft.Extensions.Primitives": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Binder/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netstandard2.0/Microsoft.Extensions.Configuration.Binder.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.CommandLine/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.EnvironmentVariables/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.FileExtensions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Physical": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Json/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.FileExtensions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "System.Text.Json": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.UserSecrets/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Json": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Physical": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.props": {},
-          "buildTransitive/net8.0/Microsoft.Extensions.Configuration.UserSecrets.targets": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/9.0.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "9.0.4",
-          "System.Text.Json": "9.0.4"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Diagnostics/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileProviders.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileProviders.Physical/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileSystemGlobbing": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Physical.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileProviders.Physical.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.FileSystemGlobbing/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Hosting/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Binder": "9.0.6",
-          "Microsoft.Extensions.Configuration.CommandLine": "9.0.6",
-          "Microsoft.Extensions.Configuration.EnvironmentVariables": "9.0.6",
-          "Microsoft.Extensions.Configuration.FileExtensions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Json": "9.0.6",
-          "Microsoft.Extensions.Configuration.UserSecrets": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Diagnostics": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Physical": "9.0.6",
-          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Configuration": "9.0.6",
-          "Microsoft.Extensions.Logging.Console": "9.0.6",
-          "Microsoft.Extensions.Logging.Debug": "9.0.6",
-          "Microsoft.Extensions.Logging.EventLog": "9.0.6",
-          "Microsoft.Extensions.Logging.EventSource": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Hosting.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "System.Diagnostics.DiagnosticSource": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Configuration/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "9.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Binder": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Console/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging.Configuration": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Text.Json": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Debug/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Debug.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Debug.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.EventLog/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "System.Diagnostics.EventLog": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.EventSource/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6",
-          "System.Text.Json": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.EventSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Options/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Configuration.Binder": "9.0.6",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
-          "Microsoft.Extensions.Options": "9.0.6",
-          "Microsoft.Extensions.Primitives": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/8.0.17": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
-      "Newtonsoft.Json/13.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PDFsharp/6.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.1"
-        },
-        "compile": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/PdfSharp.BarCodes.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Charting.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Cryptography.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Quality.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Shared.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.Snippets.dll": {
-            "related": ".pdb"
-          },
-          "lib/net8.0/PdfSharp.System.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.WPFonts.dll": {
-            "related": ".pdb;.xml"
-          },
-          "lib/net8.0/PdfSharp.dll": {
-            "related": ".BarCodes.pdb;.BarCodes.xml;.Charting.pdb;.Charting.xml;.Cryptography.pdb;.Cryptography.xml;.pdb;.Quality.pdb;.Quality.xml;.Shared.pdb;.Shared.xml;.Snippets.pdb;.System.pdb;.System.xml;.WPFonts.pdb;.WPFonts.xml;.xml"
-          }
-        }
-      },
-      "Selenium.WebDriver/4.33.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Selenium.WebDriver.targets": {}
-        }
-      },
-      "Serilog/3.1.1": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Serilog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Serilog.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.AspNetCore/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "5.0.0",
-          "Microsoft.Extensions.Logging": "5.0.0",
-          "Serilog": "2.10.0",
-          "Serilog.Extensions.Hosting": "4.2.0",
-          "Serilog.Formatting.Compact": "1.1.0",
-          "Serilog.Settings.Configuration": "3.3.0",
-          "Serilog.Sinks.Console": "4.0.1",
-          "Serilog.Sinks.Debug": "2.0.0",
-          "Serilog.Sinks.File": "5.0.0"
-        },
-        "compile": {
-          "lib/net5.0/Serilog.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Serilog.AspNetCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Serilog.Extensions.Hosting/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Serilog": "3.1.1",
-          "Serilog.Extensions.Logging": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/Serilog.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Extensions.Hosting.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Extensions.Logging/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.0",
-          "Serilog": "3.1.1"
-        },
-        "compile": {
-          "lib/net8.0/Serilog.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Formatting.Compact/1.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.8.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Serilog.Formatting.Compact.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Serilog.Formatting.Compact.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Settings.Configuration/3.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "3.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.0",
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Serilog.Settings.Configuration.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Serilog.Settings.Configuration.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Sinks.Console/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/net5.0/Serilog.Sinks.Console.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Serilog.Sinks.Console.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Sinks.Debug/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/netstandard2.1/Serilog.Sinks.Debug.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.1/Serilog.Sinks.Debug.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Serilog.Sinks.File/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Serilog": "2.10.0"
-        },
-        "compile": {
-          "lib/net5.0/Serilog.Sinks.File.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/Serilog.Sinks.File.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/e_sqlite3.dll": {}
-        },
-        "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
-        }
-      },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
-        },
-        "compile": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
-        }
-      },
-      "System.CodeDom/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Configuration.ConfigurationManager/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.EventLog": "9.0.6",
-          "System.Security.Cryptography.ProtectedData": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.EventLog/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {},
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Diagnostics.PerformanceCounter/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.IO.Pipelines/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.IO.Pipelines.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Management/7.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.CodeDom": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Memory/4.5.3": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Reactive/6.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.Pkcs/8.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Text.Encodings.Web/9.0.6": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
-      "System.Text.Json/9.0.6": {
-        "type": "package",
-        "dependencies": {
-          "System.IO.Pipelines": "9.0.6",
-          "System.Text.Encodings.Web": "9.0.6"
-        },
-        "compile": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/System.Text.Json.targets": {}
-        }
-      },
-      "Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Application.dll": {}
-        }
-      },
-      "Bootstrapper/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Application": "1.0.0",
-          "Commands": "1.0.0",
-          "Infrastructure": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Hosting": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
-          "Persistence": "1.0.0",
-          "Serilog.AspNetCore": "5.0.0",
-          "Serilog.Extensions.Hosting": "8.0.0",
-          "Serilog.Sinks.Console": "4.1.0",
-          "Serilog.Sinks.File": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Bootstrapper.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bootstrapper.dll": {}
-        }
-      },
-      "Commands/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Configuration": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "9.0.6",
-          "Microsoft.Extensions.Logging": "9.0.6",
-          "Newtonsoft.Json": "13.0.3",
-          "Services": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Commands.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Commands.dll": {}
-        }
-      },
-      "Configuration/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.Extensions.Options": "9.0.6"
-        },
-        "compile": {
-          "bin/placeholder/Configuration.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Configuration.dll": {}
-        }
-      },
-      "Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      },
-      "Domain.WhatsApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
           "bin/placeholder/Domain.WhatsApp.dll": {}
         },
         "runtime": {
@@ -52938,7 +55106,9 @@ throw new Exception("Database initialization failed");
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Application.WhatsApp": "1.0.0",
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Persistence": "1.0.0"
         },
@@ -52947,6 +55117,20 @@ throw new Exception("Database initialization failed");
         },
         "runtime": {
           "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
+      "Infrastructure.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain.WhatsApp": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.WhatsApp.dll": {}
         }
       },
       "Persistence/1.0.0": {
@@ -52987,6 +55171,32 @@ throw new Exception("Database initialization failed");
         },
         "runtime": {
           "bin/placeholder/Services.dll": {}
+        }
+      },
+      "Services.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Configuration": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
+          "FuzzySharp": "2.0.2",
+          "Google.Apis.Auth": "1.70.0",
+          "Google.Apis.Gmail.v1": "1.70.0.3833",
+          "HtmlAgilityPack": "1.12.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Newtonsoft.Json": "13.0.3",
+          "PDFsharp": "6.2.0",
+          "Selenium.WebDriver": "4.33.0",
+          "Services": "1.0.0",
+          "System.Diagnostics.PerformanceCounter": "9.0.6",
+          "System.Reactive": "6.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Services.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.WhatsApp.dll": {}
         }
       }
     }
@@ -54175,57 +56385,6 @@ throw new Exception("Database initialization failed");
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.17": {
-      "sha512": "x5/y4l8AtshpBOrCZdlE4txw8K3e3s9meBFeZeR3l8hbbku2V7kK6ojhXvrbjg1rk3G+JqL1BI26gtgc1ZrdUw==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.17",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.17.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -55092,6 +57251,11 @@ throw new Exception("Database initialization failed");
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Application.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Application.WhatsApp/Application.WhatsApp.csproj",
+      "msbuildProject": "../Application.WhatsApp/Application.WhatsApp.csproj"
+    },
     "Bootstrapper/1.0.0": {
       "type": "project",
       "path": "../Bootstrapper/Bootstrapper.csproj",
@@ -55122,6 +57286,11 @@ throw new Exception("Database initialization failed");
       "path": "../Infrastructure/Infrastructure.csproj",
       "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     },
+    "Infrastructure.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure.WhatsApp/Infrastructure.WhatsApp.csproj",
+      "msbuildProject": "../Infrastructure.WhatsApp/Infrastructure.WhatsApp.csproj"
+    },
     "Persistence/1.0.0": {
       "type": "project",
       "path": "../Persistence/Persistence.csproj",
@@ -55131,12 +57300,16 @@ throw new Exception("Database initialization failed");
       "type": "project",
       "path": "../Services/Services.csproj",
       "msbuildProject": "../Services/Services.csproj"
+    },
+    "Services.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Services.WhatsApp/Services.WhatsApp.csproj",
+      "msbuildProject": "../Services.WhatsApp/Services.WhatsApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Bootstrapper >= 1.0.0",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.17"
+      "Bootstrapper >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -55146,11 +57319,11 @@ throw new Exception("Database initialization failed");
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\marketing\\WhatsAppSender\\WhatsAppSender.csproj",
+      "projectUniqueName": "F:\\Marketing\\WhatsAppSender\\WhatsAppSender.csproj",
       "projectName": "WhatsAppSender",
-      "projectPath": "F:\\marketing\\WhatsAppSender\\WhatsAppSender.csproj",
+      "projectPath": "F:\\Marketing\\WhatsAppSender\\WhatsAppSender.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\WhatsAppSender\\obj\\",
+      "outputPath": "F:\\Marketing\\WhatsAppSender\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55170,8 +57343,8 @@ throw new Exception("Database initialization failed");
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj": {
-              "projectPath": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj"
+            "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj": {
+              "projectPath": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj"
             }
           }
         }
@@ -55191,14 +57364,6 @@ throw new Exception("Database initialization failed");
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-        "dependencies": {
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.17, )",
-            "autoReferenced": true
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -55217,11 +57382,6 @@ throw new Exception("Database initialization failed");
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
-      }
     }
   }
 }
@@ -55231,17 +57391,17 @@ throw new Exception("Database initialization failed");
 {
   "format": 1,
   "restore": {
-    "F:\\marketing\\WhatsAppSender\\WhatsAppSender.csproj": {}
+    "F:\\Marketing\\WhatsAppSender\\WhatsAppSender.csproj": {}
   },
   "projects": {
-    "F:\\marketing\\Application\\Application.csproj": {
+    "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "F:\\marketing\\Application\\Application.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
+        "projectName": "Application.WhatsApp",
+        "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Application\\obj\\",
+        "outputPath": "F:\\Marketing\\Application.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55261,8 +57421,11 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               }
             }
           }
@@ -55282,14 +57445,6 @@ throw new Exception("Database initialization failed");
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -55308,21 +57463,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj": {
+    "F:\\Marketing\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
-        "projectName": "Bootstrapper",
-        "projectPath": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Bootstrapper\\obj\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55342,17 +57492,88 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+        "projectName": "Bootstrapper",
+        "projectPath": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Bootstrapper\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
-              "F:\\marketing\\Commands\\Commands.csproj": {
-                "projectPath": "F:\\marketing\\Commands\\Commands.csproj"
+              "F:\\Marketing\\Commands\\Commands.csproj": {
+                "projectPath": "F:\\Marketing\\Commands\\Commands.csproj"
               },
-              "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj"
+              "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -55389,12 +57610,6 @@ throw new Exception("Database initialization failed");
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -55430,21 +57645,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Commands\\Commands.csproj": {
+    "F:\\Marketing\\Commands\\Commands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Commands\\Commands.csproj",
+        "projectUniqueName": "F:\\Marketing\\Commands\\Commands.csproj",
         "projectName": "Commands",
-        "projectPath": "F:\\marketing\\Commands\\Commands.csproj",
+        "projectPath": "F:\\Marketing\\Commands\\Commands.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Commands\\obj\\",
+        "outputPath": "F:\\Marketing\\Commands\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55464,11 +57674,14 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Services\\Services.csproj": {
-                "projectPath": "F:\\marketing\\Services\\Services.csproj"
+              "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -55497,12 +57710,6 @@ throw new Exception("Database initialization failed");
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -55526,19 +57733,14 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Configuration\\Configuration.csproj": {
+    "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj",
+        "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
@@ -55581,12 +57783,6 @@ throw new Exception("Database initialization failed");
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[9.0.6, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -55607,21 +57803,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "projectName": "Domain.WhatsApp",
-        "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Domain.WhatsApp\\obj\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55640,7 +57831,11 @@ throw new Exception("Database initialization failed");
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -55658,14 +57853,6 @@ throw new Exception("Database initialization failed");
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -55684,19 +57871,14 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Domain\\Domain.csproj": {
+    "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectUniqueName": "F:\\Marketing\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "F:\\marketing\\Domain\\Domain.csproj",
+        "projectPath": "F:\\Marketing\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
         "outputPath": "F:\\marketing\\Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -55735,14 +57917,6 @@ throw new Exception("Database initialization failed");
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -55761,21 +57935,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Infrastructure\\Infrastructure.csproj": {
+    "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "F:\\marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
+        "projectName": "Infrastructure.WhatsApp",
+        "projectPath": "F:\\Marketing\\Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Infrastructure\\obj\\",
+        "outputPath": "F:\\Marketing\\Infrastructure.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55795,14 +57964,91 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Application\\Application.csproj": {
-                "projectPath": "F:\\marketing\\Application\\Application.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
               },
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "F:\\Marketing\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Application.WhatsApp\\Application.WhatsApp.csproj"
               },
-              "F:\\marketing\\Persistence\\Persistence.csproj": {
-                "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj"
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              },
+              "F:\\Marketing\\Persistence\\Persistence.csproj": {
+                "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -55823,12 +58069,6 @@ throw new Exception("Database initialization failed");
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -55852,21 +58092,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Persistence\\Persistence.csproj": {
+    "F:\\Marketing\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "F:\\marketing\\Persistence\\Persistence.csproj",
+        "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Persistence\\obj\\",
+        "outputPath": "F:\\Marketing\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55886,8 +58121,8 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Domain\\Domain.csproj": {
-                "projectPath": "F:\\marketing\\Domain\\Domain.csproj"
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
           }
@@ -55915,12 +58150,6 @@ throw new Exception("Database initialization failed");
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.4, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -55941,21 +58170,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\Services\\Services.csproj": {
+    "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\Services\\Services.csproj",
-        "projectName": "Services",
-        "projectPath": "F:\\marketing\\Services\\Services.csproj",
+        "projectUniqueName": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
+        "projectName": "Services.WhatsApp",
+        "projectPath": "F:\\Marketing\\Services.WhatsApp\\Services.WhatsApp.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\Services\\obj\\",
+        "outputPath": "F:\\Marketing\\Services.WhatsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55975,11 +58199,14 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Configuration\\Configuration.csproj": {
-                "projectPath": "F:\\marketing\\Configuration\\Configuration.csproj"
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
-              "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
-                "projectPath": "F:\\marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
+              "F:\\Marketing\\Services\\Services.csproj": {
+                "projectPath": "F:\\Marketing\\Services\\Services.csproj"
               }
             }
           }
@@ -56024,11 +58251,122 @@ throw new Exception("Database initialization failed");
               "target": "Package",
               "version": "[9.0.6, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
+              "version": "[13.0.3, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.33.0, )"
+            },
+            "System.Diagnostics.PerformanceCounter": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "F:\\Marketing\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Configuration\\Configuration.csproj": {
+                "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
+              },
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FuzzySharp": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.70.0, )"
+            },
+            "Google.Apis.Gmail.v1": {
+              "target": "Package",
+              "version": "[1.70.0.3833, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.12.1, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.6, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -56069,21 +58407,16 @@ throw new Exception("Database initialization failed");
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
-        }
       }
     },
-    "F:\\marketing\\WhatsAppSender\\WhatsAppSender.csproj": {
+    "F:\\Marketing\\WhatsAppSender\\WhatsAppSender.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\marketing\\WhatsAppSender\\WhatsAppSender.csproj",
+        "projectUniqueName": "F:\\Marketing\\WhatsAppSender\\WhatsAppSender.csproj",
         "projectName": "WhatsAppSender",
-        "projectPath": "F:\\marketing\\WhatsAppSender\\WhatsAppSender.csproj",
+        "projectPath": "F:\\Marketing\\WhatsAppSender\\WhatsAppSender.csproj",
         "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-        "outputPath": "F:\\marketing\\WhatsAppSender\\obj\\",
+        "outputPath": "F:\\Marketing\\WhatsAppSender\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56103,8 +58436,8 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj": {
-                "projectPath": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj"
+              "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj": {
+                "projectPath": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj"
               }
             }
           }
@@ -56124,14 +58457,6 @@ throw new Exception("Database initialization failed");
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.17, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -56149,11 +58474,6 @@ throw new Exception("Database initialization failed");
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
         }
       }
     }
@@ -56173,7 +58493,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66800768080e37fd77f74930526b8e669332f879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -56190,7 +58510,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/66800768080e37fd77f74930526b8e669332f879/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\win-x64\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

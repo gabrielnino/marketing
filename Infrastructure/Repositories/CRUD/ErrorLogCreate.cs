@@ -8,7 +8,7 @@ namespace Infrastructure.Repositories.CRUD
     using ErrorLog = Domain.ErrorLog;
     public class ErrorLogCreate(IUnitOfWork unitOfWork) : CreateRepository<ErrorLog>(unitOfWork), IErrorLogCreate
     {
-        public async Task<Operation<bool>> CreateInvoiceAsync(ErrorLog entity)
+        public async Task<Operation<bool>> CreateAsync(ErrorLog entity)
         {
             return await CreateEntity(entity);
         }
