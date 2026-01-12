@@ -46,6 +46,8 @@ namespace Tools
                     );
             });
 
+
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -72,7 +74,22 @@ namespace Tools
                 {
                     throw new Exception("Database initialization failed");
                 }
+                var context = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
+                if (!context.Any())
+                {
+                    var errorHandler = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
+                    errorHandler.LoadErrorMappings("ErrorMappings.json");
+                }
             }
+            /*
+                         using IServiceScope scope = builder.Services.BuildServiceProvider().CreateScope();
+            var context = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
+            if (!context.Any())
+            {
+                var errorHandler = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
+                errorHandler.LoadErrorMappings("ErrorMappings.json");
+            }
+             */
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
