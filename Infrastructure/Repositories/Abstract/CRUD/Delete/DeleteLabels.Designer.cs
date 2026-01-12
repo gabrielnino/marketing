@@ -61,6 +61,15 @@ namespace Infrastructure.Repositories.Abstract.CRUD.Delete {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} was deleted failed..
+        /// </summary>
+        internal static string DeletionFailed {
+            get {
+                return ResourceManager.GetString("DeletionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} was deleted successfully..
         /// </summary>
         internal static string DeletionSuccess {

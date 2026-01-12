@@ -70,6 +70,15 @@ namespace Infrastructure.Repositories.Abstract.CRUD.Update {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} was updated failed..
+        /// </summary>
+        internal static string UpdationFail {
+            get {
+                return ResourceManager.GetString("UpdationFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} was updated successfully..
         /// </summary>
         internal static string UpdationSuccess {

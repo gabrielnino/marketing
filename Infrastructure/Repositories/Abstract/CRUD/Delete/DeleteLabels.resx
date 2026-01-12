@@ -123,4 +123,7 @@
   <data name="EntityNotFound" xml:space="preserve">
     <value>Entity not found.</value>
   </data>
+  <data name="DeletionFailed" xml:space="preserve">
+    <value>{0} was deleted failed.</value>
+  </data>
 </root>
