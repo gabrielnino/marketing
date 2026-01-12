@@ -71,7 +71,10 @@ namespace Tools
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<DataContext>();
-                db.Database.Migrate(); // applies pending migrations
+                if (!db.Initialize())
+                {
+                    throw new Exception("Database initialization failed");
+                }
             }
             if (app.Environment.IsDevelopment())
             {

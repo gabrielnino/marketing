@@ -1833,6 +1833,30 @@
       "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\createstruture\\constants\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\createstruture\\constants\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\result\\serilogerrorlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\result\\serilogerrorlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -1862,23 +1886,10 @@
               "RelativeDocumentMoniker": "Tools\\Program.cs",
               "ToolTip": "F:\\marketing\\Tools\\Program.cs*",
               "RelativeToolTip": "Tools\\Program.cs*",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAcwF4AAABGAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAcwEkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T02:05:25.948Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SerilogErrorLogger.cs",
-              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Result\\SerilogErrorLogger.cs",
-              "ToolTip": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs*",
-              "RelativeToolTip": "Infrastructure\\Result\\SerilogErrorLogger.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T02:23:18.317Z",
               "EditorCaption": ""
             },
             {
@@ -1935,7 +1946,98 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T03:21:03.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\DataContext.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\DataContext.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\DataContext.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\DataContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwDQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:12:55.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrackedLinkTable.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:12:11.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Database.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\CreateStruture\\Constants\\Database.cs",
+              "RelativeDocumentMoniker": "Persistence\\CreateStruture\\Constants\\Database.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\CreateStruture\\Constants\\Database.cs",
+              "RelativeToolTip": "Persistence\\CreateStruture\\Constants\\Database.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCAAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:11:10.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "TrackedLink.cs",
+              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "RelativeDocumentMoniker": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "RelativeToolTip": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:07:20.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrackedLinkController.cs",
+              "DocumentMoniker": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "RelativeDocumentMoniker": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "ToolTip": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "RelativeToolTip": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T02:54:53.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SerilogErrorLogger.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Result\\SerilogErrorLogger.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs",
+              "RelativeToolTip": "Infrastructure\\Result\\SerilogErrorLogger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T02:23:18.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Bootstrapper",
               "DocumentMoniker": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
               "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
@@ -1948,7 +2050,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "AppHostBuilder.cs",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
@@ -1973,8 +2075,32 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\createstruture\\constants\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\createstruture\\constants\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\result\\serilogerrorlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -1996,17 +2122,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\Tools\\Program.cs",
               "RelativeDocumentMoniker": "Tools\\Program.cs",
               "ToolTip": "F:\\marketing\\Tools\\Program.cs",
               "RelativeToolTip": "Tools\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAcwEkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T02:05:25.948Z",
               "IsPinned": true,
@@ -2066,7 +2192,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T03:21:03.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\DataContext.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\DataContext.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\DataContext.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\DataContext.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwD0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:12:55.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrackedLinkTable.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:12:11.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Database.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\CreateStruture\\Constants\\Database.cs",
+              "RelativeDocumentMoniker": "Persistence\\CreateStruture\\Constants\\Database.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\CreateStruture\\Constants\\Database.cs",
+              "RelativeToolTip": "Persistence\\CreateStruture\\Constants\\Database.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCAAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:11:10.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrackedLink.cs",
+              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "RelativeDocumentMoniker": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "RelativeToolTip": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T03:07:20.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TrackedLinkController.cs",
+              "DocumentMoniker": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "RelativeDocumentMoniker": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "ToolTip": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "RelativeToolTip": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T02:54:53.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "SerilogErrorLogger.cs",
               "DocumentMoniker": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Result\\SerilogErrorLogger.cs",
@@ -2079,7 +2283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Bootstrapper",
               "DocumentMoniker": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
               "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
@@ -2092,7 +2296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "AppHostBuilder.cs",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
@@ -3402,7 +3606,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3419,7 +3623,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\Application.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Application.WhatsApp\UseCases\Repository\CRUD\ITrackedLinkCreate.cs ===
 
@@ -5003,6 +5207,7 @@ Command
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -8176,6 +8381,9 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
@@ -10075,6 +10283,7 @@ Command
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -16162,7 +16371,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -16179,7 +16388,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -17717,7 +17926,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -17734,7 +17943,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Domain.WhatsApp\obj\Debug\net8.0\Domain.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Domain.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -17775,17 +17984,14 @@ using System.Diagnostics.CodeAnalysis;
 namespace Domain.WhatsApp.Redirect
 {
 [method: SetsRequiredMembers]
-public sealed class TrackedLink(string id, string targeUrl) : Entity(id)
+public sealed class TrackedLink(string id, string targetUrl) : Entity(id)
 {
 [Required(ErrorMessage = "A destination URL is required.")]
 [MinLength(5, ErrorMessage = "The destination URL is too short.")]
 [MaxLength(150, ErrorMessage = "The destination URL is too long (maximum 150 characters).")]
-public required string TargetUrl { get; init; } = targeUrl;
+public required string TargetUrl { get; init; } = targetUrl;
 public long VisitCount { get; private set; }
-public void RegisterVisit()
-{
-VisitCount++;
-}
+public void RegisterVisit() => VisitCount++;
 }
 }
 
@@ -18244,6 +18450,7 @@ VisitCount++;
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -19549,6 +19756,9 @@ public const string Success = "Success";
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
@@ -20203,6 +20413,7 @@ public const string Success = "Success";
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -22139,6 +22350,7 @@ return Operation<string>.Success(id, Message.GuidValidator.Success);
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -22842,6 +23054,9 @@ return Operation<string>.Success(id, Message.GuidValidator.Success);
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
@@ -23514,6 +23729,7 @@ return Operation<string>.Success(id, Message.GuidValidator.Success);
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -29195,7 +29411,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -29213,7 +29429,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\ErrorHandlerTests.cs ===
 
@@ -30698,6 +30914,7 @@ true.Should().BeTrue();
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -32188,6 +32405,9 @@ public bool Active { get; set; }
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
@@ -33763,6 +33983,7 @@ public bool Active { get; set; }
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -35848,6 +36069,7 @@ public class Class1
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -36241,6 +36463,17 @@ public class Class1
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Domain.WhatsApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -36433,6 +36666,11 @@ public class Class1
       "hashPath": "system.text.json.9.0.4.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain.WhatsApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -37083,6 +37321,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
 base.OnModelCreating(modelBuilder);
 ErrorLogTable.Create(modelBuilder, _columnTypes);
+TrackedLinkTable.Create(modelBuilder, _columnTypes);
 modelBuilder
 .HasDbFunction(typeof(DataContext)
 .GetMethod(nameof(StringCompareOrdinal), new[] { typeof(string), typeof(string) })!)
@@ -37134,6 +37373,37 @@ entity.Property(i => i.Context)
 .HasColumnType(columnTypes.TypeVar150)
 .HasMaxLength(150)
 .IsRequired(); ;
+});
+}
+}
+}
+
+=== FILE: F:\Marketing\Persistence\Context\Implementation\TrackedLinkTable.cs ===
+
+﻿using Domain.WhatsApp.Redirect;
+using Microsoft.EntityFrameworkCore;
+using Persistence.CreateStructure.Constants;
+using Persistence.CreateStructure.Constants.ColumnType;
+namespace Persistence.Context.Implementation
+{
+public static class TrackedLinkTable
+{
+public static void Create(ModelBuilder modelBuilder, IColumnTypes columnTypes)
+{
+modelBuilder.Entity<TrackedLink>().ToTable(Database.Tables.TrackedLinks);
+modelBuilder.Entity<TrackedLink>(entity =>
+{
+entity.HasKey(x => x.Id);
+entity.Property(x => x.Id)
+.HasColumnType(columnTypes.TypeVar)
+.IsRequired();
+entity.Property(x => x.TargetUrl)
+.HasColumnType(columnTypes.TypeVar150)
+.HasMaxLength(150)
+.IsRequired();
+entity.Property(x => x.VisitCount)
+.HasColumnType(columnTypes.Long)
+.IsRequired();
 });
 }
 }
@@ -37241,6 +37511,7 @@ public const string Users = "Users";
 public const string Invoices = "Invoices";
 public const string Products = "Products";
 public const string ErrorLogs = "ErrorLogs";
+public const string TrackedLinks = "TrackedLinks";
 public const string Profiles = "Profiles";
 public const string Experiences = "Experiences";
 public const string ExperienceRoles = "ExperienceRoles";
@@ -37316,6 +37587,74 @@ public object? Value => null;
     "F:\\Marketing\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
+    "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "projectName": "Domain.WhatsApp",
+        "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Domain.WhatsApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Marketing\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -37407,6 +37746,9 @@ public object? Value => null;
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
@@ -38001,6 +38343,19 @@ public object? Value => null;
         },
         "runtime": {
           "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Domain.WhatsApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.WhatsApp.dll": {}
         }
       }
     }
@@ -38735,11 +39090,17 @@ public object? Value => null;
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Domain.WhatsApp/1.0.0": {
+      "type": "project",
+      "path": "../Domain.WhatsApp/Domain.WhatsApp.csproj",
+      "msbuildProject": "../Domain.WhatsApp/Domain.WhatsApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Domain >= 1.0.0",
+      "Domain.WhatsApp >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.4"
     ]
@@ -38755,7 +39116,7 @@ public object? Value => null;
       "projectName": "Persistence",
       "projectPath": "F:\\Marketing\\Persistence\\Persistence.csproj",
       "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
-      "outputPath": "F:\\marketing\\Persistence\\obj\\",
+      "outputPath": "F:\\Marketing\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -38775,6 +39136,9 @@ public object? Value => null;
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+              "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+            },
             "F:\\Marketing\\Domain\\Domain.csproj": {
               "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
             }
@@ -38841,7 +39205,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -38858,7 +39222,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Persistence\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -42887,7 +43251,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -42904,7 +43268,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -46220,7 +46584,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -46237,7 +46601,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/bcb1ceb716b17d50e1bb3512b9fc8ebed028f4d7/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e5f94ccd7cbee270e24cde4cfdd7915a8ebe8313/*"}}
 
 === FILE: F:\Marketing\Services.WhatsApp\OpenChat\ChatClicker.cs ===
 
@@ -57731,6 +58095,11 @@ builder.Services.AddScoped<ITrackedLinkCreate, TrackedLinkCreate>();
 builder.Services.AddScoped<ITrackedLinkRead, TrackedLinkRead>();
 builder.Services.AddScoped<ITrackedLinkUpdate, TrackedLinkUpdate>();
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+var db = scope.ServiceProvider.GetRequiredService<DataContext>();
+db.Database.Migrate();
+}
 if (app.Environment.IsDevelopment())
 {
 app.UseSwagger();
@@ -58854,6 +59223,7 @@ public string? Summary { get; set; }
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -59411,6 +59781,52 @@ TemperatureC = Random.Shared.Next(-20, 55),
 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
 })
 .ToArray();
+}
+}
+}
+
+=== FILE: F:\Marketing\Tools\Controllers\api\v1\Redirect\TrackedLinkController.cs ===
+
+﻿using Application.WhatsApp.UseCases.Repository.CRUD;
+using Domain.WhatsApp.Redirect;
+using Microsoft.AspNetCore.Mvc;
+namespace Api.Controllers.v1.Redirect
+{
+[ApiController]
+[Route("api/v1/tracked-links")]
+public sealed class TrackedLinkController(
+ITrackedLinkCreate trackedLinkCreate,
+ITrackedLinkRead trackedLinkRead) : ControllerBase
+{
+private readonly ITrackedLinkCreate _create = trackedLinkCreate;
+private readonly ITrackedLinkRead _read = trackedLinkRead;
+[HttpPost]
+[ProducesResponseType(typeof(TrackedLink), StatusCodes.Status201Created)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<IActionResult> Create([FromBody] TrackedLink trackedLink)
+{
+if (!ModelState.IsValid)
+{
+return BadRequest(ModelState);
+}
+var op = await _create.CreateAsync(trackedLink);
+if (!op.IsSuccessful)
+{
+return BadRequest(op.Message);
+}
+return CreatedAtAction(nameof(ReadById), new { id = trackedLink.Id }, trackedLink);
+}
+[HttpGet("{id}")]
+[ProducesResponseType(typeof(List<TrackedLink>), StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<IActionResult> ReadById([FromRoute] string id)
+{
+var op = await _read.ReadAsync(id);
+if (!op.IsSuccessful)
+{
+return BadRequest(op.Message);
+}
+return Ok(op.Data);
 }
 }
 }
@@ -60782,6 +61198,7 @@ Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -63426,6 +63843,9 @@ Summary = Summaries[Random.Shared.Next(Summaries.Length)]
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
@@ -63611,6 +64031,76 @@ using System.Reflection;
 
 [
   {
+    "ContainingType": "Api.Controllers.v1.Redirect.TrackedLinkController",
+    "Method": "Create",
+    "RelativePath": "api/v1/tracked-links",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "trackedLink",
+        "Type": "Domain.WhatsApp.Redirect.TrackedLink",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Domain.WhatsApp.Redirect.TrackedLink",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "Api.Controllers.v1.Redirect.TrackedLinkController",
+    "Method": "ReadById",
+    "RelativePath": "api/v1/tracked-links/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Domain.WhatsApp.Redirect.TrackedLink, Domain.WhatsApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
     "ContainingType": "Tools.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
@@ -63635,11 +64125,11 @@ using System.Reflection;
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json ===
 
-{"GlobalPropertiesHash":"ZXOjFfPvrc8Ek9CbvNQ68/7avXR6Ds0xIFc2SAC7gck=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["LdvjjXaAMQInlQbPqDYJdW7h6FtwwstIWx3LCIa1dgI=","PGNqJguUPALoh3cMxN9D3wYLfcQa2mi3De1HDdj7zxM=","FrVip5dzPZ/ic1Pnq56zQ3vh9KybYYBJQzePMhuOwOs=","OGeDpL1zARpb1YvhuE0YRwXhtKSViEDmLHQNAROBxQw=","2xjF4jsKy0VRIt0H7jgqAAal3T\u002BE7MKt4y29OFS4S5w=","8\u002B4/s/X5xnj4cK/ZTThc\u002B773jUS9K4sheKv4Ne7jCLU="],"CachedAssets":{},"CachedCopyCandidates":{}}
+{"GlobalPropertiesHash":"ZXOjFfPvrc8Ek9CbvNQ68/7avXR6Ds0xIFc2SAC7gck=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["LdvjjXaAMQInlQbPqDYJdW7h6FtwwstIWx3LCIa1dgI=","mq/dWE0vsNFWLiULq6SgksUNV6FWaH5go/VlXvMZ2mQ=","FrVip5dzPZ/ic1Pnq56zQ3vh9KybYYBJQzePMhuOwOs=","OGeDpL1zARpb1YvhuE0YRwXhtKSViEDmLHQNAROBxQw=","2xjF4jsKy0VRIt0H7jgqAAal3T\u002BE7MKt4y29OFS4S5w=","TWLyEvwzA4GQHcVntrs2KRL7iKebIQO50sbdx021FQo="],"CachedAssets":{},"CachedCopyCandidates":{}}
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\rjsmrazor.dswa.cache.json ===
 
-{"GlobalPropertiesHash":"xvBbI09MJnkLHeUT2lCBELRXIZEmXWSZGWE+4oLOKcw=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["LdvjjXaAMQInlQbPqDYJdW7h6FtwwstIWx3LCIa1dgI=","PGNqJguUPALoh3cMxN9D3wYLfcQa2mi3De1HDdj7zxM=","FrVip5dzPZ/ic1Pnq56zQ3vh9KybYYBJQzePMhuOwOs=","OGeDpL1zARpb1YvhuE0YRwXhtKSViEDmLHQNAROBxQw=","2xjF4jsKy0VRIt0H7jgqAAal3T\u002BE7MKt4y29OFS4S5w=","8\u002B4/s/X5xnj4cK/ZTThc\u002B773jUS9K4sheKv4Ne7jCLU="],"CachedAssets":{},"CachedCopyCandidates":{}}
+{"GlobalPropertiesHash":"xvBbI09MJnkLHeUT2lCBELRXIZEmXWSZGWE+4oLOKcw=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["LdvjjXaAMQInlQbPqDYJdW7h6FtwwstIWx3LCIa1dgI=","mq/dWE0vsNFWLiULq6SgksUNV6FWaH5go/VlXvMZ2mQ=","FrVip5dzPZ/ic1Pnq56zQ3vh9KybYYBJQzePMhuOwOs=","OGeDpL1zARpb1YvhuE0YRwXhtKSViEDmLHQNAROBxQw=","2xjF4jsKy0VRIt0H7jgqAAal3T\u002BE7MKt4y29OFS4S5w=","TWLyEvwzA4GQHcVntrs2KRL7iKebIQO50sbdx021FQo="],"CachedAssets":{},"CachedCopyCandidates":{}}
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\rpswa.dswa.cache.json ===
 
@@ -63703,6 +64193,142 @@ using System.Reflection;
     "version": "1.0"
   },
   "paths": {
+    "/api/v1/tracked-links": {
+      "post": {
+        "tags": [
+          "TrackedLink"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrackedLink"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrackedLink"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrackedLink"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrackedLink"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrackedLink"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrackedLink"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tracked-links/{id}": {
+      "get": {
+        "tags": [
+          "TrackedLink"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrackedLink"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrackedLink"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TrackedLink"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -63745,6 +64371,60 @@ using System.Reflection;
   },
   "components": {
     "schemas": {
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TrackedLink": {
+        "required": [
+          "id",
+          "targetUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "targetUrl": {
+            "maxLength": 150,
+            "minLength": 5,
+            "type": "string"
+          },
+          "visitCount": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "WeatherForecast": {
         "type": "object",
         "properties": {
@@ -65138,6 +65818,7 @@ throw new Exception("Database initialization failed");
       "Persistence/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -70927,6 +71608,7 @@ throw new Exception("Database initialization failed");
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Domain.WhatsApp": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4"
         },
@@ -73910,6 +74592,9 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj": {
+                "projectPath": "F:\\Marketing\\Domain.WhatsApp\\Domain.WhatsApp.csproj"
+              },
               "F:\\Marketing\\Domain\\Domain.csproj": {
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }

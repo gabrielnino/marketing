@@ -46,19 +46,8 @@ namespace Persistence.Context.Implementation
         {
             base.OnModelCreating(modelBuilder);
 
-            // === Core domain ===
-            //ProfileTable.Create(modelBuilder, _columnTypes);
-            //ExperienceTable.Create(modelBuilder, _columnTypes);
-            //ExperienceRoleTable.Create(modelBuilder, _columnTypes);
-            //EducationTable.Create(modelBuilder, _columnTypes);
-            //CommunicationTable.Create(modelBuilder, _columnTypes);
             ErrorLogTable.Create(modelBuilder, _columnTypes);
-            TrackedLinkTable.Create(modelBuilder, _columnTypes);
-            // DB function mapping
-            modelBuilder
-                .HasDbFunction(typeof(DataContext)
-                    .GetMethod(nameof(StringCompareOrdinal), new[] { typeof(string), typeof(string) })!)
-                .HasName("StringCompareOrdinal");
+            TrackedLinkTable.Create(modelBuilder, _columnTypes); // ✅ add this
         }
 
 
