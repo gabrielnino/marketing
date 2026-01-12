@@ -6,7 +6,8 @@ using Persistence.Context.Interface;
 
 namespace Infrastructure.WhatsApp.Repositories.CRUD
 {
-    public class TrackedLinkUpdate(IUnitOfWork unitOfWork) : CreateRepository<TrackedLink>(unitOfWork), ITrackedLinkUpdate
+    public class TrackedLinkUpdate(IUnitOfWork unitOfWork,
+        IErrorHandler errorHandler) : CreateRepository<TrackedLink>(unitOfWork, errorHandler), ITrackedLinkUpdate
     {
         public async Task<Operation<bool>> UpdateAsync(TrackedLink entity)
         {

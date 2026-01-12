@@ -1,9 +1,7 @@
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Application.WhatsApp.UseCases.Repository.CRUD;
 using Commands;
 using Configuration;
-using Infrastructure.Repositories.CRUD;
 using Infrastructure.Result;
 using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
@@ -123,7 +121,6 @@ namespace Bootstrapper
                     services.AddScoped<IDataContext, DataContext>();
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
                     services.AddScoped<IErrorHandler, ErrorHandler>();
-                    services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
                     services.AddSingleton<IColumnTypes, SQLite>();
 
                     services.AddSingleton<ITrackedLinkCreate, TrackedLinkCreate>();

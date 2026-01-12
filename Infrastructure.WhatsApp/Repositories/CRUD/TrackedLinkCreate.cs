@@ -1,5 +1,4 @@
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Application.WhatsApp.UseCases.Repository.CRUD;
 using Domain;
 using Domain.WhatsApp.Redirect;
@@ -8,7 +7,8 @@ using Persistence.Context.Interface;
 
 namespace Infrastructure.WhatsApp.Repositories.CRUD
 {
-    public class TrackedLinkCreate(IUnitOfWork unitOfWork) : CreateRepository<TrackedLink>(unitOfWork), ITrackedLinkCreate
+    public class TrackedLinkCreate(IUnitOfWork unitOfWork,
+        IErrorHandler errorHandler) : CreateRepository<TrackedLink>(unitOfWork, errorHandler), ITrackedLinkCreate
     {
         public async Task<Operation<bool>> CreateAsync(TrackedLink entity)
         {

@@ -4,16 +4,10 @@ using Services.Interfaces;
 
 namespace Services
 {
-    public class CaptureSnapshot : ICaptureSnapshot
+    public class CaptureSnapshot(IWebDriver driver, ILogger<CaptureSnapshot> logger) : ICaptureSnapshot
     {
-        private readonly IWebDriver _driver;
-        private readonly ILogger<CaptureSnapshot> _logger;
-
-        public CaptureSnapshot(IWebDriver driver, ILogger<CaptureSnapshot> logger)
-        {
-            _driver = driver;
-            _logger = logger;
-        }
+        private readonly IWebDriver _driver = driver;
+        private readonly ILogger<CaptureSnapshot> _logger = logger;
 
         public async Task<string> CaptureArtifactsAsync(string executionFolder, string stage)
         {

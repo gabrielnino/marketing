@@ -61,6 +61,15 @@ namespace Infrastructure.Repositories.Abstract.CRUD.Create {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} was created failed..
+        /// </summary>
+        internal static string CreationFail {
+            get {
+                return ResourceManager.GetString("CreationFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} was created successfully..
         /// </summary>
         internal static string CreationSuccess {

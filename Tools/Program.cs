@@ -1,8 +1,6 @@
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Application.WhatsApp.UseCases.Repository.CRUD;
 using Configuration;
-using Infrastructure.Repositories.CRUD;
 using Infrastructure.Result;
 using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
@@ -60,7 +58,6 @@ namespace Tools
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
             builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
-            builder.Services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
             builder.Services.AddScoped<IErrorLogger, SerilogErrorLogger>();
             builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
             builder.Services.AddSingleton<IColumnTypes, SQLite>();

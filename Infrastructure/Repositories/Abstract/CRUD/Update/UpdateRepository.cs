@@ -26,6 +26,7 @@ namespace Infrastructure.Repositories.Abstract.CRUD.Update
 
             var success = UpdateLabels.UpdationSuccess;
             var message = string.Format(success, typeof(T).Name);
+            await unitOfWork.CommitAsync();
             return Operation<bool>.Success(true, message);
         }
 

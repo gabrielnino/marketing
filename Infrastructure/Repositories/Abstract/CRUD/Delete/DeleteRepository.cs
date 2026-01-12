@@ -26,6 +26,7 @@ namespace Infrastructure.Repositories.Abstract.CRUD.Delete
             Delete(entity);
             var success = DeleteLabels.DeletionSuccess;
             var message = string.Format(success, typeof(T).Name);
+            await unitOfWork.CommitAsync();
             return Operation<bool>.Success(true, message);
         }
     }
