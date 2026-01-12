@@ -53,7 +53,7 @@ namespace Persistence.Context.Implementation
             //EducationTable.Create(modelBuilder, _columnTypes);
             //CommunicationTable.Create(modelBuilder, _columnTypes);
             ErrorLogTable.Create(modelBuilder, _columnTypes);
-
+            TrackedLinkTable.Create(modelBuilder, _columnTypes);
             // DB function mapping
             modelBuilder
                 .HasDbFunction(typeof(DataContext)

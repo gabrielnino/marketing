@@ -13,73 +13,66 @@ using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
 
-namespace Api
+namespace Tools
 {
-    internal class Program
+    public sealed class Program
     {
-        private const string Connection = "Connection string 'DefaultConnection' is missing or empty.";
-        private const string AppSettingsFileName = "appsettings.json";
-        private const string OutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}";
+        private const string ConnectionMissingMessage =
+            "Connection string 'DefaultConnection' is missing or empty.";
 
-        private static void Main(string[] args)
+        private const string OutputTemplate =
+            "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}";
+
+        public static void Main(string[] args)
         {
-            var appConfig = new AppConfig();
-
-            var basePath = Directory.GetCurrentDirectory();
-            Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((hostingContext, config) =>
-                {
-                    Configure(config, basePath);
-                })
-                .ConfigureServices((hostingContext, services) =>
-                {
-                    hostingContext.Configuration.Bind(appConfig);
-                    services.AddSingleton(appConfig);
-                    AddDbContextSQLite(hostingContext, services);
-                    services.AddScoped<IUnitOfWork, UnitOfWork>();
-                    services.AddScoped<IDataContext, DataContext>();
-                    services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
-                    services.AddScoped<IErrorHandler, ErrorHandler>();
-                    services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
-                    services.AddSingleton<IColumnTypes, SQLite>();
-                    services.AddSingleton<ITrackedLinkCreate, TrackedLinkCreate>();
-                    services.AddSingleton<ITrackedLinkRead, TrackedLinkRead>();
-                    services.AddSingleton<ITrackedLinkUpdate, TrackedLinkUpdate>();
-
-                })
-                .UseSerilog((context, services, loggerConfig) =>
-                {
-                    var execution = services.GetRequiredService<ExecutionTracker>();
-                    var logPath = Path.Combine(execution.ExecutionRunning, "Logs");
-                    Directory.CreateDirectory(logPath);
-
-                    loggerConfig
-                        .MinimumLevel.Debug()
-                        .WriteTo.Console()
-                        .WriteTo.File(
-                            path: Path.Combine(logPath, "Marketing-.log"),
-                            rollingInterval: RollingInterval.Day,
-                            fileSizeLimitBytes: 5_000_000,
-                            retainedFileCountLimit: 7,
-                            rollOnFileSizeLimit: true,
-                            outputTemplate:
-                                OutputTemplate
-                        );
-                });
-
             var builder = WebApplication.CreateBuilder(args);
+            var appConfig = new AppConfig();
+            builder.Configuration.Bind(appConfig);
+            builder.Services.AddSingleton(appConfig);
+            builder.Host.UseSerilog((context, services, loggerConfig) =>
+            {
+                var logRoot = TryGetExecutionRunning(services) ?? context.HostingEnvironment.ContentRootPath;
+                var logPath = Path.Combine(logRoot, "Logs");
+                Directory.CreateDirectory(logPath);
 
-            // Add services to the container.
+                loggerConfig
+                    .MinimumLevel.Debug()
+                    .WriteTo.Console()
+                    .WriteTo.File(
+                        path: Path.Combine(logPath, "Redirect-.log"),
+                        rollingInterval: RollingInterval.Day,
+                        fileSizeLimitBytes: 5_000_000,
+                        retainedFileCountLimit: 7,
+                        rollOnFileSizeLimit: true,
+                        outputTemplate: OutputTemplate
+                    );
+            });
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddHttpClient();
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddMemoryCache();
 
-           
+            AddDbContextSQLite(builder);
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
+            builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
+            builder.Services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
+            builder.Services.AddScoped<IErrorLogger, SerilogErrorLogger>();
+            builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
+            builder.Services.AddSingleton<IColumnTypes, SQLite>();
+            builder.Services.AddScoped<ITrackedLinkCreate, TrackedLinkCreate>();
+            builder.Services.AddScoped<ITrackedLinkRead, TrackedLinkRead>();
+            builder.Services.AddScoped<ITrackedLinkUpdate, TrackedLinkUpdate>();
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<DataContext>();
+                db.Database.Migrate(); // applies pending migrations
+            }
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -95,53 +88,35 @@ namespace Api
             app.Run();
         }
 
-        private static void Configure(IConfigurationBuilder config, string basePath)
+        private static void AddDbContextSQLite(WebApplicationBuilder builder)
         {
-            config.SetBasePath(basePath);
-            // 🔴 HARD FAIL – explicit, early, deterministic
-
-
-            config.AddJsonFile(
-                path: AppSettingsFileName,
-                optional: false,
-                reloadOnChange: true
-            );
-
-            config.AddEnvironmentVariables();
-        }
-
-        private static void AddDbContextSQLite( HostBuilderContext context,IServiceCollection services)
-        {
-
-
-
-            var connectionString =  context.Configuration.GetConnectionString("DefaultConnection");
-
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                throw new ArgumentNullException(nameof(connectionString), Connection);
-            }
+                throw new ArgumentNullException(nameof(connectionString), ConnectionMissingMessage);
 
-
-            services.AddHttpClient();
-            services.AddControllers();
-            services.AddEndpointsApiExplorer();
-            //services.AddSwaggerGen();
-            services.AddDistributedMemoryCache();
-
-
-            services.AddDbContext<DataContext>(options =>
+            builder.Services.AddDbContext<DataContext>(options =>
             {
                 options
                     .UseSqlite(connectionString, sqlite =>
                     {
-                        string? name = typeof(DataContext).Assembly.GetName().Name;
-                        sqlite.MigrationsAssembly(name);
+                        var migrationsAssembly = typeof(DataContext).Assembly.GetName().Name;
+                        sqlite.MigrationsAssembly(migrationsAssembly);
                     })
                     .AddInterceptors(new SqliteFunctionInterceptor());
             });
+        }
 
-            services.AddMemoryCache();
+        private static string? TryGetExecutionRunning(IServiceProvider services)
+        {
+            try
+            {
+                var tracker = services.GetService(typeof(ExecutionTracker)) as ExecutionTracker;
+                return tracker?.ExecutionRunning;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
