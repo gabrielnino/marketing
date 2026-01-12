@@ -1,6 +1,0 @@
-@Tool_HostAddress = http://localhost:5182
-
-GET {{Tool_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
