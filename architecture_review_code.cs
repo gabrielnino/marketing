@@ -1829,6 +1829,34 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\update\\updatelabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\update\\updatelabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\delete\\deletelabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\delete\\deletelabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\update\\updaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\update\\updaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\delete\\deleterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\delete\\deleterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\create\\createlabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\create\\createlabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\create\\createrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\create\\createrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|f:\\marketing\\infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|solutionrelative:infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -1837,16 +1865,28 @@
       "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\errormappings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\errormappings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\create\\createlabels.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\create\\createlabels.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|f:\\marketing\\infrastructure.whatsapp\\repositories\\crud\\trackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|solutionrelative:infrastructure.whatsapp\\repositories\\crud\\trackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -1859,10 +1899,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\result\\serilogerrorlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\result\\serilogerrorlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -1933,31 +1969,159 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UpdateLabels.resx",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateLabels.resx",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateLabels.resx",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateLabels.resx",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateLabels.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-01-12T05:26:32.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteLabels.resx",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteLabels.resx",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteLabels.resx",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteLabels.resx",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteLabels.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-01-12T05:14:10.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateLabels.resx",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-01-12T05:13:10.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeleteRepository.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T05:11:55.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ErrorMappings.json",
+              "DocumentMoniker": "F:\\marketing\\Tools\\ErrorMappings.json",
+              "RelativeDocumentMoniker": "Tools\\ErrorMappings.json",
+              "ToolTip": "F:\\marketing\\Tools\\ErrorMappings.json",
+              "RelativeToolTip": "Tools\\ErrorMappings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T04:54:22.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateRepository.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:47:21.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateLabels.Designer.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:47:20.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TrackedLinkUpdate.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "RelativeDocumentMoniker": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "RelativeToolTip": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:46:20.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TrackedLinkCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeToolTip": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:45:51.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpdateRepository.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:16:50.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "TrackedLinkController.cs",
               "DocumentMoniker": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
               "RelativeDocumentMoniker": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
               "ToolTip": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
               "RelativeToolTip": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAwwCgAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAnwB8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T03:59:19.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\Tools\\Program.cs",
               "RelativeDocumentMoniker": "Tools\\Program.cs",
               "ToolTip": "F:\\marketing\\Tools\\Program.cs",
               "RelativeToolTip": "Tools\\Program.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAIwE4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAkwFEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T03:59:19.937Z"
+              "WhenOpened": "2026-01-12T03:59:19.937Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
               "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
@@ -1969,7 +2133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
               "Title": "DataContext.cs",
               "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\DataContext.cs",
               "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\DataContext.cs",
@@ -1981,7 +2145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "TrackedLinkTable.cs",
               "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
               "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
@@ -1993,7 +2157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "Database.cs",
               "DocumentMoniker": "F:\\marketing\\Persistence\\CreateStruture\\Constants\\Database.cs",
               "RelativeDocumentMoniker": "Persistence\\CreateStruture\\Constants\\Database.cs",
@@ -2005,19 +2169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TrackedLink.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwA0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T03:07:20.483Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "SerilogErrorLogger.cs",
               "DocumentMoniker": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Result\\SerilogErrorLogger.cs",
@@ -2029,7 +2181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "Bootstrapper.csproj",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
               "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
@@ -2041,15 +2193,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AppHostBuilder.cs",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
               "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAWwCUAAAB8AAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAADgv3oAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T02:01:39.693Z"
+              "WhenOpened": "2026-01-12T02:01:39.693Z",
+              "EditorCaption": ""
             }
           ]
         }
@@ -2065,6 +2218,26 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\update\\updaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\update\\updaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\delete\\deleterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\delete\\deleterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\create\\createlabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\create\\createlabels.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\create\\createrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\create\\createrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|f:\\marketing\\infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|solutionrelative:infrastructure.whatsapp\\repositories\\crud\\trackedlinkcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\controllers\\api\\v1\\redirect\\trackedlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -2073,16 +2246,28 @@
       "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|f:\\marketing\\tools\\errormappings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51460CED-03D9-4639-859A-406DC15ADCE9}|Tools\\Tools.csproj|solutionrelative:tools\\errormappings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\repositories\\abstract\\crud\\create\\createlabels.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\abstract\\crud\\create\\createlabels.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|f:\\marketing\\infrastructure.whatsapp\\repositories\\crud\\trackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55132C52-996F-4BDE-B0E3-97623014559F}|Infrastructure.WhatsApp\\Infrastructure.WhatsApp.csproj|solutionrelative:infrastructure.whatsapp\\repositories\\crud\\trackedlinkupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\trackedlinktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\redirect\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -2097,10 +2282,6 @@
       "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\result\\serilogerrorlogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -2112,7 +2293,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -2168,32 +2349,136 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateLabels.resx",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-01-12T05:13:10.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteRepository.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Delete\\DeleteRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T05:11:55.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ErrorMappings.json",
+              "DocumentMoniker": "F:\\marketing\\Tools\\ErrorMappings.json",
+              "RelativeDocumentMoniker": "Tools\\ErrorMappings.json",
+              "ToolTip": "F:\\marketing\\Tools\\ErrorMappings.json",
+              "RelativeToolTip": "Tools\\ErrorMappings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-12T04:54:22.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateRepository.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:47:21.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreateLabels.Designer.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Create\\CreateLabels.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:47:20.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TrackedLinkUpdate.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "RelativeDocumentMoniker": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "RelativeToolTip": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:46:20.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrackedLinkCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeDocumentMoniker": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "RelativeToolTip": "Infrastructure.WhatsApp\\Repositories\\CRUD\\TrackedLinkCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:45:51.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UpdateRepository.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs*",
+              "RelativeToolTip": "Infrastructure\\Repositories\\Abstract\\CRUD\\Update\\UpdateRepository.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T04:16:50.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "TrackedLinkController.cs",
               "DocumentMoniker": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
               "RelativeDocumentMoniker": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
               "ToolTip": "F:\\marketing\\Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
               "RelativeToolTip": "Tools\\Controllers\\api\\v1\\Redirect\\TrackedLinkController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAwwCgAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAnwB8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T03:59:19.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\Tools\\Program.cs",
               "RelativeDocumentMoniker": "Tools\\Program.cs",
               "ToolTip": "F:\\marketing\\Tools\\Program.cs",
               "RelativeToolTip": "Tools\\Program.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAIwE4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAkwFEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T03:59:19.937Z"
+              "WhenOpened": "2026-01-12T03:59:19.937Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
               "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
@@ -2205,7 +2490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "DataContext.cs",
               "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\DataContext.cs",
               "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\DataContext.cs",
@@ -2217,7 +2502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "TrackedLinkTable.cs",
               "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
               "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\TrackedLinkTable.cs",
@@ -2229,7 +2514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "Database.cs",
               "DocumentMoniker": "F:\\marketing\\Persistence\\CreateStruture\\Constants\\Database.cs",
               "RelativeDocumentMoniker": "Persistence\\CreateStruture\\Constants\\Database.cs",
@@ -2241,19 +2526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TrackedLink.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\Redirect\\TrackedLink.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwA0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T03:07:20.483Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "SerilogErrorLogger.cs",
               "DocumentMoniker": "F:\\marketing\\Infrastructure\\Result\\SerilogErrorLogger.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Result\\SerilogErrorLogger.cs",
@@ -2265,7 +2538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "Bootstrapper.csproj",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\Bootstrapper.csproj",
               "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
@@ -2277,20 +2550,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AppHostBuilder.cs",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
               "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAWwCUAAAB8AAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAADgv3oAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T02:01:39.693Z"
+              "WhenOpened": "2026-01-12T02:01:39.693Z",
+              "EditorCaption": ""
             }
           ]
         }
       ]
     }
+  ]
+}
+
+=== FILE: F:\Marketing\.vs\Marketing\v17\ResourceExplorer\settings.json ===
+
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [],
+  "ExpandedProjects": [],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "type",
+    "neutral-value",
+    "neutral-comment"
+  ],
+  "VisibleColumnKeys": [
+    "name",
+    "neutral-value"
   ]
 }
 
@@ -2714,7 +3007,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application\obj\Debug\net8.0\Application.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Application\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -3048,27 +3341,6 @@ namespace Application.UseCases.Repository.CRUD.Query
 public interface IReadById<T> where T : class, IEntity
 {
 Task<Operation<T>> ReadById(string id);
-}
-}
-
-=== FILE: F:\Marketing\Application\UseCases\Repository\UseCases\CRUD\IErrorLogCreate.cs ===
-
-﻿using Application.Result;
-using Domain;
-namespace Application.UseCases.Repository.UseCases.CRUD
-{
-public interface IErrorLogCreate
-{
-Task<Operation<bool>> CreateAsync(ErrorLog entity);
-}
-}
-
-=== FILE: F:\Marketing\Application.WhatsApp\Class1.cs ===
-
-﻿namespace Application.WhatsApp
-{
-public class Class1
-{
 }
 }
 
@@ -3603,7 +3875,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\Application.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Application.WhatsApp\UseCases\Repository\CRUD\ITrackedLinkCreate.cs ===
 
@@ -3649,11 +3921,9 @@ Task<Operation<bool>> UpdateAsync(TrackedLink entity);
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Application.WhatsApp.UseCases.Repository.CRUD;
 using Commands;
 using Configuration;
-using Infrastructure.Repositories.CRUD;
 using Infrastructure.Result;
 using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
@@ -3760,7 +4030,6 @@ services.AddScoped<IUnitOfWork, UnitOfWork>();
 services.AddScoped<IDataContext, DataContext>();
 services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
 services.AddScoped<IErrorHandler, ErrorHandler>();
-services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
 services.AddSingleton<IColumnTypes, SQLite>();
 services.AddSingleton<ITrackedLinkCreate, TrackedLinkCreate>();
 services.AddSingleton<ITrackedLinkRead, TrackedLinkRead>();
@@ -12578,7 +12847,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c815a9f36bbd1dcd37dbe19160921766b44ee3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80a6d7c819a48121d39d1a164b12e32018dd59f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -12595,7 +12864,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/a80a6d7c819a48121d39d1a164b12e32018dd59f/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -16368,7 +16637,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -21303,7 +21572,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+562ae9bc905fdc8f4db372d0770aa0049873c53f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80a6d7c819a48121d39d1a164b12e32018dd59f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -21320,7 +21589,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/a80a6d7c819a48121d39d1a164b12e32018dd59f/*"}}
 
 === FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -21387,6 +21656,11 @@ set {
 resourceCulture = value;
 }
 }
+internal static string CreationFail {
+get {
+return ResourceManager.GetString("CreationFail", resourceCulture);
+}
+}
 internal static string CreationSuccess {
 get {
 return ResourceManager.GetString("CreationSuccess", resourceCulture);
@@ -21404,21 +21678,35 @@ using Persistence.Context.Interface;
 using Persistence.Repositories;
 namespace Infrastructure.Repositories.Abstract.CRUD.Create
 {
-public abstract class CreateRepository<T>(IUnitOfWork unitOfWork)
+public abstract class CreateRepository<T>(
+IUnitOfWork unitOfWork,
+IErrorHandler errorHandler)
 : RepositoryCreate<T>(unitOfWork), ICreate<T> where T : class, IEntity
 {
+private readonly IErrorHandler ErrorHandler = errorHandler;
 public async Task<Operation<bool>> CreateEntity(T entity)
+{
+try
 {
 await Create(entity);
 var success = CreateLabels.CreationSuccess;
 var message = string.Format(success, typeof(T).Name);
+await unitOfWork.CommitAsync();
 return Operation<bool>.Success(true, message);
+}
+catch (Exception ex)
+{
+var fail = CreateLabels.CreationFail;
+var message = string.Format(fail, typeof(T).Name);
+return ErrorHandler.Fail<bool>(ex, message);
+}
 }
 public async Task<Operation<bool>> CreateEntities(List<T> entities)
 {
 await CreateRange(entities);
 var success = CreateLabels.CreationSuccess;
 var message = string.Format(success, typeof(T).Name);
+await unitOfWork.CommitAsync();
 return Operation<bool>.Success(true, message);
 }
 }
@@ -21457,6 +21745,11 @@ set {
 resourceCulture = value;
 }
 }
+internal static string DeletionFailed {
+get {
+return ResourceManager.GetString("DeletionFailed", resourceCulture);
+}
+}
 internal static string DeletionSuccess {
 get {
 return ResourceManager.GetString("DeletionSuccess", resourceCulture);
@@ -21475,14 +21768,19 @@ return ResourceManager.GetString("EntityNotFound", resourceCulture);
 ﻿using Application.Result;
 using Application.UseCases.Repository.CRUD;
 using Domain.Interfaces.Entity;
+using Infrastructure.Repositories.Abstract.CRUD.Create;
 using Persistence.Context.Interface;
 using Persistence.Repositories;
 namespace Infrastructure.Repositories.Abstract.CRUD.Delete
 {
-public abstract class DeleteRepository<T>(IUnitOfWork unitOfWork)
+public abstract class DeleteRepository<T>(IUnitOfWork unitOfWork,
+IErrorHandler errorHandler)
 : RepositoryDelete<T>(unitOfWork), IDelete<T> where T : class, IEntity
 {
+private readonly IErrorHandler ErrorHandler = errorHandler;
 public async Task<Operation<bool>> DeleteEntity(string id)
+{
+try
 {
 var entity = await HasId(id);
 if (entity is null)
@@ -21493,7 +21791,15 @@ return OperationStrategy<bool>.Fail(DeleteLabels.EntityNotFound, strategy);
 Delete(entity);
 var success = DeleteLabels.DeletionSuccess;
 var message = string.Format(success, typeof(T).Name);
+await unitOfWork.CommitAsync();
 return Operation<bool>.Success(true, message);
+}
+catch (Exception ex)
+{
+var fail = DeleteLabels.DeletionFailed;
+var message = string.Format(fail, typeof(T).Name);
+return ErrorHandler.Fail<bool>(ex, message);
+}
 }
 }
 }
@@ -21673,6 +21979,11 @@ get {
 return ResourceManager.GetString("EntityNotFound", resourceCulture);
 }
 }
+internal static string UpdationFail {
+get {
+return ResourceManager.GetString("UpdationFail", resourceCulture);
+}
+}
 internal static string UpdationSuccess {
 get {
 return ResourceManager.GetString("UpdationSuccess", resourceCulture);
@@ -21686,15 +21997,22 @@ return ResourceManager.GetString("UpdationSuccess", resourceCulture);
 ﻿using Application.Result;
 using Application.UseCases.Repository.CRUD;
 using Domain.Interfaces.Entity;
+using Infrastructure.Repositories.Abstract.CRUD.Delete;
+using Infrastructure.Result;
 using Persistence.Context.Interface;
 using Persistence.Repositories;
 namespace Infrastructure.Repositories.Abstract.CRUD.Update
 {
-public abstract class UpdateRepository<T>(IUnitOfWork unitOfWork)
+public abstract class UpdateRepository<T>(
+IUnitOfWork unitOfWork,
+IErrorHandler errorHandler)
 : RepositoryUpdate<T>(unitOfWork), IUpdate<T>
 where T : class, IEntity
 {
+private readonly IErrorHandler ErrorHandler = errorHandler;
 public async Task<Operation<bool>> UpdateEntity(T modify)
+{
+try
 {
 var entity = await HasId(modify.Id);
 if (entity is null)
@@ -21706,27 +22024,17 @@ var modified = ApplyUpdates(modify, entity);
 Update(modified);
 var success = UpdateLabels.UpdationSuccess;
 var message = string.Format(success, typeof(T).Name);
+await unitOfWork.CommitAsync();
 return Operation<bool>.Success(true, message);
 }
+catch (Exception ex)
+{
+var fail = UpdateLabels.UpdationFail;
+var message = string.Format(fail, typeof(T).Name);
+return ErrorHandler.Fail<bool>(ex, message);
+}
+}
 public abstract T ApplyUpdates(T modified, T unmodified);
-}
-}
-
-=== FILE: F:\Marketing\Infrastructure\Repositories\CRUD\ErrorLogCreate.cs ===
-
-﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
-using Infrastructure.Repositories.Abstract.CRUD.Create;
-using Persistence.Context.Interface;
-namespace Infrastructure.Repositories.CRUD
-{
-using ErrorLog = Domain.ErrorLog;
-public class ErrorLogCreate(IUnitOfWork unitOfWork) : CreateRepository<ErrorLog>(unitOfWork), IErrorLogCreate
-{
-public async Task<Operation<bool>> CreateAsync(ErrorLog entity)
-{
-return await CreateEntity(entity);
-}
 }
 }
 
@@ -24605,7 +24913,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+562ae9bc905fdc8f4db372d0770aa0049873c53f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80a6d7c819a48121d39d1a164b12e32018dd59f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -24622,12 +24930,11 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Debug\net8.0\Infrastructure.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/a80a6d7c819a48121d39d1a164b12e32018dd59f/*"}}
 
 === FILE: F:\Marketing\Infrastructure.WhatsApp\Repositories\CRUD\TrackedLinkCreate.cs ===
 
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Application.WhatsApp.UseCases.Repository.CRUD;
 using Domain;
 using Domain.WhatsApp.Redirect;
@@ -24635,7 +24942,8 @@ using Infrastructure.Repositories.Abstract.CRUD.Create;
 using Persistence.Context.Interface;
 namespace Infrastructure.WhatsApp.Repositories.CRUD
 {
-public class TrackedLinkCreate(IUnitOfWork unitOfWork) : CreateRepository<TrackedLink>(unitOfWork), ITrackedLinkCreate
+public class TrackedLinkCreate(IUnitOfWork unitOfWork,
+IErrorHandler errorHandler) : CreateRepository<TrackedLink>(unitOfWork, errorHandler), ITrackedLinkCreate
 {
 public async Task<Operation<bool>> CreateAsync(TrackedLink entity)
 {
@@ -24685,7 +24993,8 @@ using Infrastructure.Repositories.Abstract.CRUD.Create;
 using Persistence.Context.Interface;
 namespace Infrastructure.WhatsApp.Repositories.CRUD
 {
-public class TrackedLinkUpdate(IUnitOfWork unitOfWork) : CreateRepository<TrackedLink>(unitOfWork), ITrackedLinkUpdate
+public class TrackedLinkUpdate(IUnitOfWork unitOfWork,
+IErrorHandler errorHandler) : CreateRepository<TrackedLink>(unitOfWork, errorHandler), ITrackedLinkUpdate
 {
 public async Task<Operation<bool>> UpdateAsync(TrackedLink entity)
 {
@@ -29391,7 +29700,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c815a9f36bbd1dcd37dbe19160921766b44ee3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+562ae9bc905fdc8f4db372d0770aa0049873c53f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -29409,7 +29718,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\ErrorHandlerTests.cs ===
 
@@ -36007,7 +36316,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c815a9f36bbd1dcd37dbe19160921766b44ee3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80a6d7c819a48121d39d1a164b12e32018dd59f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -36025,16 +36334,7 @@ global using global::Xunit;
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\Marketing.Tests.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
-
-=== FILE: F:\Marketing\Persistence\Class1.cs ===
-
-﻿namespace Persistence
-{
-public class Class1
-{
-}
-}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/a80a6d7c819a48121d39d1a164b12e32018dd59f/*"}}
 
 === FILE: F:\Marketing\Persistence\bin\Debug\net8.0\Persistence.deps.json ===
 
@@ -39390,7 +39690,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Persistence\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -39774,15 +40074,10 @@ using OpenQA.Selenium;
 using Services.Interfaces;
 namespace Services
 {
-public class CaptureSnapshot : ICaptureSnapshot
+public class CaptureSnapshot(IWebDriver driver, ILogger<CaptureSnapshot> logger) : ICaptureSnapshot
 {
-private readonly IWebDriver _driver;
-private readonly ILogger<CaptureSnapshot> _logger;
-public CaptureSnapshot(IWebDriver driver, ILogger<CaptureSnapshot> logger)
-{
-_driver = driver;
-_logger = logger;
-}
+private readonly IWebDriver _driver = driver;
+private readonly ILogger<CaptureSnapshot> _logger = logger;
 public async Task<string> CaptureArtifactsAsync(string executionFolder, string stage)
 {
 var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
@@ -43436,7 +43731,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -46769,7 +47064,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/562ae9bc905fdc8f4db372d0770aa0049873c53f/*"}}
 
 === FILE: F:\Marketing\Services.WhatsApp\OpenChat\ChatClicker.cs ===
 
@@ -47868,13 +48163,108 @@ return result;
 }
 
 
+=== FILE: F:\Marketing\Tools\ErrorMappings.json ===
+
+{
+  "SmtpException": "ExternalServiceStrategy",
+  "HttpRequestException": "ExternalServiceStrategy",
+  "TaskCanceledException": "ExternalServiceStrategy",
+  "FileNotFoundException": "ExternalServiceStrategy",
+  "DirectoryNotFoundException": "ExternalServiceStrategy",
+  "DriveNotFoundException": "ExternalServiceStrategy",
+  "PathTooLongException": "ExternalServiceStrategy",
+  "IOException": "ExternalServiceStrategy",
+
+  "NetworkInformationException": "NetworkErrorStrategy",
+  "SocketException": "NetworkErrorStrategy",
+  "WebException": "NetworkErrorStrategy",
+  "PingException": "NetworkErrorStrategy",
+  "DnsException": "NetworkErrorStrategy",
+
+  "InvalidOperationException": "ConfigMissingStrategy",
+  "ConfigurationErrorsException": "ConfigMissingStrategy",
+  "SettingsPropertyNotFoundException": "ConfigMissingStrategy",
+  "MissingMemberException": "ConfigMissingStrategy",
+
+  "JsonException": "InvalidDataStrategy",
+  "XmlException": "InvalidDataStrategy",
+  "IndexOutOfRangeException": "InvalidDataStrategy",
+
+  "SqliteException": "DatabaseStrategy",
+  "SqlException": "DatabaseStrategy",
+  "DbException": "DatabaseStrategy",
+  "EntityException": "DatabaseStrategy",
+  "DataException": "DatabaseStrategy",
+  "TransactionException": "DatabaseStrategy",
+  "ConstraintException": "DatabaseStrategy",
+  "DbUpdateException": "DatabaseStrategy",
+
+  "UnauthorizedAccessException": "AuthenticationStrategy",
+  "SecurityException": "AuthorizationStrategy",
+  "CryptographicException": "UnexpectedErrorStrategy",
+
+  "ThreadAbortException": "UnexpectedErrorStrategy",
+  "ThreadInterruptedException": "UnexpectedErrorStrategy",
+  "SynchronizationLockException": "UnexpectedErrorStrategy",
+  "LockRecursionException": "UnexpectedErrorStrategy",
+  "TimeoutException": "TimeoutStrategy",
+  "NotSupportedException": "UnexpectedErrorStrategy",
+  "NullReferenceException": "UnexpectedErrorStrategy",
+  "InvalidCastException": "UnexpectedErrorStrategy",
+  "StackOverflowException": "UnexpectedErrorStrategy",
+  "OutOfMemoryException": "UnexpectedErrorStrategy",
+
+  "ArgumentException": "UserInputStrategy",
+  "ArgumentNullException": "UserInputStrategy",
+  "ArgumentOutOfRangeException": "UserInputStrategy",
+  "FormatException": "UserInputStrategy",
+
+  "KeyNotFoundException": "NotFoundStrategy",
+  "DivideByZeroException": "UnexpectedErrorStrategy",
+  "ArithmeticException": "UnexpectedErrorStrategy",
+  "OverflowException": "UnexpectedErrorStrategy",
+  "TypeInitializationException": "UnexpectedErrorStrategy",
+  "BadImageFormatException": "UnexpectedErrorStrategy",
+  "InsufficientMemoryException": "UnexpectedErrorStrategy",
+  "InvalidProgramException": "UnexpectedErrorStrategy",
+  "MissingMethodException": "UnexpectedErrorStrategy",
+  "AccessViolationException": "UnexpectedErrorStrategy",
+  "ApplicationException": "UnexpectedErrorStrategy",
+  "SystemException": "UnexpectedErrorStrategy",
+  "ExecutionEngineException": "UnexpectedErrorStrategy",
+  "COMException": "ExternalServiceStrategy",
+  "SEHException": "UnexpectedErrorStrategy",
+  "InvalidTimeZoneException": "ConfigMissingStrategy",
+  "TimeZoneNotFoundException": "ConfigMissingStrategy",
+  "AggregateException": "UnexpectedErrorStrategy",
+  "OperationCanceledException": "TimeoutStrategy",
+  "CultureNotFoundException": "ConfigMissingStrategy",
+  "ObjectDisposedException": "UnexpectedErrorStrategy",
+  "MarshalDirectiveException": "UnexpectedErrorStrategy",
+  "FileLoadException": "ExternalServiceStrategy",
+  "DebuggerBrowsableState": "UnexpectedErrorStrategy",
+  "MissingManifestResourceException": "ConfigMissingStrategy",
+  "PolicyException": "AuthorizationStrategy",
+  "EventSourceException": "UnexpectedErrorStrategy",
+  "HostProtectionException": "UnexpectedErrorStrategy",
+  "InsufficientExecutionStackException": "UnexpectedErrorStrategy",
+  "TypeAccessException": "UnexpectedErrorStrategy",
+  "AppDomainUnloadedException": "UnexpectedErrorStrategy",
+  "InvalidOleVariantTypeException": "UnexpectedErrorStrategy",
+  "DllNotFoundException": "ExternalServiceStrategy",
+  "EntryPointNotFoundException": "UnexpectedErrorStrategy",
+  "MissingFieldException": "UnexpectedErrorStrategy",
+  "TypeLoadException": "UnexpectedErrorStrategy",
+  "FileFormatException": "InvalidDataStrategy",
+  "XmlSyntaxException": "InvalidDataStrategy",
+  "Exception": "UnexpectedErrorStrategy"
+}
+
 === FILE: F:\Marketing\Tools\Program.cs ===
 
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Application.WhatsApp.UseCases.Repository.CRUD;
 using Configuration;
-using Infrastructure.Repositories.CRUD;
 using Infrastructure.Result;
 using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
@@ -47925,7 +48315,6 @@ AddDbContextSQLite(builder);
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
 builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
-builder.Services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
 builder.Services.AddScoped<IErrorLogger, SerilogErrorLogger>();
 builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
 builder.Services.AddSingleton<IColumnTypes, SQLite>();
@@ -47939,6 +48328,12 @@ var db = scope.ServiceProvider.GetRequiredService<DataContext>();
 if (!db.Initialize())
 {
 throw new Exception("Database initialization failed");
+}
+var context = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
+if (!context.Any())
+{
+var errorHandler = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
+errorHandler.LoadErrorMappings("ErrorMappings.json");
 }
 }
 if (app.Environment.IsDevelopment())
@@ -48092,6 +48487,103 @@ public string? Summary { get; set; }
     }
 }
 
+
+=== FILE: F:\Marketing\Tools\bin\Debug\net8.0\ErrorMappings.json ===
+
+{
+  "SmtpException": "ExternalServiceStrategy",
+  "HttpRequestException": "ExternalServiceStrategy",
+  "TaskCanceledException": "ExternalServiceStrategy",
+  "FileNotFoundException": "ExternalServiceStrategy",
+  "DirectoryNotFoundException": "ExternalServiceStrategy",
+  "DriveNotFoundException": "ExternalServiceStrategy",
+  "PathTooLongException": "ExternalServiceStrategy",
+  "IOException": "ExternalServiceStrategy",
+
+  "NetworkInformationException": "NetworkErrorStrategy",
+  "SocketException": "NetworkErrorStrategy",
+  "WebException": "NetworkErrorStrategy",
+  "PingException": "NetworkErrorStrategy",
+  "DnsException": "NetworkErrorStrategy",
+
+  "InvalidOperationException": "ConfigMissingStrategy",
+  "ConfigurationErrorsException": "ConfigMissingStrategy",
+  "SettingsPropertyNotFoundException": "ConfigMissingStrategy",
+  "MissingMemberException": "ConfigMissingStrategy",
+
+  "JsonException": "InvalidDataStrategy",
+  "XmlException": "InvalidDataStrategy",
+  "IndexOutOfRangeException": "InvalidDataStrategy",
+
+  "SqliteException": "DatabaseStrategy",
+  "SqlException": "DatabaseStrategy",
+  "DbException": "DatabaseStrategy",
+  "EntityException": "DatabaseStrategy",
+  "DataException": "DatabaseStrategy",
+  "TransactionException": "DatabaseStrategy",
+  "ConstraintException": "DatabaseStrategy",
+  "DbUpdateException": "DatabaseStrategy",
+
+  "UnauthorizedAccessException": "AuthenticationStrategy",
+  "SecurityException": "AuthorizationStrategy",
+  "CryptographicException": "UnexpectedErrorStrategy",
+
+  "ThreadAbortException": "UnexpectedErrorStrategy",
+  "ThreadInterruptedException": "UnexpectedErrorStrategy",
+  "SynchronizationLockException": "UnexpectedErrorStrategy",
+  "LockRecursionException": "UnexpectedErrorStrategy",
+  "TimeoutException": "TimeoutStrategy",
+  "NotSupportedException": "UnexpectedErrorStrategy",
+  "NullReferenceException": "UnexpectedErrorStrategy",
+  "InvalidCastException": "UnexpectedErrorStrategy",
+  "StackOverflowException": "UnexpectedErrorStrategy",
+  "OutOfMemoryException": "UnexpectedErrorStrategy",
+
+  "ArgumentException": "UserInputStrategy",
+  "ArgumentNullException": "UserInputStrategy",
+  "ArgumentOutOfRangeException": "UserInputStrategy",
+  "FormatException": "UserInputStrategy",
+
+  "KeyNotFoundException": "NotFoundStrategy",
+  "DivideByZeroException": "UnexpectedErrorStrategy",
+  "ArithmeticException": "UnexpectedErrorStrategy",
+  "OverflowException": "UnexpectedErrorStrategy",
+  "TypeInitializationException": "UnexpectedErrorStrategy",
+  "BadImageFormatException": "UnexpectedErrorStrategy",
+  "InsufficientMemoryException": "UnexpectedErrorStrategy",
+  "InvalidProgramException": "UnexpectedErrorStrategy",
+  "MissingMethodException": "UnexpectedErrorStrategy",
+  "AccessViolationException": "UnexpectedErrorStrategy",
+  "ApplicationException": "UnexpectedErrorStrategy",
+  "SystemException": "UnexpectedErrorStrategy",
+  "ExecutionEngineException": "UnexpectedErrorStrategy",
+  "COMException": "ExternalServiceStrategy",
+  "SEHException": "UnexpectedErrorStrategy",
+  "InvalidTimeZoneException": "ConfigMissingStrategy",
+  "TimeZoneNotFoundException": "ConfigMissingStrategy",
+  "AggregateException": "UnexpectedErrorStrategy",
+  "OperationCanceledException": "TimeoutStrategy",
+  "CultureNotFoundException": "ConfigMissingStrategy",
+  "ObjectDisposedException": "UnexpectedErrorStrategy",
+  "MarshalDirectiveException": "UnexpectedErrorStrategy",
+  "FileLoadException": "ExternalServiceStrategy",
+  "DebuggerBrowsableState": "UnexpectedErrorStrategy",
+  "MissingManifestResourceException": "ConfigMissingStrategy",
+  "PolicyException": "AuthorizationStrategy",
+  "EventSourceException": "UnexpectedErrorStrategy",
+  "HostProtectionException": "UnexpectedErrorStrategy",
+  "InsufficientExecutionStackException": "UnexpectedErrorStrategy",
+  "TypeAccessException": "UnexpectedErrorStrategy",
+  "AppDomainUnloadedException": "UnexpectedErrorStrategy",
+  "InvalidOleVariantTypeException": "UnexpectedErrorStrategy",
+  "DllNotFoundException": "ExternalServiceStrategy",
+  "EntryPointNotFoundException": "UnexpectedErrorStrategy",
+  "MissingFieldException": "UnexpectedErrorStrategy",
+  "TypeLoadException": "UnexpectedErrorStrategy",
+  "FileFormatException": "InvalidDataStrategy",
+  "XmlSyntaxException": "InvalidDataStrategy",
+  "Exception": "UnexpectedErrorStrategy"
+}
 
 === FILE: F:\Marketing\Tools\bin\Debug\net8.0\Tools.deps.json ===
 
@@ -50169,38 +50661,6 @@ public string? Summary { get; set; }
 === FILE: F:\Marketing\Tools\bin\Debug\net8.0\Tools.staticwebassets.endpoints.json ===
 
 {"Version":1,"ManifestType":"Build","Endpoints":[]}
-
-=== FILE: F:\Marketing\Tools\Controllers\WeatherForecastController.cs ===
-
-using Microsoft.AspNetCore.Mvc;
-namespace Tools.Controllers
-{
-[ApiController]
-[Route("[controller]")]
-public class WeatherForecastController : ControllerBase
-{
-private static readonly string[] Summaries = new[]
-{
-"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-private readonly ILogger<WeatherForecastController> _logger;
-public WeatherForecastController(ILogger<WeatherForecastController> logger)
-{
-_logger = logger;
-}
-[HttpGet(Name = "GetWeatherForecast")]
-public IEnumerable<WeatherForecast> Get()
-{
-return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-{
-Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-TemperatureC = Random.Shared.Next(-20, 55),
-Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-})
-.ToArray();
-}
-}
-}
 
 === FILE: F:\Marketing\Tools\Controllers\api\v1\Redirect\TrackedLinkController.cs ===
 
@@ -56476,15 +56936,15 @@ using System.Reflection;
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json ===
 
-{"GlobalPropertiesHash":"DOaIR89PL5Kl58NmSSuyDeAy2LzxL91nTthx/CTuxA4=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["qaNuVHLC/tAFpl6CUjTioDP3Kq0FxeYe23JSbvjv3Cc=","JnpuQyuL8rG\u002BEpFPdsyCv/QALNRKZdXDFdPuxweVtkE=","K6OSJ2Y9JHmPqH/w2hoYWdy/QvTiBy//sj2fSJYZDn8=","STSxwQu//eNNNxI4IKxwH74xslGRtMVjasxwFr7DkRw=","/vA/pil6Wayewyk1p1tG2g2DLU61nY0gUktxOYvznbc=","sHuZiVsBcmS8\u002BWr5GZ9jAgSMa\u002BghKWBSOv45x8HQUAA="],"CachedAssets":{},"CachedCopyCandidates":{}}
+{"GlobalPropertiesHash":"DOaIR89PL5Kl58NmSSuyDeAy2LzxL91nTthx/CTuxA4=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["qaNuVHLC/tAFpl6CUjTioDP3Kq0FxeYe23JSbvjv3Cc=","p16hvGVs76BGRYOo4jrERHvuBEtGC5CqGJIDnQXPRa8=","5veRWpHlytrBop2yrjkf0V5WacCZGWHICKLt2xzzeQE=","K6OSJ2Y9JHmPqH/w2hoYWdy/QvTiBy//sj2fSJYZDn8=","STSxwQu//eNNNxI4IKxwH74xslGRtMVjasxwFr7DkRw=","/vA/pil6Wayewyk1p1tG2g2DLU61nY0gUktxOYvznbc=","pvI4mA6t7vOQAAQtOqO1dE5eEAMnAPej\u002Bm4qqi5x1J0="],"CachedAssets":{},"CachedCopyCandidates":{}}
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\rjsmrazor.dswa.cache.json ===
 
-{"GlobalPropertiesHash":"sqH5NKtzYxgJLJNpgIWoG6iNrBQv92D93IDSSFpeLmk=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["qaNuVHLC/tAFpl6CUjTioDP3Kq0FxeYe23JSbvjv3Cc=","JnpuQyuL8rG\u002BEpFPdsyCv/QALNRKZdXDFdPuxweVtkE=","K6OSJ2Y9JHmPqH/w2hoYWdy/QvTiBy//sj2fSJYZDn8=","STSxwQu//eNNNxI4IKxwH74xslGRtMVjasxwFr7DkRw=","/vA/pil6Wayewyk1p1tG2g2DLU61nY0gUktxOYvznbc=","sHuZiVsBcmS8\u002BWr5GZ9jAgSMa\u002BghKWBSOv45x8HQUAA="],"CachedAssets":{},"CachedCopyCandidates":{}}
+{"GlobalPropertiesHash":"sqH5NKtzYxgJLJNpgIWoG6iNrBQv92D93IDSSFpeLmk=","FingerprintPatternsHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["qaNuVHLC/tAFpl6CUjTioDP3Kq0FxeYe23JSbvjv3Cc=","p16hvGVs76BGRYOo4jrERHvuBEtGC5CqGJIDnQXPRa8=","5veRWpHlytrBop2yrjkf0V5WacCZGWHICKLt2xzzeQE=","K6OSJ2Y9JHmPqH/w2hoYWdy/QvTiBy//sj2fSJYZDn8=","STSxwQu//eNNNxI4IKxwH74xslGRtMVjasxwFr7DkRw=","/vA/pil6Wayewyk1p1tG2g2DLU61nY0gUktxOYvznbc=","pvI4mA6t7vOQAAQtOqO1dE5eEAMnAPej\u002Bm4qqi5x1J0="],"CachedAssets":{},"CachedCopyCandidates":{}}
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\rpswa.dswa.cache.json ===
 
-{"GlobalPropertiesHash":"DNQ+sM4BBHSRv5GXzeVF+EDdI6iOjhDCI303IWuGR/A=","FingerprintPatternsHash":"gq3WsqcKBUGTSNle7RKKyXRIwh7M8ccEqOqYvIzoM04=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["qaNuVHLC/tAFpl6CUjTioDP3Kq0FxeYe23JSbvjv3Cc="],"CachedAssets":{},"CachedCopyCandidates":{}}
+{"GlobalPropertiesHash":"DNQ+sM4BBHSRv5GXzeVF+EDdI6iOjhDCI303IWuGR/A=","FingerprintPatternsHash":"gq3WsqcKBUGTSNle7RKKyXRIwh7M8ccEqOqYvIzoM04=","PropertyOverridesHash":"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=","InputHashes":["qaNuVHLC/tAFpl6CUjTioDP3Kq0FxeYe23JSbvjv3Cc=","p16hvGVs76BGRYOo4jrERHvuBEtGC5CqGJIDnQXPRa8="],"CachedAssets":{},"CachedCopyCandidates":{}}
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\staticwebassets.build.endpoints.json ===
 
@@ -56501,7 +56961,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tools")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c815a9f36bbd1dcd37dbe19160921766b44ee3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca643ac82ea6c4be7724722214e9ec0edcb09646")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tools")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tools")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -56533,7 +56993,7 @@ using System.Reflection;
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\Tools.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/a80a6d7c819a48121d39d1a164b12e32018dd59f/*"}}
 
 === FILE: F:\Marketing\Tools\obj\Debug\net8.0\EndpointInfo\Tools.json ===
 
@@ -67318,7 +67778,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c815a9f36bbd1dcd37dbe19160921766b44ee3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80a6d7c819a48121d39d1a164b12e32018dd59f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -67335,7 +67795,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4c815a9f36bbd1dcd37dbe19160921766b44ee3c/*"}}
+{"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/a80a6d7c819a48121d39d1a164b12e32018dd59f/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\win-x64\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

@@ -25,32 +25,57 @@ namespace Api.Controllers.v1.Redirect
         public async Task<IActionResult> Create([FromBody] TrackedLink trackedLink)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
-            var op = await _create.CreateAsync(trackedLink); // ITrackedLinkCreate.CreateAsync(TrackedLink) :contentReference[oaicite:0]{index=0}
+            var op = await _create.CreateAsync(trackedLink);
             if (!op.IsSuccessful)
-            {
                 return BadRequest(op.Message);
-            }
 
-            return CreatedAtAction(nameof(ReadById), new { id = trackedLink.Id }, trackedLink);
+            // Location now points to the redirect endpoint
+            return CreatedAtAction(nameof(RedirectById), new { id = trackedLink.Id }, trackedLink);
         }
 
         /// <summary>
-        /// Read TrackedLink(s) by id (current repository returns a List).
+        /// Redirect to the original URL for this tracked link.
         /// </summary>
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(List<TrackedLink>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status302Found)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> ReadById([FromRoute] string id)
+        public async Task<IActionResult> RedirectById([FromRoute] string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                return BadRequest("id is required.");
+
+            var op = await _read.ReadAsync(id);
+            if (!op.IsSuccessful || op.Data is null)
+                return NotFound(op.Message);
+
+            // If your ITrackedLinkRead returns a List<TrackedLink>, handle it safely:
+            // var link = (op.Data as List<TrackedLink>)?.FirstOrDefault();
+            // if (link is null) return NotFound(op.Message);
+            // return Redirect(link.OriginalUrl);
+
+            var link = op.Data.FirstOrDefault(); // assumes op.Data is TrackedLink
+            string targetUrl = link.TargetUrl;
+            if (string.IsNullOrWhiteSpace(targetUrl))
+                return NotFound("TrackedLink has no OriginalUrl.");
+
+            // Use 302 by default. If you want permanent redirect, use RedirectPermanent(link.OriginalUrl).
+            return Redirect(targetUrl);
+        }
+
+        /// <summary>
+        /// Optional: read metadata (non-redirect) for a tracked link.
+        /// </summary>
+        [HttpGet("{id}/meta")]
+        [ProducesResponseType(typeof(TrackedLink), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> ReadMeta([FromRoute] string id)
         {
             var op = await _read.ReadAsync(id);
-            if (!op.IsSuccessful)
-            {
-                return BadRequest(op.Message);
-            }
+            if (!op.IsSuccessful || op.Data is null)
+                return NotFound(op.Message);
 
             return Ok(op.Data);
         }
