@@ -10,6 +10,7 @@ using Persistence.Context.Interface;
 using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
+using System.Data.Common;
 
 namespace Tools
 {
@@ -81,20 +82,12 @@ namespace Tools
                     errorHandler.LoadErrorMappings("ErrorMappings.json");
                 }
             }
-            /*
-                         using IServiceScope scope = builder.Services.BuildServiceProvider().CreateScope();
-            var context = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
-            if (!context.Any())
-            {
-                var errorHandler = scope.ServiceProvider.GetRequiredService<IErrorHandler>();
-                errorHandler.LoadErrorMappings("ErrorMappings.json");
-            }
-             */
-            if (app.Environment.IsDevelopment())
-            {
+
+            //if (app.Environment.IsDevelopment())
+            //{
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            //}
 
             app.UseHttpsRedirection();
 
@@ -105,12 +98,44 @@ namespace Tools
             app.Run();
         }
 
+        public static void EnsureDatabaseFolderExists(string connectionString)
+        {
+            if (string.IsNullOrWhiteSpace(connectionString))
+                throw new ArgumentException("Connection string is null or empty.", nameof(connectionString));
+
+            // Parse connection string safely
+            var builder = new DbConnectionStringBuilder
+            {
+                ConnectionString = connectionString
+            };
+
+            if (!builder.TryGetValue("Data Source", out var dataSourceObj))
+                throw new InvalidOperationException("Connection string does not contain 'Data Source'.");
+
+            var dbFilePath = dataSourceObj.ToString();
+
+            if (string.IsNullOrWhiteSpace(dbFilePath))
+                throw new InvalidOperationException("Data Source path is empty.");
+
+            var directoryPath = Path.GetDirectoryName(dbFilePath);
+
+            if (string.IsNullOrWhiteSpace(directoryPath))
+                throw new InvalidOperationException("Could not determine database directory path.");
+
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+        }
+
+
         private static void AddDbContextSQLite(WebApplicationBuilder builder)
         {
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentNullException(nameof(connectionString), ConnectionMissingMessage);
 
+            EnsureDatabaseFolderExists(connectionString);
             builder.Services.AddDbContext<DataContext>(options =>
             {
                 options
