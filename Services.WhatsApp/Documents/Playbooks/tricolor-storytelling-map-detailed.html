@@ -1,0 +1,683 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Storytelling — Tricolor Fan Club (Mapa Detallado)</title>
+    <meta name="color-scheme" content="dark" />
+    <style>
+        :root {
+            --bg0: #070b14;
+            --bg1: #0b1220;
+            --text: #e8eefc;
+            --muted: #9fb0d4;
+            --line: rgba(255,255,255,.10);
+            --accent: #7c5cff;
+            --accent2: #2dd4ff;
+            --good: #3ddc97;
+            --warn: #ffcc66;
+            --bad: #ff5c7a;
+            --shadow: 0 18px 55px rgba(0,0,0,.45);
+            --shadow2: 0 10px 30px rgba(0,0,0,.35);
+            --r: 18px;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--sans);
+            color: var(--text);
+            background: radial-gradient(1200px 600px at 18% 8%, rgba(124,92,255,.18), transparent 60%), radial-gradient(900px 500px at 82% 18%, rgba(45,212,255,.12), transparent 60%), radial-gradient(900px 700px at 50% 100%, rgba(61,220,151,.08), transparent 62%), linear-gradient(180deg, var(--bg0), var(--bg1) 32%, #0a1020);
+            line-height: 1.45;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit
+        }
+
+        .mono {
+            font-family: var(--mono)
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 22px auto;
+            padding: 0 18px 48px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .top {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 14px;
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            background: rgba(0,0,0,.14);
+            box-shadow: var(--shadow2);
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,212,255,.95));
+            box-shadow: 0 14px 40px rgba(124,92,255,.20);
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            letter-spacing: .6px;
+            user-select: none;
+        }
+
+        h1 {
+            font-size: 15px;
+            margin: 0
+        }
+
+        .subtitle {
+            margin: 2px 0 0;
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            font-size: 11px;
+            color: var(--muted);
+            background: rgba(255,255,255,.03);
+            white-space: nowrap;
+        }
+
+            .tag.accent {
+                border-color: rgba(124,92,255,.50);
+                color: rgba(232,238,252,.92);
+                background: rgba(124,92,255,.10)
+            }
+
+            .tag.good {
+                border-color: rgba(61,220,151,.35);
+                color: rgba(61,220,151,.95);
+                background: rgba(61,220,151,.08)
+            }
+
+            .tag.warn {
+                border-color: rgba(255,204,102,.35);
+                color: rgba(255,204,102,.95);
+                background: rgba(255,204,102,.08)
+            }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: var(--r);
+            background: rgba(0,0,0,.12);
+            box-shadow: var(--shadow2);
+            overflow: hidden;
+        }
+
+        .card-h {
+            padding: 14px 14px 10px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(0,0,0,.10);
+        }
+
+            .card-h h2 {
+                margin: 0;
+                font-size: 13px;
+                letter-spacing: .2px
+            }
+
+            .card-h small {
+                color: var(--muted);
+                font-size: 12px
+            }
+
+        .card-b {
+            padding: 14px
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        @media (max-width: 780px) {
+            .grid2 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .note {
+            border-left: 3px solid rgba(124,92,255,.75);
+            padding: 10px 12px;
+            background: rgba(124,92,255,.10);
+            border-radius: 14px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .pill {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 12px;
+            background: rgba(0,0,0,.10);
+        }
+
+            .pill h3 {
+                margin: 0 0 8px;
+                font-size: 12px;
+                letter-spacing: .2px
+            }
+
+            .pill p {
+                margin: 8px 0;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .pill ul {
+                margin: 8px 0 0 18px;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .pill li {
+                margin: 6px 0
+            }
+
+        .sep {
+            height: 1px;
+            background: var(--line);
+            margin: 12px 0
+        }
+
+        details {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(0,0,0,.10);
+            overflow: hidden;
+        }
+
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            user-select: none;
+        }
+
+            summary::-webkit-details-marker {
+                display: none
+            }
+
+        .sum-title {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+            .sum-title b {
+                font-size: 12px
+            }
+
+            .sum-title span {
+                font-size: 12px;
+                color: var(--muted)
+            }
+
+        .sum-ico {
+            width: 24px;
+            height: 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.14);
+            background: rgba(255,255,255,.04);
+            display: grid;
+            place-items: center;
+            color: var(--muted);
+            flex: 0 0 auto;
+        }
+
+        details[open] .sum-ico {
+            color: var(--text);
+            border-color: rgba(124,92,255,.60);
+            background: rgba(124,92,255,.10)
+        }
+
+        .body {
+            padding: 0 12px 12px
+        }
+
+            .body p {
+                margin: 10px 0;
+                color: var(--text);
+                font-size: 13px
+            }
+
+            .body ul {
+                margin: 8px 0 0 18px;
+                color: var(--muted);
+                font-size: 12px
+            }
+
+            .body li {
+                margin: 6px 0
+            }
+
+        .kbd {
+            font-size: 11px;
+            color: var(--muted);
+            border: 1px solid rgba(255,255,255,.16);
+            padding: 3px 7px;
+            border-radius: 10px;
+            background: rgba(0,0,0,.18);
+            font-family: var(--mono);
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .quote {
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 16px;
+            padding: 12px;
+            background: rgba(0,0,0,.14);
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+            .quote b {
+                color: var(--text)
+            }
+
+        .footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+            padding: 12px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="top">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">LN</div>
+                <div>
+                    <h1>Storytelling — Tricolor Fan Club (Mapa Detallado)</h1>
+                    <p class="subtitle">Narrativa de pertenencia transnacional: conversación → comunidad → símbolo → CTA natural</p>
+                </div>
+            </div>
+            <div class="row">
+                <span class="tag accent">Story First</span>
+                <span class="tag good">2 NEWS → 1 PROMO</span>
+            </div>
+        </header>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>Historia Madre (Core)</h2>
+                    <small>La frase que gobierna el sistema</small>
+                </div>
+                <span class="tag accent">NÚCLEO</span>
+            </div>
+            <div class="card-b">
+                <div class="note">
+                    <b>Idea central:</b> “Aunque estemos lejos, seguimos conectados por la Tricolor.”
+                    <div class="sep"></div>
+                    <b>Implicación:</b> El producto no es el centro. La identidad y la conversación sí.
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Qué promete la historia</h3>
+                        <ul>
+                            <li>“No estás solo”: hay otros colombianos cerca.</li>
+                            <li>La identidad se mantiene viva fuera de Colombia.</li>
+                            <li>La pertenencia se vuelve visible (camiseta / encuentro / watch party).</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Qué evita la historia</h3>
+                        <ul>
+                            <li>Publicidad directa antes de conversación.</li>
+                            <li>Urgencias falsas / presión.</li>
+                            <li>Marca protagonista (“mírame”) en vez de guía (“te conecto”).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>Personajes y Roles Narrativos</h2>
+                    <small>Quién es quién (y por qué importa)</small>
+                </div>
+                <span class="tag warn">ROL CLARO</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Héroe</h3>
+                        <p><b>El colombiano en el exterior.</b> No es audiencia: es protagonista. Busca pertenencia y conversación real.</p>
+                        <ul>
+                            <li>Deseo: conectar con “los suyos”.</li>
+                            <li>Dolor: distancia / nostalgia / dispersión.</li>
+                            <li>Recompensa: comunidad + identidad visible.</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Guía (no héroe)</h3>
+                        <p><b>Tricolor Fan Club.</b> Facilita, sugiere, conecta. No necesita “vender” para existir.</p>
+                        <ul>
+                            <li>Función: abrir conversación y sostener el espacio.</li>
+                            <li>Tono: humano, cercano, sin presión.</li>
+                            <li>Regla: el guía no roba cámara.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="pill">
+                    <h3>Artefacto simbólico</h3>
+                    <p><b>La camiseta.</b> No es un producto primero; es un símbolo de pertenencia. Hace visible la identidad y permite reconocimiento entre iguales.</p>
+                    <ul>
+                        <li>No inicia la historia: aparece después del vínculo.</li>
+                        <li>Se presenta como respuesta: “para los que preguntan…”.</li>
+                        <li>Convierte emoción en acción sin romper la narrativa.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>Estructura del Viaje</h2>
+                    <small>De distancia a pertenencia (sin spam)</small>
+                </div>
+                <span class="tag accent">ARCO</span>
+            </div>
+            <div class="card-b">
+                <details open>
+                    <summary>
+                        <div class="sum-title">
+                            <b>1) Mundo ordinario</b>
+                            <span>Vida fuera del país</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <p>Rutina, adaptación, poco espacio para hablar de Selección. La identidad se siente, pero no se comparte.</p>
+                        <ul>
+                            <li>Señales: “no tengo con quién ver los partidos”, “no encuentro ambiente”.</li>
+                            <li>Oportunidad: abrir una conversación que parezca de amigos, no de marca.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>2) Conflicto</b>
+                            <span>Distancia emocional + nostalgia</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <p>La tensión no es “no hay producto”, es “no hay pertenencia visible y compartida”.</p>
+                        <ul>
+                            <li>Activadores: recuerdos (camisetas, goles, torneos), debates (convocatoria, posiciones).</li>
+                            <li>Regla: el conflicto se resuelve con conversación + comunidad, no con anuncios.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>3) Llamado a la conversación</b>
+                            <span>El CTA narrativo inicial es una pregunta</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <p>Antes de vender, se invita a hablar. La historia empieza porque el héroe responde.</p>
+                        <ul>
+                            <li>IDENTITY: “¿Cuál camiseta fue tu favorita?”</li>
+                            <li>CURRENT: “¿A quién pones de 9 hoy?”</li>
+                            <li>COMMUNITY: “¿Dónde se vive mejor el partido en tu ciudad?”</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>4) Comunidad como puente</b>
+                            <span>De “yo” a “nosotros”</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <p>La pertenencia se consolida cuando aparecen otros. El valor real es el puente social.</p>
+                        <ul>
+                            <li>Señal de éxito: miembros se responden entre sí.</li>
+                            <li>La marca reduce presencia: modera y observa.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>5) Clímax suave</b>
+                            <span>“Para los que preguntan…”</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <p>La promo entra como consecuencia natural. No hay ruptura de tono ni presión.</p>
+                        <ul>
+                            <li>No “compra ya”.</li>
+                            <li>Sí “si quieres, te digo disponibilidad”.</li>
+                            <li>Se siente respuesta, no anuncio.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <div class="sum-title">
+                            <b>6) Recompensa + Loop</b>
+                            <span>No termina en la compra</span>
+                        </div>
+                        <div class="sum-ico" aria-hidden="true">⌁</div>
+                    </summary>
+                    <div class="body">
+                        <p>La recompensa es pertenencia visible (camiseta + encuentro). Luego vuelve la conversación: el loop mantiene vida al sistema.</p>
+                        <ul>
+                            <li>Después de la promo, se vuelve a IDENTITY/CURRENT/COMMUNITY.</li>
+                            <li>Es loop narrativo, no embudo agresivo.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>Reglas Narrativas (Guardrails)</h2>
+                    <small>Para que el storytelling no se convierta en spam</small>
+                </div>
+                <span class="tag good">GUARDRAILS</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>Regla estructural</h3>
+                        <p><b>2 NEWS → 1 PROMO.</b> Primero vínculo, luego intercambio.</p>
+                        <ul>
+                            <li>Nunca dos PROMO seguidas.</li>
+                            <li>Nunca PROMO sin conversación previa.</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>Regla de voz</h3>
+                        <p><b>Si un amigo colombiano no lo diría en el grupo, no se publica.</b></p>
+                        <ul>
+                            <li>Preguntas abiertas.</li>
+                            <li>Lenguaje humano, no publicitario.</li>
+                            <li>Sin urgencias falsas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="quote">
+                    <b>Checklist antes de enviar:</b><br />
+                    1) ¿Esto abre conversación?<br />
+                    2) ¿Esto refuerza identidad o comunidad?<br />
+                    3) Si es promo: ¿hubo 2 news con respuestas antes?<br />
+                    4) ¿Esto suena a amigo, no a anuncio?
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>Biblioteca de Micro-historias</h2>
+                    <small>Los “motores” de conversación (listas listas)</small>
+                </div>
+                <span class="tag accent">PROMPTS</span>
+            </div>
+            <div class="card-b">
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>IDENTITY (memoria compartida)</h3>
+                        <ul>
+                            <li>“¿Cuál fue tu camiseta más inolvidable (año/torneo)?”</li>
+                            <li>“¿Qué gol de Colombia te hizo gritar más?”</li>
+                            <li>“¿Cuál jugador te marcó una época?”</li>
+                            <li>“Si tuvieras una foto con una camiseta icónica, ¿cuál sería?”</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>CURRENT (opinión dividible)</h3>
+                        <ul>
+                            <li>“Si hoy hubiera partido, ¿a quién pones de 9 y por qué?”</li>
+                            <li>“¿Prefieres juventud o experiencia en la convocatoria?”</li>
+                            <li>“¿Qué línea necesita más Colombia: defensa, medio o ataque?”</li>
+                            <li>“¿Quién debería ser capitán hoy?”</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="grid2">
+                    <div class="pill">
+                        <h3>COMMUNITY (vida afuera)</h3>
+                        <ul>
+                            <li>“Vancouver/BC: ¿en qué zona te queda mejor un watch party?”</li>
+                            <li>“¿Dónde has sentido más ambiente colombiano viendo fútbol?”</li>
+                            <li>“Si armamos encuentro, ¿qué día/hora te funciona?”</li>
+                            <li>“¿Qué te hace falta para que un watch party sea ‘de verdad’?”</li>
+                        </ul>
+                    </div>
+                    <div class="pill">
+                        <h3>PROMO (CTA natural)</h3>
+                        <ul>
+                            <li>“Para los que preguntan 👕: hay camisetas con entrega esta semana…”</li>
+                            <li>“Si quieres, dime talla + ciudad y te digo disponibilidad.”</li>
+                            <li>“Si la necesitas antes del partido, avísame y te confirmo tiempos.”</li>
+                            <li>“Te paso opciones (2024/retro) según lo que te guste.”</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="note">
+                    <b>Uso recomendado:</b> alterna prompts para evitar monotonía. El objetivo es conversación, no “publicar por publicar”.
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-h">
+                <div>
+                    <h2>Ejemplos de Ciclo Narrativo</h2>
+                    <small>Secuencias completas (2→1)</small>
+                </div>
+                <span class="tag good">SECUENCIAS</span>
+            </div>
+            <div class="card-b">
+                <div class="pill">
+                    <h3>Ciclo A (frío → caliente)</h3>
+                    <ul>
+                        <li><span class="tag accent">IDENTITY</span> “¿Cuál fue tu camiseta más inolvidable?”</li>
+                        <li><span class="tag accent">COMMUNITY</span> “¿Dónde se vive mejor el partido en tu ciudad?”</li>
+                        <li><span class="tag warn">PROMO</span> “Para los que preguntan 👕: hay camisetas esta semana…”</li>
+                    </ul>
+                </div>
+
+                <div class="sep"></div>
+
+                <div class="pill">
+                    <h3>Ciclo B (debate → acción)</h3>
+                    <ul>
+                        <li><span class="tag accent">CURRENT</span> “¿A quién pones de 9 hoy y por qué?”</li>
+                        <li><span class="tag accent">IDENTITY</span> “¿Qué gol te hizo gritar más?”</li>
+                        <li><span class="tag warn">PROMO</span> “Si quieres, dime talla + ciudad y te digo disponibilidad.”</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer">
+            <span class="kbd">Nota</span> Este documento contiene únicamente el storytelling (sin playbook operativo ni UI/feeds).
+        </div>
+    </div>
+</body>
+</html>

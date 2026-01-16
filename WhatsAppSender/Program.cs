@@ -30,23 +30,7 @@ public class Program
                 var commands = commandFactory.CreateCommand().ToList();
                 var jobArgs = host.Services.GetRequiredService<CommandArgs>();
                 Log.Information("Discovered {CommandCount} command(s) to execute", commands.Count);
-
-                foreach (var command in commands)
-                {
-                    var commandName = command.GetType().Name;
-                    try
-                    {
-                        Log.Information("▶ Executing command: {CommandName}", commandName);
-                        await command.ExecuteAsync(jobArgs.Arguments);
-                        Log.Information("✔ Command completed successfully: {CommandName}", commandName);
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error(ex, "✖ Command execution failed: {CommandName}", commandName);
-                        throw new AggregateException($"Command '{commandName}' failed", ex);
-                    }
-                }
-
+                await ExecuteCommand(commands, jobArgs);
                 Log.Information("✅ All commands executed successfully");
                 return;
             }
@@ -63,6 +47,25 @@ public class Program
         {
             Log.Information("🧹 Flushing logs and shutting down");
             await Log.CloseAndFlushAsync();
+        }
+    }
+
+    private static async Task ExecuteCommand(List<ICommand> commands, CommandArgs jobArgs)
+    {
+        foreach (var command in commands)
+        {
+            var commandName = command.GetType().Name;
+            try
+            {
+                Log.Information("▶ Executing command: {CommandName}", commandName);
+                await command.ExecuteAsync(jobArgs.Arguments);
+                Log.Information("✔ Command completed successfully: {CommandName}", commandName);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "✖ Command execution failed: {CommandName}", commandName);
+                throw new AggregateException($"Command '{commandName}' failed", ex);
+            }
         }
     }
 

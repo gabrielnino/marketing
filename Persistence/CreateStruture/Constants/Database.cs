@@ -30,6 +30,8 @@
             /// </summary>
             public const string ErrorLogs = "ErrorLogs";
 
+            public const string TrackedLinks = "TrackedLinks";
+
             /// <summary>
             /// Name of the Profiles table.
             /// </summary>

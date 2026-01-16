@@ -2,8 +2,8 @@
 using Application.UseCases.Repository.UseCases.CRUD;
 using Commands;
 using Configuration;
-using Infrastructure.Repositories.CRUD;
 using Infrastructure.Result;
+using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,12 +17,23 @@ using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
 using Services;
 using Services.Interfaces;
+using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenChat;
+using Services.WhatsApp.Abstractions.Search;
+using Services.WhatsApp.Login;
+using Services.WhatsApp.OpenChat;
+using Services.WhatsApp.Selector;
+using Services.WhatsApp.WhatsApp;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Bootstrapper
 {
     public static class AppHostBuilder
     {
         private const string AppSettingsFileName = "appsettings.json";
+        private const string Connection = "Connection string 'DefaultConnection' is missing or empty.";
+        private const string FailureMessage = "WhatsApp:Message configuration is incomplete";
+        private const string OutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}";
 
         public static IHostBuilder Create(string[] args)
         {
@@ -39,17 +50,7 @@ namespace Bootstrapper
             return Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    config.SetBasePath(basePath);
-                    // 🔴 HARD FAIL – explicit, early, deterministic
-                    
-
-                    config.AddJsonFile(
-                        path: AppSettingsFileName,
-                        optional: false,
-                        reloadOnChange: true
-                    );
-
-                    config.AddEnvironmentVariables();
+                    Configure(config, basePath);
                 })
                 .ConfigureServices((hostingContext, services) =>
                 {
@@ -57,19 +58,7 @@ namespace Bootstrapper
                         .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
                         .PostConfigure(o =>
                         {
-                            foreach (var key in o.Weekly.Keys.ToList())
-                            {
-                                var list = o.Weekly[key] ?? [];
-                                List<string> value =
-                                [
-                                    .. list
-                                        .Where(x => !string.IsNullOrWhiteSpace(x))
-                                        .Select(x => x.Trim())
-                                        .Distinct(StringComparer.OrdinalIgnoreCase)
-                                        .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
-                                ];
-                                o.Weekly[key] = value;
-                            }
+                            SetScheduler(o);
                         })
                         .ValidateOnStart();
 
@@ -79,7 +68,7 @@ namespace Bootstrapper
                             !string.IsNullOrWhiteSpace(o.ImageDirectory) &&
                             !string.IsNullOrWhiteSpace(o.ImageFileName) &&
                             !string.IsNullOrWhiteSpace(o.Caption),
-                            "WhatsApp:Message configuration is incomplete"
+                            FailureMessage
                         );
 
                     hostingContext.Configuration.Bind(appConfig);
@@ -110,7 +99,7 @@ namespace Bootstrapper
                         services.AddHostedService<WebDriverLifetimeService>();
                     }
 
-                    services.AddScoped<IWhatsAppMessage, WhatsAppMessage>();
+                    services.AddScoped<IMessage, Message>();
                     services.AddScoped<IWebDriver>(sp =>
                     {
                         var factory = sp.GetRequiredService<IWebDriverFactory>();
@@ -122,9 +111,9 @@ namespace Bootstrapper
                     services.AddTransient<ICaptureSnapshot, CaptureSnapshot>();
                     services.AddSingleton<IWebDriverFactory, ChromeDriverFactory>();
                     services.AddSingleton<IDirectoryCheck, DirectoryCheck>();
-                    services.AddSingleton<IUtil, Util>();
-                    services.AddTransient<IWhatAppOpenChat, WhatAppOpenChat>();
-                    services.AddTransient<IWhatsAppChatService, WhatsAppChatService>();
+                    services.AddTransient<IOpenChat, OpenChat>();
+                    services.AddTransient<IChatService, ChatService>();
+                    services.AddTransient<IAttachments, Attachments>();
                     services.AddTransient<IAutoItRunner, AutoItRunner>();
                     AddDbContextSQLite(hostingContext, services);
 
@@ -132,8 +121,12 @@ namespace Bootstrapper
                     services.AddScoped<IDataContext, DataContext>();
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
                     services.AddScoped<IErrorHandler, ErrorHandler>();
-                    services.AddScoped<IErrorLogCreate, ErrorLogCreate>();
                     services.AddSingleton<IColumnTypes, SQLite>();
+
+                    services.AddSingleton<ITrackedLinkCreate, TrackedLinkCreate>();
+                    services.AddSingleton<ITrackedLinkRead, TrackedLinkRead>();
+                    services.AddSingleton<ITrackedLinkUpdate, TrackedLinkUpdate>();
+
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {
@@ -151,9 +144,41 @@ namespace Bootstrapper
                             retainedFileCountLimit: 7,
                             rollOnFileSizeLimit: true,
                             outputTemplate:
-                                "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level}] {Message}{NewLine}{Exception}"
+                                OutputTemplate
                         );
                 });
+        }
+
+        private static void SetScheduler(SchedulerOptions o)
+        {
+            foreach (var key in o.Weekly.Keys.ToList())
+            {
+                var list = o.Weekly[key] ?? [];
+                List<string> value =
+                [
+                    .. list
+                                        .Where(x => !string.IsNullOrWhiteSpace(x))
+                                        .Select(x => x.Trim())
+                                        .Distinct(StringComparer.OrdinalIgnoreCase)
+                                        .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
+                ];
+                o.Weekly[key] = value;
+            }
+        }
+
+        private static void Configure(IConfigurationBuilder config, string basePath)
+        {
+            config.SetBasePath(basePath);
+            // 🔴 HARD FAIL – explicit, early, deterministic
+
+
+            config.AddJsonFile(
+                path: AppSettingsFileName,
+                optional: false,
+                reloadOnChange: true
+            );
+
+            config.AddEnvironmentVariables();
         }
 
         public static void LogCleanupReport(CleanupReport report)
@@ -164,19 +189,19 @@ namespace Bootstrapper
                 return;
             }
 
-            foreach (var deleted in report.DeletedRunningFolders)
-            {
-                Log.Information("Deleted orphaned execution folder: {FolderPath}", deleted);
-            }
+            //foreach (var deleted in report.DeletedRunningFolders)
+            //{
+            //    Log.Information("Deleted orphaned execution folder: {FolderPath}", deleted);
+            //}
 
-            foreach (var failure in report.DeleteFailures)
-            {
-                Log.Warning(
-                    failure.Exception,
-                    "Failed to delete orphaned execution folder: {FolderPath}",
-                    failure.Path
-                );
-            }
+            //foreach (var failure in report.DeleteFailures)
+            //{
+            //    Log.Warning(
+            //        failure.Exception,
+            //        "Failed to delete orphaned execution folder: {FolderPath}",
+            //        failure.Path
+            //    );
+            //}
 
             if (report.IsClean)
             {
@@ -196,25 +221,32 @@ namespace Bootstrapper
             IServiceCollection services
         )
         {
+
+
+
             var connectionString =
                 context.Configuration.GetConnectionString("DefaultConnection");
 
             if (string.IsNullOrWhiteSpace(connectionString))
             {
-                throw new ArgumentNullException(
-                    nameof(connectionString),
-                    "Connection string 'DefaultConnection' is missing or empty."
-                );
+                throw new ArgumentNullException(nameof(connectionString), Connection);
             }
+
+
+            services.AddHttpClient();
+            services.AddControllers();
+            services.AddEndpointsApiExplorer();
+            //services.AddSwaggerGen();
+            services.AddDistributedMemoryCache();
+
 
             services.AddDbContext<DataContext>(options =>
             {
                 options
                     .UseSqlite(connectionString, sqlite =>
                     {
-                        sqlite.MigrationsAssembly(
-                            typeof(DataContext).Assembly.GetName().Name
-                        );
+                        string? name = typeof(DataContext).Assembly.GetName().Name;
+                        sqlite.MigrationsAssembly(name);
                     })
                     .AddInterceptors(new SqliteFunctionInterceptor());
             });

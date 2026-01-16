@@ -2,8 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Services.Interfaces;
-using System;
-using System.IO;
 
 namespace Services;
 

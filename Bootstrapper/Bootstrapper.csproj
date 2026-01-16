@@ -8,6 +8,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Application\Application.csproj" />
 		<ProjectReference Include="..\Commands\Commands.csproj" />
+		<ProjectReference Include="..\Infrastructure.WhatsApp\Infrastructure.WhatsApp.csproj" />
 		<ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
 		<ProjectReference Include="..\Persistence\Persistence.csproj" />
 	</ItemGroup>
@@ -25,9 +26,6 @@
 
 	<ItemGroup>
 	  <None Update="appsettings.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="credentials.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="whatsapp_upload.au3">
