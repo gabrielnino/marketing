@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Concurrent;
+using System.Text.RegularExpressions;
 
 namespace Redirect.Func.Functions
 {
-    using Microsoft.Azure.Functions.Worker.Http;
-    using Microsoft.Extensions.Configuration;
-    using System.Collections.Concurrent;
-    using System.Net;
-    using System.Text.RegularExpressions;
-
     public static class RedirectDefense
     {
         private sealed record Counter(long WindowStartUnixMinute, int Count);
