@@ -1,5 +1,5 @@
 ﻿using Application.Result;
-using Application.WhatsApp.UseCases.Repository.CRUD;
+using Application.UseCases.Repository.UseCases.CRUD;
 using Commands;
 using Configuration;
 using Infrastructure.Result;
