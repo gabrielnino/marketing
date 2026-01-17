@@ -1,5 +1,4 @@
 ﻿using Application.Result;
-using Application.UseCases.Repository.UseCases.CRUD;
 using Commands;
 using Configuration;
 using Infrastructure.Result;
@@ -25,6 +24,7 @@ using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
 using Services.WhatsApp.WhatsApp;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Application.WhatsApp.UseCases.Repository.CRUD;
 
 namespace Bootstrapper
 {
