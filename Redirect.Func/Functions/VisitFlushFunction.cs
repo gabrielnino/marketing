@@ -11,24 +11,16 @@ using Microsoft.Extensions.Logging;
 
 namespace Redirect.Func.Functions;
 
-public sealed class VisitFlushFunction
+public sealed class VisitFlushFunction(
+    TableServiceClient tableServiceClient,
+    QueueServiceClient queueServiceClient,
+    IConfiguration config,
+    ILogger<VisitFlushFunction> logger)
 {
-    private readonly TableClient _tableClient;
-    private readonly QueueClient _queueClient;
-    private readonly ILogger<VisitFlushFunction> _logger;
-    private readonly IConfiguration _config;
-
-    public VisitFlushFunction(
-        TableServiceClient tableServiceClient,
-        QueueServiceClient queueServiceClient,
-        IConfiguration config,
-        ILogger<VisitFlushFunction> logger)
-    {
-        _tableClient = tableServiceClient.GetTableClient("TrackedLinks");
-        _queueClient = queueServiceClient.GetQueueClient("trackedlink-visits");
-        _config = config;
-        _logger = logger;
-    }
+    private readonly TableClient _tableClient = tableServiceClient.GetTableClient("TrackedLinks");
+    private readonly QueueClient _queueClient = queueServiceClient.GetQueueClient("trackedlink-visits");
+    private readonly ILogger<VisitFlushFunction> _logger = logger;
+    private readonly IConfiguration _config = config;
 
     // Se ejecuta cada 5 minutos por defecto (puedes cambiar a "0 */N * * * *")
     [Function("VisitFlush")]
