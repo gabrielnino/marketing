@@ -23,5 +23,5 @@ jobs:
         with:
           app-name: 'redirect-func'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E0379C862CF84CA6869CBD76E7C3EFC4 }}
