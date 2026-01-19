@@ -23,8 +23,8 @@ using Services.WhatsApp.Abstractions.Search;
 using Services.WhatsApp.Login;
 using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
+using Infrastructure.AzureTables;
 using Services.WhatsApp.WhatsApp;
-
 
 namespace Bootstrapper
 {
@@ -77,6 +77,8 @@ namespace Bootstrapper
                         !string.IsNullOrWhiteSpace(o.ServiceSasUrl) ,
                         FailureMessage
                     );
+
+                    
 
                     hostingContext.Configuration.Bind(appConfig);
 

@@ -45,9 +45,7 @@ namespace Persistence.Context.Implementation
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             ErrorLogTable.Create(modelBuilder, _columnTypes);
-            TrackedLinkTable.Create(modelBuilder, _columnTypes); // ✅ add this
         }
 
 
