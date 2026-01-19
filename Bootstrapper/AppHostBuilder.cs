@@ -71,13 +71,14 @@ namespace Bootstrapper
                             FailureMessage
                         );
 
-                    services.AddOptions<AzureTablesOptions>()
+                    services.AddOptions<AzureTablesConfig>()
                     .Bind(hostingContext.Configuration.GetSection("WhatsApp:AzureTables"))
                     .Validate(o =>
                         !string.IsNullOrWhiteSpace(o.ServiceSasUrl) ,
                         FailureMessage
                     );
 
+                        return new TrackedLink(opt.ServiceSasUrl);
                     
 
                     hostingContext.Configuration.Bind(appConfig);
