@@ -24,4 +24,10 @@
 		<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.6" />
 		<PackageReference Include="System.Reactive" Version="6.0.1" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Application">
+	    <HintPath>..\Application\obj\Debug\net8.0\ref\Application.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
 </Project>

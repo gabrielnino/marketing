@@ -4,12 +4,12 @@ using Application.TrackedLinks;
 
 namespace Infrastructure.AzureTables;
 
-public sealed class TrackedLink : ITrackedLink
+public sealed partial class TrackedLink : ITrackedLink
 {
     private const string TableName = "TrackedLinks";
     private const string PartitionKey = "urls";
 
-    private static readonly Regex IdRegex =   new(@"^[A-Za-z0-9]{15}$", RegexOptions.Compiled);
+    private static readonly Regex IdRegex = BuildIdRegex();
 
     private readonly TableClient _table;
 
@@ -46,4 +46,7 @@ public sealed class TrackedLink : ITrackedLink
                 "Id must be exactly 15 alphanumeric characters (A–Z, a–z, 0–9).",
                 nameof(id));
     }
+
+    [GeneratedRegex(@"^[A-Za-z0-9]{15}$", RegexOptions.Compiled)]
+    private static partial Regex BuildIdRegex();
 }

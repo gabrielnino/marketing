@@ -1,6 +1,7 @@
 ﻿using Bootstrapper;
 using Commands;
 using Configuration;
+using Infrastructure.AzureTables;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
