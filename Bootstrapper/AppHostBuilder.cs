@@ -1,11 +1,12 @@
 ﻿using Application.Result;
+using Application.TrackedLinks;
 using Commands;
 using Configuration;
 using Infrastructure.Result;
-using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using OpenQA.Selenium;
 using Persistence.Context.Implementation;
@@ -23,8 +24,7 @@ using Services.WhatsApp.Login;
 using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
 using Services.WhatsApp.WhatsApp;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Application.WhatsApp.UseCases.Repository.CRUD;
+
 
 namespace Bootstrapper
 {
@@ -70,6 +70,13 @@ namespace Bootstrapper
                             !string.IsNullOrWhiteSpace(o.Caption),
                             FailureMessage
                         );
+
+                    services.AddOptions<AzureTablesOptions>()
+                    .Bind(hostingContext.Configuration.GetSection("WhatsApp:AzureTables"))
+                    .Validate(o =>
+                        !string.IsNullOrWhiteSpace(o.ServiceSasUrl) ,
+                        FailureMessage
+                    );
 
                     hostingContext.Configuration.Bind(appConfig);
 
@@ -122,11 +129,7 @@ namespace Bootstrapper
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
                     services.AddScoped<IErrorHandler, ErrorHandler>();
                     services.AddSingleton<IColumnTypes, SQLite>();
-
-                    services.AddSingleton<ITrackedLinkCreate, TrackedLinkCreate>();
-                    services.AddSingleton<ITrackedLinkRead, TrackedLinkRead>();
-                    services.AddSingleton<ITrackedLinkUpdate, TrackedLinkUpdate>();
-
+                    services.AddSingleton<ITrackedLink, TrackedLink>();
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {

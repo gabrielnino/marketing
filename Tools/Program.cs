@@ -1,8 +1,6 @@
 ﻿using Application.Result;
-using Application.WhatsApp.UseCases.Repository.CRUD;
 using Configuration;
 using Infrastructure.Result;
-using Infrastructure.WhatsApp.Repositories.CRUD;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
@@ -64,9 +62,6 @@ namespace Tools
             builder.Services.AddScoped<IErrorLogger, SerilogErrorLogger>();
             builder.Services.AddScoped<IErrorHandler, ErrorHandler>();
             builder.Services.AddSingleton<IColumnTypes, SQLite>();
-            builder.Services.AddScoped<ITrackedLinkCreate, TrackedLinkCreate>();
-            builder.Services.AddScoped<ITrackedLinkRead, TrackedLinkRead>();
-            builder.Services.AddScoped<ITrackedLinkUpdate, TrackedLinkUpdate>();
             var app = builder.Build();
             using (var scope = app.Services.CreateScope())
             {
