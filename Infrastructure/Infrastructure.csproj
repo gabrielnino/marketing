@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\CRUD\**" />
+    <EmbeddedResource Remove="Repositories\CRUD\**" />
+    <None Remove="Repositories\CRUD\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Data.Tables" Version="12.11.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
@@ -59,9 +65,5 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UpdateLabels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\CRUD\" />
   </ItemGroup>
 </Project>

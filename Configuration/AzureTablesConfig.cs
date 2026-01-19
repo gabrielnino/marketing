@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Configuration
 {
-    public sealed class AzureTablesOptions
+    public sealed class AzureTablesConfig
     {
         public const string SectionName = "AzureTables";
 

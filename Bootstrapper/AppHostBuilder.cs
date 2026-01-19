@@ -25,6 +25,7 @@ using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
 using Infrastructure.AzureTables;
 using Services.WhatsApp.WhatsApp;
+using Microsoft.Extensions.Options;
 
 namespace Bootstrapper
 {
@@ -72,14 +73,17 @@ namespace Bootstrapper
                         );
 
                     services.AddOptions<AzureTablesConfig>()
-                    .Bind(hostingContext.Configuration.GetSection("WhatsApp:AzureTables"))
-                    .Validate(o =>
-                        !string.IsNullOrWhiteSpace(o.ServiceSasUrl) ,
-                        FailureMessage
-                    );
+                        .Bind(hostingContext.Configuration.GetSection("WhatsApp:AzureTables"))
+                        .Validate(o => !string.IsNullOrWhiteSpace(o.ServiceSasUrl),
+                            "WhatsApp:AzureTables:ServiceSasUrl is required.")
+                        .ValidateOnStart();
 
+                    services.AddScoped<ITrackedLink>(sp =>
+                    {
+                        var opt = sp.GetRequiredService<IOptions<AzureTablesConfig>>().Value;
                         return new TrackedLink(opt.ServiceSasUrl);
-                    
+                    });
+
 
                     hostingContext.Configuration.Bind(appConfig);
 
@@ -132,7 +136,7 @@ namespace Bootstrapper
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
                     services.AddScoped<IErrorHandler, ErrorHandler>();
                     services.AddSingleton<IColumnTypes, SQLite>();
-                    services.AddSingleton<ITrackedLink, TrackedLink>();
+
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {
@@ -163,10 +167,10 @@ namespace Bootstrapper
                 List<string> value =
                 [
                     .. list
-                                        .Where(x => !string.IsNullOrWhiteSpace(x))
-                                        .Select(x => x.Trim())
-                                        .Distinct(StringComparer.OrdinalIgnoreCase)
-                                        .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
+                        .Where(x => !string.IsNullOrWhiteSpace(x))
+                        .Select(x => x.Trim())
+                        .Distinct(StringComparer.OrdinalIgnoreCase)
+                        .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
                 ];
                 o.Weekly[key] = value;
             }
@@ -227,24 +231,17 @@ namespace Bootstrapper
             IServiceCollection services
         )
         {
-
-
-
-            var connectionString =
-                context.Configuration.GetConnectionString("DefaultConnection");
+            var connectionString = context.Configuration.GetConnectionString("DefaultConnection");
 
             if (string.IsNullOrWhiteSpace(connectionString))
             {
-                throw new ArgumentNullException(nameof(connectionString), Connection);
+                throw new ArgumentNullException(nameof(context), Connection);
             }
-
 
             services.AddHttpClient();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
-            //services.AddSwaggerGen();
             services.AddDistributedMemoryCache();
-
 
             services.AddDbContext<DataContext>(options =>
             {
