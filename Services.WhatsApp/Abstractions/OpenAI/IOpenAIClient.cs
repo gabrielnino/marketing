@@ -10,6 +10,6 @@ namespace Services.WhatsApp.Abstractions.OpenAI
 {
     public interface IOpenAIClient
     {
-        Task<string> GetChatCompletionAsync(Prompt prompt);
+        Task<string> GetChatCompletionAsync(Prompt prompt, CancellationToken ct = default);
     }
 }
