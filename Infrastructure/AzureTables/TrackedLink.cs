@@ -43,10 +43,10 @@ public sealed partial class TrackedLink : ITrackedLink
     {
         if (!IdRegex.IsMatch(id))
             throw new ArgumentException(
-                "Id must be exactly 15 alphanumeric characters (A–Z, a–z, 0–9).",
+                "Id must be exactly between 4 and 15 alphanumeric characters (A–Z, a–z, 0–9).",
                 nameof(id));
     }
 
-    [GeneratedRegex(@"^[A-Za-z0-9]{15}$", RegexOptions.Compiled)]
+    [GeneratedRegex(@"^[A-Za-z0-9]{4,15}$", RegexOptions.Compiled)]
     private static partial Regex BuildIdRegex();
 }

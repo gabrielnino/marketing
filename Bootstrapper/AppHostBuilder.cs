@@ -136,7 +136,7 @@ namespace Bootstrapper
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
                     services.AddScoped<IErrorHandler, ErrorHandler>();
                     services.AddSingleton<IColumnTypes, SQLite>();
-                    services.AddSingleton<ITrackedLink, TrackedLink>();
+                    //services.AddSingleton<ITrackedLink, TrackedLink>();
 
 
                 })
