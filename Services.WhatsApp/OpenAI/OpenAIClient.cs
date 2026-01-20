@@ -12,15 +12,20 @@ namespace Services.WhatsApp.OpenAI
 
         public async Task<string> GetChatCompletionAsync(Prompt prompt)
         {
-            if (string.IsNullOrWhiteSpace(prompt.SystemContent) || string.IsNullOrWhiteSpace(prompt.SystemContent))
-                throw new ArgumentException("Code cannot be null or whitespace.", nameof(prompt));
+            ArgumentNullException.ThrowIfNull(prompt);
+
+            if (string.IsNullOrWhiteSpace(prompt.SystemContent))
+                throw new ArgumentException("SystemContent cannot be null or whitespace.", nameof(prompt.SystemContent));
+
+            if (string.IsNullOrWhiteSpace(prompt.UserContent))
+                throw new ArgumentException("UserContent cannot be null or whitespace.", nameof(prompt.UserContent));
 
             var request = new OpenAIChatRequest(_openAI.Model)
             {
                 Messages =
                 [
-                    new() { Role = "system",  Content = prompt.SystemContent },
-                    new() { Role = "user",  Content = prompt.UserContent }
+                    new() { Role = "system", Content = prompt.SystemContent },
+                    new() { Role = "user",   Content = prompt.UserContent }
                 ]
             };
 
@@ -34,13 +39,10 @@ namespace Services.WhatsApp.OpenAI
 
             var responseData = await response.Content.ReadFromJsonAsync<OpenAIChatResponse>();
 
-            if (responseData == null || responseData.Choices == null || responseData.Choices.Count == 0)
-            {
+            if (responseData?.Choices == null || responseData.Choices.Count == 0)
                 throw new Exception("No response received from OpenAI API.");
-            }
 
-            var improvedCode = responseData.Choices[0].Message.Content.Trim();
-            return improvedCode;
+            return responseData.Choices[0].Message.Content.Trim();
         }
     }
 }
