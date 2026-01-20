@@ -2,12 +2,14 @@
 using Application.TrackedLinks;
 using Commands;
 using Configuration;
+using Infrastructure.AzureTables;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
@@ -18,14 +20,16 @@ using Serilog;
 using Services;
 using Services.Interfaces;
 using Services.WhatsApp.Abstractions.Login;
+using Services.WhatsApp.Abstractions.OpenAI;
 using Services.WhatsApp.Abstractions.OpenChat;
 using Services.WhatsApp.Abstractions.Search;
 using Services.WhatsApp.Login;
+using Services.WhatsApp.OpenAI;
 using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
-using Infrastructure.AzureTables;
 using Services.WhatsApp.WhatsApp;
-using Microsoft.Extensions.Options;
+using System.Net;
+using System.Net.Http.Headers;
 
 namespace Bootstrapper
 {
@@ -84,6 +88,30 @@ namespace Bootstrapper
                         return new TrackedLink(opt.ServiceSasUrl);
                     });
 
+                    services.AddOptions<OpenAIConfig>()
+                      .Bind(hostingContext.Configuration.GetSection("WhatsApp:OpenAI"))
+                      .Validate(o => !string.IsNullOrWhiteSpace(o.ApiKey) &&
+                                     !string.IsNullOrWhiteSpace(o.UriString) &&
+                                     !string.IsNullOrWhiteSpace(o.Model),
+                          "Configuration WhatsApp:OpenAI is required.")
+                      .ValidateOnStart();
+
+                    services.AddHttpClient<IOpenAIClient, OpenAIClient>((sp, http) =>
+                    {
+                        var opt = sp.GetRequiredService<IOptions<OpenAIConfig>>().Value;
+
+                        http.BaseAddress = new Uri(opt.UriString);
+                        var apiKey = Environment.GetEnvironmentVariable(opt.ApiKey, EnvironmentVariableTarget.Machine);
+                        http.DefaultRequestHeaders.Authorization =
+                            new AuthenticationHeaderValue("Bearer", apiKey);
+
+                        http.DefaultRequestHeaders.Accept.Add(
+                            new MediaTypeWithQualityHeaderValue("application/json"));
+                    })
+                    .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+                    {
+                        AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                    });
 
                     hostingContext.Configuration.Bind(appConfig);
 
