@@ -33,7 +33,7 @@ namespace Services.WhatsApp.OpenAI
             // Minimal resilience: retry a few times on transient failures (429/503/504)
             const int maxAttempts = 3;
             for (var attempt = 1; attempt <= maxAttempts; attempt++)
-            {
+            var response = await _httpClient.PostAsync(requestUri, content, ct);
                 using var response = await _httpClient.PostAsJsonAsync("v1/chat/completions", request, ct);
 
                 if (response.IsSuccessStatusCode)
