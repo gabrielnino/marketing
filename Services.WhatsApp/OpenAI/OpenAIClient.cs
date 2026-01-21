@@ -1,55 +1,51 @@
 ﻿using Configuration;
 using Domain.WhatsApp.OpenAI;
+using Microsoft.Extensions.Options;
 using Services.WhatsApp.Abstractions.OpenAI;
 using System.Net;
 using System.Net.Http.Json;
-
+using System.Text;
+using System.Text.Json;
 namespace Services.WhatsApp.OpenAI
 {
-    public class OpenAIClient(OpenAIConfig openAI, HttpClient httpClient) : IOpenAIClient
+    public class OpenAIClient(IOptions<OpenAIConfig> openAI, HttpClient httpClient) : IOpenAIClient
     {
-        private readonly OpenAIConfig _openAI = openAI;
+        private readonly IOptions<OpenAIConfig> _openAI = openAI;
         private readonly HttpClient _httpClient = httpClient;
 
         public async Task<string> GetChatCompletionAsync(Prompt prompt, CancellationToken ct = default)
         {
-            ArgumentNullException.ThrowIfNull(prompt);
 
-            if (string.IsNullOrWhiteSpace(prompt.SystemContent))
-                throw new ArgumentException("SystemContent cannot be null or whitespace.", nameof(prompt.SystemContent));
+            var apiKey = Environment.GetEnvironmentVariable(_openAI.Value.ApiKey);
 
-            if (string.IsNullOrWhiteSpace(prompt.UserContent))
-                throw new ArgumentException("UserContent cannot be null or whitespace.", nameof(prompt.UserContent));
-
-            var request = new OpenAIChatRequest(_openAI.Model)
+            var requestBody = new OpenAIChatRequest(_openAI.Value.Model)
             {
                 Messages =
                 [
                     new() { Role = "system", Content = prompt.SystemContent },
                     new() { Role = "user",   Content = prompt.UserContent }
-                ]
+                ],
+                Stream = false
             };
 
-            // Minimal resilience: retry a few times on transient failures (429/503/504)
+            var jsonBody = JsonSerializer.Serialize(requestBody);
+            var contentRequest = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+            var requestUri = $"{_openAI.Value.UriString}/v1/chat/completions";
             const int maxAttempts = 3;
             for (var attempt = 1; attempt <= maxAttempts; attempt++)
-            var response = await _httpClient.PostAsync(requestUri, content, ct);
-                using var response = await _httpClient.PostAsJsonAsync("v1/chat/completions", request, ct);
-
-                if (response.IsSuccessStatusCode)
+            {
+                var response = await _httpClient.PostAsync(requestUri, contentRequest, ct);
+                var statusResponse = response.IsSuccessStatusCode;
+                if (statusResponse)
                 {
                     var responseData = await response.Content.ReadFromJsonAsync<OpenAIChatResponse>(cancellationToken: ct);
-
                     if (responseData?.Choices == null || responseData.Choices.Count == 0)
                         throw new Exception("No response received from OpenAI API.");
-
                     var content = responseData.Choices[0]?.Message?.Content;
                     if (string.IsNullOrWhiteSpace(content))
                         throw new Exception("OpenAI API returned an empty completion.");
-
                     return content.Trim();
                 }
-
                 var status = response.StatusCode;
 
                 // Retry only on clearly transient statuses
@@ -72,10 +68,11 @@ namespace Services.WhatsApp.OpenAI
                     delay = TimeSpan.FromMilliseconds(250 * Math.Pow(2, attempt - 1)); // 250ms, 500ms, 1000ms
 
                 await Task.Delay(delay, ct);
-            }
 
+            }
             // Unreachable, but keeps compiler happy
             throw new Exception("Unexpected failure executing OpenAI request.");
+           
         }
     }
 }

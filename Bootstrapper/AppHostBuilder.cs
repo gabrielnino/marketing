@@ -21,10 +21,12 @@ using Services;
 using Services.Interfaces;
 using Services.WhatsApp.Abstractions.Login;
 using Services.WhatsApp.Abstractions.OpenAI;
+using Services.WhatsApp.Abstractions.OpenAI.news;
 using Services.WhatsApp.Abstractions.OpenChat;
 using Services.WhatsApp.Abstractions.Search;
 using Services.WhatsApp.Login;
 using Services.WhatsApp.OpenAI;
+using Services.WhatsApp.OpenAI.news;
 using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
 using Services.WhatsApp.WhatsApp;
@@ -101,17 +103,16 @@ namespace Bootstrapper
                         var opt = sp.GetRequiredService<IOptions<OpenAIConfig>>().Value;
 
                         http.BaseAddress = new Uri(opt.UriString);
-                        var apiKey = Environment.GetEnvironmentVariable(opt.ApiKey, EnvironmentVariableTarget.Machine);
-                        http.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", apiKey);
+                        http.Timeout = TimeSpan.FromSeconds(60);
 
-                        http.DefaultRequestHeaders.Accept.Add(
-                            new MediaTypeWithQualityHeaderValue("application/json"));
-                    })
-                    .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
-                    {
-                        AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                        var apiKey = Environment.GetEnvironmentVariable(opt.ApiKey, EnvironmentVariableTarget.Machine);
+                        if (string.IsNullOrWhiteSpace(apiKey))
+                            throw new InvalidOperationException($"OpenAI API key env var '{opt.ApiKey}' was not found at Machine scope.");
+
+                        http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+                        http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     });
+
 
                     hostingContext.Configuration.Bind(appConfig);
 
@@ -166,7 +167,11 @@ namespace Bootstrapper
                     services.AddSingleton<IColumnTypes, SQLite>();
                     //services.AddSingleton<ITrackedLink, TrackedLink>();
 
-
+                    services.AddSingleton<INewsHistoryStore, NewsHistoryStore>();
+                    services.AddSingleton<INostalgiaPromptLoader, NostalgiaPromptLoader>();
+                    //services.AddSingleton<IOpenAIClient, OpenAIClient>();
+                    services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
+                    
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {

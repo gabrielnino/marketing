@@ -30,4 +30,10 @@
 	    <HintPath>..\Application\obj\Debug\net8.0\ref\Application.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="OpenAI\news\NostalgiaURLSelector.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
 </Project>

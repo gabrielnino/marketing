@@ -1833,52 +1833,68 @@
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\openaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\iopenaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openai\\iopenaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|F:\\Marketing\\00_ImprovePromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|solutionrelative:00_ImprovePromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\prompt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\prompt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaimessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaimessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\ijsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openai\\news\\ijsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|f:\\marketing\\whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\inostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openai\\news\\inostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|F:\\Marketing\\02_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|solutionrelative:02_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|F:\\Marketing\\01_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|solutionrelative:01_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\azuretables\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\azuretables\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -1891,10 +1907,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|f:\\marketing\\whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -1923,10 +1935,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|f:\\marketing\\whatsappsender\\build-prodbundle.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\build-prodbundle.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -1936,7 +1944,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -1992,33 +2000,150 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "00_ImprovePromp.json",
-              "DocumentMoniker": "F:\\marketing\\00_ImprovePromp.json",
-              "RelativeDocumentMoniker": "00_ImprovePromp.json",
-              "ToolTip": "F:\\marketing\\00_ImprovePromp.json",
-              "RelativeToolTip": "00_ImprovePromp.json",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAkwIEAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwGYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T02:10:18.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OpenAIClient.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs*",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs*",
+              "ViewState": "AgIAAAUAAAAAAAAAAAD4vx4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T02:01:14.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAFQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-20T03:12:13.675Z",
+              "WhenOpened": "2026-01-21T01:56:15.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IJsonPromptRunner.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T15:09:14.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "INostalgiaPromptLoader.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T13:48:54.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "OpenAIChatRequest.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "NostalgiaPromptLoader.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T03:08:31.111Z",
+              "WhenOpened": "2026-01-20T13:46:37.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "JsonPromptRunner.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T13:26:28.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewsHistoryStore.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAApwGwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T05:10:50.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "02_TestPromp.json",
+              "DocumentMoniker": "F:\\marketing\\02_TestPromp.json",
+              "RelativeDocumentMoniker": "02_TestPromp.json",
+              "ToolTip": "F:\\marketing\\02_TestPromp.json",
+              "RelativeToolTip": "02_TestPromp.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-20T04:24:03.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "01_TestPromp.json",
+              "DocumentMoniker": "F:\\marketing\\01_TestPromp.json",
+              "RelativeDocumentMoniker": "01_TestPromp.json",
+              "ToolTip": "F:\\marketing\\01_TestPromp.json",
+              "RelativeToolTip": "01_TestPromp.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-20T04:24:02.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TrackedLink.cs",
+              "DocumentMoniker": "F:\\marketing\\Infrastructure\\AzureTables\\TrackedLink.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\AzureTables\\TrackedLink.cs",
+              "ToolTip": "F:\\marketing\\Infrastructure\\AzureTables\\TrackedLink.cs",
+              "RelativeToolTip": "Infrastructure\\AzureTables\\TrackedLink.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswB8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T03:07:49.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "OpenAIConfig.cs",
               "DocumentMoniker": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
               "RelativeDocumentMoniker": "Configuration\\OpenAIConfig.cs",
@@ -2031,33 +2156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AppHostBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAmwFwAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:54:12.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Selectors.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
-              "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Selectors.cs",
-              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
-              "RelativeToolTip": "Services.WhatsApp\\Selector\\Selectors.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:40:51.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "LoginService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginService.cs",
@@ -2070,33 +2169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OpenAIMessage.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:30:36.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Prompt.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:30:07.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "OpenAIChatResponse.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
@@ -2109,7 +2182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "OpenAIChatChoice.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
@@ -2122,46 +2195,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OpenAIClient.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwBwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:24:06.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IOpenAIClient.cs",
-              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:20:53.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
               "RelativeDocumentMoniker": "AzureTable\\Program.cs",
               "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
               "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T01:27:58.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "Attachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Attachments.cs",
@@ -2174,7 +2221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "SearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
@@ -2187,7 +2234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "ISearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
@@ -2199,7 +2246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "IAttachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
@@ -2211,7 +2258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "IOpenChat.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
@@ -2223,7 +2270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "IClicker.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
@@ -2235,7 +2282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "IChatService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
@@ -2248,7 +2295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "ISelectors.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
@@ -2260,7 +2307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "WebDriverFacade.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
@@ -2272,7 +2319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "UrlShort.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Url\\UrlShort.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Url\\UrlShort.cs",
@@ -2285,28 +2332,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\WhatsAppSender\\Program.cs",
               "RelativeDocumentMoniker": "WhatsAppSender\\Program.cs",
               "ToolTip": "F:\\marketing\\WhatsAppSender\\Program.cs",
               "RelativeToolTip": "WhatsAppSender\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvwoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvyMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T14:36:11.603Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Build-ProdBundle.ps1",
-              "DocumentMoniker": "F:\\marketing\\WhatsAppSender\\Build-ProdBundle.ps1",
-              "RelativeDocumentMoniker": "WhatsAppSender\\Build-ProdBundle.ps1",
-              "ToolTip": "F:\\marketing\\WhatsAppSender\\Build-ProdBundle.ps1",
-              "RelativeToolTip": "WhatsAppSender\\Build-ProdBundle.ps1",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-19T14:35:45.067Z"
             }
           ]
         }
@@ -2322,56 +2357,72 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\azuretables\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\azuretables\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\iopenaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openai\\iopenaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|F:\\Marketing\\00_ImprovePromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|solutionrelative:00_ImprovePromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\prompt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\prompt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaimessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaimessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\openaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\openaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\selectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\ijsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openai\\news\\ijsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|f:\\marketing\\whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\inostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openai\\news\\inostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|f:\\marketing\\domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A10AD4E0-9CD3-4978-A045-07A96B129989}|Domain.WhatsApp\\Domain.WhatsApp.csproj|solutionrelative:domain.whatsapp\\openai\\openaichatchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|F:\\Marketing\\02_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|solutionrelative:02_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|F:\\Marketing\\01_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E082B258-B779-44B6-964A-208238F3D78F}|Others{E082B258-B779-44B6-964A-208238F3D78F}|solutionrelative:01_TestPromp.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|f:\\marketing\\infrastructure\\azuretables\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23F914B5-3BE2-401B-BFFF-D69A8902FEFE}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\azuretables\\trackedlink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\selector\\attachments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -2384,10 +2435,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\openchat\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|f:\\marketing\\whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -2416,10 +2463,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\abstractions\\selector\\iselectors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|f:\\marketing\\whatsappsender\\build-prodbundle.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\build-prodbundle.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -2429,7 +2472,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -2485,46 +2528,150 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwGYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T02:10:18.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OpenAIClient.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAD4vx4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-21T02:01:14.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAFQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-21T01:56:15.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IJsonPromptRunner.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T15:09:14.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "INostalgiaPromptLoader.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T13:48:54.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NostalgiaPromptLoader.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T13:46:37.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JsonPromptRunner.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T13:26:28.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewsHistoryStore.cs",
+              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAApwGwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T05:10:50.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "02_TestPromp.json",
+              "DocumentMoniker": "F:\\marketing\\02_TestPromp.json",
+              "RelativeDocumentMoniker": "02_TestPromp.json",
+              "ToolTip": "F:\\marketing\\02_TestPromp.json",
+              "RelativeToolTip": "02_TestPromp.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-20T04:24:03.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "01_TestPromp.json",
+              "DocumentMoniker": "F:\\marketing\\01_TestPromp.json",
+              "RelativeDocumentMoniker": "01_TestPromp.json",
+              "ToolTip": "F:\\marketing\\01_TestPromp.json",
+              "RelativeToolTip": "01_TestPromp.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-20T04:24:02.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "TrackedLink.cs",
               "DocumentMoniker": "F:\\marketing\\Infrastructure\\AzureTables\\TrackedLink.cs",
               "RelativeDocumentMoniker": "Infrastructure\\AzureTables\\TrackedLink.cs",
               "ToolTip": "F:\\marketing\\Infrastructure\\AzureTables\\TrackedLink.cs",
               "RelativeToolTip": "Infrastructure\\AzureTables\\TrackedLink.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAswCAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswB8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T03:07:49.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "00_ImprovePromp.json",
-              "DocumentMoniker": "F:\\marketing\\00_ImprovePromp.json",
-              "RelativeDocumentMoniker": "00_ImprovePromp.json",
-              "ToolTip": "F:\\marketing\\00_ImprovePromp.json",
-              "RelativeToolTip": "00_ImprovePromp.json",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAkwIEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-20T03:12:13.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OpenAIChatRequest.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\OpenAI\\OpenAIChatRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T03:08:31.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "OpenAIConfig.cs",
               "DocumentMoniker": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
               "RelativeDocumentMoniker": "Configuration\\OpenAIConfig.cs",
@@ -2537,33 +2684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AppHostBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAmwFwAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:54:12.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Selectors.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
-              "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Selectors.cs",
-              "ToolTip": "F:\\marketing\\Services.WhatsApp\\Selector\\Selectors.cs",
-              "RelativeToolTip": "Services.WhatsApp\\Selector\\Selectors.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:40:51.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "LoginService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginService.cs",
@@ -2576,33 +2697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OpenAIMessage.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\OpenAI\\OpenAIMessage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:30:36.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Prompt.cs",
-              "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "ToolTip": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "RelativeToolTip": "Domain.WhatsApp\\OpenAI\\Prompt.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:30:07.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "OpenAIChatResponse.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
@@ -2615,7 +2710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "OpenAIChatChoice.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
@@ -2629,32 +2724,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IOpenAIClient.cs",
-              "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "ToolTip": "F:\\Marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "RelativeToolTip": "Services.WhatsApp\\Abstractions\\OpenAI\\IOpenAIClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T02:20:53.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
               "RelativeDocumentMoniker": "AzureTable\\Program.cs",
-              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs*",
-              "RelativeToolTip": "AzureTable\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeToolTip": "AzureTable\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T01:27:58.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "Attachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Attachments.cs",
@@ -2667,7 +2749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "SearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
@@ -2680,7 +2762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "ISearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
@@ -2692,7 +2774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "IAttachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
@@ -2704,7 +2786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "IOpenChat.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
@@ -2716,7 +2798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "IClicker.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
@@ -2728,7 +2810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "IChatService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
@@ -2741,7 +2823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "ISelectors.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
@@ -2753,7 +2835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "WebDriverFacade.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
@@ -2765,7 +2847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "UrlShort.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Url\\UrlShort.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Url\\UrlShort.cs",
@@ -2778,28 +2860,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\WhatsAppSender\\Program.cs",
               "RelativeDocumentMoniker": "WhatsAppSender\\Program.cs",
               "ToolTip": "F:\\marketing\\WhatsAppSender\\Program.cs",
               "RelativeToolTip": "WhatsAppSender\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvwoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvyMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T14:36:11.603Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Build-ProdBundle.ps1",
-              "DocumentMoniker": "F:\\marketing\\WhatsAppSender\\Build-ProdBundle.ps1",
-              "RelativeDocumentMoniker": "WhatsAppSender\\Build-ProdBundle.ps1",
-              "ToolTip": "F:\\marketing\\WhatsAppSender\\Build-ProdBundle.ps1",
-              "RelativeToolTip": "WhatsAppSender\\Build-ProdBundle.ps1",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-19T14:35:45.067Z"
             }
           ]
         }
@@ -4195,7 +4265,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -4212,7 +4282,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application.WhatsApp\obj\Debug\net8.0\Application.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Application.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -4251,13 +4321,15 @@ global using global::System.Threading.Tasks;
 ﻿using Application.TrackedLinks;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
+using Services.WhatsApp.Abstractions.OpenAI.news;
+using Services.WhatsApp.OpenAI.news;
 public class Program
 {
 public static async Task Main(string[] args)
 {
 using var host = AppHostBuilder.Create(args).Build();
-var trackedLink = host.Services.GetRequiredService<ITrackedLink>();
-await trackedLink.UpsertAsync("google", "https://www.google.com/");
+var runner = host.Services.GetRequiredService<IJsonPromptRunner>();
+await runner.RunStrictJsonAsync();
 }
 }
 
@@ -6276,6 +6348,72 @@ await trackedLink.UpsertAsync("google", "https://www.google.com/");
     }
   }
 }
+
+=== FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\NewsHistoryStore.json ===
+
+{
+  "Urls": []
+}
+
+=== FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+
+{
+  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
+  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "context": {
+    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
+    "allowed_sources": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ],
+    "history": {
+      "type": "json",
+      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
+    },
+    "excluded_urls": [
+      "https://example.com/already-used-1",
+      "https://example.com/already-used-2"
+    ]
+  },
+  "task": {
+    "goal": "Select five unique URLs of audiovisual content.",
+    "selection_priority": [
+      "Immediate emotional explosion (goal, celebration, visceral reaction)",
+      "Narrative load (story, voice-over, emotional context)",
+      "Collective identity (pride, fans, national symbols)"
+    ],
+    "mandatory_threshold": [
+      "A recognizable iconic moment of the Colombian National Team",
+      "Strong human reaction (players, narrator, crowd)"
+    ],
+    "exclusion_rules": [
+      "Tactical or journalistic analysis",
+      "Informational summaries without emotional charge",
+      "Generic reposts lacking narrative or emotional context",
+      "Any URL present in excluded_urls"
+    ],
+    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
+  },
+  "output": {
+    "type": "strict_json",
+    "schema": {
+      "urls": [
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://..."
+      ]
+    },
+    "constraints": [
+      "Do not repeat URLs present in history or excluded_urls",
+      "Do not include descriptions, messages, metadata, or comments",
+      "Do not add any text outside the JSON output"
+    ]
+  }
+}
+
 
 === FILE: F:\Marketing\AzureTable\obj\AzureTable.csproj.nuget.dgspec.json ===
 
@@ -11566,7 +11704,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ddb55b3862f9df2d558ef14e836e6ddf1d34a92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -11583,7 +11721,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\AzureTable\obj\Debug\net8.0\AzureTable.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4ddb55b3862f9df2d558ef14e836e6ddf1d34a92/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
@@ -11610,10 +11748,12 @@ using Services;
 using Services.Interfaces;
 using Services.WhatsApp.Abstractions.Login;
 using Services.WhatsApp.Abstractions.OpenAI;
+using Services.WhatsApp.Abstractions.OpenAI.news;
 using Services.WhatsApp.Abstractions.OpenChat;
 using Services.WhatsApp.Abstractions.Search;
 using Services.WhatsApp.Login;
 using Services.WhatsApp.OpenAI;
+using Services.WhatsApp.OpenAI.news;
 using Services.WhatsApp.OpenChat;
 using Services.WhatsApp.Selector;
 using Services.WhatsApp.WhatsApp;
@@ -11682,15 +11822,12 @@ services.AddHttpClient<IOpenAIClient, OpenAIClient>((sp, http) =>
 {
 var opt = sp.GetRequiredService<IOptions<OpenAIConfig>>().Value;
 http.BaseAddress = new Uri(opt.UriString);
+http.Timeout = TimeSpan.FromSeconds(60);
 var apiKey = Environment.GetEnvironmentVariable(opt.ApiKey, EnvironmentVariableTarget.Machine);
-http.DefaultRequestHeaders.Authorization =
-new AuthenticationHeaderValue("Bearer", apiKey);
-http.DefaultRequestHeaders.Accept.Add(
-new MediaTypeWithQualityHeaderValue("application/json"));
-})
-.ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
-{
-AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+if (string.IsNullOrWhiteSpace(apiKey))
+throw new InvalidOperationException($"OpenAI API key env var '{opt.ApiKey}' was not found at Machine scope.");
+http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 });
 hostingContext.Configuration.Bind(appConfig);
 var executionMode =
@@ -11734,6 +11871,9 @@ services.AddScoped<IDataContext, DataContext>();
 services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
 services.AddScoped<IErrorHandler, ErrorHandler>();
 services.AddSingleton<IColumnTypes, SQLite>();
+services.AddSingleton<INewsHistoryStore, NewsHistoryStore>();
+services.AddSingleton<INostalgiaPromptLoader, NostalgiaPromptLoader>();
+services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
 })
 .UseSerilog((context, services, loggerConfig) =>
 {
@@ -13910,6 +14050,66 @@ Command
     }
   }
 }
+
+=== FILE: F:\Marketing\Bootstrapper\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+
+{
+  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
+  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "context": {
+    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
+    "allowed_sources": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ],
+    "history": {
+      "type": "json",
+      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
+    },
+    "excluded_urls": [
+      "https://example.com/already-used-1",
+      "https://example.com/already-used-2"
+    ]
+  },
+  "task": {
+    "goal": "Select five unique URLs of audiovisual content.",
+    "selection_priority": [
+      "Immediate emotional explosion (goal, celebration, visceral reaction)",
+      "Narrative load (story, voice-over, emotional context)",
+      "Collective identity (pride, fans, national symbols)"
+    ],
+    "mandatory_threshold": [
+      "A recognizable iconic moment of the Colombian National Team",
+      "Strong human reaction (players, narrator, crowd)"
+    ],
+    "exclusion_rules": [
+      "Tactical or journalistic analysis",
+      "Informational summaries without emotional charge",
+      "Generic reposts lacking narrative or emotional context",
+      "Any URL present in excluded_urls"
+    ],
+    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
+  },
+  "output": {
+    "type": "strict_json",
+    "schema": {
+      "urls": [
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://..."
+      ]
+    },
+    "constraints": [
+      "Do not repeat URLs present in history or excluded_urls",
+      "Do not include descriptions, messages, metadata, or comments",
+      "Do not add any text outside the JSON output"
+    ]
+  }
+}
+
 
 === FILE: F:\Marketing\Bootstrapper\bin\Release\net8.0\appsettings.json ===
 
@@ -21027,7 +21227,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ddb55b3862f9df2d558ef14e836e6ddf1d34a92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -21044,7 +21244,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4ddb55b3862f9df2d558ef14e836e6ddf1d34a92/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -21906,6 +22106,66 @@ Logger.LogInformation("InviteCommand: finished.");
     }
   }
 }
+
+=== FILE: F:\Marketing\Commands\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+
+{
+  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
+  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "context": {
+    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
+    "allowed_sources": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ],
+    "history": {
+      "type": "json",
+      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
+    },
+    "excluded_urls": [
+      "https://example.com/already-used-1",
+      "https://example.com/already-used-2"
+    ]
+  },
+  "task": {
+    "goal": "Select five unique URLs of audiovisual content.",
+    "selection_priority": [
+      "Immediate emotional explosion (goal, celebration, visceral reaction)",
+      "Narrative load (story, voice-over, emotional context)",
+      "Collective identity (pride, fans, national symbols)"
+    ],
+    "mandatory_threshold": [
+      "A recognizable iconic moment of the Colombian National Team",
+      "Strong human reaction (players, narrator, crowd)"
+    ],
+    "exclusion_rules": [
+      "Tactical or journalistic analysis",
+      "Informational summaries without emotional charge",
+      "Generic reposts lacking narrative or emotional context",
+      "Any URL present in excluded_urls"
+    ],
+    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
+  },
+  "output": {
+    "type": "strict_json",
+    "schema": {
+      "urls": [
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://..."
+      ]
+    },
+    "constraints": [
+      "Do not repeat URLs present in history or excluded_urls",
+      "Do not include descriptions, messages, metadata, or comments",
+      "Do not add any text outside the JSON output"
+    ]
+  }
+}
+
 
 === FILE: F:\Marketing\Commands\bin\Release\net8.0\Commands.deps.json ===
 
@@ -24859,7 +25119,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ddb55b3862f9df2d558ef14e836e6ddf1d34a92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -24876,7 +25136,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4ddb55b3862f9df2d558ef14e836e6ddf1d34a92/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -26108,6 +26368,69 @@ public string Caption { get; init; } = string.Empty;
 }
 }
 
+=== FILE: F:\Marketing\Domain.WhatsApp\NostalgiaPrompt.cs ===
+
+﻿using System.Text.Json.Serialization;
+namespace Domain.WhatsApp;
+public sealed class NostalgiaPrompt
+{
+[JsonPropertyName("prompt_name")]
+public string PromptName { get; set; } = string.Empty;
+[JsonPropertyName("role")]
+public string Role { get; set; } = string.Empty;
+[JsonPropertyName("context")]
+public NostalgiaContext Context { get; set; } = new();
+[JsonPropertyName("task")]
+public NostalgiaTask Task { get; set; } = new();
+[JsonPropertyName("output")]
+public NostalgiaOutput Output { get; set; } = new();
+}
+public sealed class NostalgiaContext
+{
+[JsonPropertyName("objective")]
+public string Objective { get; set; } = string.Empty;
+[JsonPropertyName("allowed_sources")]
+public List<string> AllowedSources { get; set; } = [];
+[JsonPropertyName("history")]
+public NostalgiaHistory History { get; set; } = new();
+[JsonPropertyName("excluded_urls")]
+public List<string> ExcludedUrls { get; set; } = [];
+}
+public sealed class NostalgiaHistory
+{
+[JsonPropertyName("type")]
+public string Type { get; set; } = string.Empty;
+[JsonPropertyName("rule")]
+public string Rule { get; set; } = string.Empty;
+}
+public sealed class NostalgiaTask
+{
+[JsonPropertyName("goal")]
+public string Goal { get; set; } = string.Empty;
+[JsonPropertyName("selection_priority")]
+public List<string> SelectionPriority { get; set; } = [];
+[JsonPropertyName("mandatory_threshold")]
+public List<string> MandatoryThreshold { get; set; } = [];
+[JsonPropertyName("exclusion_rules")]
+public List<string> ExclusionRules { get; set; } = [];
+[JsonPropertyName("duration_policy")]
+public string DurationPolicy { get; set; } = string.Empty;
+}
+public sealed class NostalgiaOutput
+{
+[JsonPropertyName("type")]
+public string Type { get; set; } = string.Empty;
+[JsonPropertyName("schema")]
+public NostalgiaOutputSchema Schema { get; set; } = new();
+[JsonPropertyName("constraints")]
+public List<string> Constraints { get; set; } = [];
+}
+public sealed class NostalgiaOutputSchema
+{
+[JsonPropertyName("urls")]
+public List<string> Urls { get; set; } = [];
+}
+
 === FILE: F:\Marketing\Domain.WhatsApp\bin\Debug\net8.0\Domain.WhatsApp.deps.json ===
 
 {
@@ -26461,7 +26784,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -26478,7 +26801,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Domain.WhatsApp\obj\Debug\net8.0\Domain.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Domain.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -30424,7 +30747,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -30441,7 +30764,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -34891,7 +35214,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -34908,7 +35231,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Debug\net8.0\Infrastructure.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Infrastructure.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -39639,7 +39962,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -39657,7 +39980,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -48484,7 +48807,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -48502,7 +48825,7 @@ global using global::Xunit;
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net8.0\Marketing.Tests.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs ===
 
@@ -51888,7 +52211,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -51905,7 +52228,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Persistence\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -55936,7 +56259,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bcc1a16f53db90d30699049d02f79a5ee004e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -55953,7 +56276,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/8bcc1a16f53db90d30699049d02f79a5ee004e57/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -56035,65 +56358,42 @@ Task<string> GetChatCompletionAsync(Prompt prompt, CancellationToken ct = defaul
 }
 }
 
-=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenAI\news\IJsonPromptRunner.cs ===
 
+﻿namespace Services.WhatsApp.Abstractions.OpenAI.news
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
-  "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
-    ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
-  },
-  "task": {
-    "goal": "Select five unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
-    ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
-  }
+public interface IJsonPromptRunner
+{
+Task<List<string>> RunStrictJsonAsync(CancellationToken ct = default);
+}
 }
 
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenAI\news\INewsHistoryStore.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.WhatsApp.Abstractions.OpenAI.news
+{
+public interface INewsHistoryStore
+{
+Task<HashSet<string>> LoadUrlsAsync(CancellationToken ct = default);
+Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct = default);
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenAI\news\INostalgiaPromptLoader.cs ===
+
+﻿using Domain.WhatsApp;
+namespace Services.WhatsApp.Abstractions.OpenAI.news
+{
+public interface INostalgiaPromptLoader
+{
+Task<NostalgiaPrompt> LoadPromptAsync();
+}
+}
 
 === FILE: F:\Marketing\Services.WhatsApp\Abstractions\OpenChat\IChatService.cs ===
 
@@ -56905,6 +57205,66 @@ string EscapeXPathLiteral(string value);
     }
   }
 }
+
+=== FILE: F:\Marketing\Services.WhatsApp\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+
+{
+  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
+  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "context": {
+    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
+    "allowed_sources": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ],
+    "history": {
+      "type": "json",
+      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
+    },
+    "excluded_urls": [
+      "https://example.com/already-used-1",
+      "https://example.com/already-used-2"
+    ]
+  },
+  "task": {
+    "goal": "Select five unique URLs of audiovisual content.",
+    "selection_priority": [
+      "Immediate emotional explosion (goal, celebration, visceral reaction)",
+      "Narrative load (story, voice-over, emotional context)",
+      "Collective identity (pride, fans, national symbols)"
+    ],
+    "mandatory_threshold": [
+      "A recognizable iconic moment of the Colombian National Team",
+      "Strong human reaction (players, narrator, crowd)"
+    ],
+    "exclusion_rules": [
+      "Tactical or journalistic analysis",
+      "Informational summaries without emotional charge",
+      "Generic reposts lacking narrative or emotional context",
+      "Any URL present in excluded_urls"
+    ],
+    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
+  },
+  "output": {
+    "type": "strict_json",
+    "schema": {
+      "urls": [
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://..."
+      ]
+    },
+    "constraints": [
+      "Do not repeat URLs present in history or excluded_urls",
+      "Do not include descriptions, messages, metadata, or comments",
+      "Do not add any text outside the JSON output"
+    ]
+  }
+}
+
 
 === FILE: F:\Marketing\Services.WhatsApp\bin\Release\net8.0\Services.WhatsApp.deps.json ===
 
@@ -60047,7 +60407,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55b1a2f5a83716a2c2639e4341cf6eb5baacc337")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -60064,7 +60424,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4ddb55b3862f9df2d558ef14e836e6ddf1d34a92/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\Services.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -60102,65 +60462,301 @@ global using global::System.Threading.Tasks;
 
 ﻿using Configuration;
 using Domain.WhatsApp.OpenAI;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Services.WhatsApp.Abstractions.OpenAI;
 using System.Net;
 using System.Net.Http.Json;
+using System.Text;
 namespace Services.WhatsApp.OpenAI
 {
-public class OpenAIClient(OpenAIConfig openAI, HttpClient httpClient) : IOpenAIClient
+public class OpenAIClient(IOptions<OpenAIConfig> openAI, HttpClient httpClient) : IOpenAIClient
 {
-private readonly OpenAIConfig _openAI = openAI;
+private readonly IOptions<OpenAIConfig> _openAI = openAI;
 private readonly HttpClient _httpClient = httpClient;
 public async Task<string> GetChatCompletionAsync(Prompt prompt, CancellationToken ct = default)
 {
-ArgumentNullException.ThrowIfNull(prompt);
-if (string.IsNullOrWhiteSpace(prompt.SystemContent))
-throw new ArgumentException("SystemContent cannot be null or whitespace.", nameof(prompt.SystemContent));
-if (string.IsNullOrWhiteSpace(prompt.UserContent))
-throw new ArgumentException("UserContent cannot be null or whitespace.", nameof(prompt.UserContent));
-var request = new OpenAIChatRequest(_openAI.Model)
+string apiKey = Environment.GetEnvironmentVariable("DEEPSEEK_API_KEY");
+if (string.IsNullOrEmpty(apiKey))
 {
-Messages =
-[
-new() { Role = "system", Content = prompt.SystemContent },
-new() { Role = "user",   Content = prompt.UserContent }
-]
+Console.WriteLine("Please set the OPENAI_API_KEY environment variable.");
+return string.Empty;
+}
+using var httpClient = new HttpClient();
+httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
+var requestBody = new
+{
+model = _openAI.Value.Model,
+messages = new[]
+{
+new { role = "system", content = "You are a helpful assistant." },
+new { role = "user", content = "write note to introduce you." }
+},
+stream = false
 };
-const int maxAttempts = 3;
-for (var attempt = 1; attempt <= maxAttempts; attempt++)
-{
-using var response = await _httpClient.PostAsJsonAsync("v1/chat/completions", request, ct);
+string jsonBody = JsonConvert.SerializeObject(requestBody);
+var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+var response = await httpClient.PostAsync("https://api.deepseek.com/v1/chat/completions", content);
 if (response.IsSuccessStatusCode)
 {
-var responseData = await response.Content.ReadFromJsonAsync<OpenAIChatResponse>(cancellationToken: ct);
-if (responseData?.Choices == null || responseData.Choices.Count == 0)
-throw new Exception("No response received from OpenAI API.");
-var content = responseData.Choices[0]?.Message?.Content;
-if (string.IsNullOrWhiteSpace(content))
-throw new Exception("OpenAI API returned an empty completion.");
-return content.Trim();
+string responseBody = await response.Content.ReadAsStringAsync();
+dynamic jsonResponse = JsonConvert.DeserializeObject(responseBody);
+Console.WriteLine(jsonResponse.choices[0].message.content);
 }
-var status = response.StatusCode;
-var isTransient =
-status == (HttpStatusCode)429 ||
-status == HttpStatusCode.ServiceUnavailable ||
-status == HttpStatusCode.GatewayTimeout;
-if (!isTransient || attempt == maxAttempts)
-{
-var errorContent = await response.Content.ReadAsStringAsync(ct);
-throw new Exception($"OpenAI API request failed with status code {status}: {errorContent}");
-}
-TimeSpan delay;
-if (response.Headers.RetryAfter?.Delta is { } retryAfterDelta)
-delay = retryAfterDelta;
 else
-delay = TimeSpan.FromMilliseconds(250 * Math.Pow(2, attempt - 1));
-await Task.Delay(delay, ct);
+{
+Console.WriteLine($"Error: {response.StatusCode} - {await response.Content.ReadAsStringAsync()}");
 }
-throw new Exception("Unexpected failure executing OpenAI request.");
+return string.Empty;
 }
 }
 }
+
+=== FILE: F:\Marketing\Services.WhatsApp\OpenAI\news\JsonPromptRunner.cs ===
+
+﻿using Domain.WhatsApp;
+using Domain.WhatsApp.OpenAI;
+using Services.WhatsApp.Abstractions.OpenAI;
+using Services.WhatsApp.Abstractions.OpenAI.news;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+namespace Services.WhatsApp.OpenAI.news
+{
+public class JsonPromptRunner(
+INewsHistoryStore newsHistoryStore,
+INostalgiaPromptLoader nostalgiaPromptLoader,
+IOpenAIClient openAIClient
+) : IJsonPromptRunner
+{
+private readonly INewsHistoryStore _newsHistoryStore = newsHistoryStore;
+private readonly INostalgiaPromptLoader _nostalgiaPromptLoader = nostalgiaPromptLoader;
+private readonly IOpenAIClient _openAIClient = openAIClient;
+public async Task<List<string>> RunStrictJsonAsync(CancellationToken ct = default)
+{
+var urls = await _newsHistoryStore.LoadUrlsAsync(ct);
+var promptNoslgia = await _nostalgiaPromptLoader.LoadPromptAsync();
+promptNoslgia.Context.ExcludedUrls = [];
+if (urls.Any())
+{
+promptNoslgia.Context.ExcludedUrls.AddRange(urls);
+}
+var content = ToJsonWithoutRole(promptNoslgia);
+var prompt = new Prompt
+{
+SystemContent = promptNoslgia.Role,
+UserContent = content
+};
+var result = _openAIClient.GetChatCompletionAsync(prompt, ct);
+return ["one", "two", "three"];
+}
+public static string ToJsonWithoutRole(NostalgiaPrompt prompt, bool indented = true)
+{
+if (prompt is null) throw new ArgumentNullException(nameof(prompt));
+var options = new JsonSerializerOptions { WriteIndented = indented };
+JsonNode node = JsonSerializer.SerializeToNode(prompt, options)
+?? throw new JsonException("Failed to serialize NostalgiaPrompt.");
+node.AsObject().Remove("role");
+return node.ToJsonString(options);
+}
+public static string ConvertJsonWithoutRole(string json)
+{
+if (string.IsNullOrWhiteSpace(json))
+throw new ArgumentException("JSON input cannot be null or empty.", nameof(json));
+var node = JsonNode.Parse(json)
+?? throw new JsonException("Invalid JSON.");
+node.AsObject().Remove("role");
+return node.ToJsonString(new JsonSerializerOptions
+{
+WriteIndented = true
+});
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\OpenAI\news\NewsHistoryStore.cs ===
+
+﻿using Services.WhatsApp.Abstractions.OpenAI.news;
+using System.Text.Json;
+namespace Services.WhatsApp.OpenAI.news
+{
+public sealed class NewsHistoryStore : INewsHistoryStore
+{
+private const string DefaultNameFileNewsHistoryStore = "NewsHistoryStore.json";
+private readonly string _historyPath = Path.Combine(AppContext.BaseDirectory, DefaultNameFileNewsHistoryStore);
+private static readonly JsonSerializerOptions JsonOpts = new()
+{
+PropertyNameCaseInsensitive = true,
+WriteIndented = true
+};
+public async Task<HashSet<string>> LoadUrlsAsync(CancellationToken ct = default)
+{
+EnsureFileExists();
+await using var fs = File.OpenRead(_historyPath);
+var doc = await JsonSerializer.DeserializeAsync<HistoryDoc>(fs, JsonOpts, ct);
+return (doc?.Urls ?? [])
+.Where(u => !string.IsNullOrWhiteSpace(u))
+.ToHashSet(StringComparer.Ordinal);
+}
+public async Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct = default)
+{
+var toAdd = urls
+.Where(u => !string.IsNullOrWhiteSpace(u))
+.Select(u => u.Trim())
+.ToList();
+if (toAdd.Count == 0) return;
+var used = await LoadUrlsAsync(ct);
+var changed = toAdd.Any(u => used.Add(u));
+if (!changed) return;
+var doc = new HistoryDoc
+{
+Urls = [.. used.OrderBy(x => x, StringComparer.Ordinal)]
+};
+await WriteJsonAtomicallyAsync(_historyPath, doc, ct);
+}
+private static async Task WriteJsonAtomicallyAsync(string path, HistoryDoc doc, CancellationToken ct)
+{
+var dir = Path.GetDirectoryName(path);
+if (!string.IsNullOrWhiteSpace(dir))
+Directory.CreateDirectory(dir);
+var tempPath = Path.Combine(dir ?? ".", $"{Path.GetFileName(path)}.{Guid.NewGuid():N}.tmp");
+try
+{
+await using (var fs = new FileStream(
+tempPath,
+FileMode.CreateNew,
+FileAccess.Write,
+FileShare.None,
+bufferSize: 64 * 1024,
+options: FileOptions.Asynchronous | FileOptions.WriteThrough))
+{
+await JsonSerializer.SerializeAsync(fs, doc, JsonOpts, ct);
+await fs.FlushAsync(ct);
+}
+if (File.Exists(path))
+{
+var backupPath = path + ".bak";
+File.Replace(tempPath, path, backupPath, ignoreMetadataErrors: true);
+TryDelete(backupPath);
+}
+else
+{
+File.Move(tempPath, path);
+}
+}
+finally
+{
+TryDelete(tempPath);
+}
+}
+private static void TryDelete(string path)
+{
+try
+{
+if (File.Exists(path)) File.Delete(path);
+}
+catch
+{
+}
+}
+private void EnsureFileExists()
+{
+var dir = Path.GetDirectoryName(_historyPath);
+if (!string.IsNullOrWhiteSpace(dir))
+Directory.CreateDirectory(dir);
+if (!File.Exists(_historyPath))
+{
+File.WriteAllText(_historyPath, JsonSerializer.Serialize(new HistoryDoc { Urls = [] }, JsonOpts));
+}
+}
+private sealed class HistoryDoc
+{
+public List<string> Urls { get; set; } = [];
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\OpenAI\news\NostalgiaPromptLoader.cs ===
+
+﻿using Domain.WhatsApp;
+using Services.WhatsApp.Abstractions.OpenAI.news;
+using System.Text.Json;
+namespace Services.WhatsApp.OpenAI.news
+{
+public class NostalgiaPromptLoader: INostalgiaPromptLoader
+{
+private static readonly JsonSerializerOptions Opts = new() { PropertyNameCaseInsensitive = true };
+private const string DefaultNameFilePrompt = "NostalgiaURLSelector.json";
+public async Task<NostalgiaPrompt> LoadPromptAsync()
+{
+var path = Path.Combine(AppContext.BaseDirectory, "OpenAI", "news", DefaultNameFilePrompt);
+if (!File.Exists(path))
+throw new FileNotFoundException($"Prompt file not found: {path}");
+var json = await File.ReadAllTextAsync(path);
+var cfg = JsonSerializer.Deserialize<NostalgiaPrompt>(json, Opts);
+return cfg ?? throw new InvalidOperationException("Prompt JSON is invalid or empty.");
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.WhatsApp\OpenAI\news\NostalgiaURLSelector.json ===
+
+{
+  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
+  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "context": {
+    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
+    "allowed_sources": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ],
+    "history": {
+      "type": "json",
+      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
+    },
+    "excluded_urls": [
+      "https://example.com/already-used-1",
+      "https://example.com/already-used-2"
+    ]
+  },
+  "task": {
+    "goal": "Select five unique URLs of audiovisual content.",
+    "selection_priority": [
+      "Immediate emotional explosion (goal, celebration, visceral reaction)",
+      "Narrative load (story, voice-over, emotional context)",
+      "Collective identity (pride, fans, national symbols)"
+    ],
+    "mandatory_threshold": [
+      "A recognizable iconic moment of the Colombian National Team",
+      "Strong human reaction (players, narrator, crowd)"
+    ],
+    "exclusion_rules": [
+      "Tactical or journalistic analysis",
+      "Informational summaries without emotional charge",
+      "Generic reposts lacking narrative or emotional context",
+      "Any URL present in excluded_urls"
+    ],
+    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
+  },
+  "output": {
+    "type": "strict_json",
+    "schema": {
+      "urls": [
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://..."
+      ]
+    },
+    "constraints": [
+      "Do not repeat URLs present in history or excluded_urls",
+      "Do not include descriptions, messages, metadata, or comments",
+      "Do not add any text outside the JSON output"
+    ]
+  }
+}
+
 
 === FILE: F:\Marketing\Services.WhatsApp\OpenChat\ChatClicker.cs ===
 
@@ -75188,6 +75784,66 @@ throw new Exception("Database initialization failed");
   }
 }
 
+=== FILE: F:\Marketing\WhatsAppSender\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+
+{
+  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
+  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "context": {
+    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
+    "allowed_sources": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ],
+    "history": {
+      "type": "json",
+      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
+    },
+    "excluded_urls": [
+      "https://example.com/already-used-1",
+      "https://example.com/already-used-2"
+    ]
+  },
+  "task": {
+    "goal": "Select five unique URLs of audiovisual content.",
+    "selection_priority": [
+      "Immediate emotional explosion (goal, celebration, visceral reaction)",
+      "Narrative load (story, voice-over, emotional context)",
+      "Collective identity (pride, fans, national symbols)"
+    ],
+    "mandatory_threshold": [
+      "A recognizable iconic moment of the Colombian National Team",
+      "Strong human reaction (players, narrator, crowd)"
+    ],
+    "exclusion_rules": [
+      "Tactical or journalistic analysis",
+      "Informational summaries without emotional charge",
+      "Generic reposts lacking narrative or emotional context",
+      "Any URL present in excluded_urls"
+    ],
+    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
+  },
+  "output": {
+    "type": "strict_json",
+    "schema": {
+      "urls": [
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://...",
+        "https://..."
+      ]
+    },
+    "constraints": [
+      "Do not repeat URLs present in history or excluded_urls",
+      "Do not include descriptions, messages, metadata, or comments",
+      "Do not add any text outside the JSON output"
+    ]
+  }
+}
+
+
 === FILE: F:\Marketing\WhatsAppSender\bin\Release\net8.0\win-x64\appsettings.json ===
 
 ﻿{
@@ -84035,7 +84691,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ddb55b3862f9df2d558ef14e836e6ddf1d34a92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -84052,7 +84708,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/4ddb55b3862f9df2d558ef14e836e6ddf1d34a92/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

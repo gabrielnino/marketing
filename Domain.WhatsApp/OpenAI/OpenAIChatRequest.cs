@@ -14,5 +14,9 @@ namespace Domain.WhatsApp.OpenAI
 
         [JsonPropertyName("messages")]
         public required List<OpenAIMessage> Messages { get; set; }
+
+        [JsonPropertyName("stream")]
+        public bool Stream { get; set; } = false;
+        
     }
 }
