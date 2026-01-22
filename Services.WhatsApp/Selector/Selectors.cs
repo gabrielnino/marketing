@@ -1,4 +1,4 @@
-﻿using Services.WhatsApp.Abstractions.Selector;
+﻿using Services.Abstractions.Selector;
 
 namespace Services.WhatsApp.Selector
 {

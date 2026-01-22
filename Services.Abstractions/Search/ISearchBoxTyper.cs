@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.Search
+﻿namespace Services.Abstractions.Search
 {
     public interface ISearchBoxTyper
     {

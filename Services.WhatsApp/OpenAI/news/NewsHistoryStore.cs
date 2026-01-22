@@ -1,4 +1,4 @@
-﻿using Services.WhatsApp.Abstractions.OpenAI.news;
+﻿using Services.Abstractions.OpenAI.news;
 using System.Text.Json;
 
 namespace Services.WhatsApp.OpenAI.news

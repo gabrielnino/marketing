@@ -4,8 +4,8 @@ using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Services.Interfaces;
-using Services.WhatsApp.Abstractions.OpenChat;
-using Services.WhatsApp.Abstractions.Search;
+using Services.Abstractions.OpenChat;
+using Services.Abstractions.Search;
 
 namespace Services.WhatsApp.OpenChat
 {

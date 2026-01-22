@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
-using Services.WhatsApp.Abstractions.Search;
-using Services.WhatsApp.Abstractions.Selector;
-using Services.WhatsApp.Abstractions.Selenium;
+using Services.Abstractions.Search;
+using Services.Abstractions.Selector;
+using Services.Abstractions.Selenium;
 using Services.WhatsApp.Login;
 
 namespace Services.WhatsApp.Search

@@ -1,9 +1,7 @@
 ﻿using Domain.WhatsApp;
 using Domain.WhatsApp.OpenAI;
-using Newtonsoft.Json;
-using Services.WhatsApp.Abstractions.OpenAI;
-using Services.WhatsApp.Abstractions.OpenAI.news;
-using System.Text;
+using Services.Abstractions.OpenAI;
+using Services.Abstractions.OpenAI.news;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
@@ -46,8 +44,8 @@ namespace Services.WhatsApp.OpenAI.news
             var options = new JsonSerializerOptions { WriteIndented = indented };
 
             // Serialize the class normally, then remove "role" from the JSON.
-            JsonNode node = System.Text.Json.JsonSerializer.SerializeToNode(prompt, options)
-                ?? throw new System.Text.Json.JsonException("Failed to serialize NostalgiaPrompt.");
+            JsonNode node = JsonSerializer.SerializeToNode(prompt, options)
+                ?? throw new JsonException("Failed to serialize NostalgiaPrompt.");
 
             node.AsObject().Remove("role");
 
@@ -60,7 +58,7 @@ namespace Services.WhatsApp.OpenAI.news
                 throw new ArgumentException("JSON input cannot be null or empty.", nameof(json));
 
             var node = JsonNode.Parse(json)
-                       ?? throw new System.Text.Json.JsonException("Invalid JSON.");
+                       ?? throw new JsonException("Invalid JSON.");
 
             // Remove "role" at root level if present
             node.AsObject().Remove("role");

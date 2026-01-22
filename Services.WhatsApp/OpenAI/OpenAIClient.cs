@@ -1,7 +1,7 @@
 ﻿using Configuration;
 using Domain.WhatsApp.OpenAI;
 using Microsoft.Extensions.Options;
-using Services.WhatsApp.Abstractions.OpenAI;
+using Services.Abstractions.OpenAI;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text;

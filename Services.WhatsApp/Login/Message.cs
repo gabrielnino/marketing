@@ -1,8 +1,8 @@
 ﻿using Configuration;
 using Domain.WhatsApp;
 using Microsoft.Extensions.Logging;
-using Services.WhatsApp.Abstractions.Login;
-using Services.WhatsApp.Abstractions.OpenChat;
+using Services.Abstractions.Login;
+using Services.Abstractions.OpenChat;
 
 namespace Services.WhatsApp.Login
 {

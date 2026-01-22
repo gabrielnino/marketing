@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Services.WhatsApp.Abstractions.XPath;
+using Services.Abstractions.XPath;
 using Services.WhatsApp.Login;
 
 namespace Services.WhatsApp.XPath

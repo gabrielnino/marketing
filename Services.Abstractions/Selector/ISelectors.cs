@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.Selector
+﻿namespace Services.Abstractions.Selector
 {
     public interface ISelectors
     {

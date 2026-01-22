@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Services.WhatsApp.Abstractions.Selenium
+namespace Services.Abstractions.Selenium
 {
     public interface IWebDriverFacade
     {

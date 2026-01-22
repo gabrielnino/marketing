@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_Presentation", "07_Prese
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureTable", "AzureTable\AzureTable.csproj", "{422EA84A-2998-4917-8125-CE4AFFAA1ED8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{303E3F6A-9903-430E-93E1-5B157EF5A95F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{422EA84A-2998-4917-8125-CE4AFFAA1ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{422EA84A-2998-4917-8125-CE4AFFAA1ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{422EA84A-2998-4917-8125-CE4AFFAA1ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +154,7 @@ Global
 		{55132C52-996F-4BDE-B0E3-97623014559F} = {BC189936-33B5-4AFD-9773-4620C30A7D23}
 		{8255B7B7-63E3-4ABB-B9A6-62E5C2CF725F} = {BC189936-33B5-4AFD-9773-4620C30A7D23}
 		{422EA84A-2998-4917-8125-CE4AFFAA1ED8} = {B628D088-366D-4455-8288-50279F5BEADF}
+		{303E3F6A-9903-430E-93E1-5B157EF5A95F} = {333B38CF-0B9F-40EF-B7B7-776DF304C20C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FE554F8-4450-41A9-A935-290C6D2308C3}

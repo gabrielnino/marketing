@@ -1,6 +1,6 @@
 ﻿using Domain.WhatsApp;
 
-namespace Services.WhatsApp.Abstractions.OpenAI.news
+namespace Services.Abstractions.OpenAI.news
 {
     public interface INostalgiaPromptLoader
     {

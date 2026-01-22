@@ -1,5 +1,5 @@
 ﻿using Application.TrackedLinks;
-using Services.WhatsApp.Abstractions.Url;
+using Services.Abstractions.Url;
 using System.Text;
 
 namespace Services.WhatsApp.Url

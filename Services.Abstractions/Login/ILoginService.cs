@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.Login
+﻿namespace Services.Abstractions.Login
 {
     public interface ILoginService
     {

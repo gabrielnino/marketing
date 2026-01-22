@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Configuration;
-using Services.WhatsApp.Abstractions.Login;
+using Services.Abstractions.Login;
 
 namespace Services.WhatsApp.WhatsApp
 {

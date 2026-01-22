@@ -8,10 +8,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Configuration\Configuration.csproj" />
 		<ProjectReference Include="..\Domain.WhatsApp\Domain.WhatsApp.csproj" />
-		<ProjectReference Include="..\Services.Abstractions\Services.Abstractions.csproj" />
-		<ProjectReference Include="..\Services\Services.csproj" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="FuzzySharp" Version="2.0.2" />
 		<PackageReference Include="Google.Apis.Auth" Version="1.70.0" />
@@ -26,15 +23,4 @@
 		<PackageReference Include="System.Reactive" Version="6.0.1" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Reference Include="Application">
-	    <HintPath>..\Application\obj\Debug\net8.0\ref\Application.dll</HintPath>
-	  </Reference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="OpenAI\news\NostalgiaURLSelector.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	</ItemGroup>
 </Project>

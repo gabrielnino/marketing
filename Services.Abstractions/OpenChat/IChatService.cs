@@ -1,7 +1,7 @@
 ﻿using Domain.WhatsApp;
 
 
-namespace Services.WhatsApp.Abstractions.OpenChat
+namespace Services.Abstractions.OpenChat
 {
     public interface IChatService
     {

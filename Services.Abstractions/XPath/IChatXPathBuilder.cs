@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.XPath
+﻿namespace Services.Abstractions.XPath
 {
     public interface IChatXPathBuilder
     {

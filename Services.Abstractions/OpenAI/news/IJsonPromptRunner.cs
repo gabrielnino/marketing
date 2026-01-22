@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.OpenAI.news
+﻿namespace Services.Abstractions.OpenAI.news
 {
     public interface IJsonPromptRunner
     {

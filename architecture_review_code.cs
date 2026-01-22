@@ -1833,16 +1833,16 @@
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\openaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\ijsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -1853,20 +1853,12 @@
       "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\inostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -2000,7 +1992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AppHostBuilder.cs",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
@@ -2017,24 +2009,11 @@
               "Title": "OpenAIClient.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs*",
-              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs*",
-              "ViewState": "AgIAAAUAAAAAAAAAAAD4vx4AAAAmAAAAAAAAAA==",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-21T02:01:14.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeToolTip": "Bootstrapper\\appsettings.json",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAFQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-21T01:56:15.259Z",
               "EditorCaption": ""
             },
             {
@@ -2052,7 +2031,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "INostalgiaPromptLoader.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
@@ -2065,7 +2044,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "NostalgiaPromptLoader.cs",
               "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
@@ -2078,20 +2057,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "JsonPromptRunner.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
               "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCUAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T13:26:28.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "NewsHistoryStore.cs",
               "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
@@ -2104,7 +2083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "02_TestPromp.json",
               "DocumentMoniker": "F:\\marketing\\02_TestPromp.json",
               "RelativeDocumentMoniker": "02_TestPromp.json",
@@ -2117,7 +2096,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
               "Title": "01_TestPromp.json",
               "DocumentMoniker": "F:\\marketing\\01_TestPromp.json",
               "RelativeDocumentMoniker": "01_TestPromp.json",
@@ -2130,7 +2109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "TrackedLink.cs",
               "DocumentMoniker": "F:\\marketing\\Infrastructure\\AzureTables\\TrackedLink.cs",
               "RelativeDocumentMoniker": "Infrastructure\\AzureTables\\TrackedLink.cs",
@@ -2143,20 +2122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OpenAIConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\OpenAIConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
-              "RelativeToolTip": "Configuration\\OpenAIConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T03:02:12.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "LoginService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginService.cs",
@@ -2169,7 +2135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "OpenAIChatResponse.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
@@ -2182,7 +2148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "OpenAIChatChoice.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
@@ -2201,14 +2167,14 @@
               "RelativeDocumentMoniker": "AzureTable\\Program.cs",
               "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
               "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T01:27:58.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "Attachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Attachments.cs",
@@ -2221,7 +2187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "SearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
@@ -2234,7 +2200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "ISearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
@@ -2246,7 +2212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "IAttachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
@@ -2258,7 +2224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 22,
               "Title": "IOpenChat.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
@@ -2270,7 +2236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 23,
               "Title": "IClicker.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
@@ -2282,7 +2248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "IChatService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
@@ -2295,7 +2261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 24,
               "Title": "ISelectors.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
@@ -2307,7 +2273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "WebDriverFacade.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
@@ -2319,7 +2285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "UrlShort.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Url\\UrlShort.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Url\\UrlShort.cs",
@@ -2357,20 +2323,16 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\openaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\openaiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\ijsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -2381,20 +2343,12 @@
       "RelativeMoniker": "D:0:0:{EBC0EB2D-33F0-471C-95B1-76C4CA4C5030}|WhatsAppSender\\WhatsAppSender.csproj|solutionrelative:whatsappsender\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\nostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|solutionrelative:services.whatsapp\\openai\\news\\newshistorystore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8AF0B5D3-9404-4541-8EB6-829D463DB9F8}|Services.WhatsApp\\Services.WhatsApp.csproj|f:\\marketing\\services.whatsapp\\abstractions\\openai\\news\\inostalgiapromptloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -2472,7 +2426,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -2528,7 +2482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AppHostBuilder.cs",
               "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
               "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
@@ -2541,33 +2495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OpenAIClient.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\OpenAIClient.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAD4vx4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T02:01:14.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeToolTip": "Bootstrapper\\appsettings.json",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAFQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-21T01:56:15.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "IJsonPromptRunner.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\IJsonPromptRunner.cs",
@@ -2580,7 +2508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "INostalgiaPromptLoader.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenAI\\news\\INostalgiaPromptLoader.cs",
@@ -2593,7 +2521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "NostalgiaPromptLoader.cs",
               "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NostalgiaPromptLoader.cs",
@@ -2606,20 +2534,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "JsonPromptRunner.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
-              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
+              "ToolTip": "F:\\marketing\\Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs*",
+              "RelativeToolTip": "Services.WhatsApp\\OpenAI\\news\\JsonPromptRunner.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T13:26:28.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "NewsHistoryStore.cs",
               "DocumentMoniker": "F:\\Marketing\\Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\OpenAI\\news\\NewsHistoryStore.cs",
@@ -2632,7 +2560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "02_TestPromp.json",
               "DocumentMoniker": "F:\\marketing\\02_TestPromp.json",
               "RelativeDocumentMoniker": "02_TestPromp.json",
@@ -2645,7 +2573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "01_TestPromp.json",
               "DocumentMoniker": "F:\\marketing\\01_TestPromp.json",
               "RelativeDocumentMoniker": "01_TestPromp.json",
@@ -2658,7 +2586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "TrackedLink.cs",
               "DocumentMoniker": "F:\\marketing\\Infrastructure\\AzureTables\\TrackedLink.cs",
               "RelativeDocumentMoniker": "Infrastructure\\AzureTables\\TrackedLink.cs",
@@ -2671,20 +2599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OpenAIConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\OpenAIConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
-              "RelativeToolTip": "Configuration\\OpenAIConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T03:02:12.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
               "Title": "LoginService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Login\\LoginService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Login\\LoginService.cs",
@@ -2697,7 +2612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "OpenAIChatResponse.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatResponse.cs",
@@ -2710,7 +2625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "OpenAIChatChoice.cs",
               "DocumentMoniker": "F:\\marketing\\Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
               "RelativeDocumentMoniker": "Domain.WhatsApp\\OpenAI\\OpenAIChatChoice.cs",
@@ -2723,20 +2638,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
               "RelativeDocumentMoniker": "AzureTable\\Program.cs",
               "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
               "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-20T01:27:58.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "Attachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selector\\Attachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selector\\Attachments.cs",
@@ -2749,7 +2664,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "SearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Search\\SearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Search\\SearchBoxTyper.cs",
@@ -2762,7 +2677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 19,
               "Title": "ISearchBoxTyper.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\ISearchBoxTyper.cs",
@@ -2774,7 +2689,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 20,
               "Title": "IAttachments.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Search\\IAttachments.cs",
@@ -2786,7 +2701,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 21,
               "Title": "IOpenChat.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IOpenChat.cs",
@@ -2798,7 +2713,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 22,
               "Title": "IClicker.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IClicker.cs",
@@ -2810,7 +2725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 16,
               "Title": "IChatService.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\OpenChat\\IChatService.cs",
@@ -2823,7 +2738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 23,
               "Title": "ISelectors.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Abstractions\\Selector\\ISelectors.cs",
@@ -2835,7 +2750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "WebDriverFacade.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Selenium\\WebDriverFacade.cs",
@@ -2847,7 +2762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "UrlShort.cs",
               "DocumentMoniker": "F:\\marketing\\Services.WhatsApp\\Url\\UrlShort.cs",
               "RelativeDocumentMoniker": "Services.WhatsApp\\Url\\UrlShort.cs",
@@ -2860,7 +2775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\marketing\\WhatsAppSender\\Program.cs",
               "RelativeDocumentMoniker": "WhatsAppSender\\Program.cs",
@@ -4321,8 +4236,10 @@ global using global::System.Threading.Tasks;
 ﻿using Application.TrackedLinks;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using Services.WhatsApp.Abstractions.OpenAI.news;
 using Services.WhatsApp.OpenAI.news;
+using System.Text;
 public class Program
 {
 public static async Task Main(string[] args)
@@ -11704,7 +11621,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bbbd341d389021c29651e9c74599bad9549ecf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -11721,7 +11638,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\AzureTable\obj\Debug\net8.0\AzureTable.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/9bbbd341d389021c29651e9c74599bad9549ecf6/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
@@ -21227,7 +21144,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bbbd341d389021c29651e9c74599bad9549ecf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -21244,7 +21161,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/9bbbd341d389021c29651e9c74599bad9549ecf6/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -25119,7 +25036,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bbbd341d389021c29651e9c74599bad9549ecf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -25136,7 +25053,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/9bbbd341d389021c29651e9c74599bad9549ecf6/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -26872,6 +26789,8 @@ public class OpenAIChatRequest(string model)
 public string Model { get; } = model;
 [JsonPropertyName("messages")]
 public required List<OpenAIMessage> Messages { get; set; }
+[JsonPropertyName("stream")]
+public bool Stream { get; set; } = false;
 }
 }
 
@@ -60407,7 +60326,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bbbd341d389021c29651e9c74599bad9549ecf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -60424,7 +60343,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services.WhatsApp\obj\Debug\net8.0\Services.WhatsApp.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/9bbbd341d389021c29651e9c74599bad9549ecf6/*"}}
 
 === FILE: F:\Marketing\Services.WhatsApp\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -60463,11 +60382,11 @@ global using global::System.Threading.Tasks;
 ﻿using Configuration;
 using Domain.WhatsApp.OpenAI;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
 using Services.WhatsApp.Abstractions.OpenAI;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 namespace Services.WhatsApp.OpenAI
 {
 public class OpenAIClient(IOptions<OpenAIConfig> openAI, HttpClient httpClient) : IOpenAIClient
@@ -60476,38 +60395,52 @@ private readonly IOptions<OpenAIConfig> _openAI = openAI;
 private readonly HttpClient _httpClient = httpClient;
 public async Task<string> GetChatCompletionAsync(Prompt prompt, CancellationToken ct = default)
 {
-string apiKey = Environment.GetEnvironmentVariable("DEEPSEEK_API_KEY");
-if (string.IsNullOrEmpty(apiKey))
+var apiKey = Environment.GetEnvironmentVariable(_openAI.Value.ApiKey);
+var requestBody = new OpenAIChatRequest(_openAI.Value.Model)
 {
-Console.WriteLine("Please set the OPENAI_API_KEY environment variable.");
-return string.Empty;
-}
-using var httpClient = new HttpClient();
-httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
-var requestBody = new
-{
-model = _openAI.Value.Model,
-messages = new[]
-{
-new { role = "system", content = "You are a helpful assistant." },
-new { role = "user", content = "write note to introduce you." }
-},
-stream = false
+Messages =
+[
+new() { Role = "system", Content = prompt.SystemContent },
+new() { Role = "user",   Content = prompt.UserContent }
+],
+Stream = false
 };
-string jsonBody = JsonConvert.SerializeObject(requestBody);
-var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
-var response = await httpClient.PostAsync("https://api.deepseek.com/v1/chat/completions", content);
-if (response.IsSuccessStatusCode)
+var jsonBody = JsonSerializer.Serialize(requestBody);
+var contentRequest = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+var requestUri = $"{_openAI.Value.UriString}/v1/chat/completions";
+const int maxAttempts = 3;
+for (var attempt = 1; attempt <= maxAttempts; attempt++)
 {
-string responseBody = await response.Content.ReadAsStringAsync();
-dynamic jsonResponse = JsonConvert.DeserializeObject(responseBody);
-Console.WriteLine(jsonResponse.choices[0].message.content);
+var response = await _httpClient.PostAsync(requestUri, contentRequest, ct);
+var statusResponse = response.IsSuccessStatusCode;
+if (statusResponse)
+{
+var responseData = await response.Content.ReadFromJsonAsync<OpenAIChatResponse>(cancellationToken: ct);
+if (responseData?.Choices == null || responseData.Choices.Count == 0)
+throw new Exception("No response received from OpenAI API.");
+var content = responseData.Choices[0]?.Message?.Content;
+if (string.IsNullOrWhiteSpace(content))
+throw new Exception("OpenAI API returned an empty completion.");
+return content.Trim();
 }
+var status = response.StatusCode;
+var isTransient =
+status == (HttpStatusCode)429 ||
+status == HttpStatusCode.ServiceUnavailable ||
+status == HttpStatusCode.GatewayTimeout;
+if (!isTransient || attempt == maxAttempts)
+{
+var errorContent = await response.Content.ReadAsStringAsync(ct);
+throw new Exception($"OpenAI API request failed with status code {status}: {errorContent}");
+}
+TimeSpan delay;
+if (response.Headers.RetryAfter?.Delta is { } retryAfterDelta)
+delay = retryAfterDelta;
 else
-{
-Console.WriteLine($"Error: {response.StatusCode} - {await response.Content.ReadAsStringAsync()}");
+delay = TimeSpan.FromMilliseconds(250 * Math.Pow(2, attempt - 1));
+await Task.Delay(delay, ct);
 }
-return string.Empty;
+throw new Exception("Unexpected failure executing OpenAI request.");
 }
 }
 }
@@ -60516,8 +60449,10 @@ return string.Empty;
 
 ﻿using Domain.WhatsApp;
 using Domain.WhatsApp.OpenAI;
+using Newtonsoft.Json;
 using Services.WhatsApp.Abstractions.OpenAI;
 using Services.WhatsApp.Abstractions.OpenAI.news;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 namespace Services.WhatsApp.OpenAI.news
@@ -60546,15 +60481,15 @@ var prompt = new Prompt
 SystemContent = promptNoslgia.Role,
 UserContent = content
 };
-var result = _openAIClient.GetChatCompletionAsync(prompt, ct);
+var result = await _openAIClient.GetChatCompletionAsync(prompt, ct);
 return ["one", "two", "three"];
 }
 public static string ToJsonWithoutRole(NostalgiaPrompt prompt, bool indented = true)
 {
 if (prompt is null) throw new ArgumentNullException(nameof(prompt));
 var options = new JsonSerializerOptions { WriteIndented = indented };
-JsonNode node = JsonSerializer.SerializeToNode(prompt, options)
-?? throw new JsonException("Failed to serialize NostalgiaPrompt.");
+JsonNode node = System.Text.Json.JsonSerializer.SerializeToNode(prompt, options)
+?? throw new System.Text.Json.JsonException("Failed to serialize NostalgiaPrompt.");
 node.AsObject().Remove("role");
 return node.ToJsonString(options);
 }
@@ -60563,7 +60498,7 @@ public static string ConvertJsonWithoutRole(string json)
 if (string.IsNullOrWhiteSpace(json))
 throw new ArgumentException("JSON input cannot be null or empty.", nameof(json));
 var node = JsonNode.Parse(json)
-?? throw new JsonException("Invalid JSON.");
+?? throw new System.Text.Json.JsonException("Invalid JSON.");
 node.AsObject().Remove("role");
 return node.ToJsonString(new JsonSerializerOptions
 {
@@ -84691,7 +84626,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eef81f3da8d111031bb316749bad6f49b02dd07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bbbd341d389021c29651e9c74599bad9549ecf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -84708,7 +84643,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/1eef81f3da8d111031bb316749bad6f49b02dd07/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/9bbbd341d389021c29651e9c74599bad9549ecf6/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

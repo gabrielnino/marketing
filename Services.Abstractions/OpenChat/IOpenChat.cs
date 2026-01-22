@@ -1,4 +1,4 @@
-﻿namespace Services.WhatsApp.Abstractions.OpenChat
+﻿namespace Services.Abstractions.OpenChat
 {
     public interface IOpenChat
     {

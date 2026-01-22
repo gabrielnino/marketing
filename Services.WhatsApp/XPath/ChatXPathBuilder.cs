@@ -1,4 +1,4 @@
-﻿using Services.WhatsApp.Abstractions.XPath;
+﻿using Services.Abstractions.XPath;
 
 namespace Services.WhatsApp.XPath
 {

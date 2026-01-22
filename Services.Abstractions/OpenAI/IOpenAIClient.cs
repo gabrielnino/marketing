@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.WhatsApp.Abstractions.OpenAI
+namespace Services.Abstractions.OpenAI
 {
     public interface IOpenAIClient
     {

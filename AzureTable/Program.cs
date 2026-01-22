@@ -1,10 +1,6 @@
-﻿using Application.TrackedLinks;
-using Bootstrapper;
+﻿using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
-using Services.WhatsApp.Abstractions.OpenAI.news;
-using Services.WhatsApp.OpenAI.news;
-using System.Text;
+using Services.Abstractions.OpenAI.news;
 
 public class Program
 {

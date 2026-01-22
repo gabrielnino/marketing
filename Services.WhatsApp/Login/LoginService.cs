@@ -1,8 +1,8 @@
 ﻿using Configuration;
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
+using Services.Abstractions.Login;
 using Services.Interfaces;
-using Services.WhatsApp.Abstractions.Login;
 
 namespace Services.WhatsApp.Login
 {

@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using Services.WhatsApp.Abstractions.Selenium;
+using Services.Abstractions.Selenium;
 
 namespace Services.WhatsApp.Selenium
 {
