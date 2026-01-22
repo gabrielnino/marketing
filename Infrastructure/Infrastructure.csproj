@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.WhatsApp\Application.WhatsApp.csproj" />
     <ProjectReference Include="..\Application\Application.csproj" />
-    <ProjectReference Include="..\Domain.WhatsApp\Domain.WhatsApp.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
   </ItemGroup>

@@ -1,10 +1,4 @@
-﻿using Domain.WhatsApp;
-using Domain.WhatsApp.OpenAI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.OpenAI;
 
 namespace Services.Abstractions.OpenAI
 {

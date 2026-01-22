@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using Services;
+using Services.Check;
 
 namespace Marketing.Services.Test
 {

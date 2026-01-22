@@ -9,7 +9,8 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using Configuration;
-using Services;
+using Services.AutoIt;
+using Domain;
 
 namespace Marketing.Services.Test
 {
@@ -206,7 +207,7 @@ Global Const $FILE_TO_UPLOAD = ""__FILE_TO_UPLOAD__""
             // Este test existe para proteger el contrato del DTO ante refactors:
             // ExitCode, TimedOut, StdOut, StdErr, Duration son required.
             // Si alguien cambia required/remove properties, esto rompe compilación o expectativas.
-            var result = new Domain.WhatsApp.AutoItRunnerResult
+            var result = new AutoItRunnerResult
             {
                 ExitCode = 0,
                 TimedOut = false,

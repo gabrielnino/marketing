@@ -1,0 +1,12 @@
+﻿using Services.Abstractions.Selector;
+
+namespace Services.Selector
+{
+    internal sealed class Selectors : ISelectors
+    {
+        // Original constants preserved verbatim
+        public string CssSelectorToFindLoggedInMarker => "div[role='textbox'][contenteditable='true']";
+        public string CssSelectorToFindSearchInput => "div[role='textbox'][contenteditable='true'][aria-label='Search input textbox']";
+        public string XpathToFindGridcellAncestor => "./ancestor::*[@role='gridcell' or @role='row' or @tabindex][1]";
+    }
+}

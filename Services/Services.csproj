@@ -7,8 +7,9 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Application\Application.csproj" />
 		<ProjectReference Include="..\Configuration\Configuration.csproj" />
-		<ProjectReference Include="..\Domain.WhatsApp\Domain.WhatsApp.csproj" />
+		<ProjectReference Include="..\Services.Abstractions\Services.Abstractions.csproj" />
 	</ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,12 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.33.0" />
     <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.6" />
     <PackageReference Include="System.Reactive" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="OpenAI\news\NostalgiaURLSelector.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

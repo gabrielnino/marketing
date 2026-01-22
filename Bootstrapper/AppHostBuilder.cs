@@ -17,21 +17,23 @@ using Persistence.Context.Interface;
 using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
-using Services;
-using Services.Interfaces;
+using Services.Abstractions.Check;
 using Services.Abstractions.Login;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.OpenChat;
 using Services.Abstractions.Search;
-using Services.WhatsApp.Login;
-using Services.WhatsApp.OpenAI;
-using Services.WhatsApp.OpenAI.news;
-using Services.WhatsApp.OpenChat;
-using Services.WhatsApp.Selector;
-using Services.WhatsApp.WhatsApp;
+using Services.Login;
+using Services.OpenAI;
+using Services.OpenAI.news;
+using Services.OpenChat;
+using Services.Selector;
+using Services.WhatsApp;
 using System.Net;
 using System.Net.Http.Headers;
+using Services.Abstractions.AutoIt;
+using Services.AutoIt;
+using Services.Check;
 
 namespace Bootstrapper
 {

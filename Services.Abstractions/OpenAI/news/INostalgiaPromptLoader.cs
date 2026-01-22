@@ -1,4 +1,4 @@
-﻿using Domain.WhatsApp;
+﻿using Domain;
 
 namespace Services.Abstractions.OpenAI.news
 {

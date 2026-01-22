@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Services.Interfaces;
+using Services.Abstractions.Check;
 
 
 namespace Commands
