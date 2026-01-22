@@ -76,6 +76,7 @@ namespace Services.OpenAI.news
 
                 var results = validation.Results;
 
+                await AppendUsedUrlsAsync(candidates, ct);
                 //if (validation.AllValid)
                 //{
                 //    // STEP 4.7: Persist results
@@ -102,6 +103,13 @@ namespace Services.OpenAI.news
             var history = await _newsHistoryStore.LoadUrlsAsync(ct);
             _logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", history.Count);
             return history;
+        }
+
+        private async Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct)
+        {
+            _logger.LogDebug("STEP 1: Loading history URLs...");
+            await _newsHistoryStore.AppendUsedUrlsAsync(urls, ct);
+            _logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", urls.Count());
         }
 
         private async Task<NostalgiaPrompt> LoadPromptAsync(CancellationToken ct)

@@ -4,9 +4,7 @@
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
