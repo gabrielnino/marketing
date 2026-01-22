@@ -2,6 +2,7 @@
 using Application.TrackedLinks;
 using Commands;
 using Configuration;
+using Configuration.UrlValidation;
 using Infrastructure.AzureTables;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
@@ -17,23 +18,24 @@ using Persistence.Context.Interface;
 using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
+using Services.Abstractions.AutoIt;
 using Services.Abstractions.Check;
 using Services.Abstractions.Login;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.OpenChat;
 using Services.Abstractions.Search;
+using Services.Abstractions.UrlValidation;
+using Services.AutoIt;
+using Services.Check;
 using Services.Login;
 using Services.OpenAI;
 using Services.OpenAI.news;
 using Services.OpenChat;
 using Services.Selector;
+using Services.UrlValidation;
 using Services.WhatsApp;
-using System.Net;
 using System.Net.Http.Headers;
-using Services.Abstractions.AutoIt;
-using Services.AutoIt;
-using Services.Check;
 
 namespace Bootstrapper
 {
@@ -173,7 +175,20 @@ namespace Bootstrapper
                     services.AddSingleton<INostalgiaPromptLoader, NostalgiaPromptLoader>();
                     //services.AddSingleton<IOpenAIClient, OpenAIClient>();
                     services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
-                    
+                    services.AddUrlValidation(hostingContext.Configuration);
+
+                    services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
+
+                    //services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
+                    //services.AddHttpClient<TikTokUrlAvailabilityValidator>();
+                    //services.AddHttpClient<InstagramUrlAvailabilityValidator>();
+
+                    //services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<YouTubeUrlAvailabilityValidator>());
+                    //services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<TikTokUrlAvailabilityValidator>());
+                    //services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<InstagramUrlAvailabilityValidator>());
+
+                    //services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
+
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {
@@ -195,7 +210,25 @@ namespace Bootstrapper
                         );
                 });
         }
+        public static IServiceCollection AddUrlValidation(this IServiceCollection services, IConfiguration cfg)
+        {
+            services.Configure<UrlValidationOptions>(cfg.GetSection(UrlValidationOptions.SectionName));
 
+            services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
+            services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
+            services.AddSingleton<IUrlValidationPipeline, UrlValidationPipeline>();
+
+            // Separate HttpClient per platform if you want different headers/timeouts later.
+            services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
+            services.AddHttpClient<TikTokUrlAvailabilityValidator>();
+            services.AddHttpClient<InstagramUrlAvailabilityValidator>();
+
+            services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<YouTubeUrlAvailabilityValidator>());
+            services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<TikTokUrlAvailabilityValidator>());
+            services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<InstagramUrlAvailabilityValidator>());
+
+            return services;
+        }
         private static void SetScheduler(SchedulerOptions o)
         {
             foreach (var key in o.Weekly.Keys.ToList())

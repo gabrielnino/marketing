@@ -18,7 +18,7 @@
     ]
   },
   "task": {
-    "goal": "Select five unique URLs of audiovisual content.",
+    "goal": "Select fifty unique URLs of audiovisual content.",
     "selection_priority": [
       "Immediate emotional explosion (goal, celebration, visceral reaction)",
       "Narrative load (story, voice-over, emotional context)",

@@ -51,6 +51,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureTable", "AzureTable\Az
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{303E3F6A-9903-430E-93E1-5B157EF5A95F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_Common", "00_Common", "{670B62EE-30F8-44A2-8DD6-12E0ADEA106C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{55716BA5-BD5E-460C-973E-916C3535D7FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,10 @@ Global
 		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{303E3F6A-9903-430E-93E1-5B157EF5A95F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55716BA5-BD5E-460C-973E-916C3535D7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55716BA5-BD5E-460C-973E-916C3535D7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55716BA5-BD5E-460C-973E-916C3535D7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55716BA5-BD5E-460C-973E-916C3535D7FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +135,7 @@ Global
 		{2EB58012-62C9-48A5-ABCD-8647CA2C468F} = {97442D08-2C0C-443F-B48A-26062C0723DD}
 		{422EA84A-2998-4917-8125-CE4AFFAA1ED8} = {B628D088-366D-4455-8288-50279F5BEADF}
 		{303E3F6A-9903-430E-93E1-5B157EF5A95F} = {333B38CF-0B9F-40EF-B7B7-776DF304C20C}
+		{55716BA5-BD5E-460C-973E-916C3535D7FB} = {670B62EE-30F8-44A2-8DD6-12E0ADEA106C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FE554F8-4450-41A9-A935-290C6D2308C3}
