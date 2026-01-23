@@ -1,10 +1,10 @@
 ﻿namespace Services.Abstractions.UrlValidation
 {
-    public sealed class UrlAvailabilityValidatorFactory(
-        IUrlPlatformResolver resolver,
-        IEnumerable<IUrValidator> validators) : IUrlAvailabilityValidatorFactory
+    public sealed class UrlValidatorFactory(
+        IPlatformResolver resolver,
+        IEnumerable<IUrValidator> validators) : IUrlValidatorFactory
     {
-        private readonly IUrlPlatformResolver _resolver = resolver;
+        private readonly IPlatformResolver _resolver = resolver;
         private readonly IReadOnlyDictionary<UrlPlatform, IUrValidator> _validators = validators.ToDictionary(v => v.Platform, v => v);
 
         public IUrValidator GetValidator(string url)

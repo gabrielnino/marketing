@@ -177,7 +177,7 @@ namespace Bootstrapper
                     services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
                     services.AddUrlValidation(hostingContext.Configuration);
 
-                    services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
+                    services.AddSingleton<IPlatformResolver, PlatformResolver>();
 
                     //services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
                     //services.AddHttpClient<TikTokUrlAvailabilityValidator>();
@@ -214,9 +214,9 @@ namespace Bootstrapper
         {
             services.Configure<UrlOptions>(cfg.GetSection(UrlOptions.SectionName));
 
-            services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
-            services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
-            services.AddSingleton<IUrlValidationPipeline, UrlValidationPipeline>();
+            services.AddSingleton<IPlatformResolver, PlatformResolver>();
+            services.AddSingleton<IUrlValidatorFactory, UrlValidatorFactory>();
+            services.AddSingleton<IValidationPipeline, UrlValidationPipeline>();
 
             // Separate HttpClient per platform if you want different headers/timeouts later.
             services.AddHttpClient<YouTubeUrlValidator>();

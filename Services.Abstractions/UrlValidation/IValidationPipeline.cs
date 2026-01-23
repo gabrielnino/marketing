@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services.Abstractions.UrlValidation
+﻿namespace Services.Abstractions.UrlValidation
 {
-    public interface IUrlValidationPipeline
+    public interface IValidationPipeline
     {
         /// <summary>
         /// Validates all URLs. "All-or-nothing": if any fails, returns failure (with details).

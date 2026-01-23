@@ -1,6 +1,6 @@
 ﻿namespace Services.Abstractions.UrlValidation
 {
-    public sealed class UrlPlatformResolver : IUrlPlatformResolver
+    public sealed class PlatformResolver : IPlatformResolver
     {
         public UrlPlatform Resolve(string url)
         {
