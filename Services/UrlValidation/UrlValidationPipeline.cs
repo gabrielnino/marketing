@@ -2,14 +2,9 @@
 
 namespace Services.UrlValidation
 {
-    public sealed class UrlValidationPipeline : IUrlValidationPipeline
+    public sealed class UrlValidationPipeline(IUrlAvailabilityValidatorFactory factory) : IUrlValidationPipeline
     {
-        private readonly IUrlAvailabilityValidatorFactory _factory;
-
-        public UrlValidationPipeline(IUrlAvailabilityValidatorFactory factory)
-        {
-            _factory = factory;
-        }
+        private readonly IUrlAvailabilityValidatorFactory _factory = factory;
 
         public async Task<(bool AllValid, IReadOnlyList<UrlValidationResult> Results)> ValidateAllAsync(
             IReadOnlyList<string> urls,

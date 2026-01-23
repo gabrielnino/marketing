@@ -1829,8 +1829,36 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|f:\\marketing\\common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|solutionrelative:common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -1840,7 +1868,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -1896,15 +1924,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "NostalgiaURLSelector.json",
               "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
               "RelativeDocumentMoniker": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
               "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
               "RelativeToolTip": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-22T00:24:24.942Z",
+              "WhenOpened": "2026-01-22T05:45:49.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAG0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-22T05:34:01.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HttpBodyRuleValidatorBase.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "RelativeDocumentMoniker": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "RelativeToolTip": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAIwCUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:38:52.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
+              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeToolTip": "AzureTable\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:13:28.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAIwOMAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:16:10.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Bootstrapper",
+              "DocumentMoniker": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+              "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
+              "ToolTip": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+              "RelativeToolTip": "Bootstrapper\\Bootstrapper.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-22T02:16:08.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JsonPromptRunner.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeDocumentMoniker": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeToolTip": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAIwF0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:12:55.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JsonExtractionExtensions.cs",
+              "DocumentMoniker": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "RelativeDocumentMoniker": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "ToolTip": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "RelativeToolTip": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:12:52.321Z",
               "EditorCaption": ""
             }
           ]
@@ -1921,12 +2040,92 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\youtubeurlavailabilityvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\youtubeurlavailabilityvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\common\\pagination\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\common\\pagination\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\common\\messages\\imagemessagepayload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\common\\messages\\imagemessagepayload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\whatsappconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\whatsappconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\scheduleroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\scheduleroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\pathsconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\pathsconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\messageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\messageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\executiontracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\executiontracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\azuretablesconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\azuretablesconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\urlvalidation\\urlvalidationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\urlvalidation\\urlvalidationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|f:\\marketing\\common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|solutionrelative:common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -1936,8 +2135,190 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 29,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "YouTubeUrlAvailabilityValidator.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
+              "RelativeDocumentMoniker": "Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
+              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
+              "RelativeToolTip": "Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAACZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:28:29.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Application",
+              "DocumentMoniker": "F:\\Marketing\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "F:\\Marketing\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-23T03:14:52.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Messages.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\Constants\\Messages.cs",
+              "RelativeDocumentMoniker": "Application\\Constants\\Messages.cs",
+              "ToolTip": "F:\\marketing\\Application\\Constants\\Messages.cs",
+              "RelativeToolTip": "Application\\Constants\\Messages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:15:02.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\Common\\Pagination\\PagedResult.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Pagination\\PagedResult.cs",
+              "ToolTip": "F:\\marketing\\Application\\Common\\Pagination\\PagedResult.cs",
+              "RelativeToolTip": "Application\\Common\\Pagination\\PagedResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:58.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ImageMessagePayload.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\Common\\Messages\\ImageMessagePayload.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Messages\\ImageMessagePayload.cs",
+              "ToolTip": "F:\\marketing\\Application\\Common\\Messages\\ImageMessagePayload.cs",
+              "RelativeToolTip": "Application\\Common\\Messages\\ImageMessagePayload.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:55.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WhatsAppConfig.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\WhatsAppConfig.cs",
+              "RelativeDocumentMoniker": "Configuration\\WhatsAppConfig.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\WhatsAppConfig.cs",
+              "RelativeToolTip": "Configuration\\WhatsAppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:47.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PathsConfig.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\PathsConfig.cs",
+              "RelativeDocumentMoniker": "Configuration\\PathsConfig.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\PathsConfig.cs",
+              "RelativeToolTip": "Configuration\\PathsConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:33.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SchedulerOptions.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\SchedulerOptions.cs",
+              "RelativeDocumentMoniker": "Configuration\\SchedulerOptions.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\SchedulerOptions.cs",
+              "RelativeToolTip": "Configuration\\SchedulerOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:33.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OpenAIConfig.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
+              "RelativeDocumentMoniker": "Configuration\\OpenAIConfig.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
+              "RelativeToolTip": "Configuration\\OpenAIConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:27.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MessageConfig.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\MessageConfig.cs",
+              "RelativeDocumentMoniker": "Configuration\\MessageConfig.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\MessageConfig.cs",
+              "RelativeToolTip": "Configuration\\MessageConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:14:25.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ExecutionTracker.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\ExecutionTracker.cs",
+              "RelativeDocumentMoniker": "Configuration\\ExecutionTracker.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\ExecutionTracker.cs",
+              "RelativeToolTip": "Configuration\\ExecutionTracker.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAA6wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:13:55.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AzureTablesConfig.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\AzureTablesConfig.cs",
+              "RelativeDocumentMoniker": "Configuration\\AzureTablesConfig.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\AzureTablesConfig.cs",
+              "RelativeToolTip": "Configuration\\AzureTablesConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:13:48.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\AppConfig.cs",
+              "RelativeDocumentMoniker": "Configuration\\AppConfig.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\AppConfig.cs",
+              "RelativeToolTip": "Configuration\\AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:13:47.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UrlValidationOptions.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\UrlValidation\\UrlValidationOptions.cs",
+              "RelativeDocumentMoniker": "Configuration\\UrlValidation\\UrlValidationOptions.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\UrlValidation\\UrlValidationOptions.cs",
+              "RelativeToolTip": "Configuration\\UrlValidation\\UrlValidationOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T03:13:14.501Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -1992,28 +2373,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
-              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs*",
-              "RelativeToolTip": "AzureTable\\Program.cs*",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAgAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T00:26:52.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 19,
               "Title": "NostalgiaURLSelector.json",
               "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
               "RelativeDocumentMoniker": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
               "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
               "RelativeToolTip": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-22T00:24:24.942Z",
+              "WhenOpened": "2026-01-22T05:45:49.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAF8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-22T05:34:01.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HttpBodyRuleValidatorBase.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "RelativeDocumentMoniker": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "RelativeToolTip": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:38:52.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
+              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeToolTip": "AzureTable\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:13:28.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAIwOMAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:16:10.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Bootstrapper",
+              "DocumentMoniker": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+              "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
+              "ToolTip": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
+              "RelativeToolTip": "Bootstrapper\\Bootstrapper.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-22T02:16:08.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "JsonPromptRunner.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeDocumentMoniker": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "RelativeToolTip": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAowHAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:12:55.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "JsonExtractionExtensions.cs",
+              "DocumentMoniker": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "RelativeDocumentMoniker": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "ToolTip": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "RelativeToolTip": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwA0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T02:12:52.321Z",
               "EditorCaption": ""
             }
           ]
@@ -2445,7 +2904,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9272bfbaf5e1a96d6c008749295ac06e91de936")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2916,6 +3375,30 @@ await runner.RunStrictJsonAsync();
       "ApiKey": "DEEPSEEK_API_KEY",
       "UriString": "https://api.deepseek.com",
       "Model": "deepseek-chat"
+    }
+  },
+  "UrlValidation": {
+    "TimeoutSeconds": 15,
+    "MaxBodyCharsToScan": 200000,
+
+    "YouTube": {
+      "MustContain": [ "ytInitialPlayerResponse", "og:title" ],
+      "MustNotContain": [ "Video unavailable", "This video is unavailable", "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\"" ]
+    },
+
+    "TikTok": {
+      "MustContain": [ "tiktok", "video" ],
+      "MustNotContain": [ "Couldn't find this account", "Video currently unavailable", "This content isn't available" ]
+    },
+
+    "Instagram": {
+      "MustContain": [ "instagram" ],
+      "MustNotContain": [
+        "Sorry, this page isn't available",
+        "The link you followed may be broken",
+        "The link may be broken, or the profile may have been removed.",
+        "Post isn't available"
+      ]
     }
   }
 }
@@ -4063,6 +4546,14 @@ await runner.RunStrictJsonAsync();
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -4113,6 +4604,7 @@ await runner.RunStrictJsonAsync();
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -4733,6 +5225,11 @@ await runner.RunStrictJsonAsync();
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -4791,7 +5288,9 @@ await runner.RunStrictJsonAsync();
 === FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\NewsHistoryStore.json ===
 
 {
-  "Urls": []
+  "Urls": [
+    "https://www.youtube.com/watch?v=Jh6j4L5L_0E"
+  ]
 }
 
 === FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
@@ -4802,9 +5301,7 @@ await runner.RunStrictJsonAsync();
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -5174,6 +5671,70 @@ await runner.RunStrictJsonAsync();
               "version": "[13.0.3, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -5636,6 +6197,9 @@ await runner.RunStrictJsonAsync();
             "projectReferences": {
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
               },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
@@ -7380,6 +7944,16 @@ await runner.RunStrictJsonAsync();
           "bin/placeholder/Commands.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -7440,6 +8014,7 @@ await runner.RunStrictJsonAsync();
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -9734,6 +10309,11 @@ await runner.RunStrictJsonAsync();
       "path": "../Commands/Commands.csproj",
       "msbuildProject": "../Commands/Commands.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -9857,7 +10437,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -9874,7 +10454,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\AzureTable\obj\Debug\net8.0\AzureTable.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
@@ -9882,6 +10462,7 @@ global using global::System.Threading.Tasks;
 using Application.TrackedLinks;
 using Commands;
 using Configuration;
+using Configuration.UrlValidation;
 using Infrastructure.AzureTables;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
@@ -9897,23 +10478,24 @@ using Persistence.Context.Interface;
 using Persistence.CreateStructure.Constants.ColumnType;
 using Persistence.CreateStructure.Constants.ColumnType.Database;
 using Serilog;
+using Services.Abstractions.AutoIt;
 using Services.Abstractions.Check;
 using Services.Abstractions.Login;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.OpenChat;
 using Services.Abstractions.Search;
+using Services.Abstractions.UrlValidation;
+using Services.AutoIt;
+using Services.Check;
 using Services.Login;
 using Services.OpenAI;
 using Services.OpenAI.news;
 using Services.OpenChat;
 using Services.Selector;
+using Services.UrlValidation;
 using Services.WhatsApp;
-using System.Net;
 using System.Net.Http.Headers;
-using Services.Abstractions.AutoIt;
-using Services.AutoIt;
-using Services.Check;
 namespace Bootstrapper
 {
 public static class AppHostBuilder
@@ -10029,6 +10611,8 @@ services.AddSingleton<IColumnTypes, SQLite>();
 services.AddSingleton<INewsHistoryStore, NewsHistoryStore>();
 services.AddSingleton<INostalgiaPromptLoader, NostalgiaPromptLoader>();
 services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
+services.AddUrlValidation(hostingContext.Configuration);
+services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
 })
 .UseSerilog((context, services, loggerConfig) =>
 {
@@ -10048,6 +10632,20 @@ outputTemplate:
 OutputTemplate
 );
 });
+}
+public static IServiceCollection AddUrlValidation(this IServiceCollection services, IConfiguration cfg)
+{
+services.Configure<UrlValidationOptions>(cfg.GetSection(UrlValidationOptions.SectionName));
+services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
+services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
+services.AddSingleton<IUrlValidationPipeline, UrlValidationPipeline>();
+services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
+services.AddHttpClient<TikTokUrlAvailabilityValidator>();
+services.AddHttpClient<InstagramUrlAvailabilityValidator>();
+services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<YouTubeUrlAvailabilityValidator>());
+services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<TikTokUrlAvailabilityValidator>());
+services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<InstagramUrlAvailabilityValidator>());
+return services;
 }
 private static void SetScheduler(SchedulerOptions o)
 {
@@ -10213,6 +10811,41 @@ services.AddMemoryCache();
       "UriString": "https://api.deepseek.com",
       "Model": "deepseek-chat"
     }
+  },
+  "UrlValidation": {
+    "TimeoutSeconds": 15,
+    "MaxBodyCharsToScan": 200000,
+
+    "YouTube": {
+      "MustContain": [
+        "ytInitialPlayerResponse",
+        "og:title"
+      ],
+      "MustNotContain": [
+        "Video unavailable",
+        "This video is unavailable",
+        "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\""
+      ]
+    },
+
+    "TikTok": {
+      "MustContain": [ "tiktok", "video" ],
+      "MustNotContain": [
+        "Couldn't find this account",
+        "Video currently unavailable",
+        "This content isn't available"
+      ]
+    },
+
+    "Instagram": {
+      "MustContain": [ "instagram" ],
+      "MustNotContain": [
+        "Sorry, this page isn't available",
+        "The link you followed may be broken",
+        "The link may be broken, or the profile may have been removed.",
+        "Post isn't available"
+      ]
+    }
   }
 }
 
@@ -10317,6 +10950,30 @@ Command
       "ApiKey": "DEEPSEEK_API_KEY",
       "UriString": "https://api.deepseek.com",
       "Model": "deepseek-chat"
+    }
+  },
+  "UrlValidation": {
+    "TimeoutSeconds": 15,
+    "MaxBodyCharsToScan": 200000,
+
+    "YouTube": {
+      "MustContain": [ "ytInitialPlayerResponse", "og:title" ],
+      "MustNotContain": [ "Video unavailable", "This video is unavailable", "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\"" ]
+    },
+
+    "TikTok": {
+      "MustContain": [ "tiktok", "video" ],
+      "MustNotContain": [ "Couldn't find this account", "Video currently unavailable", "This content isn't available" ]
+    },
+
+    "Instagram": {
+      "MustContain": [ "instagram" ],
+      "MustNotContain": [
+        "Sorry, this page isn't available",
+        "The link you followed may be broken",
+        "The link may be broken, or the profile may have been removed.",
+        "Post isn't available"
+      ]
     }
   }
 }
@@ -11453,6 +12110,14 @@ Command
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -11503,6 +12168,7 @@ Command
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -12118,6 +12784,11 @@ Command
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -12159,9 +12830,7 @@ Command
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -14350,6 +15019,70 @@ Command
         }
       }
     },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -14792,6 +15525,9 @@ Command
             "projectReferences": {
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
               },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
@@ -16512,6 +17248,16 @@ Command
           "bin/placeholder/Commands.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -16572,6 +17318,7 @@ Command
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -18861,6 +19608,11 @@ Command
       "path": "../Commands/Commands.csproj",
       "msbuildProject": "../Commands/Commands.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -19038,7 +19790,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -19055,7 +19807,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -19600,6 +20352,14 @@ Logger.LogInformation("InviteCommand: finished.");
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -19622,6 +20382,7 @@ Logger.LogInformation("InviteCommand: finished.");
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -19875,6 +20636,11 @@ Logger.LogInformation("InviteCommand: finished.");
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -19906,9 +20672,7 @@ Logger.LogInformation("InviteCommand: finished.");
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -20817,6 +21581,70 @@ Logger.LogInformation("InviteCommand: finished.");
         }
       }
     },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -21097,6 +21925,9 @@ Logger.LogInformation("InviteCommand: finished.");
             "projectReferences": {
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
               },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
@@ -21769,6 +22600,16 @@ Logger.LogInformation("InviteCommand: finished.");
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -21797,6 +22638,7 @@ Logger.LogInformation("InviteCommand: finished.");
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -22769,6 +23611,11 @@ Logger.LogInformation("InviteCommand: finished.");
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -22903,7 +23750,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -22920,7 +23767,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -22954,6 +23801,255 @@ global using global::System.Threading.Tasks;
 
 {"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/943078ad1fd4a3759ac0f9160f6b41019777bb96/*"}}
 
+=== FILE: F:\Marketing\Common\bin\Debug\net8.0\Common.deps.json ===
+
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Common\obj\Common.csproj.nuget.dgspec.json ===
+
+{
+  "format": 1,
+  "restore": {
+    "F:\\Marketing\\Common\\Common.csproj": {}
+  },
+  "projects": {
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Common\obj\project.assets.json ===
+
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\luisg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+      "projectName": "Common",
+      "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+      "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+      "outputPath": "F:\\Marketing\\Common\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
+
+=== FILE: F:\Marketing\Common\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
+
+using System;
+using System.Reflection;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(".NETCoreApp,Version=v8.0", FrameworkDisplayName = ".NET 8.0")]
+
+=== FILE: F:\Marketing\Common\obj\Debug\net8.0\Common.AssemblyInfo.cs ===
+
+using System;
+using System.Reflection;
+[assembly: System.Reflection.AssemblyCompanyAttribute("Common")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyProductAttribute("Common")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Common")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+=== FILE: F:\Marketing\Common\obj\Debug\net8.0\Common.GlobalUsings.g.cs ===
+
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+=== FILE: F:\Marketing\Common\obj\Debug\net8.0\Common.sourcelink.json ===
+
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+
+=== FILE: F:\Marketing\Common\StringExtensions\JsonExtractionExtensions.cs ===
+
+﻿namespace Common.StringExtensions
+{
+public static class JsonExtractionExtensions
+{
+public static string ExtractJsonContent(this string? input)
+{
+if (string.IsNullOrWhiteSpace(input))
+return string.Empty;
+const string JsonFence = "```json";
+const string Fence = "```";
+if (!input.Contains(Fence, StringComparison.Ordinal))
+return input.Trim();
+var startIndex = input.IndexOf(JsonFence, StringComparison.OrdinalIgnoreCase);
+if (startIndex >= 0)
+{
+startIndex += JsonFence.Length;
+var endIndex = input.IndexOf(Fence, startIndex, StringComparison.Ordinal);
+if (endIndex < 0)
+endIndex = input.Length;
+return input[startIndex..endIndex].Trim();
+}
+startIndex = input.IndexOf(Fence, StringComparison.Ordinal);
+if (startIndex < 0)
+return input.Trim();
+startIndex += Fence.Length;
+var genericEndIndex = input.IndexOf(Fence, startIndex, StringComparison.Ordinal);
+if (genericEndIndex < 0)
+genericEndIndex = input.Length;
+return input[startIndex..genericEndIndex].Trim();
+}
+}
+}
+
 === FILE: F:\Marketing\Configuration\AppConfig.cs ===
 
 ﻿namespace Configuration
@@ -22967,12 +24063,7 @@ public PathsConfig Paths { get; set; }
 
 === FILE: F:\Marketing\Configuration\AzureTablesConfig.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Configuration
+﻿namespace Configuration
 {
 public sealed class AzureTablesConfig
 {
@@ -23147,12 +24238,7 @@ public string Caption { get; init; } = null!;
 
 === FILE: F:\Marketing\Configuration\OpenAIConfig.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Configuration
+﻿namespace Configuration
 {
 public sealed class OpenAIConfig
 {
@@ -23168,8 +24254,8 @@ public string Model { get; init; } = null!;
 {
 public class PathsConfig
 {
-public string OutFolder { get; set; }
-public string AutoItInterpreterPath { get; set; }
+public required string OutFolder { get; set; }
+public required string AutoItInterpreterPath { get; set; }
 }
 }
 
@@ -23756,6 +24842,31 @@ global using global::System.Threading.Tasks;
 === FILE: F:\Marketing\Configuration\obj\Release\net8.0\Configuration.sourcelink.json ===
 
 {"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/943078ad1fd4a3759ac0f9160f6b41019777bb96/*"}}
+
+=== FILE: F:\Marketing\Configuration\UrlValidation\UrlValidationOptions.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Configuration.UrlValidation
+{
+public sealed class UrlValidationOptions
+{
+public const string SectionName = "UrlValidation";
+public int TimeoutSeconds { get; set; } = 15;
+public int MaxBodyCharsToScan { get; set; } = 200_000;
+public PlatformRules YouTube { get; set; } = new();
+public PlatformRules TikTok { get; set; } = new();
+public PlatformRules Instagram { get; set; } = new();
+}
+public sealed class PlatformRules
+{
+public List<string> MustContain { get; set; } = [];
+public List<string> MustNotContain { get; set; } = [];
+}
+}
 
 === FILE: F:\Marketing\Domain\AutoItRunnerResult.cs ===
 
@@ -29698,6 +30809,14 @@ times
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -29720,6 +30839,7 @@ times
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -30071,6 +31191,11 @@ times
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -30117,9 +31242,7 @@ times
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -30208,6 +31331,70 @@ times
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -30619,6 +31806,9 @@ times
             "projectReferences": {
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
               },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
@@ -31682,6 +32872,16 @@ times
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -31710,6 +32910,7 @@ times
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -33286,6 +34487,11 @@ times
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -33431,7 +34637,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -33449,7 +34655,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -35013,6 +36219,14 @@ true.Should().BeTrue();
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -35063,6 +36277,7 @@ true.Should().BeTrue();
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -35610,6 +36825,11 @@ true.Should().BeTrue();
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -35667,9 +36887,7 @@ true.Should().BeTrue();
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -37767,6 +38985,70 @@ public bool Active { get; set; }
         }
       }
     },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -38315,6 +39597,9 @@ public bool Active { get; set; }
             "projectReferences": {
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
               },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
@@ -39910,6 +41195,16 @@ public bool Active { get; set; }
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -39970,6 +41265,7 @@ public bool Active { get; set; }
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -42121,6 +43417,11 @@ public bool Active { get; set; }
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -42292,7 +43593,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -42310,7 +43611,7 @@ global using global::Xunit;
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net8.0\Marketing.Tests.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs ===
 
@@ -45993,6 +47294,7 @@ return completed == tcs.Task ? await tcs.Task : -1;
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -46379,6 +47681,14 @@ return completed == tcs.Task ? await tcs.Task : -1;
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -46630,6 +47940,11 @@ return completed == tcs.Task ? await tcs.Task : -1;
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -46656,9 +47971,7 @@ return completed == tcs.Task ? await tcs.Task : -1;
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -48502,6 +49815,16 @@ report.DeleteFailures.Count);
           "bin/placeholder/Application.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -49476,6 +50799,11 @@ report.DeleteFailures.Count);
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -49495,6 +50823,7 @@ report.DeleteFailures.Count);
   "projectFileDependencyGroups": {
     "net8.0": [
       "Application >= 1.0.0",
+      "Common >= 1.0.0",
       "Configuration >= 1.0.0",
       "FuzzySharp >= 2.0.2",
       "Google.Apis.Auth >= 1.70.0",
@@ -49543,6 +50872,9 @@ report.DeleteFailures.Count);
           "projectReferences": {
             "F:\\Marketing\\Application\\Application.csproj": {
               "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+            },
+            "F:\\Marketing\\Common\\Common.csproj": {
+              "projectPath": "F:\\Marketing\\Common\\Common.csproj"
             },
             "F:\\Marketing\\Configuration\\Configuration.csproj": {
               "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
@@ -49675,6 +51007,70 @@ report.DeleteFailures.Count);
                 "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
               }
             }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -49993,6 +51389,9 @@ report.DeleteFailures.Count);
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -50099,7 +51498,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -50116,7 +51515,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -50220,41 +51619,245 @@ throw new Exception("Unexpected failure executing OpenAI request.");
 
 === FILE: F:\Marketing\Services\OpenAI\news\JsonPromptRunner.cs ===
 
-﻿using Domain;
+﻿
+using Common.StringExtensions;
+using Domain;
 using Domain.OpenAI;
+using Microsoft.Extensions.Logging;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
+using Services.Abstractions.UrlValidation;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 namespace Services.OpenAI.news
 {
 public class JsonPromptRunner(
 INewsHistoryStore newsHistoryStore,
 INostalgiaPromptLoader nostalgiaPromptLoader,
-IOpenAIClient openAIClient
+IOpenAIClient openAIClient,
+IUrlAvailabilityValidatorFactory urlValidatorFactory,
+ILogger<JsonPromptRunner> logger
 ) : IJsonPromptRunner
 {
 private readonly INewsHistoryStore _newsHistoryStore = newsHistoryStore;
 private readonly INostalgiaPromptLoader _nostalgiaPromptLoader = nostalgiaPromptLoader;
 private readonly IOpenAIClient _openAIClient = openAIClient;
+private readonly IUrlAvailabilityValidatorFactory _urlValidatorFactory = urlValidatorFactory;
+private readonly ILogger<JsonPromptRunner> _logger = logger;
+private const int DesiredCount = 5;
+private static readonly TimeSpan MaxOverallDuration = TimeSpan.FromMinutes(2);
 public async Task<List<string>> RunStrictJsonAsync(CancellationToken ct = default)
 {
-var urls = await _newsHistoryStore.LoadUrlsAsync(ct);
-var promptNoslgia = await _nostalgiaPromptLoader.LoadPromptAsync();
-promptNoslgia.Context.ExcludedUrls = [];
-if (urls.Any())
+var history = await LoadHistoryAsync(ct);
+var promptNostalgia = await LoadPromptAsync(ct);
+var attempted = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+var deadline = DateTimeOffset.UtcNow + MaxOverallDuration;
+while (DateTimeOffset.UtcNow < deadline && !ct.IsCancellationRequested)
 {
-promptNoslgia.Context.ExcludedUrls.AddRange(urls);
+UpdateExcludedUrls(promptNostalgia, history, attempted);
+var prompt = BuildPrompt(promptNostalgia);
+var llmRaw = await CallLlmAsync(prompt, ct);
+var candidates = ExtractCandidateUrls(llmRaw);
+if (candidates.Count == 0)
+{
+_logger.LogWarning("LLM returned no URLs. Retrying.");
+continue;
 }
-var content = ToJsonWithoutRole(promptNoslgia);
-var prompt = new Prompt
+AddAttempted(attempted, candidates);
+var validation = await ValidateCandidatesUntilDesiredAsync(candidates, DesiredCount, ct);
+var results = validation.Results;
+await AppendUsedUrlsAsync(candidates, ct);
+LogFirstFailure(validation.Results);
+}
+return new List<string>();
+}
+private async Task<HashSet<string>> LoadHistoryAsync(CancellationToken ct)
 {
-SystemContent = promptNoslgia.Role,
+_logger.LogDebug("STEP 1: Loading history URLs...");
+var history = await _newsHistoryStore.LoadUrlsAsync(ct);
+_logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", history.Count);
+return history;
+}
+private async Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct)
+{
+_logger.LogDebug("STEP 1: Loading history URLs...");
+await _newsHistoryStore.AppendUsedUrlsAsync(urls, ct);
+_logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", urls.Count());
+}
+private async Task<NostalgiaPrompt> LoadPromptAsync(CancellationToken ct)
+{
+_logger.LogDebug("STEP 2: Loading NostalgiaPrompt template...");
+var prompt = await _nostalgiaPromptLoader.LoadPromptAsync();
+prompt.Context.ExcludedUrls = [];
+_logger.LogDebug("STEP 2: Prompt loaded. ExcludedUrls initialized.");
+return prompt;
+}
+private void UpdateExcludedUrls(NostalgiaPrompt prompt, HashSet<string> history, HashSet<string> attempted)
+{
+_logger.LogDebug("STEP 4.1: Updating exclusions (history + attempted)...");
+prompt.Context.ExcludedUrls.Clear();
+if (history.Count > 0)
+prompt.Context.ExcludedUrls.AddRange(history);
+if (attempted.Count > 0)
+prompt.Context.ExcludedUrls.AddRange(attempted);
+_logger.LogDebug("STEP 4.1: ExcludedUrls updated. Total={Count}.", prompt.Context.ExcludedUrls.Count);
+}
+private Prompt BuildPrompt(NostalgiaPrompt promptNostalgia)
+{
+_logger.LogDebug("STEP 4.2: Building LLM prompt (System + User JSON without role)...");
+var content = ToJsonWithoutRole(promptNostalgia);
+return new Prompt
+{
+SystemContent = promptNostalgia.Role,
 UserContent = content
 };
-var result = await _openAIClient.GetChatCompletionAsync(prompt, ct);
-return ["one", "two", "three"];
 }
+private async Task<string> CallLlmAsync(Prompt prompt, CancellationToken ct)
+{
+_logger.LogDebug("STEP 4.3: Calling LLM...");
+var raw = await _openAIClient.GetChatCompletionAsync(prompt, ct);
+_logger.LogDebug("STEP 4.3: LLM response received. Length={Len}", raw?.Length ?? 0);
+return raw ?? string.Empty;
+}
+private List<string> ExtractCandidateUrls(string llmRaw)
+{
+_logger.LogDebug("STEP 4.4: Extracting URLs from LLM response...");
+var extracted = llmRaw.ExtractJsonContent();
+var urls = ExtractUrlsFromLlmResponse(extracted)
+.Where(u => !string.IsNullOrWhiteSpace(u))
+.Select(u => u.Trim())
+.Distinct(StringComparer.OrdinalIgnoreCase)
+.ToList();
+_logger.LogDebug("STEP 4.4: Extracted {Count} candidate URLs.", urls.Count);
+return urls;
+}
+private static void AddAttempted(HashSet<string> attempted, List<string> candidates)
+{
+foreach (var c in candidates)
+attempted.Add(c);
+}
+private async Task<(bool Success, IReadOnlyList<string> ValidUrls, IReadOnlyList<UrlValidationResult> Results)>
+ValidateCandidatesUntilDesiredAsync(
+IReadOnlyList<string> urls,
+int desiredCount,
+CancellationToken ct)
+{
+_logger.LogDebug("Validating URLs linearly until {Desired} valid ones are found.", desiredCount);
+var validUrls = new List<string>(desiredCount);
+var results = new List<UrlValidationResult>(urls.Count);
+foreach (var url in urls)
+{
+ct.ThrowIfCancellationRequested();
+_logger.LogDebug("Validating URL: {Url}", url);
+var res = await ValidateOneUrlAsync(url, ct);
+results.Add(res);
+if (res.IsValid)
+{
+validUrls.Add(url);
+_logger.LogDebug("URL valid ({Count}/{Desired})", validUrls.Count, desiredCount);
+if (validUrls.Count == desiredCount)
+{
+_logger.LogDebug("Desired number of valid URLs reached.");
+return (true, validUrls, results);
+}
+}
+}
+_logger.LogDebug(
+"Validation finished. Only {Count}/{Desired} valid URLs found.",
+validUrls.Count, desiredCount);
+return (false, validUrls, results);
+}
+private static List<string> PrepareStrictBatch(IReadOnlyList<string> urls, int desiredCount)
+{
+return urls
+.Where(u => !string.IsNullOrWhiteSpace(u))
+.Select(u => u.Trim())
+.Distinct(StringComparer.OrdinalIgnoreCase)
+.Take(desiredCount)
+.ToList();
+}
+private async Task<UrlValidationResult> ValidateOneUrlAsync(string url, CancellationToken ct)
+{
+if (!Uri.TryCreate(url, UriKind.Absolute, out _))
+return new UrlValidationResult(false, UrlPlatform.Unknown, null, "Invalid absolute URL.");
+try
+{
+var validator = _urlValidatorFactory.GetValidator(url);
+return await validator.ValidateAsync(url, ct);
+}
+catch (Exception ex)
+{
+return new UrlValidationResult(false, UrlPlatform.Unknown, null, ex.Message);
+}
+}
+private async Task PersistValidUrlsAsync(IReadOnlyList<string> validUrls, CancellationToken ct)
+{
+_logger.LogDebug("STEP 4.7: Persisting {Count} valid URLs into history store...", validUrls.Count);
+await _newsHistoryStore.AppendUsedUrlsAsync(validUrls, ct);
+_logger.LogDebug("STEP 4.7: Persist complete.");
+}
+private void LogFirstFailure(IReadOnlyList<UrlValidationResult> results)
+{
+var firstFail = results.FirstOrDefault(r => !r.IsValid);
+if (firstFail is null)
+return;
+_logger.LogInformation(
+"Batch rejected. First failure: Platform={Platform} Status={Status} Reason={Reason}",
+firstFail.Platform,
+firstFail.HttpStatusCode,
+firstFail.FailureReason);
+}
+private static List<string> ExtractUrlsFromLlmResponse(string llmRaw)
+{
+try
+{
+using var doc = JsonDocument.Parse(llmRaw);
+var root = doc.RootElement;
+if (root.ValueKind == JsonValueKind.Array)
+return root.EnumerateArray()
+.Where(e => e.ValueKind == JsonValueKind.String)
+.Select(e => e.GetString()!)
+.Where(IsProbablyUrl)
+.ToList();
+if (root.ValueKind == JsonValueKind.Object &&
+root.TryGetProperty("urls", out var urlsEl) &&
+urlsEl.ValueKind == JsonValueKind.Array)
+{
+return urlsEl.EnumerateArray()
+.Where(e => e.ValueKind == JsonValueKind.String)
+.Select(e => e.GetString()!)
+.Where(IsProbablyUrl)
+.ToList();
+}
+if (root.ValueKind == JsonValueKind.Object &&
+root.TryGetProperty("items", out var itemsEl) &&
+itemsEl.ValueKind == JsonValueKind.Array)
+{
+return itemsEl.EnumerateArray()
+.Select(e => e.ValueKind == JsonValueKind.Object &&
+e.TryGetProperty("url", out var u) &&
+u.ValueKind == JsonValueKind.String
+? u.GetString()
+: null)
+.Where(u => !string.IsNullOrWhiteSpace(u) && IsProbablyUrl(u!))
+.Cast<string>()
+.ToList();
+}
+}
+catch
+{
+}
+return Regex.Matches(llmRaw, @"https?:
+.Select(m => TrimUrl(m.Value))
+.Where(IsProbablyUrl)
+.ToList();
+}
+private static bool IsProbablyUrl(string s)
+=> Uri.TryCreate(s, UriKind.Absolute, out var uri) &&
+(uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
+private static string TrimUrl(string url)
+=> url.Trim().TrimEnd('.', ',', ';', ')', ']', '}', '"', '\'');
 public static string ToJsonWithoutRole(NostalgiaPrompt prompt, bool indented = true)
 {
 if (prompt is null) throw new ArgumentNullException(nameof(prompt));
@@ -50268,13 +51871,9 @@ public static string ConvertJsonWithoutRole(string json)
 {
 if (string.IsNullOrWhiteSpace(json))
 throw new ArgumentException("JSON input cannot be null or empty.", nameof(json));
-var node = JsonNode.Parse(json)
-?? throw new JsonException("Invalid JSON.");
+var node = JsonNode.Parse(json) ?? throw new JsonException("Invalid JSON.");
 node.AsObject().Remove("role");
-return node.ToJsonString(new JsonSerializerOptions
-{
-WriteIndented = true
-});
+return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
 }
 }
 }
@@ -50412,9 +52011,7 @@ return cfg ?? throw new InvalidOperationException("Prompt JSON is invalid or emp
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -51306,6 +52903,167 @@ if (string.IsNullOrWhiteSpace(key))
 throw new ArgumentException("key is required.", nameof(key));
 await _trackedLink.UpsertAsync(id: key,targetUrl: longUrl, ct: ct);
 }
+}
+}
+
+=== FILE: F:\Marketing\Services\UrlValidation\HttpBodyRuleValidatorBase.cs ===
+
+﻿using Configuration.UrlValidation;
+using Microsoft.Extensions.Options;
+using Services.Abstractions.UrlValidation;
+using System.Net;
+namespace Services.UrlValidation
+{
+public abstract class HttpBodyRuleValidatorBase(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : IUrlAvailabilityValidator
+{
+private readonly HttpClient _httpClient = httpClient;
+private readonly IOptionsMonitor<UrlValidationOptions> _options = options;
+public abstract UrlPlatform Platform { get; }
+protected abstract PlatformRules Rules(UrlValidationOptions opt);
+public async Task<UrlValidationResult> ValidateAsync(string url, CancellationToken ct = default)
+{
+if (!Uri.TryCreate(url, UriKind.Absolute, out _))
+return new UrlValidationResult(false, Platform, null, "Invalid absolute URL.");
+var opt = _options.CurrentValue;
+using var cts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+cts.CancelAfter(TimeSpan.FromSeconds(Math.Max(1, opt.TimeoutSeconds)));
+try
+{
+using var req = new HttpRequestMessage(HttpMethod.Get, url);
+req.Headers.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36");
+using var resp = await _httpClient.SendAsync(req, HttpCompletionOption.ResponseHeadersRead, cts.Token);
+var status = (int)resp.StatusCode;
+if ((int)resp.StatusCode >= 400 && resp.StatusCode != HttpStatusCode.Forbidden)
+{
+return new UrlValidationResult(false, Platform, status, $"HTTP {(int)resp.StatusCode} {resp.ReasonPhrase}");
+}
+var body = await resp.Content.ReadAsStringAsync(cts.Token);
+if (body.Length > opt.MaxBodyCharsToScan)
+body = body[..opt.MaxBodyCharsToScan];
+var rules = Rules(opt);
+foreach (var must in rules.MustContain)
+{
+if (!ContainsIgnoreCase(body, must))
+{
+return new UrlValidationResult(
+false, Platform, status,
+$"Missing required marker: '{must}'.",
+EvidenceSnippet: TakeSnippet(body, must)
+);
+}
+}
+foreach (var mustNot in rules.MustNotContain)
+{
+if (ContainsIgnoreCase(body, mustNot))
+{
+return new UrlValidationResult(
+false, Platform, status,
+$"Found forbidden marker: '{mustNot}'.",
+EvidenceSnippet: TakeSnippet(body, mustNot)
+);
+}
+}
+return new UrlValidationResult(true, Platform, status, null);
+}
+catch (TaskCanceledException)
+{
+return new UrlValidationResult(false, Platform, null, "Timeout while validating URL.");
+}
+catch (HttpRequestException ex)
+{
+return new UrlValidationResult(false, Platform, null, $"Network error: {ex.Message}");
+}
+catch (Exception ex)
+{
+return new UrlValidationResult(false, Platform, null, $"Unexpected error: {ex.Message}");
+}
+}
+private static bool ContainsIgnoreCase(string haystack, string needle) =>
+haystack.Contains(needle, StringComparison.OrdinalIgnoreCase);
+private static string? TakeSnippet(string body, string needle)
+{
+var idx = body.IndexOf(needle, StringComparison.OrdinalIgnoreCase);
+if (idx < 0) return null;
+var start = Math.Max(0, idx - 80);
+var len = Math.Min(body.Length - start, 200);
+return body.Substring(start, len);
+}
+}
+}
+
+=== FILE: F:\Marketing\Services\UrlValidation\InstagramUrlAvailabilityValidator.cs ===
+
+﻿using Configuration.UrlValidation;
+using Microsoft.Extensions.Options;
+using Services.Abstractions.UrlValidation;
+namespace Services.UrlValidation
+{
+public sealed class InstagramUrlAvailabilityValidator : HttpBodyRuleValidatorBase
+{
+public InstagramUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
+: base(httpClient, options) { }
+public override UrlPlatform Platform => UrlPlatform.Instagram;
+protected override PlatformRules Rules(UrlValidationOptions opt) => opt.Instagram;
+}
+}
+
+=== FILE: F:\Marketing\Services\UrlValidation\TikTokUrlAvailabilityValidator.cs ===
+
+﻿using Configuration.UrlValidation;
+using Microsoft.Extensions.Options;
+using Services.Abstractions.UrlValidation;
+namespace Services.UrlValidation
+{
+public sealed class TikTokUrlAvailabilityValidator : HttpBodyRuleValidatorBase
+{
+public TikTokUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
+: base(httpClient, options) { }
+public override UrlPlatform Platform => UrlPlatform.TikTok;
+protected override PlatformRules Rules(UrlValidationOptions opt) => opt.TikTok;
+}
+}
+
+=== FILE: F:\Marketing\Services\UrlValidation\UrlValidationPipeline.cs ===
+
+﻿using Services.Abstractions.UrlValidation;
+namespace Services.UrlValidation
+{
+public sealed class UrlValidationPipeline : IUrlValidationPipeline
+{
+private readonly IUrlAvailabilityValidatorFactory _factory;
+public UrlValidationPipeline(IUrlAvailabilityValidatorFactory factory)
+{
+_factory = factory;
+}
+public async Task<(bool AllValid, IReadOnlyList<UrlValidationResult> Results)> ValidateAllAsync(
+IReadOnlyList<string> urls,
+CancellationToken ct = default)
+{
+var results = new List<UrlValidationResult>(urls.Count);
+foreach (var url in urls)
+{
+var validator = _factory.GetValidator(url);
+var result = await validator.ValidateAsync(url, ct);
+results.Add(result);
+if (!result.IsValid)
+return (false, results);
+}
+return (true, results);
+}
+}
+}
+
+=== FILE: F:\Marketing\Services\UrlValidation\YouTubeUrlAvailabilityValidator.cs ===
+
+﻿using Configuration.UrlValidation;
+using Microsoft.Extensions.Options;
+using Services.Abstractions.UrlValidation;
+namespace Services.UrlValidation
+{
+public sealed class YouTubeUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : HttpBodyRuleValidatorBase(httpClient, options)
+{
+public override UrlPlatform Platform => UrlPlatform.YouTube;
+protected override PlatformRules Rules(UrlValidationOptions opt) => opt.YouTube;
 }
 }
 
@@ -54302,6 +56060,153 @@ public interface IUrlShort
 {
 Task ShortenUrlAsync(string longUrl, string key, CancellationToken ct = default);
 }
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlAvailabilityValidator.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Abstractions.UrlValidation
+{
+public interface IUrlAvailabilityValidator
+{
+UrlPlatform Platform { get; }
+Task<UrlValidationResult> ValidateAsync(string url, CancellationToken ct = default);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlAvailabilityValidatorFactory.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Abstractions.UrlValidation
+{
+public interface IUrlAvailabilityValidatorFactory
+{
+IUrlAvailabilityValidator GetValidator(string url);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlPlatformResolver.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Abstractions.UrlValidation
+{
+public interface IUrlPlatformResolver
+{
+UrlPlatform Resolve(string url);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlValidationPipeline.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Abstractions.UrlValidation
+{
+public interface IUrlValidationPipeline
+{
+Task<(bool AllValid, IReadOnlyList<UrlValidationResult> Results)> ValidateAllAsync(
+IReadOnlyList<string> urls,
+CancellationToken ct = default
+);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlAvailabilityValidatorFactory.cs ===
+
+﻿namespace Services.Abstractions.UrlValidation
+{
+public sealed class UrlAvailabilityValidatorFactory : IUrlAvailabilityValidatorFactory
+{
+private readonly IUrlPlatformResolver _resolver;
+private readonly IReadOnlyDictionary<UrlPlatform, IUrlAvailabilityValidator> _validators;
+public UrlAvailabilityValidatorFactory(
+IUrlPlatformResolver resolver,
+IEnumerable<IUrlAvailabilityValidator> validators)
+{
+_resolver = resolver;
+_validators = validators.ToDictionary(v => v.Platform, v => v);
+}
+public IUrlAvailabilityValidator GetValidator(string url)
+{
+var platform = _resolver.Resolve(url);
+if (platform == UrlPlatform.Unknown || !_validators.TryGetValue(platform, out var validator))
+throw new NotSupportedException($"No validator registered for platform '{platform}'.");
+return validator;
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlPlatform.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Abstractions.UrlValidation
+{
+public enum UrlPlatform
+{
+Unknown = 0,
+YouTube = 1,
+TikTok = 2,
+Instagram = 3
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlPlatformResolver.cs ===
+
+﻿namespace Services.Abstractions.UrlValidation
+{
+public sealed class UrlPlatformResolver : IUrlPlatformResolver
+{
+public UrlPlatform Resolve(string url)
+{
+if (!Uri.TryCreate(url, UriKind.Absolute, out var uri))
+return UrlPlatform.Unknown;
+var host = uri.Host.ToLowerInvariant();
+if (host.Contains("youtube.com") || host.Contains("youtu.be"))
+return UrlPlatform.YouTube;
+if (host.Contains("tiktok.com"))
+return UrlPlatform.TikTok;
+if (host.Contains("instagram.com"))
+return UrlPlatform.Instagram;
+return UrlPlatform.Unknown;
+}
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlValidationResult.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.Abstractions.UrlValidation
+{
+public sealed record UrlValidationResult(
+bool IsValid,
+UrlPlatform Platform,
+int? HttpStatusCode,
+string? FailureReason,
+string? EvidenceSnippet = null
+);
 }
 
 === FILE: F:\Marketing\Services.Abstractions\XPath\IChatXPathBuilder.cs ===
@@ -66401,6 +68306,30 @@ throw new Exception("Database initialization failed");
       "UriString": "https://api.deepseek.com",
       "Model": "deepseek-chat"
     }
+  },
+  "UrlValidation": {
+    "TimeoutSeconds": 15,
+    "MaxBodyCharsToScan": 200000,
+
+    "YouTube": {
+      "MustContain": [ "ytInitialPlayerResponse", "og:title" ],
+      "MustNotContain": [ "Video unavailable", "This video is unavailable", "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\"" ]
+    },
+
+    "TikTok": {
+      "MustContain": [ "tiktok", "video" ],
+      "MustNotContain": [ "Couldn't find this account", "Video currently unavailable", "This content isn't available" ]
+    },
+
+    "Instagram": {
+      "MustContain": [ "instagram" ],
+      "MustNotContain": [
+        "Sorry, this page isn't available",
+        "The link you followed may be broken",
+        "The link may be broken, or the profile may have been removed.",
+        "Post isn't available"
+      ]
+    }
   }
 }
 
@@ -67547,6 +69476,14 @@ throw new Exception("Database initialization failed");
           }
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -67597,6 +69534,7 @@ throw new Exception("Database initialization failed");
       "Services/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -68217,6 +70155,11 @@ throw new Exception("Database initialization failed");
       "serviceable": false,
       "sha512": ""
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -68280,9 +70223,7 @@ throw new Exception("Database initialization failed");
   "context": {
     "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
     "allowed_sources": [
-      "YouTube",
-      "Instagram",
-      "TikTok"
+      "YouTube"
     ],
     "history": {
       "type": "json",
@@ -73540,6 +75481,16 @@ throw new Exception("Database initialization failed");
           "bin/placeholder/Commands.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "Configuration/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -73600,6 +75551,7 @@ throw new Exception("Database initialization failed");
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Common": "1.0.0",
           "Configuration": "1.0.0",
           "FuzzySharp": "2.0.2",
           "Google.Apis.Auth": "1.70.0",
@@ -75894,6 +77846,11 @@ throw new Exception("Database initialization failed");
       "path": "../Commands/Commands.csproj",
       "msbuildProject": "../Commands/Commands.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -76256,6 +78213,70 @@ throw new Exception("Database initialization failed");
               "version": "[13.0.3, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Marketing\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "F:\\Marketing\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -76719,6 +78740,9 @@ throw new Exception("Database initialization failed");
               "F:\\Marketing\\Application\\Application.csproj": {
                 "projectPath": "F:\\Marketing\\Application\\Application.csproj"
               },
+              "F:\\Marketing\\Common\\Common.csproj": {
+                "projectPath": "F:\\Marketing\\Common\\Common.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -76893,7 +78917,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -76910,7 +78934,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

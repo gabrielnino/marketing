@@ -5,16 +5,10 @@ using System.Net;
 
 namespace Services.UrlValidation
 {
-    public abstract class HttpBodyRuleValidatorBase : IUrlAvailabilityValidator
+    public abstract class HttpBodyRuleValidatorBase(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : IUrlAvailabilityValidator
     {
-        private readonly HttpClient _httpClient;
-        private readonly IOptionsMonitor<UrlValidationOptions> _options;
-
-        protected HttpBodyRuleValidatorBase(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
-        {
-            _httpClient = httpClient;
-            _options = options;
-        }
+        private readonly HttpClient _httpClient = httpClient;
+        private readonly IOptionsMonitor<UrlValidationOptions> _options = options;
 
         public abstract UrlPlatform Platform { get; }
 
@@ -23,7 +17,10 @@ namespace Services.UrlValidation
         public async Task<UrlValidationResult> ValidateAsync(string url, CancellationToken ct = default)
         {
             if (!Uri.TryCreate(url, UriKind.Absolute, out _))
+            {
                 return new UrlValidationResult(false, Platform, null, "Invalid absolute URL.");
+            }
+                
 
             var opt = _options.CurrentValue;
             using var cts = CancellationTokenSource.CreateLinkedTokenSource(ct);
@@ -46,7 +43,7 @@ namespace Services.UrlValidation
 
                 var body = await resp.Content.ReadAsStringAsync(cts.Token);
                 if (body.Length > opt.MaxBodyCharsToScan)
-                    body = body.Substring(0, opt.MaxBodyCharsToScan);
+                    body = body[..opt.MaxBodyCharsToScan];
 
                 var rules = Rules(opt);
 
@@ -93,7 +90,7 @@ namespace Services.UrlValidation
         }
 
         private static bool ContainsIgnoreCase(string haystack, string needle) =>
-            haystack.IndexOf(needle, StringComparison.OrdinalIgnoreCase) >= 0;
+            haystack.Contains(needle, StringComparison.OrdinalIgnoreCase);
 
         private static string? TakeSnippet(string body, string needle)
         {

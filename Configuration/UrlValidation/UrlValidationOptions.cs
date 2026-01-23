@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Configuration.UrlValidation
+﻿namespace Configuration.UrlValidation
 {
     public sealed class UrlValidationOptions
     {
@@ -20,7 +14,7 @@ namespace Configuration.UrlValidation
 
     public sealed class PlatformRules
     {
-        public List<string> MustContain { get; set; } = new();
-        public List<string> MustNotContain { get; set; } = new();
+        public List<string> MustContain { get; set; } = [];
+        public List<string> MustNotContain { get; set; } = [];
     }
 }

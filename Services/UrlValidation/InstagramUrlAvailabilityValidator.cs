@@ -4,11 +4,8 @@ using Services.Abstractions.UrlValidation;
 
 namespace Services.UrlValidation
 {
-    public sealed class InstagramUrlAvailabilityValidator : HttpBodyRuleValidatorBase
+    public sealed class InstagramUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : HttpBodyRuleValidatorBase(httpClient, options)
     {
-        public InstagramUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
-            : base(httpClient, options) { }
-
         public override UrlPlatform Platform => UrlPlatform.Instagram;
 
         protected override PlatformRules Rules(UrlValidationOptions opt) => opt.Instagram;

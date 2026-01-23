@@ -2,8 +2,8 @@
 {
     public class PathsConfig
     {
-        public string OutFolder { get; set; }
-        public string AutoItInterpreterPath { get; set; }
+        public required string OutFolder { get; set; }
+        public required string AutoItInterpreterPath { get; set; }
     }
 
 }

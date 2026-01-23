@@ -4,11 +4,8 @@ using Services.Abstractions.UrlValidation;
 
 namespace Services.UrlValidation
 {
-    public sealed class TikTokUrlAvailabilityValidator : HttpBodyRuleValidatorBase
+    public sealed class TikTokUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : HttpBodyRuleValidatorBase(httpClient, options)
     {
-        public TikTokUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
-            : base(httpClient, options) { }
-
         public override UrlPlatform Platform => UrlPlatform.TikTok;
 
         protected override PlatformRules Rules(UrlValidationOptions opt) => opt.TikTok;
