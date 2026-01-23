@@ -1,6 +1,6 @@
 ﻿namespace Configuration.UrlValidation
 {
-    public sealed class UrlValidationOptions
+    public sealed class UrlOptions
     {
         public const string SectionName = "UrlValidation";
 

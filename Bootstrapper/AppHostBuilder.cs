@@ -212,20 +212,20 @@ namespace Bootstrapper
         }
         public static IServiceCollection AddUrlValidation(this IServiceCollection services, IConfiguration cfg)
         {
-            services.Configure<UrlValidationOptions>(cfg.GetSection(UrlValidationOptions.SectionName));
+            services.Configure<UrlOptions>(cfg.GetSection(UrlOptions.SectionName));
 
             services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
             services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
             services.AddSingleton<IUrlValidationPipeline, UrlValidationPipeline>();
 
             // Separate HttpClient per platform if you want different headers/timeouts later.
-            services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
-            services.AddHttpClient<TikTokUrlAvailabilityValidator>();
-            services.AddHttpClient<InstagramUrlAvailabilityValidator>();
+            services.AddHttpClient<YouTubeUrlValidator>();
+            services.AddHttpClient<TikTokUrlValidator>();
+            services.AddHttpClient<InstagramUrlValidator>();
 
-            services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<YouTubeUrlAvailabilityValidator>());
-            services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<TikTokUrlAvailabilityValidator>());
-            services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<InstagramUrlAvailabilityValidator>());
+            services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<YouTubeUrlValidator>());
+            services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<TikTokUrlValidator>());
+            services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<InstagramUrlValidator>());
 
             return services;
         }

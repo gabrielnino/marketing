@@ -5,14 +5,14 @@ using System.Net;
 
 namespace Services.UrlValidation
 {
-    public abstract class HttpBodyRuleValidatorBase(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : IUrlAvailabilityValidator
+    public abstract class HttpValidatorBase(HttpClient httpClient, IOptionsMonitor<UrlOptions> options) : IUrValidator
     {
         private readonly HttpClient _httpClient = httpClient;
-        private readonly IOptionsMonitor<UrlValidationOptions> _options = options;
+        private readonly IOptionsMonitor<UrlOptions> _options = options;
 
         public abstract UrlPlatform Platform { get; }
 
-        protected abstract PlatformRules Rules(UrlValidationOptions opt);
+        protected abstract PlatformRules Rules(UrlOptions opt);
 
         public async Task<UrlValidationResult> ValidateAsync(string url, CancellationToken ct = default)
         {

@@ -8,6 +8,6 @@ namespace Services.Abstractions.UrlValidation
 {
     public interface IUrlAvailabilityValidatorFactory
     {
-        IUrlAvailabilityValidator GetValidator(string url);
+        IUrValidator GetValidator(string url);
     }
 }

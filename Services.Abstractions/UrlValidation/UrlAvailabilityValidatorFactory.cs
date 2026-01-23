@@ -2,12 +2,12 @@
 {
     public sealed class UrlAvailabilityValidatorFactory(
         IUrlPlatformResolver resolver,
-        IEnumerable<IUrlAvailabilityValidator> validators) : IUrlAvailabilityValidatorFactory
+        IEnumerable<IUrValidator> validators) : IUrlAvailabilityValidatorFactory
     {
         private readonly IUrlPlatformResolver _resolver = resolver;
-        private readonly IReadOnlyDictionary<UrlPlatform, IUrlAvailabilityValidator> _validators = validators.ToDictionary(v => v.Platform, v => v);
+        private readonly IReadOnlyDictionary<UrlPlatform, IUrValidator> _validators = validators.ToDictionary(v => v.Platform, v => v);
 
-        public IUrlAvailabilityValidator GetValidator(string url)
+        public IUrValidator GetValidator(string url)
         {
             var platform = _resolver.Resolve(url);
 
