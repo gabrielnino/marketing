@@ -50,9 +50,9 @@
           "Each step contributes to implementing the target feature."
         ],
         "sub_steps": [
-          "Search for viral videos using the YouTube API",
-          "Process the results through an LLM using specific prompts",
-          "Validate the outputs using a validation factory to ensure quality and availability"
+          " ",
+          " ",
+          " "
         ]
       }
     ],
