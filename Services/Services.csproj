@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="OpenAI\news\NostalgiaURLSelector.json">
+    <None Update="OpenAI\news\NostalgiaRank.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

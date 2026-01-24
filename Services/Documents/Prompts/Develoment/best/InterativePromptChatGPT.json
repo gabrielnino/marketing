@@ -50,17 +50,20 @@
           "Each step contributes to implementing the target feature."
         ],
         "sub_steps": [
-          " ",
-          " ",
-          " "
+          "Modify the following prompt for an LLM.",
+          "The goal is for the model to act as a content curator",
+          "focused on viral topics about the Colombian national football team.",
+          "It should take two inputs: a list of new URLs and a historical list of URLs.",
+          "The prompt should instruct the model to classify the content",
+          "from the new URLs from most to least viral,",
+          "using the historical list for context. All output must be in Spanish."
         ]
       }
     ],
     "deliverable": {
       "description": [
-        "",
-        "",
-        ""
+        "A prompt for a JSON file, intended for ChatGPT.",
+        "example format: as attached."
       ],
       "components": [
         "Role",
