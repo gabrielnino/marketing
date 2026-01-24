@@ -2,7 +2,7 @@
 {
     public sealed class UrlValidatorFactory(
         IPlatformResolver resolver,
-        IEnumerable<IUrValidator> validators) : IUrlValidatorFactory
+        IEnumerable<IUrValidator> validators) : IUrlFactory
     {
         private readonly IPlatformResolver _resolver = resolver;
         private readonly IReadOnlyDictionary<UrlPlatform, IUrValidator> _validators = validators.ToDictionary(v => v.Platform, v => v);

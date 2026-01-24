@@ -1,6 +1,6 @@
 ﻿namespace Services.Abstractions.UrlValidation
 {
-    public interface IUrlValidatorFactory
+    public interface IUrlFactory
     {
         IUrValidator GetValidator(string url);
     }

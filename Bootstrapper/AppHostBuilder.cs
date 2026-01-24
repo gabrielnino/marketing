@@ -215,7 +215,7 @@ namespace Bootstrapper
             services.Configure<UrlOptions>(cfg.GetSection(UrlOptions.SectionName));
 
             services.AddSingleton<IPlatformResolver, PlatformResolver>();
-            services.AddSingleton<IUrlValidatorFactory, UrlValidatorFactory>();
+            services.AddSingleton<IUrlFactory, UrlValidatorFactory>();
             services.AddSingleton<IValidationPipeline, UrlValidationPipeline>();
 
             // Separate HttpClient per platform if you want different headers/timeouts later.

@@ -1,8 +1,4 @@
-﻿// ===============================
-// FILE: Application/Result/IErrorHandler.cs
-// (Corrección: elimina dependencia de IErrorLogCreate para evitar acoplamiento Application↔Infrastructure)
-// ===============================
-namespace Application.Result
+﻿namespace Application.Result
 {
     public interface IErrorHandler
     {

@@ -22,14 +22,14 @@ namespace Services.OpenAI.news
         INewsHistoryStore newsHistoryStore,
         INostalgiaPromptLoader nostalgiaPromptLoader,
         IOpenAIClient openAIClient,
-        IUrlValidatorFactory urlValidatorFactory,
+        IUrlFactory urlValidatorFactory,
         ILogger<JsonPromptRunner> logger
     ) : IJsonPromptRunner
     {
         private readonly INewsHistoryStore _newsHistoryStore = newsHistoryStore;
         private readonly INostalgiaPromptLoader _nostalgiaPromptLoader = nostalgiaPromptLoader;
         private readonly IOpenAIClient _openAIClient = openAIClient;
-        private readonly IUrlValidatorFactory _urlValidatorFactory = urlValidatorFactory;
+        private readonly IUrlFactory _urlValidatorFactory = urlValidatorFactory;
         private readonly ILogger<JsonPromptRunner> _logger = logger;
 
         private const int DesiredCount = 5;
