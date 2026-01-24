@@ -58,9 +58,9 @@
     ],
     "deliverable": {
       "description": [
-        "The deliverable is a fully validated, incremental specification.",
-        "It is paired with a step-by-step execution plan.",
-        "Progression is strictly controlled through validation."
+        "",
+        "",
+        ""
       ],
       "components": [
         "Role",
