@@ -187,9 +187,6 @@ namespace Services.OpenAI.news
             return op;
         }
 
-    
-
-
         private List<string> ExtractCandidateUrlsFromYouTube(
             SearchResponse response,
             HashSet<string> history,
