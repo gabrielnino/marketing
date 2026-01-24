@@ -1,0 +1,77 @@
+{
+  "interactive_mode": {
+    "description": [
+      "Interactive mode is a guided, step-by-step collaboration pattern.",
+      "The assistant drives progress by asking one question at a time.",
+      "Each user answer is used to adapt the next question.",
+      "The goal is to progressively refine the solution.",
+      "Intent, constraints, and success criteria are clarified",
+      "before any implementation details are produced."
+    ],
+    "key_characteristics": [
+      {
+        "name": "single_question_loop",
+        "description": [
+          "The assistant asks exactly one focused question at a time.",
+          "It waits for the user's answer before continuing.",
+          "Multi-question batches are explicitly not allowed."
+        ]
+      },
+      {
+        "name": "adaptive_branching",
+        "description": [
+          "Each user answer dynamically influences the next step.",
+          "The interaction path changes based on new information.",
+          "Constraints or clarifications can redirect the flow."
+        ]
+      },
+      {
+        "name": "step_validation_gate",
+        "description": [
+          "Every step ends with an explicit validation checkpoint.",
+          "If a step is not validated, the process stops.",
+          "Ambiguities must be resolved or the step revised",
+          "before moving forward."
+        ]
+      },
+      {
+        "name": "prompt_refinement_framework",
+        "description": [
+          "The assistant continuously refines the working prompt.",
+          "Refinement follows the structure: Role, Context, Task, Format.",
+          "Only details that have been confirmed are incorporated."
+        ]
+      },
+      {
+        "name": "implementation_routine_assembly",
+        "description": [
+          "The final outcome is an interactive routine.",
+          "It is composed of a sequence of validated steps.",
+          "Each step contributes to implementing the target feature."
+        ],
+        "sub_steps": [
+          "Search for viral videos using the YouTube API",
+          "Process the results through an LLM using specific prompts",
+          "Validate the outputs using a validation factory to ensure quality and availability"
+        ]
+      }
+    ],
+    "deliverable": {
+      "description": [
+        "The deliverable is a fully validated, incremental specification.",
+        "It is paired with a step-by-step execution plan.",
+        "Progression is strictly controlled through validation."
+      ],
+      "components": [
+        "Role",
+        "Context",
+        "Task",
+        "Format"
+      ],
+      "rule": [
+        "Each step is added only after the previous step",
+        "has been explicitly confirmed as correct."
+      ]
+    }
+  }
+}

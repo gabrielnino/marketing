@@ -115,7 +115,7 @@ namespace Services.OpenAI.news
                 // STEP 4.8: Log first failure and retry loop
                 LogFirstFailure(validation.Results);
             }
-
+            `
             return new List<string>(); // timeout / cancelled
         }
 

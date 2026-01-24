@@ -1,0 +1,53 @@
+{
+  "request": {
+    "action": "convert_to_json",
+    "source_type": "prompt_description",
+    "target_format": "structured_interactive_workflow"
+  },
+  "workflow": {
+    "mode": "interactive",
+    "interaction_rules": [
+      "ask_one_question_at_a_time",
+      "adapt_based_on_user_answers",
+      "do_not_proceed_until_current_step_validated"
+    ],
+    "objective": "help_improve_user_prompt"
+  },
+  "prompt_improvement_framework": {
+    "required_sections": [
+      "Role",
+      "Context",
+      "Task",
+      "Format"
+    ]
+  },
+  "system_context": {
+    "code_attachment": true,
+    "primary_goal": "develop_interactive_routine"
+  },
+  "routine_specification": {
+    "purpose": "implement_feature",
+    "feature_description": "Search for viral YouTube videos via YouTube API, process results through LLM with specific prompts, and utilize validation factory services",
+    "implementation_phases": [
+      {
+        "phase": 1,
+        "action": "youtube_api_search",
+        "target": "viral_videos"
+      },
+      {
+        "phase": 2,
+        "action": "llm_processing",
+        "requirements": "specific_prompts"
+      },
+      {
+        "phase": 3,
+        "action": "validation_factory_utilization"
+      }
+    ],
+    "execution_constraint": "step_by_step_with_validation_checkpoints"
+  },
+  "initialization": {
+    "first_action": "initiate_interactive_mode",
+    "first_question": "What specific aspect of the YouTube viral video search would you like to clarify first? (e.g., search criteria, API parameters, LLM prompt design, validation criteria)"
+  }
+}
