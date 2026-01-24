@@ -3,12 +3,12 @@ using Application.TrackedLinks;
 using Commands;
 using Configuration;
 using Configuration.UrlValidation;
+using Configuration.YouTube;
 using Infrastructure.AzureTables;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
@@ -26,6 +26,7 @@ using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.OpenChat;
 using Services.Abstractions.Search;
 using Services.Abstractions.UrlValidation;
+using Services.Abstractions.YouTube;                 // ✅ NEW        // ✅ NEW (YouTubeApiOptions)
 using Services.AutoIt;
 using Services.Check;
 using Services.Login;
@@ -35,6 +36,7 @@ using Services.OpenChat;
 using Services.Selector;
 using Services.UrlValidation;
 using Services.WhatsApp;
+using Services.YouTube;                              // ✅ NEW (YouTubeService/Discoverer)
 using System.Net.Http.Headers;
 
 namespace Bootstrapper
@@ -51,13 +53,16 @@ namespace Bootstrapper
             var appConfig = new AppConfig();
             var basePath = Directory.GetCurrentDirectory();
             var appSettingsPath = Path.Combine(basePath, AppSettingsFileName);
+
             if (!File.Exists(appSettingsPath))
             {
                 var configMessage = $"Required configuration file '{AppSettingsFileName}' was not found.";
                 Log.Warning(configMessage);
                 throw new FileNotFoundException(configMessage, appSettingsPath);
             }
+
             Log.Information($"The configuration file '{AppSettingsFileName}' was found.");
+
             return Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
@@ -65,12 +70,12 @@ namespace Bootstrapper
                 })
                 .ConfigureServices((hostingContext, services) =>
                 {
+                    // -----------------------------
+                    // Scheduler / WhatsApp / AzureTables / OpenAI
+                    // -----------------------------
                     services.AddOptions<SchedulerOptions>()
                         .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
-                        .PostConfigure(o =>
-                        {
-                            SetScheduler(o);
-                        })
+                        .PostConfigure(SetScheduler)
                         .ValidateOnStart();
 
                     services.AddOptions<MessageConfig>()
@@ -95,12 +100,13 @@ namespace Bootstrapper
                     });
 
                     services.AddOptions<OpenAIConfig>()
-                      .Bind(hostingContext.Configuration.GetSection("WhatsApp:OpenAI"))
-                      .Validate(o => !string.IsNullOrWhiteSpace(o.ApiKey) &&
-                                     !string.IsNullOrWhiteSpace(o.UriString) &&
-                                     !string.IsNullOrWhiteSpace(o.Model),
-                          "Configuration WhatsApp:OpenAI is required.")
-                      .ValidateOnStart();
+                        .Bind(hostingContext.Configuration.GetSection("WhatsApp:OpenAI"))
+                        .Validate(o =>
+                            !string.IsNullOrWhiteSpace(o.ApiKey) &&
+                            !string.IsNullOrWhiteSpace(o.UriString) &&
+                            !string.IsNullOrWhiteSpace(o.Model),
+                            "Configuration WhatsApp:OpenAI is required.")
+                        .ValidateOnStart();
 
                     services.AddHttpClient<IOpenAIClient, OpenAIClient>((sp, http) =>
                     {
@@ -117,19 +123,20 @@ namespace Bootstrapper
                         http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     });
 
-
+                    // -----------------------------
+                    // Bind AppConfig and execution mode
+                    // -----------------------------
                     hostingContext.Configuration.Bind(appConfig);
 
-                    var executionMode =
-                        hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
-
+                    var executionMode = hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
                     if (executionMode == ExecutionMode.Scheduler)
-                    {
                         services.AddHostedService<ScheduledMessenger>();
-                    }
 
                     services.AddSingleton(appConfig);
 
+                    // -----------------------------
+                    // Execution tracker
+                    // -----------------------------
                     var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
                     var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
                     LogCleanupReport(cleanupReport);
@@ -137,6 +144,9 @@ namespace Bootstrapper
                     Directory.CreateDirectory(executionTracker.ExecutionRunning);
                     services.AddSingleton(executionTracker);
 
+                    // -----------------------------
+                    // Command mode
+                    // -----------------------------
                     if (executionMode == ExecutionMode.Command)
                     {
                         services.AddSingleton(new CommandArgs(args));
@@ -146,7 +156,11 @@ namespace Bootstrapper
                         services.AddHostedService<WebDriverLifetimeService>();
                     }
 
+                    // -----------------------------
+                    // Core services
+                    // -----------------------------
                     services.AddScoped<IMessage, Message>();
+
                     services.AddScoped<IWebDriver>(sp =>
                     {
                         var factory = sp.GetRequiredService<IWebDriverFactory>();
@@ -162,33 +176,67 @@ namespace Bootstrapper
                     services.AddTransient<IChatService, ChatService>();
                     services.AddTransient<IAttachments, Attachments>();
                     services.AddTransient<IAutoItRunner, AutoItRunner>();
+
                     AddDbContextSQLite(hostingContext, services);
 
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<IDataContext, DataContext>();
                     services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
+                    services.AddSingleton<IErrorLogger, SerilogErrorLogger>();
                     services.AddScoped<IErrorHandler, ErrorHandler>();
                     services.AddSingleton<IColumnTypes, SQLite>();
-                    //services.AddSingleton<ITrackedLink, TrackedLink>();
 
+                    // -----------------------------
+                    // News / Prompt runner
+                    // -----------------------------
                     services.AddSingleton<INewsHistoryStore, NewsHistoryStore>();
                     services.AddSingleton<INostalgiaPromptLoader, NostalgiaPromptLoader>();
-                    //services.AddSingleton<IOpenAIClient, OpenAIClient>();
+
+                    // JsonPromptRunner now depends on IYouTubeService and options (you changed it)
                     services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
+
+                    // -----------------------------
+                    // URL validation
+                    // -----------------------------
                     services.AddUrlValidation(hostingContext.Configuration);
 
+                    // -----------------------------
+                    // ✅ NEW: YouTube API + viral discoverer
+                    // -----------------------------
+
+                    // Bind YouTube API options (BaseUrl + ApiKey)
+                    services.AddOptions<YouTubeApiOptions>()
+                        .Bind(hostingContext.Configuration.GetSection(YouTubeApiOptions.SectionName))
+                        .Validate(o => !string.IsNullOrWhiteSpace(o.ApiKey), "YouTube:ApiKey is required.")
+                        .Validate(o => !string.IsNullOrWhiteSpace(o.BaseUrl), "YouTube:BaseUrl is required.")
+                        .ValidateOnStart();
+
+
+        
+                    // Typed HttpClient for YouTubeService using BaseUrl + API key is read inside the service
+                    services.AddHttpClient<IYouTubeService, YouTubeService>((sp, http) =>
+                    {
+                        var opt = sp.GetRequiredService<IOptions<YouTubeApiOptions>>().Value;
+
+                        http.BaseAddress = new Uri(opt.BaseUrl);
+                        //http.Timeout = TimeSpan.FromSeconds(opt.HttpTimeoutSeconds);
+
+                        http.DefaultRequestHeaders.Accept.Add(
+                            new MediaTypeWithQualityHeaderValue("application/json"));
+                    });
+
+                    // Composite discoverer (if you are using it)
+                    services.AddSingleton<IYouTubeViralVideoDiscoverer, YouTubeViralVideoDiscoverer>();
+
+                    // If JsonPromptRunner uses extra runner options for query/options, bind them here:
+                    // services.AddOptions<YouTubeCurationRunnerOptions>()
+                    //     .Bind(hostingContext.Configuration.GetSection(YouTubeCurationRunnerOptions.SectionName))
+                    //     .ValidateOnStart();
+
+                    // -----------------------------
+                    // Platform resolver (if still needed elsewhere; avoid double registration)
+                    // -----------------------------
                     services.AddSingleton<IPlatformResolver, PlatformResolver>();
-
-                    //services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
-                    //services.AddHttpClient<TikTokUrlAvailabilityValidator>();
-                    //services.AddHttpClient<InstagramUrlAvailabilityValidator>();
-
-                    //services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<YouTubeUrlAvailabilityValidator>());
-                    //services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<TikTokUrlAvailabilityValidator>());
-                    //services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<InstagramUrlAvailabilityValidator>());
-
-                    //services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
-
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {
@@ -205,11 +253,11 @@ namespace Bootstrapper
                             fileSizeLimitBytes: 5_000_000,
                             retainedFileCountLimit: 7,
                             rollOnFileSizeLimit: true,
-                            outputTemplate:
-                                OutputTemplate
+                            outputTemplate: OutputTemplate
                         );
                 });
         }
+
         public static IServiceCollection AddUrlValidation(this IServiceCollection services, IConfiguration cfg)
         {
             services.Configure<UrlOptions>(cfg.GetSection(UrlOptions.SectionName));
@@ -223,12 +271,14 @@ namespace Bootstrapper
             services.AddHttpClient<TikTokUrlValidator>();
             services.AddHttpClient<InstagramUrlValidator>();
 
+            // Register all validators (multi-implementation)
             services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<YouTubeUrlValidator>());
             services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<TikTokUrlValidator>());
             services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<InstagramUrlValidator>());
 
             return services;
         }
+
         private static void SetScheduler(SchedulerOptions o)
         {
             foreach (var key in o.Weekly.Keys.ToList())
@@ -249,8 +299,6 @@ namespace Bootstrapper
         private static void Configure(IConfigurationBuilder config, string basePath)
         {
             config.SetBasePath(basePath);
-            // 🔴 HARD FAIL – explicit, early, deterministic
-
 
             config.AddJsonFile(
                 path: AppSettingsFileName,
@@ -269,20 +317,6 @@ namespace Bootstrapper
                 return;
             }
 
-            //foreach (var deleted in report.DeletedRunningFolders)
-            //{
-            //    Log.Information("Deleted orphaned execution folder: {FolderPath}", deleted);
-            //}
-
-            //foreach (var failure in report.DeleteFailures)
-            //{
-            //    Log.Warning(
-            //        failure.Exception,
-            //        "Failed to delete orphaned execution folder: {FolderPath}",
-            //        failure.Path
-            //    );
-            //}
-
             if (report.IsClean)
             {
                 Log.Information("Execution cleanup completed with no errors");
@@ -296,17 +330,11 @@ namespace Bootstrapper
             }
         }
 
-        private static void AddDbContextSQLite(
-            HostBuilderContext context,
-            IServiceCollection services
-        )
+        private static void AddDbContextSQLite(HostBuilderContext context, IServiceCollection services)
         {
             var connectionString = context.Configuration.GetConnectionString("DefaultConnection");
-
             if (string.IsNullOrWhiteSpace(connectionString))
-            {
                 throw new ArgumentNullException(nameof(context), Connection);
-            }
 
             services.AddHttpClient();
             services.AddControllers();

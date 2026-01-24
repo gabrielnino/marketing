@@ -1829,6 +1829,10 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -1837,28 +1841,76 @@
       "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|f:\\marketing\\common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|solutionrelative:common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -1868,7 +1920,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 25,
           "Children": [
             {
               "$type": "Bookmark",
@@ -1925,106 +1977,274 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NostalgiaURLSelector.json",
-              "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "RelativeDocumentMoniker": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "RelativeToolTip": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-22T05:45:49.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeToolTip": "Bootstrapper\\appsettings.json",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAG0AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-22T05:34:01.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HttpBodyRuleValidatorBase.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "RelativeDocumentMoniker": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "RelativeToolTip": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAIwCUAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:38:52.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
-              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:13:28.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppHostBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAAIwOMAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:16:10.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Bootstrapper",
-              "DocumentMoniker": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
-              "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
-              "ToolTip": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
-              "RelativeToolTip": "Bootstrapper\\Bootstrapper.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-22T02:16:08.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "JsonPromptRunner.cs",
               "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeDocumentMoniker": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
               "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeToolTip": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAIwF0AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAvwCcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:12:55.809Z",
+              "WhenOpened": "2026-01-24T04:23:31.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAWwOIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T04:15:53.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "YouTubeCurationRunnerOptions.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "RelativeDocumentMoniker": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "RelativeToolTip": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvwwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T04:09:16.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
+              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeToolTip": "AzureTable\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T04:00:40.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "JsonExtractionExtensions.cs",
-              "DocumentMoniker": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "RelativeDocumentMoniker": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "ToolTip": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "RelativeToolTip": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
+              "Title": "YouTubeUrlValidator.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "RelativeDocumentMoniker": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "RelativeToolTip": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:12:52.321Z",
+              "WhenOpened": "2026-01-24T03:59:42.141Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UrlShort.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Url\\UrlShort.cs",
+              "RelativeDocumentMoniker": "Services\\Url\\UrlShort.cs",
+              "ToolTip": "F:\\marketing\\Services\\Url\\UrlShort.cs",
+              "RelativeToolTip": "Services\\Url\\UrlShort.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:45.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SearchBoxTyper.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
+              "RelativeDocumentMoniker": "Services\\Search\\SearchBoxTyper.cs",
+              "ToolTip": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
+              "RelativeToolTip": "Services\\Search\\SearchBoxTyper.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:34.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SecurityCheck.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
+              "RelativeDocumentMoniker": "Services\\Check\\SecurityCheck.cs",
+              "ToolTip": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
+              "RelativeToolTip": "Services\\Check\\SecurityCheck.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:19.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ChromeDriverFactory.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
+              "RelativeDocumentMoniker": "Services\\Check\\ChromeDriverFactory.cs",
+              "ToolTip": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
+              "RelativeToolTip": "Services\\Check\\ChromeDriverFactory.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:15.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Login\\LoginService.cs",
+              "RelativeDocumentMoniker": "Services\\Login\\LoginService.cs",
+              "ToolTip": "F:\\marketing\\Services\\Login\\LoginService.cs",
+              "RelativeToolTip": "Services\\Login\\LoginService.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:05.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ScheduledMessenger.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeDocumentMoniker": "Services\\WhatsApp\\ScheduledMessenger.cs",
+              "ToolTip": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeToolTip": "Services\\WhatsApp\\ScheduledMessenger.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:43:55.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ChatXPathBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
+              "RelativeDocumentMoniker": "Services\\XPath\\ChatXPathBuilder.cs",
+              "ToolTip": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
+              "RelativeToolTip": "Services\\XPath\\ChatXPathBuilder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:43:47.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-24T03:38:44.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EnrichedVideoDataExtensions.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "RelativeDocumentMoniker": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "ToolTip": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "RelativeToolTip": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:28:33.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "YouTubeService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
+              "RelativeDocumentMoniker": "Services\\YouTube\\YouTubeService.cs",
+              "ToolTip": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
+              "RelativeToolTip": "Services\\YouTube\\YouTubeService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAD4vxMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:26:10.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EnrichedVideoData.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:25:24.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ChannelDetails.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:25:06.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "VideoDetails.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:24:40.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SearchResponse.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:24:14.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DataContextModelSnapshot.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T00:06:10.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20260112035756_InitialCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T00:06:09.146Z"
             }
           ]
         }
@@ -2040,68 +2260,12 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\httpbodyrulevalidatorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\youtubeurlavailabilityvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\youtubeurlavailabilityvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\common\\pagination\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\common\\pagination\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\common\\messages\\imagemessagepayload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\common\\messages\\imagemessagepayload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\whatsappconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\whatsappconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\scheduleroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\scheduleroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\pathsconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\pathsconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\openaiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\messageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\messageconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\executiontracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\executiontracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\azuretablesconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\azuretablesconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\urlvalidation\\urlvalidationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\urlvalidation\\urlvalidationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|f:\\marketing\\common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55716BA5-BD5E-460C-973E-916C3535D7FB}|Common\\Common.csproj|solutionrelative:common\\stringextensions\\jsonextractionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -2112,20 +2276,72 @@
       "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\nostalgiaurlselector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\bootstrapper.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -2135,190 +2351,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 29,
+          "SelectedChildIndex": 14,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "YouTubeUrlAvailabilityValidator.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
-              "RelativeDocumentMoniker": "Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
-              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
-              "RelativeToolTip": "Services\\UrlValidation\\YouTubeUrlAvailabilityValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAACZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:28:29.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Application",
-              "DocumentMoniker": "F:\\Marketing\\Application\\Application.csproj",
-              "RelativeDocumentMoniker": "Application\\Application.csproj",
-              "ToolTip": "F:\\Marketing\\Application\\Application.csproj",
-              "RelativeToolTip": "Application\\Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-23T03:14:52.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Messages.cs",
-              "DocumentMoniker": "F:\\marketing\\Application\\Constants\\Messages.cs",
-              "RelativeDocumentMoniker": "Application\\Constants\\Messages.cs",
-              "ToolTip": "F:\\marketing\\Application\\Constants\\Messages.cs",
-              "RelativeToolTip": "Application\\Constants\\Messages.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:15:02.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PagedResult.cs",
-              "DocumentMoniker": "F:\\marketing\\Application\\Common\\Pagination\\PagedResult.cs",
-              "RelativeDocumentMoniker": "Application\\Common\\Pagination\\PagedResult.cs",
-              "ToolTip": "F:\\marketing\\Application\\Common\\Pagination\\PagedResult.cs",
-              "RelativeToolTip": "Application\\Common\\Pagination\\PagedResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:58.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ImageMessagePayload.cs",
-              "DocumentMoniker": "F:\\marketing\\Application\\Common\\Messages\\ImageMessagePayload.cs",
-              "RelativeDocumentMoniker": "Application\\Common\\Messages\\ImageMessagePayload.cs",
-              "ToolTip": "F:\\marketing\\Application\\Common\\Messages\\ImageMessagePayload.cs",
-              "RelativeToolTip": "Application\\Common\\Messages\\ImageMessagePayload.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:55.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WhatsAppConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\WhatsAppConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\WhatsAppConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\WhatsAppConfig.cs",
-              "RelativeToolTip": "Configuration\\WhatsAppConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:47.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PathsConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\PathsConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\PathsConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\PathsConfig.cs",
-              "RelativeToolTip": "Configuration\\PathsConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:33.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SchedulerOptions.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\SchedulerOptions.cs",
-              "RelativeDocumentMoniker": "Configuration\\SchedulerOptions.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\SchedulerOptions.cs",
-              "RelativeToolTip": "Configuration\\SchedulerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:33.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "OpenAIConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\OpenAIConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\OpenAIConfig.cs",
-              "RelativeToolTip": "Configuration\\OpenAIConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:27.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MessageConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\MessageConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\MessageConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\MessageConfig.cs",
-              "RelativeToolTip": "Configuration\\MessageConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:14:25.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ExecutionTracker.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\ExecutionTracker.cs",
-              "RelativeDocumentMoniker": "Configuration\\ExecutionTracker.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\ExecutionTracker.cs",
-              "RelativeToolTip": "Configuration\\ExecutionTracker.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAA6wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:13:55.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AzureTablesConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\AzureTablesConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\AzureTablesConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\AzureTablesConfig.cs",
-              "RelativeToolTip": "Configuration\\AzureTablesConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:13:48.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AppConfig.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\AppConfig.cs",
-              "RelativeDocumentMoniker": "Configuration\\AppConfig.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\AppConfig.cs",
-              "RelativeToolTip": "Configuration\\AppConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:13:47.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UrlValidationOptions.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\UrlValidation\\UrlValidationOptions.cs",
-              "RelativeDocumentMoniker": "Configuration\\UrlValidation\\UrlValidationOptions.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\UrlValidation\\UrlValidationOptions.cs",
-              "RelativeToolTip": "Configuration\\UrlValidation\\UrlValidationOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-23T03:13:14.501Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -2373,107 +2407,275 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "NostalgiaURLSelector.json",
-              "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "RelativeDocumentMoniker": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "RelativeToolTip": "Services\\OpenAI\\news\\NostalgiaURLSelector.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-22T05:45:49.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeToolTip": "Bootstrapper\\appsettings.json",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAF8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-22T05:34:01.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HttpBodyRuleValidatorBase.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "RelativeDocumentMoniker": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "RelativeToolTip": "Services\\UrlValidation\\HttpBodyRuleValidatorBase.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAkwAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:38:52.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
-              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:13:28.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AppHostBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAAIwOMAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:16:10.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Bootstrapper",
-              "DocumentMoniker": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
-              "RelativeDocumentMoniker": "Bootstrapper\\Bootstrapper.csproj",
-              "ToolTip": "F:\\Marketing\\Bootstrapper\\Bootstrapper.csproj",
-              "RelativeToolTip": "Bootstrapper\\Bootstrapper.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-22T02:16:08.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 3,
               "Title": "JsonPromptRunner.cs",
               "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeDocumentMoniker": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
               "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
               "RelativeToolTip": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAowHAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAvwCcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:12:55.809Z",
+              "WhenOpened": "2026-01-24T04:23:31.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppHostBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
+              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAWwOQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T04:15:53.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "YouTubeCurationRunnerOptions.cs",
+              "DocumentMoniker": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "RelativeDocumentMoniker": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "ToolTip": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "RelativeToolTip": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvwwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T04:09:16.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
+              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
+              "RelativeToolTip": "AzureTable\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T04:00:40.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "YouTubeUrlValidator.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "RelativeDocumentMoniker": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "RelativeToolTip": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:59:42.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UrlShort.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Url\\UrlShort.cs",
+              "RelativeDocumentMoniker": "Services\\Url\\UrlShort.cs",
+              "ToolTip": "F:\\marketing\\Services\\Url\\UrlShort.cs",
+              "RelativeToolTip": "Services\\Url\\UrlShort.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:45.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SearchBoxTyper.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
+              "RelativeDocumentMoniker": "Services\\Search\\SearchBoxTyper.cs",
+              "ToolTip": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
+              "RelativeToolTip": "Services\\Search\\SearchBoxTyper.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:34.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SecurityCheck.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
+              "RelativeDocumentMoniker": "Services\\Check\\SecurityCheck.cs",
+              "ToolTip": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
+              "RelativeToolTip": "Services\\Check\\SecurityCheck.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:19.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ChromeDriverFactory.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
+              "RelativeDocumentMoniker": "Services\\Check\\ChromeDriverFactory.cs",
+              "ToolTip": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
+              "RelativeToolTip": "Services\\Check\\ChromeDriverFactory.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:15.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\Login\\LoginService.cs",
+              "RelativeDocumentMoniker": "Services\\Login\\LoginService.cs",
+              "ToolTip": "F:\\marketing\\Services\\Login\\LoginService.cs",
+              "RelativeToolTip": "Services\\Login\\LoginService.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:44:05.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ScheduledMessenger.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeDocumentMoniker": "Services\\WhatsApp\\ScheduledMessenger.cs",
+              "ToolTip": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
+              "RelativeToolTip": "Services\\WhatsApp\\ScheduledMessenger.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:43:55.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ChatXPathBuilder.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
+              "RelativeDocumentMoniker": "Services\\XPath\\ChatXPathBuilder.cs",
+              "ToolTip": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
+              "RelativeToolTip": "Services\\XPath\\ChatXPathBuilder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:43:47.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
+              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
+              "RelativeToolTip": "Bootstrapper\\appsettings.json",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-24T03:38:44.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EnrichedVideoDataExtensions.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "RelativeDocumentMoniker": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "ToolTip": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "RelativeToolTip": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:28:33.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "YouTubeService.cs",
+              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
+              "RelativeDocumentMoniker": "Services\\YouTube\\YouTubeService.cs",
+              "ToolTip": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
+              "RelativeToolTip": "Services\\YouTube\\YouTubeService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAD4vxMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:26:10.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EnrichedVideoData.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:25:24.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "JsonExtractionExtensions.cs",
-              "DocumentMoniker": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "RelativeDocumentMoniker": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "ToolTip": "F:\\marketing\\Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "RelativeToolTip": "Common\\StringExtensions\\JsonExtractionExtensions.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAgwA0AAAA/AAAAAAAAAA==",
+              "Title": "ChannelDetails.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T02:12:52.321Z",
+              "WhenOpened": "2026-01-24T03:25:06.613Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "VideoDetails.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\VideoDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:24:40.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SearchResponse.cs",
+              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "RelativeToolTip": "Services.Abstractions\\YouTube\\SearchResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T03:24:14.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DataContextModelSnapshot.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T00:06:10.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20260112035756_InitialCreate.cs",
+              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T00:06:09.146Z"
             }
           ]
         }
@@ -2904,7 +3106,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9272bfbaf5e1a96d6c008749295ac06e91de936")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2921,7 +3123,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application\obj\Debug\net8.0\Application.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Application\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -2957,8 +3159,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application\Result\IErrorHandler.cs ===
 
-﻿
-namespace Application.Result
+﻿namespace Application.Result
 {
 public interface IErrorHandler
 {
@@ -2971,8 +3172,7 @@ bool Any();
 
 === FILE: F:\Marketing\Application\Result\IErrorLogger.cs ===
 
-﻿
-namespace Application.Result
+﻿namespace Application.Result
 {
 public interface IErrorLogger
 {
@@ -3382,13 +3582,24 @@ await runner.RunStrictJsonAsync();
     "MaxBodyCharsToScan": 200000,
 
     "YouTube": {
-      "MustContain": [ "ytInitialPlayerResponse", "og:title" ],
-      "MustNotContain": [ "Video unavailable", "This video is unavailable", "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\"" ]
+      "MustContain": [
+        "ytInitialPlayerResponse",
+        "og:title"
+      ],
+      "MustNotContain": [
+        "Video unavailable",
+        "This video is unavailable",
+        "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\""
+      ]
     },
 
     "TikTok": {
       "MustContain": [ "tiktok", "video" ],
-      "MustNotContain": [ "Couldn't find this account", "Video currently unavailable", "This content isn't available" ]
+      "MustNotContain": [
+        "Couldn't find this account",
+        "Video currently unavailable",
+        "This content isn't available"
+      ]
     },
 
     "Instagram": {
@@ -3400,9 +3611,21 @@ await runner.RunStrictJsonAsync();
         "Post isn't available"
       ]
     }
+  },
+  "YouTube": {
+    "ApiKey": "AIzaSyCSej3Yw6A06eYy-4AKGwCYopJlWobLQK4",
+    "BaseUrl": "https://www.googleapis.com/youtube/v3/",
+    "HttpTimeoutSeconds": 20,
+    "DefaultMaxResults": 10,
+    "DefaultRegionCode": "CA",
+    "DefaultRelevanceLanguage": "en",
+    "DefaultOrder": "viewCount"
+  },
+  "QuotaProtection": {
+    "EnableCaching": true,
+    "CacheMinutes": 30
   }
 }
-
 
 === FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\AzureTable.deps.json ===
 
@@ -4628,6 +4851,7 @@ await runner.RunStrictJsonAsync();
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -6078,6 +6302,9 @@ await runner.RunStrictJsonAsync();
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -8040,6 +8267,7 @@ await runner.RunStrictJsonAsync();
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -10437,7 +10665,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -10454,7 +10682,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\AzureTable\obj\Debug\net8.0\AzureTable.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
@@ -10463,12 +10691,12 @@ using Application.TrackedLinks;
 using Commands;
 using Configuration;
 using Configuration.UrlValidation;
+using Configuration.YouTube;
 using Infrastructure.AzureTables;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
@@ -10486,6 +10714,7 @@ using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.OpenChat;
 using Services.Abstractions.Search;
 using Services.Abstractions.UrlValidation;
+using Services.Abstractions.YouTube;
 using Services.AutoIt;
 using Services.Check;
 using Services.Login;
@@ -10495,6 +10724,7 @@ using Services.OpenChat;
 using Services.Selector;
 using Services.UrlValidation;
 using Services.WhatsApp;
+using Services.YouTube;
 using System.Net.Http.Headers;
 namespace Bootstrapper
 {
@@ -10525,10 +10755,7 @@ Configure(config, basePath);
 {
 services.AddOptions<SchedulerOptions>()
 .Bind(hostingContext.Configuration.GetSection(SchedulerOptions.SectionName))
-.PostConfigure(o =>
-{
-SetScheduler(o);
-})
+.PostConfigure(SetScheduler)
 .ValidateOnStart();
 services.AddOptions<MessageConfig>()
 .Bind(hostingContext.Configuration.GetSection("WhatsApp:Message"))
@@ -10550,7 +10777,8 @@ return new TrackedLink(opt.ServiceSasUrl);
 });
 services.AddOptions<OpenAIConfig>()
 .Bind(hostingContext.Configuration.GetSection("WhatsApp:OpenAI"))
-.Validate(o => !string.IsNullOrWhiteSpace(o.ApiKey) &&
+.Validate(o =>
+!string.IsNullOrWhiteSpace(o.ApiKey) &&
 !string.IsNullOrWhiteSpace(o.UriString) &&
 !string.IsNullOrWhiteSpace(o.Model),
 "Configuration WhatsApp:OpenAI is required.")
@@ -10567,12 +10795,9 @@ http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer
 http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 });
 hostingContext.Configuration.Bind(appConfig);
-var executionMode =
-hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
+var executionMode = hostingContext.Configuration.GetValue<ExecutionMode>("ExecutionMode");
 if (executionMode == ExecutionMode.Scheduler)
-{
 services.AddHostedService<ScheduledMessenger>();
-}
 services.AddSingleton(appConfig);
 var executionTracker = new ExecutionTracker(appConfig.Paths.OutFolder);
 var cleanupReport = executionTracker.CleanupOrphanedRunningFolders();
@@ -10612,7 +10837,20 @@ services.AddSingleton<INewsHistoryStore, NewsHistoryStore>();
 services.AddSingleton<INostalgiaPromptLoader, NostalgiaPromptLoader>();
 services.AddSingleton<IJsonPromptRunner, JsonPromptRunner>();
 services.AddUrlValidation(hostingContext.Configuration);
-services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
+services.AddOptions<YouTubeApiOptions>()
+.Bind(hostingContext.Configuration.GetSection(YouTubeApiOptions.SectionName))
+.Validate(o => !string.IsNullOrWhiteSpace(o.ApiKey), "YouTube:ApiKey is required.")
+.Validate(o => !string.IsNullOrWhiteSpace(o.BaseUrl), "YouTube:BaseUrl is required.")
+.ValidateOnStart();
+services.AddHttpClient<IYouTubeService, YouTubeService>((sp, http) =>
+{
+var opt = sp.GetRequiredService<IOptions<YouTubeApiOptions>>().Value;
+http.BaseAddress = new Uri(opt.BaseUrl);
+http.DefaultRequestHeaders.Accept.Add(
+new MediaTypeWithQualityHeaderValue("application/json"));
+});
+services.AddSingleton<IYouTubeViralVideoDiscoverer, YouTubeViralVideoDiscoverer>();
+services.AddSingleton<IPlatformResolver, PlatformResolver>();
 })
 .UseSerilog((context, services, loggerConfig) =>
 {
@@ -10628,23 +10866,22 @@ rollingInterval: RollingInterval.Day,
 fileSizeLimitBytes: 5_000_000,
 retainedFileCountLimit: 7,
 rollOnFileSizeLimit: true,
-outputTemplate:
-OutputTemplate
+outputTemplate: OutputTemplate
 );
 });
 }
 public static IServiceCollection AddUrlValidation(this IServiceCollection services, IConfiguration cfg)
 {
-services.Configure<UrlValidationOptions>(cfg.GetSection(UrlValidationOptions.SectionName));
-services.AddSingleton<IUrlPlatformResolver, UrlPlatformResolver>();
-services.AddSingleton<IUrlAvailabilityValidatorFactory, UrlAvailabilityValidatorFactory>();
-services.AddSingleton<IUrlValidationPipeline, UrlValidationPipeline>();
-services.AddHttpClient<YouTubeUrlAvailabilityValidator>();
-services.AddHttpClient<TikTokUrlAvailabilityValidator>();
-services.AddHttpClient<InstagramUrlAvailabilityValidator>();
-services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<YouTubeUrlAvailabilityValidator>());
-services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<TikTokUrlAvailabilityValidator>());
-services.AddSingleton<IUrlAvailabilityValidator>(sp => sp.GetRequiredService<InstagramUrlAvailabilityValidator>());
+services.Configure<UrlOptions>(cfg.GetSection(UrlOptions.SectionName));
+services.AddSingleton<IPlatformResolver, PlatformResolver>();
+services.AddSingleton<IUrlFactory, UrlValidatorFactory>();
+services.AddSingleton<IValidationPipeline, UrlValidationPipeline>();
+services.AddHttpClient<YouTubeUrlValidator>();
+services.AddHttpClient<TikTokUrlValidator>();
+services.AddHttpClient<InstagramUrlValidator>();
+services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<YouTubeUrlValidator>());
+services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<TikTokUrlValidator>());
+services.AddSingleton<IUrValidator>(sp => sp.GetRequiredService<InstagramUrlValidator>());
 return services;
 }
 private static void SetScheduler(SchedulerOptions o)
@@ -10692,16 +10929,11 @@ report.DeleteFailures.Count
 );
 }
 }
-private static void AddDbContextSQLite(
-HostBuilderContext context,
-IServiceCollection services
-)
+private static void AddDbContextSQLite(HostBuilderContext context, IServiceCollection services)
 {
 var connectionString = context.Configuration.GetConnectionString("DefaultConnection");
 if (string.IsNullOrWhiteSpace(connectionString))
-{
 throw new ArgumentNullException(nameof(context), Connection);
-}
 services.AddHttpClient();
 services.AddControllers();
 services.AddEndpointsApiExplorer();
@@ -10846,9 +11078,21 @@ services.AddMemoryCache();
         "Post isn't available"
       ]
     }
+  },
+  "YouTube": {
+    "ApiKey": "AIzaSyCSej3Yw6A06eYy-4AKGwCYopJlWobLQK4",
+    "BaseUrl": "https://www.googleapis.com/youtube/v3/",
+    "HttpTimeoutSeconds": 20,
+    "DefaultMaxResults": 10,
+    "DefaultRegionCode": "CA",
+    "DefaultRelevanceLanguage": "en",
+    "DefaultOrder": "viewCount"
+  },
+  "QuotaProtection": {
+    "EnableCaching": true,
+    "CacheMinutes": 30
   }
 }
-
 
 === FILE: F:\Marketing\Bootstrapper\ExecutionMode.cs ===
 
@@ -10957,13 +11201,24 @@ Command
     "MaxBodyCharsToScan": 200000,
 
     "YouTube": {
-      "MustContain": [ "ytInitialPlayerResponse", "og:title" ],
-      "MustNotContain": [ "Video unavailable", "This video is unavailable", "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\"" ]
+      "MustContain": [
+        "ytInitialPlayerResponse",
+        "og:title"
+      ],
+      "MustNotContain": [
+        "Video unavailable",
+        "This video is unavailable",
+        "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\""
+      ]
     },
 
     "TikTok": {
       "MustContain": [ "tiktok", "video" ],
-      "MustNotContain": [ "Couldn't find this account", "Video currently unavailable", "This content isn't available" ]
+      "MustNotContain": [
+        "Couldn't find this account",
+        "Video currently unavailable",
+        "This content isn't available"
+      ]
     },
 
     "Instagram": {
@@ -10975,9 +11230,21 @@ Command
         "Post isn't available"
       ]
     }
+  },
+  "YouTube": {
+    "ApiKey": "AIzaSyCSej3Yw6A06eYy-4AKGwCYopJlWobLQK4",
+    "BaseUrl": "https://www.googleapis.com/youtube/v3/",
+    "HttpTimeoutSeconds": 20,
+    "DefaultMaxResults": 10,
+    "DefaultRegionCode": "CA",
+    "DefaultRelevanceLanguage": "en",
+    "DefaultOrder": "viewCount"
+  },
+  "QuotaProtection": {
+    "EnableCaching": true,
+    "CacheMinutes": 30
   }
 }
-
 
 === FILE: F:\Marketing\Bootstrapper\bin\Debug\net8.0\Bootstrapper.deps.json ===
 
@@ -12192,6 +12459,7 @@ Command
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -15406,6 +15674,9 @@ Command
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -17344,6 +17615,7 @@ Command
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -19790,7 +20062,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -19807,7 +20079,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -20406,6 +20678,7 @@ Logger.LogInformation("InviteCommand: finished.");
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -21806,6 +22079,9 @@ Logger.LogInformation("InviteCommand: finished.");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -22664,6 +22940,7 @@ Logger.LogInformation("InviteCommand: finished.");
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -23750,7 +24027,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -23767,7 +24044,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -24792,7 +25069,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -24809,7 +25086,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Configuration\obj\Debug\net8.0\Configuration.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Configuration\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -24843,16 +25120,11 @@ global using global::System.Threading.Tasks;
 
 {"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/943078ad1fd4a3759ac0f9160f6b41019777bb96/*"}}
 
-=== FILE: F:\Marketing\Configuration\UrlValidation\UrlValidationOptions.cs ===
+=== FILE: F:\Marketing\Configuration\UrlValidation\UrlOptions.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Configuration.UrlValidation
+﻿namespace Configuration.UrlValidation
 {
-public sealed class UrlValidationOptions
+public sealed class UrlOptions
 {
 public const string SectionName = "UrlValidation";
 public int TimeoutSeconds { get; set; } = 15;
@@ -24865,6 +25137,60 @@ public sealed class PlatformRules
 {
 public List<string> MustContain { get; set; } = [];
 public List<string> MustNotContain { get; set; } = [];
+}
+}
+
+=== FILE: F:\Marketing\Configuration\YouTube\YouTubeApiOptions.cs ===
+
+﻿namespace Configuration.YouTube
+{
+public sealed class YouTubeApiOptions
+{
+public const string SectionName = "YouTube";
+public string ApiKey { get; init; } = null!;
+public string BaseUrl { get; init; } = "https://www.googleapis.com/youtube/v3/";
+public YouTubeDefaultSearchOptions DefaultSearch { get; init; } = new();
+public YouTubeQuotaProtectionOptions QuotaProtection { get; init; } = new();
+}
+public sealed class YouTubeDefaultSearchOptions
+{
+public int MaxResults { get; init; } = 25;
+public string Order { get; init; } = "viewCount";
+public string SafeSearch { get; init; } = "none";
+public string? RegionCode { get; init; }
+public string? RelevanceLanguage { get; init; }
+}
+public sealed class YouTubeQuotaProtectionOptions
+{
+public bool EnableCaching { get; init; } = true;
+public int CacheMinutes { get; init; } = 30;
+}
+}
+
+=== FILE: F:\Marketing\Configuration\YouTube\YouTubeCurationRunnerOptions.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Configuration.YouTube
+{
+public sealed class YouTubeCurationRunnerOptions
+{
+public const string SectionName = "YouTubeCurationRunner";
+public string Query { get; init; } = "Colombia 2014 world cup highlights James Rodriguez";
+public SearchOptionsOptions Search { get; init; } = new();
+}
+public sealed class SearchOptionsOptions
+{
+public int MaxResults { get; init; } = 25;
+public string Order { get; init; } = "viewCount";
+public string SafeSearch { get; init; } = "none";
+public string? RegionCode { get; init; } = "CA";
+public string? RelevanceLanguage { get; init; } = "es";
+public string? PublishedAfterIso { get; init; }
+public string? PublishedBeforeIso { get; init; }
 }
 }
 
@@ -29005,7 +29331,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -29022,7 +29348,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -30863,6 +31189,7 @@ times
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -31687,6 +32014,9 @@ times
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -32936,6 +33266,7 @@ times
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -34637,7 +34968,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -34655,7 +34986,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -36301,6 +36632,7 @@ true.Should().BeTrue();
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -39478,6 +39810,9 @@ public bool Active { get; set; }
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -41291,6 +41626,7 @@ public bool Active { get; set; }
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -43593,7 +43929,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -43611,7 +43947,7 @@ global using global::Xunit;
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net8.0\Marketing.Tests.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs ===
 
@@ -47710,6 +48046,7 @@ return completed == tcs.Task ? await tcs.Task : -1;
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -49852,6 +50189,7 @@ report.DeleteFailures.Count);
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -51269,6 +51607,9 @@ report.DeleteFailures.Count);
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -51498,7 +51839,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -51515,7 +51856,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -51620,13 +51961,16 @@ throw new Exception("Unexpected failure executing OpenAI request.");
 === FILE: F:\Marketing\Services\OpenAI\news\JsonPromptRunner.cs ===
 
 ﻿
+using Application.Result;
 using Common.StringExtensions;
 using Domain;
 using Domain.OpenAI;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.UrlValidation;
+using Services.Abstractions.YouTube;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
@@ -51636,14 +51980,18 @@ public class JsonPromptRunner(
 INewsHistoryStore newsHistoryStore,
 INostalgiaPromptLoader nostalgiaPromptLoader,
 IOpenAIClient openAIClient,
-IUrlAvailabilityValidatorFactory urlValidatorFactory,
+IUrlFactory urlValidatorFactory,
+IYouTubeService youTubeService,
+IOptions<YouTubeCurationRunnerOptions> youTubeRunnerOptions,
 ILogger<JsonPromptRunner> logger
 ) : IJsonPromptRunner
 {
 private readonly INewsHistoryStore _newsHistoryStore = newsHistoryStore;
 private readonly INostalgiaPromptLoader _nostalgiaPromptLoader = nostalgiaPromptLoader;
 private readonly IOpenAIClient _openAIClient = openAIClient;
-private readonly IUrlAvailabilityValidatorFactory _urlValidatorFactory = urlValidatorFactory;
+private readonly IUrlFactory _urlValidatorFactory = urlValidatorFactory;
+private readonly IYouTubeService _youTubeService = youTubeService;
+private readonly YouTubeCurationRunnerOptions _yt = youTubeRunnerOptions.Value;
 private readonly ILogger<JsonPromptRunner> _logger = logger;
 private const int DesiredCount = 5;
 private static readonly TimeSpan MaxOverallDuration = TimeSpan.FromMinutes(2);
@@ -51656,18 +52004,26 @@ var deadline = DateTimeOffset.UtcNow + MaxOverallDuration;
 while (DateTimeOffset.UtcNow < deadline && !ct.IsCancellationRequested)
 {
 UpdateExcludedUrls(promptNostalgia, history, attempted);
-var prompt = BuildPrompt(promptNostalgia);
-var llmRaw = await CallLlmAsync(prompt, ct);
-var candidates = ExtractCandidateUrls(llmRaw);
+var searchOp = await CallYouTubeSearchAsync(_yt.Query, BuildSearchOptions(_yt.Search), ct);
+if (!searchOp.IsSuccessful || searchOp.Data is null || searchOp.Data.Items.Count == 0)
+{
+_logger.LogWarning("YouTube search returned no items. Retrying.");
+continue;
+}
+var candidates = ExtractCandidateUrlsFromYouTube(searchOp.Data, history, attempted);
 if (candidates.Count == 0)
 {
-_logger.LogWarning("LLM returned no URLs. Retrying.");
+_logger.LogWarning("No candidate URLs after exclusions (history/attempted). Retrying.");
 continue;
 }
 AddAttempted(attempted, candidates);
 var validation = await ValidateCandidatesUntilDesiredAsync(candidates, DesiredCount, ct);
-var results = validation.Results;
 await AppendUsedUrlsAsync(candidates, ct);
+if (validation.Success && validation.ValidUrls.Count == DesiredCount)
+{
+_logger.LogInformation("Success: {Count} valid URLs found.", validation.ValidUrls.Count);
+return [.. validation.ValidUrls];
+}
 LogFirstFailure(validation.Results);
 }
 return new List<string>();
@@ -51681,9 +52037,9 @@ return history;
 }
 private async Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct)
 {
-_logger.LogDebug("STEP 1: Loading history URLs...");
+_logger.LogDebug("STEP: Appending used URLs...");
 await _newsHistoryStore.AppendUsedUrlsAsync(urls, ct);
-_logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", urls.Count());
+_logger.LogDebug("STEP: Appended {Count} URLs.", urls.Count());
 }
 private async Task<NostalgiaPrompt> LoadPromptAsync(CancellationToken ct)
 {
@@ -51703,33 +52059,44 @@ if (attempted.Count > 0)
 prompt.Context.ExcludedUrls.AddRange(attempted);
 _logger.LogDebug("STEP 4.1: ExcludedUrls updated. Total={Count}.", prompt.Context.ExcludedUrls.Count);
 }
-private Prompt BuildPrompt(NostalgiaPrompt promptNostalgia)
+private async Task<Operation<SearchResponse>> CallYouTubeSearchAsync(
+string query,
+SearchOptions options,
+CancellationToken ct)
 {
-_logger.LogDebug("STEP 4.2: Building LLM prompt (System + User JSON without role)...");
-var content = ToJsonWithoutRole(promptNostalgia);
-return new Prompt
+_logger.LogDebug("STEP 4.2: Calling YouTube Search API. Query={Query}", query);
+var op = await _youTubeService.SearchVideosAsync(query, options);
+_logger.LogDebug("STEP 4.2: YouTube Search Success={Success}, Count={Count}",
+op.IsSuccessful,
+op.Data?.Items.Count ?? 0);
+return op;
+}
+private static SearchOptions BuildSearchOptions(YouTubeCurationRunnerSearchOptions src)
+=> new SearchOptions
 {
-SystemContent = promptNostalgia.Role,
-UserContent = content
+MaxResults = src.MaxResults,
+RegionCode = src.RegionCode,
+RelevanceLanguage = src.RelevanceLanguage,
+PublishedAfterIso = src.PublishedAfterIso,
+PublishedBeforeIso = src.PublishedBeforeIso,
+Order = src.Order,
+SafeSearch = src.SafeSearch,
 };
-}
-private async Task<string> CallLlmAsync(Prompt prompt, CancellationToken ct)
+private List<string> ExtractCandidateUrlsFromYouTube(
+SearchResponse response,
+HashSet<string> history,
+HashSet<string> attempted)
 {
-_logger.LogDebug("STEP 4.3: Calling LLM...");
-var raw = await _openAIClient.GetChatCompletionAsync(prompt, ct);
-_logger.LogDebug("STEP 4.3: LLM response received. Length={Len}", raw?.Length ?? 0);
-return raw ?? string.Empty;
-}
-private List<string> ExtractCandidateUrls(string llmRaw)
-{
-_logger.LogDebug("STEP 4.4: Extracting URLs from LLM response...");
-var extracted = llmRaw.ExtractJsonContent();
-var urls = ExtractUrlsFromLlmResponse(extracted)
+_logger.LogDebug("STEP 4.3: Building candidate URLs from YouTube search items...");
+var urls =
+response.Items
+.Select(i => $"https://www.youtube.com/watch?v={i.VideoId}")
 .Where(u => !string.IsNullOrWhiteSpace(u))
-.Select(u => u.Trim())
 .Distinct(StringComparer.OrdinalIgnoreCase)
+.Where(u => !history.Contains(u))
+.Where(u => !attempted.Contains(u))
 .ToList();
-_logger.LogDebug("STEP 4.4: Extracted {Count} candidate URLs.", urls.Count);
+_logger.LogDebug("STEP 4.3: Candidate URLs after exclusions: {Count}", urls.Count);
 return urls;
 }
 private static void AddAttempted(HashSet<string> attempted, List<string> candidates)
@@ -51768,15 +52135,6 @@ _logger.LogDebug(
 validUrls.Count, desiredCount);
 return (false, validUrls, results);
 }
-private static List<string> PrepareStrictBatch(IReadOnlyList<string> urls, int desiredCount)
-{
-return urls
-.Where(u => !string.IsNullOrWhiteSpace(u))
-.Select(u => u.Trim())
-.Distinct(StringComparer.OrdinalIgnoreCase)
-.Take(desiredCount)
-.ToList();
-}
 private async Task<UrlValidationResult> ValidateOneUrlAsync(string url, CancellationToken ct)
 {
 if (!Uri.TryCreate(url, UriKind.Absolute, out _))
@@ -51790,12 +52148,6 @@ catch (Exception ex)
 {
 return new UrlValidationResult(false, UrlPlatform.Unknown, null, ex.Message);
 }
-}
-private async Task PersistValidUrlsAsync(IReadOnlyList<string> validUrls, CancellationToken ct)
-{
-_logger.LogDebug("STEP 4.7: Persisting {Count} valid URLs into history store...", validUrls.Count);
-await _newsHistoryStore.AppendUsedUrlsAsync(validUrls, ct);
-_logger.LogDebug("STEP 4.7: Persist complete.");
 }
 private void LogFirstFailure(IReadOnlyList<UrlValidationResult> results)
 {
@@ -51875,6 +52227,24 @@ var node = JsonNode.Parse(json) ?? throw new JsonException("Invalid JSON.");
 node.AsObject().Remove("role");
 return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
 }
+}
+public sealed class YouTubeCurationRunnerOptions
+{
+public const string SectionName = "YouTubeCurationRunner";
+public string Query { get; init; } = string.Empty;
+public YouTubeCurationRunnerSearchOptions Search { get; init; } = new();
+}
+public sealed class YouTubeCurationRunnerSearchOptions
+{
+public int MaxResults { get; init; } = 25;
+public string? RegionCode { get; init; }
+public string? RelevanceLanguage { get; init; }
+public string? PublishedAfterIso { get; init; }
+public string? PublishedBeforeIso { get; init; }
+public string Order { get; init; } = "viewCount";
+public string SafeSearch { get; init; } = "none";
+public string? VideoCategoryId { get; init; }
+public string? ChannelId { get; init; }
 }
 }
 
@@ -52906,66 +53276,38 @@ await _trackedLink.UpsertAsync(id: key,targetUrl: longUrl, ct: ct);
 }
 }
 
-=== FILE: F:\Marketing\Services\UrlValidation\HttpBodyRuleValidatorBase.cs ===
+=== FILE: F:\Marketing\Services\UrlValidation\HttpValidatorBase.cs ===
 
 ﻿using Configuration.UrlValidation;
 using Microsoft.Extensions.Options;
 using Services.Abstractions.UrlValidation;
 using System.Net;
-namespace Services.UrlValidation
-{
-public abstract class HttpBodyRuleValidatorBase(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : IUrlAvailabilityValidator
+using System.Text;
+namespace Services.UrlValidation;
+public abstract class HttpValidatorBase(
+HttpClient httpClient,
+IOptionsMonitor<UrlOptions> options) : IUrValidator
 {
 private readonly HttpClient _httpClient = httpClient;
-private readonly IOptionsMonitor<UrlValidationOptions> _options = options;
+private readonly IOptionsMonitor<UrlOptions> _options = options;
+private const string DefaultUserAgent =
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36";
 public abstract UrlPlatform Platform { get; }
-protected abstract PlatformRules Rules(UrlValidationOptions opt);
+protected abstract PlatformRules Rules(UrlOptions opt);
 public async Task<UrlValidationResult> ValidateAsync(string url, CancellationToken ct = default)
 {
-if (!Uri.TryCreate(url, UriKind.Absolute, out _))
+if (!Uri.TryCreate(url, UriKind.Absolute, out var uri))
 return new UrlValidationResult(false, Platform, null, "Invalid absolute URL.");
 var opt = _options.CurrentValue;
-using var cts = CancellationTokenSource.CreateLinkedTokenSource(ct);
-cts.CancelAfter(TimeSpan.FromSeconds(Math.Max(1, opt.TimeoutSeconds)));
+using var cts = CreateTimeoutCts(opt, ct);
 try
 {
-using var req = new HttpRequestMessage(HttpMethod.Get, url);
-req.Headers.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36");
-using var resp = await _httpClient.SendAsync(req, HttpCompletionOption.ResponseHeadersRead, cts.Token);
-var status = (int)resp.StatusCode;
-if ((int)resp.StatusCode >= 400 && resp.StatusCode != HttpStatusCode.Forbidden)
-{
-return new UrlValidationResult(false, Platform, status, $"HTTP {(int)resp.StatusCode} {resp.ReasonPhrase}");
+var headerProbe = await TryFetchHeadersAsync(uri, cts.Token).ConfigureAwait(false);
+if (headerProbe.DecisiveResult is not null)
+return headerProbe.DecisiveResult;
+return await FetchBodySnippetAndEvaluateAsync(uri, opt, cts.Token).ConfigureAwait(false);
 }
-var body = await resp.Content.ReadAsStringAsync(cts.Token);
-if (body.Length > opt.MaxBodyCharsToScan)
-body = body[..opt.MaxBodyCharsToScan];
-var rules = Rules(opt);
-foreach (var must in rules.MustContain)
-{
-if (!ContainsIgnoreCase(body, must))
-{
-return new UrlValidationResult(
-false, Platform, status,
-$"Missing required marker: '{must}'.",
-EvidenceSnippet: TakeSnippet(body, must)
-);
-}
-}
-foreach (var mustNot in rules.MustNotContain)
-{
-if (ContainsIgnoreCase(body, mustNot))
-{
-return new UrlValidationResult(
-false, Platform, status,
-$"Found forbidden marker: '{mustNot}'.",
-EvidenceSnippet: TakeSnippet(body, mustNot)
-);
-}
-}
-return new UrlValidationResult(true, Platform, status, null);
-}
-catch (TaskCanceledException)
+catch (OperationCanceledException) when (cts.IsCancellationRequested)
 {
 return new UrlValidationResult(false, Platform, null, "Timeout while validating URL.");
 }
@@ -52978,8 +53320,97 @@ catch (Exception ex)
 return new UrlValidationResult(false, Platform, null, $"Unexpected error: {ex.Message}");
 }
 }
-private static bool ContainsIgnoreCase(string haystack, string needle) =>
-haystack.Contains(needle, StringComparison.OrdinalIgnoreCase);
+private async Task<(UrlValidationResult? DecisiveResult, int? StatusCode)> TryFetchHeadersAsync(
+Uri uri,
+CancellationToken ct)
+{
+using var headReq = new HttpRequestMessage(HttpMethod.Head, uri);
+headReq.Headers.UserAgent.ParseAdd(DefaultUserAgent);
+try
+{
+using var headResp = await _httpClient.SendAsync(
+headReq,
+HttpCompletionOption.ResponseHeadersRead,
+ct).ConfigureAwait(false);
+var status = (int)headResp.StatusCode;
+if (headResp.StatusCode == HttpStatusCode.Forbidden)
+return (null, status);
+if ((int)headResp.StatusCode >= 400)
+{
+return (
+new UrlValidationResult(false, Platform, status, $"HTTP {status} {headResp.ReasonPhrase}"),
+status);
+}
+return (null, status);
+}
+catch (HttpRequestException)
+{
+return (null, null);
+}
+}
+private async Task<UrlValidationResult> FetchBodySnippetAndEvaluateAsync(
+Uri uri,
+UrlOptions opt,
+CancellationToken ct)
+{
+using var getReq = new HttpRequestMessage(HttpMethod.Get, uri);
+getReq.Headers.UserAgent.ParseAdd(DefaultUserAgent);
+using var resp = await _httpClient.SendAsync(
+getReq,
+HttpCompletionOption.ResponseHeadersRead,
+ct).ConfigureAwait(false);
+var status = (int)resp.StatusCode;
+if ((int)resp.StatusCode >= 400 && resp.StatusCode != HttpStatusCode.Forbidden)
+{
+return new UrlValidationResult(false, Platform, status, $"HTTP {status} {resp.ReasonPhrase}");
+}
+var body = await ReadUpToCharsAsync(resp, opt.MaxBodyCharsToScan, ct).ConfigureAwait(false);
+var rules = Rules(opt);
+foreach (var must in rules.MustContain)
+{
+if (!body.Contains(must, StringComparison.OrdinalIgnoreCase))
+{
+return new UrlValidationResult(false, Platform, status, $"Missing required marker: '{must}'");
+}
+}
+foreach (var bad in rules.MustNotContain)
+{
+if (body.Contains(bad, StringComparison.OrdinalIgnoreCase))
+{
+return new UrlValidationResult(
+false,
+Platform,
+status,
+$"Contains blocked marker: '{bad}'. Evidence: {TakeSnippet(body, bad)}");
+}
+}
+return new UrlValidationResult(true, Platform, status, "Available");
+}
+private static CancellationTokenSource CreateTimeoutCts(UrlOptions opt, CancellationToken ct)
+{
+var cts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+cts.CancelAfter(TimeSpan.FromSeconds(Math.Max(1, opt.TimeoutSeconds)));
+return cts;
+}
+private static async Task<string> ReadUpToCharsAsync(
+HttpResponseMessage resp,
+int maxChars,
+CancellationToken ct)
+{
+await using var stream = await resp.Content.ReadAsStreamAsync(ct).ConfigureAwait(false);
+using var reader = new StreamReader(stream, Encoding.UTF8, true);
+var sb = new StringBuilder(Math.Min(maxChars, 64_000));
+var buffer = new char[8192];
+while (sb.Length < maxChars)
+{
+var read = await reader.ReadAsync(
+buffer.AsMemory(0, Math.Min(buffer.Length, maxChars - sb.Length)), ct)
+.ConfigureAwait(false);
+if (read <= 0) break;
+sb.Append(buffer, 0, read);
+}
+return sb.ToString();
+}
 private static string? TakeSnippet(string body, string needle)
 {
 var idx = body.IndexOf(needle, StringComparison.OrdinalIgnoreCase);
@@ -52989,37 +53420,32 @@ var len = Math.Min(body.Length - start, 200);
 return body.Substring(start, len);
 }
 }
-}
 
-=== FILE: F:\Marketing\Services\UrlValidation\InstagramUrlAvailabilityValidator.cs ===
+=== FILE: F:\Marketing\Services\UrlValidation\InstagramUrlValidator.cs ===
 
 ﻿using Configuration.UrlValidation;
 using Microsoft.Extensions.Options;
 using Services.Abstractions.UrlValidation;
 namespace Services.UrlValidation
 {
-public sealed class InstagramUrlAvailabilityValidator : HttpBodyRuleValidatorBase
+public sealed class InstagramUrlValidator(HttpClient httpClient, IOptionsMonitor<UrlOptions> options) : HttpValidatorBase(httpClient, options)
 {
-public InstagramUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
-: base(httpClient, options) { }
 public override UrlPlatform Platform => UrlPlatform.Instagram;
-protected override PlatformRules Rules(UrlValidationOptions opt) => opt.Instagram;
+protected override PlatformRules Rules(UrlOptions opt) => opt.Instagram;
 }
 }
 
-=== FILE: F:\Marketing\Services\UrlValidation\TikTokUrlAvailabilityValidator.cs ===
+=== FILE: F:\Marketing\Services\UrlValidation\TikTokUrlValidator.cs ===
 
 ﻿using Configuration.UrlValidation;
 using Microsoft.Extensions.Options;
 using Services.Abstractions.UrlValidation;
 namespace Services.UrlValidation
 {
-public sealed class TikTokUrlAvailabilityValidator : HttpBodyRuleValidatorBase
+public sealed class TikTokUrlValidator(HttpClient httpClient, IOptionsMonitor<UrlOptions> options) : HttpValidatorBase(httpClient, options)
 {
-public TikTokUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options)
-: base(httpClient, options) { }
 public override UrlPlatform Platform => UrlPlatform.TikTok;
-protected override PlatformRules Rules(UrlValidationOptions opt) => opt.TikTok;
+protected override PlatformRules Rules(UrlOptions opt) => opt.TikTok;
 }
 }
 
@@ -53028,13 +53454,9 @@ protected override PlatformRules Rules(UrlValidationOptions opt) => opt.TikTok;
 ﻿using Services.Abstractions.UrlValidation;
 namespace Services.UrlValidation
 {
-public sealed class UrlValidationPipeline : IUrlValidationPipeline
+public sealed class UrlValidationPipeline(IUrlFactory factory) : IValidationPipeline
 {
-private readonly IUrlAvailabilityValidatorFactory _factory;
-public UrlValidationPipeline(IUrlAvailabilityValidatorFactory factory)
-{
-_factory = factory;
-}
+private readonly IUrlFactory _factory = factory;
 public async Task<(bool AllValid, IReadOnlyList<UrlValidationResult> Results)> ValidateAllAsync(
 IReadOnlyList<string> urls,
 CancellationToken ct = default)
@@ -53053,17 +53475,17 @@ return (true, results);
 }
 }
 
-=== FILE: F:\Marketing\Services\UrlValidation\YouTubeUrlAvailabilityValidator.cs ===
+=== FILE: F:\Marketing\Services\UrlValidation\YouTubeUrlValidator.cs ===
 
 ﻿using Configuration.UrlValidation;
 using Microsoft.Extensions.Options;
 using Services.Abstractions.UrlValidation;
 namespace Services.UrlValidation
 {
-public sealed class YouTubeUrlAvailabilityValidator(HttpClient httpClient, IOptionsMonitor<UrlValidationOptions> options) : HttpBodyRuleValidatorBase(httpClient, options)
+public sealed class YouTubeUrlValidator(HttpClient httpClient, IOptionsMonitor<UrlOptions> options) : HttpValidatorBase(httpClient, options)
 {
 public override UrlPlatform Platform => UrlPlatform.YouTube;
-protected override PlatformRules Rules(UrlValidationOptions opt) => opt.YouTube;
+protected override PlatformRules Rules(UrlOptions opt) => opt.YouTube;
 }
 }
 
@@ -53245,6 +53667,194 @@ return result;
 }
 }
 
+=== FILE: F:\Marketing\Services\YouTube\EnrichedVideoDataExtensions.cs ===
+
+﻿using Services.Abstractions.YouTube;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.YouTube
+{
+public static class EnrichedVideoDataExtensions
+{
+public static string FormatForLLM(this IEnumerable<EnrichedVideoData> videos)
+{
+var sb = new StringBuilder();
+sb.AppendLine("VIDEO_CANDIDATES:");
+foreach (var v in videos.OrderByDescending(x => x.ViewsPerHour))
+{
+sb.AppendLine("- VIDEO");
+sb.AppendLine($"  url: {v.VideoUrl}");
+sb.AppendLine($"  title: {v.Title}");
+sb.AppendLine($"  published_at: {v.PublishedAt:O}");
+sb.AppendLine($"  duration_sec: {(v.Duration?.TotalSeconds ?? 0):0}");
+sb.AppendLine($"  views: {v.Views}");
+sb.AppendLine($"  likes: {v.Likes}");
+sb.AppendLine($"  comments: {v.Comments}");
+sb.AppendLine($"  views_per_hour: {v.ViewsPerHour:0.##}");
+sb.AppendLine($"  like_view_ratio: {v.LikeViewRatio:0.####}");
+sb.AppendLine($"  comment_view_ratio: {v.CommentViewRatio:0.####}");
+sb.AppendLine($"  velocity_bucket: {v.VelocityBucket}");
+sb.AppendLine($"  tags: [{string.Join(", ", v.Tags.Take(15))}]");
+sb.AppendLine($"  channel_subscribers: {v.SubscriberCount}");
+sb.AppendLine($"  channel_views_per_video: {v.ChannelViewsPerVideo:0.##}");
+}
+return sb.ToString();
+}
+}
+}
+
+=== FILE: F:\Marketing\Services\YouTube\YouTubeService.cs ===
+
+﻿using Application.Result;
+using Configuration.YouTube;
+using Microsoft.Extensions.Logging;
+using Services.Abstractions.YouTube;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Services.YouTube
+{
+public sealed class YouTubeService(
+HttpClient httpClient,
+IErrorHandler errorHandler,
+ILogger<YouTubeService> logger,
+YouTubeApiOptions apiOptions
+) : IYouTubeService
+{
+public async Task<Operation<SearchResponse>> SearchVideosAsync(string query, SearchOptions options)
+{
+try
+{
+return Operation<SearchResponse>.Success( null!, "Search completed");
+}
+catch (Exception ex)
+{
+return OperationStrategy<SearchResponse>.Fail(ex.Message, new NetworkErrorStrategy<SearchResponse>());
+}
+}
+public async Task<Operation<VideoDetails>> GetVideoDetailsAsync(string videoId)
+{
+try
+{
+return Operation<VideoDetails>.Success( null!, "Video details fetched");
+}
+catch (Exception ex)
+{
+errorHandler.Fail<Operation<VideoDetails>>(ex);
+var strategy = new BusinessStrategy<VideoDetails>();
+return OperationStrategy<VideoDetails>.Fail(ex.Message, strategy);
+}
+}
+public async Task<Operation<ChannelDetails>> GetChannelDetailsAsync(string channelId)
+{
+try
+{
+return Operation<ChannelDetails>.Success( null!, "Channel details fetched");
+}
+catch (Exception ex)
+{
+errorHandler.Fail<Operation<ChannelDetails>>(ex);
+var strategy = new BusinessStrategy<ChannelDetails>();
+return OperationStrategy<ChannelDetails>.Fail(ex.Message, strategy);
+}
+}
+}
+}
+
+=== FILE: F:\Marketing\Services\YouTube\YouTubeViralVideoDiscoverer.cs ===
+
+﻿using Application.Result;
+using Microsoft.Extensions.Logging;
+using Services.Abstractions.UrlValidation;
+using Services.Abstractions.YouTube;
+namespace Services.YouTube
+{
+public sealed class YouTubeViralVideoDiscoverer(
+IYouTubeService youTubeService,
+IUrlFactory urlFactory,
+ILogger<YouTubeViralVideoDiscoverer> logger
+) : IYouTubeViralVideoDiscoverer
+{
+public async Task<Operation<List<EnrichedVideoData>>> DiscoverAsync(
+string query, SearchOptions options, CancellationToken ct = default)
+{
+var searchOp = await youTubeService.SearchVideosAsync(query, options);
+if (!searchOp.IsSuccessful || searchOp.Data is null)
+return searchOp.ConvertTo<List<EnrichedVideoData>>();
+var enriched = new List<EnrichedVideoData>();
+foreach (var item in searchOp.Data.Items)
+{
+ct.ThrowIfCancellationRequested();
+var url = $"https://www.youtube.com/watch?v={item.VideoId}";
+var validator = urlFactory.GetValidator(url);
+var validOp = await validator.ValidateAsync(url, ct);
+if (validOp is not null)
+{
+if (!validOp.IsValid) continue;
+}
+var videoOp = await youTubeService.GetVideoDetailsAsync(item.VideoId);
+if (!videoOp.IsSuccessful || videoOp.Data is null) continue;
+var channelOp = await youTubeService.GetChannelDetailsAsync(item.ChannelId);
+if (!channelOp.IsSuccessful || channelOp.Data is null) continue;
+enriched.Add(Enrich(videoOp.Data, channelOp.Data, url));
+}
+return Operation<List<EnrichedVideoData>>.Success(enriched, "Discovery completed");
+}
+private static EnrichedVideoData Enrich(VideoDetails v, ChannelDetails c, string url)
+{
+var age = DateTimeOffset.UtcNow - v.PublishedAt;
+var viewsPerHour = age.TotalHours <= 0.01 ? v.Statistics.ViewCount : v.Statistics.ViewCount / age.TotalHours;
+var likeView = v.Statistics.ViewCount == 0 ? 0 : (double)v.Statistics.LikeCount / v.Statistics.ViewCount;
+var commentView = v.Statistics.ViewCount == 0 ? 0 : (double)v.Statistics.CommentCount / v.Statistics.ViewCount;
+var engagementScore = (likeView * 0.7) + (commentView * 0.3);
+var velocityBucket =
+viewsPerHour >= 50_000 ? "Exploding" :
+viewsPerHour >= 10_000 ? "Rising" :
+"Steady";
+var channelAge = DateTimeOffset.UtcNow - c.PublishedAt;
+var channelViewsPerVideo = c.VideoCount == 0 ? 0 : (double)c.ViewCount / c.VideoCount;
+return new EnrichedVideoData(
+v.VideoId,
+url,
+v.Title,
+v.Description,
+v.Duration,
+v.PublishedAt,
+v.Statistics.ViewCount,
+v.Statistics.LikeCount,
+v.Statistics.CommentCount,
+likeView,
+commentView,
+engagementScore,
+age,
+viewsPerHour,
+velocityBucket,
+v.Tags,
+v.CategoryId,
+KeywordExtract(v.Description),
+c.ChannelId,
+c.Title,
+c.SubscriberCount,
+channelAge,
+channelViewsPerVideo
+);
+}
+private static IReadOnlyList<string> KeywordExtract(string text)
+{
+return [.. text.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+.Select(t => t.Trim().ToLowerInvariant())
+.Where(t => t.Length >= 5)
+.Distinct()
+.Take(25)];
+}
+}
+}
+
 === FILE: F:\Marketing\Services.Abstractions\AutoIt\IAutoItRunner.cs ===
 
 ﻿using Domain;
@@ -53272,6 +53882,7 @@ CancellationToken cancellationToken = default);
     ".NETCoreApp,Version=v8.0": {
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -53647,6 +54258,17 @@ CancellationToken cancellationToken = default);
           }
         }
       },
+      "Application/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Configuration/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options": "9.0.6"
@@ -53869,6 +54491,11 @@ CancellationToken cancellationToken = default);
       "sha512": "sha512-yErfw/3pZkJE/VKza/Cm5idTpIKOy/vsmVi59Ta5SruPVtubzxb8CtnE8tyUpzs5pr0Y28GUFfSVzAhCLN3F/Q==",
       "path": "system.security.cryptography.protecteddata/9.0.6",
       "hashPath": "system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Configuration/1.0.0": {
       "type": "project",
@@ -54524,6 +55151,19 @@ Task SendMessageAsync();
         },
         "build": {
           "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
         }
       },
       "Configuration/1.0.0": {
@@ -55470,6 +56110,11 @@ Task SendMessageAsync();
         "useSharedDesignerContext.txt"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
     "Configuration/1.0.0": {
       "type": "project",
       "path": "../Configuration/Configuration.csproj",
@@ -55483,6 +56128,7 @@ Task SendMessageAsync();
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Application >= 1.0.0",
       "Configuration >= 1.0.0",
       "Domain >= 1.0.0",
       "FuzzySharp >= 2.0.2",
@@ -55529,6 +56175,9 @@ Task SendMessageAsync();
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "F:\\Marketing\\Application\\Application.csproj": {
+              "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+            },
             "F:\\Marketing\\Configuration\\Configuration.csproj": {
               "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
             },
@@ -55629,6 +56278,74 @@ Task SendMessageAsync();
     "F:\\Marketing\\Services.Abstractions\\Services.Abstractions.csproj": {}
   },
   "projects": {
+    "F:\\Marketing\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Marketing\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\Marketing\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "F:\\Marketing\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "F:\\Marketing\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\Marketing\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Marketing\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -55790,6 +56507,9 @@ Task SendMessageAsync();
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -55896,7 +56616,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -55913,7 +56633,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services.Abstractions\obj\Debug\net8.0\Services.Abstractions.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\Services.Abstractions\OpenAI\IOpenAIClient.cs ===
 
@@ -56062,62 +56782,42 @@ Task ShortenUrlAsync(string longUrl, string key, CancellationToken ct = default)
 }
 }
 
-=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlAvailabilityValidator.cs ===
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IPlatformResolver.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Abstractions.UrlValidation
+﻿namespace Services.Abstractions.UrlValidation
 {
-public interface IUrlAvailabilityValidator
+public interface IPlatformResolver
+{
+UrlPlatform Resolve(string url);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlFactory.cs ===
+
+﻿namespace Services.Abstractions.UrlValidation
+{
+public interface IUrlFactory
+{
+IUrValidator GetValidator(string url);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrValidator.cs ===
+
+﻿namespace Services.Abstractions.UrlValidation
+{
+public interface IUrValidator
 {
 UrlPlatform Platform { get; }
 Task<UrlValidationResult> ValidateAsync(string url, CancellationToken ct = default);
 }
 }
 
-=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlAvailabilityValidatorFactory.cs ===
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IValidationPipeline.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Abstractions.UrlValidation
+﻿namespace Services.Abstractions.UrlValidation
 {
-public interface IUrlAvailabilityValidatorFactory
-{
-IUrlAvailabilityValidator GetValidator(string url);
-}
-}
-
-=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlPlatformResolver.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Abstractions.UrlValidation
-{
-public interface IUrlPlatformResolver
-{
-UrlPlatform Resolve(string url);
-}
-}
-
-=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\IUrlValidationPipeline.cs ===
-
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Abstractions.UrlValidation
-{
-public interface IUrlValidationPipeline
+public interface IValidationPipeline
 {
 Task<(bool AllValid, IReadOnlyList<UrlValidationResult> Results)> ValidateAllAsync(
 IReadOnlyList<string> urls,
@@ -56126,27 +56826,24 @@ CancellationToken ct = default
 }
 }
 
-=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlAvailabilityValidatorFactory.cs ===
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\PlatformResolver.cs ===
 
 ﻿namespace Services.Abstractions.UrlValidation
 {
-public sealed class UrlAvailabilityValidatorFactory : IUrlAvailabilityValidatorFactory
+public sealed class PlatformResolver : IPlatformResolver
 {
-private readonly IUrlPlatformResolver _resolver;
-private readonly IReadOnlyDictionary<UrlPlatform, IUrlAvailabilityValidator> _validators;
-public UrlAvailabilityValidatorFactory(
-IUrlPlatformResolver resolver,
-IEnumerable<IUrlAvailabilityValidator> validators)
+public UrlPlatform Resolve(string url)
 {
-_resolver = resolver;
-_validators = validators.ToDictionary(v => v.Platform, v => v);
-}
-public IUrlAvailabilityValidator GetValidator(string url)
-{
-var platform = _resolver.Resolve(url);
-if (platform == UrlPlatform.Unknown || !_validators.TryGetValue(platform, out var validator))
-throw new NotSupportedException($"No validator registered for platform '{platform}'.");
-return validator;
+if (!Uri.TryCreate(url, UriKind.Absolute, out var uri))
+return UrlPlatform.Unknown;
+var host = uri.Host.ToLowerInvariant();
+if (host.Contains("youtube.com") || host.Contains("youtu.be"))
+return UrlPlatform.YouTube;
+if (host.Contains("tiktok.com"))
+return UrlPlatform.TikTok;
+if (host.Contains("instagram.com"))
+return UrlPlatform.Instagram;
+return UrlPlatform.Unknown;
 }
 }
 }
@@ -56169,36 +56866,9 @@ Instagram = 3
 }
 }
 
-=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlPlatformResolver.cs ===
-
-﻿namespace Services.Abstractions.UrlValidation
-{
-public sealed class UrlPlatformResolver : IUrlPlatformResolver
-{
-public UrlPlatform Resolve(string url)
-{
-if (!Uri.TryCreate(url, UriKind.Absolute, out var uri))
-return UrlPlatform.Unknown;
-var host = uri.Host.ToLowerInvariant();
-if (host.Contains("youtube.com") || host.Contains("youtu.be"))
-return UrlPlatform.YouTube;
-if (host.Contains("tiktok.com"))
-return UrlPlatform.TikTok;
-if (host.Contains("instagram.com"))
-return UrlPlatform.Instagram;
-return UrlPlatform.Unknown;
-}
-}
-}
-
 === FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlValidationResult.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.Abstractions.UrlValidation
+﻿namespace Services.Abstractions.UrlValidation
 {
 public sealed record UrlValidationResult(
 bool IsValid,
@@ -56207,6 +56877,29 @@ int? HttpStatusCode,
 string? FailureReason,
 string? EvidenceSnippet = null
 );
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\UrlValidation\UrlValidatorFactory.cs ===
+
+﻿namespace Services.Abstractions.UrlValidation
+{
+public sealed class UrlValidatorFactory(
+IPlatformResolver resolver,
+IEnumerable<IUrValidator> validators) : IUrlFactory
+{
+private readonly IPlatformResolver _resolver = resolver;
+private readonly IReadOnlyDictionary<UrlPlatform, IUrValidator> _validators = validators.ToDictionary(v => v.Platform, v => v);
+public IUrValidator GetValidator(string url)
+{
+var platform = _resolver.Resolve(url);
+if (platform == UrlPlatform.Unknown || !_validators.TryGetValue(platform, out var validator))
+{
+var message = $"No validator registered for platform '{platform}'.";
+throw new NotSupportedException(message);
+}
+return validator;
+}
+}
 }
 
 === FILE: F:\Marketing\Services.Abstractions\XPath\IChatXPathBuilder.cs ===
@@ -56227,6 +56920,124 @@ public interface IXPathLiteralEscaper
 {
 string EscapeXPathLiteral(string value);
 }
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\YouTube\ChannelDetails.cs ===
+
+﻿namespace Services.Abstractions.YouTube
+{
+public sealed record ChannelDetails(
+string ChannelId,
+string Title,
+DateTimeOffset PublishedAt,
+long SubscriberCount,
+long VideoCount,
+long ViewCount
+);
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\YouTube\EnrichedVideoData.cs ===
+
+﻿namespace Services.Abstractions.YouTube
+{
+public sealed record EnrichedVideoData(
+string VideoId,
+string VideoUrl,
+string Title,
+string Description,
+TimeSpan? Duration,
+DateTimeOffset PublishedAt,
+long Views,
+long Likes,
+long Comments,
+double LikeViewRatio,
+double CommentViewRatio,
+double EngagementScore,
+TimeSpan Age,
+double ViewsPerHour,
+string VelocityBucket,
+IReadOnlyList<string> Tags,
+string? CategoryId,
+IReadOnlyList<string> DescriptionKeywords,
+string ChannelId,
+string ChannelTitle,
+long SubscriberCount,
+TimeSpan ChannelAge,
+double ChannelViewsPerVideo
+);
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\YouTube\SearchOptions.cs ===
+
+﻿using Application.Result;
+namespace Services.Abstractions.YouTube
+{
+public sealed class SearchOptions
+{
+public int MaxResults { get; init; } = 10;
+public string? RegionCode { get; init; }
+public string? RelevanceLanguage { get; init; }
+public string? Order { get; init; }
+public string? PublishedAfterIso { get; init; }
+public string? PublishedBeforeIso { get; init; }
+public string Type { get; init; } = "video";
+public string? VideoDuration { get; init; }
+public string? SafeSearch { get; init; }
+}
+public interface IYouTubeService
+{
+Task<Operation<SearchResponse>> SearchVideosAsync(string query, SearchOptions options);
+Task<Operation<VideoDetails>> GetVideoDetailsAsync(string videoId);
+Task<Operation<ChannelDetails>> GetChannelDetailsAsync(string channelId);
+}
+public interface IYouTubeViralVideoDiscoverer
+{
+Task<Operation<List<EnrichedVideoData>>> DiscoverAsync(
+string query,
+SearchOptions options,
+CancellationToken ct = default);
+}
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\YouTube\SearchResponse.cs ===
+
+﻿namespace Services.Abstractions.YouTube
+{
+public sealed record SearchResponse(
+string Query,
+IReadOnlyList<SearchVideoItem> Items,
+string? NextPageToken
+);
+public sealed record SearchVideoItem(
+string VideoId,
+string ChannelId,
+string Title,
+string Description,
+DateTimeOffset PublishedAt,
+string? ThumbnailUrl
+);
+}
+
+=== FILE: F:\Marketing\Services.Abstractions\YouTube\VideoDetails.cs ===
+
+﻿namespace Services.Abstractions.YouTube
+{
+public sealed record VideoDetails(
+string VideoId,
+string ChannelId,
+string Title,
+string Description,
+DateTimeOffset PublishedAt,
+TimeSpan? Duration,
+IReadOnlyList<string> Tags,
+string? CategoryId,
+VideoStatistics Statistics
+);
+public sealed record VideoStatistics(
+long ViewCount,
+long LikeCount,
+long CommentCount
+);
 }
 
 === FILE: F:\Marketing\Tools\appsettings.Development.json ===
@@ -68312,13 +69123,24 @@ throw new Exception("Database initialization failed");
     "MaxBodyCharsToScan": 200000,
 
     "YouTube": {
-      "MustContain": [ "ytInitialPlayerResponse", "og:title" ],
-      "MustNotContain": [ "Video unavailable", "This video is unavailable", "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\"" ]
+      "MustContain": [
+        "ytInitialPlayerResponse",
+        "og:title"
+      ],
+      "MustNotContain": [
+        "Video unavailable",
+        "This video is unavailable",
+        "playabilityStatus\"\\s*:\\s*\\{\\s*\"status\"\\s*:\\s*\"ERROR\""
+      ]
     },
 
     "TikTok": {
       "MustContain": [ "tiktok", "video" ],
-      "MustNotContain": [ "Couldn't find this account", "Video currently unavailable", "This content isn't available" ]
+      "MustNotContain": [
+        "Couldn't find this account",
+        "Video currently unavailable",
+        "This content isn't available"
+      ]
     },
 
     "Instagram": {
@@ -68329,6 +69151,20 @@ throw new Exception("Database initialization failed");
         "The link may be broken, or the profile may have been removed.",
         "Post isn't available"
       ]
+    }
+  },
+    "YouTube": {
+      "ApiKey": "AIzaSyCSej3Yw6A06eYy-4AKGwCYopJlWobLQK4",
+      "BaseUrl": "https://www.googleapis.com/youtube/v3/",
+      "HttpTimeoutSeconds": 20,
+      "DefaultMaxResults": 10,
+      "DefaultRegionCode": "CA",
+      "DefaultRelevanceLanguage": "en",
+      "DefaultOrder": "viewCount"
+    },
+    "QuotaProtection": {
+      "EnableCaching": true,
+      "CacheMinutes": 30
     }
   }
 }
@@ -69558,6 +70394,7 @@ throw new Exception("Database initialization failed");
       },
       "Services.Abstractions/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -75577,6 +76414,7 @@ throw new Exception("Database initialization failed");
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Application": "1.0.0",
           "Configuration": "1.0.0",
           "Domain": "1.0.0",
           "FuzzySharp": "2.0.2",
@@ -78620,6 +79458,9 @@ throw new Exception("Database initialization failed");
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "F:\\Marketing\\Application\\Application.csproj": {
+                "projectPath": "F:\\Marketing\\Application\\Application.csproj"
+              },
               "F:\\Marketing\\Configuration\\Configuration.csproj": {
                 "projectPath": "F:\\Marketing\\Configuration\\Configuration.csproj"
               },
@@ -78917,7 +79758,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+091d25b53cc7fa60359d04f0f55d1c266aaeb8e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -78934,7 +79775,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/091d25b53cc7fa60359d04f0f55d1c266aaeb8e3/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

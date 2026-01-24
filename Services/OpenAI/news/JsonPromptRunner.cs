@@ -4,14 +4,22 @@
 // - Fail-fast all-or-nothing
 // - Structured steps for debugging
 // - Each step isolated into small methods
+//
+// MODIFICATION:
+// - Instead of asking the LLM to generate URLs, this runner now calls YouTube:
+//   Task<Operation<SearchResponse>> SearchVideosAsync(string query, SearchOptions options);
 
+using Application.Result;
 using Common.StringExtensions;
+using Configuration.YouTube;
 using Domain;
 using Domain.OpenAI;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.UrlValidation;
+using Services.Abstractions.YouTube;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
@@ -23,13 +31,17 @@ namespace Services.OpenAI.news
         INostalgiaPromptLoader nostalgiaPromptLoader,
         IOpenAIClient openAIClient,
         IUrlFactory urlValidatorFactory,
+        IYouTubeService youTubeService,
+        IOptions<YouTubeCurationRunnerOptions> youTubeRunnerOptions,
         ILogger<JsonPromptRunner> logger
     ) : IJsonPromptRunner
     {
         private readonly INewsHistoryStore _newsHistoryStore = newsHistoryStore;
         private readonly INostalgiaPromptLoader _nostalgiaPromptLoader = nostalgiaPromptLoader;
-        private readonly IOpenAIClient _openAIClient = openAIClient;
+        private readonly IOpenAIClient _openAIClient = openAIClient; // kept for compatibility (may be used later)
         private readonly IUrlFactory _urlValidatorFactory = urlValidatorFactory;
+        private readonly IYouTubeService _youTubeService = youTubeService;
+        private readonly YouTubeCurationRunnerOptions _yt = youTubeRunnerOptions.Value;
         private readonly ILogger<JsonPromptRunner> _logger = logger;
 
         private const int DesiredCount = 5;
@@ -40,7 +52,7 @@ namespace Services.OpenAI.news
             // STEP 1: Load history
             var history = await LoadHistoryAsync(ct);
 
-            // STEP 2: Load prompt template
+            // STEP 2: Load prompt template (kept; useful for auditing / future LLM analysis)
             var promptNostalgia = await LoadPromptAsync(ct);
 
             // STEP 3: Setup iteration memory
@@ -50,43 +62,57 @@ namespace Services.OpenAI.news
             // STEP 4: Iterate until we succeed or timeout
             while (DateTimeOffset.UtcNow < deadline && !ct.IsCancellationRequested)
             {
-                // STEP 4.1: Update excluded URLs
+                // STEP 4.1: Update excluded URLs (history + attempted) into prompt JSON (optional but debug-friendly)
                 UpdateExcludedUrls(promptNostalgia, history, attempted);
 
-                // STEP 4.2: Build request prompt
-                var prompt = BuildPrompt(promptNostalgia);
+                // STEP 4.2: Call YouTube Search (ground truth candidates)
+                var searchOp = await CallYouTubeSearchAsync(_yt.Query, _yt.Search, ct);
+                if (!searchOp.IsSuccessful || searchOp.Data is null || searchOp.Data.Items.Count == 0)
+                {
+                    _logger.LogWarning("YouTube search returned no items. Retrying.");
+                    continue;
+                }
 
+                // STEP 4.3: Convert search results to candidate URLs, apply exclusions
+                var candidates = ExtractCandidateUrlsFromYouTube(searchOp.Data, history, attempted);
+
+                if (candidates.Count == 0)
+                {
+                    _logger.LogWarning("No candidate URLs after exclusions (history/attempted). Retrying.");
+                    continue;
+                }
+                /*
+                var prompt = BuildPrompt(promptNostalgia);
                 // STEP 4.3: Call LLM
                 var llmRaw = await CallLlmAsync(prompt, ct);
 
                 // STEP 4.4: Extract candidate URLs from response
-                var candidates = ExtractCandidateUrls(llmRaw);
-
+                var candidatesFiltered = ExtractCandidateUrls(llmRaw);
+                */
                 if (candidates.Count == 0)
                 {
                     _logger.LogWarning("LLM returned no URLs. Retrying.");
                     continue;
                 }
 
-                // STEP 4.5: Track attempted (so next LLM call excludes them)
+
+                // STEP 4.4: Track attempted (so next loop excludes them)
                 AddAttempted(attempted, candidates);
 
-                // STEP 4.6: Validate URLs linearly (one by one)
+                // STEP 4.5: Validate URLs linearly (one by one)
                 var validation = await ValidateCandidatesUntilDesiredAsync(candidates, DesiredCount, ct);
 
-                var results = validation.Results;
-
+                // STEP 4.6: Persist attempted to history (so we don’t keep rediscovering them)
                 await AppendUsedUrlsAsync(candidates, ct);
-                //if (validation.AllValid)
-                //{
-                //    // STEP 4.7: Persist results
-                //    await PersistValidUrlsAsync(validation.ValidUrls, ct);
 
-                //    // STEP 4.8: Return valid list
-                //    return [.. validation.ValidUrls];
-                //}
+                // STEP 4.7: If we reached desired count, return valid list
+                if (validation.Success && validation.ValidUrls.Count == DesiredCount)
+                {
+                    _logger.LogInformation("Success: {Count} valid URLs found.", validation.ValidUrls.Count);
+                    return [.. validation.ValidUrls];
+                }
 
-                // STEP 4.9: Log first failure and retry loop
+                // STEP 4.8: Log first failure and retry loop
                 LogFirstFailure(validation.Results);
             }
 
@@ -96,7 +122,20 @@ namespace Services.OpenAI.news
         // -----------------------------
         // STEP HELPERS (LINEAR/DEBUGGABLE)
         // -----------------------------
+        private List<string> ExtractCandidateUrls(string llmRaw)
+        {
+            _logger.LogDebug("STEP 4.4: Extracting URLs from LLM response...");
 
+            var extracted = llmRaw.ExtractJsonContent();
+            var urls = ExtractUrlsFromLlmResponse(extracted)
+                .Where(u => !string.IsNullOrWhiteSpace(u))
+                .Select(u => u.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            _logger.LogDebug("STEP 4.4: Extracted {Count} candidate URLs.", urls.Count);
+            return urls;
+        }
         private async Task<HashSet<string>> LoadHistoryAsync(CancellationToken ct)
         {
             _logger.LogDebug("STEP 1: Loading history URLs...");
@@ -107,9 +146,9 @@ namespace Services.OpenAI.news
 
         private async Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct)
         {
-            _logger.LogDebug("STEP 1: Loading history URLs...");
+            _logger.LogDebug("STEP: Appending used URLs...");
             await _newsHistoryStore.AppendUsedUrlsAsync(urls, ct);
-            _logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", urls.Count());
+            _logger.LogDebug("STEP: Appended {Count} URLs.", urls.Count());
         }
 
         private async Task<NostalgiaPrompt> LoadPromptAsync(CancellationToken ct)
@@ -135,37 +174,39 @@ namespace Services.OpenAI.news
             _logger.LogDebug("STEP 4.1: ExcludedUrls updated. Total={Count}.", prompt.Context.ExcludedUrls.Count);
         }
 
-        private Prompt BuildPrompt(NostalgiaPrompt promptNostalgia)
+        private async Task<Operation<SearchResponse>> CallYouTubeSearchAsync(
+            string query,
+            SearchOptions options,
+            CancellationToken ct)
         {
-            _logger.LogDebug("STEP 4.2: Building LLM prompt (System + User JSON without role)...");
-            var content = ToJsonWithoutRole(promptNostalgia);
-            return new Prompt
-            {
-                SystemContent = promptNostalgia.Role,
-                UserContent = content
-            };
+            _logger.LogDebug("STEP 4.2: Calling YouTube Search API. Query={Query}", query);
+            var op = await _youTubeService.SearchVideosAsync(query, options);
+            _logger.LogDebug("STEP 4.2: YouTube Search Success={Success}, Count={Count}",
+                op.IsSuccessful,
+                op.Data?.Items.Count ?? 0);
+            return op;
         }
 
-        private async Task<string> CallLlmAsync(Prompt prompt, CancellationToken ct)
+    
+
+
+        private List<string> ExtractCandidateUrlsFromYouTube(
+            SearchResponse response,
+            HashSet<string> history,
+            HashSet<string> attempted)
         {
-            _logger.LogDebug("STEP 4.3: Calling LLM...");
-            var raw = await _openAIClient.GetChatCompletionAsync(prompt, ct);
-            _logger.LogDebug("STEP 4.3: LLM response received. Length={Len}", raw?.Length ?? 0);
-            return raw ?? string.Empty;
-        }
+            _logger.LogDebug("STEP 4.3: Building candidate URLs from YouTube search items...");
 
-        private List<string> ExtractCandidateUrls(string llmRaw)
-        {
-            _logger.LogDebug("STEP 4.4: Extracting URLs from LLM response...");
+            var urls =
+                response.Items
+                    .Select(i => $"https://www.youtube.com/watch?v={i.VideoId}")
+                    .Where(u => !string.IsNullOrWhiteSpace(u))
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .Where(u => !history.Contains(u))
+                    .Where(u => !attempted.Contains(u))
+                    .ToList();
 
-            var extracted = llmRaw.ExtractJsonContent();
-            var urls = ExtractUrlsFromLlmResponse(extracted)
-                .Where(u => !string.IsNullOrWhiteSpace(u))
-                .Select(u => u.Trim())
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToList();
-
-            _logger.LogDebug("STEP 4.4: Extracted {Count} candidate URLs.", urls.Count);
+            _logger.LogDebug("STEP 4.3: Candidate URLs after exclusions: {Count}", urls.Count);
             return urls;
         }
 
@@ -175,12 +216,11 @@ namespace Services.OpenAI.news
                 attempted.Add(c);
         }
 
-
         private async Task<(bool Success, IReadOnlyList<string> ValidUrls, IReadOnlyList<UrlValidationResult> Results)>
-     ValidateCandidatesUntilDesiredAsync(
-         IReadOnlyList<string> urls,
-         int desiredCount,
-         CancellationToken ct)
+            ValidateCandidatesUntilDesiredAsync(
+                IReadOnlyList<string> urls,
+                int desiredCount,
+                CancellationToken ct)
         {
             _logger.LogDebug("Validating URLs linearly until {Desired} valid ones are found.", desiredCount);
 
@@ -217,17 +257,6 @@ namespace Services.OpenAI.news
             return (false, validUrls, results);
         }
 
-
-        private static List<string> PrepareStrictBatch(IReadOnlyList<string> urls, int desiredCount)
-        {
-            return urls
-                .Where(u => !string.IsNullOrWhiteSpace(u))
-                .Select(u => u.Trim())
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .Take(desiredCount)
-                .ToList();
-        }
-
         private async Task<UrlValidationResult> ValidateOneUrlAsync(string url, CancellationToken ct)
         {
             // Explicit URL format check (debug-friendly)
@@ -236,7 +265,7 @@ namespace Services.OpenAI.news
 
             try
             {
-                // FACTORY INVOCATION (linear)
+                // Factory resolves correct validator based on URL/platform
                 var validator = _urlValidatorFactory.GetValidator(url);
 
                 // Single validation call
@@ -246,13 +275,6 @@ namespace Services.OpenAI.news
             {
                 return new UrlValidationResult(false, UrlPlatform.Unknown, null, ex.Message);
             }
-        }
-
-        private async Task PersistValidUrlsAsync(IReadOnlyList<string> validUrls, CancellationToken ct)
-        {
-            _logger.LogDebug("STEP 4.7: Persisting {Count} valid URLs into history store...", validUrls.Count);
-            await _newsHistoryStore.AppendUsedUrlsAsync(validUrls, ct);
-            _logger.LogDebug("STEP 4.7: Persist complete.");
         }
 
         private void LogFirstFailure(IReadOnlyList<UrlValidationResult> results)
@@ -269,7 +291,7 @@ namespace Services.OpenAI.news
         }
 
         // -----------------------------
-        // URL extraction (unchanged)
+        // URL extraction (unchanged) - kept for compatibility
         // -----------------------------
 
         private static List<string> ExtractUrlsFromLlmResponse(string llmRaw)
@@ -355,6 +377,25 @@ namespace Services.OpenAI.news
             node.AsObject().Remove("role");
 
             return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
+        }
+
+        private Prompt BuildPrompt(NostalgiaPrompt promptNostalgia)
+        {
+            _logger.LogDebug("STEP 4.2: Building LLM prompt (System + User JSON without role)...");
+            var content = ToJsonWithoutRole(promptNostalgia);
+            return new Prompt
+            {
+                SystemContent = promptNostalgia.Role,
+                UserContent = content
+            };
+        }
+
+        private async Task<string> CallLlmAsync(Prompt prompt, CancellationToken ct)
+        {
+            _logger.LogDebug("STEP 4.3: Calling LLM...");
+            var raw = await _openAIClient.GetChatCompletionAsync(prompt, ct);
+            _logger.LogDebug("STEP 4.3: LLM response received. Length={Len}", raw?.Length ?? 0);
+            return raw ?? string.Empty;
         }
     }
 }
