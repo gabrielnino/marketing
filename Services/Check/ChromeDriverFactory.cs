@@ -9,9 +9,6 @@ public sealed class ChromeDriverFactory(ILogger<ChromeDriverFactory> logger) : I
 {
     private readonly ILogger<ChromeDriverFactory> _logger = logger;
 
-    // ============================================================
-    // IWebDriverFactory
-    // ============================================================
 
     public IWebDriver Create(bool hide)
     {
@@ -31,10 +28,6 @@ public sealed class ChromeDriverFactory(ILogger<ChromeDriverFactory> logger) : I
         var hide = mode.Equals("headless", StringComparison.OrdinalIgnoreCase);
         return BuildDefaultOptions(hide);
     }
-
-    // ============================================================
-    // INTERNAL
-    // ============================================================
 
     private IWebDriver CreateDriver(ChromeOptions options)
     {

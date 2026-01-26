@@ -1,5 +1,4 @@
-﻿using Domain;
-using Prompts.NostalgiaRank;
+﻿using Prompts.NostalgiaRank;
 using Services.Abstractions.OpenAI.news;
 using System.Text.Json;
 

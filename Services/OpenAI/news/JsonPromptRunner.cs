@@ -1,18 +1,6 @@
-﻿// === FILE: F:\Marketing\Services\OpenAI\news\JsonPromptRunner.cs ===
-// Goal: fully linear, step-by-step execution (one entity at a time)
-// - No parallel tasks
-// - Fail-fast all-or-nothing
-// - Structured steps for debugging
-// - Each step isolated into small methods
-//
-// MODIFICATION:
-// - Instead of asking the LLM to generate URLs, this runner now calls YouTube:
-//   Task<Operation<SearchResponse>> SearchVideosAsync(string query, SearchOptions options);
-
-using Application.Result;
+﻿using Application.Result;
 using Common.StringExtensions;
 using Configuration.YouTube;
-using Domain;
 using Domain.OpenAI;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;

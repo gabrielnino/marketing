@@ -1,0 +1,60 @@
+{
+  "role": "Senior YouTube Thumbnail Designer (CTR-focused)",
+  "goal": "Generate a viral modern YouTube thumbnail that is instantly understandable and optimized for high click-through rate.",
+  "technical_specs": {
+    "resolution_px": {
+      "width": 1280,
+      "height": 720
+    },
+    "aspect_ratio": "16:9",
+    "format": "PNG",
+    "quality": "Ultra sharp, no pixelation",
+    "safe_margins_px": 60
+  },
+  "style": {
+    "look_and_feel": "Modern viral YouTube thumbnail",
+    "contrast": "High contrast (bright subject vs dark background)",
+    "colors": "Intense, saturated, eye-catching",
+    "background": "Dark bokeh (blurred background)",
+    "lighting": "Studio lighting (key light + rim light)",
+    "effects": [ "Subtle outline/glow around subject" ]
+  },
+  "composition": {
+    "left_side": {
+      "subject": "Human face close-up - james rodriguez",
+      "expression": "Extreme surprise (wide open eyes, slightly open mouth)",
+      "focus": "Crisp and sharp"
+    },
+    "right_side": {
+      "object": "Large smartphone",
+      "screen_text": "99+ NOTIFICATIONS",
+      "highlight_elements": [
+        "Big red arrow pointing to '99+'",
+        "Red circle around '99+'"
+      ]
+    }
+  },
+  "text_overlay": {
+    "required": true,
+    "max_words": 3,
+    "text": "NO LO CREO",
+    "typography": {
+      "style": "Bold",
+      "color": "White",
+      "outline": "Black stroke",
+      "shadow": "Dark drop shadow for mobile readability",
+      "size": "Very large, ultra readable"
+    }
+  },
+  "rules": [
+    "Max 2 main elements: person + smartphone",
+    "No small text",
+    "Must be understood in 1 second",
+    "Clean design, minimal visual noise",
+    "High impact, high CTR composition"
+  ],
+  "output": {
+    "deliverable": "One final thumbnail image ready for YouTube upload",
+    "count": 1
+  }
+}
