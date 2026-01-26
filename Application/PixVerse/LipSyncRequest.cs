@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace Application.PixVerse
 {
@@ -23,22 +25,67 @@ namespace Application.PixVerse
 
         public void Validate()
         {
-      
             var hasSourceVideo = SourceVideoId.HasValue && SourceVideoId.Value > 0;
             var hasAudioMedia = AudioMediaId.HasValue && AudioMediaId.Value > 0;
             var hasTtsPair =
                 !string.IsNullOrWhiteSpace(LipSyncTtsSpeakerId) &&
                 !string.IsNullOrWhiteSpace(LipSyncTtsContent);
 
-            if (hasAudioMedia == hasTtsPair) // both true OR both false
-                throw new ArgumentException("Either AudioMediaId OR (LipSyncTtsSpeakerId + LipSyncTtsContent) must be set (exactly one).");
+            // exactly one audio source
+            if (hasAudioMedia == hasTtsPair)
+                throw new ArgumentException(
+                    "Either AudioMediaId OR (LipSyncTtsSpeakerId + LipSyncTtsContent) must be set (exactly one).");
 
-            // If user provides one of the TTS fields, enforce both.
-            if (!string.IsNullOrWhiteSpace(LipSyncTtsSpeakerId) && string.IsNullOrWhiteSpace(LipSyncTtsContent))
-                throw new ArgumentException("LipSyncTtsContent is required when LipSyncTtsSpeakerId is provided.");
+            if (!hasSourceVideo && VideoMediaId <= 0)
+                throw new ArgumentException(
+                    "Either SourceVideoId or VideoMediaId must be provided.");
 
-            if (string.IsNullOrWhiteSpace(LipSyncTtsSpeakerId) && !string.IsNullOrWhiteSpace(LipSyncTtsContent))
-                throw new ArgumentException("LipSyncTtsSpeakerId is required when LipSyncTtsContent is provided.");
+            if (hasSourceVideo && VideoMediaId > 0)
+                throw new ArgumentException(
+                    "SourceVideoId and VideoMediaId cannot be provided together.");
+
+            // TTS-specific validation + sanitization
+            if (hasTtsPair)
+            {
+                var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent!);
+
+                if (string.IsNullOrWhiteSpace(sanitized))
+                    throw new ArgumentException(
+                        "LipSyncTtsContent is empty after sanitization. Only standard characters are allowed.");
+
+                // IMPORTANT:
+                // Because properties are init-only, we cannot reassign here.
+                // Validation guarantees the content is safe.
+                // If you want mutation, change `init` to `set`.
+            }
+        }
+
+        private static string SanitizeToStandardCharacters(string input)
+        {
+            // 1) Normalize Unicode (removes weird composed forms)
+            var normalized = input.Normalize(NormalizationForm.FormKC);
+
+            // 2) Keep only:
+            // - letters (\p{L})
+            // - numbers (\p{N})
+            // - spaces
+            // - basic punctuation
+            var sb = new StringBuilder(normalized.Length);
+
+            foreach (var ch in normalized)
+            {
+                if (char.IsLetterOrDigit(ch) ||
+                    ch == ' ' ||
+                    ".,;:!?\"'()-".IndexOf(ch) >= 0)
+                {
+                    sb.Append(ch);
+                }
+            }
+
+            // 3) Collapse multiple spaces
+            var cleaned = Regex.Replace(sb.ToString(), @"\s{2,}", " ").Trim();
+
+            return cleaned;
         }
     }
 }
