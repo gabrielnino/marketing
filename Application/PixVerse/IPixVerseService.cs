@@ -32,6 +32,11 @@ namespace Application.PixVerse
             TransitionRequest request,
             CancellationToken ct = default);
 
+        // Speech (Lipsync)
+        Task<Operation<JobSubmitted>> SubmitLipSyncAsync(
+            LipSyncRequest request,
+            CancellationToken ct = default);
+
         // Status / Result
         Task<Operation<GenerationStatus>> GetGenerationStatusAsync(
             long jobId,
