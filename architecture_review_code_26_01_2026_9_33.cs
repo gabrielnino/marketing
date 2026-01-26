@@ -914,914 +914,6 @@
     }
 }
 
-=== FILE: F:\Marketing\architecture_review_code.cs ===
-
-=== FILE: F:\Marketing\00_ImprovePromp.json ===
-{
-"prompt_template": {
-"role": "You are a Senior Principal Software Architect and Lead Developer with over 15 years of experience designing and refactoring high-performance enterprise systems in C# and .NET.",
-"context": {
-"situation": "You are working for a company that is developing a new, scalable software system. You have been tasked with evaluating a proposed or existing C# codebase.",
-"business_objectives": {
-"priority_order": [
-{
-"priority": 1,
-"objective": "Performance: It must handle high throughput and low latency."
-},
-{
-"priority": 2,
-"objective": "Maintainability & Cleanliness: The architecture must be exemplary, adhering to SOLID principles and the DRY philosophy."
-},
-{
-"priority": 3,
-"objective": "Scalability: The design must support horizontal and vertical scaling to meet future demand."
-}
-]
-},
-"code_input": {
-"source": "external_file",
-"filename": "architecture_review_code.cs",
-"description": "The C# code to be analyzed is provided in a separate file named 'architecture_review_code.cs'",
-"format": "C# source code",
-"instruction": "Analyze all code contained in the referenced file"
-}
-},
-"task": {
-"primary_action": "Perform a comprehensive architectural and code review of the provided C# code.",
-"objective": "Produce a concise, actionable report that identifies the most critical issues and opportunities aligned with the company's primary goals.",
-"focus": "pragmatic improvements that offer the highest impact"
-},
-"format": {
-"output_type": "well-structured markdown document",
-"structure": {
-"sections": [
-{
-"title": "Architectural Review Summary",
-"subsections": [
-{
-"title": "Top 5 Priority Areas for Improvement",
-"requirements": "Number this list 1-5, with #1 being the most critical/significant impact.",
-"item_format": {
-"structure": "[Issue Category]: [Brief description].",
-"suggestion": "Suggestion: [Concrete refactoring or pattern to implement]."
-}
-}
-]
-},
-{
-"title": "Detailed Analysis",
-"subsections": [
-{
-"title": "Performance Bottlenecks & Recommendations",
-"elements": [
-{
-"name": "Identified Bottlenecks",
-"description": "List specific code patterns, data structures, or API calls that will degrade performance under load",
-"examples": ["synchronous I/O in hot paths", "N+1 database queries", "improper caching", "expensive allocations in loops"]
-},
-{
-"name": "Recommendations",
-"description": "Provide targeted fixes for each identified bottleneck"
-}
-]
-},
-{
-"title": "Scalability Recommendations",
-"elements": [
-{
-"name": "Architectural Constraints",
-"description": "Identify design choices that would limit horizontal/vertical scaling",
-"examples": ["stateful services", "monolithic database patterns", "tight coupling"]
-},
-{
-"name": "Suggested Evolutions",
-"description": "Recommend patterns or changes to overcome these constraints",
-"examples": ["introducing caching layers", "adopting CQRS", "implementing repository/unit of work", "moving to stateless services"]
-}
-]
-},
-{
-"title": "Code Quality & Design (SOLID/DRY)",
-"elements": [
-{
-"name": "Violations Found",
-"description": "List specific violations of SOLID principles or DRY philosophy",
-"example": "The OrderProcessor class has multiple responsibilities (SRP violation): it validates, calculates tax, and persists to the database."
-},
-{
-"name": "Refactoring Proposals",
-"description": "For each violation, propose a specific refactoring",
-"example": "Extract validation logic into an IOrderValidator service and persistence logic into an IOrderRepository."
-}
-]
-}
-]
-}
-],
-"formatting_requirements": ["Use bullet points", "Use inline code snippets for examples", "Use clear headings"]
-}
-},
-"constraints": [
-"Your analysis must be based solely on the provided code snippet. Do not assume external libraries or frameworks unless evident in the code.",
-"Recommendations must be practical for an enterprise C# /.NET ecosystem. Avoid overly academic or niche suggestions.",
-"Focus on the top 5 most critical areas. Do not provide an exhaustive list of minor code style issues."
-],
-"evaluation_criteria": [
-{
-"criterion": "Actionability",
-"description": "How clearly and specifically the recommendations can be implemented by a development team"
-},
-{
-"criterion": "Impact Focus",
-"description": "How well the prioritized list addresses the core goals of performance, cleanliness, and scalability"
-},
-{
-"criterion": "Technical Accuracy",
-"description": "The correctness of the identified issues and the appropriateness of the suggested solutions within the .NET landscape"
-},
-{
-"criterion": "Clarity & Structure",
-"description": "The adherence to the requested format and the professional presentation of the analysis"
-}
-]
-}
-}
-=== FILE: F:\Marketing\01_TestPromp.json ===
-{
-"meta": {
-"version": "2.0",
-"purpose": "Comprehensive code analysis with test prioritization guidance"
-},
-"role": {
-"title": "Senior Principal Software Architect & Lead Developer",
-"experience": "15+ years designing and refactoring high-performance enterprise systems in C#/.NET",
-"specialization": "Test strategy formulation, architectural reviews, and pragmatic refactoring"
-},
-"context": {
-"project_situation": "Developing a new scalable software system requiring test strategy formulation",
-"primary_goal": "Evaluate which classes need testing and establish testing priorities",
-"secondary_goals": [
-"Identify architectural improvements",
-"Highlight performance bottlenecks",
-"Recommend scalability enhancements"
-]
-},
-"testing_prioritization_framework": {
-"priority_1_critical": {
-"name": "Business Criticality",
-"description": "Classes that directly impact core business functionality, revenue, or compliance",
-"evaluation_factors": [
-"Handles financial transactions",
-"Manages sensitive data",
-"Implements regulatory requirements",
-"Core user workflows"
-]
-},
-"priority_2_high": {
-"name": "Complex Logic",
-"description": "Classes with complex algorithms, business rules, or decision logic",
-"evaluation_factors": [
-"High cyclomatic complexity",
-"Multiple conditional branches",
-"Algorithmic complexity",
-"Business rule engines"
-]
-},
-"priority_3_medium": {
-"name": "Integration Points",
-"description": "Classes that interact with external systems, databases, or APIs",
-"evaluation_factors": [
-"Database access layers",
-"External API clients",
-"Message queue handlers",
-"File system operations"
-]
-},
-"priority_4_low": {
-"name": "Performance Sensitivity",
-"description": "Classes requiring load/performance testing due to scalability concerns",
-"evaluation_factors": [
-"High-frequency execution paths",
-"Resource-intensive operations",
-"Concurrent access patterns",
-"Memory/CPU bottlenecks"
-]
-}
-},
-"input_specification": {
-"source_code": {
-"location": "External file: architecture_review_code.cs",
-"format": "C# source code",
-"instruction": "Analyze ALL classes, methods, and architectural patterns in the provided file"
-}
-},
-"analysis_task": {
-"primary_action": "Perform comprehensive architectural and code analysis with focus on test strategy",
-"output_objective": "Produce actionable recommendations for testing priorities and architectural improvements",
-"analysis_dimensions": [
-"Test prioritization matrix for all identified classes",
-"Architectural strengths and weaknesses",
-"Performance and scalability concerns",
-"Code quality and maintainability"
-]
-},
-"output_format": {
-"document_type": "Structured markdown report",
-"required_sections": [
-{
-"title": "Executive Summary",
-"content": "Brief overview of findings and top recommendations"
-},
-{
-"title": "Testing Priority Assessment",
-"subsections": [
-{
-"title": "Priority 1: Business-Critical Classes (Must Test)",
-"format": "Table with columns: [ClassName, Reason for Priority, Recommended Test Types, Risk if Untested]"
-},
-{
-"title": "Priority 2: Complex Logic Classes (Should Test)",
-"format": "Bulleted list with: Class name, complexity rationale, specific test scenarios"
-},
-{
-"title": "Priority 3: Integration Point Classes (Consider Testing)",
-"format": "Brief description of integration risks and test approaches"
-},
-{
-"title": "Priority 4: Performance-Sensitive Classes (Load Test Candidates)",
-"format": "List of classes requiring performance/load testing with metrics to monitor"
-}
-]
-},
-{
-"title": "Architectural Review",
-"subsections": [
-{
-"title": "Top 5 Priority Improvements",
-"structure": "Numbered list (1 = highest impact)",
-"item_format": {
-"issue": "[Category]: [Specific Problem]",
-"impact": "[Business/Technical Impact]",
-"recommendation": "[Concrete Action]",
-"estimated_effort": "[S/M/L]"
-}
-},
-{
-"title": "Performance Analysis",
-"elements": [
-"Identified bottlenecks with code snippets",
-"Scalability limitations",
-"Memory/CPU optimization opportunities"
-]
-},
-{
-"title": "Design Pattern Recommendations",
-"elements": [
-"SOLID violations with refactoring suggestions",
-"Patterns to implement (Repository, Strategy, Factory, etc.)",
-"Dependency injection improvements"
-]
-}
-]
-},
-{
-"title": "Implementation Roadmap",
-"content": "Phased approach for addressing findings (Immediate, Short-term, Long-term)"
-}
-],
-"formatting_requirements": [
-"Use clear hierarchical headings",
-"Include code examples in backticks",
-"Use tables for comparative data",
-"Highlight critical findings with **bold** or *italic* emphasis"
-]
-},
-"constraints_and_guidelines": [
-"Base analysis ONLY on provided code - no assumptions about external dependencies",
-"Recommendations must be pragmatic and implementable in enterprise C#/.NET environment",
-"Focus on high-impact improvements over minor style issues",
-"Consider maintainability and team skill levels in recommendations",
-"Balance ideal architecture with practical constraints"
-],
-"quality_criteria": {
-"actionability": "Recommendations should include specific implementation steps",
-"prioritization": "Clear justification for why some items are higher priority than others",
-"technical_soundness": "Recommendations align with .NET best practices and patterns",
-"business_alignment": "Findings should support scalability, maintainability, and business objectives",
-"clarity": "Report should be understandable by both technical and non-technical stakeholders"
-},
-"additional_instructions": [
-"When identifying test priorities, explicitly reference the testing framework categories",
-"For each architectural issue, explain the potential impact on testing effort",
-"Consider testability as a key factor in refactoring recommendations",
-"Suggest specific testing frameworks or approaches where appropriate (xUnit/NUnit, Moq, Benchmark.NET, etc.)",
-"Highlight any anti-patterns that would make testing difficult"
-]
-}
-=== FILE: F:\Marketing\02_TestPromp.json ===
-{
-"meta": {
-"version": "4.0",
-"purpose": "Interactive test strategy with step-by-step implementation guide",
-"interactive_approach": "Iterative, hands-on test development methodology"
-},
-"role": {
-"title": "Senior Test Automation Architect & Quality Engineering Coach",
-"experience": "15+ years leading enterprise testing transformations, CI/CD pipeline design, and interactive testing workshops",
-"specialization": "Test-driven development coaching, interactive test implementation, pairing sessions, and incremental quality improvement",
-"coaching_style": "Socratic method - guiding through questions and practical exercises"
-},
-"context": {
-"project_situation": "New scalable system requiring interactive, step-by-step test implementation approach",
-"primary_goal": "Create interactive test implementation roadmap with hands-on guidance",
-"coaching_objectives": [
-"Enable incremental test adoption",
-"Provide pair programming-style guidance",
-"Create executable test examples",
-"Establish feedback loops for learning",
-"Build team testing competence progressively"
-]
-},
-"interactive_testing_methodology": {
-"iterative_cycle": {
-"step_1_discovery": "Analyze code and identify test starting points",
-"step_2_prioritization": "Select highest-value tests to implement first",
-"step_3_implementation": "Write tests with guided examples",
-"step_4_review": "Validate test quality and coverage",
-"step_5_retrospective": "Learn and improve testing approach",
-"iteration_duration": "2-4 hours per focused testing session"
-},
-"pair_programming_approach": {
-"driver_role": "AI provides test code examples and patterns",
-"navigator_role": "Developer implements and adapts to context",
-"checkpoints": "Regular validation points to ensure understanding",
-"knowledge_transfer": "Explain rationale behind each testing decision"
-}
-},
-"testing_best_practices_framework": {
-"test_design_principles": {
-"red_green_refactor_cycle": "Write failing test → Make it pass → Improve design",
-"test_first_mentality": "Write test before implementing functionality",
-"incremental_complexity": "Start with simplest cases, build toward complexity",
-"rapid_feedback": "Tests should run in seconds, not minutes",
-"collaborative_testing": "Tests as living documentation and communication tool"
-},
-"interactive_implementation_patterns": {
-"scaffolding_first": "Start with test project structure and basic setup",
-"hello_world_test": "Create simplest possible test to verify setup",
-"parameter_progression": "From hardcoded values → test data → parameterized tests",
-"mock_evolution": "From no mocks → simple stubs → sophisticated behavior verification",
-"refactoring_waves": "Multiple passes improving test readability and maintainability"
-}
-},
-"testing_prioritization_framework": {
-"priority_1_critical": {
-"name": "Business Critical & High Risk",
-"implementation_approach": "Test-first, pair programming sessions",
-"interactive_steps": [
-"Session 1: Identify core business logic",
-"Session 2: Write failing acceptance tests",
-"Session 3: Implement basic unit tests",
-"Session 4: Add edge case scenarios",
-"Session 5: Review and refine test suite"
-]
-},
-"priority_2_high": {
-"name": "Complex Logic Components",
-"implementation_approach": "Example-driven development",
-"interactive_steps": [
-"Step 1: Document test scenarios with examples",
-"Step 2: Create parameterized test template",
-"Step 3: Implement simplest test case",
-"Step 4: Add complexity incrementally",
-"Step 5: Refactor for clarity and coverage"
-]
-},
-"priority_3_medium": {
-"name": "Integration Points",
-"implementation_approach": "Contract-first testing",
-"interactive_steps": [
-"Phase A: Define integration contracts",
-"Phase B: Create integration test stubs",
-"Phase C: Implement mock behaviors",
-"Phase D: Add failure scenario tests",
-"Phase E: Performance and load testing"
-]
-},
-"priority_4_low": {
-"name": "Performance Components",
-"implementation_approach": "Benchmark-driven optimization",
-"interactive_steps": [
-"Iteration 1: Establish performance baselines",
-"Iteration 2: Create micro-benchmarks",
-"Iteration 3: Implement load test scenarios",
-"Iteration 4: Add monitoring and alerting",
-"Iteration 5: Optimize based on findings"
-]
-}
-},
-"input_specification": {
-"source_code": {
-"location": "External file: architecture_review_code.cs",
-"format": "C# source code",
-"instruction": "Analyze for interactive test implementation opportunities"
-}
-},
-"analysis_task": {
-"primary_action": "Create interactive test implementation roadmap with executable examples",
-"output_objective": "Provide step-by-step guidance that developers can follow in real-time",
-"interactive_elements": [
-"Executable test code snippets",
-"Progressive complexity levels",
-"Checkpoint questions for validation",
-"Common pitfalls and solutions",
-"Refactoring exercises"
-]
-},
-"output_format": {
-"document_type": "Interactive Test Implementation Playbook",
-"required_sections": [
-{
-"title": "🚀 Interactive Test Implementation Roadmap",
-"content": "Step-by-step guide organized into focused implementation sessions"
-},
-{
-"title": "📋 Session 1: Foundation Setup (2 hours)",
-"subsections": [
-{
-"title": "Hands-on Exercise: Test Project Creation",
-"interactive_steps": [
-"1. Create test project: `dotnet new xunit -n YourProject.Tests`",
-"2. Add project reference: `dotnet add reference ../YourProject.csproj`",
-"3. Install essential packages: `dotnet add package Moq`, `dotnet add package FluentAssertions`",
-"4. Create basic test structure with `TestClass` and `TestMethod`",
-"✅ CHECKPOINT: Run `dotnet test` and see 0 tests passed"
-],
-"code_examples": {
-"test_structure": "
-}
-}
-]
-},
-{
-"title": "🎯 Session 2: Priority 1 - Critical Business Logic (3 hours)",
-"subsections": [
-{
-"title": "Exercise 2.1: Test-First Implementation",
-"interactive_approach": "Red-Green-Refactor cycle demonstration",
-"step_by_step": [
-"STEP 1: Write a failing test for core business requirement",
-"STEP 2: Implement minimal code to make test pass",
-"STEP 3: Refactor both test and production code",
-"STEP 4: Add edge case tests",
-"STEP 5: Review test coverage and readability"
-],
-"example_workflow": {
-"red_phase": "
-"green_phase": "
-"refactor_phase": "
-}
-}
-]
-},
-{
-"title": "🔧 Session 3: Priority 2 - Complex Logic Testing (2.5 hours)",
-"subsections": [
-{
-"title": "Exercise 3.1: Parameterized Testing Workshop",
-"interactive_components": [
-"🎯 LEARNING OBJECTIVE: Master [Theory] and [InlineData] attributes",
-"🛠️ TOOLS NEEDED: xUnit, FluentAssertions",
-"⏱️ TIME BOX: 45 minutes",
-"✅ SUCCESS CRITERIA: 5+ parameterized test cases"
-],
-"hands_on_exercise": {
-"task": "Convert simple tests to parameterized tests",
-"instructions": [
-"1. Identify a method with multiple input scenarios",
-"2. Create test data matrix showing inputs/expected outputs",
-"3. Implement [Theory] with [InlineData] for each scenario",
-"4. Run tests and verify all pass",
-"5. Add one more edge case scenario"
-],
-"code_transformation": {
-"before": "
-"after": "
-}
-}
-}
-]
-},
-{
-"title": "🔄 Session 4: Iterative Improvement & Refactoring (2 hours)",
-"subsections": [
-{
-"title": "Exercise 4.1: Test Code Smells Workshop",
-"interactive_activity": "Code review and refactoring session",
-"refactoring_steps": [
-"IDENTIFY: Locate test code smells in your test suite",
-"ANALYZE: Discuss impact on maintainability",
-"REFACTOR: Apply one improvement at a time",
-"VALIDATE: Ensure tests still pass",
-"DOCUMENT: Record lessons learned"
-],
-"common_smells_and_fixes": {
-"magic_numbers": "❌ Hardcoded values → ✅ Test data constants",
-"test_duplication": "❌ Copy-pasted setup → ✅ Test base class or helpers",
-"complex_setup": "❌ 20+ lines of Arrange → ✅ Builder pattern",
-"over_mocking": "❌ Mocking everything → ✅ Strategic mocks only"
-}
-}
-]
-},
-{
-"title": "📊 Interactive Implementation Dashboard",
-"subsections": [
-{
-"title": "Progress Tracking Matrix",
-"format": "Interactive table showing completion status",
-"columns": [
-"Component",
-"Test Priority",
-"Session Complete",
-"Tests Written",
-"Coverage %",
-"Next Action"
-],
-"interactive_features": [
-"✅/❌ completion indicators",
-"📈 progress visualizations",
-"🔗 clickable examples",
-"🔄 retry failed exercises"
-]
-},
-{
-"title": "Pair Programming Prompts",
-"content": "Questions to discuss during implementation:",
-"prompts": [
-"🤔 'What's the simplest test we could write first?'",
-"💡 'How could we make this test more readable?'",
-"🔍 'What edge cases are we missing?'",
-"⚡ 'How can we make these tests run faster?'",
-"📝 'What would make this test better documentation?'"
-]
-}
-]
-},
-{
-"title": "🚦 Implementation Checkpoints & Quality Gates",
-"subsections": [
-{
-"title": "Checkpoint 1: After Session 2",
-"verification_items": [
-"✅ At least 3 critical business tests implemented",
-"✅ All tests follow AAA pattern",
-"✅ Test names use Given-When-Then format",
-"✅ Tests run in under 2 seconds total",
-"✅ No test interdependencies"
-]
-},
-{
-"title": "Checkpoint 2: After Session 3",
-"verification_items": [
-"✅ Parameterized tests for complex logic",
-"✅ Test data builders/factories implemented",
-"✅ Edge case coverage documented",
-"✅ Integration test scaffold created",
-"✅ CI pipeline executing tests"
-]
-},
-{
-"title": "Checkpoint 3: After Session 4",
-"verification_items": [
-"✅ Test refactoring complete",
-"✅ Code coverage > 70% for priority components",
-"✅ Zero flaky tests",
-"✅ Performance baselines established",
-"✅ Team can independently add new tests"
-]
-}
-]
-},
-{
-"title": "🎓 Learning Resources & Next Steps",
-"subsections": [
-{
-"title": "Interactive Learning Path",
-"progression": [
-"Level 1: Basic test implementation (complete ✅)",
-"Level 2: Advanced test patterns",
-"Level 3: Test infrastructure & CI/CD",
-"Level 4: Performance & security testing",
-"Level 5: Testing leadership & strategy"
-]
-},
-{
-"title": "Pair Programming Challenges",
-"exercises": [
-"Challenge 1: Convert legacy code to testable design",
-"Challenge 2: Implement full test suite for a microservice",
-"Challenge 3: Create custom test utilities",
-"Challenge 4: Design testing strategy for new feature",
-"Challenge 5: Lead test review session"
-]
-}
-]
-}
-],
-"interactive_elements": [
-"✅/❌ Task completion tracking",
-"🔁 Retry failed exercises option",
-"📊 Progress visualization",
-"💬 Pair programming dialogue prompts",
-"🎯 Focused time-boxed exercises"
-]
-},
-"constraints_and_guidelines": [
-"Provide executable code examples that can be copied and run",
-"Each exercise should be completable in 30-90 minutes",
-"Include validation steps to confirm understanding",
-"Progress from simple to complex incrementally",
-"Focus on practical, immediately applicable skills",
-"Encourage experimentation and learning from failures"
-],
-"interactive_quality_criteria": {
-"actionability": "Every recommendation includes executable code",
-"learnability": "Progressive complexity with built-in scaffolding",
-"engagement": "Interactive elements and checkpoints maintain focus",
-"applicability": "Skills transfer directly to daily work",
-"sustainability": "Builds team competence, not dependency"
-},
-"implementation_philosophy": {
-"iterative_learning": "Small, frequent iterations with immediate feedback",
-"fail_fast": "Encourage early failure as learning opportunity",
-"collaborative": "Designed for pair/mob programming sessions",
-"practical": "Focus on skills used in real development workflow",
-"measurable": "Clear progress tracking and success criteria"
-},
-"interactive_components": [
-{
-"component": "Live Coding Exercises",
-"description": "Step-by-step coding with expected outputs",
-"duration": "30-45 minutes each",
-"outcome": "Working test implementation"
-},
-{
-"component": "Code Review Sessions",
-"description": "Analyze and improve existing tests",
-"duration": "20-30 minutes each",
-"outcome": "Refactored, improved tests"
-},
-{
-"component": "Retrospective Discussions",
-"description": "What worked, what didn't, what to improve",
-"duration": "15 minutes each session",
-"outcome": "Improved testing practices"
-},
-{
-"component": "Challenge Problems",
-"description": "Apply skills to new, unfamiliar code",
-"duration": "60 minutes each",
-"outcome": "Expanded testing competence"
-}
-]
-}
-=== FILE: F:\Marketing\03_TestPromp.json ===
-{
-"meta": {
-"version": "4.0",
-"purpose": "Targeted test implementation for highest-risk untested classes",
-"analysis_basis": "Functional correctness and concurrency risk assessment"
-},
-"untested_classes_priority_list": [
-{
-"priority": 1,
-"class_name": "OrderProcessor",
-"risk_level": "CRITICAL",
-"testing_urgency": "IMMEDIATE",
-"rationale": "Core business logic with financial transactions -直接影响收入",
-"concurrency_risks": [
-"Race conditions in order status updates",
-"Inventory synchronization issues",
-"Duplicate order processing"
-],
-"functional_risks": [
-"Incorrect order totals calculation",
-"Tax calculation errors",
-"Discount application logic flaws"
-]
-},
-{
-"priority": 2,
-"class_name": "PaymentGatewayClient",
-"risk_level": "HIGH",
-"testing_urgency": "HIGH",
-"rationale": "External integration with monetary consequences - 支付失败将导致业务中断",
-"concurrency_risks": [
-"Double-charge scenarios",
-"Timeout handling under load",
-"Connection pool exhaustion"
-],
-"functional_risks": [
-"Payment failure handling",
-"Retry logic implementation",
-"Webhook validation issues"
-]
-},
-{
-"priority": 3,
-"class_name": "InventoryService",
-"risk_level": "HIGH",
-"testing_urgency": "HIGH",
-"rationale": "Multi-threaded inventory management - 库存不一致将导致超卖",
-"concurrency_risks": [
-"Stock level race conditions",
-"Deadlock in inventory reservations",
-"Cache invalidation timing issues"
-],
-"functional_risks": [
-"Incorrect stock calculations",
-"Reservation release logic",
-"Backorder handling failures"
-]
-},
-{
-"priority": 4,
-"class_name": "EmailNotificationService",
-"risk_level": "MEDIUM",
-"testing_urgency": "MEDIUM",
-"rationale": "Asynchronous notification system - 影响客户通信",
-"concurrency_risks": [
-"Message queue contention",
-"Template rendering race conditions",
-"Rate limiting bypass"
-],
-"functional_risks": [
-"Template variable substitution errors",
-"Attachment handling issues",
-"Unsubscribe logic failures"
-]
-},
-{
-"priority": 5,
-"class_name": "CacheRepository",
-"risk_level": "MEDIUM",
-"testing_urgency": "MEDIUM",
-"rationale": "Shared cache with expiration logic - 性能瓶颈风险",
-"concurrency_risks": [
-"Cache stampede (thundering herd)",
-"Memory leak in distributed locks",
-"Serialization/deserialization race conditions"
-],
-"functional_risks": [
-"Incorrect cache expiration",
-"Cache penetration issues",
-"Serialization format mismatches"
-]
-}
-],
-"interactive_test_implementation_roadmap": {
-"session_1_critical_concurrency": {
-"title": "🚨 Priority 1: OrderProcessor Concurrency Testing",
-"duration": "3 hours",
-"focus": "Race condition prevention and thread safety",
-"hands_on_exercises": [
-{
-"exercise": "1.1 - Basic Thread Safety Validation",
-"time_box": "45 minutes",
-"code_template": "
-"validation_checkpoint": "✅ Run test 10 times to ensure no intermittent failures"
-},
-{
-"exercise": "1.2 - Deadlock Detection Test",
-"time_box": "60 minutes",
-"code_template": "
-"validation_checkpoint": "✅ Test should pass consistently with timeout"
-},
-{
-"exercise": "1.3 - Atomic Operation Verification",
-"time_box": "75 minutes",
-"code_template": "
-"validation_checkpoint": "✅ Database stock should equal expected stock after all operations"
-}
-]
-},
-"session_2_payment_integration": {
-"title": "💳 Priority 2: PaymentGatewayClient Integration & Failure Testing",
-"duration": "2.5 hours",
-"focus": "Network failure handling and idempotency",
-"hands_on_exercises": [
-{
-"exercise": "2.1 - Idempotency Test",
-"time_box": "45 minutes",
-"code_template": "
-"validation_checkpoint": "✅ Second call should not create duplicate charge"
-}
-]
-},
-"concurrency_testing_framework": {
-"title": "⚡ Concurrency Testing Patterns Template",
-"reusable_templates": [
-{
-"pattern": "Race Condition Detection",
-"template": "
-"usage_example": "
-},
-{
-"pattern": "Thread Safety Assertion",
-"template": "
-"usage_example": "
-}
-]
-},
-"implementation_checkpoints": {
-"checkpoint_1_session_completion": {
-"title": "After Session 1 Validation",
-"verification_items": [
-"✅ OrderProcessor passes all concurrency tests (run 10x)",
-"✅ Zero deadlocks detected in 5-minute stress test",
-"✅ InventoryService maintains data consistency under load",
-"✅ Test coverage > 80% for critical transaction methods"
-]
-},
-"checkpoint_2_ci_integration": {
-"title": "CI Pipeline Integration",
-"actions": [
-"Add parallel test execution in CI",
-"Configure memory leak detection",
-"Set up performance baselines",
-"Add race condition detection as required step"
-]
-}
-},
-"risk_mitigation_strategy": {
-"immediate_actions": [
-{
-"action": "Add Circuit Breaker to PaymentGatewayClient",
-"test_requirement": "Write tests for open/half-open/closed states",
-"time_estimate": "1 hour"
-},
-{
-"action": "Implement Distributed Lock for InventoryService",
-"test_requirement": "Test lock acquisition/release under contention",
-"time_estimate": "1.5 hours"
-},
-{
-"action": "Add Idempotency Keys to OrderProcessor",
-"test_requirement": "Test duplicate request handling",
-"time_estimate": "45 minutes"
-}
-]
-}
-},
-"interactive_quality_gates": {
-"gate_1_concurrency_safety": {
-"name": "Concurrency Safety Certification",
-"requirements": [
-"All tests pass 100 consecutive runs",
-"Zero deadlocks in 30-minute load test",
-"Data consistency maintained under 100+ concurrent users",
-"Memory usage stable under load"
-],
-"validation_command": "dotnet test --filter \"Category=Concurrency\" --verbosity normal --count 100"
-},
-"gate_2_integration_reliability": {
-"name": "Integration Reliability",
-"requirements": [
-"Payment failures handled gracefully",
-"Retry logic tested with simulated outages",
-"Circuit breaker prevents cascade failures",
-"All external calls have timeouts"
-],
-"validation_command": "dotnet test --filter \"Category=Integration\""
-}
-},
-"pair_programming_challenges": {
-"challenge_1": {
-"title": "The Inventory Stampede",
-"scenario": "Black Friday sale - 10,000 users trying to buy 100 items",
-"task": "Implement and test prevention of overselling",
-"hints": [
-"Use optimistic concurrency control",
-"Implement queue-based reservation system",
-"Add inventory cache with expiration"
-],
-"expected_outcome": "Exactly 100 successful orders, rest get polite sold-out message"
-},
-"challenge_2": {
-"title": "Payment Gateway Meltdown",
-"scenario": "Payment processor goes down during peak hour",
-"task": "Test circuit breaker and fallback mechanisms",
-"hints": [
-"Implement exponential backoff",
-"Add fallback payment providers",
-"Queue failed payments for retry"
-],
-"expected_outcome": "System degrades gracefully, no lost orders"
-}
-}
-}
-
 === FILE: F:\Marketing\.vs\Marketing\v17\DocumentLayout.backup.json ===
 
 {
@@ -1829,88 +921,28 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversebalance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversebalance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\ipixverseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\ipixverseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversegenerationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversegenerationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversegenerationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversegenerationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversejobsubmitted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversejobsubmitted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversetexttovideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversetexttovideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -1920,7 +952,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -1976,275 +1008,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "JsonPromptRunner.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "RelativeDocumentMoniker": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "RelativeToolTip": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAvwCcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:23:31.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppHostBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAANUAAAAAAAAAAAAWwOIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:15:53.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "YouTubeCurationRunnerOptions.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "RelativeDocumentMoniker": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "RelativeToolTip": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvwwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:09:16.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
-              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:00:40.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "YouTubeUrlValidator.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "RelativeDocumentMoniker": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "RelativeToolTip": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:59:42.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UrlShort.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Url\\UrlShort.cs",
-              "RelativeDocumentMoniker": "Services\\Url\\UrlShort.cs",
-              "ToolTip": "F:\\marketing\\Services\\Url\\UrlShort.cs",
-              "RelativeToolTip": "Services\\Url\\UrlShort.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:45.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SearchBoxTyper.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
-              "RelativeDocumentMoniker": "Services\\Search\\SearchBoxTyper.cs",
-              "ToolTip": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
-              "RelativeToolTip": "Services\\Search\\SearchBoxTyper.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:34.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SecurityCheck.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
-              "RelativeDocumentMoniker": "Services\\Check\\SecurityCheck.cs",
-              "ToolTip": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
-              "RelativeToolTip": "Services\\Check\\SecurityCheck.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:19.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ChromeDriverFactory.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
-              "RelativeDocumentMoniker": "Services\\Check\\ChromeDriverFactory.cs",
-              "ToolTip": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
-              "RelativeToolTip": "Services\\Check\\ChromeDriverFactory.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:15.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginService.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Login\\LoginService.cs",
-              "RelativeDocumentMoniker": "Services\\Login\\LoginService.cs",
-              "ToolTip": "F:\\marketing\\Services\\Login\\LoginService.cs",
-              "RelativeToolTip": "Services\\Login\\LoginService.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:05.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ScheduledMessenger.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
-              "RelativeDocumentMoniker": "Services\\WhatsApp\\ScheduledMessenger.cs",
-              "ToolTip": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
-              "RelativeToolTip": "Services\\WhatsApp\\ScheduledMessenger.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:43:55.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ChatXPathBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
-              "RelativeDocumentMoniker": "Services\\XPath\\ChatXPathBuilder.cs",
-              "ToolTip": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
-              "RelativeToolTip": "Services\\XPath\\ChatXPathBuilder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:43:47.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeToolTip": "Bootstrapper\\appsettings.json",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-24T03:38:44.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EnrichedVideoDataExtensions.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "RelativeDocumentMoniker": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "ToolTip": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "RelativeToolTip": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCMAAAAFAAAAAAAAAA==",
+              "Title": "PixVerseBalance.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseBalance.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseBalance.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseBalance.cs*",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseBalance.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:28:33.84Z",
+              "WhenOpened": "2026-01-26T17:28:11.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "YouTubeService.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
-              "RelativeDocumentMoniker": "Services\\YouTube\\YouTubeService.cs",
-              "ToolTip": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
-              "RelativeToolTip": "Services\\YouTube\\YouTubeService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAD4vxMAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:26:10.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EnrichedVideoData.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "Title": "PixVerseTextToVideoRequest.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseTextToVideoRequest.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseTextToVideoRequest.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseTextToVideoRequest.cs*",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseTextToVideoRequest.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:25:24.844Z",
+              "WhenOpened": "2026-01-26T17:27:22.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ChannelDetails.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "DocumentIndex": 3,
+              "Title": "PixVerseGenerationStatus.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T17:26:03.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PixVerseJobSubmitted.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseJobSubmitted.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseJobSubmitted.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseJobSubmitted.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseJobSubmitted.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:25:06.613Z",
+              "WhenOpened": "2026-01-26T17:25:09.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "VideoDetails.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PixVerseGenerationResult.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:24:40.243Z",
+              "WhenOpened": "2026-01-26T17:25:04.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SearchResponse.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IPixVerseService.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\IPixVerseService.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\IPixVerseService.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\IPixVerseService.cs",
+              "RelativeToolTip": "Application\\PixVerse\\IPixVerseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:24:14.801Z",
+              "WhenOpened": "2026-01-26T17:19:17.672Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DataContextModelSnapshot.cs",
-              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T00:06:10.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "20260112035756_InitialCreate.cs",
-              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T00:06:09.146Z"
             }
           ]
         }
@@ -2260,88 +1098,28 @@
   "WorkspaceRootPath": "F:\\marketing\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\apphostbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversebalance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversebalance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|f:\\marketing\\azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{422EA84A-2998-4917-8125-CE4AFFAA1ED8}|AzureTable\\AzureTable.csproj|solutionrelative:azuretable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\ipixverseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\ipixverseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|f:\\marketing\\bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ADFB29BD-EB6A-443F-B5E8-0150EA8F37AF}|Bootstrapper\\Bootstrapper.csproj|solutionrelative:bootstrapper\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversegenerationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversegenerationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\openai\\news\\jsonpromptrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversegenerationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversegenerationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|f:\\marketing\\configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F190A7D8-57DA-44F0-A267-A0F08E00E0A9}|Configuration\\Configuration.csproj|solutionrelative:configuration\\youtube\\youtubecurationrunneroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversejobsubmitted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversejobsubmitted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\searchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\urlvalidation\\youtubeurlvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\url\\urlshort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\search\\searchboxtyper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\securitycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\check\\chromedriverfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\whatsapp\\scheduledmessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\xpath\\chatxpathbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\channeldetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\enrichedvideodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|f:\\marketing\\services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{303E3F6A-9903-430E-93E1-5B157EF5A95F}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\youtube\\videodetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|f:\\marketing\\services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE28F5A4-1603-4A07-A932-9683544F57F2}|Services\\Services.csproj|solutionrelative:services\\youtube\\enrichedvideodataextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|f:\\marketing\\persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C37CAC63-ABF5-474D-86F7-31001C71E516}|Persistence\\Persistence.csproj|solutionrelative:persistence\\context\\implementation\\migrations\\20260112035756_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|f:\\marketing\\application\\pixverse\\pixversetexttovideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA1565A0-95B8-4031-A819-7799E7B1DE90}|Application\\Application.csproj|solutionrelative:application\\pixverse\\pixversetexttovideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -2351,7 +1129,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -2407,275 +1185,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JsonPromptRunner.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "RelativeDocumentMoniker": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ToolTip": "F:\\marketing\\Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "RelativeToolTip": "Services\\OpenAI\\news\\JsonPromptRunner.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAvwCcAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:23:31.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AppHostBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeDocumentMoniker": "Bootstrapper\\AppHostBuilder.cs",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\AppHostBuilder.cs",
-              "RelativeToolTip": "Bootstrapper\\AppHostBuilder.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAWwOQAAAAIAAAAAAAAAA==",
+              "Title": "PixVerseBalance.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseBalance.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseBalance.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseBalance.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseBalance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:15:53.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "YouTubeCurationRunnerOptions.cs",
-              "DocumentMoniker": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "RelativeDocumentMoniker": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "ToolTip": "F:\\marketing\\Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "RelativeToolTip": "Configuration\\YouTube\\YouTubeCurationRunnerOptions.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvwwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:09:16.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeDocumentMoniker": "AzureTable\\Program.cs",
-              "ToolTip": "F:\\marketing\\AzureTable\\Program.cs",
-              "RelativeToolTip": "AzureTable\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T04:00:40.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "YouTubeUrlValidator.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "RelativeDocumentMoniker": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "ToolTip": "F:\\marketing\\Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "RelativeToolTip": "Services\\UrlValidation\\YouTubeUrlValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:59:42.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UrlShort.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Url\\UrlShort.cs",
-              "RelativeDocumentMoniker": "Services\\Url\\UrlShort.cs",
-              "ToolTip": "F:\\marketing\\Services\\Url\\UrlShort.cs",
-              "RelativeToolTip": "Services\\Url\\UrlShort.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:45.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SearchBoxTyper.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
-              "RelativeDocumentMoniker": "Services\\Search\\SearchBoxTyper.cs",
-              "ToolTip": "F:\\marketing\\Services\\Search\\SearchBoxTyper.cs",
-              "RelativeToolTip": "Services\\Search\\SearchBoxTyper.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:34.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SecurityCheck.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
-              "RelativeDocumentMoniker": "Services\\Check\\SecurityCheck.cs",
-              "ToolTip": "F:\\marketing\\Services\\Check\\SecurityCheck.cs",
-              "RelativeToolTip": "Services\\Check\\SecurityCheck.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:19.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ChromeDriverFactory.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
-              "RelativeDocumentMoniker": "Services\\Check\\ChromeDriverFactory.cs",
-              "ToolTip": "F:\\marketing\\Services\\Check\\ChromeDriverFactory.cs",
-              "RelativeToolTip": "Services\\Check\\ChromeDriverFactory.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:15.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginService.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\Login\\LoginService.cs",
-              "RelativeDocumentMoniker": "Services\\Login\\LoginService.cs",
-              "ToolTip": "F:\\marketing\\Services\\Login\\LoginService.cs",
-              "RelativeToolTip": "Services\\Login\\LoginService.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:44:05.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ScheduledMessenger.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
-              "RelativeDocumentMoniker": "Services\\WhatsApp\\ScheduledMessenger.cs",
-              "ToolTip": "F:\\marketing\\Services\\WhatsApp\\ScheduledMessenger.cs",
-              "RelativeToolTip": "Services\\WhatsApp\\ScheduledMessenger.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:43:55.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ChatXPathBuilder.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
-              "RelativeDocumentMoniker": "Services\\XPath\\ChatXPathBuilder.cs",
-              "ToolTip": "F:\\marketing\\Services\\XPath\\ChatXPathBuilder.cs",
-              "RelativeToolTip": "Services\\XPath\\ChatXPathBuilder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:43:47.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeDocumentMoniker": "Bootstrapper\\appsettings.json",
-              "ToolTip": "F:\\marketing\\Bootstrapper\\appsettings.json",
-              "RelativeToolTip": "Bootstrapper\\appsettings.json",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-24T03:38:44.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "EnrichedVideoDataExtensions.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "RelativeDocumentMoniker": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "ToolTip": "F:\\marketing\\Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "RelativeToolTip": "Services\\YouTube\\EnrichedVideoDataExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:28:33.84Z",
+              "WhenOpened": "2026-01-26T17:28:11.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "YouTubeService.cs",
-              "DocumentMoniker": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
-              "RelativeDocumentMoniker": "Services\\YouTube\\YouTubeService.cs",
-              "ToolTip": "F:\\marketing\\Services\\YouTube\\YouTubeService.cs",
-              "RelativeToolTip": "Services\\YouTube\\YouTubeService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAD4vxMAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:26:10.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "EnrichedVideoData.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\EnrichedVideoData.cs",
+              "Title": "PixVerseTextToVideoRequest.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseTextToVideoRequest.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseTextToVideoRequest.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseTextToVideoRequest.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseTextToVideoRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:25:24.844Z",
+              "WhenOpened": "2026-01-26T17:27:22.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ChannelDetails.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\ChannelDetails.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\ChannelDetails.cs",
+              "DocumentIndex": 3,
+              "Title": "PixVerseGenerationStatus.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseGenerationStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T17:26:03.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PixVerseJobSubmitted.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseJobSubmitted.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseJobSubmitted.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseJobSubmitted.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseJobSubmitted.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:25:06.613Z",
+              "WhenOpened": "2026-01-26T17:25:09.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "VideoDetails.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\VideoDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PixVerseGenerationResult.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "RelativeToolTip": "Application\\PixVerse\\PixVerseGenerationResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:24:40.243Z",
+              "WhenOpened": "2026-01-26T17:25:04.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SearchResponse.cs",
-              "DocumentMoniker": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "ToolTip": "F:\\marketing\\Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "RelativeToolTip": "Services.Abstractions\\YouTube\\SearchResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IPixVerseService.cs",
+              "DocumentMoniker": "F:\\marketing\\Application\\PixVerse\\IPixVerseService.cs",
+              "RelativeDocumentMoniker": "Application\\PixVerse\\IPixVerseService.cs",
+              "ToolTip": "F:\\marketing\\Application\\PixVerse\\IPixVerseService.cs",
+              "RelativeToolTip": "Application\\PixVerse\\IPixVerseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T03:24:14.801Z",
+              "WhenOpened": "2026-01-26T17:19:17.672Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DataContextModelSnapshot.cs",
-              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\DataContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T00:06:10.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "20260112035756_InitialCreate.cs",
-              "DocumentMoniker": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "ToolTip": "F:\\marketing\\Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "RelativeToolTip": "Persistence\\Context\\Implementation\\Migrations\\20260112035756_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-24T00:06:09.146Z"
             }
           ]
         }
@@ -2794,17 +1378,6 @@
       "sha512": ""
     }
   }
-}
-
-=== FILE: F:\Marketing\Application\Common\Messages\ImageMessagePayload.cs ===
-
-﻿namespace Application.Common.Messages
-{
-public sealed class ImageMessagePayload
-{
-public string StoredImagePath { get; init; } = default!;
-public string Caption { get; init; } = string.Empty;
-}
 }
 
 === FILE: F:\Marketing\Application\Common\Pagination\PagedResult.cs ===
@@ -3106,7 +1679,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -3123,7 +1696,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Application\obj\Debug\net8.0\Application.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Application\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -3156,6 +1729,149 @@ global using global::System.Threading.Tasks;
 === FILE: F:\Marketing\Application\obj\Release\net8.0\Application.sourcelink.json ===
 
 {"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/943078ad1fd4a3759ac0f9160f6b41019777bb96/*"}}
+
+=== FILE: F:\Marketing\Application\PixVerse\IPixVerseService.cs ===
+
+﻿using Application.Result;
+namespace Application.PixVerse
+{
+public interface IPixVerseService
+{
+Task<Operation<PixVerseBalance>> CheckBalanceAsync(CancellationToken ct = default);
+Task<Operation<PixVerseJobSubmitted>> SubmitTextToVideoAsync(
+PixVerseTextToVideoRequest request,
+CancellationToken ct = default);
+Task<Operation<PixVerseGenerationStatus>> GetGenerationStatusAsync(
+string jobId,
+CancellationToken ct = default);
+Task<Operation<PixVerseGenerationResult>> GetGenerationResultAsync(
+string jobId,
+CancellationToken ct = default);
+Task<Operation<PixVerseGenerationResult>> WaitForCompletionAsync(
+string jobId,
+CancellationToken ct = default);
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\PixVerseBalance.cs ===
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Application.PixVerse
+{
+public sealed class PixVerseBalance
+{
+public required decimal Available { get; init; }
+public string? Unit { get; init; }
+public DateTimeOffset? RetrievedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+public bool HasAtLeast(decimal minimum) => Available >= minimum;
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\PixVerseGenerationResult.cs ===
+
+﻿namespace Application.PixVerse
+{
+public sealed class PixVerseGenerationResult
+{
+public required string JobId { get; init; }
+public PixVerseJobState State { get; init; } = PixVerseJobState.Unknown;
+public IReadOnlyList<string> VideoUrls { get; init; } = Array.Empty<string>();
+public IReadOnlyList<string> PreviewUrls { get; init; } = Array.Empty<string>();
+public string? ErrorCode { get; init; }
+public string? ErrorMessage { get; init; }
+public DateTimeOffset RetrievedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+public bool HasAnyVideoUrl => VideoUrls is { Count: > 0 };
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\PixVerseGenerationStatus.cs ===
+
+﻿namespace Application.PixVerse
+{
+public enum PixVerseJobState
+{
+Unknown = 0,
+Queued = 1,
+Processing = 2,
+Succeeded = 3,
+Failed = 4,
+Cancelled = 5
+}
+public sealed class PixVerseGenerationStatus
+{
+public required string JobId { get; init; }
+public PixVerseJobState State { get; init; } = PixVerseJobState.Unknown;
+public int? ProgressPercent { get; init; }
+public string? ErrorCode { get; init; }
+public string? ErrorMessage { get; init; }
+public DateTimeOffset CheckedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+public bool IsTerminal =>
+State is PixVerseJobState.Succeeded
+or PixVerseJobState.Failed
+or PixVerseJobState.Cancelled;
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\PixVerseJobSubmitted.cs ===
+
+﻿namespace Application.PixVerse
+{
+public sealed class PixVerseJobSubmitted
+{
+public required string JobId { get; init; }
+public string? Message { get; init; }
+public DateTimeOffset SubmittedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\PixVerseTextToVideoRequest.cs ===
+
+﻿using System.Text.Json.Serialization;
+namespace Application.PixVerse
+{
+public sealed class PixVerseTextToVideoRequest
+{
+[JsonPropertyName("model")]
+public required string Model { get; init; }
+[JsonPropertyName("prompt")]
+public required string Prompt { get; init; }
+[JsonPropertyName("negative_prompt")]
+public string? NegativePrompt { get; init; }
+[JsonPropertyName("camera_movement")]
+public string? CameraMovement { get; init; }
+[JsonPropertyName("style")]
+public string? Style { get; init; }
+[JsonPropertyName("motion_mode")]
+public string? MotionMode { get; init; }
+[JsonPropertyName("duration")]
+public required int Duration { get; init; }
+[JsonPropertyName("quality")]
+public required string Quality { get; init; }
+[JsonPropertyName("seed")]
+public int? Seed { get; init; }
+public void Validate()
+{
+if (string.IsNullOrWhiteSpace(Model))
+throw new ArgumentException("Model cannot be null/empty.", nameof(Model));
+if (string.IsNullOrWhiteSpace(Prompt))
+throw new ArgumentException("Prompt cannot be null/empty.", nameof(Prompt));
+if (Prompt.Length > 2048)
+throw new ArgumentException("Prompt exceeds 2048 characters.", nameof(Prompt));
+if (NegativePrompt is not null && NegativePrompt.Length > 2048)
+throw new ArgumentException("NegativePrompt exceeds 2048 characters.", nameof(NegativePrompt));
+if (Duration is not (5 or 8))
+throw new ArgumentOutOfRangeException(nameof(Duration), "Duration must be 5 or 8.");
+if (string.IsNullOrWhiteSpace(Quality))
+throw new ArgumentException("Quality cannot be null/empty.", nameof(Quality));
+if (Seed is < 0 or > 2147483647)
+throw new ArgumentOutOfRangeException(nameof(Seed), "Seed must be between 0 and 2147483647.");
+}
+}
+}
 
 === FILE: F:\Marketing\Application\Result\IErrorHandler.cs ===
 
@@ -3621,9 +2337,29 @@ await runner.RunStrictJsonAsync();
     "DefaultRelevanceLanguage": "en",
     "DefaultOrder": "viewCount"
   },
+  "YouTubeCurationRunner": {
+    "Query": "Colombia 2014 James Rodriguez gol Uruguay",
+    "Search": {
+      "MaxResults": 25,
+      "Order": "viewCount",
+      "SafeSearch": "none",
+      "RegionCode": "CA",
+      "RelevanceLanguage": "es",
+      "PublishedAfterIso": null,
+      "PublishedBeforeIso": null
+    }
+  },
   "QuotaProtection": {
     "EnableCaching": true,
     "CacheMinutes": 30
+  },
+  "PixVerse": {
+    "BaseUrl": "https://app-api.pixverse.ai",
+    "ApiKey": "sk-5732d37798d0f6cba8b86653bda2151f",
+    "HttpTimeout": "00:00:30",
+    "PollingInterval": "00:00:03",
+    "MaxPollingAttempts": 40,
+    "MinimumRequiredBalance": 1.0
   }
 }
 
@@ -5513,67 +4249,52 @@ await runner.RunStrictJsonAsync();
 
 {
   "Urls": [
+    "https://www.youtube.com/watch?v=4rp2aLQl7vg**",
     "https://www.youtube.com/watch?v=Jh6j4L5L_0E"
   ]
 }
 
-=== FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\AzureTable\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\AzureTable\obj\AzureTable.csproj.nuget.dgspec.json ===
 
@@ -10665,7 +9386,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -10682,7 +9403,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\AzureTable\obj\Debug\net8.0\AzureTable.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\AppHostBuilder.cs ===
 
@@ -10690,6 +9411,7 @@ global using global::System.Threading.Tasks;
 using Application.TrackedLinks;
 using Commands;
 using Configuration;
+using Configuration.PixVerse;
 using Configuration.UrlValidation;
 using Configuration.YouTube;
 using Infrastructure.AzureTables;
@@ -10831,6 +9553,7 @@ AddDbContextSQLite(hostingContext, services);
 services.AddScoped<IUnitOfWork, UnitOfWork>();
 services.AddScoped<IDataContext, DataContext>();
 services.AddScoped<IDataContext>(sp => sp.GetRequiredService<DataContext>());
+services.AddSingleton<IErrorLogger, SerilogErrorLogger>();
 services.AddScoped<IErrorHandler, ErrorHandler>();
 services.AddSingleton<IColumnTypes, SQLite>();
 services.AddSingleton<INewsHistoryStore, NewsHistoryStore>();
@@ -10851,6 +9574,9 @@ new MediaTypeWithQualityHeaderValue("application/json"));
 });
 services.AddSingleton<IYouTubeViralVideoDiscoverer, YouTubeViralVideoDiscoverer>();
 services.AddSingleton<IPlatformResolver, PlatformResolver>();
+services.AddOptions<PixVerseOptions>()
+.Bind(hostingContext.Configuration.GetSection("PixVerse"))
+.ValidateOnStart();
 })
 .UseSerilog((context, services, loggerConfig) =>
 {
@@ -11088,9 +9814,29 @@ services.AddMemoryCache();
     "DefaultRelevanceLanguage": "en",
     "DefaultOrder": "viewCount"
   },
+  "YouTubeCurationRunner": {
+    "Query": "Colombia 2014 James Rodriguez gol Uruguay",
+    "Search": {
+      "MaxResults": 25,
+      "Order": "viewCount",
+      "SafeSearch": "none",
+      "RegionCode": "CA",
+      "RelevanceLanguage": "es",
+      "PublishedAfterIso": null,
+      "PublishedBeforeIso": null
+    }
+  },
   "QuotaProtection": {
     "EnableCaching": true,
     "CacheMinutes": 30
+  },
+  "PixVerse": {
+    "BaseUrl": "https://app-api.pixverse.ai",
+    "ApiKey": "sk-5732d37798d0f6cba8b86653bda2151f",
+    "HttpTimeout": "00:00:30",
+    "PollingInterval": "00:00:03",
+    "MaxPollingAttempts": 40,
+    "MinimumRequiredBalance": 1.0
   }
 }
 
@@ -11240,9 +9986,29 @@ Command
     "DefaultRelevanceLanguage": "en",
     "DefaultOrder": "viewCount"
   },
+  "YouTubeCurationRunner": {
+    "Query": "Colombia 2014 James Rodriguez gol Uruguay",
+    "Search": {
+      "MaxResults": 25,
+      "Order": "viewCount",
+      "SafeSearch": "none",
+      "RegionCode": "CA",
+      "RelevanceLanguage": "es",
+      "PublishedAfterIso": null,
+      "PublishedBeforeIso": null
+    }
+  },
   "QuotaProtection": {
     "EnableCaching": true,
     "CacheMinutes": 30
+  },
+  "PixVerse": {
+    "BaseUrl": "https://app-api.pixverse.ai",
+    "ApiKey": "sk-5732d37798d0f6cba8b86653bda2151f",
+    "HttpTimeout": "00:00:30",
+    "PollingInterval": "00:00:03",
+    "MaxPollingAttempts": 40,
+    "MinimumRequiredBalance": 1.0
   }
 }
 
@@ -13090,63 +11856,47 @@ Command
   }
 }
 
-=== FILE: F:\Marketing\Bootstrapper\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Bootstrapper\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\Bootstrapper\bin\Release\net8.0\appsettings.json ===
 
@@ -20062,7 +18812,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -20079,7 +18829,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Bootstrapper\obj\Debug\net8.0\Bootstrapper.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Bootstrapper\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -20937,63 +19687,47 @@ Logger.LogInformation("InviteCommand: finished.");
   }
 }
 
-=== FILE: F:\Marketing\Commands\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Commands\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\Commands\bin\Release\net8.0\Commands.deps.json ===
 
@@ -24027,7 +22761,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -24044,7 +22778,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Commands\obj\Debug\net8.0\Commands.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Commands\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -24273,7 +23007,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -24290,7 +23024,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Common\obj\Debug\net8.0\Common.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Common\StringExtensions\JsonExtractionExtensions.cs ===
 
@@ -25069,7 +23803,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Configuration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -25086,7 +23820,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Configuration\obj\Debug\net8.0\Configuration.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Configuration\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -25120,6 +23854,35 @@ global using global::System.Threading.Tasks;
 
 {"documents":{"F:\\marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/943078ad1fd4a3759ac0f9160f6b41019777bb96/*"}}
 
+=== FILE: F:\Marketing\Configuration\PixVerse\PixVerseBalance.cs ===
+
+﻿using System;
+namespace Services.Abstractions.PixVerse
+{
+public sealed class PixVerseBalance
+{
+public required decimal Available { get; init; }
+public string? Unit { get; init; }
+public DateTimeOffset? RetrievedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+public bool HasAtLeast(decimal minimum) => Available >= minimum;
+}
+}
+
+=== FILE: F:\Marketing\Configuration\PixVerse\PixVerseOptions.cs ===
+
+﻿namespace Configuration.PixVerse
+{
+public sealed class PixVerseOptions
+{
+public required string BaseUrl { get; init; }
+public required string ApiKey { get; init; }
+public TimeSpan HttpTimeout { get; init; } = TimeSpan.FromSeconds(30);
+public TimeSpan PollingInterval { get; init; } = TimeSpan.FromSeconds(3);
+public int MaxPollingAttempts { get; init; } = 40;
+public decimal MinimumRequiredBalance { get; init; } = 0m;
+}
+}
+
 === FILE: F:\Marketing\Configuration\UrlValidation\UrlOptions.cs ===
 
 ﻿namespace Configuration.UrlValidation
@@ -25149,48 +23912,28 @@ public sealed class YouTubeApiOptions
 public const string SectionName = "YouTube";
 public string ApiKey { get; init; } = null!;
 public string BaseUrl { get; init; } = "https://www.googleapis.com/youtube/v3/";
-public YouTubeDefaultSearchOptions DefaultSearch { get; init; } = new();
-public YouTubeQuotaProtectionOptions QuotaProtection { get; init; } = new();
-}
-public sealed class YouTubeDefaultSearchOptions
-{
-public int MaxResults { get; init; } = 25;
-public string Order { get; init; } = "viewCount";
-public string SafeSearch { get; init; } = "none";
-public string? RegionCode { get; init; }
-public string? RelevanceLanguage { get; init; }
-}
-public sealed class YouTubeQuotaProtectionOptions
-{
-public bool EnableCaching { get; init; } = true;
-public int CacheMinutes { get; init; } = 30;
 }
 }
 
 === FILE: F:\Marketing\Configuration\YouTube\YouTubeCurationRunnerOptions.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Configuration.YouTube
+﻿namespace Configuration.YouTube
 {
 public sealed class YouTubeCurationRunnerOptions
 {
 public const string SectionName = "YouTubeCurationRunner";
 public string Query { get; init; } = "Colombia 2014 world cup highlights James Rodriguez";
-public SearchOptionsOptions Search { get; init; } = new();
+public SearchOptions Search { get; init; } = new();
 }
-public sealed class SearchOptionsOptions
+public sealed class SearchOptions
 {
 public int MaxResults { get; init; } = 25;
-public string Order { get; init; } = "viewCount";
-public string SafeSearch { get; init; } = "none";
 public string? RegionCode { get; init; } = "CA";
 public string? RelevanceLanguage { get; init; } = "es";
+public string? Order { get; init; } = "viewCount";
 public string? PublishedAfterIso { get; init; }
 public string? PublishedBeforeIso { get; init; }
+public string? SafeSearch { get; init; }
 }
 }
 
@@ -25281,65 +24024,113 @@ public string Caption { get; init; } = string.Empty;
 
 === FILE: F:\Marketing\Domain\NostalgiaPrompt.cs ===
 
-﻿using System.Text.Json.Serialization;
-namespace Domain;
-public sealed class NostalgiaPrompt
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+namespace Prompts.NostalgiaRank
+{
+public sealed class NostalgiaRankPrompt
 {
 [JsonPropertyName("prompt_name")]
-public string PromptName { get; set; } = string.Empty;
+public string PromptName { get; init; } = "";
 [JsonPropertyName("role")]
-public string Role { get; set; } = string.Empty;
+public List<string> Role { get; init; } = [];
 [JsonPropertyName("context")]
-public NostalgiaContext Context { get; set; } = new();
+public NostalgiaRankContext Context { get; init; } = new();
 [JsonPropertyName("task")]
-public NostalgiaTask Task { get; set; } = new();
-[JsonPropertyName("output")]
-public NostalgiaOutput Output { get; set; } = new();
+public NostalgiaRankTask Task { get; init; } = new();
 }
-public sealed class NostalgiaContext
+public sealed class NostalgiaRankContext
 {
-[JsonPropertyName("objective")]
-public string Objective { get; set; } = string.Empty;
-[JsonPropertyName("allowed_sources")]
-public List<string> AllowedSources { get; set; } = [];
-[JsonPropertyName("history")]
-public NostalgiaHistory History { get; set; } = new();
-[JsonPropertyName("excluded_urls")]
-public List<string> ExcludedUrls { get; set; } = [];
+[JsonPropertyName("audience")]
+public string Audience { get; init; } = "";
+[JsonPropertyName("language_of_output")]
+public string LanguageOfOutput { get; init; } = "";
+[JsonPropertyName("platform")]
+public string Platform { get; init; } = "";
+[JsonPropertyName("historical_rule")]
+public List<string> HistoricalRule { get; init; } = [];
+[JsonPropertyName("temporal_focus")]
+public List<string> TemporalFocus { get; init; } = [];
+[JsonPropertyName("input_description")]
+public NostalgiaRankInputDescription InputDescription { get; init; } = new();
 }
-public sealed class NostalgiaHistory
+public sealed class NostalgiaRankInputDescription
 {
-[JsonPropertyName("type")]
-public string Type { get; set; } = string.Empty;
-[JsonPropertyName("rule")]
-public string Rule { get; set; } = string.Empty;
+[JsonPropertyName("new_urls")]
+public string NewUrls { get; init; } = "";
+[JsonPropertyName("historical_urls")]
+public string HistoricalUrls { get; init; } = "";
 }
-public sealed class NostalgiaTask
+public sealed class NostalgiaRankTask
 {
 [JsonPropertyName("goal")]
-public string Goal { get; set; } = string.Empty;
-[JsonPropertyName("selection_priority")]
-public List<string> SelectionPriority { get; set; } = [];
-[JsonPropertyName("mandatory_threshold")]
-public List<string> MandatoryThreshold { get; set; } = [];
-[JsonPropertyName("exclusion_rules")]
-public List<string> ExclusionRules { get; set; } = [];
-[JsonPropertyName("duration_policy")]
-public string DurationPolicy { get; set; } = string.Empty;
+public List<string> Goal { get; init; } = [];
+[JsonPropertyName("evaluation_criteria")]
+public NostalgiaRankEvaluationCriteria EvaluationCriteria { get; init; } = new();
 }
-public sealed class NostalgiaOutput
+public sealed class NostalgiaRankEvaluationCriteria
 {
-[JsonPropertyName("type")]
-public string Type { get; set; } = string.Empty;
-[JsonPropertyName("schema")]
-public NostalgiaOutputSchema Schema { get; set; } = new();
-[JsonPropertyName("constraints")]
-public List<string> Constraints { get; set; } = [];
+[JsonPropertyName("score_viral")]
+public string ScoreViral { get; init; } = "";
 }
-public sealed class NostalgiaOutputSchema
+public interface INostalgiaRankPromptLoader
 {
-[JsonPropertyName("urls")]
-public List<string> Urls { get; set; } = [];
+Task<NostalgiaRankPrompt> LoadAsync(string jsonPath, CancellationToken ct = default);
+}
+public sealed class NostalgiaRankPromptLoader : INostalgiaRankPromptLoader
+{
+private static readonly JsonSerializerOptions JsonOptions = new()
+{
+PropertyNameCaseInsensitive = true,
+ReadCommentHandling = JsonCommentHandling.Skip,
+AllowTrailingCommas = true
+};
+public async Task<NostalgiaRankPrompt> LoadAsync(string jsonPath, CancellationToken ct = default)
+{
+if (string.IsNullOrWhiteSpace(jsonPath))
+throw new ArgumentException("JSON path is required.", nameof(jsonPath));
+if (!File.Exists(jsonPath))
+throw new FileNotFoundException("Prompt JSON file not found.", jsonPath);
+var json = await File.ReadAllTextAsync(jsonPath, ct).ConfigureAwait(false);
+var prompt = JsonSerializer.Deserialize<NostalgiaRankPrompt>(json, JsonOptions);
+if (prompt is null)
+throw new InvalidOperationException("Failed to deserialize NostalgiaRankPrompt from JSON.");
+return prompt;
+}
+}
+public static class NostalgiaRankPromptPlaceholderReplacer
+{
+public static NostalgiaRankPrompt ReplaceUrlPlaceholders(
+NostalgiaRankPrompt prompt,
+IReadOnlyList<string> newUrls,
+IReadOnlyList<string> historicalUrls)
+{
+if (prompt is null) throw new ArgumentNullException(nameof(prompt));
+string newUrlsJson = JsonSerializer.Serialize(newUrls ?? []);
+string historicalUrlsJson = JsonSerializer.Serialize(historicalUrls ?? []);
+var input = prompt.Context.InputDescription;
+var replacedInput = new NostalgiaRankInputDescription
+{
+NewUrls = (input.NewUrls ?? "").Replace("__NEW_URLS__", newUrlsJson),
+HistoricalUrls = (input.HistoricalUrls ?? "").Replace("__HISTORICAL_URLS__", historicalUrlsJson)
+};
+return new NostalgiaRankPrompt
+{
+PromptName = prompt.PromptName,
+Role = prompt.Role,
+Context = new NostalgiaRankContext
+{
+Audience = prompt.Context.Audience,
+LanguageOfOutput = prompt.Context.LanguageOfOutput,
+Platform = prompt.Context.Platform,
+HistoricalRule = prompt.Context.HistoricalRule,
+TemporalFocus = prompt.Context.TemporalFocus,
+InputDescription = replacedInput
+},
+Task = prompt.Task
+};
+}
+}
 }
 
 === FILE: F:\Marketing\Domain\bin\Debug\net8.0\Domain.deps.json ===
@@ -25601,7 +24392,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -25618,7 +24409,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Domain\obj\Debug\net8.0\Domain.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Domain\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -29331,7 +28122,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -29348,7 +28139,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Infrastructure\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -29889,12 +28680,7 @@ catch
 
 === FILE: F:\Marketing\Infrastructure\Result\SerilogErrorLogger.cs ===
 
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application.Result;
+﻿using Application.Result;
 using Microsoft.Extensions.Logging;
 namespace Infrastructure.Result
 {
@@ -31561,63 +30347,47 @@ times
   }
 }
 
-=== FILE: F:\Marketing\Marketing.Services.Test\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Marketing.Services.Test\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Marketing.Services.Test.csproj.nuget.dgspec.json ===
 
@@ -34968,7 +33738,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -34986,7 +33756,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Debug\net8.0\Marketing.Services.Test.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Marketing.Services.Test\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -37211,63 +35981,47 @@ true.Should().BeTrue();
   }
 }
 
-=== FILE: F:\Marketing\Marketing.Tests\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Marketing.Tests\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\Marketing.Tests\bin\Debug\net9.0\Marketing.Tests.deps.json ===
 
@@ -43929,7 +42683,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -43947,7 +42701,7 @@ global using global::Xunit;
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net8.0\Marketing.Tests.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Marketing.Tests\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs ===
 
@@ -47223,7 +45977,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63f82fc96a717beb13f5f59c26d8b40fe2a4cac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -47240,7 +45994,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/e63f82fc96a717beb13f5f59c26d8b40fe2a4cac/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Persistence\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -48300,63 +47054,47 @@ return completed == tcs.Task ? await tcs.Task : -1;
   }
 }
 
-=== FILE: F:\Marketing\Services\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Services\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\Services\bin\Release\net8.0\Services.deps.json ===
 
@@ -49284,6 +48022,292 @@ return Task.CompletedTask;
 }
 }
 }
+
+=== FILE: F:\Marketing\Services\Documents\Prompts\Develoment\InterativePromptDeepSeeky.json ===
+
+{
+  "request": {
+    "action": "convert_to_json",
+    "source_type": "prompt_description",
+    "target_format": "structured_interactive_workflow"
+  },
+  "workflow": {
+    "mode": "interactive",
+    "interaction_rules": [
+      "ask_one_question_at_a_time",
+      "adapt_based_on_user_answers",
+      "do_not_proceed_until_current_step_validated"
+    ],
+    "objective": "help_improve_user_prompt"
+  },
+  "prompt_improvement_framework": {
+    "required_sections": [
+      "Role",
+      "Context",
+      "Task",
+      "Format"
+    ]
+  },
+  "system_context": {
+    "code_attachment": true,
+    "primary_goal": "develop_interactive_routine"
+  },
+  "routine_specification": {
+    "purpose": "implement_feature",
+    "feature_description": "Search for viral YouTube videos via YouTube API, process results through LLM with specific prompts, and utilize validation factory services",
+    "implementation_phases": [
+      {
+        "phase": 1,
+        "action": "youtube_api_search",
+        "target": "viral_videos"
+      },
+      {
+        "phase": 2,
+        "action": "llm_processing",
+        "requirements": "specific_prompts"
+      },
+      {
+        "phase": 3,
+        "action": "validation_factory_utilization"
+      }
+    ],
+    "execution_constraint": "step_by_step_with_validation_checkpoints"
+  },
+  "initialization": {
+    "first_action": "initiate_interactive_mode",
+    "first_question": "What specific aspect of the YouTube viral video search would you like to clarify first? (e.g., search criteria, API parameters, LLM prompt design, validation criteria)"
+  }
+}
+
+=== FILE: F:\Marketing\Services\Documents\Prompts\Develoment\best\IGenerateAPI-PixVerse.json ===
+
+{
+  "interactive_mode": {
+    "description": [
+      "Interactive mode is a guided, step-by-step collaboration pattern.",
+      "The assistant drives progress by asking one question at a time.",
+      "Each user answer is used to adapt the next question.",
+      "The goal is to progressively refine the solution.",
+      "Intent, constraints, and success criteria are clarified",
+      "before any implementation details are produced."
+    ],
+    "key_characteristics": [
+      {
+        "name": "single_question_loop",
+        "description": [
+          "The assistant asks exactly one focused question at a time.",
+          "It waits for the user's answer before continuing.",
+          "Multi-question batches are explicitly not allowed."
+        ]
+      },
+      {
+        "name": "adaptive_branching",
+        "description": [
+          "Each user answer dynamically influences the next step.",
+          "The interaction path changes based on new information.",
+          "Constraints or clarifications can redirect the flow."
+        ]
+      },
+      {
+        "name": "step_validation_gate",
+        "description": [
+          "Every step ends with an explicit validation checkpoint.",
+          "If a step is not validated, the process stops.",
+          "Ambiguities must be resolved or the step revised",
+          "before moving forward."
+        ]
+      },
+      {
+        "name": "prompt_refinement_framework",
+        "description": [
+          "The assistant continuously refines the working prompt.",
+          "Refinement follows the structure: Role, Context, Task, Format.",
+          "Only details that have been confirmed are incorporated."
+        ]
+      },
+      {
+        "name": "implementation_routine_assembly",
+        "description": [
+          "The final outcome is an interactive routine.",
+          "It is composed of a sequence of validated steps.",
+          "Each step contributes to implementing the target feature."
+        ],
+        "sub_steps": [
+          "Using general arquitecture attacheded code as example",
+          "Implement step by step, with logging for each message",
+          "Use generic types for flexibility and reusability",
+          "Remember to use clean code principles",
+          "The goal is to implement API connections for PixVerse"
+        ]
+      }
+    ],
+    "deliverable": {
+      "description": [
+        "A prompt for a JSON file, intended for ChatGPT.",
+        "example format: as attached."
+      ],
+      "components": [
+        "Role",
+        "Context",
+        "Task",
+        "Format"
+      ],
+      "rule": [
+        "Each step is added only after the previous step",
+        "has been explicitly confirmed as correct."
+      ]
+    }
+  }
+}
+
+
+=== FILE: F:\Marketing\Services\Documents\Prompts\Develoment\best\InterativePromptChatGPT.json ===
+
+{
+  "interactive_mode": {
+    "description": [
+      "Interactive mode is a guided, step-by-step collaboration pattern.",
+      "The assistant drives progress by asking one question at a time.",
+      "Each user answer is used to adapt the next question.",
+      "The goal is to progressively refine the solution.",
+      "Intent, constraints, and success criteria are clarified",
+      "before any implementation details are produced."
+    ],
+    "key_characteristics": [
+      {
+        "name": "single_question_loop",
+        "description": [
+          "The assistant asks exactly one focused question at a time.",
+          "It waits for the user's answer before continuing.",
+          "Multi-question batches are explicitly not allowed."
+        ]
+      },
+      {
+        "name": "adaptive_branching",
+        "description": [
+          "Each user answer dynamically influences the next step.",
+          "The interaction path changes based on new information.",
+          "Constraints or clarifications can redirect the flow."
+        ]
+      },
+      {
+        "name": "step_validation_gate",
+        "description": [
+          "Every step ends with an explicit validation checkpoint.",
+          "If a step is not validated, the process stops.",
+          "Ambiguities must be resolved or the step revised",
+          "before moving forward."
+        ]
+      },
+      {
+        "name": "prompt_refinement_framework",
+        "description": [
+          "The assistant continuously refines the working prompt.",
+          "Refinement follows the structure: Role, Context, Task, Format.",
+          "Only details that have been confirmed are incorporated."
+        ]
+      },
+      {
+        "name": "implementation_routine_assembly",
+        "description": [
+          "The final outcome is an interactive routine.",
+          "It is composed of a sequence of validated steps.",
+          "Each step contributes to implementing the target feature."
+        ],
+        "sub_steps": [
+          "Modify the following prompt for an LLM.",
+          "The goal is for the model to act as a content curator",
+          "focused on viral topics about the Colombian national football team.",
+          "It should take two inputs: a list of new URLs and a historical list of URLs.",
+          "The prompt should instruct the model to classify the content",
+          "from the new URLs from most to least viral,",
+          "using the historical list for context. All output must be in Spanish."
+        ]
+      }
+    ],
+    "deliverable": {
+      "description": [
+        "A prompt for a JSON file, intended for ChatGPT.",
+        "example format: as attached."
+      ],
+      "components": [
+        "Role",
+        "Context",
+        "Task",
+        "Format"
+      ],
+      "rule": [
+        "Each step is added only after the previous step",
+        "has been explicitly confirmed as correct."
+      ]
+    }
+  }
+}
+
+
+=== FILE: F:\Marketing\Services\Documents\Prompts\Develoment\best\PromptImage.json ===
+
+{
+  "role": "Senior YouTube Thumbnail Designer (CTR-focused)",
+  "goal": "Generate a viral modern YouTube thumbnail that is instantly understandable and optimized for high click-through rate.",
+  "technical_specs": {
+    "resolution_px": {
+      "width": 1280,
+      "height": 720
+    },
+    "aspect_ratio": "16:9",
+    "format": "PNG",
+    "quality": "Ultra sharp, no pixelation",
+    "safe_margins_px": 60
+  },
+  "style": {
+    "look_and_feel": "Modern viral YouTube thumbnail",
+    "contrast": "High contrast (bright subject vs dark background)",
+    "colors": "Intense, saturated, eye-catching",
+    "background": "Dark bokeh (blurred background)",
+    "lighting": "Studio lighting (key light + rim light)",
+    "effects": [ "Subtle outline/glow around subject" ]
+  },
+  "composition": {
+    "left_side": {
+      "subject": "Human face close-up - james rodriguez",
+      "expression": "Extreme surprise (wide open eyes, slightly open mouth)",
+      "focus": "Crisp and sharp"
+    },
+    "right_side": {
+      "object": "Large smartphone",
+      "screen_text": "99+ NOTIFICATIONS",
+      "highlight_elements": [
+        "Big red arrow pointing to '99+'",
+        "Red circle around '99+'"
+      ]
+    }
+  },
+  "text_overlay": {
+    "required": true,
+    "max_words": 3,
+    "text": "NO LO CREO",
+    "typography": {
+      "style": "Bold",
+      "color": "White",
+      "outline": "Black stroke",
+      "shadow": "Dark drop shadow for mobile readability",
+      "size": "Very large, ultra readable"
+    }
+  },
+  "rules": [
+    "Max 2 main elements: person + smartphone",
+    "No small text",
+    "Must be understood in 1 second",
+    "Clean design, minimal visual noise",
+    "High impact, high CTR composition"
+  ],
+  "output": {
+    "deliverable": "One final thumbnail image ready for YouTube upload",
+    "count": 1
+  }
+}
+
 
 === FILE: F:\Marketing\Services\Login\LoginService.cs ===
 
@@ -51839,7 +50863,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -51856,7 +50880,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services\obj\Debug\net8.0\Services.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Services\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
@@ -51960,13 +50984,13 @@ throw new Exception("Unexpected failure executing OpenAI request.");
 
 === FILE: F:\Marketing\Services\OpenAI\news\JsonPromptRunner.cs ===
 
-﻿
-using Application.Result;
+﻿using Application.Result;
 using Common.StringExtensions;
-using Domain;
+using Configuration.YouTube;
 using Domain.OpenAI;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Prompts.NostalgiaRank;
 using Services.Abstractions.OpenAI;
 using Services.Abstractions.OpenAI.news;
 using Services.Abstractions.UrlValidation;
@@ -51997,97 +51021,160 @@ private const int DesiredCount = 5;
 private static readonly TimeSpan MaxOverallDuration = TimeSpan.FromMinutes(2);
 public async Task<List<string>> RunStrictJsonAsync(CancellationToken ct = default)
 {
-var history = await LoadHistoryAsync(ct);
-var promptNostalgia = await LoadPromptAsync(ct);
+var runId = Guid.NewGuid().ToString("N")[..8];
+var startedUtc = DateTimeOffset.UtcNow;
+_logger.LogInformation("[RUN {RunId}] START JsonPromptRunner. DesiredCount={DesiredCount}, Timeout={TimeoutSeconds}s, Query={Query}",
+runId, DesiredCount, (int)MaxOverallDuration.TotalSeconds, _yt.Query);
+try
+{
+Step0_Preflight(runId);
+var history = await LoadHistoryAsync(runId, ct);
+var promptNostalgia = await LoadPromptAsync(runId, ct);
 var attempted = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 var deadline = DateTimeOffset.UtcNow + MaxOverallDuration;
+_logger.LogInformation("[RUN {RunId}] STEP 3: Init iteration state. HistoryCount={HistoryCount}, DeadlineUtc={DeadlineUtc:o}",
+runId, history.Count, deadline);
+var loop = 0;
 while (DateTimeOffset.UtcNow < deadline && !ct.IsCancellationRequested)
 {
-UpdateExcludedUrls(promptNostalgia, history, attempted);
-var searchOp = await CallYouTubeSearchAsync(_yt.Query, BuildSearchOptions(_yt.Search), ct);
+loop++;
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: Begin. AttemptedCount={AttemptedCount}, UtcNow={UtcNow:o}",
+runId, loop, attempted.Count, DateTimeOffset.UtcNow);
+var searchOp = await CallYouTubeSearchAsync(runId, loop, _yt.Query, _yt.Search, ct);
 if (!searchOp.IsSuccessful || searchOp.Data is null || searchOp.Data.Items.Count == 0)
 {
-_logger.LogWarning("YouTube search returned no items. Retrying.");
+_logger.LogWarning("[RUN {RunId}] LOOP {Loop}: STEP 4.2 YouTube search returned no items. Success={Success}, Items={Items}. Retrying.",
+runId, loop, searchOp.IsSuccessful, searchOp.Data?.Items.Count ?? 0);
 continue;
 }
-var candidates = ExtractCandidateUrlsFromYouTube(searchOp.Data, history, attempted);
-if (candidates.Count == 0)
+var candidatesFromYoutube = ExtractCandidateUrlsFromYouTube(runId, loop, searchOp.Data, history, attempted);
+if (candidatesFromYoutube.Count == 0)
 {
-_logger.LogWarning("No candidate URLs after exclusions (history/attempted). Retrying.");
+_logger.LogWarning("[RUN {RunId}] LOOP {Loop}: STEP 4.3 No candidate URLs after exclusions (history/attempted). Retrying.",
+runId, loop);
 continue;
 }
-AddAttempted(attempted, candidates);
-var validation = await ValidateCandidatesUntilDesiredAsync(candidates, DesiredCount, ct);
-await AppendUsedUrlsAsync(candidates, ct);
+var prompt = BuildPrompt(runId, loop, promptNostalgia, [.. history], candidatesFromYoutube);
+var llmRaw = await CallLlmAsync(runId, loop, prompt, ct);
+var candidatesFiltered = ExtractCandidateUrls(runId, loop, llmRaw);
+if (candidatesFiltered.Count == 0)
+{
+_logger.LogWarning("[RUN {RunId}] LOOP {Loop}: STEP 4.6 LLM returned no URLs. Retrying.",
+runId, loop);
+AddAttempted(attempted, candidatesFromYoutube);
+continue;
+}
+AddAttempted(attempted, candidatesFromYoutube);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.7 Attempted updated. AttemptedCount={AttemptedCount}",
+runId, loop, attempted.Count);
+var validation = await ValidateCandidatesUntilDesiredAsync(runId, loop, candidatesFiltered, DesiredCount, ct);
+await AppendUsedUrlsAsync(runId, loop, candidatesFiltered, ct);
 if (validation.Success && validation.ValidUrls.Count == DesiredCount)
 {
-_logger.LogInformation("Success: {Count} valid URLs found.", validation.ValidUrls.Count);
+_logger.LogInformation("[RUN {RunId}] SUCCESS. ValidCount={Count}. ElapsedMs={ElapsedMs}",
+runId, validation.ValidUrls.Count, (DateTimeOffset.UtcNow - startedUtc).TotalMilliseconds);
 return [.. validation.ValidUrls];
 }
-LogFirstFailure(validation.Results);
+LogFirstFailure(runId, loop, validation.Results);
+_logger.LogWarning("[RUN {RunId}] LOOP {Loop}: Not enough valid URLs. ValidCount={ValidCount}/{DesiredCount}. Retrying.",
+runId, loop, validation.ValidUrls.Count, DesiredCount);
 }
+_logger.LogWarning("[RUN {RunId}] END: Timed out or cancelled. Cancelled={Cancelled}. ElapsedMs={ElapsedMs}",
+runId, ct.IsCancellationRequested, (DateTimeOffset.UtcNow - startedUtc).TotalMilliseconds);
 return new List<string>();
 }
-private async Task<HashSet<string>> LoadHistoryAsync(CancellationToken ct)
+catch (OperationCanceledException)
 {
-_logger.LogDebug("STEP 1: Loading history URLs...");
+_logger.LogWarning("[RUN {RunId}] CANCELLED. ElapsedMs={ElapsedMs}",
+runId, (DateTimeOffset.UtcNow - startedUtc).TotalMilliseconds);
+return new List<string>();
+}
+catch (Exception ex)
+{
+_logger.LogError(ex, "[RUN {RunId}] FAILED with unhandled exception. ElapsedMs={ElapsedMs}",
+runId, (DateTimeOffset.UtcNow - startedUtc).TotalMilliseconds);
+return new List<string>();
+}
+}
+private void Step0_Preflight(string runId)
+{
+_logger.LogDebug("[RUN {RunId}] STEP 0: Preflight checks...", runId);
+if (_yt is null)
+throw new InvalidOperationException("YouTubeCurationRunnerOptions is null.");
+if (string.IsNullOrWhiteSpace(_yt.Query))
+_logger.LogWarning("[RUN {RunId}] STEP 0: YouTube query is empty/blank.", runId);
+if (_yt.Search is null)
+_logger.LogWarning("[RUN {RunId}] STEP 0: YouTube search options are null.", runId);
+_logger.LogDebug("[RUN {RunId}] STEP 0: Preflight completed.", runId);
+}
+private List<string> ExtractCandidateUrls(string runId, int loop, string llmRaw)
+{
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.6 Extracting URLs from LLM response. RawLen={Len}",
+runId, loop, llmRaw?.Length ?? 0);
+var extracted = llmRaw.ExtractJsonContent();
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.6 JSON extracted from LLM. ExtractedLen={Len}",
+runId, loop, extracted?.Length ?? 0);
+var urls = ExtractUrlsFromLlmResponse(extracted ?? string.Empty)
+.Where(u => !string.IsNullOrWhiteSpace(u))
+.Select(u => u.Trim())
+.Distinct(StringComparer.OrdinalIgnoreCase)
+.ToList();
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.6 Extracted {Count} candidate URLs from LLM.",
+runId, loop, urls.Count);
+return urls;
+}
+private async Task<HashSet<string>> LoadHistoryAsync(string runId, CancellationToken ct)
+{
+_logger.LogInformation("[RUN {RunId}] STEP 1: Loading history URLs...", runId);
 var history = await _newsHistoryStore.LoadUrlsAsync(ct);
-_logger.LogDebug("STEP 1: Loaded {Count} historical URLs.", history.Count);
+_logger.LogInformation("[RUN {RunId}] STEP 1: Loaded {Count} historical URLs.", runId, history.Count);
 return history;
 }
-private async Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct)
+private async Task AppendUsedUrlsAsync(string runId, int loop, IEnumerable<string> urls, CancellationToken ct)
 {
-_logger.LogDebug("STEP: Appending used URLs...");
-await _newsHistoryStore.AppendUsedUrlsAsync(urls, ct);
-_logger.LogDebug("STEP: Appended {Count} URLs.", urls.Count());
+var list = urls?.ToList() ?? new List<string>();
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.9 Appending used URLs to history. Count={Count}",
+runId, loop, list.Count);
+if (list.Count == 0)
+{
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.9 No URLs to append. Skipping.", runId, loop);
+return;
 }
-private async Task<NostalgiaPrompt> LoadPromptAsync(CancellationToken ct)
+await _newsHistoryStore.AppendUsedUrlsAsync(list, ct);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.9 Appended {Count} URLs to history.",
+runId, loop, list.Count);
+}
+private async Task<NostalgiaRankPrompt> LoadPromptAsync(string runId, CancellationToken ct)
 {
-_logger.LogDebug("STEP 2: Loading NostalgiaPrompt template...");
+_logger.LogInformation("[RUN {RunId}] STEP 2: Loading NostalgiaPrompt template...", runId);
 var prompt = await _nostalgiaPromptLoader.LoadPromptAsync();
-prompt.Context.ExcludedUrls = [];
-_logger.LogDebug("STEP 2: Prompt loaded. ExcludedUrls initialized.");
+_logger.LogInformation("[RUN {RunId}] STEP 2: Prompt loaded. RoleLines={RoleLines}.",
+runId, prompt?.Role?.Count ?? 0);
 return prompt;
 }
-private void UpdateExcludedUrls(NostalgiaPrompt prompt, HashSet<string> history, HashSet<string> attempted)
-{
-_logger.LogDebug("STEP 4.1: Updating exclusions (history + attempted)...");
-prompt.Context.ExcludedUrls.Clear();
-if (history.Count > 0)
-prompt.Context.ExcludedUrls.AddRange(history);
-if (attempted.Count > 0)
-prompt.Context.ExcludedUrls.AddRange(attempted);
-_logger.LogDebug("STEP 4.1: ExcludedUrls updated. Total={Count}.", prompt.Context.ExcludedUrls.Count);
-}
 private async Task<Operation<SearchResponse>> CallYouTubeSearchAsync(
+string runId,
+int loop,
 string query,
 SearchOptions options,
 CancellationToken ct)
 {
-_logger.LogDebug("STEP 4.2: Calling YouTube Search API. Query={Query}", query);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.2 Calling YouTube Search API. Query={Query}",
+runId, loop, query);
 var op = await _youTubeService.SearchVideosAsync(query, options);
-_logger.LogDebug("STEP 4.2: YouTube Search Success={Success}, Count={Count}",
-op.IsSuccessful,
-op.Data?.Items.Count ?? 0);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.2 YouTube Search completed. Success={Success}, Items={Items}",
+runId, loop, op.IsSuccessful, op.Data?.Items.Count ?? 0);
 return op;
 }
-private static SearchOptions BuildSearchOptions(YouTubeCurationRunnerSearchOptions src)
-=> new SearchOptions
-{
-MaxResults = src.MaxResults,
-RegionCode = src.RegionCode,
-RelevanceLanguage = src.RelevanceLanguage,
-PublishedAfterIso = src.PublishedAfterIso,
-PublishedBeforeIso = src.PublishedBeforeIso,
-Order = src.Order,
-SafeSearch = src.SafeSearch,
-};
 private List<string> ExtractCandidateUrlsFromYouTube(
+string runId,
+int loop,
 SearchResponse response,
 HashSet<string> history,
 HashSet<string> attempted)
 {
-_logger.LogDebug("STEP 4.3: Building candidate URLs from YouTube search items...");
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.3 Building candidate URLs from YouTube items...",
+runId, loop);
 var urls =
 response.Items
 .Select(i => $"https://www.youtube.com/watch?v={i.VideoId}")
@@ -52096,7 +51183,8 @@ response.Items
 .Where(u => !history.Contains(u))
 .Where(u => !attempted.Contains(u))
 .ToList();
-_logger.LogDebug("STEP 4.3: Candidate URLs after exclusions: {Count}", urls.Count);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.3 Candidate URLs after exclusions: {Count}",
+runId, loop, urls.Count);
 return urls;
 }
 private static void AddAttempted(HashSet<string> attempted, List<string> candidates)
@@ -52106,56 +51194,88 @@ attempted.Add(c);
 }
 private async Task<(bool Success, IReadOnlyList<string> ValidUrls, IReadOnlyList<UrlValidationResult> Results)>
 ValidateCandidatesUntilDesiredAsync(
+string runId,
+int loop,
 IReadOnlyList<string> urls,
 int desiredCount,
 CancellationToken ct)
 {
-_logger.LogDebug("Validating URLs linearly until {Desired} valid ones are found.", desiredCount);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.8 Validating URLs linearly. Target={DesiredCount}, InputCount={InputCount}",
+runId, loop, desiredCount, urls.Count);
 var validUrls = new List<string>(desiredCount);
 var results = new List<UrlValidationResult>(urls.Count);
+var index = 0;
 foreach (var url in urls)
 {
+index++;
 ct.ThrowIfCancellationRequested();
-_logger.LogDebug("Validating URL: {Url}", url);
-var res = await ValidateOneUrlAsync(url, ct);
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8 Validating URL {Index}/{Total}: {Url}",
+runId, loop, index, urls.Count, url);
+var res = await ValidateOneUrlAsync(runId, loop, url, ct);
 results.Add(res);
 if (res.IsValid)
 {
 validUrls.Add(url);
-_logger.LogDebug("URL valid ({Count}/{Desired})", validUrls.Count, desiredCount);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.8 URL valid ({Valid}/{Desired}).",
+runId, loop, validUrls.Count, desiredCount);
 if (validUrls.Count == desiredCount)
 {
-_logger.LogDebug("Desired number of valid URLs reached.");
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.8 Desired number of valid URLs reached.",
+runId, loop);
 return (true, validUrls, results);
 }
 }
+else
+{
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8 URL invalid. Platform={Platform} Status={Status} Reason={Reason}",
+runId, loop, res.Platform, res.HttpStatusCode, res.FailureReason);
 }
-_logger.LogDebug(
-"Validation finished. Only {Count}/{Desired} valid URLs found.",
-validUrls.Count, desiredCount);
+}
+_logger.LogWarning("[RUN {RunId}] LOOP {Loop}: STEP 4.8 Validation finished. Valid={Valid}/{Desired}.",
+runId, loop, validUrls.Count, desiredCount);
 return (false, validUrls, results);
 }
-private async Task<UrlValidationResult> ValidateOneUrlAsync(string url, CancellationToken ct)
+private async Task<UrlValidationResult> ValidateOneUrlAsync(string runId, int loop, string url, CancellationToken ct)
 {
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8.1 ValidateOneUrl start. Url={Url}",
+runId, loop, url);
 if (!Uri.TryCreate(url, UriKind.Absolute, out _))
+{
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8.1 Invalid absolute URL format. Url={Url}",
+runId, loop, url);
 return new UrlValidationResult(false, UrlPlatform.Unknown, null, "Invalid absolute URL.");
+}
 try
 {
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8.1 Resolving validator from factory...", runId, loop);
 var validator = _urlValidatorFactory.GetValidator(url);
-return await validator.ValidateAsync(url, ct);
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8.1 Validator resolved: {ValidatorType}",
+runId, loop, validator.GetType().Name);
+var result = await validator.ValidateAsync(url, ct);
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.8.1 Validation done. IsValid={IsValid} Platform={Platform} Status={Status} Reason={Reason}",
+runId, loop, result.IsValid, result.Platform, result.HttpStatusCode, result.FailureReason);
+return result;
 }
 catch (Exception ex)
 {
+_logger.LogWarning(ex, "[RUN {RunId}] LOOP {Loop}: STEP 4.8.1 Validation exception for Url={Url}",
+runId, loop, url);
 return new UrlValidationResult(false, UrlPlatform.Unknown, null, ex.Message);
 }
 }
-private void LogFirstFailure(IReadOnlyList<UrlValidationResult> results)
+private void LogFirstFailure(string runId, int loop, IReadOnlyList<UrlValidationResult> results)
 {
 var firstFail = results.FirstOrDefault(r => !r.IsValid);
 if (firstFail is null)
+{
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.11 No failures to report (all valid).",
+runId, loop);
 return;
+}
 _logger.LogInformation(
-"Batch rejected. First failure: Platform={Platform} Status={Status} Reason={Reason}",
+"[RUN {RunId}] LOOP {Loop}: STEP 4.11 Batch rejected. First failure: Platform={Platform} Status={Status} Reason={Reason}",
+runId,
+loop,
 firstFail.Platform,
 firstFail.HttpStatusCode,
 firstFail.FailureReason);
@@ -52167,50 +51287,46 @@ try
 using var doc = JsonDocument.Parse(llmRaw);
 var root = doc.RootElement;
 if (root.ValueKind == JsonValueKind.Array)
-return root.EnumerateArray()
+return [.. root.EnumerateArray()
 .Where(e => e.ValueKind == JsonValueKind.String)
 .Select(e => e.GetString()!)
-.Where(IsProbablyUrl)
-.ToList();
+.Where(IsProbablyUrl)];
 if (root.ValueKind == JsonValueKind.Object &&
 root.TryGetProperty("urls", out var urlsEl) &&
 urlsEl.ValueKind == JsonValueKind.Array)
 {
-return urlsEl.EnumerateArray()
+return [.. urlsEl.EnumerateArray()
 .Where(e => e.ValueKind == JsonValueKind.String)
 .Select(e => e.GetString()!)
-.Where(IsProbablyUrl)
-.ToList();
+.Where(IsProbablyUrl)];
 }
 if (root.ValueKind == JsonValueKind.Object &&
 root.TryGetProperty("items", out var itemsEl) &&
 itemsEl.ValueKind == JsonValueKind.Array)
 {
-return itemsEl.EnumerateArray()
+return [.. itemsEl.EnumerateArray()
 .Select(e => e.ValueKind == JsonValueKind.Object &&
 e.TryGetProperty("url", out var u) &&
 u.ValueKind == JsonValueKind.String
 ? u.GetString()
 : null)
 .Where(u => !string.IsNullOrWhiteSpace(u) && IsProbablyUrl(u!))
-.Cast<string>()
-.ToList();
+.Cast<string>()];
 }
 }
 catch
 {
 }
-return Regex.Matches(llmRaw, @"https?:
+return [.. Regex.Matches(llmRaw, @"https?:
 .Select(m => TrimUrl(m.Value))
-.Where(IsProbablyUrl)
-.ToList();
+.Where(IsProbablyUrl)];
 }
 private static bool IsProbablyUrl(string s)
 => Uri.TryCreate(s, UriKind.Absolute, out var uri) &&
 (uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
 private static string TrimUrl(string url)
 => url.Trim().TrimEnd('.', ',', ';', ')', ']', '}', '"', '\'');
-public static string ToJsonWithoutRole(NostalgiaPrompt prompt, bool indented = true)
+public static string ToJsonWithoutRole(NostalgiaRankPrompt prompt, bool indented = true)
 {
 if (prompt is null) throw new ArgumentNullException(nameof(prompt));
 var options = new JsonSerializerOptions { WriteIndented = indented };
@@ -52227,24 +51343,55 @@ var node = JsonNode.Parse(json) ?? throw new JsonException("Invalid JSON.");
 node.AsObject().Remove("role");
 return node.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
 }
-}
-public sealed class YouTubeCurationRunnerOptions
+private Prompt BuildPrompt(
+string runId,
+int loop,
+NostalgiaRankPrompt promptNostalgia,
+IReadOnlyList<string> historicalUrls,
+IReadOnlyList<string> newUrls)
 {
-public const string SectionName = "YouTubeCurationRunner";
-public string Query { get; init; } = string.Empty;
-public YouTubeCurationRunnerSearchOptions Search { get; init; } = new();
-}
-public sealed class YouTubeCurationRunnerSearchOptions
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.4 Building LLM prompt (System + User JSON without role)...",
+runId, loop);
+ArgumentNullException.ThrowIfNull(promptNostalgia);
+historicalUrls ??= [];
+newUrls ??= [];
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.4 Injecting URLs into JSON. HistoricalCount={HCount}, NewCount={NCount}",
+runId, loop, historicalUrls.Count, newUrls.Count);
+var content = ToJsonWithoutRole(promptNostalgia);
+content = ReplaceJsonTagWithArray(content, "__HISTORICAL_URLS__", historicalUrls);
+content = ReplaceJsonTagWithArray(content, "__NEW_URLS__", newUrls);
+var systemContent = string.Join(" ", promptNostalgia.Role.Where(r => !string.IsNullOrWhiteSpace(r)));
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.4 Prompt built. SystemLen={SysLen}, UserLen={UserLen}",
+runId, loop, systemContent.Length, content.Length);
+return new Prompt
 {
-public int MaxResults { get; init; } = 25;
-public string? RegionCode { get; init; }
-public string? RelevanceLanguage { get; init; }
-public string? PublishedAfterIso { get; init; }
-public string? PublishedBeforeIso { get; init; }
-public string Order { get; init; } = "viewCount";
-public string SafeSearch { get; init; } = "none";
-public string? VideoCategoryId { get; init; }
-public string? ChannelId { get; init; }
+SystemContent = systemContent,
+UserContent = content
+};
+}
+private static string ReplaceJsonTagWithArray(
+string json,
+string tag,
+IReadOnlyList<string> urls)
+{
+if (string.IsNullOrWhiteSpace(json))
+return json;
+urls ??= [];
+var arrayJson = JsonSerializer.Serialize(urls);
+var quotedTag = JsonSerializer.Serialize(tag);
+return json.Replace(quotedTag, arrayJson, StringComparison.Ordinal);
+}
+private async Task<string> CallLlmAsync(string runId, int loop, Prompt prompt, CancellationToken ct)
+{
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.5 Calling LLM...",
+runId, loop);
+_logger.LogDebug("[RUN {RunId}] LOOP {Loop}: STEP 4.5 Prompt sizes. SystemLen={SysLen}, UserLen={UserLen}",
+runId, loop, prompt.SystemContent?.Length ?? 0, prompt.UserContent?.Length ?? 0);
+var raw = await _openAIClient.GetChatCompletionAsync(prompt, ct);
+_logger.LogInformation("[RUN {RunId}] LOOP {Loop}: STEP 4.5 LLM response received. Length={Len}",
+runId, loop, raw?.Length ?? 0);
+return raw ?? string.Empty;
+}
 }
 }
 
@@ -52352,7 +51499,7 @@ public List<string> Urls { get; set; } = [];
 
 === FILE: F:\Marketing\Services\OpenAI\news\NostalgiaPromptLoader.cs ===
 
-﻿using Domain;
+﻿using Prompts.NostalgiaRank;
 using Services.Abstractions.OpenAI.news;
 using System.Text.Json;
 namespace Services.OpenAI.news
@@ -52360,76 +51507,60 @@ namespace Services.OpenAI.news
 public class NostalgiaPromptLoader: INostalgiaPromptLoader
 {
 private static readonly JsonSerializerOptions Opts = new() { PropertyNameCaseInsensitive = true };
-private const string DefaultNameFilePrompt = "NostalgiaURLSelector.json";
-public async Task<NostalgiaPrompt> LoadPromptAsync()
+private const string DefaultNameFilePrompt = "NostalgiaRank.json";
+public async Task<NostalgiaRankPrompt> LoadPromptAsync()
 {
 var path = Path.Combine(AppContext.BaseDirectory, "OpenAI", "news", DefaultNameFilePrompt);
 if (!File.Exists(path))
 throw new FileNotFoundException($"Prompt file not found: {path}");
 var json = await File.ReadAllTextAsync(path);
-var cfg = JsonSerializer.Deserialize<NostalgiaPrompt>(json, Opts);
+var cfg = JsonSerializer.Deserialize<NostalgiaRankPrompt>(json, Opts);
 return cfg ?? throw new InvalidOperationException("Prompt JSON is invalid or empty.");
 }
 }
 }
 
-=== FILE: F:\Marketing\Services\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\Services\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\Services\OpenChat\ChatClicker.cs ===
 
@@ -53667,108 +52798,271 @@ return result;
 }
 }
 
-=== FILE: F:\Marketing\Services\YouTube\EnrichedVideoDataExtensions.cs ===
-
-﻿using Services.Abstractions.YouTube;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Services.YouTube
-{
-public static class EnrichedVideoDataExtensions
-{
-public static string FormatForLLM(this IEnumerable<EnrichedVideoData> videos)
-{
-var sb = new StringBuilder();
-sb.AppendLine("VIDEO_CANDIDATES:");
-foreach (var v in videos.OrderByDescending(x => x.ViewsPerHour))
-{
-sb.AppendLine("- VIDEO");
-sb.AppendLine($"  url: {v.VideoUrl}");
-sb.AppendLine($"  title: {v.Title}");
-sb.AppendLine($"  published_at: {v.PublishedAt:O}");
-sb.AppendLine($"  duration_sec: {(v.Duration?.TotalSeconds ?? 0):0}");
-sb.AppendLine($"  views: {v.Views}");
-sb.AppendLine($"  likes: {v.Likes}");
-sb.AppendLine($"  comments: {v.Comments}");
-sb.AppendLine($"  views_per_hour: {v.ViewsPerHour:0.##}");
-sb.AppendLine($"  like_view_ratio: {v.LikeViewRatio:0.####}");
-sb.AppendLine($"  comment_view_ratio: {v.CommentViewRatio:0.####}");
-sb.AppendLine($"  velocity_bucket: {v.VelocityBucket}");
-sb.AppendLine($"  tags: [{string.Join(", ", v.Tags.Take(15))}]");
-sb.AppendLine($"  channel_subscribers: {v.SubscriberCount}");
-sb.AppendLine($"  channel_views_per_video: {v.ChannelViewsPerVideo:0.##}");
-}
-return sb.ToString();
-}
-}
-}
-
 === FILE: F:\Marketing\Services\YouTube\YouTubeService.cs ===
 
 ﻿using Application.Result;
 using Configuration.YouTube;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Services.Abstractions.YouTube;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Text.Json;
 namespace Services.YouTube
 {
 public sealed class YouTubeService(
 HttpClient httpClient,
+IOptions<YouTubeApiOptions> options,
 IErrorHandler errorHandler,
-ILogger<YouTubeService> logger,
-YouTubeApiOptions apiOptions
+ILogger<YouTubeService> logger
 ) : IYouTubeService
 {
+private readonly HttpClient _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+private readonly YouTubeApiOptions _cfg = options?.Value ?? throw new ArgumentNullException(nameof(options));
+private readonly IErrorHandler _errorHandler = errorHandler ?? throw new ArgumentNullException(nameof(errorHandler));
+private readonly ILogger<YouTubeService> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+private static readonly JsonSerializerOptions JsonOptions = new()
+{
+PropertyNameCaseInsensitive = true
+};
 public async Task<Operation<SearchResponse>> SearchVideosAsync(string query, SearchOptions options)
 {
+var requestId = Guid.NewGuid().ToString("N");
+using var scope = _logger.BeginScope(new Dictionary<string, object>
+{
+["Service"] = nameof(YouTubeService),
+["Method"] = nameof(SearchVideosAsync),
+["RequestId"] = requestId
+});
+_logger.LogInformation("STEP 0: Enter SearchVideosAsync. QueryLen={Len}", query?.Length ?? 0);
 try
 {
-return Operation<SearchResponse>.Success( null!, "Search completed");
+_logger.LogDebug("STEP 1: Validating inputs...");
+if (string.IsNullOrWhiteSpace(query))
+{
+_logger.LogWarning("STEP 1: Validation failed. Reason=EmptyQuery");
+return _errorHandler.Business<SearchResponse>("Query cannot be null or empty.");
+}
+if (options is null)
+{
+_logger.LogWarning("STEP 1: Validation failed. Reason=NullSearchOptions");
+return _errorHandler.Business<SearchResponse>("SearchOptions cannot be null.");
+}
+if (string.IsNullOrWhiteSpace(_cfg.ApiKey))
+{
+_logger.LogError("STEP 1: Validation failed. Reason=MissingApiKey");
+return _errorHandler.Fail<SearchResponse>(
+new InvalidOperationException("YouTube API key is missing."),
+"YouTube API key is not configured.");
+}
+_logger.LogDebug("STEP 1: Validation passed.");
+_logger.LogDebug("STEP 2: Normalizing defaults...");
+var maxResults = options.MaxResults <= 0 ? 10 : options.MaxResults;
+var order = string.IsNullOrWhiteSpace(options.Order) ? "viewCount" : options.Order;
+var safeSearch = string.IsNullOrWhiteSpace(options.SafeSearch) ? "none" : options.SafeSearch;
+_logger.LogInformation(
+"STEP 2: Defaults applied. MaxResults={MaxResults}, Order={Order}, SafeSearch={SafeSearch}, Region={Region}, Lang={Lang}, After={After}, Before={Before}",
+maxResults,
+order,
+safeSearch,
+options.RegionCode,
+options.RelevanceLanguage,
+options.PublishedAfterIso,
+options.PublishedBeforeIso);
+_logger.LogDebug("STEP 3: Building request URI (redacted)...");
+var uri = BuildSearchUri(query, options, maxResults, order, safeSearch);
+_logger.LogInformation("STEP 3: URI built (redacted). Endpoint=search?part=snippet&type=video&...");
+_logger.LogInformation("STEP 4: Calling YouTube API via HttpClient...");
+using var resp = await _httpClient.GetAsync(uri);
+_logger.LogInformation("STEP 4: HTTP call completed. StatusCode={StatusCode} ({StatusInt})",
+resp.StatusCode, (int)resp.StatusCode);
+_logger.LogDebug("STEP 5: Reading response body...");
+var body = await resp.Content.ReadAsStringAsync();
+_logger.LogInformation("STEP 5: Body read. BodyLen={BodyLen}", body?.Length ?? 0);
+if (resp.StatusCode == HttpStatusCode.Forbidden || resp.StatusCode == HttpStatusCode.Unauthorized)
+{
+_logger.LogWarning(
+"STEP 6: Auth/quota failure detected. StatusCode={StatusCode} ({StatusInt})",
+resp.StatusCode, (int)resp.StatusCode);
+return _errorHandler.Fail<SearchResponse>(
+new InvalidOperationException(
+$"YouTube API auth/quota failure. Status={(int)resp.StatusCode}. Body={body}"),
+"YouTube API rejected the request (auth/quota).");
+}
+if (!resp.IsSuccessStatusCode)
+{
+_logger.LogWarning(
+"STEP 7: Non-success status detected. StatusCode={StatusCode} ({StatusInt})",
+resp.StatusCode, (int)resp.StatusCode);
+return _errorHandler.Fail<SearchResponse>(
+new HttpRequestException(
+$"YouTube API error. Status={(int)resp.StatusCode}. Body={body}"),
+"YouTube API returned non-success status.");
+}
+_logger.LogDebug("STEP 8: Deserializing JSON response...");
+YouTubeSearchListDto? dto;
+try
+{
+dto = JsonSerializer.Deserialize<YouTubeSearchListDto>(body, JsonOptions);
+}
+catch (JsonException jex)
+{
+_logger.LogError(jex, "STEP 8: JSON deserialization failed.");
+return _errorHandler.Fail<SearchResponse>(jex, "Failed to parse YouTube response.");
+}
+var rawItems = dto?.Items?.Count ?? 0;
+_logger.LogInformation("STEP 8: JSON deserialized. RawItems={RawItems}, NextPageTokenPresent={HasToken}",
+rawItems,
+!string.IsNullOrWhiteSpace(dto?.NextPageToken));
+_logger.LogDebug("STEP 9: Mapping DTO -> SearchResponse...");
+var items =
+(dto?.Items ?? [])
+.Where(x => x?.Id?.VideoId is not null)
+.Select(x => new SearchVideoItem(
+VideoId: x!.Id!.VideoId!,
+ChannelId: x.Snippet?.ChannelId ?? string.Empty,
+Title: x.Snippet?.Title ?? string.Empty,
+Description: x.Snippet?.Description ?? string.Empty,
+PublishedAt: x.Snippet?.PublishedAt ?? DateTimeOffset.MinValue,
+ThumbnailUrl: x.Snippet?.Thumbnails?.High?.Url
+?? x.Snippet?.Thumbnails?.Medium?.Url
+?? x.Snippet?.Thumbnails?.Default?.Url
+))
+.ToList();
+var mapped = new SearchResponse(
+Query: query,
+Items: items,
+NextPageToken: dto?.NextPageToken
+);
+_logger.LogInformation(
+"STEP 9: Mapping completed. MappedItems={Count}",
+mapped.Items.Count);
+_logger.LogInformation("STEP 10: Returning success.");
+return Operation<SearchResponse>.Success(mapped, "Search completed");
 }
 catch (Exception ex)
 {
-return OperationStrategy<SearchResponse>.Fail(ex.Message, new NetworkErrorStrategy<SearchResponse>());
+_logger.LogError(ex, "STEP X: Unhandled exception in SearchVideosAsync.");
+return _errorHandler.Fail<SearchResponse>(ex, "SearchVideosAsync failed.");
 }
 }
-public async Task<Operation<VideoDetails>> GetVideoDetailsAsync(string videoId)
+public Task<Operation<VideoDetails>> GetVideoDetailsAsync(string videoId)
 {
+using var scope = _logger.BeginScope(new Dictionary<string, object>
+{
+["Service"] = nameof(YouTubeService),
+["Method"] = nameof(GetVideoDetailsAsync)
+});
+_logger.LogInformation("STEP 0: Enter GetVideoDetailsAsync. VideoIdEmpty={Empty}", string.IsNullOrWhiteSpace(videoId));
 try
 {
-return Operation<VideoDetails>.Success( null!, "Video details fetched");
+_logger.LogDebug("STEP 1: Validating inputs...");
+if (string.IsNullOrWhiteSpace(videoId))
+{
+_logger.LogWarning("STEP 1: Validation failed. Reason=EmptyVideoId");
+return Task.FromResult(_errorHandler.Business<VideoDetails>("VideoId cannot be null or empty."));
+}
+if (string.IsNullOrWhiteSpace(_cfg.ApiKey))
+{
+_logger.LogError("STEP 1: Validation failed. Reason=MissingApiKey");
+return Task.FromResult(_errorHandler.Fail<VideoDetails>(
+new InvalidOperationException("YouTube API key is missing."),
+"YouTube API key is not configured."));
+}
+_logger.LogWarning("STEP 2: Not implemented.");
+return Task.FromResult(_errorHandler.Business<VideoDetails>("GetVideoDetailsAsync is not implemented yet."));
 }
 catch (Exception ex)
 {
-errorHandler.Fail<Operation<VideoDetails>>(ex);
-var strategy = new BusinessStrategy<VideoDetails>();
-return OperationStrategy<VideoDetails>.Fail(ex.Message, strategy);
+_logger.LogError(ex, "STEP X: Unhandled exception in GetVideoDetailsAsync.");
+return Task.FromResult(_errorHandler.Fail<VideoDetails>(ex, "GetVideoDetailsAsync failed."));
 }
 }
-public async Task<Operation<ChannelDetails>> GetChannelDetailsAsync(string channelId)
+public Task<Operation<ChannelDetails>> GetChannelDetailsAsync(string channelId)
 {
+using var scope = _logger.BeginScope(new Dictionary<string, object>
+{
+["Service"] = nameof(YouTubeService),
+["Method"] = nameof(GetChannelDetailsAsync)
+});
+_logger.LogInformation("STEP 0: Enter GetChannelDetailsAsync. ChannelIdEmpty={Empty}", string.IsNullOrWhiteSpace(channelId));
 try
 {
-return Operation<ChannelDetails>.Success( null!, "Channel details fetched");
+_logger.LogDebug("STEP 1: Validating inputs...");
+if (string.IsNullOrWhiteSpace(channelId))
+{
+_logger.LogWarning("STEP 1: Validation failed. Reason=EmptyChannelId");
+return Task.FromResult(_errorHandler.Business<ChannelDetails>("ChannelId cannot be null or empty."));
+}
+if (string.IsNullOrWhiteSpace(_cfg.ApiKey))
+{
+_logger.LogError("STEP 1: Validation failed. Reason=MissingApiKey");
+return Task.FromResult(_errorHandler.Fail<ChannelDetails>(
+new InvalidOperationException("YouTube API key is missing."),
+"YouTube API key is not configured."));
+}
+_logger.LogWarning("STEP 2: Not implemented.");
+return Task.FromResult(_errorHandler.Business<ChannelDetails>("GetChannelDetailsAsync is not implemented yet."));
 }
 catch (Exception ex)
 {
-errorHandler.Fail<Operation<ChannelDetails>>(ex);
-var strategy = new BusinessStrategy<ChannelDetails>();
-return OperationStrategy<ChannelDetails>.Fail(ex.Message, strategy);
+_logger.LogError(ex, "STEP X: Unhandled exception in GetChannelDetailsAsync.");
+return Task.FromResult(_errorHandler.Fail<ChannelDetails>(ex, "GetChannelDetailsAsync failed."));
 }
 }
+private string BuildSearchUri(string query, SearchOptions options, int maxResults, string order, string safeSearch)
+{
+return
+$"search?part=snippet" +
+$"&type=video" +
+$"&q={Uri.EscapeDataString(query)}" +
+$"&maxResults={maxResults}" +
+$"&order={Uri.EscapeDataString(order)}" +
+$"&safeSearch={Uri.EscapeDataString(safeSearch)}" +
+$"{(string.IsNullOrWhiteSpace(options.RegionCode) ? "" : $"&regionCode={Uri.EscapeDataString(options.RegionCode)}")}" +
+$"{(string.IsNullOrWhiteSpace(options.RelevanceLanguage) ? "" : $"&relevanceLanguage={Uri.EscapeDataString(options.RelevanceLanguage)}")}" +
+$"{(string.IsNullOrWhiteSpace(options.PublishedAfterIso) ? "" : $"&publishedAfter={Uri.EscapeDataString(options.PublishedAfterIso)}")}" +
+$"{(string.IsNullOrWhiteSpace(options.PublishedBeforeIso) ? "" : $"&publishedBefore={Uri.EscapeDataString(options.PublishedBeforeIso)}")}" +
+$"&key={Uri.EscapeDataString(_cfg.ApiKey)}";
+}
+}
+public sealed class YouTubeSearchListDto
+{
+public string? NextPageToken { get; set; }
+public List<YouTubeSearchItemDto>? Items { get; set; }
+}
+public sealed class YouTubeSearchItemDto
+{
+public YouTubeSearchIdDto? Id { get; set; }
+public YouTubeSearchSnippetDto? Snippet { get; set; }
+}
+public sealed class YouTubeSearchIdDto
+{
+public string? VideoId { get; set; }
+}
+public sealed class YouTubeSearchSnippetDto
+{
+public DateTimeOffset? PublishedAt { get; set; }
+public string? ChannelId { get; set; }
+public string? Title { get; set; }
+public string? Description { get; set; }
+public YouTubeThumbnailsDto? Thumbnails { get; set; }
+}
+public sealed class YouTubeThumbnailsDto
+{
+public YouTubeThumbnailDto? Default { get; set; }
+public YouTubeThumbnailDto? Medium { get; set; }
+public YouTubeThumbnailDto? High { get; set; }
+}
+public sealed class YouTubeThumbnailDto
+{
+public string? Url { get; set; }
 }
 }
 
 === FILE: F:\Marketing\Services\YouTube\YouTubeViralVideoDiscoverer.cs ===
 
 ﻿using Application.Result;
+using Configuration.YouTube;
 using Microsoft.Extensions.Logging;
 using Services.Abstractions.UrlValidation;
 using Services.Abstractions.YouTube;
@@ -56616,7 +55910,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -56633,7 +55927,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\Services.Abstractions\obj\Debug\net8.0\Services.Abstractions.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\Services.Abstractions\OpenAI\IOpenAIClient.cs ===
 
@@ -56670,11 +55964,12 @@ Task AppendUsedUrlsAsync(IEnumerable<string> urls, CancellationToken ct = defaul
 === FILE: F:\Marketing\Services.Abstractions\OpenAI\news\INostalgiaPromptLoader.cs ===
 
 ﻿using Domain;
+using Prompts.NostalgiaRank;
 namespace Services.Abstractions.OpenAI.news
 {
 public interface INostalgiaPromptLoader
 {
-Task<NostalgiaPrompt> LoadPromptAsync();
+Task<NostalgiaRankPrompt> LoadPromptAsync();
 }
 }
 
@@ -56970,20 +56265,9 @@ double ChannelViewsPerVideo
 === FILE: F:\Marketing\Services.Abstractions\YouTube\SearchOptions.cs ===
 
 ﻿using Application.Result;
+using Configuration.YouTube;
 namespace Services.Abstractions.YouTube
 {
-public sealed class SearchOptions
-{
-public int MaxResults { get; init; } = 10;
-public string? RegionCode { get; init; }
-public string? RelevanceLanguage { get; init; }
-public string? Order { get; init; }
-public string? PublishedAfterIso { get; init; }
-public string? PublishedBeforeIso { get; init; }
-public string Type { get; init; } = "video";
-public string? VideoDuration { get; init; }
-public string? SafeSearch { get; init; }
-}
 public interface IYouTubeService
 {
 Task<Operation<SearchResponse>> SearchVideosAsync(string query, SearchOptions options);
@@ -69153,22 +68437,40 @@ throw new Exception("Database initialization failed");
       ]
     }
   },
-    "YouTube": {
-      "ApiKey": "AIzaSyCSej3Yw6A06eYy-4AKGwCYopJlWobLQK4",
-      "BaseUrl": "https://www.googleapis.com/youtube/v3/",
-      "HttpTimeoutSeconds": 20,
-      "DefaultMaxResults": 10,
-      "DefaultRegionCode": "CA",
-      "DefaultRelevanceLanguage": "en",
-      "DefaultOrder": "viewCount"
-    },
-    "QuotaProtection": {
-      "EnableCaching": true,
-      "CacheMinutes": 30
+  "YouTube": {
+    "ApiKey": "AIzaSyCSej3Yw6A06eYy-4AKGwCYopJlWobLQK4",
+    "BaseUrl": "https://www.googleapis.com/youtube/v3/",
+    "HttpTimeoutSeconds": 20,
+    "DefaultMaxResults": 10,
+    "DefaultRegionCode": "CA",
+    "DefaultRelevanceLanguage": "en",
+    "DefaultOrder": "viewCount"
+  },
+  "YouTubeCurationRunner": {
+    "Query": "Colombia 2014 James Rodriguez gol Uruguay",
+    "Search": {
+      "MaxResults": 25,
+      "Order": "viewCount",
+      "SafeSearch": "none",
+      "RegionCode": "CA",
+      "RelevanceLanguage": "es",
+      "PublishedAfterIso": null,
+      "PublishedBeforeIso": null
     }
+  },
+  "QuotaProtection": {
+    "EnableCaching": true,
+    "CacheMinutes": 30
+  },
+  "PixVerse": {
+    "BaseUrl": "https://app-api.pixverse.ai",
+    "ApiKey": "sk-5732d37798d0f6cba8b86653bda2151f",
+    "HttpTimeout": "00:00:30",
+    "PollingInterval": "00:00:03",
+    "MaxPollingAttempts": 40,
+    "MinimumRequiredBalance": 1.0
   }
 }
-
 
 === FILE: F:\Marketing\WhatsAppSender\bin\Debug\net8.0\WhatsAppSender.deps.json ===
 
@@ -71052,63 +70354,47 @@ throw new Exception("Database initialization failed");
   }
 }
 
-=== FILE: F:\Marketing\WhatsAppSender\bin\Debug\net8.0\OpenAI\news\NostalgiaURLSelector.json ===
+=== FILE: F:\Marketing\WhatsAppSender\bin\Debug\net8.0\OpenAI\news\NostalgiaRank.json ===
 
 {
-  "prompt_name": "ColombianFootballNostalgiaURLCurator_2014to2026",
-  "role": "You are a football content curator focused on the Colombian community living in Vancouver, specialized in activating emotional nostalgia through iconic moments of the Colombian National Team.",
+  "prompt_name": "NostalgiaRank",
+  "role": [
+    "You are a senior content curator specialized in the Colombian National ",
+    "Football Team, with strong expertise in evaluating virality, emotional ",
+    "nostalgia, and inspirational impact. Your primary objective is to ",
+    "select and rank audiovisual content that effectively incentivizes the ",
+    "purchase of official Colombian National Team merchandise, especially ",
+    "jerseys, by activating deep emotional triggers."
+  ],
   "context": {
-    "objective": "Activate emotional nostalgia using the 2014 World Cup as the identity axis, allowing earlier and later references only if they reinforce the emotional path toward the 2026 World Cup.",
-    "allowed_sources": [
-      "YouTube"
+    "audience": "Spanish-speaking Colombian community, including the diaspora",
+    "language_of_output": "Spanish",
+    "platform": "YouTube",
+    "historical_rule": [
+      "Any URL present in the historical input list must be ",
+      "automatically excluded and must not be evaluated."
     ],
-    "history": {
-      "type": "json",
-      "rule": "A piece of content is considered repeated only if the exact URL already exists in the history."
-    },
-    "excluded_urls": [
-      "https://example.com/already-used-1",
-      "https://example.com/already-used-2"
-    ]
+    "temporal_focus": [
+      "The 2014 World Cup is the main nostalgic axis, but earlier ",
+      "or later content is allowed if it reinforces the emotional ",
+      "identity of the Colombian National Team."
+    ],
+    "input_description": {
+      "new_urls": "__NEW_URLS__",
+      "historical_urls": "__HISTORICAL_URLS__"
+    }
   },
   "task": {
-    "goal": "Select fifty unique URLs of audiovisual content.",
-    "selection_priority": [
-      "Immediate emotional explosion (goal, celebration, visceral reaction)",
-      "Narrative load (story, voice-over, emotional context)",
-      "Collective identity (pride, fans, national symbols)"
+    "goal": [
+      "Evaluate, filter, and rank the new URLs from most to least viral, ",
+      "nostalgic, and inspirational, excluding all URLs that appear in the ",
+      "historical list."
     ],
-    "mandatory_threshold": [
-      "A recognizable iconic moment of the Colombian National Team",
-      "Strong human reaction (players, narrator, crowd)"
-    ],
-    "exclusion_rules": [
-      "Tactical or journalistic analysis",
-      "Informational summaries without emotional charge",
-      "Generic reposts lacking narrative or emotional context",
-      "Any URL present in excluded_urls"
-    ],
-    "duration_policy": "No restriction on content length; the emotional strength of the opening is the key criterion."
-  },
-  "output": {
-    "type": "strict_json",
-    "schema": {
-      "urls": [
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://...",
-        "https://..."
-      ]
-    },
-    "constraints": [
-      "Do not repeat URLs present in history or excluded_urls",
-      "Do not include descriptions, messages, metadata, or comments",
-      "Do not add any text outside the JSON output"
-    ]
+    "evaluation_criteria": {
+      "score_viral": "The content’s ability to generate massive reactions, "
+    }
   }
 }
-
 
 === FILE: F:\Marketing\WhatsAppSender\bin\Release\net8.0\win-x64\appsettings.json ===
 
@@ -79758,7 +79044,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+925386ecbb170edd0248d2f321d11978362a290a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3627c1caacc4b611661e53bf16712c3a807da0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -79775,7 +79061,7 @@ global using global::System.Threading.Tasks;
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Debug\net8.0\WhatsAppSender.sourcelink.json ===
 
-{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/925386ecbb170edd0248d2f321d11978362a290a/*"}}
+{"documents":{"F:\\Marketing\\*":"https://raw.githubusercontent.com/gabrielnino/marketing/3627c1caacc4b611661e53bf16712c3a807da0b3/*"}}
 
 === FILE: F:\Marketing\WhatsAppSender\obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 

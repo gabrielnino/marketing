@@ -1,10 +1,13 @@
-﻿using Application.Result;
+﻿using Application.PixVerse;
+using Application.Result;
 using Application.TrackedLinks;
 using Commands;
 using Configuration;
+using Configuration.PixVerse;
 using Configuration.UrlValidation;
 using Configuration.YouTube;
 using Infrastructure.AzureTables;
+using Infrastructure.PixVerse;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using Persistence.Context.Implementation;
 using Persistence.Context.Interceptors;
 using Persistence.Context.Interface;
@@ -37,6 +41,7 @@ using Services.Selector;
 using Services.UrlValidation;
 using Services.WhatsApp;
 using Services.YouTube;                              // ✅ NEW (YouTubeService/Discoverer)
+using System.Net.Http;
 using System.Net.Http.Headers;
 
 namespace Bootstrapper
@@ -200,6 +205,8 @@ namespace Bootstrapper
                     // -----------------------------
                     services.AddUrlValidation(hostingContext.Configuration);
 
+                    services.AddSingleton<IPixVerseService, PixVerseService>();
+
                     // -----------------------------
                     // ✅ NEW: YouTube API + viral discoverer
                     // -----------------------------
@@ -237,6 +244,11 @@ namespace Bootstrapper
                     // Platform resolver (if still needed elsewhere; avoid double registration)
                     // -----------------------------
                     services.AddSingleton<IPlatformResolver, PlatformResolver>();
+                    services.AddOptions<PixVerseOptions>()
+                    .Bind(hostingContext.Configuration.GetSection("PixVerse"))
+                    .ValidateOnStart();
+
+                    //services.AddHttpClient<IPixVerseService, PixVerseService>();
                 })
                 .UseSerilog((context, services, loggerConfig) =>
                 {

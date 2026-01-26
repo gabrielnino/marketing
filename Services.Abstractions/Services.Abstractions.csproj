@@ -23,5 +23,8 @@
 		<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.6" />
 		<PackageReference Include="System.Reactive" Version="6.0.1" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="PixVerse\" />
+	</ItemGroup>
 
 </Project>
