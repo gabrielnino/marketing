@@ -4,45 +4,45 @@ namespace Application.PixVerse
 {
     public interface IPixVerseService
     {
-        Task<Operation<PixVerseBalance>> CheckBalanceAsync(CancellationToken ct = default);
+        Task<Operation<Balance>> CheckBalanceAsync(CancellationToken ct = default);
 
         // Text-to-Video
-        Task<Operation<PixVerseJobSubmitted>> SubmitTextToVideoAsync(
-            PixVerseTextToVideoRequest request,
+        Task<Operation<JobSubmitted>> SubmitTextToVideoAsync(
+            TextToVideoRequest request,
             CancellationToken ct = default);
 
         // Upload Image
-        Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
+        Task<Operation<UploadImageResult>> UploadImageAsync(
             Stream imageStream,
             string fileName,
             string contentType,
             CancellationToken ct = default);
 
-        Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
+        Task<Operation<UploadImageResult>> UploadImageAsync(
             string imageUrl,
             CancellationToken ct = default);
 
         // Image-to-Video
-        Task<Operation<PixVerseJobSubmitted>> SubmitImageToVideoAsync(
-            PixVerseImageToVideoRequest request,
+        Task<Operation<JobSubmitted>> SubmitImageToVideoAsync(
+            ImageToVideoRequest request,
             CancellationToken ct = default);
 
         // Transition (First-last frame)
-        Task<Operation<PixVerseJobSubmitted>> SubmitTransitionAsync(
-            PixVerseTransitionRequest request,
+        Task<Operation<JobSubmitted>> SubmitTransitionAsync(
+            TransitionRequest request,
             CancellationToken ct = default);
 
         // Status / Result
-        Task<Operation<PixVerseGenerationStatus>> GetGenerationStatusAsync(
-            string jobId,
+        Task<Operation<GenerationStatus>> GetGenerationStatusAsync(
+            long jobId,
             CancellationToken ct = default);
 
-        Task<Operation<PixVerseGenerationResult>> GetGenerationResultAsync(
-            string jobId,
+        Task<Operation<GenerationResult>> GetGenerationResultAsync(
+            long jobId,
             CancellationToken ct = default);
 
-        Task<Operation<PixVerseGenerationResult>> WaitForCompletionAsync(
-            string jobId,
+        Task<Operation<GenerationResult>> WaitForCompletionAsync(
+            long jobId,
             CancellationToken ct = default);
     }
 }

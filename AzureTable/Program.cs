@@ -100,7 +100,7 @@ public class Program
         // -----------------------------
         // 6) Submit Image-to-Video using ImgId
         // -----------------------------
-        var i2vReq = new PixVerseImageToVideoRequest
+        var i2vReq = new ImageToVideoRequest
         {
             Duration = 5,
             ImgId = uploadFileOp.Data.ImgId, // <-- REQUIRED
@@ -120,7 +120,7 @@ public class Program
             return;
         }
 
-        var i2vJobId = i2vSubmitOp.Data.JobId.ToString();
+        var i2vJobId = i2vSubmitOp.Data.JobId;
         logger.LogInformation("Image-to-Video job submitted. JobId={JobId}", i2vJobId);
 
         // -----------------------------
@@ -140,7 +140,7 @@ public class Program
         // -----------------------------
         // 8) Submit TEXT-to-VIDEO (normal generation)
         // -----------------------------
-        var t2vReq = new PixVerseTextToVideoRequest
+        var t2vReq = new TextToVideoRequest
         {
             AspectRatio = "16:9",
             Duration = 5,
@@ -159,7 +159,7 @@ public class Program
             return;
         }
 
-        var t2vJobId = t2vSubmitOp.Data.JobId.ToString();
+        var t2vJobId = t2vSubmitOp.Data.JobId;
         logger.LogInformation("Text-to-Video job submitted. JobId={JobId}", t2vJobId);
 
         // -----------------------------
@@ -182,7 +182,7 @@ public class Program
     private static async Task<bool> PollUntilDoneAsync(
         ILogger logger,
         IPixVerseService pixVerse,
-        string jobId,
+        long jobId,
         TimeSpan maxWait,
         TimeSpan pollDelay,
         string label)
@@ -214,13 +214,13 @@ public class Program
 
 
 
-            if (status.State == PixVerseJobState.Succeeded)
+            if (status.State == JobState.Succeeded)
             {
                 logger.LogInformation("[{Label}] Completed successfully. JobId={JobId}", label, jobId);
                 return true;
             }
 
-            if (status.State != PixVerseJobState.Succeeded)
+            if (status.State != JobState.Succeeded)
             {
                 logger.LogError("[{Label}] FAILED. JobId={JobId} Result={Result}", label, jobId, getOp.Data);
                 return false;

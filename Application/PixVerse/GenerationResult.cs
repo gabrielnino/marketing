@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace Application.PixVerse
+{
+    public sealed class GenerationResult
+    {
+        // -----------------------------
+        // Raw PixVerse fields
+        // -----------------------------
+
+        [JsonPropertyName("id")]
+        public long RawJobId { get; init; }
+
+        [JsonPropertyName("status")]
+        public int RawStatus { get; init; }
+
+        [JsonPropertyName("url")]
+        public string? Url { get; init; }
+
+        [JsonPropertyName("prompt")]
+        public string? Prompt { get; init; }
+
+        [JsonPropertyName("negative_prompt")]
+        public string? NegativePrompt { get; init; }
+
+        [JsonPropertyName("seed")]
+        public int? Seed { get; init; }
+
+        [JsonPropertyName("size")]
+        public int? DurationSeconds { get; init; }
+
+        [JsonPropertyName("has_audio")]
+        public bool? HasAudio { get; init; }
+
+        [JsonPropertyName("credits")]
+        public int? Credits { get; init; }
+
+        [JsonPropertyName("create_time")]
+        public DateTimeOffset? CreateTimeUtc { get; init; }
+
+        [JsonPropertyName("modify_time")]
+        public DateTimeOffset? ModifyTimeUtc { get; init; }
+
+        // -----------------------------
+        // Normalized / domain-facing API
+        // -----------------------------
+
+        [JsonIgnore]
+        public string JobId => RawJobId.ToString();
+
+        [JsonIgnore]
+        public JobState State => RawStatus switch
+        {
+            0 => JobState.Pending,
+            1 => JobState.Queued,
+            2 => JobState.Processing,
+            5 => JobState.Succeeded,
+            6 => JobState.Failed,
+            _ => JobState.Unknown
+        };
+
+        [JsonIgnore]
+        public IReadOnlyList<string> VideoUrls =>
+            string.IsNullOrWhiteSpace(Url)
+                ? []
+                : new[] { Url };
+
+        [JsonIgnore]
+        public IReadOnlyList<string> PreviewUrls => Array.Empty<string>();
+
+        [JsonIgnore]
+        public string? ErrorCode => State == JobState.Failed ? RawStatus.ToString() : null;
+
+        [JsonIgnore]
+        public string? ErrorMessage => State == JobState.Failed ? "PixVerse generation failed" : null;
+
+        [JsonIgnore]
+        public DateTimeOffset RetrievedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+
+        [JsonIgnore]
+        public bool HasAnyVideoUrl => !string.IsNullOrWhiteSpace(Url);
+    }
+}
