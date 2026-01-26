@@ -24,6 +24,7 @@ public sealed class PixVerseService(
     // -----------------------------
     private const string BalancePath = "/openapi/v2/account/balance";
     private const string TextToVideoPath = "/openapi/v2/video/text/generate";
+    private const string ImageToVideoPath = "/openapi/v2/video/img/generate";
     private const string StatusPath = "/openapi/v2/video/status/";
     private const string ResultPath = "/openapi/v2/video/result/";
     private const string UploadImagePath = "/openapi/v2/image/upload";
@@ -165,6 +166,68 @@ public sealed class PixVerseService(
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitTextToVideo", runId);
             return _error.Fail<PixVerseJobSubmitted>(ex, "Submit failed");
+        }
+    }
+
+    // -------------------------------------------------
+    // Image-to-Video (NEW)
+    // POST /openapi/v2/video/img/generate
+    // Response: { ErrCode, ErrMsg, Resp: { video_id } }
+    // -------------------------------------------------
+    public async Task<Operation<PixVerseJobSubmitted>> SubmitImageToVideoAsync(
+        PixVerseImageToVideoRequest request,
+        CancellationToken ct = default)
+    {
+        var runId = NewRunId();
+        _logger.LogInformation("[RUN {RunId}] START SubmitImageToVideo", runId);
+
+        try
+        {
+            request.Validate();
+
+            if (!TryValidateConfig(out var configError))
+                return _error.Fail<PixVerseJobSubmitted>(null, configError);
+
+            var endpoint = BuildEndpoint(ImageToVideoPath);
+            var payload = JsonSerializer.Serialize(request, JsonOpts);
+
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
+            {
+                Content = new StringContent(payload, Encoding.UTF8, "application/json")
+            };
+
+            ApplyAuth(req);
+
+            using var res = await _http.SendAsync(req, ct);
+
+            if (!res.IsSuccessStatusCode)
+                return _error.Fail<PixVerseJobSubmitted>(null, $"SubmitImageToVideo failed. HTTP {(int)res.StatusCode}");
+
+            var json = await res.Content.ReadAsStringAsync(ct);
+
+            var env = JsonSerializer.Deserialize<PixVerseApiEnvelope<PixVerseI2VSubmitResp>>(json, JsonOpts);
+
+            if (env is null)
+                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid ImageToVideo response (null).");
+
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseJobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            if (env.Resp is null || env.Resp.VideoId == 0)
+                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid ImageToVideo response (missing Resp.video_id).");
+
+            var submitted = new PixVerseJobSubmitted
+            {
+                JobId = env.Resp.VideoId,
+                Message = env.ErrMsg
+            };
+
+            return Operation<PixVerseJobSubmitted>.Success(submitted, env.ErrMsg);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitImageToVideo", runId);
+            return _error.Fail<PixVerseJobSubmitted>(ex, "SubmitImageToVideo failed");
         }
     }
 
@@ -310,8 +373,6 @@ public sealed class PixVerseService(
 
     // -------------------------------------------------
     // Image Upload
-    // POST /openapi/v2/image/upload
-    // Either image (file) OR image_url (string) is required.
     // -------------------------------------------------
     public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
         Stream imageStream,
@@ -348,7 +409,6 @@ public sealed class PixVerseService(
                 return _error.Business<PixVerseUploadImageResult>(
                     $"Unsupported file extension '{ext}'. Allowed: .png, .webp, .jpeg, .jpg");
 
-            // size < 20MB (requirement); we can only enforce if seekable
             if (imageStream.CanSeek)
             {
                 const long maxBytes = 20L * 1024L * 1024L;
@@ -365,7 +425,6 @@ public sealed class PixVerseService(
             var fileContent = new StreamContent(imageStream);
             fileContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
 
-            // field name must be "image"
             form.Add(fileContent, "image", fileName);
 
             using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
@@ -392,9 +451,6 @@ public sealed class PixVerseService(
 
             if (env.Resp is null)
                 return _error.Fail<PixVerseUploadImageResult>(null, "Invalid upload payload (Resp null).");
-
-            if (env.Resp.ImgId == 0 || string.IsNullOrWhiteSpace(env.Resp.ImgUrl))
-                _logger.LogWarning("[RUN {RunId}] UploadImage returned partial data. ImgId={ImgId} ImgUrl={ImgUrl}", runId, env.Resp.ImgId, env.Resp.ImgUrl);
 
             return Operation<PixVerseUploadImageResult>.Success(env.Resp, env.ErrMsg);
         }
@@ -426,7 +482,6 @@ public sealed class PixVerseService(
 
             var endpoint = BuildEndpoint(UploadImagePath);
 
-            // body is multipart/form-data with image_url
             using var form = new MultipartFormDataContent
             {
                 { new StringContent(imageUrl, Encoding.UTF8), "image_url" }
@@ -532,5 +587,11 @@ public sealed class PixVerseService(
 
         [JsonPropertyName("credits")]
         public int Credits { get; init; }
+    }
+
+    private sealed class PixVerseI2VSubmitResp
+    {
+        [JsonPropertyName("video_id")]
+        public long VideoId { get; init; }
     }
 }

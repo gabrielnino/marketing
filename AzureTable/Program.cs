@@ -50,7 +50,9 @@ public class Program
             uploadOp.Data.ImgId,
             uploadOp.Data.ImgUrl);
 
-
+        // -----------------------------
+        // 3) Upload image (FILE) -> to get img_id
+        // -----------------------------
         var localPath = @"E:\DocumentosCV\LuisNino\images\140704-james-rodriguez-10a.webp"; // <-- change this
 
         if (!File.Exists(localPath))
@@ -59,19 +61,28 @@ public class Program
             return;
         }
 
-        // IMPORTANT: contentType must match the file type
-        // jpg/jpeg -> image/jpeg
-        // png      -> image/png
-        // webp     -> image/webp
-        var contentType = "image/jpeg";
+        // Detect content-type from extension (basic)
+        var ext = Path.GetExtension(localPath).ToLowerInvariant();
+        var contentType = ext switch
+        {
+            ".jpg" or ".jpeg" => "image/jpeg",
+            ".png" => "image/png",
+            ".webp" => "image/webp",
+            _ => "application/octet-stream"
+        };
+
+        if (contentType == "application/octet-stream")
+        {
+            logger.LogError("Unsupported image extension: {Ext}", ext);
+            return;
+        }
 
         await using var fs = File.OpenRead(localPath);
 
         var uploadFileOp = await pixVerse.UploadImageAsync(
             fs,
             Path.GetFileName(localPath),
-            contentType,
-            CancellationToken.None);
+            contentType);
 
         if (!uploadFileOp.IsSuccessful || uploadFileOp.Data is null)
         {
@@ -79,28 +90,50 @@ public class Program
             return;
         }
 
+        logger.LogInformation(
+            "Upload (file) OK. ImgId={ImgId} ImgUrl={ImgUrl}",
+            uploadFileOp.Data.ImgId,
+            uploadFileOp.Data.ImgUrl);
 
         // -----------------------------
-        // 2b) Upload image (FILE) - optional example
+        // 4) Submit Image-to-Video using ImgId
         // -----------------------------
-        // NOTE: Set a real local path to an image file < 20MB (png/webp/jpeg/jpg).
-        //var localPath = @"C:\temp\test.jpg";
-        //await using var fs = File.OpenRead(localPath);
-        //var uploadFileOp = await pixVerse.UploadImageAsync(
-        //    fs,
-        //    Path.GetFileName(localPath),
-        //    "image/jpeg");
-        //
-        //if (!uploadFileOp.IsSuccessful || uploadFileOp.Data is null)
-        //{
-        //    logger.LogError("Upload (file) failed: {Message}", uploadFileOp.Message);
-        //    return;
-        //}
-        //
-        //logger.LogInformation(
-        //    "Upload (file) OK. ImgId={ImgId} ImgUrl={ImgUrl}",
-        //    uploadFileOp.Data.ImgId,
-        //    uploadFileOp.Data.ImgUrl);
+        var i2vReq = new PixVerseImageToVideoRequest
+        {
+            Duration = 5,
+            ImgId = uploadFileOp.Data.ImgId, // <-- REQUIRED
+            Model = "v5",
+            Prompt = "James Rodríguez celebrating a goal in World Cup 2014, cinematic slow motion, stadium lights, nostalgic, high detail",
+            Quality = "540p",
+            NegativePrompt = "blurry, low quality, artifacts",
+            Seed = 0
+        };
+
+        var i2vSubmitOp = await pixVerse.SubmitImageToVideoAsync(i2vReq);
+
+        if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
+        {
+            logger.LogError("Image-to-Video submit failed: {Message}", i2vSubmitOp.Message);
+            return;
+        }
+
+        var jobId = i2vSubmitOp.Data.JobId.ToString();
+
+        logger.LogInformation("Image-to-Video job submitted. JobId={JobId}", jobId);
+
+        // -----------------------------
+        // 5) Wait for completion + fetch result
+        // -----------------------------
+        var resultOp = await pixVerse.WaitForCompletionAsync(jobId);
+
+        if (!resultOp.IsSuccessful || resultOp.Data is null)
+        {
+            logger.LogError("Image-to-Video generation failed: {Message}", resultOp.Message);
+            return;
+        }
+
+        // Adapt these properties to your PixVerseGenerationResult model
+        logger.LogInformation("Image-to-Video completed. Result={Result}", resultOp.Data);
 
         logger.LogInformation("=== END PixVerseService TEST ===");
     }
