@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace Application.PixVerse
+namespace Application.PixVerse.request
 {
     public sealed class LipSyncRequest
     {

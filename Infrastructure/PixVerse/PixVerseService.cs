@@ -1,4 +1,6 @@
 ﻿using Application.PixVerse;
+using Application.PixVerse.request;
+using Application.PixVerse.response;
 using Application.Result;
 using Configuration.PixVerse;
 using Microsoft.Extensions.Logging;

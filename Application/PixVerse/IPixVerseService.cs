@@ -1,4 +1,6 @@
-﻿using Application.Result;
+﻿using Application.PixVerse.request;
+using Application.PixVerse.response;
+using Application.Result;
 
 namespace Application.PixVerse
 {

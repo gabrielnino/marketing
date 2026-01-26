@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Application.PixVerse
+namespace Application.PixVerse.request
 {
     public sealed class TransitionRequest
     {

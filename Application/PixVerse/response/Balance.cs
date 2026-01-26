@@ -1,7 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace Application.PixVerse
+namespace Application.PixVerse.response
 {
     public sealed class Balance
     {
