@@ -64,7 +64,7 @@ namespace Application.PixVerse
         [JsonIgnore]
         public IReadOnlyList<string> VideoUrls =>
             string.IsNullOrWhiteSpace(Url)
-                ? Array.Empty<string>()
+                ? []
                 : new[] { Url };
 
         [JsonIgnore]

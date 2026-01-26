@@ -201,29 +201,38 @@ public class Program
 
             // Adjust these fields to match YOUR model (e.g., Status as string).
             var status = getOp.Data ?? null;
+            if (status is null)
+            {
+                logger.LogError("[{Label}] FAILED. JobId={JobId} Result={Result}", label, jobId, getOp.Data);
+                return false;
+            }
 
             logger.LogInformation("[{Label}] Status={Status} Result={Result}", label, status, getOp.Data);
+            //PixVerseGenerationResult
 
-            //if (string.Equals(status.State), "success", StringComparison.OrdinalIgnoreCase) ||
-            //    string.Equals(status, "completed", StringComparison.OrdinalIgnoreCase))
-            //{
-            //    logger.LogInformation("[{Label}] Completed successfully. JobId={JobId}", label, jobId);
-            //    return true;
-            //}
+            //PixVerseJobState State
 
-            //if (string.Equals(status, "failed", StringComparison.OrdinalIgnoreCase) ||
-            //    string.Equals(status, "error", StringComparison.OrdinalIgnoreCase))
-            //{
-            //    logger.LogError("[{Label}] FAILED. JobId={JobId} Result={Result}", label, jobId, getOp.Data);
-            //    return false;
-            //}
 
-            //if (DateTimeOffset.UtcNow >= deadline)
-            //{
-            //    logger.LogError("[{Label}] Timed out after {MaxWait}. JobId={JobId}", label, maxWait, jobId);
-            //    return false;
+
+            if (status.State == PixVerseJobState.Succeeded)
+            {
+                logger.LogInformation("[{Label}] Completed successfully. JobId={JobId}", label, jobId);
+                return true;
+            }
+
+            if (status.State != PixVerseJobState.Succeeded)
+            {
+                logger.LogError("[{Label}] FAILED. JobId={JobId} Result={Result}", label, jobId, getOp.Data);
+                return false;
+            }
+
+            if (DateTimeOffset.UtcNow >= deadline)
+            {
+                logger.LogError("[{Label}] Timed out after {MaxWait}. JobId={JobId}", label, maxWait, jobId);
+                return false;
+            }
+
+            await Task.Delay(pollDelay);
         }
-
-        await Task.Delay(pollDelay);
     }
 }
