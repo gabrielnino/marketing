@@ -5,7 +5,7 @@
         /// <summary>
         /// PixVerse generation job identifier.
         /// </summary>
-        public required string JobId { get; init; }
+        public required long JobId { get; init; }
 
         /// <summary>
         /// Optional server message if PixVerse returns it.

@@ -5,41 +5,10 @@ namespace Application.PixVerse
     public sealed class PixVerseTextToVideoRequest
     {
         /// <summary>
-        /// PixVerse model (e.g. "v3.5", "v4", "v4.5" depending on API support)
+        /// Aspect ratio (e.g. "16:9", "9:16", "1:1")
         /// </summary>
-        [JsonPropertyName("model")]
-        public required string Model { get; init; }
-
-        /// <summary>
-        /// Main prompt (<= 2048 characters)
-        /// </summary>
-        [JsonPropertyName("prompt")]
-        public required string Prompt { get; init; }
-
-        /// <summary>
-        /// Optional negative prompt (<= 2048 characters)
-        /// </summary>
-        [JsonPropertyName("negative_prompt")]
-        public string? NegativePrompt { get; init; }
-
-        /// <summary>
-        /// Optional camera movement string (supported values depend on model)
-        /// </summary>
-        [JsonPropertyName("camera_movement")]
-        public string? CameraMovement { get; init; }
-
-        /// <summary>
-        /// Optional style (e.g. "anime", "3d_animation", "day", "cyberpunk", "comic")
-        /// Do not include unless needed.
-        /// </summary>
-        [JsonPropertyName("style")]
-        public string? Style { get; init; }
-
-        /// <summary>
-        /// Optional motion mode ("normal" default, "fast" only allows 5s, 1080p doesn't support fast)
-        /// </summary>
-        [JsonPropertyName("motion_mode")]
-        public string? MotionMode { get; init; }
+        [JsonPropertyName("aspect_ratio")]
+        public required string AspectRatio { get; init; }
 
         /// <summary>
         /// Required duration (5 or 8). 1080p doesn't support 8.
@@ -48,7 +17,25 @@ namespace Application.PixVerse
         public required int Duration { get; init; }
 
         /// <summary>
-        /// Required quality (e.g. "540p", "720p", "1080p"; "360p" for Turbo)
+        /// PixVerse model (e.g. "v5")
+        /// </summary>
+        [JsonPropertyName("model")]
+        public required string Model { get; init; }
+
+        /// <summary>
+        /// Optional negative prompt (<= 2048 characters)
+        /// </summary>
+        [JsonPropertyName("negative_prompt")]
+        public string? NegativePrompt { get; init; }
+
+        /// <summary>
+        /// Main prompt (<= 2048 characters)
+        /// </summary>
+        [JsonPropertyName("prompt")]
+        public required string Prompt { get; init; }
+
+        /// <summary>
+        /// Required quality (e.g. "540p", "720p", "1080p")
         /// </summary>
         [JsonPropertyName("quality")]
         public required string Quality { get; init; }
@@ -59,8 +46,25 @@ namespace Application.PixVerse
         [JsonPropertyName("seed")]
         public int? Seed { get; init; }
 
+        // ---- Optional extra fields (still compatible with PixVerse UI doc) ----
+
+        [JsonPropertyName("camera_movement")]
+        public string? CameraMovement { get; init; }
+
+        [JsonPropertyName("style")]
+        public string? Style { get; init; }
+
+        [JsonPropertyName("motion_mode")]
+        public string? MotionMode { get; init; }
+
+        [JsonPropertyName("template_id")]
+        public long? TemplateId { get; init; }
+
         public void Validate()
         {
+            if (string.IsNullOrWhiteSpace(AspectRatio))
+                throw new ArgumentException("AspectRatio cannot be null/empty.", nameof(AspectRatio));
+
             if (string.IsNullOrWhiteSpace(Model))
                 throw new ArgumentException("Model cannot be null/empty.", nameof(Model));
 

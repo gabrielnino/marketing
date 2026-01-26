@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Infrastructure.PixVerse;
 
@@ -17,12 +18,18 @@ public sealed class PixVerseService(
 ) : IPixVerseService
 {
     // -----------------------------
-    // PixVerse API paths (Infrastructure knowledge)
+    // PixVerse API paths (per screenshots)
+    // Base URL: https://app-api.pixverse.ai
+    // POST: /openapi/v2/video/text/generate
+    // Headers: API-KEY, Ai-trace-id
     // -----------------------------
-    private const string BalancePath = "/v1/balance";
-    private const string TextToVideoPath = "/v1/video/text";
-    private const string StatusPath = "/v1/video/status/";
-    private const string ResultPath = "/v1/video/result/";
+    private const string BalancePath = "/openapi/v2/balance";               // not shown in screenshots; keep as best-guess
+    private const string TextToVideoPath = "/openapi/v2/video/text/generate";
+    private const string StatusPath = "/openapi/v2/video/status/";         // best-guess
+    private const string ResultPath = "/openapi/v2/video/result/";         // best-guess
+
+    private const string ApiKeyHeader = "API-KEY";
+    private const string TraceIdHeader = "Ai-trace-id";
 
     private readonly HttpClient _http = httpClient;
     private readonly PixVerseOptions _opt = options.Value;
@@ -35,7 +42,6 @@ public sealed class PixVerseService(
     // -------------------------------------------------
     // Account / Billing
     // -------------------------------------------------
-
     public async Task<Operation<PixVerseBalance>> CheckBalanceAsync(CancellationToken ct = default)
     {
         var runId = NewRunId();
@@ -43,22 +49,13 @@ public sealed class PixVerseService(
 
         try
         {
-            if (string.IsNullOrWhiteSpace(_opt.BaseUrl))
-                return _error.Fail<PixVerseBalance>(null, "PixVerse BaseUrl is not configured.");
+            if (!TryValidateConfig(out var configError))
+                return _error.Fail<PixVerseBalance>(null, configError);
 
-            if (string.IsNullOrWhiteSpace(_opt.ApiKey))
-                return _error.Fail<PixVerseBalance>(null, "PixVerse ApiKey is not configured.");
-
-            var endpoint = new Uri(
-                new Uri(_opt.BaseUrl.TrimEnd('/') + "/"),
-                BalancePath.TrimStart('/')
-            );
+            var endpoint = BuildEndpoint(BalancePath);
 
             using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
-
-            // ✅ Bearer authorization using _opt.ApiKey
-            req.Headers.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _opt.ApiKey);
+            ApplyAuth(req);
 
             using var timeoutCts = _opt.HttpTimeout > TimeSpan.Zero
                 ? new CancellationTokenSource(_opt.HttpTimeout)
@@ -75,8 +72,21 @@ public sealed class PixVerseService(
                     $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
 
             var json = await res.Content.ReadAsStringAsync(linkedCts.Token);
-            var balance = JsonSerializer.Deserialize<PixVerseBalance>(json, JsonOpts);
 
+            // Some PixVerse endpoints may also return envelope; we try envelope first, then raw model.
+            var env = TryDeserialize<PixVerseApiEnvelope<PixVerseBalance>>(json);
+            if (env is not null)
+            {
+                if (env.ErrCode != 0)
+                    return _error.Fail<PixVerseBalance>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+                if (env.Resp is null)
+                    return _error.Fail<PixVerseBalance>(null, "Invalid balance payload (Resp null).");
+
+                return Operation<PixVerseBalance>.Success(env.Resp, env.ErrMsg);
+            }
+
+            var balance = JsonSerializer.Deserialize<PixVerseBalance>(json, JsonOpts);
             if (balance is null)
                 return _error.Fail<PixVerseBalance>(null, "Invalid balance payload");
 
@@ -101,12 +111,9 @@ public sealed class PixVerseService(
         }
     }
 
-
-
     // -------------------------------------------------
     // Text-to-Video
     // -------------------------------------------------
-
     public async Task<Operation<PixVerseJobSubmitted>> SubmitTextToVideoAsync(
         PixVerseTextToVideoRequest request,
         CancellationToken ct = default)
@@ -116,17 +123,18 @@ public sealed class PixVerseService(
 
         try
         {
-            request.Validate();
+            request.Validate(); // current model validates Model/Prompt/Duration/Quality/Seed :contentReference[oaicite:2]{index=2}
 
+            if (!TryValidateConfig(out var configError))
+                return _error.Fail<PixVerseJobSubmitted>(null, configError);
+
+            var endpoint = BuildEndpoint(TextToVideoPath);
             var payload = JsonSerializer.Serialize(request, JsonOpts);
-
-            if (string.IsNullOrWhiteSpace(_opt.BaseUrl))
-                return _error.Fail<PixVerseJobSubmitted>(null, "PixVerse BaseUrl is not configured.");
-
-            using var req = new HttpRequestMessage(HttpMethod.Post, TextToVideoPath)
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
             {
                 Content = new StringContent(payload, Encoding.UTF8, "application/json")
             };
+
             ApplyAuth(req);
 
             using var res = await _http.SendAsync(req, ct);
@@ -137,12 +145,27 @@ public sealed class PixVerseService(
                     $"Submit failed. HTTP {(int)res.StatusCode}");
 
             var json = await res.Content.ReadAsStringAsync(ct);
-            var submitted = JsonSerializer.Deserialize<PixVerseJobSubmitted>(json, JsonOpts);
 
-            if (submitted is null || string.IsNullOrWhiteSpace(submitted.JobId))
-                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid submit response");
+            // Per screenshot response:
+            // { "ErrCode":0, "ErrMsg":"success", "Resp": { "video_id":"...", "credits":45 } }
+            var env = JsonSerializer.Deserialize<PixVerseApiEnvelope<PixVerseSubmitResp>>(json, JsonOpts);
 
-            return Operation<PixVerseJobSubmitted>.Success(submitted);
+            if (env is null)
+                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid submit response (null).");
+
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseJobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            if (env.Resp is null || env.Resp.VideoId == 0)
+                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid submit response (missing Resp.video_id).");
+
+            var submitted = new PixVerseJobSubmitted
+            {
+                JobId = env.Resp.VideoId,
+                Message = env.ErrMsg
+            };
+
+            return Operation<PixVerseJobSubmitted>.Success(submitted, env.ErrMsg);
         }
         catch (Exception ex)
         {
@@ -155,10 +178,12 @@ public sealed class PixVerseService(
         string jobId,
         CancellationToken ct = default)
     {
-        using var req = new HttpRequestMessage(
-            HttpMethod.Get,
-            StatusPath + Uri.EscapeDataString(jobId));
+        if (!TryValidateConfig(out var configError))
+            return _error.Fail<PixVerseGenerationStatus>(null, configError);
 
+        var endpoint = BuildEndpoint(StatusPath + Uri.EscapeDataString(jobId));
+
+        using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
         ApplyAuth(req);
 
         using var res = await _http.SendAsync(req, ct);
@@ -169,6 +194,19 @@ public sealed class PixVerseService(
                 $"Status failed. HTTP {(int)res.StatusCode}");
 
         var json = await res.Content.ReadAsStringAsync(ct);
+
+        // Best-effort: try envelope first, then raw model.
+        var env = TryDeserialize<PixVerseApiEnvelope<PixVerseGenerationStatus>>(json);
+        if (env is not null)
+        {
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseGenerationStatus>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            return env.Resp is null
+                ? _error.Fail<PixVerseGenerationStatus>(null, "Invalid status payload (Resp null).")
+                : Operation<PixVerseGenerationStatus>.Success(env.Resp, env.ErrMsg);
+        }
+
         var status = JsonSerializer.Deserialize<PixVerseGenerationStatus>(json, JsonOpts);
 
         return status is null
@@ -180,10 +218,12 @@ public sealed class PixVerseService(
         string jobId,
         CancellationToken ct = default)
     {
-        using var req = new HttpRequestMessage(
-            HttpMethod.Get,
-            ResultPath + Uri.EscapeDataString(jobId));
+        if (!TryValidateConfig(out var configError))
+            return _error.Fail<PixVerseGenerationResult>(null, configError);
 
+        var endpoint = BuildEndpoint(ResultPath + Uri.EscapeDataString(jobId));
+
+        using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
         ApplyAuth(req);
 
         using var res = await _http.SendAsync(req, ct);
@@ -194,6 +234,19 @@ public sealed class PixVerseService(
                 $"Result failed. HTTP {(int)res.StatusCode}");
 
         var json = await res.Content.ReadAsStringAsync(ct);
+
+        // Best-effort: try envelope first, then raw model.
+        var env = TryDeserialize<PixVerseApiEnvelope<PixVerseGenerationResult>>(json);
+        if (env is not null)
+        {
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseGenerationResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            return env.Resp is null
+                ? _error.Fail<PixVerseGenerationResult>(null, "Invalid result payload (Resp null).")
+                : Operation<PixVerseGenerationResult>.Success(env.Resp, env.ErrMsg);
+        }
+
         var result = JsonSerializer.Deserialize<PixVerseGenerationResult>(json, JsonOpts);
 
         return result is null
@@ -218,17 +271,15 @@ public sealed class PixVerseService(
 
             var st = await GetGenerationStatusAsync(jobId, ct);
 
-            // Case A: status call failed -> propagate same failure typed as PixVerseGenerationResult
             if (!st.IsSuccessful)
             {
                 _logger.LogWarning(
                     "STEP PV-4.1 - Status call failed. JobId={JobId}. Type={Type}. Message={Message}",
                     jobId, st.Type, st.Message);
 
-                return st.ConvertTo<PixVerseGenerationResult>(); // <-- FIX (was Convert<>)
+                return st.ConvertTo<PixVerseGenerationResult>();
             }
 
-            // Case B: success but null payload -> explicit failure (ConvertTo would throw)
             if (st.Data is null)
             {
                 _logger.LogWarning(
@@ -248,11 +299,9 @@ public sealed class PixVerseService(
                     "STEP PV-4.3 - Job reached terminal state. JobId={JobId}. State={State}. Fetching result...",
                     jobId, st.Data.State);
 
-                // If succeeded, fetch full result
                 if (st.Data.State == PixVerseJobState.Succeeded)
                     return await GetGenerationResultAsync(jobId, ct);
 
-                // If failed/cancelled, return a result-shaped failure payload
                 var msg = $"Job ended with terminal state: {st.Data.State}.";
                 return Operation<PixVerseGenerationResult>.Success(new PixVerseGenerationResult
                 {
@@ -280,13 +329,73 @@ public sealed class PixVerseService(
     // -------------------------------------------------
     // Helpers
     // -------------------------------------------------
+    private static string NewRunId() => Guid.NewGuid().ToString("N")[..8];
 
-    private static string NewRunId() =>
-        Guid.NewGuid().ToString("N")[..8];
+    private bool TryValidateConfig(out string error)
+    {
+        if (string.IsNullOrWhiteSpace(_opt.BaseUrl))
+        {
+            error = "PixVerse BaseUrl is not configured.";
+            return false;
+        }
+
+        if (string.IsNullOrWhiteSpace(_opt.ApiKey))
+        {
+            error = "PixVerse ApiKey is not configured.";
+            return false;
+        }
+
+        error = string.Empty;
+        return true;
+    }
+
+    private Uri BuildEndpoint(string pathOrPathWithId)
+    {
+        //TextToVideoPath
+        var baseUri = new Uri(_opt.BaseUrl.TrimEnd('/') + "/");
+        return new Uri(baseUri, pathOrPathWithId.TrimStart('/'));
+    }
 
     private void ApplyAuth(HttpRequestMessage req)
     {
-        req.Headers.Authorization =
-            new AuthenticationHeaderValue("Bearer", _opt.ApiKey);
+        // Matches screenshots: API-KEY header, NOT Bearer Authorization
+        req.Headers.Remove(ApiKeyHeader);
+        req.Headers.Add(ApiKeyHeader, _opt.ApiKey);
+
+        // Matches screenshots: Ai-trace-id header
+        if (!req.Headers.Contains(TraceIdHeader))
+            req.Headers.Add(TraceIdHeader, Guid.NewGuid().ToString());
+
+        req.Headers.Accept.Clear();
+        req.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    }
+
+    private static T? TryDeserialize<T>(string json)
+    {
+        try { return JsonSerializer.Deserialize<T>(json, JsonOpts); }
+        catch { return default; }
+    }
+
+    private sealed class PixVerseApiEnvelope<T>
+    {
+        [JsonPropertyName("ErrCode")]
+        public int ErrCode { get; init; }
+
+        [JsonPropertyName("ErrMsg")]
+        public string? ErrMsg { get; init; }
+
+        [JsonPropertyName("Resp")]
+        public T? Resp { get; init; }
+    }
+
+    private sealed class PixVerseSubmitResp
+    {
+        // In the JSON, video_id is a NUMBER (not a string):
+        // "video_id": 383655565438332
+        [JsonPropertyName("video_id")]
+        public long VideoId { get; init; }
+
+        [JsonPropertyName("credits")]
+        public int Credits { get; init; }
     }
 }

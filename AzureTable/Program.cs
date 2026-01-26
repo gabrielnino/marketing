@@ -43,11 +43,15 @@ public class Program
         // -----------------------------
         var request = new PixVerseTextToVideoRequest
         {
-            Model = "v3.5",
-            Prompt = "Epic cinematic shot of a football stadium exploding in celebration",
+            AspectRatio = "16:9",
             Duration = 5,
-            Quality = "720p"
+            Model = "v5",
+            NegativePrompt = "string",
+            Prompt = "string",
+            Quality = "540p",
+            Seed = 0
         };
+
 
         var submitOp = await pixVerse.SubmitTextToVideoAsync(request);
 
@@ -61,12 +65,12 @@ public class Program
 
         logger.LogInformation(
             "Job submitted successfully. JobId={JobId}",
-            jobId);
+            jobId.ToString());
 
         // -----------------------------
         // 3) Wait for completion
         // -----------------------------
-        var resultOp = await pixVerse.WaitForCompletionAsync(jobId);
+        var resultOp = await pixVerse.WaitForCompletionAsync(jobId.ToString());
 
         if (!resultOp.IsSuccessful || resultOp.Data is null)
         {
