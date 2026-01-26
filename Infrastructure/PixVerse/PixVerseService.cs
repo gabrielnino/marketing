@@ -376,6 +376,16 @@ public sealed class PixVerseService(
         catch { return default; }
     }
 
+    public Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(Stream imageStream, string fileName, string contentType, CancellationToken ct = default)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(string imageUrl, CancellationToken ct = default)
+    {
+        throw new NotImplementedException();
+    }
+
     private sealed class PixVerseApiEnvelope<T>
     {
         [JsonPropertyName("ErrCode")]

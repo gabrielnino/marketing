@@ -4,17 +4,23 @@ namespace Application.PixVerse
 {
     public interface IPixVerseService
     {
-        // -----------------------------
-        // Account / Billing
-        // -----------------------------
+
         Task<Operation<PixVerseBalance>> CheckBalanceAsync(CancellationToken ct = default);
 
-        // -----------------------------
-        // Text-to-Video (Async Orchestration)
-        // -----------------------------
         Task<Operation<PixVerseJobSubmitted>> SubmitTextToVideoAsync(
             PixVerseTextToVideoRequest request,
             CancellationToken ct = default);
+
+        Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
+            Stream imageStream,
+            string fileName,
+            string contentType,
+            CancellationToken ct = default);
+
+        Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
+            string imageUrl,
+            CancellationToken ct = default);
+
 
         Task<Operation<PixVerseGenerationStatus>> GetGenerationStatusAsync(
             string jobId,
@@ -24,10 +30,7 @@ namespace Application.PixVerse
             string jobId,
             CancellationToken ct = default);
 
-        /// <summary>
-        /// Opinionated polling helper: polls status until terminal state,
-        /// or hits max attempts / cancellation.
-        /// </summary>
+
         Task<Operation<PixVerseGenerationResult>> WaitForCompletionAsync(
             string jobId,
             CancellationToken ct = default);
