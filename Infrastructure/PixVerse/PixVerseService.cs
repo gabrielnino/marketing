@@ -36,25 +36,45 @@ public sealed class PixVerseService(
     // Account / Billing
     // -------------------------------------------------
 
-    public async Task<Operation<PixVerseBalance>> CheckBalanceAsync(
-        CancellationToken ct = default)
+    public async Task<Operation<PixVerseBalance>> CheckBalanceAsync(CancellationToken ct = default)
     {
         var runId = NewRunId();
         _logger.LogInformation("[RUN {RunId}] START PixVerse.CheckBalance", runId);
 
         try
         {
-            using var req = new HttpRequestMessage(HttpMethod.Get, BalancePath);
-            ApplyAuth(req);
+            if (string.IsNullOrWhiteSpace(_opt.BaseUrl))
+                return _error.Fail<PixVerseBalance>(null, "PixVerse BaseUrl is not configured.");
 
-            using var res = await _http.SendAsync(req, ct);
+            if (string.IsNullOrWhiteSpace(_opt.ApiKey))
+                return _error.Fail<PixVerseBalance>(null, "PixVerse ApiKey is not configured.");
+
+            var endpoint = new Uri(
+                new Uri(_opt.BaseUrl.TrimEnd('/') + "/"),
+                BalancePath.TrimStart('/')
+            );
+
+            using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
+
+            // ✅ Bearer authorization using _opt.ApiKey
+            req.Headers.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _opt.ApiKey);
+
+            using var timeoutCts = _opt.HttpTimeout > TimeSpan.Zero
+                ? new CancellationTokenSource(_opt.HttpTimeout)
+                : new CancellationTokenSource();
+
+            using var linkedCts =
+                CancellationTokenSource.CreateLinkedTokenSource(ct, timeoutCts.Token);
+
+            using var res = await _http.SendAsync(req, linkedCts.Token);
 
             if (!res.IsSuccessStatusCode)
                 return _error.Fail<PixVerseBalance>(
                     null,
                     $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
 
-            var json = await res.Content.ReadAsStringAsync(ct);
+            var json = await res.Content.ReadAsStringAsync(linkedCts.Token);
             var balance = JsonSerializer.Deserialize<PixVerseBalance>(json, JsonOpts);
 
             if (balance is null)
@@ -62,12 +82,26 @@ public sealed class PixVerseService(
 
             return Operation<PixVerseBalance>.Success(balance);
         }
+        catch (OperationCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogError(
+                ex,
+                "[RUN {RunId}] TIMEOUT CheckBalance after {Timeout}",
+                runId,
+                _opt.HttpTimeout);
+
+            return _error.Fail<PixVerseBalance>(
+                ex,
+                $"Balance check timed out after {_opt.HttpTimeout}");
+        }
         catch (Exception ex)
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED CheckBalance", runId);
             return _error.Fail<PixVerseBalance>(ex, "Balance check failed");
         }
     }
+
+
 
     // -------------------------------------------------
     // Text-to-Video
@@ -85,6 +119,9 @@ public sealed class PixVerseService(
             request.Validate();
 
             var payload = JsonSerializer.Serialize(request, JsonOpts);
+
+            if (string.IsNullOrWhiteSpace(_opt.BaseUrl))
+                return _error.Fail<PixVerseJobSubmitted>(null, "PixVerse BaseUrl is not configured.");
 
             using var req = new HttpRequestMessage(HttpMethod.Post, TextToVideoPath)
             {
