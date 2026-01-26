@@ -49,5 +49,11 @@ namespace Application.PixVerse
         Task<Operation<GenerationResult>> WaitForCompletionAsync(
             long jobId,
             CancellationToken ct = default);
+
+        Task<Operation<FileInfo>> DownloadVideoAsync(
+            long jobId,
+            string destinationFilePath,
+            int videoIndex = 0,
+            CancellationToken ct = default);
     }
 }

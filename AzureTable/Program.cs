@@ -36,87 +36,89 @@ public class Program
             return;
         }
 
-        await using var fs = File.OpenRead(gokuPath);
+        //await using var fs = File.OpenRead(gokuPath);
 
-        var uploadImgOp = await pixVerse.UploadImageAsync(
-            fs,
-            Path.GetFileName(gokuPath),
-            "image/jpeg");
+        //var uploadImgOp = await pixVerse.UploadImageAsync(
+        //    fs,
+        //    Path.GetFileName(gokuPath),
+        //    "image/jpeg");
 
-        if (!uploadImgOp.IsSuccessful || uploadImgOp.Data is null)
-        {
-            logger.LogError("Goku image upload failed: {Message}", uploadImgOp.Message);
-            return;
-        }
+        //if (!uploadImgOp.IsSuccessful || uploadImgOp.Data is null)
+        //{
+        //    logger.LogError("Goku image upload failed: {Message}", uploadImgOp.Message);
+        //    return;
+        //}
 
-        var imgId = uploadImgOp.Data.ImgId;
-        logger.LogInformation("Goku image uploaded. ImgId={ImgId}", imgId);
+        //var imgId = uploadImgOp.Data.ImgId;
+        //logger.LogInformation("Goku image uploaded. ImgId={ImgId}", imgId);
 
-        // -------------------------------------------------
-        // 3) Image-to-Video (creates source_video_id)
-        // -------------------------------------------------
-        var i2vReq = new ImageToVideoRequest
-        {
-            ImgId = imgId,
-            Duration = 5,
-            Model = "v5",
-            Quality = "540p",
-            Prompt = "Goku speaking directly to camera, anime style, expressive mouth, clear face, neutral background",
-            NegativePrompt = "blurry, distorted face, artifacts",
-            Seed = 0
-        };
+        //// -------------------------------------------------
+        //// 3) Image-to-Video (creates source_video_id)
+        //// -------------------------------------------------
+        //var i2vReq = new ImageToVideoRequest
+        //{
+        //    ImgId = imgId,
+        //    Duration = 5,
+        //    Model = "v5",
+        //    Quality = "540p",
+        //    Prompt = "Goku speaking directly to camera, anime style, expressive mouth, clear face, neutral background",
+        //    NegativePrompt = "blurry, distorted face, artifacts",
+        //    Seed = 0
+        //};
 
-        var i2vSubmitOp = await pixVerse.SubmitImageToVideoAsync(i2vReq);
-        if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
-        {
-            logger.LogError("Image-to-Video failed: {Message}", i2vSubmitOp.Message);
-            return;
-        }
+        //var i2vSubmitOp = await pixVerse.SubmitImageToVideoAsync(i2vReq);
+        //if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
+        //{
+        //    logger.LogError("Image-to-Video failed: {Message}", i2vSubmitOp.Message);
+        //    return;
+        //}
 
-        var sourceVideoId = i2vSubmitOp.Data.JobId;
-        logger.LogInformation("Image-to-Video submitted. source_video_id={VideoId}", sourceVideoId);
+        //var sourceVideoId = i2vSubmitOp.Data.JobId;
+        //logger.LogInformation("Image-to-Video submitted. source_video_id={VideoId}", sourceVideoId);
 
-        var i2vOk = await PollUntilDoneAsync(
-            logger, pixVerse, sourceVideoId,
-            TimeSpan.FromMinutes(8),
-            TimeSpan.FromSeconds(3),
-            "I2V");
+        //var i2vOk = await PollUntilDoneAsync(
+        //    logger, pixVerse, sourceVideoId,
+        //    TimeSpan.FromMinutes(8),
+        //    TimeSpan.FromSeconds(3),
+        //    "I2V");
 
-        if (!i2vOk) return;
+        //if (!i2vOk) return;
 
-        // -------------------------------------------------
-        // 4) LipSync (ONLY required capability)
-        // Case 2: source_video_id + TTS
-        // -------------------------------------------------
-        var lipReq = new LipSyncRequest
-        {
-            SourceVideoId = sourceVideoId,
-            LipSyncTtsSpeakerId = "auto",
-            LipSyncTtsContent =
-                "¡Hola Vancouver! Soy Goku. Siento un ki increíble aquí. "
-              + "No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
-        };
+        //// -------------------------------------------------
+        //// 4) LipSync (ONLY required capability)
+        //// Case 2: source_video_id + TTS
+        //// -------------------------------------------------
+        //var lipReq = new LipSyncRequest
+        //{
+        //    SourceVideoId = sourceVideoId,
+        //    LipSyncTtsSpeakerId = "auto",
+        //    LipSyncTtsContent =
+        //        "¡Hola Vancouver! Soy Goku. Siento un ki increíble aquí. "
+        //      + "No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
+        //};
 
-        var lipSubmitOp = await pixVerse.SubmitLipSyncAsync(lipReq);
-        if (!lipSubmitOp.IsSuccessful || lipSubmitOp.Data is null)
-        {
-            logger.LogError("LipSync submit failed: {Message}", lipSubmitOp.Message);
-            return;
-        }
+        //var lipSubmitOp = await pixVerse.SubmitLipSyncAsync(lipReq);
+        //if (!lipSubmitOp.IsSuccessful || lipSubmitOp.Data is null)
+        //{
+        //    logger.LogError("LipSync submit failed: {Message}", lipSubmitOp.Message);
+        //    return;
+        //}
 
-        var lipJobId = lipSubmitOp.Data.JobId;
-        logger.LogInformation("LipSync submitted. video_id={JobId}", lipJobId);
+        //var lipJobId = lipSubmitOp.Data.JobId;
+        //logger.LogInformation("LipSync submitted. video_id={JobId}", lipJobId);
 
-        // -------------------------------------------------
-        // 5) Poll LipSync result
-        // -------------------------------------------------
-        var lipOk = await PollUntilDoneAsync(
-            logger, pixVerse, lipJobId,
-            TimeSpan.FromMinutes(10),
-            TimeSpan.FromSeconds(3),
-            "LIPSYNC");
+        //// -------------------------------------------------
+        //// 5) Poll LipSync result
+        //// -------------------------------------------------
+        //var lipOk = await PollUntilDoneAsync(
+        //    logger, pixVerse, lipJobId,
+        //    TimeSpan.FromMinutes(10),
+        //    TimeSpan.FromSeconds(3),
+        //    "LIPSYNC");
 
-        if (!lipOk) return;
+        //if (!lipOk) return;
+
+        await pixVerse.DownloadVideoAsync(383686258808174, @"E:\DocumentosCV\LuisNino\images\donwload\goku_lipsync_output.mp4");
 
         logger.LogInformation("=== END PixVerse LipSync TEST (GOKU IMAGE) ===");
     }
