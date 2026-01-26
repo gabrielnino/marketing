@@ -1,4 +1,5 @@
 ﻿using Application.PixVerse;
+using Application.Result.EnumType.Extensions;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -62,7 +63,6 @@ public class Program
             return;
         }
 
-        // Detect content-type from extension (basic)
         var ext = Path.GetExtension(localPath).ToLowerInvariant();
         var contentType = ext switch
         {
@@ -96,54 +96,9 @@ public class Program
             uploadFileOp.Data.ImgId,
             uploadFileOp.Data.ImgUrl);
 
+   
         // -----------------------------
-        // 4) Submit TRANSITION (ImgId -> ImgId)
-        //    FIX: PixVerseTransitionRequest requires FirstFrameImg + LastFrameImg
-        // -----------------------------
-        var transitionReq = new PixVerseTransitionRequest
-        {
-            // Required fields (per DTO)
-            FirstFrameImg = uploadOp.Data.ImgId,        // Image A (from URL upload)
-            LastFrameImg = uploadFileOp.Data.ImgId,     // Image B (from file upload)
-
-            // Optional alias fields (only if you added them to DTO). Keeping them removed avoids ambiguity.
-            // FromImgId = uploadOp.Data.ImgId,
-            // ToImgId   = uploadFileOp.Data.ImgId,
-
-            Duration = 4,
-            Model = "v5",
-            Prompt = "Smooth cinematic transition, nostalgic football memory, stadium lights, high detail",
-            Quality = "540p",
-            Seed = 0
-        };
-
-        var transitionSubmitOp = await pixVerse.SubmitTransitionAsync(transitionReq);
-
-        if (!transitionSubmitOp.IsSuccessful || transitionSubmitOp.Data is null)
-        {
-            logger.LogError("Transition submit failed: {Message}", transitionSubmitOp.Message);
-            return;
-        }
-
-        var transitionJobId = transitionSubmitOp.Data.JobId.ToString();
-
-        logger.LogInformation("Transition job submitted. JobId={JobId}", transitionJobId);
-
-        // -----------------------------
-        // 5) Wait for completion + fetch transition result
-        // -----------------------------
-        var transitionResultOp = await pixVerse.WaitForCompletionAsync(transitionJobId);
-
-        if (!transitionResultOp.IsSuccessful || transitionResultOp.Data is null)
-        {
-            logger.LogError("Transition generation failed: {Message}", transitionResultOp.Message);
-            return;
-        }
-
-        logger.LogInformation("Transition completed. Result={Result}", transitionResultOp.Data);
-
-        // -----------------------------
-        // 6) (Optional) Submit Image-to-Video using ImgId
+        // 6) Submit Image-to-Video using ImgId
         // -----------------------------
         var i2vReq = new PixVerseImageToVideoRequest
         {
@@ -165,23 +120,110 @@ public class Program
             return;
         }
 
-        var jobId = i2vSubmitOp.Data.JobId.ToString();
-
-        logger.LogInformation("Image-to-Video job submitted. JobId={JobId}", jobId);
+        var i2vJobId = i2vSubmitOp.Data.JobId.ToString();
+        logger.LogInformation("Image-to-Video job submitted. JobId={JobId}", i2vJobId);
 
         // -----------------------------
-        // 7) Wait for completion + fetch i2v result
+        // 7) Poll GetGenerationResultAsync for Image-to-Video
         // -----------------------------
-        var resultOp = await pixVerse.WaitForCompletionAsync(jobId);
+        var i2vOk = await PollUntilDoneAsync(
+            logger,
+            pixVerse,
+            i2vJobId,
+            maxWait: TimeSpan.FromMinutes(8),
+            pollDelay: TimeSpan.FromSeconds(3),
+            label: "I2V");
 
-        if (!resultOp.IsSuccessful || resultOp.Data is null)
+        if (!i2vOk)
+            return;
+
+        // -----------------------------
+        // 8) Submit TEXT-to-VIDEO (normal generation)
+        // -----------------------------
+        var t2vReq = new PixVerseTextToVideoRequest
         {
-            logger.LogError("Image-to-Video generation failed: {Message}", resultOp.Message);
+            AspectRatio = "16:9",
+            Duration = 5,
+            Model = "v5",
+            Prompt = "Cinematic night street in Vancouver, neon reflections on wet asphalt, slow camera move, ultra detailed",
+            Quality = "540p",
+            NegativePrompt = "blurry, low quality, artifacts, watermark, text",
+            Seed = 0
+        };
+
+        var t2vSubmitOp = await pixVerse.SubmitTextToVideoAsync(t2vReq);
+
+        if (!t2vSubmitOp.IsSuccessful || t2vSubmitOp.Data is null)
+        {
+            logger.LogError("Text-to-Video submit failed: {Message}", t2vSubmitOp.Message);
             return;
         }
 
-        logger.LogInformation("Image-to-Video completed. Result={Result}", resultOp.Data);
+        var t2vJobId = t2vSubmitOp.Data.JobId.ToString();
+        logger.LogInformation("Text-to-Video job submitted. JobId={JobId}", t2vJobId);
+
+        // -----------------------------
+        // 9) Poll GetGenerationResultAsync for Text-to-Video
+        // -----------------------------
+        var t2vOk = await PollUntilDoneAsync(
+            logger,
+            pixVerse,
+            t2vJobId,
+            maxWait: TimeSpan.FromMinutes(8),
+            pollDelay: TimeSpan.FromSeconds(3),
+            label: "T2V");
+
+        if (!t2vOk)
+            return;
 
         logger.LogInformation("=== END PixVerseService TEST ===");
+    }
+
+    private static async Task<bool> PollUntilDoneAsync(
+        ILogger logger,
+        IPixVerseService pixVerse,
+        string jobId,
+        TimeSpan maxWait,
+        TimeSpan pollDelay,
+        string label)
+    {
+        var deadline = DateTimeOffset.UtcNow + maxWait;
+
+        while (true)
+        {
+            var getOp = await pixVerse.GetGenerationResultAsync(jobId);
+
+            if (!getOp.IsSuccessful || getOp.Data is null)
+            {
+                logger.LogError("[{Label}] GetGenerationResult failed: {Message}", label, getOp.Message);
+                return false;
+            }
+
+            // Adjust these fields to match YOUR model (e.g., Status as string).
+            var status = getOp.Data ?? null;
+
+            logger.LogInformation("[{Label}] Status={Status} Result={Result}", label, status, getOp.Data);
+
+            //if (string.Equals(status.State), "success", StringComparison.OrdinalIgnoreCase) ||
+            //    string.Equals(status, "completed", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    logger.LogInformation("[{Label}] Completed successfully. JobId={JobId}", label, jobId);
+            //    return true;
+            //}
+
+            //if (string.Equals(status, "failed", StringComparison.OrdinalIgnoreCase) ||
+            //    string.Equals(status, "error", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    logger.LogError("[{Label}] FAILED. JobId={JobId} Result={Result}", label, jobId, getOp.Data);
+            //    return false;
+            //}
+
+            //if (DateTimeOffset.UtcNow >= deadline)
+            //{
+            //    logger.LogError("[{Label}] Timed out after {MaxWait}. JobId={JobId}", label, maxWait, jobId);
+            //    return false;
+        }
+
+        await Task.Delay(pollDelay);
     }
 }

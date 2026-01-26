@@ -387,13 +387,13 @@ public sealed class PixVerseService(
                     return await GetGenerationResultAsync(jobId, ct);
 
                 var msg = $"Job ended with terminal state: {st.Data.State}.";
-                return Operation<PixVerseGenerationResult>.Success(new PixVerseGenerationResult
-                {
-                    JobId = jobId,
-                    State = st.Data.State,
-                    ErrorCode = st.Data.ErrorCode,
-                    ErrorMessage = st.Data.ErrorMessage ?? msg
-                }, msg);
+                //return Operation<PixVerseGenerationResult>.Success(new PixVerseGenerationResult
+                //{
+                //    JobId = jobId,
+                //    State = st.Data.State,
+                //    ErrorCode = st.Data.ErrorCode,
+                //    ErrorMessage = st.Data.ErrorMessage ?? msg
+                //}, msg);
             }
 
             await Task.Delay(_opt.PollingInterval, ct);
