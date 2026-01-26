@@ -19,12 +19,11 @@ public sealed class PixVerseService(
 {
     // -----------------------------
     // PixVerse API paths (v2)
-    // Base URL: https://app-api.pixverse.ai
-    // Headers: API-KEY, Ai-trace-id
     // -----------------------------
     private const string BalancePath = "/openapi/v2/account/balance";
     private const string TextToVideoPath = "/openapi/v2/video/text/generate";
     private const string ImageToVideoPath = "/openapi/v2/video/img/generate";
+    private const string TransitionPath = "/openapi/v2/video/transition/generate";
     private const string StatusPath = "/openapi/v2/video/status/";
     private const string ResultPath = "/openapi/v2/video/result/";
     private const string UploadImagePath = "/openapi/v2/image/upload";
@@ -75,8 +74,7 @@ public sealed class PixVerseService(
                 ? new CancellationTokenSource(_opt.HttpTimeout)
                 : new CancellationTokenSource();
 
-            using var linkedCts =
-                CancellationTokenSource.CreateLinkedTokenSource(ct, timeoutCts.Token);
+            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct, timeoutCts.Token);
 
             using var res = await _http.SendAsync(req, linkedCts.Token);
 
@@ -170,9 +168,7 @@ public sealed class PixVerseService(
     }
 
     // -------------------------------------------------
-    // Image-to-Video (NEW)
-    // POST /openapi/v2/video/img/generate
-    // Response: { ErrCode, ErrMsg, Resp: { video_id } }
+    // Image-to-Video
     // -------------------------------------------------
     public async Task<Operation<PixVerseJobSubmitted>> SubmitImageToVideoAsync(
         PixVerseImageToVideoRequest request,
@@ -231,9 +227,70 @@ public sealed class PixVerseService(
         }
     }
 
-    public async Task<Operation<PixVerseGenerationStatus>> GetGenerationStatusAsync(
-        string jobId,
+    // -------------------------------------------------
+    // Transition (First-last frame) (MISSING -> IMPLEMENTED)
+    // POST /openapi/v2/video/transition/generate
+    // Response: { ErrCode, ErrMsg, Resp: { video_id } }
+    // -------------------------------------------------
+    public async Task<Operation<PixVerseJobSubmitted>> SubmitTransitionAsync(
+        PixVerseTransitionRequest request,
         CancellationToken ct = default)
+    {
+        var runId = NewRunId();
+        _logger.LogInformation("[RUN {RunId}] START SubmitTransition", runId);
+
+        try
+        {
+            request.Validate();
+
+            if (!TryValidateConfig(out var configError))
+                return _error.Fail<PixVerseJobSubmitted>(null, configError);
+
+            var endpoint = BuildEndpoint(TransitionPath);
+            var payload = JsonSerializer.Serialize(request, JsonOpts);
+
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
+            {
+                Content = new StringContent(payload, Encoding.UTF8, "application/json")
+            };
+
+            // NOTE: Spec says "Ai-Trace-Id" but header matching is case-insensitive; we keep the same header name.
+            ApplyAuth(req);
+
+            using var res = await _http.SendAsync(req, ct);
+
+            if (!res.IsSuccessStatusCode)
+                return _error.Fail<PixVerseJobSubmitted>(null, $"SubmitTransition failed. HTTP {(int)res.StatusCode}");
+
+            var json = await res.Content.ReadAsStringAsync(ct);
+
+            var env = JsonSerializer.Deserialize<PixVerseApiEnvelope<PixVerseI2VSubmitResp>>(json, JsonOpts);
+
+            if (env is null)
+                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid Transition response (null).");
+
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseJobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            if (env.Resp is null || env.Resp.VideoId == 0)
+                return _error.Fail<PixVerseJobSubmitted>(null, "Invalid Transition response (missing Resp.video_id).");
+
+            var submitted = new PixVerseJobSubmitted
+            {
+                JobId = env.Resp.VideoId,
+                Message = env.ErrMsg
+            };
+
+            return Operation<PixVerseJobSubmitted>.Success(submitted, env.ErrMsg);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitTransition", runId);
+            return _error.Fail<PixVerseJobSubmitted>(ex, "SubmitTransition failed");
+        }
+    }
+
+    public async Task<Operation<PixVerseGenerationStatus>> GetGenerationStatusAsync(string jobId, CancellationToken ct = default)
     {
         if (!TryValidateConfig(out var configError))
             return _error.Fail<PixVerseGenerationStatus>(null, configError);
@@ -268,9 +325,7 @@ public sealed class PixVerseService(
             : Operation<PixVerseGenerationStatus>.Success(status);
     }
 
-    public async Task<Operation<PixVerseGenerationResult>> GetGenerationResultAsync(
-        string jobId,
-        CancellationToken ct = default)
+    public async Task<Operation<PixVerseGenerationResult>> GetGenerationResultAsync(string jobId, CancellationToken ct = default)
     {
         if (!TryValidateConfig(out var configError))
             return _error.Fail<PixVerseGenerationResult>(null, configError);
@@ -305,9 +360,7 @@ public sealed class PixVerseService(
             : Operation<PixVerseGenerationResult>.Success(result);
     }
 
-    public async Task<Operation<PixVerseGenerationResult>> WaitForCompletionAsync(
-        string jobId,
-        CancellationToken ct = default)
+    public async Task<Operation<PixVerseGenerationResult>> WaitForCompletionAsync(string jobId, CancellationToken ct = default)
     {
         if (string.IsNullOrWhiteSpace(jobId))
             return _error.Business<PixVerseGenerationResult>("jobId cannot be null or empty.");
@@ -323,30 +376,13 @@ public sealed class PixVerseService(
             var st = await GetGenerationStatusAsync(jobId, ct);
 
             if (!st.IsSuccessful)
-            {
-                _logger.LogWarning(
-                    "STEP PV-4.1 - Status call failed. JobId={JobId}. Type={Type}. Message={Message}",
-                    jobId, st.Type, st.Message);
-
                 return st.ConvertTo<PixVerseGenerationResult>();
-            }
 
             if (st.Data is null)
-            {
-                _logger.LogWarning("STEP PV-4.1 - Status payload was null. JobId={JobId}", jobId);
                 return _error.Fail<PixVerseGenerationResult>(null, "Invalid status payload (null).");
-            }
-
-            _logger.LogInformation(
-                "STEP PV-4.2 - Status received. JobId={JobId}. State={State}. Progress={Progress}",
-                jobId, st.Data.State, st.Data.ProgressPercent);
 
             if (st.Data.IsTerminal)
             {
-                _logger.LogInformation(
-                    "STEP PV-4.3 - Job reached terminal state. JobId={JobId}. State={State}. Fetching result...",
-                    jobId, st.Data.State);
-
                 if (st.Data.State == PixVerseJobState.Succeeded)
                     return await GetGenerationResultAsync(jobId, ct);
 
@@ -360,26 +396,18 @@ public sealed class PixVerseService(
                 }, msg);
             }
 
-            _logger.LogInformation(
-                "STEP PV-4.4 - Job not terminal yet. Waiting {DelayMs}ms before next poll. JobId={JobId}",
-                (int)_opt.PollingInterval.TotalMilliseconds, jobId);
-
             await Task.Delay(_opt.PollingInterval, ct);
         }
 
-        _logger.LogWarning("STEP PV-4.5 - Polling timed out after {Max} attempts. JobId={JobId}", _opt.MaxPollingAttempts, jobId);
         return _error.Fail<PixVerseGenerationResult>(null, "Polling timed out.");
     }
 
     // -------------------------------------------------
     // Image Upload
     // -------------------------------------------------
-    public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
-        Stream imageStream,
-        string fileName,
-        string contentType,
-        CancellationToken ct = default)
+    public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(Stream imageStream, string fileName, string contentType, CancellationToken ct = default)
     {
+        // (unchanged from your version)
         var runId = NewRunId();
         _logger.LogInformation("[RUN {RunId}] START UploadImage (file). FileName={FileName} ContentType={ContentType}", runId, fileName, contentType);
 
@@ -427,11 +455,7 @@ public sealed class PixVerseService(
 
             form.Add(fileContent, "image", fileName);
 
-            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
-            {
-                Content = form
-            };
-
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint) { Content = form };
             ApplyAuth(req);
 
             using var res = await _http.SendAsync(req, ct);
@@ -461,10 +485,9 @@ public sealed class PixVerseService(
         }
     }
 
-    public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
-        string imageUrl,
-        CancellationToken ct = default)
+    public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(string imageUrl, CancellationToken ct = default)
     {
+        // (unchanged from your version)
         var runId = NewRunId();
         _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
 
@@ -487,11 +510,7 @@ public sealed class PixVerseService(
                 { new StringContent(imageUrl, Encoding.UTF8), "image_url" }
             };
 
-            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
-            {
-                Content = form
-            };
-
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint) { Content = form };
             ApplyAuth(req);
 
             using var res = await _http.SendAsync(req, ct);

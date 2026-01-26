@@ -35,7 +35,8 @@ public class Program
         // -----------------------------
         // 2) Upload image (URL)
         // -----------------------------
-        var imageUrl = "https://media.pixverse.ai/openapi%2Ff4c512d1-0110-4360-8515-d84d788ca8d1test_image_auto.jpg";
+        var imageUrl =
+            "https://media.pixverse.ai/openapi%2Ff4c512d1-0110-4360-8515-d84d788ca8d1test_image_auto.jpg";
 
         var uploadOp = await pixVerse.UploadImageAsync(imageUrl);
 
@@ -96,14 +97,61 @@ public class Program
             uploadFileOp.Data.ImgUrl);
 
         // -----------------------------
-        // 4) Submit Image-to-Video using ImgId
+        // 4) Submit TRANSITION (ImgId -> ImgId)
+        //    FIX: PixVerseTransitionRequest requires FirstFrameImg + LastFrameImg
+        // -----------------------------
+        var transitionReq = new PixVerseTransitionRequest
+        {
+            // Required fields (per DTO)
+            FirstFrameImg = uploadOp.Data.ImgId,        // Image A (from URL upload)
+            LastFrameImg = uploadFileOp.Data.ImgId,     // Image B (from file upload)
+
+            // Optional alias fields (only if you added them to DTO). Keeping them removed avoids ambiguity.
+            // FromImgId = uploadOp.Data.ImgId,
+            // ToImgId   = uploadFileOp.Data.ImgId,
+
+            Duration = 4,
+            Model = "v5",
+            Prompt = "Smooth cinematic transition, nostalgic football memory, stadium lights, high detail",
+            Quality = "540p",
+            Seed = 0
+        };
+
+        var transitionSubmitOp = await pixVerse.SubmitTransitionAsync(transitionReq);
+
+        if (!transitionSubmitOp.IsSuccessful || transitionSubmitOp.Data is null)
+        {
+            logger.LogError("Transition submit failed: {Message}", transitionSubmitOp.Message);
+            return;
+        }
+
+        var transitionJobId = transitionSubmitOp.Data.JobId.ToString();
+
+        logger.LogInformation("Transition job submitted. JobId={JobId}", transitionJobId);
+
+        // -----------------------------
+        // 5) Wait for completion + fetch transition result
+        // -----------------------------
+        var transitionResultOp = await pixVerse.WaitForCompletionAsync(transitionJobId);
+
+        if (!transitionResultOp.IsSuccessful || transitionResultOp.Data is null)
+        {
+            logger.LogError("Transition generation failed: {Message}", transitionResultOp.Message);
+            return;
+        }
+
+        logger.LogInformation("Transition completed. Result={Result}", transitionResultOp.Data);
+
+        // -----------------------------
+        // 6) (Optional) Submit Image-to-Video using ImgId
         // -----------------------------
         var i2vReq = new PixVerseImageToVideoRequest
         {
             Duration = 5,
             ImgId = uploadFileOp.Data.ImgId, // <-- REQUIRED
             Model = "v5",
-            Prompt = "James Rodríguez celebrating a goal in World Cup 2014, cinematic slow motion, stadium lights, nostalgic, high detail",
+            Prompt =
+                "James Rodríguez celebrating a goal in World Cup 2014, cinematic slow motion, stadium lights, nostalgic, high detail",
             Quality = "540p",
             NegativePrompt = "blurry, low quality, artifacts",
             Seed = 0
@@ -122,7 +170,7 @@ public class Program
         logger.LogInformation("Image-to-Video job submitted. JobId={JobId}", jobId);
 
         // -----------------------------
-        // 5) Wait for completion + fetch result
+        // 7) Wait for completion + fetch i2v result
         // -----------------------------
         var resultOp = await pixVerse.WaitForCompletionAsync(jobId);
 
@@ -132,7 +180,6 @@ public class Program
             return;
         }
 
-        // Adapt these properties to your PixVerseGenerationResult model
         logger.LogInformation("Image-to-Video completed. Result={Result}", resultOp.Data);
 
         logger.LogInformation("=== END PixVerseService TEST ===");

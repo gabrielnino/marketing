@@ -27,6 +27,12 @@ namespace Application.PixVerse
             PixVerseImageToVideoRequest request,
             CancellationToken ct = default);
 
+        // Transition (First-last frame)
+        Task<Operation<PixVerseJobSubmitted>> SubmitTransitionAsync(
+            PixVerseTransitionRequest request,
+            CancellationToken ct = default);
+
+        // Status / Result
         Task<Operation<PixVerseGenerationStatus>> GetGenerationStatusAsync(
             string jobId,
             CancellationToken ct = default);
