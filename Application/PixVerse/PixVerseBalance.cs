@@ -1,28 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace Application.PixVerse
 {
     public sealed class PixVerseBalance
     {
-        /// <summary>
-        /// Available balance units/credits (as reported by PixVerse).
-        /// </summary>
-        public required decimal Available { get; init; }
+        [JsonPropertyName("account_id")]
+        public long AccountId { get; init; }
 
-        /// <summary>
-        /// Optional: currency or unit label if PixVerse provides it (e.g., "USD", "credits").
-        /// </summary>
-        public string? Unit { get; init; }
+        [JsonPropertyName("credit_monthly")]
+        public int CreditMonthly { get; init; }
 
-        /// <summary>
-        /// Optional: server-side timestamp or retrieval time if you want to attach it.
-        /// </summary>
-        public DateTimeOffset? RetrievedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+        [JsonPropertyName("credit_package")]
+        public int CreditPackage { get; init; }
 
-        public bool HasAtLeast(decimal minimum) => Available >= minimum;
+        // Optional convenience property
+        [JsonIgnore]
+        public int TotalCredits => CreditMonthly + CreditPackage;
+
+        [JsonIgnore]
+        public DateTimeOffset RetrievedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+
+        public bool HasAtLeast(int minimum) => TotalCredits >= minimum;
     }
 }

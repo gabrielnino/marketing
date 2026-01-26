@@ -23,7 +23,7 @@ public sealed class PixVerseService(
     // POST: /openapi/v2/video/text/generate
     // Headers: API-KEY, Ai-trace-id
     // -----------------------------
-    private const string BalancePath = "/openapi/v2/balance";               // not shown in screenshots; keep as best-guess
+    private const string BalancePath = "/openapi/v2/account/balance";               // not shown in screenshots; keep as best-guess
     private const string TextToVideoPath = "/openapi/v2/video/text/generate";
     private const string StatusPath = "/openapi/v2/video/status/";         // best-guess
     private const string ResultPath = "/openapi/v2/video/result/";         // best-guess

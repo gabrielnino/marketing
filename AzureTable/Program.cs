@@ -26,61 +26,61 @@ public class Program
         // -----------------------------
         // 1) Check balance
         // -----------------------------
-        //var balanceOp = await pixVerse.CheckBalanceAsync();
+        var balanceOp = await pixVerse.CheckBalanceAsync();
 
-        //if (!balanceOp.IsSuccessful || balanceOp.Data is null)
-        //{
-        //    logger.LogError("Balance check failed: {Message}", balanceOp.Message);
-        //    return;
-        //}
+        if (!balanceOp.IsSuccessful || balanceOp.Data is null)
+        {
+            logger.LogError("Balance check failed: {Message}", balanceOp.Message);
+            return;
+        }
 
-        //logger.LogInformation(
-        //    "Balance OK. Credits={Credits}",
-        //    balanceOp.Data);
+        logger.LogInformation(
+            "Balance OK. Credits={Credits}",
+            balanceOp.Data);
 
         // -----------------------------
         // 2) Submit Text-to-Video
         // -----------------------------
-        var request = new PixVerseTextToVideoRequest
-        {
-            AspectRatio = "16:9",
-            Duration = 5,
-            Model = "v5",
-            NegativePrompt = "string",
-            Prompt = "string",
-            Quality = "540p",
-            Seed = 0
-        };
+        //var request = new PixVerseTextToVideoRequest
+        //{
+        //    AspectRatio = "16:9",
+        //    Duration = 5,
+        //    Model = "v5",
+        //    NegativePrompt = "string",
+        //    Prompt = "string",
+        //    Quality = "540p",
+        //    Seed = 0
+        //};
 
 
-        var submitOp = await pixVerse.SubmitTextToVideoAsync(request);
+        //var submitOp = await pixVerse.SubmitTextToVideoAsync(request);
 
-        if (!submitOp.IsSuccessful || submitOp.Data is null)
-        {
-            logger.LogError("Submit failed: {Message}", submitOp.Message);
-            return;
-        }
+        //if (!submitOp.IsSuccessful || submitOp.Data is null)
+        //{
+        //    logger.LogError("Submit failed: {Message}", submitOp.Message);
+        //    return;
+        //}
 
-        var jobId = submitOp.Data.JobId;
+        //var jobId = submitOp.Data.JobId;
 
-        logger.LogInformation(
-            "Job submitted successfully. JobId={JobId}",
-            jobId.ToString());
+        //logger.LogInformation(
+        //    "Job submitted successfully. JobId={JobId}",
+        //    jobId.ToString());
 
         // -----------------------------
         // 3) Wait for completion
         // -----------------------------
-        var resultOp = await pixVerse.WaitForCompletionAsync(jobId.ToString());
+        //var resultOp = await pixVerse.WaitForCompletionAsync(jobId.ToString());
 
-        if (!resultOp.IsSuccessful || resultOp.Data is null)
-        {
-            logger.LogError("Generation failed: {Message}", resultOp.Message);
-            return;
-        }
+        //if (!resultOp.IsSuccessful || resultOp.Data is null)
+        //{
+        //    logger.LogError("Generation failed: {Message}", resultOp.Message);
+        //    return;
+        //}
 
-        logger.LogInformation(
-            "Generation completed successfully. VideoUrl={Url}",
-            resultOp.Data);
+        //logger.LogInformation(
+        //    "Generation completed successfully. VideoUrl={Url}",
+        //    resultOp.Data);
 
         logger.LogInformation("=== END PixVerseService TEST ===");
 
