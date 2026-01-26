@@ -18,18 +18,31 @@ public sealed class PixVerseService(
 ) : IPixVerseService
 {
     // -----------------------------
-    // PixVerse API paths (per screenshots)
+    // PixVerse API paths (v2)
     // Base URL: https://app-api.pixverse.ai
-    // POST: /openapi/v2/video/text/generate
     // Headers: API-KEY, Ai-trace-id
     // -----------------------------
-    private const string BalancePath = "/openapi/v2/account/balance";               // not shown in screenshots; keep as best-guess
+    private const string BalancePath = "/openapi/v2/account/balance";
     private const string TextToVideoPath = "/openapi/v2/video/text/generate";
-    private const string StatusPath = "/openapi/v2/video/status/";         // best-guess
-    private const string ResultPath = "/openapi/v2/video/result/";         // best-guess
+    private const string StatusPath = "/openapi/v2/video/status/";
+    private const string ResultPath = "/openapi/v2/video/result/";
+    private const string UploadImagePath = "/openapi/v2/image/upload";
 
     private const string ApiKeyHeader = "API-KEY";
     private const string TraceIdHeader = "Ai-trace-id";
+
+    private static readonly HashSet<string> AllowedImageMimeTypes = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/webp"
+    };
+
+    private static readonly HashSet<string> AllowedExtensions = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ".jpeg", ".jpg", ".png", ".webp"
+    };
 
     private readonly HttpClient _http = httpClient;
     private readonly PixVerseOptions _opt = options.Value;
@@ -67,42 +80,26 @@ public sealed class PixVerseService(
             using var res = await _http.SendAsync(req, linkedCts.Token);
 
             if (!res.IsSuccessStatusCode)
-                return _error.Fail<PixVerseBalance>(
-                    null,
-                    $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<PixVerseBalance>(null, $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
 
             var json = await res.Content.ReadAsStringAsync(linkedCts.Token);
 
-            // Some PixVerse endpoints may also return envelope; we try envelope first, then raw model.
             var env = TryDeserialize<PixVerseApiEnvelope<PixVerseBalance>>(json);
-            if (env is not null)
-            {
-                if (env.ErrCode != 0)
-                    return _error.Fail<PixVerseBalance>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+            if (env is null)
+                return _error.Fail<PixVerseBalance>(null, "Invalid balance response (null).");
 
-                if (env.Resp is null)
-                    return _error.Fail<PixVerseBalance>(null, "Invalid balance payload (Resp null).");
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseBalance>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 
-                return Operation<PixVerseBalance>.Success(env.Resp, env.ErrMsg);
-            }
+            if (env.Resp is null)
+                return _error.Fail<PixVerseBalance>(null, "Invalid balance payload (Resp null).");
 
-            var balance = JsonSerializer.Deserialize<PixVerseBalance>(json, JsonOpts);
-            if (balance is null)
-                return _error.Fail<PixVerseBalance>(null, "Invalid balance payload");
-
-            return Operation<PixVerseBalance>.Success(balance);
+            return Operation<PixVerseBalance>.Success(env.Resp, env.ErrMsg);
         }
         catch (OperationCanceledException ex) when (!ct.IsCancellationRequested)
         {
-            _logger.LogError(
-                ex,
-                "[RUN {RunId}] TIMEOUT CheckBalance after {Timeout}",
-                runId,
-                _opt.HttpTimeout);
-
-            return _error.Fail<PixVerseBalance>(
-                ex,
-                $"Balance check timed out after {_opt.HttpTimeout}");
+            _logger.LogError(ex, "[RUN {RunId}] TIMEOUT CheckBalance after {Timeout}", runId, _opt.HttpTimeout);
+            return _error.Fail<PixVerseBalance>(ex, $"Balance check timed out after {_opt.HttpTimeout}");
         }
         catch (Exception ex)
         {
@@ -123,13 +120,14 @@ public sealed class PixVerseService(
 
         try
         {
-            request.Validate(); // current model validates Model/Prompt/Duration/Quality/Seed :contentReference[oaicite:2]{index=2}
+            request.Validate();
 
             if (!TryValidateConfig(out var configError))
                 return _error.Fail<PixVerseJobSubmitted>(null, configError);
 
             var endpoint = BuildEndpoint(TextToVideoPath);
             var payload = JsonSerializer.Serialize(request, JsonOpts);
+
             using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
             {
                 Content = new StringContent(payload, Encoding.UTF8, "application/json")
@@ -140,14 +138,10 @@ public sealed class PixVerseService(
             using var res = await _http.SendAsync(req, ct);
 
             if (!res.IsSuccessStatusCode)
-                return _error.Fail<PixVerseJobSubmitted>(
-                    null,
-                    $"Submit failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<PixVerseJobSubmitted>(null, $"Submit failed. HTTP {(int)res.StatusCode}");
 
             var json = await res.Content.ReadAsStringAsync(ct);
 
-            // Per screenshot response:
-            // { "ErrCode":0, "ErrMsg":"success", "Resp": { "video_id":"...", "credits":45 } }
             var env = JsonSerializer.Deserialize<PixVerseApiEnvelope<PixVerseSubmitResp>>(json, JsonOpts);
 
             if (env is null)
@@ -189,13 +183,10 @@ public sealed class PixVerseService(
         using var res = await _http.SendAsync(req, ct);
 
         if (!res.IsSuccessStatusCode)
-            return _error.Fail<PixVerseGenerationStatus>(
-                null,
-                $"Status failed. HTTP {(int)res.StatusCode}");
+            return _error.Fail<PixVerseGenerationStatus>(null, $"Status failed. HTTP {(int)res.StatusCode}");
 
         var json = await res.Content.ReadAsStringAsync(ct);
 
-        // Best-effort: try envelope first, then raw model.
         var env = TryDeserialize<PixVerseApiEnvelope<PixVerseGenerationStatus>>(json);
         if (env is not null)
         {
@@ -229,13 +220,10 @@ public sealed class PixVerseService(
         using var res = await _http.SendAsync(req, ct);
 
         if (!res.IsSuccessStatusCode)
-            return _error.Fail<PixVerseGenerationResult>(
-                null,
-                $"Result failed. HTTP {(int)res.StatusCode}");
+            return _error.Fail<PixVerseGenerationResult>(null, $"Result failed. HTTP {(int)res.StatusCode}");
 
         var json = await res.Content.ReadAsStringAsync(ct);
 
-        // Best-effort: try envelope first, then raw model.
         var env = TryDeserialize<PixVerseApiEnvelope<PixVerseGenerationResult>>(json);
         if (env is not null)
         {
@@ -282,10 +270,7 @@ public sealed class PixVerseService(
 
             if (st.Data is null)
             {
-                _logger.LogWarning(
-                    "STEP PV-4.1 - Status payload was null (unexpected). JobId={JobId}",
-                    jobId);
-
+                _logger.LogWarning("STEP PV-4.1 - Status payload was null. JobId={JobId}", jobId);
                 return _error.Fail<PixVerseGenerationResult>(null, "Invalid status payload (null).");
             }
 
@@ -319,11 +304,166 @@ public sealed class PixVerseService(
             await Task.Delay(_opt.PollingInterval, ct);
         }
 
-        _logger.LogWarning(
-            "STEP PV-4.5 - Polling timed out after {Max} attempts. JobId={JobId}",
-            _opt.MaxPollingAttempts, jobId);
-
+        _logger.LogWarning("STEP PV-4.5 - Polling timed out after {Max} attempts. JobId={JobId}", _opt.MaxPollingAttempts, jobId);
         return _error.Fail<PixVerseGenerationResult>(null, "Polling timed out.");
+    }
+
+    // -------------------------------------------------
+    // Image Upload
+    // POST /openapi/v2/image/upload
+    // Either image (file) OR image_url (string) is required.
+    // -------------------------------------------------
+    public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
+        Stream imageStream,
+        string fileName,
+        string contentType,
+        CancellationToken ct = default)
+    {
+        var runId = NewRunId();
+        _logger.LogInformation("[RUN {RunId}] START UploadImage (file). FileName={FileName} ContentType={ContentType}", runId, fileName, contentType);
+
+        try
+        {
+            if (!TryValidateConfig(out var configError))
+                return _error.Fail<PixVerseUploadImageResult>(null, configError);
+
+            if (imageStream is null)
+                return _error.Business<PixVerseUploadImageResult>("imageStream cannot be null.");
+
+            if (!imageStream.CanRead)
+                return _error.Business<PixVerseUploadImageResult>("imageStream must be readable.");
+
+            if (string.IsNullOrWhiteSpace(fileName))
+                return _error.Business<PixVerseUploadImageResult>("fileName cannot be null or empty.");
+
+            if (string.IsNullOrWhiteSpace(contentType))
+                return _error.Business<PixVerseUploadImageResult>("contentType cannot be null or empty.");
+
+            if (!AllowedImageMimeTypes.Contains(contentType))
+                return _error.Business<PixVerseUploadImageResult>(
+                    $"Unsupported contentType '{contentType}'. Allowed: image/jpeg, image/jpg, image/png, image/webp");
+
+            var ext = Path.GetExtension(fileName);
+            if (string.IsNullOrWhiteSpace(ext) || !AllowedExtensions.Contains(ext))
+                return _error.Business<PixVerseUploadImageResult>(
+                    $"Unsupported file extension '{ext}'. Allowed: .png, .webp, .jpeg, .jpg");
+
+            // size < 20MB (requirement); we can only enforce if seekable
+            if (imageStream.CanSeek)
+            {
+                const long maxBytes = 20L * 1024L * 1024L;
+                if (imageStream.Length > maxBytes)
+                    return _error.Business<PixVerseUploadImageResult>("Image file size must be < 20MB.");
+
+                imageStream.Position = 0;
+            }
+
+            var endpoint = BuildEndpoint(UploadImagePath);
+
+            using var form = new MultipartFormDataContent();
+
+            var fileContent = new StreamContent(imageStream);
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
+
+            // field name must be "image"
+            form.Add(fileContent, "image", fileName);
+
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
+            {
+                Content = form
+            };
+
+            ApplyAuth(req);
+
+            using var res = await _http.SendAsync(req, ct);
+
+            if (!res.IsSuccessStatusCode)
+                return _error.Fail<PixVerseUploadImageResult>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
+
+            var json = await res.Content.ReadAsStringAsync(ct);
+
+            var env = JsonSerializer.Deserialize<PixVerseApiEnvelope<PixVerseUploadImageResult>>(json, JsonOpts);
+
+            if (env is null)
+                return _error.Fail<PixVerseUploadImageResult>(null, "Invalid upload response (null).");
+
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseUploadImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            if (env.Resp is null)
+                return _error.Fail<PixVerseUploadImageResult>(null, "Invalid upload payload (Resp null).");
+
+            if (env.Resp.ImgId == 0 || string.IsNullOrWhiteSpace(env.Resp.ImgUrl))
+                _logger.LogWarning("[RUN {RunId}] UploadImage returned partial data. ImgId={ImgId} ImgUrl={ImgUrl}", runId, env.Resp.ImgId, env.Resp.ImgUrl);
+
+            return Operation<PixVerseUploadImageResult>.Success(env.Resp, env.ErrMsg);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (file)", runId);
+            return _error.Fail<PixVerseUploadImageResult>(ex, "Upload image failed");
+        }
+    }
+
+    public async Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(
+        string imageUrl,
+        CancellationToken ct = default)
+    {
+        var runId = NewRunId();
+        _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
+
+        try
+        {
+            if (!TryValidateConfig(out var configError))
+                return _error.Fail<PixVerseUploadImageResult>(null, configError);
+
+            if (string.IsNullOrWhiteSpace(imageUrl))
+                return _error.Business<PixVerseUploadImageResult>("imageUrl cannot be null or empty.");
+
+            if (!Uri.TryCreate(imageUrl, UriKind.Absolute, out var uri) ||
+                (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
+                return _error.Business<PixVerseUploadImageResult>("imageUrl must be a valid http/https absolute URL.");
+
+            var endpoint = BuildEndpoint(UploadImagePath);
+
+            // body is multipart/form-data with image_url
+            using var form = new MultipartFormDataContent
+            {
+                { new StringContent(imageUrl, Encoding.UTF8), "image_url" }
+            };
+
+            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
+            {
+                Content = form
+            };
+
+            ApplyAuth(req);
+
+            using var res = await _http.SendAsync(req, ct);
+
+            if (!res.IsSuccessStatusCode)
+                return _error.Fail<PixVerseUploadImageResult>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
+
+            var json = await res.Content.ReadAsStringAsync(ct);
+
+            var env = JsonSerializer.Deserialize<PixVerseApiEnvelope<PixVerseUploadImageResult>>(json, JsonOpts);
+
+            if (env is null)
+                return _error.Fail<PixVerseUploadImageResult>(null, "Invalid upload response (null).");
+
+            if (env.ErrCode != 0)
+                return _error.Fail<PixVerseUploadImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+
+            if (env.Resp is null)
+                return _error.Fail<PixVerseUploadImageResult>(null, "Invalid upload payload (Resp null).");
+
+            return Operation<PixVerseUploadImageResult>.Success(env.Resp, env.ErrMsg);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (url)", runId);
+            return _error.Fail<PixVerseUploadImageResult>(ex, "Upload image failed");
+        }
     }
 
     // -------------------------------------------------
@@ -351,18 +491,15 @@ public sealed class PixVerseService(
 
     private Uri BuildEndpoint(string pathOrPathWithId)
     {
-        //TextToVideoPath
         var baseUri = new Uri(_opt.BaseUrl.TrimEnd('/') + "/");
         return new Uri(baseUri, pathOrPathWithId.TrimStart('/'));
     }
 
     private void ApplyAuth(HttpRequestMessage req)
     {
-        // Matches screenshots: API-KEY header, NOT Bearer Authorization
         req.Headers.Remove(ApiKeyHeader);
         req.Headers.Add(ApiKeyHeader, _opt.ApiKey);
 
-        // Matches screenshots: Ai-trace-id header
         if (!req.Headers.Contains(TraceIdHeader))
             req.Headers.Add(TraceIdHeader, Guid.NewGuid().ToString());
 
@@ -374,16 +511,6 @@ public sealed class PixVerseService(
     {
         try { return JsonSerializer.Deserialize<T>(json, JsonOpts); }
         catch { return default; }
-    }
-
-    public Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(Stream imageStream, string fileName, string contentType, CancellationToken ct = default)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Operation<PixVerseUploadImageResult>> UploadImageAsync(string imageUrl, CancellationToken ct = default)
-    {
-        throw new NotImplementedException();
     }
 
     private sealed class PixVerseApiEnvelope<T>
@@ -400,8 +527,6 @@ public sealed class PixVerseService(
 
     private sealed class PixVerseSubmitResp
     {
-        // In the JSON, video_id is a NUMBER (not a string):
-        // "video_id": 383655565438332
         [JsonPropertyName("video_id")]
         public long VideoId { get; init; }
 
