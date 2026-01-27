@@ -40,10 +40,10 @@ namespace AzureTable
 
                 using var host = AppHostBuilder
                     .Create(args)
-                    .ConfigureServices((context, services) =>
-                    {
-                        services.AddSingleton<ILoggerFactory>(loggerFactory);
-                    })
+    .ConfigureServices((context, services) =>
+    {
+        services.AddSingleton<ILoggerFactory>(loggerFactory);
+    })
                     .Build();
 
                 var logger = host.Services.GetRequiredService<ILogger<Program>>();
