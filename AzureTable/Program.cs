@@ -33,7 +33,7 @@ namespace AzureTable
                 //   {ExecutionTracker.ExecutionRunning}\Logs\Marketing-<date>.log
                 // We log this explicitly so you always know where the file is.
                 var executionRunning = TryGetExecutionRunning(host.Services) ?? null;
-                if(executionRunning is null)
+                if (executionRunning is null)
                 {
                     return;
                 }
@@ -49,6 +49,7 @@ namespace AzureTable
                 var videoJobQueryClient = host.Services.GetRequiredService<IVideoJobQueryClient>();
                 var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
                 var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
+                var videoClient = host.Services.GetRequiredService<IVideoClient>();
 
                 // -------------------------------------------------
                 // STEP 1) Check balance
@@ -159,32 +160,7 @@ namespace AzureTable
                     runId, jobId, 60, 2);
 
                 JobResult? finalStatus = null;
-                for (var attempt = 1; attempt <= 60; attempt++)
-                {
-                    var attemptSw = Stopwatch.StartNew();
-                    var stOp = await videoJobQueryClient.GetResultAsync(jobId);
-
-                    if (!stOp.IsSuccessful || stOp.Data is null)
-                    {
-                        logger.LogWarning(
-                            "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} FAILED. Error={Error}. PayloadNull={PayloadNull}. AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
-                            runId, attempt, stOp.Error ?? "unknown", stOp.Data is null, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
-                    }
-                    else
-                    {
-                        logger.LogInformation(
-                            "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} OK. State={State} IsTerminal={IsTerminal} AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
-                            runId, attempt, stOp.Data.State, stOp.Data.RawStatus, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
-
-                        if (stOp.Data.State == JobState.Succeeded)
-                        {
-                            finalStatus = stOp.Data;
-                            break;
-                        }
-                    }
-
-                    await Task.Delay(TimeSpan.FromSeconds(2));
-                }
+                finalStatus = await GetFinalStatus(runId, sw, logger, videoJobQueryClient, jobId, finalStatus);
 
                 if (finalStatus is null)
                 {
@@ -285,6 +261,27 @@ namespace AzureTable
                 logger.LogInformation(
                     "[RUN {RunId}] [STEP 6] LipSync Submit OK. LipJobId={LipJobId}. TotalElapsedMs={ElapsedMs}",
                     runId, lipOp.Data?.JobId, sw.ElapsedMilliseconds);
+
+                
+                if (lipOp.Data is null)
+                {
+                    logger.LogInformation(
+                        "[RUN {RunId}] [STEP 5] MediaId extraction (fallback) VideoMediaId={VideoMediaId}",
+                        runId, videoMediaId ?? 0);
+                }
+
+                var lipobJobId = lipOp.Data!.JobId;
+                finalStatus = null;
+                finalStatus = await GetFinalStatus(runId, sw, logger, videoJobQueryClient, lipobJobId, finalStatus);
+
+                if (finalStatus is null)
+                {
+                    logger.LogError(
+                        "[RUN {RunId}] [STEP 4] I2V Status polling TIMEOUT. JobId={JobId}. ElapsedMs={ElapsedMs}",
+                        runId, jobId, sw.ElapsedMilliseconds);
+                    return;
+                }
+                await videoClient.DownloadAsync(jobId, @"E:\Marketing-Logs\PixVerse\Inputs\final_video.mp4");
             }
             catch (Exception ex)
             {
@@ -299,6 +296,38 @@ namespace AzureTable
                 Log.Information("[RUN {RunId}] Flushing logs. TotalElapsedMs={ElapsedMs}", runId, sw.ElapsedMilliseconds);
                 await Log.CloseAndFlushAsync();
             }
+        }
+
+        private static async Task<JobResult?> GetFinalStatus(string runId, Stopwatch sw, ILogger<Program> logger, IVideoJobQueryClient videoJobQueryClient, long jobId, JobResult? finalStatus)
+        {
+            for (var attempt = 1; attempt <= 60; attempt++)
+            {
+                var attemptSw = Stopwatch.StartNew();
+                var stOp = await videoJobQueryClient.GetResultAsync(jobId);
+
+                if (!stOp.IsSuccessful || stOp.Data is null)
+                {
+                    logger.LogWarning(
+                        "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} FAILED. Error={Error}. PayloadNull={PayloadNull}. AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
+                        runId, attempt, stOp.Error ?? "unknown", stOp.Data is null, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
+                }
+                else
+                {
+                    logger.LogInformation(
+                        "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} OK. State={State} IsTerminal={IsTerminal} AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
+                        runId, attempt, stOp.Data.State, stOp.Data.RawStatus, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
+
+                    if (stOp.Data.State == JobState.Succeeded)
+                    {
+                        finalStatus = stOp.Data;
+                        break;
+                    }
+                }
+
+                await Task.Delay(TimeSpan.FromSeconds(2));
+            }
+
+            return finalStatus;
         }
 
         private static ExecutionTracker? TryGetExecutionRunning(IServiceProvider services)
