@@ -1,4 +1,4 @@
-﻿namespace Application.PixVerse.request
+﻿namespace Application.PixVerse.Response
 { 
     public sealed class JobSubmitted
     {

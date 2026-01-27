@@ -1,5 +1,5 @@
 ﻿using Application.PixVerse;
-using Application.PixVerse.response;
+using Application.PixVerse.Response;
 using Application.Result.EnumType.Extensions;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,13 +13,16 @@ public class Program
 
         var logger = host.Services.GetRequiredService<ILogger<Program>>();
         var pixVerse = host.Services.GetRequiredService<IPixVerseService>();
+        var CheckBalance = host.Services.GetRequiredService<ICheckBalance>();
 
+
+        
         logger.LogInformation("=== START PixVerse LipSync TEST (GOKU IMAGE) ===");
 
         // -------------------------------------------------
         // 1) Check balance (optional but recommended)
         // -------------------------------------------------
-        var balanceOp = await pixVerse.CheckBalanceAsync();
+        var balanceOp = await CheckBalance.CheckBalanceAsync();
         if (!balanceOp.IsSuccessful || balanceOp.Data is null)
         {
             logger.LogError("Balance check failed: {Message}", balanceOp.Message);

@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Application.PixVerse.request
+namespace Application.PixVerse.Request
 {
-    public sealed class TextToVideoRequest
+    public sealed class TextToVideo
     {
         /// <summary>
         /// Aspect ratio (e.g. "16:9", "9:16", "1:1")

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Application.PixVerse.request
+namespace Application.PixVerse.Request
 {
-    public sealed class TransitionRequest
+    public sealed class Transition
     {
         // -----------------------------
         // Compatibility aliases (FIX)

@@ -1,4 +1,4 @@
-﻿namespace Application.PixVerse.response
+﻿namespace Application.PixVerse.Response
 {
 
     public sealed class GenerationStatus

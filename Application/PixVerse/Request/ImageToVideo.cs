@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Application.PixVerse.request
+namespace Application.PixVerse.Request
 {
-    public sealed class ImageToVideoRequest
+    public sealed class ImageToVideo
     {
         [JsonPropertyName("duration")]
         public required int Duration { get; init; }

@@ -2,14 +2,11 @@
 
 namespace Infrastructure.PixVerse;
 
-public sealed partial class PixVerseService
+public sealed class SubmitResp
 {
-    private sealed class SubmitResp
-    {
-        [JsonPropertyName("video_id")]
-        public long VideoId { get; init; }
+    [JsonPropertyName("video_id")]
+    public long VideoId { get; init; }
 
-        [JsonPropertyName("credits")]
-        public int Credits { get; init; }
-    }
+    [JsonPropertyName("credits")]
+    public int Credits { get; init; }
 }

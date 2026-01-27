@@ -1,6 +1,6 @@
 ﻿using Application.PixVerse;
-using Application.PixVerse.request;
-using Application.PixVerse.response;
+using Application.PixVerse.Request;
+using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
 using Microsoft.Extensions.Logging;
@@ -16,7 +16,7 @@ public sealed partial class PixVerseService(
     IOptions<PixVerseOptions> options,
     IErrorHandler errorHandler,
     ILogger<PixVerseService> logger
-) : IPixVerseService
+) : BaseVerseService(options.Value), IPixVerseService
 {
 
     private readonly HttpClient _http = httpClient;
@@ -24,380 +24,28 @@ public sealed partial class PixVerseService(
     private readonly IErrorHandler _error = errorHandler;
     private readonly ILogger<PixVerseService> _logger = logger;
 
-    private static readonly JsonSerializerOptions JsonOpts = new(JsonSerializerDefaults.Web);
 
-    // -------------------------------------------------
-    // Account / Billing
-    // -------------------------------------------------
-    public async Task<Operation<Balance>> CheckBalanceAsync(CancellationToken ct = default)
-    {
-        var runId = NewRunId();
-        _logger.LogInformation("[RUN {RunId}] START PixVerse.CheckBalance", runId);
 
-        try
-        {
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-1 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-1 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<Balance>(null, configError);
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-2 Build endpoint. Path={Path}", runId, ApiConstants.BalancePath);
-            var endpoint = BuildEndpoint(ApiConstants.BalancePath);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-3 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
-            using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
-            ApplyAuth(req);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-4 Create timeout tokens. HttpTimeout={Timeout}", runId, _opt.HttpTimeout);
-            using var timeoutCts = _opt.HttpTimeout > TimeSpan.Zero
-                ? new CancellationTokenSource(_opt.HttpTimeout)
-                : new CancellationTokenSource();
-
-            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct, timeoutCts.Token);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-5 Send request", runId);
-            using var res = await _http.SendAsync(req, linkedCts.Token);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-6 Response received. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-            if (!res.IsSuccessStatusCode)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-6 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<Balance>(null, $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-7 Read response body", runId);
-            var json = await res.Content.ReadAsStringAsync(linkedCts.Token);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-BAL-7 BodyLength={Length}", runId, json?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-8 Deserialize envelope", runId);
-            var env = TryDeserialize<ApiEnvelope<Balance>>(json);
-            if (env is null)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-8 FAILED Envelope is null", runId);
-                return _error.Fail<Balance>(null, "Invalid balance response (null).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-9 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
-            if (env.ErrCode != 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-9 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<Balance>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
-            }
-
-            if (env.Resp is null)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-9 FAILED Resp is null", runId);
-                return _error.Fail<Balance>(null, "Invalid balance payload (Resp null).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] SUCCESS PixVerse.CheckBalance", runId);
-            return Operation<Balance>.Success(env.Resp, env.ErrMsg);
-        }
-        catch (OperationCanceledException ex) when (!ct.IsCancellationRequested)
-        {
-            _logger.LogError(ex, "[RUN {RunId}] TIMEOUT CheckBalance after {Timeout}", runId, _opt.HttpTimeout);
-            return _error.Fail<Balance>(ex, $"Balance check timed out after {_opt.HttpTimeout}");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "[RUN {RunId}] FAILED CheckBalance", runId);
-            return _error.Fail<Balance>(ex, "Balance check failed");
-        }
-    }
-
-    // -------------------------------------------------
-    // Text-to-Video
-    // -------------------------------------------------
-    public async Task<Operation<JobSubmitted>> SubmitTextToVideoAsync(
-        TextToVideoRequest request,
-        CancellationToken ct = default)
-    {
-        var runId = NewRunId();
-        _logger.LogInformation("[RUN {RunId}] START SubmitTextToVideo", runId);
-
-        try
-        {
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-1 Validate request", runId);
-            request.Validate();
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-2 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-2 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<JobSubmitted>(null, configError);
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-3 Build endpoint. Path={Path}", runId, ApiConstants.TextToVideoPath);
-            var endpoint = BuildEndpoint(ApiConstants.TextToVideoPath);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-4 Serialize payload", runId);
-            var payload = JsonSerializer.Serialize(request, JsonOpts);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-T2V-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
-            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
-            {
-                Content = new StringContent(payload, Encoding.UTF8, "application/json")
-            };
-            ApplyAuth(req);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-6 Send request", runId);
-            using var res = await _http.SendAsync(req, ct);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-7 Response received. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-            if (!res.IsSuccessStatusCode)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<JobSubmitted>(null, $"Submit failed. HTTP {(int)res.StatusCode}");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-8 Read response body", runId);
-            var json = await res.Content.ReadAsStringAsync(ct);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-T2V-8 BodyLength={Length}", runId, json?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-9 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<ApiEnvelope<SubmitResp>>(json, JsonOpts);
-            if (env is null)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-9 FAILED Envelope is null", runId);
-                return _error.Fail<JobSubmitted>(null, "Invalid submit response (null).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
-            if (env.ErrCode != 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
-            }
-
-            if (env.Resp is null || env.Resp.VideoId == 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-                return _error.Fail<JobSubmitted>(null, "Invalid submit response (missing Resp.video_id).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-            var submitted = new JobSubmitted
-            {
-                JobId = env.Resp.VideoId,
-                Message = env.ErrMsg
-            };
-
-            _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitTextToVideo. JobId={JobId}", runId, submitted.JobId);
-            return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitTextToVideo", runId);
-            return _error.Fail<JobSubmitted>(ex, "Submit failed");
-        }
-    }
-
-    // -------------------------------------------------
-    // Image-to-Video
-    // -------------------------------------------------
-    public async Task<Operation<JobSubmitted>> SubmitImageToVideoAsync(
-        ImageToVideoRequest request,
-        CancellationToken ct = default)
-    {
-        var runId = NewRunId();
-        _logger.LogInformation("[RUN {RunId}] START SubmitImageToVideo", runId);
-
-        try
-        {
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-1 Validate request", runId);
-            request.Validate();
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-2 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-2 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<JobSubmitted>(null, configError);
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-3 Build endpoint. Path={Path}", runId, ApiConstants.ImageToVideoPath);
-            var endpoint = BuildEndpoint(ApiConstants.ImageToVideoPath);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-4 Serialize payload", runId);
-            var payload = JsonSerializer.Serialize(request, JsonOpts);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-I2V-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
-            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
-            {
-                Content = new StringContent(payload, Encoding.UTF8, "application/json")
-            };
-            ApplyAuth(req);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-6 Send request", runId);
-            using var res = await _http.SendAsync(req, ct);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-7 Response received. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-            if (!res.IsSuccessStatusCode)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<JobSubmitted>(null, $"SubmitImageToVideo failed. HTTP {(int)res.StatusCode}");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-8 Read response body", runId);
-            var json = await res.Content.ReadAsStringAsync(ct);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-I2V-8 BodyLength={Length}", runId, json?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-9 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<ApiEnvelope<I2VSubmitResp>>(json, JsonOpts);
-
-            if (env is null)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-9 FAILED Envelope is null", runId);
-                return _error.Fail<JobSubmitted>(null, "Invalid ImageToVideo response (null).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
-            if (env.ErrCode != 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
-            }
-
-            if (env.Resp is null || env.Resp.VideoId == 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-                return _error.Fail<JobSubmitted>(null, "Invalid ImageToVideo response (missing Resp.video_id).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-            var submitted = new JobSubmitted
-            {
-                JobId = env.Resp.VideoId,
-                Message = env.ErrMsg
-            };
-
-            _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitImageToVideo. JobId={JobId}", runId, submitted.JobId);
-            return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitImageToVideo", runId);
-            return _error.Fail<JobSubmitted>(ex, "SubmitImageToVideo failed");
-        }
-    }
-
-    // -------------------------------------------------
-    // Transition
-    // -------------------------------------------------
-    public async Task<Operation<JobSubmitted>> SubmitTransitionAsync(
-        TransitionRequest request,
-        CancellationToken ct = default)
-    {
-        var runId = NewRunId();
-        _logger.LogInformation("[RUN {RunId}] START SubmitTransition", runId);
-
-        try
-        {
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-1 Validate request", runId);
-            request.Validate();
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-2 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-TR-2 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<JobSubmitted>(null, configError);
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-3 Build endpoint. Path={Path}", runId, ApiConstants.TransitionPath);
-            var endpoint = BuildEndpoint(ApiConstants.TransitionPath);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-4 Serialize payload", runId);
-            var payload = JsonSerializer.Serialize(request, JsonOpts);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-TR-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
-            using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
-            {
-                Content = new StringContent(payload, Encoding.UTF8, "application/json")
-            };
-
-            // NOTE: Spec says "Ai-Trace-Id" but header matching is case-insensitive; we keep the same header name.
-            ApplyAuth(req);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-6 Send request", runId);
-            using var res = await _http.SendAsync(req, ct);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-7 Response received. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-            if (!res.IsSuccessStatusCode)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-TR-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<JobSubmitted>(null, $"SubmitTransition failed. HTTP {(int)res.StatusCode}");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-8 Read response body", runId);
-            var json = await res.Content.ReadAsStringAsync(ct);
-            _logger.LogDebug("[RUN {RunId}] STEP PV-TR-8 BodyLength={Length}", runId, json?.Length ?? 0);
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-9 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<ApiEnvelope<I2VSubmitResp>>(json, JsonOpts);
-
-            if (env is null)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-TR-9 FAILED Envelope is null", runId);
-                return _error.Fail<JobSubmitted>(null, "Invalid Transition response (null).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
-            if (env.ErrCode != 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-TR-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
-            }
-
-            if (env.Resp is null || env.Resp.VideoId == 0)
-            {
-                _logger.LogWarning("[RUN {RunId}] STEP PV-TR-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-                return _error.Fail<JobSubmitted>(null, "Invalid Transition response (missing Resp.video_id).");
-            }
-
-            _logger.LogInformation("[RUN {RunId}] STEP PV-TR-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-            var submitted = new JobSubmitted
-            {
-                JobId = env.Resp.VideoId,
-                Message = env.ErrMsg
-            };
-
-            _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitTransition. JobId={JobId}", runId, submitted.JobId);
-            return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitTransition", runId);
-            return _error.Fail<JobSubmitted>(ex, "SubmitTransition failed");
-        }
-    }
-
-    // -------------------------------------------------
-    // Status
-    // -------------------------------------------------
     public async Task<Operation<GenerationStatus>> GetGenerationStatusAsync(long jobId, CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation("[RUN {RunId}] START GetGenerationStatus. JobId={JobId}", runId, jobId);
 
         try
         {
             _logger.LogInformation("[RUN {RunId}] STEP PV-ST-1 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
+            if (!Helper.TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-ST-1 FAILED Config invalid: {Error}", runId, configError);
                 return _error.Fail<GenerationStatus>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-ST-2 Build endpoint. JobId={JobId}", runId, jobId);
-            var endpoint = BuildEndpoint(ApiConstants.StatusPath + Uri.EscapeDataString(jobId.ToString()));
+            var endpoint = Helper.BuildEndpoint(ApiConstants.StatusPath + Uri.EscapeDataString(jobId.ToString()));
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-ST-3 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
             using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
-            ApplyAuth(req);
+            Helper.ApplyAuth(req);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-ST-4 Send request", runId);
             using var res = await _http.SendAsync(req, ct);
@@ -414,7 +62,7 @@ public sealed partial class PixVerseService(
             _logger.LogDebug("[RUN {RunId}] STEP PV-ST-6 BodyLength={Length}", runId, json?.Length ?? 0);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-ST-7 Try deserialize envelope", runId);
-            var env = TryDeserialize<ApiEnvelope<GenerationStatus>>(json);
+            var env = Helper.TryDeserialize<ApiEnvelope<GenerationStatus>>(json);
 
             if (env is not null)
             {
@@ -458,26 +106,26 @@ public sealed partial class PixVerseService(
     // -------------------------------------------------
     // Result
     // -------------------------------------------------
-    public async Task<Operation<GenerationResult>> GetGenerationResultAsync(long jobId, CancellationToken ct = default)
+    public async Task<Operation<Generation>> GetGenerationResultAsync(long jobId, CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation("[RUN {RunId}] START GetGenerationResult. JobId={JobId}", runId, jobId);
 
         try
         {
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-1 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
+            if (!Helper.TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-1 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<GenerationResult>(null, configError);
+                return _error.Fail<Generation>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-2 Build endpoint. JobId={JobId}", runId, jobId);
-            var endpoint = BuildEndpoint(ApiConstants.ResultPath + Uri.EscapeDataString(jobId.ToString()));
+            var endpoint = Helper.BuildEndpoint(ApiConstants.ResultPath + Uri.EscapeDataString(jobId.ToString()));
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-3 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
             using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
-            ApplyAuth(req);
+            Helper.ApplyAuth(req);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-4 Send request", runId);
             using var res = await _http.SendAsync(req, ct);
@@ -486,7 +134,7 @@ public sealed partial class PixVerseService(
             if (!res.IsSuccessStatusCode)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-5 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<GenerationResult>(null, $"Result failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<Generation>(null, $"Result failed. HTTP {(int)res.StatusCode}");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-6 Read response body", runId);
@@ -494,7 +142,7 @@ public sealed partial class PixVerseService(
             _logger.LogDebug("[RUN {RunId}] STEP PV-RS-6 BodyLength={Length}", runId, json?.Length ?? 0);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-7 Try deserialize envelope", runId);
-            var env = TryDeserialize<ApiEnvelope<GenerationResult>>(json);
+            var env = Helper.TryDeserialize<ApiEnvelope<Generation>>(json);
 
             if (env is not null)
             {
@@ -503,50 +151,50 @@ public sealed partial class PixVerseService(
                 if (env.ErrCode != 0)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-RS-8 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                    return _error.Fail<GenerationResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                    return _error.Fail<Generation>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
                 }
 
                 if (env.Resp is null)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-RS-8 FAILED Resp is null", runId);
-                    return _error.Fail<GenerationResult>(null, "Invalid result payload (Resp null).");
+                    return _error.Fail<Generation>(null, "Invalid result payload (Resp null).");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] SUCCESS GetGenerationResult (envelope)", runId);
-                return Operation<GenerationResult>.Success(env.Resp, env.ErrMsg);
+                return Operation<Generation>.Success(env.Resp, env.ErrMsg);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-RS-9 Envelope parse failed. Fallback to raw result model", runId);
-            var result = JsonSerializer.Deserialize<GenerationResult>(json, JsonOpts);
+            var result = JsonSerializer.Deserialize<Generation>(json, JsonOpts);
 
             if (result is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-9 FAILED Result model is null", runId);
-                return _error.Fail<GenerationResult>(null, "Invalid result payload");
+                return _error.Fail<Generation>(null, "Invalid result payload");
             }
 
             _logger.LogInformation("[RUN {RunId}] SUCCESS GetGenerationResult (raw)", runId);
-            return Operation<GenerationResult>.Success(result);
+            return Operation<Generation>.Success(result);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED GetGenerationResult. JobId={JobId}", runId, jobId);
-            return _error.Fail<GenerationResult>(ex, "Result check failed");
+            return _error.Fail<Generation>(ex, "Result check failed");
         }
     }
 
     // -------------------------------------------------
     // Polling
     // -------------------------------------------------
-    public async Task<Operation<GenerationResult>> WaitForCompletionAsync(long jobId, CancellationToken ct = default)
+    public async Task<Operation<Generation>> WaitForCompletionAsync(long jobId, CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation("[RUN {RunId}] START WaitForCompletion. JobId={JobId}", runId, jobId);
 
         if (jobId == 0)
         {
             _logger.LogWarning("[RUN {RunId}] WaitForCompletion aborted: jobId=0", runId);
-            return _error.Business<GenerationResult>("jobId cannot be null or empty.");
+            return _error.Business<Generation>("jobId cannot be null or empty.");
         }
 
         _logger.LogInformation(
@@ -566,13 +214,13 @@ public sealed partial class PixVerseService(
             if (!st.IsSuccessful)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-POLL-1 Status call failed. Poll={Poll}/{Max} JobId={JobId}", runId, i + 1, _opt.MaxPollingAttempts, jobId);
-                return st.ConvertTo<GenerationResult>();
+                return st.ConvertTo<Generation>();
             }
 
             if (st.Data is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-POLL-2 Invalid status payload (null). Poll={Poll}/{Max} JobId={JobId}", runId, i + 1, _opt.MaxPollingAttempts, jobId);
-                return _error.Fail<GenerationResult>(null, "Invalid status payload (null).");
+                return _error.Fail<Generation>(null, "Invalid status payload (null).");
             }
 
             _logger.LogInformation(
@@ -590,7 +238,7 @@ public sealed partial class PixVerseService(
                 var msg = $"Job ended with terminal state: {st.Data.State}.";
                 _logger.LogWarning("[RUN {RunId}] STEP PV-POLL-4 Terminal!=Succeeded. {Message} JobId={JobId}", runId, msg, jobId);
 
-                return Operation<GenerationResult>.Success(new GenerationResult
+                return Operation<Generation>.Success(new Generation
                 {
                     RawJobId = jobId,
                     RawStatus = (int)st.Data.State
@@ -604,19 +252,19 @@ public sealed partial class PixVerseService(
         }
 
         _logger.LogError("[RUN {RunId}] FAILED WaitForCompletion: Polling timed out. JobId={JobId}", runId, jobId);
-        return _error.Fail<GenerationResult>(null, "Polling timed out.");
+        return _error.Fail<Generation>(null, "Polling timed out.");
     }
 
     // -------------------------------------------------
     // Image Upload (file)
     // -------------------------------------------------
-    public async Task<Operation<UploadImageResult>> UploadImageAsync(
+    public async Task<Operation<UploadImage>> UploadImageAsync(
         Stream imageStream,
         string fileName,
         string contentType,
         CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation(
             "[RUN {RunId}] START UploadImage (file). FileName={FileName} ContentType={ContentType}",
             runId, fileName, contentType);
@@ -624,32 +272,32 @@ public sealed partial class PixVerseService(
         try
         {
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-1 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
+            if (!Helper.TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-1 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<UploadImageResult>(null, configError);
+                return _error.Fail<UploadImage>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-2 Validate inputs", runId);
             if (imageStream is null)
-                return _error.Business<UploadImageResult>("imageStream cannot be null.");
+                return _error.Business<UploadImage>("imageStream cannot be null.");
 
             if (!imageStream.CanRead)
-                return _error.Business<UploadImageResult>("imageStream must be readable.");
+                return _error.Business<UploadImage>("imageStream must be readable.");
 
             if (string.IsNullOrWhiteSpace(fileName))
-                return _error.Business<UploadImageResult>("fileName cannot be null or empty.");
+                return _error.Business<UploadImage>("fileName cannot be null or empty.");
 
             if (string.IsNullOrWhiteSpace(contentType))
-                return _error.Business<UploadImageResult>("contentType cannot be null or empty.");
+                return _error.Business<UploadImage>("contentType cannot be null or empty.");
 
             if (!ApiConstants.AllowedImageMimeTypes.Contains(contentType))
-                return _error.Business<UploadImageResult>(
+                return _error.Business<UploadImage>(
                     $"Unsupported contentType '{contentType}'. Allowed: image/jpeg, image/jpg, image/png, image/webp");
 
             var ext = Path.GetExtension(fileName);
             if (string.IsNullOrWhiteSpace(ext) || !ApiConstants.AllowedExtensions.Contains(ext))
-                return _error.Business<UploadImageResult>(
+                return _error.Business<UploadImage>(
                     $"Unsupported file extension '{ext}'. Allowed: .png, .webp, .jpeg, .jpg");
 
             if (imageStream.CanSeek)
@@ -658,13 +306,13 @@ public sealed partial class PixVerseService(
                 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-3 Validate size (seekable). MaxBytes={MaxBytes}", runId, maxBytes);
 
                 if (imageStream.Length > maxBytes)
-                    return _error.Business<UploadImageResult>("Image file size must be < 20MB.");
+                    return _error.Business<UploadImage>("Image file size must be < 20MB.");
 
                 imageStream.Position = 0;
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-4 Build endpoint. Path={Path}", runId, ApiConstants.UploadImagePath);
-            var endpoint = BuildEndpoint(ApiConstants.UploadImagePath);
+            var endpoint = Helper.BuildEndpoint(ApiConstants.UploadImagePath);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-5 Build multipart form", runId);
             using var form = new MultipartFormDataContent();
@@ -676,7 +324,7 @@ public sealed partial class PixVerseService(
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-6 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
             using var req = new HttpRequestMessage(HttpMethod.Post, endpoint) { Content = form };
-            ApplyAuth(req);
+            Helper.ApplyAuth(req);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-7 Send request", runId);
             using var res = await _http.SendAsync(req, ct);
@@ -685,7 +333,7 @@ public sealed partial class PixVerseService(
             if (!res.IsSuccessStatusCode)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-8 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<UploadImageResult>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<UploadImage>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-9 Read response body", runId);
@@ -693,64 +341,64 @@ public sealed partial class PixVerseService(
             _logger.LogDebug("[RUN {RunId}] STEP PV-UPF-9 BodyLength={Length}", runId, json?.Length ?? 0);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-10 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<ApiEnvelope<UploadImageResult>>(json, JsonOpts);
+            var env = JsonSerializer.Deserialize<ApiEnvelope<UploadImage>>(json, JsonOpts);
 
             if (env is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-10 FAILED Envelope is null", runId);
-                return _error.Fail<UploadImageResult>(null, "Invalid upload response (null).");
+                return _error.Fail<UploadImage>(null, "Invalid upload response (null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-11 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
             if (env.ErrCode != 0)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-11 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<UploadImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                return _error.Fail<UploadImage>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
             }
 
             if (env.Resp is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-11 FAILED Resp is null", runId);
-                return _error.Fail<UploadImageResult>(null, "Invalid upload payload (Resp null).");
+                return _error.Fail<UploadImage>(null, "Invalid upload payload (Resp null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] SUCCESS UploadImage (file)", runId);
-            return Operation<UploadImageResult>.Success(env.Resp, env.ErrMsg);
+            return Operation<UploadImage>.Success(env.Resp, env.ErrMsg);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (file)", runId);
-            return _error.Fail<UploadImageResult>(ex, "Upload image failed");
+            return _error.Fail<UploadImage>(ex, "Upload image failed");
         }
     }
 
     // -------------------------------------------------
     // Image Upload (url)
     // -------------------------------------------------
-    public async Task<Operation<UploadImageResult>> UploadImageAsync(string imageUrl, CancellationToken ct = default)
+    public async Task<Operation<UploadImage>> UploadImageAsync(string imageUrl, CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
 
         try
         {
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-1 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
+            if (!Helper.TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-1 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<UploadImageResult>(null, configError);
+                return _error.Fail<UploadImage>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-2 Validate inputs", runId);
             if (string.IsNullOrWhiteSpace(imageUrl))
-                return _error.Business<UploadImageResult>("imageUrl cannot be null or empty.");
+                return _error.Business<UploadImage>("imageUrl cannot be null or empty.");
 
             if (!Uri.TryCreate(imageUrl, UriKind.Absolute, out var uri) ||
                 (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
-                return _error.Business<UploadImageResult>("imageUrl must be a valid http/https absolute URL.");
+                return _error.Business<UploadImage>("imageUrl must be a valid http/https absolute URL.");
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-3 Build endpoint. Path={Path}", runId, ApiConstants.UploadImagePath);
-            var endpoint = BuildEndpoint(ApiConstants.UploadImagePath);
+            var endpoint = Helper.BuildEndpoint(ApiConstants.UploadImagePath);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-4 Build multipart form", runId);
             using var form = new MultipartFormDataContent
@@ -760,7 +408,7 @@ public sealed partial class PixVerseService(
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
             using var req = new HttpRequestMessage(HttpMethod.Post, endpoint) { Content = form };
-            ApplyAuth(req);
+            Helper.ApplyAuth(req);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-6 Send request", runId);
             using var res = await _http.SendAsync(req, ct);
@@ -769,7 +417,7 @@ public sealed partial class PixVerseService(
             if (!res.IsSuccessStatusCode)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<UploadImageResult>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<UploadImage>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-8 Read response body", runId);
@@ -777,89 +425,44 @@ public sealed partial class PixVerseService(
             _logger.LogDebug("[RUN {RunId}] STEP PV-UPU-8 BodyLength={Length}", runId, json?.Length ?? 0);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-9 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<ApiEnvelope<UploadImageResult>>(json, JsonOpts);
+            var env = JsonSerializer.Deserialize<ApiEnvelope<UploadImage>>(json, JsonOpts);
 
             if (env is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-9 FAILED Envelope is null", runId);
-                return _error.Fail<UploadImageResult>(null, "Invalid upload response (null).");
+                return _error.Fail<UploadImage>(null, "Invalid upload response (null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
             if (env.ErrCode != 0)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<UploadImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                return _error.Fail<UploadImage>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
             }
 
             if (env.Resp is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-10 FAILED Resp is null", runId);
-                return _error.Fail<UploadImageResult>(null, "Invalid upload payload (Resp null).");
+                return _error.Fail<UploadImage>(null, "Invalid upload payload (Resp null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] SUCCESS UploadImage (url)", runId);
-            return Operation<UploadImageResult>.Success(env.Resp, env.ErrMsg);
+            return Operation<UploadImage>.Success(env.Resp, env.ErrMsg);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (url)", runId);
-            return _error.Fail<UploadImageResult>(ex, "Upload image failed");
+            return _error.Fail<UploadImage>(ex, "Upload image failed");
         }
     }
 
-    // -------------------------------------------------
-    // Helpers
-    // -------------------------------------------------
-    private static string NewRunId() => Guid.NewGuid().ToString("N")[..8];
 
-    private bool TryValidateConfig(out string error)
-    {
-        if (string.IsNullOrWhiteSpace(_opt.BaseUrl))
-        {
-            error = "PixVerse BaseUrl is not configured.";
-            return false;
-        }
-
-        if (string.IsNullOrWhiteSpace(_opt.ApiKey))
-        {
-            error = "PixVerse ApiKey is not configured.";
-            return false;
-        }
-
-        error = string.Empty;
-        return true;
-    }
-
-    private Uri BuildEndpoint(string pathOrPathWithId)
-    {
-        var baseUri = new Uri(_opt.BaseUrl.TrimEnd('/') + "/");
-        return new Uri(baseUri, pathOrPathWithId.TrimStart('/'));
-    }
-
-    private void ApplyAuth(HttpRequestMessage req)
-    {
-        req.Headers.Remove(ApiConstants.ApiKeyHeader);
-        req.Headers.Add(ApiConstants.ApiKeyHeader, _opt.ApiKey);
-
-        if (!req.Headers.Contains(ApiConstants.TraceIdHeader))
-            req.Headers.Add(ApiConstants.TraceIdHeader, Guid.NewGuid().ToString());
-
-        req.Headers.Accept.Clear();
-        req.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-    }
-
-    private static T? TryDeserialize<T>(string json)
-    {
-        try { return JsonSerializer.Deserialize<T>(json, JsonOpts); }
-        catch { return default; }
-    }
 
     public async Task<Operation<JobSubmitted>> SubmitLipSyncAsync(
-        LipSyncRequest request,
+        LipSync request,
         CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation("[RUN {RunId}] START SubmitLipSync", runId);
 
         try
@@ -868,14 +471,14 @@ public sealed partial class PixVerseService(
             request.Validate();
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-LS-2 Validate config", runId);
-            if (!TryValidateConfig(out var configError))
+            if (!Helper.TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-LS-2 FAILED Config invalid: {Error}", runId, configError);
                 return _error.Fail<JobSubmitted>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-LS-3 Build endpoint. Path={Path}", runId, ApiConstants.LipSyncPath);
-            var endpoint = BuildEndpoint(ApiConstants.LipSyncPath);
+            var endpoint = Helper.BuildEndpoint(ApiConstants.LipSyncPath);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-LS-4 Serialize payload", runId);
             var payload = JsonSerializer.Serialize(request, JsonOpts);
@@ -888,7 +491,7 @@ public sealed partial class PixVerseService(
             };
 
             // Must include API-KEY + Ai-Trace-Id (already done by ApplyAuth)
-            ApplyAuth(req);
+            Helper.ApplyAuth(req);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-LS-6 Send request", runId);
             using var res = await _http.SendAsync(req, ct);
@@ -954,7 +557,7 @@ public sealed partial class PixVerseService(
         int videoIndex = 0,
         CancellationToken ct = default)
     {
-        var runId = NewRunId();
+        var runId = VerseApiSupport.NewRunId();
         _logger.LogInformation(
             "[RUN {RunId}] START PixVerse.DownloadVideo jobId={JobId} videoIndex={VideoIndex} dest={Dest}",
             runId, jobId, videoIndex, destinationFilePath);

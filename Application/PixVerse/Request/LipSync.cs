@@ -2,9 +2,9 @@
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
-namespace Application.PixVerse.request
+namespace Application.PixVerse.Request
 {
-    public sealed class LipSyncRequest
+    public sealed class LipSync
     {
         // either source_video_id or video_media_id, not both
         [JsonPropertyName("video_media_id")]

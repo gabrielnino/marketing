@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Application.PixVerse.request
+namespace Application.PixVerse.Response
 {
-    public sealed class UploadImageResult
+    public sealed class UploadImage
     {
         [JsonPropertyName("img_id")]
         public long ImgId { get; init; }

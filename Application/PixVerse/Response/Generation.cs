@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Application.PixVerse.response
+namespace Application.PixVerse.Response
 {
-    public sealed class GenerationResult
+    public sealed class Generation
     {
         // -----------------------------
         // Raw PixVerse fields
