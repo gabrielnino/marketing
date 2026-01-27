@@ -960,8 +960,10 @@ Task<Operation<T>> ReadById(string id);
 using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Bootstrapper;
+using Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using System.Diagnostics;
 using System.Text.Json;
 namespace AzureTable
@@ -970,17 +972,27 @@ public sealed class Program
 {
 public static async Task Main(string[] args)
 {
+var runId = Guid.NewGuid().ToString("N")[..8];
+var sw = Stopwatch.StartNew();
+try
+{
 using var host = AppHostBuilder.Create(args).Build();
 var logger = host.Services.GetRequiredService<ILogger<Program>>();
+var executionRunning = TryGetExecutionRunning(host.Services) ?? null;
+if(executionRunning is null)
+{
+return;
+}
+var logsFolder = Path.Combine(executionRunning.ExecutionRunning, "Logs");
+var logFilePattern = Path.Combine(logsFolder, $"Marketing-{executionRunning.TimeStamp}.log");
+logger.LogInformation("[RUN {RunId}] === START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===", runId);
+logger.LogInformation("[RUN {RunId}] ArgsCount={ArgsCount}", runId, args?.Length ?? 0);
+logger.LogInformation("[RUN {RunId}] LOG FILE TARGET (pattern) => {LogFilePattern}", runId, logFilePattern);
 var imageClient = host.Services.GetRequiredService<IImageClient>();
 var balanceClient = host.Services.GetRequiredService<IBalanceClient>();
 var videoJobQueryClient = host.Services.GetRequiredService<IVideoJobQueryClient>();
 var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
 var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
-var runId = Guid.NewGuid().ToString("N")[..8];
-var sw = Stopwatch.StartNew();
-logger.LogInformation("[RUN {RunId}] === START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===", runId);
-logger.LogInformation("[RUN {RunId}] ArgsCount={ArgsCount}", runId, args?.Length ?? 0);
 logger.LogInformation("[RUN {RunId}] [STEP 1] Checking balance...", runId);
 var balOp = await balanceClient.GetAsync();
 if (!balOp.IsSuccessful)
@@ -993,7 +1005,7 @@ return;
 logger.LogInformation(
 "[RUN {RunId}] [STEP 1] Balance OK. Credits={Credits}. ElapsedMs={ElapsedMs}",
 runId, balOp.Data?.TotalCredits, sw.ElapsedMilliseconds);
-var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\donalTrump.webp";
+var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\gustavo.webp";
 var fileName = Path.GetFileName(imagePath);
 var fileExt = Path.GetExtension(imagePath);
 var contentType = GuessContentType(fileExt);
@@ -1164,20 +1176,37 @@ logger.LogInformation(
 "[RUN {RunId}] [STEP 6] LipSync Submit OK. LipJobId={LipJobId}. TotalElapsedMs={ElapsedMs}",
 runId, lipOp.Data?.JobId, sw.ElapsedMilliseconds);
 }
+catch (Exception ex)
+{
+Log.Fatal(ex, "[RUN {RunId}] Unhandled exception. Application terminating.", runId);
+Environment.ExitCode = 1;
+}
+finally
+{
+Log.Information("[RUN {RunId}] Flushing logs. TotalElapsedMs={ElapsedMs}", runId, sw.ElapsedMilliseconds);
+await Log.CloseAndFlushAsync();
+}
+}
+private static ExecutionTracker? TryGetExecutionRunning(IServiceProvider services)
+{
+try
+{
+var tracker = services.GetService(typeof(ExecutionTracker)) as ExecutionTracker;
+return tracker;
+}
+catch
+{
+return null;
+}
+}
 private static long? TryGetVideoMediaIdFromKnownModel(JobResult result)
 {
 return null;
 }
 private static string SafeSerialize<T>(T obj)
 {
-try
-{
-return JsonSerializer.Serialize(obj);
-}
-catch
-{
-return "(serialize_failed)";
-}
+try { return JsonSerializer.Serialize(obj); }
+catch { return "(serialize_failed)"; }
 }
 private static long? TryExtractMediaIdFromJson(string json)
 {
@@ -1264,7 +1293,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3dad7f1ed0b6a3152f5a1a098f4efa26bd51f16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cf37dd2c874cb16f7035747f1f95ced1f2c5baf")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

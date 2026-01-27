@@ -2,6 +2,7 @@
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -27,6 +28,7 @@ namespace Infrastructure.PixVerse
 
         public async Task<Operation<JobResult>> WaitForCompletionAsync(long jobId, CancellationToken ct = default)
         {
+            var operation = "PixVerse.PixVerseBase.JobClient.WaitForCompletionAsync";
             var runId = NewRunId();
             _logger.LogInformation("[RUN {RunId}] START WaitForCompletion. JobId={JobId}", runId, jobId);
 

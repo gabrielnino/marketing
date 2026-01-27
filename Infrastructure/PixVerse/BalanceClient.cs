@@ -26,6 +26,7 @@ namespace Infrastructure.PixVerse
 
         public async Task<Operation<AccountCredits>> GetAsync(CancellationToken ct = default)
         {
+            var operation = "PixVerse.PixVerseBase.BalanceClient.GetAsync";
             var runId = NewRunId();
             _logger.LogInformation("[RUN {RunId}] START PixVerse.CheckBalance", runId);
 

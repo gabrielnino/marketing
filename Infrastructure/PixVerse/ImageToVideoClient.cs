@@ -3,6 +3,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -27,6 +28,7 @@ namespace Infrastructure.PixVerse
             ImageToVideo request,
             CancellationToken ct = default)
         {
+            var operation = "PixVerse.PixVerseBase.ImageToVideoClient.UploadAsync";
             var runId = NewRunId();
             _logger.LogInformation("[RUN {RunId}] START SubmitImageToVideo", runId);
 
@@ -48,7 +50,12 @@ namespace Infrastructure.PixVerse
                 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-4 Serialize payload", runId);
                 var payload = JsonSerializer.Serialize(request, JsonOpts);
                 _logger.LogDebug("[RUN {RunId}] STEP PV-I2V-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
-
+                ApiPayloadLogger.LogResponse(
+                _logger,
+                runId,
+                operation,
+                payload
+                );
                 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
                 using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
                 {

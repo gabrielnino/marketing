@@ -29,6 +29,7 @@ namespace Infrastructure.PixVerse
         public async Task<Operation<JobStatus>> GetStatusAsync(long jobId, CancellationToken ct = default)
         {
             var runId = NewRunId();
+            var operation = "PixVerse.VideoJobQueryClient.GetStatusAsync";
             _logger.LogInformation("[RUN {RunId}] START GetGenerationStatus. JobId={JobId}", runId, jobId);
 
             try
@@ -106,6 +107,7 @@ namespace Infrastructure.PixVerse
         public async Task<Operation<JobResult>> GetResultAsync(long jobId, CancellationToken ct = default)
         {
             var runId = NewRunId();
+            var operation = "PixVerse.VideoJobQueryClient.GetResultAsync";
             _logger.LogInformation("[RUN {RunId}] START GetGenerationResult. JobId={JobId}", runId, jobId);
 
             try

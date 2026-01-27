@@ -1,0 +1,432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/interactive-mode.schema.json",
+  "title": "InteractiveModeProtocol",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "version",
+    "definition",
+    "core_rules",
+    "turn_contract",
+    "state_model",
+    "step_lifecycle",
+    "scope_control",
+    "evidence_policy",
+    "termination"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "Interactive Mode"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "default": "1.0.0"
+    },
+    "definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "what", "how", "what_it_is_not", "purpose" ],
+      "properties": {
+        "what": {
+          "type": "string",
+          "description": "Concise definition of Interactive Mode.",
+          "minLength": 10
+        },
+        "how": {
+          "type": "string",
+          "description": "Operational mechanism: one-step gating and state-dependent progression.",
+          "minLength": 10
+        },
+        "what_it_is_not": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3
+          },
+          "minItems": 3
+        },
+        "purpose": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 5
+          },
+          "minItems": 2
+        }
+      }
+    },
+    "core_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "single_atomic_action_per_turn",
+        "explicit_user_feedback_required",
+        "completion_gating",
+        "state_driven_flow",
+        "no_unverified_assumptions"
+      ],
+      "properties": {
+        "single_atomic_action_per_turn": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "enabled", "allowed_action_types", "max_actions_per_turn" ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "allowed_action_types": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [ "question", "task", "verification_request" ]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "max_actions_per_turn": {
+              "type": "integer",
+              "const": 1
+            }
+          }
+        },
+        "explicit_user_feedback_required": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "enabled", "required_feedback_types" ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "required_feedback_types": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [ "result", "confirmation", "clarification", "blocker_report" ]
+              },
+              "minItems": 2,
+              "uniqueItems": true
+            }
+          }
+        },
+        "completion_gating": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "enabled", "closure_requires_user_confirmation", "closure_requires_assistant_ack" ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "closure_requires_user_confirmation": {
+              "type": "boolean",
+              "const": true
+            },
+            "closure_requires_assistant_ack": {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        },
+        "state_driven_flow": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "enabled", "next_step_inputs" ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "next_step_inputs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [ "user_last_answer", "verified_state", "documentation_evidence" ]
+              },
+              "minItems": 2,
+              "uniqueItems": true
+            }
+          }
+        },
+        "no_unverified_assumptions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "enabled", "assumption_handling" ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "assumption_handling": {
+              "type": "string",
+              "enum": [ "ask_to_confirm", "block_progress", "request_evidence" ]
+            }
+          }
+        }
+      }
+    },
+    "turn_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistant_turn",
+        "user_turn",
+        "forbidden_patterns"
+      ],
+      "properties": {
+        "assistant_turn": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "must_include", "must_end_with", "must_not_include" ],
+          "properties": {
+            "must_include": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [ "step_id", "action_type", "single_action", "waiting_state" ]
+              },
+              "minItems": 3,
+              "uniqueItems": true
+            },
+            "must_end_with": {
+              "type": "string",
+              "description": "A waiting cue that requests user response.",
+              "enum": [ "WAIT_FOR_USER_RESPONSE" ]
+            },
+            "must_not_include": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "multiple_questions",
+                  "multiple_tasks",
+                  "unrequested_solutions",
+                  "assumptions_as_facts",
+                  "skipping_verification"
+                ]
+              },
+              "minItems": 3,
+              "uniqueItems": true
+            }
+          }
+        },
+        "user_turn": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "expected_inputs" ],
+          "properties": {
+            "expected_inputs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [ "answer", "test_result", "log_excerpt", "payload", "doc_excerpt", "confirmation", "blocker" ]
+              },
+              "minItems": 2,
+              "uniqueItems": true
+            }
+          }
+        },
+        "forbidden_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "batch_checklist_without_pause",
+              "multi-branch_in_single_turn",
+              "speculative_root_cause_without_evidence",
+              "changing_scope_without_user_ack"
+            ]
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      }
+    },
+    "state_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "state_id", "active_focus", "open_questions", "verified_facts", "pending_evidence_requests" ],
+      "properties": {
+        "state_id": {
+          "type": "string",
+          "minLength": 6
+        },
+        "active_focus": {
+          "type": "string",
+          "description": "The single active aspect being investigated."
+        },
+        "open_questions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "verified_facts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "pending_evidence_requests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        }
+      }
+    },
+    "step_lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "statuses", "closure_criteria", "step_record" ],
+      "properties": {
+        "statuses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [ "proposed", "in_progress", "blocked", "completed_unverified", "closed_verified" ]
+          },
+          "minItems": 5,
+          "uniqueItems": true
+        },
+        "closure_criteria": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "user_confirms_done", "assistant_verifies_sufficiency", "evidence_attached_if_applicable" ],
+          "properties": {
+            "user_confirms_done": {
+              "type": "boolean",
+              "const": true
+            },
+            "assistant_verifies_sufficiency": {
+              "type": "boolean",
+              "const": true
+            },
+            "evidence_attached_if_applicable": {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        },
+        "step_record": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [ "step_id", "action_type", "instruction_or_question", "expected_user_response", "status" ],
+          "properties": {
+            "step_id": {
+              "type": "string",
+              "pattern": "^[A-Z0-9_-]{4,32}$"
+            },
+            "action_type": {
+              "type": "string",
+              "enum": [ "question", "task", "verification_request" ]
+            },
+            "instruction_or_question": {
+              "type": "string",
+              "minLength": 5
+            },
+            "expected_user_response": {
+              "type": "string",
+              "enum": [ "answer", "result", "confirmation", "clarification", "blocker_report" ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [ "proposed", "in_progress", "blocked", "completed_unverified", "closed_verified" ]
+            }
+          }
+        }
+      }
+    },
+    "scope_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "single_active_aspect", "parking_lot", "scope_change_requires_user_ack" ],
+      "properties": {
+        "single_active_aspect": {
+          "type": "boolean",
+          "const": true
+        },
+        "parking_lot": {
+          "type": "array",
+          "description": "Deferred issues that are not explored in parallel.",
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "scope_change_requires_user_ack": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "evidence_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "doc_first", "compare_doc_to_implementation", "evidence_types" ],
+      "properties": {
+        "doc_first": {
+          "type": "boolean",
+          "description": "Prefer documentation-anchored reasoning for API behavior.",
+          "const": true
+        },
+        "compare_doc_to_implementation": {
+          "type": "boolean",
+          "const": true
+        },
+        "evidence_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [ "api_docs", "request_payload", "response_payload", "logs", "code_excerpt", "config" ]
+          },
+          "minItems": 3,
+          "uniqueItems": true
+        }
+      }
+    },
+    "termination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [ "conditions", "exit_outputs" ],
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "root_cause_identified_and_verified",
+              "user_stops",
+              "insufficient_inputs",
+              "external_service_fault_confirmed"
+            ]
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "exit_outputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "root_cause_statement",
+              "evidence_summary",
+              "minimal_fix_plan",
+              "verification_steps"
+            ]
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

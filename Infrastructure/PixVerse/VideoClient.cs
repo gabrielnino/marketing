@@ -31,6 +31,7 @@ namespace Infrastructure.PixVerse
             int videoIndex = 0,
             CancellationToken ct = default)
         {
+            var operation = "PixVerse.VideoClient.DownloadAsync";
             var runId = NewRunId();
             _logger.LogInformation(
                 "[RUN {RunId}] START PixVerse.DownloadVideo jobId={JobId} videoIndex={VideoIndex} dest={Dest}",

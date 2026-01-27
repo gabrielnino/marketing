@@ -3,6 +3,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -33,6 +34,8 @@ namespace Infrastructure.PixVerse
             CancellationToken ct = default)
         {
             var runId = NewRunId();
+            var operation = "PixVerse.LipSyncClient.SubmitAsync";
+
             _logger.LogInformation("[RUN {RunId}] START SubmitLipSync", runId);
 
             // Logs de entorno/cliente
@@ -86,6 +89,12 @@ namespace Infrastructure.PixVerse
                 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-4 Serialize payload", runId);
                 var payload = JsonSerializer.Serialize(request, JsonOpts);
 
+                ApiPayloadLogger.LogRequest(
+                    _logger,
+                    runId,
+                    operation,
+                    payload
+                );
                 _logger.LogInformation(
                     "[RUN {RunId}] STEP PV-LS-4 PayloadLength={Length}",
                     runId,

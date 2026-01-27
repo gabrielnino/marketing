@@ -3,6 +3,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -27,6 +28,7 @@ namespace Infrastructure.PixVerse
       VideoTransition request,
       CancellationToken ct = default)
         {
+            var operation = "PixVerse.TransitionClient.SubmitAsync";
             var runId = NewRunId();
             _logger.LogInformation("[RUN {RunId}] START SubmitTransition", runId);
 
@@ -50,6 +52,14 @@ namespace Infrastructure.PixVerse
                 _logger.LogDebug("[RUN {RunId}] STEP PV-TR-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
+
+                ApiPayloadLogger.LogResponse(
+                    _logger,
+                    runId,
+                    operation,
+                    payload
+                );
+
                 using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
                 {
                     Content = new StringContent(payload, Encoding.UTF8, "application/json")
