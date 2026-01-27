@@ -4,9 +4,6 @@ namespace Application.PixVerse.Response
 {
     public sealed class Generation
     {
-        // -----------------------------
-        // Raw PixVerse fields
-        // -----------------------------
 
         [JsonPropertyName("id")]
         public long RawJobId { get; init; }
@@ -41,9 +38,7 @@ namespace Application.PixVerse.Response
         [JsonPropertyName("modify_time")]
         public DateTimeOffset? ModifyTimeUtc { get; init; }
 
-        // -----------------------------
-        // Normalized / domain-facing API
-        // -----------------------------
+
 
         [JsonIgnore]
         public string JobId => RawJobId.ToString();

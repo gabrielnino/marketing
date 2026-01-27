@@ -13,9 +13,9 @@ public class Program
         using var host = AppHostBuilder.Create(args).Build();
 
         var logger = host.Services.GetRequiredService<ILogger<Program>>();
-        var pixVerse = host.Services.GetRequiredService<IPixVerseService>();
-        var CheckBalance = host.Services.GetRequiredService<ICheckBalance>();
-        var GetGenerationStatus = host.Services.GetRequiredService<IGetGenerationStatus>();
+        var pixVerse = host.Services.GetRequiredService<Application.PixVerse.IImageClient>();
+        var CheckBalance = host.Services.GetRequiredService<IBalanceClient>();
+        var GetGenerationStatus = host.Services.GetRequiredService<IGenerationClient>();
         
 
 
@@ -25,7 +25,7 @@ public class Program
         // -------------------------------------------------
         // 1) Check balance (optional but recommended)
         // -------------------------------------------------
-        var balanceOp = await CheckBalance.CheckBalanceAsync();
+        var balanceOp = await CheckBalance.GetAsync();
         if (!balanceOp.IsSuccessful || balanceOp.Data is null)
         {
             logger.LogError("Balance check failed: {Message}", balanceOp.Message);
@@ -132,7 +132,7 @@ public class Program
 
     private static async Task<bool> PollUntilDoneAsync(
         ILogger logger,
-        IGetGenerationStatus getGenerationStatus,
+        IGenerationClient getGenerationStatus,
         long jobId,
         TimeSpan maxWait,
         TimeSpan pollDelay,
@@ -142,7 +142,7 @@ public class Program
 
         while (true)
         {
-            var op = await getGenerationStatus.GetGenerationResultAsync(jobId);
+            var op = await getGenerationStatus.GetResultAsync(jobId);
 
             if (!op.IsSuccessful || op.Data is null)
             {

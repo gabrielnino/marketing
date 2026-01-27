@@ -205,12 +205,12 @@ namespace Bootstrapper
                     // -----------------------------
                     services.AddUrlValidation(hostingContext.Configuration);
 
-                    services.AddSingleton<IPixVerseService, PixVerseService>();
-                    services.AddSingleton<ICheckBalance, CheckBalance>();
-                    services.AddSingleton<IPixVerseService, PixVerseService>();
-                    services.AddSingleton<ISubmitImageToVideo, SubmitImageToVideo>();
-                    services.AddSingleton<IGetGenerationStatus, GetGenerationStatus>();
-                    services.AddSingleton<ISubmitLipSync, SubmitLipSync>();
+                    services.AddSingleton<ImageClient, ImageClient>();
+                    services.AddSingleton<IBalanceClient, BalanceClient>();
+                    services.AddSingleton<ImageClient, ImageClient>();
+                    services.AddSingleton<IImageToVideoClient, ImageToVideoClient>();
+                    services.AddSingleton<IGenerationClient, GenerationClient>();
+                    services.AddSingleton<ILipSyncClient, LipSyncClient>();
                     
 
                     // -----------------------------
