@@ -41,7 +41,7 @@ namespace Application.PixVerse.Response
 
 
         [JsonIgnore]
-        public string JobId => RawJobId.ToString();
+        public long JobId => RawJobId;
 
         [JsonIgnore]
         public JobState State => RawStatus switch

@@ -1293,7 +1293,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cf37dd2c874cb16f7035747f1f95ced1f2c5baf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1618,7 +1618,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2688,6 +2688,51 @@ public const string Success = "Success";
 }
 }
 
+=== FILE: F:\Marketing\Infrastructure\Logging\ApiPayloadLogger.cs ===
+
+﻿using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+namespace Infrastructure.Logging
+{
+public static class ApiPayloadLogger
+{
+private static readonly JsonSerializerOptions PrettyJson = new()
+{
+WriteIndented = true
+};
+public static void LogRequest(
+ILogger logger,
+string runId,
+string operation,
+object payload)
+{
+var json = JsonSerializer.Serialize(payload, PrettyJson);
+logger.LogInformation(
+"[RUN {RunId}] [{Operation}] REQUEST PAYLOAD:\n{Json}",
+runId,
+operation,
+json);
+}
+public static void LogResponse(
+ILogger logger,
+string runId,
+string operation,
+string rawJson)
+{
+logger.LogInformation(
+"[RUN {RunId}] [{Operation}] RESPONSE PAYLOAD:\n{Json}",
+runId,
+operation,
+rawJson);
+}
+}
+}
+
 === FILE: F:\Marketing\Infrastructure\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs ===
 
 using System;
@@ -2701,7 +2746,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2769,6 +2814,7 @@ private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
 public async Task<Operation<AccountCredits>> GetAsync(CancellationToken ct = default)
 {
+var operation = "PixVerse.PixVerseBase.BalanceClient.GetAsync";
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START PixVerse.CheckBalance", runId);
 try
@@ -2865,6 +2911,7 @@ string fileName,
 string contentType,
 CancellationToken ct = default)
 {
+var operation = "PixVerse.PixVerseBase.ImageClient.UploadAsync";
 var runId = NewRunId();
 _logger.LogInformation(
 "[RUN {RunId}] START UploadImage (file). FileName={FileName} ContentType={ContentType}",
@@ -2951,6 +2998,7 @@ return _error.Fail<ImageResult>(ex, "Upload image failed");
 }
 public async Task<Operation<ImageResult>> UploadAsync(string imageUrl, CancellationToken ct = default)
 {
+var operation = "PixVerse.PixVerseBase.ImageClient.UploadAsync";
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
 try
@@ -3024,6 +3072,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -3046,6 +3095,7 @@ public async Task<Operation<JobReceipt>> SubmitAsync(
 ImageToVideo request,
 CancellationToken ct = default)
 {
+var operation = "PixVerse.PixVerseBase.ImageToVideoClient.UploadAsync";
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START SubmitImageToVideo", runId);
 try
@@ -3063,6 +3113,12 @@ var endpoint = BuildEndpoint(Api.ImageToVideoPath);
 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-4 Serialize payload", runId);
 var payload = JsonSerializer.Serialize(request, JsonOpts);
 _logger.LogDebug("[RUN {RunId}] STEP PV-I2V-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
+ApiPayloadLogger.LogResponse(
+_logger,
+runId,
+operation,
+payload
+);
 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
 using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
 {
@@ -3122,6 +3178,7 @@ return _error.Fail<JobReceipt>(ex, "SubmitImageToVideo failed");
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -3145,6 +3202,7 @@ private readonly ILogger<ImageClient> _logger = logger;
 private readonly IVideoJobQueryClient _videoJobQueryClient = videoJobQueryClient;
 public async Task<Operation<JobResult>> WaitForCompletionAsync(long jobId, CancellationToken ct = default)
 {
+var operation = "PixVerse.PixVerseBase.JobClient.WaitForCompletionAsync";
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START WaitForCompletion. JobId={JobId}", runId, jobId);
 if (jobId == 0)
@@ -3207,6 +3265,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -3233,6 +3292,7 @@ VideoLipSync request,
 CancellationToken ct = default)
 {
 var runId = NewRunId();
+var operation = "PixVerse.LipSyncClient.SubmitAsync";
 _logger.LogInformation("[RUN {RunId}] START SubmitLipSync", runId);
 _logger.LogInformation(
 "[RUN {RunId}] Client settings: BaseAddress={BaseAddress} Timeout={TimeoutMs} DefaultHeaders={DefaultHeaders}",
@@ -3274,6 +3334,12 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-LS-3 Build endpoint. Path={Path}",
 var endpoint = BuildEndpoint(Api.LipSyncPath);
 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-4 Serialize payload", runId);
 var payload = JsonSerializer.Serialize(request, JsonOpts);
+ApiPayloadLogger.LogRequest(
+_logger,
+runId,
+operation,
+payload
+);
 _logger.LogInformation(
 "[RUN {RunId}] STEP PV-LS-4 PayloadLength={Length}",
 runId,
@@ -3534,6 +3600,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -3556,6 +3623,7 @@ public async Task<Operation<JobReceipt>> SubmitTAsync(
 TextToVideo request,
 CancellationToken ct = default)
 {
+var operation = "PixVerse.TextToVideoClient.SubmitTAsync";
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START SubmitTextToVideo", runId);
 try
@@ -3574,6 +3642,12 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-4 Serialize payload", runId);
 var payload = JsonSerializer.Serialize(request, JsonOpts);
 _logger.LogDebug("[RUN {RunId}] STEP PV-T2V-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
+ApiPayloadLogger.LogResponse(
+_logger,
+runId,
+operation,
+payload
+);
 using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
 {
 Content = new StringContent(payload, Encoding.UTF8, "application/json")
@@ -3633,6 +3707,7 @@ using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
 using Configuration.PixVerse;
+using Infrastructure.Logging;
 using Infrastructure.PixVerse.Constants;
 using Infrastructure.PixVerse.Result;
 using Microsoft.Extensions.Logging;
@@ -3655,6 +3730,7 @@ public async Task<Operation<JobReceipt>> SubmitAsync(
 VideoTransition request,
 CancellationToken ct = default)
 {
+var operation = "PixVerse.TransitionClient.SubmitAsync";
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START SubmitTransition", runId);
 try
@@ -3673,6 +3749,12 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-TR-4 Serialize payload", runId);
 var payload = JsonSerializer.Serialize(request, JsonOpts);
 _logger.LogDebug("[RUN {RunId}] STEP PV-TR-4 PayloadLength={Length}", runId, payload?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-5 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
+ApiPayloadLogger.LogResponse(
+_logger,
+runId,
+operation,
+payload
+);
 using var req = new HttpRequestMessage(HttpMethod.Post, endpoint)
 {
 Content = new StringContent(payload, Encoding.UTF8, "application/json")
@@ -3757,6 +3839,7 @@ string destinationFilePath,
 int videoIndex = 0,
 CancellationToken ct = default)
 {
+var operation = "PixVerse.VideoClient.DownloadAsync";
 var runId = NewRunId();
 _logger.LogInformation(
 "[RUN {RunId}] START PixVerse.DownloadVideo jobId={JobId} videoIndex={VideoIndex} dest={Dest}",
@@ -3884,6 +3967,7 @@ private readonly ILogger<ImageClient> _logger = logger;
 public async Task<Operation<JobStatus>> GetStatusAsync(long jobId, CancellationToken ct = default)
 {
 var runId = NewRunId();
+var operation = "PixVerse.VideoJobQueryClient.GetStatusAsync";
 _logger.LogInformation("[RUN {RunId}] START GetGenerationStatus. JobId={JobId}", runId, jobId);
 try
 {
@@ -3946,6 +4030,7 @@ return _error.Fail<JobStatus>(ex, "Status check failed");
 public async Task<Operation<JobResult>> GetResultAsync(long jobId, CancellationToken ct = default)
 {
 var runId = NewRunId();
+var operation = "PixVerse.VideoJobQueryClient.GetResultAsync";
 _logger.LogInformation("[RUN {RunId}] START GetGenerationResult. JobId={JobId}", runId, jobId);
 try
 {
@@ -5864,7 +5949,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -7361,7 +7446,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -10520,7 +10605,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

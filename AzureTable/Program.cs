@@ -158,11 +158,11 @@ namespace AzureTable
                     "[RUN {RunId}] [STEP 4] Poll I2V status START. JobId={JobId} MaxAttempts={MaxAttempts} DelaySec={DelaySec}",
                     runId, jobId, 60, 2);
 
-                JobStatus? finalStatus = null;
+                JobResult? finalStatus = null;
                 for (var attempt = 1; attempt <= 60; attempt++)
                 {
                     var attemptSw = Stopwatch.StartNew();
-                    var stOp = await videoJobQueryClient.GetStatusAsync(jobId);
+                    var stOp = await videoJobQueryClient.GetResultAsync(jobId);
 
                     if (!stOp.IsSuccessful || stOp.Data is null)
                     {
@@ -174,9 +174,9 @@ namespace AzureTable
                     {
                         logger.LogInformation(
                             "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} OK. State={State} IsTerminal={IsTerminal} AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
-                            runId, attempt, stOp.Data.State, stOp.Data.IsTerminal, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
+                            runId, attempt, stOp.Data.State, stOp.Data.RawStatus, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
 
-                        if (stOp.Data.IsTerminal)
+                        if (stOp.Data.State == JobState.Succeeded)
                         {
                             finalStatus = stOp.Data;
                             break;
@@ -227,9 +227,9 @@ namespace AzureTable
                     "[RUN {RunId}] [STEP 5] Get result OK. JobId={JobId} ResultJsonLen={Len} ElapsedMs={ElapsedMs}",
                     runId, jobId, resultJson.Length, sw.ElapsedMilliseconds);
 
-                long? videoMediaId = TryGetVideoMediaIdFromKnownModel(resOp.Data);
+                long? videoMediaId = 0;
 
-                if (videoMediaId is null || videoMediaId <= 0)
+                if (videoMediaId is null)
                 {
                     videoMediaId = TryExtractMediaIdFromJson(resultJson);
 
@@ -238,7 +238,7 @@ namespace AzureTable
                         runId, videoMediaId ?? 0);
                 }
 
-                if (videoMediaId is null || videoMediaId <= 0)
+                if (videoMediaId is null)
                 {
                     logger.LogError(
                         "[RUN {RunId}] [STEP 5] Cannot proceed: VideoMediaId NOT FOUND. JobId={JobId}. ResultJson={ResultJson}",
@@ -255,12 +255,12 @@ namespace AzureTable
                 // -------------------------------------------------
                 var lipReq = new VideoLipSync
                 {
-                    VideoMediaId = videoMediaId.Value,
-                    SourceVideoId = null,
+                    VideoMediaId = 0,
+                    SourceVideoId =  resOp.Data.JobId,
 
-                    AudioMediaId = null,
+                    AudioMediaId = 0,
                     LipSyncTtsSpeakerId = "auto",
-                    LipSyncTtsContent = "¡Hola Vancouver! Soy Goku. No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
+                    LipSyncTtsContent = "¡Hola Vancouver! Soy gustavo. Voten por abelardo de la aspriella. ¡Vamos con toda!"
                 };
 
                 logger.LogInformation(
