@@ -7,7 +7,10 @@ namespace Infrastructure.PixVerse
 {
     public class PixVerseBase(PixVerseOptions opt)
     {
-        public static readonly JsonSerializerOptions JsonOpts = new(JsonSerializerDefaults.Web);
+        public static readonly JsonSerializerOptions JsonOpts = new(JsonSerializerDefaults.Web)
+        {
+            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+        };
 
         internal static string NewRunId() => Guid.NewGuid().ToString("N")[..8];
         public bool TryValidateConfig(out string error)

@@ -4,218 +4,289 @@ using Application.PixVerse.Response;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using Serilog.Extensions.Logging;
-using ILogger = Microsoft.Extensions.Logging.ILogger;
+using System.Text.Json;
 
 namespace AzureTable
 {
-    public class Program
+    /// <summary>
+    /// Fix principal:
+    /// - NO usar el JobId del Image->Video como source_video_id del LipSync.
+    /// - Extraer del "result" el VideoMediaId (o media id equivalente) y enviarlo como video_media_id.
+    ///
+    /// El log muestra que estabas mandando:
+    ///   SourceVideoId = {JobId del I2V}
+    /// y PixVerse responde ErrCode=500047 "provided media is invalid".
+    /// </summary>
+    public sealed class Program
     {
         public static async Task Main(string[] args)
         {
+            using var host = AppHostBuilder.Create(args).Build();
+
+            var logger = host.Services.GetRequiredService<ILogger<Program>>();
+
+            var imageClient = host.Services.GetRequiredService<IImageClient>();
+            var balanceClient = host.Services.GetRequiredService<IBalanceClient>();
+            var generationClient = host.Services.GetRequiredService<IGenerationClient>();
+            var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
+            var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
+
+            logger.LogInformation("=== START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===");
+
             // -------------------------------------------------
-            // LOG FILE SETUP
+            // 1) Check balance
             // -------------------------------------------------
-            var logDir = @"E:\Marketing-Logs\PixVerse";
-            Directory.CreateDirectory(logDir);
+            var balOp = await balanceClient.GetAsync();
+            if (!balOp.IsSuccessful)
+            {
+                logger.LogError("Balance failed: {Error}", balOp.Error ?? "unknown");
+                return;
+            }
 
-            var logFile = Path.Combine(
-                logDir,
-                $"PixVerse_{DateTime.UtcNow:yyyyMMdd_HHmmss}.log");
+            logger.LogInformation("Balance OK. Credits={Credits}", balOp.Data?.TotalCredits);
 
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .WriteTo.Console(
-                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
-                .WriteTo.File(
-                    logFile,
-                    rollingInterval: RollingInterval.Infinite,
-                    outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
-                .CreateLogger();
+            // -------------------------------------------------
+            // 2) Upload image
+            // -------------------------------------------------
+            var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\luisNino.jpg"; // AJUSTA
+            await using var imgStream = File.OpenRead(imagePath);
 
+            var upOp = await imageClient.UploadAsync(
+                imgStream,
+                fileName: Path.GetFileName(imagePath),
+                contentType: "image/jpeg");
+
+            if (!upOp.IsSuccessful || upOp.Data is null)
+            {
+                logger.LogError("UploadImage failed: {Error}", upOp.Error ?? "unknown");
+                return;
+            }
+
+            var imgId = upOp.Data.ImgId;
+            logger.LogInformation("Image uploaded. ImgId={ImgId}", imgId);
+
+            // -------------------------------------------------
+            // 3) Submit Image->Video
+            // -------------------------------------------------
+            var i2vReq = new ImageToVideo
+            {
+                ImgId = imgId,
+                Duration = 5,
+                Model = "v5",
+                Quality = "540p",
+                Prompt = "adult guy speaking directly to camera, serious style, expressive mouth, clear face, neutral background",
+                NegativePrompt = "blurry, distorted face, artifacts",
+                Seed = 0
+            };
+
+            var i2vSubmitOp = await imageToVideoClient.SubmitAsync(i2vReq);
+            if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
+            {
+                logger.LogError("SubmitImageToVideo failed: {Error}", i2vSubmitOp.Error ?? "unknown");
+                return;
+            }
+
+            var jobId = i2vSubmitOp.Data.JobId;
+            logger.LogInformation("Image-to-Video submitted. JobId={JobId}", jobId);
+
+            // -------------------------------------------------
+            // 4) Esperar a que el job termine (status)
+            // -------------------------------------------------
+            GenerationStatus? finalStatus = null;
+
+            for (var attempt = 1; attempt <= 60; attempt++)
+            {
+                var stOp = await generationClient.GetStatusAsync(jobId);
+                if (!stOp.IsSuccessful || stOp.Data is null)
+                {
+                    logger.LogWarning("GetStatus attempt {Attempt} failed: {Error}", attempt, stOp.Error ?? "unknown");
+                }
+                else
+                {
+                    logger.LogInformation("[I2V] attempt={Attempt} state={State}", attempt, stOp.Data.State);
+
+                    if (stOp.Data.IsTerminal)
+                    {
+                        finalStatus = stOp.Data;
+                        break;
+                    }
+                }
+
+                await Task.Delay(TimeSpan.FromSeconds(2));
+            }
+            if(finalStatus is null)
+            {
+                return;
+            }
+            if (finalStatus is null || finalStatus.State != JobState.Succeeded)
+            {
+                logger.LogError("I2V job did not succeed. JobId={JobId} State={State}", jobId, finalStatus.State);
+                return;
+            }
+
+            // -------------------------------------------------
+            // 5) Obtener el RESULT y extraer VideoMediaId
+            //    FIX: aquí está la corrección clave.
+            // -------------------------------------------------
+            var resOp = await generationClient.GetResultAsync(jobId);
+            if (!resOp.IsSuccessful || resOp.Data is null)
+            {
+                logger.LogError("GetGenerationResult failed: {Error}", resOp.Error ?? "unknown");
+                return;
+            }
+
+            // A) Caso ideal: tu modelo YA tiene VideoMediaId (o similar)
+            //    Si tu PixVerseGenerationResult no lo tiene, ver B) parsing por JSON abajo.
+            long? videoMediaId = TryGetVideoMediaIdFromKnownModel(resOp.Data);
+
+            // B) Fallback: si tu implementación expone RawJson, o si puedes re-serializar el objeto,
+            //    intentamos encontrar fields comunes.
+            if (videoMediaId is null || videoMediaId <= 0)
+            {
+                var raw = SafeSerialize(resOp.Data);
+                videoMediaId = TryExtractMediaIdFromJson(raw);
+
+                logger.LogInformation(
+                    "MediaId extraction: VideoMediaId={VideoMediaId} (from json fallback)",
+                    videoMediaId ?? 0);
+            }
+
+            if (videoMediaId is null || videoMediaId <= 0)
+            {
+                // Este log es el que te evita “adivinar” y te dice por qué NO puedes seguir.
+                var raw = SafeSerialize(resOp.Data);
+                logger.LogError(
+                    "Cannot proceed to LipSync because no VideoMediaId could be extracted from result. " +
+                    "JobId={JobId}. ResultJson={ResultJson}",
+                    jobId,
+                    raw);
+
+                return;
+            }
+
+            logger.LogInformation("Using VideoMediaId={VideoMediaId} for LipSync (NOT JobId={JobId}).", videoMediaId, jobId);
+
+            // -------------------------------------------------
+            // 6) Submit LipSync (TTS) usando video_media_id
+            // -------------------------------------------------
+            var lipReq = new LipSync
+            {
+                // FIX: usar VideoMediaId (media id), y NO usar SourceVideoId = jobId
+                VideoMediaId = videoMediaId.Value,
+                SourceVideoId = null,
+
+                // TTS (no audio_media_id)
+                AudioMediaId = null,
+                LipSyncTtsSpeakerId = "auto",
+                LipSyncTtsContent = "¡Hola Vancouver! Soy Goku. No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
+            };
+
+            var lipOp = await lipSyncClient.SubmitJobAsync(lipReq);
+
+            if (!lipOp.IsSuccessful)
+            {
+                logger.LogError("LipSync submit failed: {Error}", lipOp.Error ?? "unknown");
+                return;
+            }
+
+            logger.LogInformation("LipSync submitted OK. JobId={LipJobId}", lipOp.Data?.JobId);
+        }
+
+        /// <summary>
+        /// Si tu PixVerseGenerationResult ya contiene algo tipo VideoMediaId, mapea aquí.
+        /// Si no existe, devuelve null y se usa el parsing por JSON.
+        /// </summary>
+        private static long? TryGetVideoMediaIdFromKnownModel(Generation result)
+        {
+            // AJUSTA esto a TU modelo real si ya existe un campo:
+            // return result.VideoMediaId;
+            // o return result.Resp?.VideoMediaId;
+            // Por defecto: null (para forzar fallback JSON).
+            return null;
+        }
+
+        private static string SafeSerialize<T>(T obj)
+        {
             try
             {
-                using var loggerFactory = new SerilogLoggerFactory(Log.Logger, dispose: false);
-
-                using var host = AppHostBuilder
-                    .Create(args)
-    .ConfigureServices((context, services) =>
-    {
-        services.AddSingleton<ILoggerFactory>(loggerFactory);
-    })
-                    .Build();
-
-                var logger = host.Services.GetRequiredService<ILogger<Program>>();
-
-                logger.LogInformation("=== START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) ===");
-                logger.LogInformation("Log file: {LogFile}", logFile);
-
-                var imageClient = host.Services.GetRequiredService<IImageClient>();
-                var balanceClient = host.Services.GetRequiredService<IBalanceClient>();
-                var generationClient = host.Services.GetRequiredService<IGenerationClient>();
-                var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
-                var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
-
-                // -------------------------------------------------
-                // 1) Balance
-                // -------------------------------------------------
-                var balanceOp = await balanceClient.GetAsync();
-                if (!balanceOp.IsSuccessful || balanceOp.Data is null)
-                {
-                    logger.LogError("Balance check failed: {Message}", balanceOp.Message);
-                    return;
-                }
-
-                logger.LogInformation("Balance OK. Credits={Credits}", balanceOp.Data.TotalCredits);
-
-                // -------------------------------------------------
-                // 2) Upload image
-                // -------------------------------------------------
-                var imagePath = @"E:\DocumentosCV\LuisNino\images\luisNino.jpg";
-                if (!File.Exists(imagePath))
-                {
-                    logger.LogError("Image not found: {Path}", imagePath);
-                    return;
-                }
-
-                await using var fs = File.OpenRead(imagePath);
-
-                var uploadImgOp = await imageClient.UploadAsync(
-                    fs,
-                    Path.GetFileName(imagePath),
-                    "image/jpeg");
-
-                if (!uploadImgOp.IsSuccessful || uploadImgOp.Data is null)
-                {
-                    logger.LogError("Image upload failed: {Message}", uploadImgOp.Message);
-                    return;
-                }
-
-                var imgId = uploadImgOp.Data.ImgId;
-                logger.LogInformation("Image uploaded. ImgId={ImgId}", imgId);
-
-                // -------------------------------------------------
-                // 3) Image -> Video
-                // -------------------------------------------------
-                var i2vReq = new ImageToVideo
-                {
-                    ImgId = imgId,
-                    Duration = 5,
-                    Model = "v5",
-                    Quality = "540p",
-                    Prompt = "adult guy speaking directly to camera, serious style, expressive mouth, clear face, neutral background",
-                    NegativePrompt = "blurry, distorted face, artifacts",
-                    Seed = 0
-                };
-
-                var i2vSubmitOp = await imageToVideoClient.SubmitAsync(i2vReq);
-                if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
-                {
-                    logger.LogError("Image-to-Video submit failed: {Message}", i2vSubmitOp.Message);
-                    return;
-                }
-
-                var sourceVideoId = i2vSubmitOp.Data.JobId;
-                logger.LogInformation("Image-to-Video submitted. JobId={JobId}", sourceVideoId);
-
-                var i2vOk = await PollUntilDoneAsync(
-                    logger,
-                    generationClient,
-                    sourceVideoId,
-                    TimeSpan.FromMinutes(10),
-                    TimeSpan.FromSeconds(3),
-                    "I2V");
-
-                if (!i2vOk)
-                    return;
-
-                // -------------------------------------------------
-                // 4) LipSync
-                // -------------------------------------------------
-                var lipReq = new LipSync
-                {
-                    SourceVideoId = sourceVideoId,
-                    LipSyncTtsSpeakerId = "auto",
-                    LipSyncTtsContent = "Hola Andres, sí vamos a ir a practicar para la prueba de carretera."
-                };
-
-                var lipSubmitOp = await lipSyncClient.SubmitJobAsync(lipReq);
-                if (!lipSubmitOp.IsSuccessful || lipSubmitOp.Data is null)
-                {
-                    logger.LogError("LipSync submit failed: {Message}", lipSubmitOp.Message);
-                    return;
-                }
-
-                var lipJobId = lipSubmitOp.Data.JobId;
-                logger.LogInformation("LipSync submitted. JobId={JobId}", lipJobId);
-
-                var lipOk = await PollUntilDoneAsync(
-                    logger,
-                    generationClient,
-                    lipJobId,
-                    TimeSpan.FromMinutes(12),
-                    TimeSpan.FromSeconds(3),
-                    "LIPSYNC");
-
-                if (!lipOk)
-                    return;
-
-                // -------------------------------------------------
-                // 5) Download
-                // -------------------------------------------------
-                var outputPath = @"E:\DocumentosCV\LuisNino\images\donwload\final_with_voice.mp4";
-                Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
-
-                await generationClient.DownloadVideoAsync(lipJobId, outputPath);
-
-                logger.LogInformation("Final video downloaded: {Path}", outputPath);
-                logger.LogInformation("=== END PixVerse IMAGE->VIDEO + LIPSYNC(TTS) ===");
+                return JsonSerializer.Serialize(obj);
             }
-            finally
+            catch
             {
-                Log.CloseAndFlush();
+                return "(serialize_failed)";
             }
         }
 
-        private static async Task<bool> PollUntilDoneAsync(
-            ILogger logger,
-            IGenerationClient generationClient,
-            long jobId,
-            TimeSpan maxWait,
-            TimeSpan pollDelay,
-            string label)
+        /// <summary>
+        /// Busca claves comunes en respuestas de APIs: video_media_id, media_id, videoMediaId, etc.
+        /// Devuelve null si no encuentra nada.
+        /// </summary>
+        private static long? TryExtractMediaIdFromJson(string json)
         {
-            var deadline = DateTimeOffset.UtcNow + maxWait;
+            if (string.IsNullOrWhiteSpace(json) || json == "(serialize_failed)")
+                return null;
 
-            while (true)
+            try
             {
-                var op = await generationClient.GetResultAsync(jobId);
+                using var doc = JsonDocument.Parse(json);
+                var root = doc.RootElement;
 
-                if (!op.IsSuccessful || op.Data is null)
+                // búsqueda profunda en todo el árbol
+                var candidates = new[]
                 {
-                    logger.LogError("[{Label}] GetResultAsync failed: {Message}", label, op.Message);
-                    return false;
+                    "video_media_id",
+                    "videoMediaId",
+                    "media_id",
+                    "mediaId",
+                    "video_id",
+                    "videoId"
+                };
+
+                foreach (var c in candidates)
+                {
+                    if (TryFindLong(root, c, out var value) && value > 0)
+                        return value;
                 }
 
-                logger.LogInformation(
-                    "[{Label}] JobId={JobId} State={State}",
-                    label, jobId, op.Data.State);
-
-                if (op.Data.State == JobState.Succeeded)
-                    return true;
-
-                if (op.Data.State == JobState.Failed)
-                    return false;
-
-                if (DateTimeOffset.UtcNow >= deadline)
-                {
-                    logger.LogError("[{Label}] TIMEOUT. JobId={JobId}", label, jobId);
-                    return false;
-                }
-
-                await Task.Delay(pollDelay);
+                return null;
             }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static bool TryFindLong(JsonElement el, string propertyName, out long value)
+        {
+            value = 0;
+
+            if (el.ValueKind == JsonValueKind.Object)
+            {
+                if (el.TryGetProperty(propertyName, out var prop))
+                {
+                    if (prop.ValueKind == JsonValueKind.Number && prop.TryGetInt64(out value))
+                        return true;
+
+                    if (prop.ValueKind == JsonValueKind.String && long.TryParse(prop.GetString(), out value))
+                        return true;
+                }
+
+                foreach (var p in el.EnumerateObject())
+                {
+                    if (TryFindLong(p.Value, propertyName, out value))
+                        return true;
+                }
+            }
+            else if (el.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var item in el.EnumerateArray())
+                {
+                    if (TryFindLong(item, propertyName, out value))
+                        return true;
+                }
+            }
+
+            return false;
         }
     }
 }

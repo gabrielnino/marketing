@@ -60,6 +60,22 @@ namespace Application.PixVerse.Request
             }
         }
 
+        public LipSync Normalize()
+        {
+            if (string.IsNullOrWhiteSpace(LipSyncTtsContent))
+                return this;
+
+            var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent);
+            return new LipSync
+            {
+                VideoMediaId = this.VideoMediaId,
+                SourceVideoId = this.SourceVideoId,
+                AudioMediaId = this.AudioMediaId,
+                LipSyncTtsSpeakerId = this.LipSyncTtsSpeakerId,
+                LipSyncTtsContent = sanitized
+            };
+        }
+
         private static string SanitizeToStandardCharacters(string input)
         {
             // 1) Normalize Unicode (removes weird composed forms)
