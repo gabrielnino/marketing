@@ -37,7 +37,7 @@ namespace Infrastructure.PixVerse
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-2 Build endpoint. JobId={JobId}", runId, jobId);
-                var endpoint = BuildEndpoint(ApiConstants.StatusPath + Uri.EscapeDataString(jobId.ToString()));
+                var endpoint = BuildEndpoint(Api.StatusPath + Uri.EscapeDataString(jobId.ToString()));
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-3 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
                 using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
@@ -114,7 +114,7 @@ namespace Infrastructure.PixVerse
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-2 Build endpoint. JobId={JobId}", runId, jobId);
-                var endpoint = BuildEndpoint(ApiConstants.ResultPath + Uri.EscapeDataString(jobId.ToString()));
+                var endpoint = BuildEndpoint(Api.ResultPath + Uri.EscapeDataString(jobId.ToString()));
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-3 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
                 using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);

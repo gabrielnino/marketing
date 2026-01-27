@@ -36,11 +36,11 @@ namespace Infrastructure.PixVerse
 
         public void ApplyAuth(HttpRequestMessage req)
         {
-            req.Headers.Remove(ApiConstants.ApiKeyHeader);
-            req.Headers.Add(ApiConstants.ApiKeyHeader, opt.ApiKey);
+            req.Headers.Remove(Api.ApiKeyHeader);
+            req.Headers.Add(Api.ApiKeyHeader, opt.ApiKey);
 
-            if (!req.Headers.Contains(ApiConstants.TraceIdHeader))
-                req.Headers.Add(ApiConstants.TraceIdHeader, Guid.NewGuid().ToString());
+            if (!req.Headers.Contains(Api.TraceIdHeader))
+                req.Headers.Add(Api.TraceIdHeader, Guid.NewGuid().ToString());
 
             req.Headers.Accept.Clear();
             req.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

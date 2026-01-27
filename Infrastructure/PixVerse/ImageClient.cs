@@ -17,7 +17,7 @@ public sealed partial class ImageClient(
     IOptions<PixVerseOptions> options,
     IErrorHandler errorHandler,
     ILogger<ImageClient> logger
-) : PixVerseBase(options.Value), Application.PixVerse.IImageClient
+) : PixVerseBase(options.Value), IImageClient
 {
 
     private readonly HttpClient _http = httpClient;
@@ -58,12 +58,12 @@ public sealed partial class ImageClient(
             if (string.IsNullOrWhiteSpace(contentType))
                 return _error.Business<UploadImage>("contentType cannot be null or empty.");
 
-            if (!ApiConstants.AllowedImageMimeTypes.Contains(contentType))
+            if (!Api.AllowedImageMimeTypes.Contains(contentType))
                 return _error.Business<UploadImage>(
                     $"Unsupported contentType '{contentType}'. Allowed: image/jpeg, image/jpg, image/png, image/webp");
 
             var ext = Path.GetExtension(fileName);
-            if (string.IsNullOrWhiteSpace(ext) || !ApiConstants.AllowedExtensions.Contains(ext))
+            if (string.IsNullOrWhiteSpace(ext) || !Api.AllowedExtensions.Contains(ext))
                 return _error.Business<UploadImage>(
                     $"Unsupported file extension '{ext}'. Allowed: .png, .webp, .jpeg, .jpg");
 
@@ -78,8 +78,8 @@ public sealed partial class ImageClient(
                 imageStream.Position = 0;
             }
 
-            _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-4 Build endpoint. Path={Path}", runId, ApiConstants.UploadImagePath);
-            var endpoint = BuildEndpoint(ApiConstants.UploadImagePath);
+            _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-4 Build endpoint. Path={Path}", runId, Api.UploadImagePath);
+            var endpoint = BuildEndpoint(Api.UploadImagePath);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-5 Build multipart form", runId);
             using var form = new MultipartFormDataContent();
@@ -161,8 +161,8 @@ public sealed partial class ImageClient(
                 (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
                 return _error.Business<UploadImage>("imageUrl must be a valid http/https absolute URL.");
 
-            _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-3 Build endpoint. Path={Path}", runId, ApiConstants.UploadImagePath);
-            var endpoint = BuildEndpoint(ApiConstants.UploadImagePath);
+            _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-3 Build endpoint. Path={Path}", runId, Api.UploadImagePath);
+            var endpoint = BuildEndpoint(Api.UploadImagePath);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-4 Build multipart form", runId);
             using var form = new MultipartFormDataContent

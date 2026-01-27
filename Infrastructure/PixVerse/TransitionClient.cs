@@ -42,8 +42,8 @@ namespace Infrastructure.PixVerse
                     return _error.Fail<JobSubmitted>(null, configError);
                 }
 
-                _logger.LogInformation("[RUN {RunId}] STEP PV-TR-3 Build endpoint. Path={Path}", runId, ApiConstants.TransitionPath);
-                var endpoint = BuildEndpoint(ApiConstants.TransitionPath);
+                _logger.LogInformation("[RUN {RunId}] STEP PV-TR-3 Build endpoint. Path={Path}", runId, Api.TransitionPath);
+                var endpoint = BuildEndpoint(Api.TransitionPath);
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-4 Serialize payload", runId);
                 var payload = JsonSerializer.Serialize(request, JsonOpts);

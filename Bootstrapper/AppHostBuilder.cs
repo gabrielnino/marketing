@@ -211,8 +211,8 @@ namespace Bootstrapper
                     services.AddSingleton<IImageToVideoClient, ImageToVideoClient>();
                     services.AddSingleton<IGenerationClient, GenerationClient>();
                     services.AddSingleton<ILipSyncClient, LipSyncClient>();
+                    services.AddSingleton<IImageClient, ImageClient>();
                     
-
                     // -----------------------------
                     // ✅ NEW: YouTube API + viral discoverer
                     // -----------------------------

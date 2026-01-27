@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.PixVerse.Constants
 {
-    public class ApiConstants
+    public class Api
     {
 
         public static IReadOnlySet<string> AllowedImageMimeTypes { get; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase)

@@ -25,8 +25,8 @@ namespace Infrastructure.PixVerse
         private readonly ILogger<ImageClient> _logger = logger;
 
         public async Task<Operation<JobSubmitted>> SubmitJobAsync(
-       LipSync request,
-       CancellationToken ct = default)
+            LipSync request,
+            CancellationToken ct = default)
         {
             var runId = NewRunId();
             _logger.LogInformation("[RUN {RunId}] START SubmitLipSync", runId);
@@ -43,8 +43,8 @@ namespace Infrastructure.PixVerse
                     return _error.Fail<JobSubmitted>(null, configError);
                 }
 
-                _logger.LogInformation("[RUN {RunId}] STEP PV-LS-3 Build endpoint. Path={Path}", runId, ApiConstants.LipSyncPath);
-                var endpoint = BuildEndpoint(ApiConstants.LipSyncPath);
+                _logger.LogInformation("[RUN {RunId}] STEP PV-LS-3 Build endpoint. Path={Path}", runId, Api.LipSyncPath);
+                var endpoint = BuildEndpoint(Api.LipSyncPath);
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-4 Serialize payload", runId);
                 var payload = JsonSerializer.Serialize(request, JsonOpts);

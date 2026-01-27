@@ -38,8 +38,8 @@ namespace Infrastructure.PixVerse
                     return _error.Fail<Balance>(null, configError);
                 }
 
-                _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-2 Build endpoint. Path={Path}", runId, ApiConstants.BalancePath);
-                var endpoint = BuildEndpoint(ApiConstants.BalancePath);
+                _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-2 Build endpoint. Path={Path}", runId, Api.BalancePath);
+                var endpoint = BuildEndpoint(Api.BalancePath);
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-3 Create request + apply auth. Endpoint={Endpoint}", runId, endpoint);
                 using var req = new HttpRequestMessage(HttpMethod.Get, endpoint);
