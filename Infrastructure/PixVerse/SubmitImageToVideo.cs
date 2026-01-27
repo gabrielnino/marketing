@@ -18,7 +18,6 @@ namespace Infrastructure.PixVerse
 ) : BaseVerseService(options.Value), ISubmitImageToVideo
     {
           private readonly HttpClient _http = httpClient;
-          private readonly PixVerseOptions _opt = options.Value;
           private readonly IErrorHandler _error = errorHandler;
           private readonly ILogger<PixVerseService> _logger = logger;
 

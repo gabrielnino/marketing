@@ -2,6 +2,7 @@
 using Application.PixVerse.Response;
 using Application.Result.EnumType.Extensions;
 using Bootstrapper;
+using Infrastructure.PixVerse;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -14,9 +15,11 @@ public class Program
         var logger = host.Services.GetRequiredService<ILogger<Program>>();
         var pixVerse = host.Services.GetRequiredService<IPixVerseService>();
         var CheckBalance = host.Services.GetRequiredService<ICheckBalance>();
-
-
+        var GetGenerationStatus = host.Services.GetRequiredService<IGetGenerationStatus>();
         
+
+
+
         logger.LogInformation("=== START PixVerse LipSync TEST (GOKU IMAGE) ===");
 
         // -------------------------------------------------
@@ -122,14 +125,14 @@ public class Program
 
         //if (!lipOk) return;
 
-        await pixVerse.DownloadVideoAsync(383686258808174, @"E:\DocumentosCV\LuisNino\images\donwload\goku_lipsync_output.mp4");
+        await GetGenerationStatus.DownloadVideoAsync(383686258808174, @"E:\DocumentosCV\LuisNino\images\donwload\goku_lipsync_output.mp4");
 
         logger.LogInformation("=== END PixVerse LipSync TEST (GOKU IMAGE) ===");
     }
 
     private static async Task<bool> PollUntilDoneAsync(
         ILogger logger,
-        IPixVerseService pixVerse,
+        IGetGenerationStatus getGenerationStatus,
         long jobId,
         TimeSpan maxWait,
         TimeSpan pollDelay,
@@ -139,7 +142,7 @@ public class Program
 
         while (true)
         {
-            var op = await pixVerse.GetGenerationResultAsync(jobId);
+            var op = await getGenerationStatus.GetGenerationResultAsync(jobId);
 
             if (!op.IsSuccessful || op.Data is null)
             {

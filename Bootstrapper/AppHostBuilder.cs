@@ -209,8 +209,9 @@ namespace Bootstrapper
                     services.AddSingleton<ICheckBalance, CheckBalance>();
                     services.AddSingleton<IPixVerseService, PixVerseService>();
                     services.AddSingleton<ISubmitImageToVideo, SubmitImageToVideo>();
-
-
+                    services.AddSingleton<IGetGenerationStatus, GetGenerationStatus>();
+                    services.AddSingleton<ISubmitLipSync, SubmitLipSync>();
+                    
 
                     // -----------------------------
                     // ✅ NEW: YouTube API + viral discoverer

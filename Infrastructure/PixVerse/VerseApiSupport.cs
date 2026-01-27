@@ -8,9 +8,7 @@ namespace Infrastructure.PixVerse
     {
         private readonly PixVerseOptions _opt = opt;
         private readonly JsonSerializerOptions _jsonOpts = jsonOpts;
-        // -------------------------------------------------
-        // Helpers
-        // -------------------------------------------------
+
         internal static string NewRunId() => Guid.NewGuid().ToString("N")[..8];
         public bool TryValidateConfig(out string error)
         {

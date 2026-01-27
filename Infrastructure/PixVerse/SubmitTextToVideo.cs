@@ -5,14 +5,8 @@ using Application.Result;
 using Configuration.PixVerse;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Infrastructure.PixVerse
 {
@@ -24,7 +18,6 @@ namespace Infrastructure.PixVerse
 ) : BaseVerseService(options.Value), ISubmitTextToVideo
     {
         private readonly HttpClient _http = httpClient;
-        private readonly PixVerseOptions _opt = options.Value;
         private readonly IErrorHandler _error = errorHandler;
         private readonly ILogger<PixVerseService> _logger = logger;
 
