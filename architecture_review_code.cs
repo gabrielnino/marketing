@@ -107,7 +107,7 @@ namespace Application.PixVerse
 {
 public interface IBalanceClient
 {
-Task<Operation<Balance>> GetAsync(CancellationToken ct = default);
+Task<Operation<AccountCredits>> GetAsync(CancellationToken ct = default);
 }
 }
 
@@ -119,12 +119,12 @@ namespace Application.PixVerse
 {
 public interface IImageClient
 {
-Task<Operation<UploadImage>> UploadAsync(
+Task<Operation<ImageResult>> UploadAsync(
 Stream imageStream,
 string fileName,
 string contentType,
 CancellationToken ct = default);
-Task<Operation<UploadImage>> UploadAsync(
+Task<Operation<ImageResult>> UploadAsync(
 string imageUrl,
 CancellationToken ct = default);
 }
@@ -139,7 +139,7 @@ namespace Application.PixVerse
 {
 public interface IImageToVideoClient
 {
-Task<Operation<JobSubmitted>> SubmitAsync(
+Task<Operation<JobReceipt>> SubmitAsync(
 ImageToVideo request,
 CancellationToken ct = default);
 }
@@ -149,16 +149,11 @@ CancellationToken ct = default);
 
 ﻿using Application.PixVerse.Response;
 using Application.Result;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Application.PixVerse
 {
 public interface IJobClient
 {
-Task<Operation<Generation>> WaitForCompletionAsync(
+Task<Operation<JobResult>> WaitForCompletionAsync(
 long jobId,
 CancellationToken ct = default);
 }
@@ -173,8 +168,8 @@ namespace Application.PixVerse
 {
 public interface ILipSyncClient
 {
-Task<Operation<JobSubmitted>> SubmitAsync(
-LipSync request,
+Task<Operation<JobReceipt>> SubmitAsync(
+VideoLipSync request,
 CancellationToken ct = default);
 }
 }
@@ -188,7 +183,7 @@ namespace Application.PixVerse
 {
 public interface ITextToVideoClient
 {
-Task<Operation<JobSubmitted>> SubmitTAsync(
+Task<Operation<JobReceipt>> SubmitTAsync(
 TextToVideo request,
 CancellationToken ct = default);
 }
@@ -203,8 +198,8 @@ namespace Application.PixVerse
 {
 public interface ITransitionClient
 {
-Task<Operation<JobSubmitted>> SubmitAsync(
-Transition request,
+Task<Operation<JobReceipt>> SubmitAsync(
+VideoTransition request,
 CancellationToken ct = default);
 }
 }
@@ -229,19 +224,14 @@ CancellationToken ct = default);
 
 ﻿using Application.PixVerse.Response;
 using Application.Result;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Application.PixVerse
 {
 public interface IVideoJobQueryClient
 {
-Task<Operation<GenerationStatus>> GetStatusAsync(
+Task<Operation<JobStatus>> GetStatusAsync(
 long jobId,
 CancellationToken ct = default);
-Task<Operation<Generation>> GetResultAsync(
+Task<Operation<JobResult>> GetResultAsync(
 long jobId,
 CancellationToken ct = default);
 }
@@ -314,82 +304,6 @@ throw new ArgumentOutOfRangeException(nameof(Seed), "Seed must be between 0 and 
 }
 }
 
-=== FILE: F:\Marketing\Application\PixVerse\Request\LipSync.cs ===
-
-﻿using System.Text;
-using System.Text.Json.Serialization;
-using System.Text.RegularExpressions;
-namespace Application.PixVerse.Request
-{
-public sealed class LipSync
-{
-[JsonPropertyName("video_media_id")]
-public long VideoMediaId { get; init; } = 0;
-[JsonPropertyName("source_video_id")]
-public long? SourceVideoId { get; init; }
-[JsonPropertyName("audio_media_id")]
-public long? AudioMediaId { get; init; } = 0;
-[JsonPropertyName("lip_sync_tts_speaker_id")]
-public string? LipSyncTtsSpeakerId { get; init; }
-[JsonPropertyName("lip_sync_tts_content")]
-public string? LipSyncTtsContent { get; init; }
-public void Validate()
-{
-var hasSourceVideo = SourceVideoId.HasValue && SourceVideoId.Value > 0;
-var hasAudioMedia = AudioMediaId.HasValue && AudioMediaId.Value > 0;
-var hasTtsPair =
-!string.IsNullOrWhiteSpace(LipSyncTtsSpeakerId) &&
-!string.IsNullOrWhiteSpace(LipSyncTtsContent);
-if (hasAudioMedia == hasTtsPair)
-throw new ArgumentException(
-"Either AudioMediaId OR (LipSyncTtsSpeakerId + LipSyncTtsContent) must be set (exactly one).");
-if (!hasSourceVideo && VideoMediaId <= 0)
-throw new ArgumentException(
-"Either SourceVideoId or VideoMediaId must be provided.");
-if (hasSourceVideo && VideoMediaId > 0)
-throw new ArgumentException(
-"SourceVideoId and VideoMediaId cannot be provided together.");
-if (hasTtsPair)
-{
-var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent!);
-if (string.IsNullOrWhiteSpace(sanitized))
-throw new ArgumentException(
-"LipSyncTtsContent is empty after sanitization. Only standard characters are allowed.");
-}
-}
-public LipSync Normalize()
-{
-if (string.IsNullOrWhiteSpace(LipSyncTtsContent))
-return this;
-var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent);
-return new LipSync
-{
-VideoMediaId = this.VideoMediaId,
-SourceVideoId = this.SourceVideoId,
-AudioMediaId = this.AudioMediaId,
-LipSyncTtsSpeakerId = this.LipSyncTtsSpeakerId,
-LipSyncTtsContent = sanitized
-};
-}
-private static string SanitizeToStandardCharacters(string input)
-{
-var normalized = input.Normalize(NormalizationForm.FormKC);
-var sb = new StringBuilder(normalized.Length);
-foreach (var ch in normalized)
-{
-if (char.IsLetterOrDigit(ch) ||
-ch == ' ' ||
-".,;:!?\"'()-".IndexOf(ch) >= 0)
-{
-sb.Append(ch);
-}
-}
-var cleaned = Regex.Replace(sb.ToString(), @"\s{2,}", " ").Trim();
-return cleaned;
-}
-}
-}
-
 === FILE: F:\Marketing\Application\PixVerse\Request\TextToVideo.cs ===
 
 ﻿using System.Text.Json.Serialization;
@@ -441,13 +355,89 @@ throw new ArgumentOutOfRangeException(nameof(Seed), "Seed must be between 0 and 
 }
 }
 
-=== FILE: F:\Marketing\Application\PixVerse\Request\Transition.cs ===
+=== FILE: F:\Marketing\Application\PixVerse\Request\VideoLipSync.cs ===
+
+﻿using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
+namespace Application.PixVerse.Request
+{
+public sealed class VideoLipSync
+{
+[JsonPropertyName("video_media_id")]
+public long VideoMediaId { get; init; } = 0;
+[JsonPropertyName("source_video_id")]
+public long? SourceVideoId { get; init; }
+[JsonPropertyName("audio_media_id")]
+public long? AudioMediaId { get; init; } = 0;
+[JsonPropertyName("lip_sync_tts_speaker_id")]
+public string? LipSyncTtsSpeakerId { get; init; }
+[JsonPropertyName("lip_sync_tts_content")]
+public string? LipSyncTtsContent { get; init; }
+public void Validate()
+{
+var hasSourceVideo = SourceVideoId.HasValue && SourceVideoId.Value > 0;
+var hasAudioMedia = AudioMediaId.HasValue && AudioMediaId.Value > 0;
+var hasTtsPair =
+!string.IsNullOrWhiteSpace(LipSyncTtsSpeakerId) &&
+!string.IsNullOrWhiteSpace(LipSyncTtsContent);
+if (hasAudioMedia == hasTtsPair)
+throw new ArgumentException(
+"Either AudioMediaId OR (LipSyncTtsSpeakerId + LipSyncTtsContent) must be set (exactly one).");
+if (!hasSourceVideo && VideoMediaId <= 0)
+throw new ArgumentException(
+"Either SourceVideoId or VideoMediaId must be provided.");
+if (hasSourceVideo && VideoMediaId > 0)
+throw new ArgumentException(
+"SourceVideoId and VideoMediaId cannot be provided together.");
+if (hasTtsPair)
+{
+var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent!);
+if (string.IsNullOrWhiteSpace(sanitized))
+throw new ArgumentException(
+"LipSyncTtsContent is empty after sanitization. Only standard characters are allowed.");
+}
+}
+public VideoLipSync Normalize()
+{
+if (string.IsNullOrWhiteSpace(LipSyncTtsContent))
+return this;
+var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent);
+return new VideoLipSync
+{
+VideoMediaId = this.VideoMediaId,
+SourceVideoId = this.SourceVideoId,
+AudioMediaId = this.AudioMediaId,
+LipSyncTtsSpeakerId = this.LipSyncTtsSpeakerId,
+LipSyncTtsContent = sanitized
+};
+}
+private static string SanitizeToStandardCharacters(string input)
+{
+var normalized = input.Normalize(NormalizationForm.FormKC);
+var sb = new StringBuilder(normalized.Length);
+foreach (var ch in normalized)
+{
+if (char.IsLetterOrDigit(ch) ||
+ch == ' ' ||
+".,;:!?\"'()-".IndexOf(ch) >= 0)
+{
+sb.Append(ch);
+}
+}
+var cleaned = Regex.Replace(sb.ToString(), @"\s{2,}", " ").Trim();
+return cleaned;
+}
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\Request\VideoTransition.cs ===
 
 ﻿using System;
 using System.Text.Json.Serialization;
 namespace Application.PixVerse.Request
 {
-public sealed class Transition
+public sealed class VideoTransition
 {
 [JsonIgnore]
 public long FromImgId
@@ -509,12 +499,12 @@ throw new ArgumentOutOfRangeException(nameof(Seed), "Seed must be between 0 and 
 }
 }
 
-=== FILE: F:\Marketing\Application\PixVerse\Response\Balance.cs ===
+=== FILE: F:\Marketing\Application\PixVerse\Response\AccountCredits.cs ===
 
 ﻿using System.Text.Json.Serialization;
 namespace Application.PixVerse.Response
 {
-public sealed class Balance
+public sealed class AccountCredits
 {
 [JsonPropertyName("account_id")]
 public long AccountId { get; init; }
@@ -530,12 +520,38 @@ public bool HasAtLeast(int minimum) => TotalCredits >= minimum;
 }
 }
 
-=== FILE: F:\Marketing\Application\PixVerse\Response\Generation.cs ===
+=== FILE: F:\Marketing\Application\PixVerse\Response\ImageResult.cs ===
 
 ﻿using System.Text.Json.Serialization;
 namespace Application.PixVerse.Response
 {
-public sealed class Generation
+public sealed class ImageResult
+{
+[JsonPropertyName("img_id")]
+public long ImgId { get; init; }
+[JsonPropertyName("img_url")]
+public string? ImgUrl { get; init; }
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\Response\JobReceipt.cs ===
+
+﻿namespace Application.PixVerse.Response
+{
+public sealed class JobReceipt
+{
+public required long JobId { get; init; }
+public string? Message { get; init; }
+public DateTimeOffset SubmittedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+}
+}
+
+=== FILE: F:\Marketing\Application\PixVerse\Response\JobResult.cs ===
+
+﻿using System.Text.Json.Serialization;
+namespace Application.PixVerse.Response
+{
+public sealed class JobResult
 {
 [JsonPropertyName("id")]
 public long RawJobId { get; init; }
@@ -589,25 +605,6 @@ public bool HasAnyVideoUrl => !string.IsNullOrWhiteSpace(Url);
 }
 }
 
-=== FILE: F:\Marketing\Application\PixVerse\Response\GenerationStatus.cs ===
-
-﻿namespace Application.PixVerse.Response
-{
-public sealed class GenerationStatus
-{
-public required string JobId { get; init; }
-public JobState State { get; init; } = JobState.Unknown;
-public int? ProgressPercent { get; init; }
-public string? ErrorCode { get; init; }
-public string? ErrorMessage { get; init; }
-public DateTimeOffset CheckedAtUtc { get; init; } = DateTimeOffset.UtcNow;
-public bool IsTerminal =>
-State is JobState.Succeeded
-or JobState.Failed
-or JobState.Cancelled;
-}
-}
-
 === FILE: F:\Marketing\Application\PixVerse\Response\JobState.cs ===
 
 ﻿namespace Application.PixVerse.Response
@@ -624,29 +621,22 @@ Pending
 }
 }
 
-=== FILE: F:\Marketing\Application\PixVerse\Response\JobSubmitted.cs ===
+=== FILE: F:\Marketing\Application\PixVerse\Response\JobStatus.cs ===
 
 ﻿namespace Application.PixVerse.Response
 {
-public sealed class JobSubmitted
+public sealed class JobStatus
 {
-public required long JobId { get; init; }
-public string? Message { get; init; }
-public DateTimeOffset SubmittedAtUtc { get; init; } = DateTimeOffset.UtcNow;
-}
-}
-
-=== FILE: F:\Marketing\Application\PixVerse\Response\UploadImage.cs ===
-
-﻿using System.Text.Json.Serialization;
-namespace Application.PixVerse.Response
-{
-public sealed class UploadImage
-{
-[JsonPropertyName("img_id")]
-public long ImgId { get; init; }
-[JsonPropertyName("img_url")]
-public string? ImgUrl { get; init; }
+public required string JobId { get; init; }
+public JobState State { get; init; } = JobState.Unknown;
+public int? ProgressPercent { get; init; }
+public string? ErrorCode { get; init; }
+public string? ErrorMessage { get; init; }
+public DateTimeOffset CheckedAtUtc { get; init; } = DateTimeOffset.UtcNow;
+public bool IsTerminal =>
+State is JobState.Succeeded
+or JobState.Failed
+or JobState.Cancelled;
 }
 }
 
@@ -972,6 +962,7 @@ using Application.PixVerse.Response;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 using System.Text.Json;
 namespace AzureTable
 {
@@ -986,27 +977,56 @@ var balanceClient = host.Services.GetRequiredService<IBalanceClient>();
 var videoJobQueryClient = host.Services.GetRequiredService<IVideoJobQueryClient>();
 var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
 var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
-logger.LogInformation("=== START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===");
+var runId = Guid.NewGuid().ToString("N")[..8];
+var sw = Stopwatch.StartNew();
+logger.LogInformation("[RUN {RunId}] === START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===", runId);
+logger.LogInformation("[RUN {RunId}] ArgsCount={ArgsCount}", runId, args?.Length ?? 0);
+logger.LogInformation("[RUN {RunId}] [STEP 1] Checking balance...", runId);
 var balOp = await balanceClient.GetAsync();
 if (!balOp.IsSuccessful)
 {
-logger.LogError("Balance failed: {Error}", balOp.Error ?? "unknown");
+logger.LogError(
+"[RUN {RunId}] [STEP 1] Balance FAILED. Error={Error}. ElapsedMs={ElapsedMs}",
+runId, balOp.Error ?? "unknown", sw.ElapsedMilliseconds);
 return;
 }
-logger.LogInformation("Balance OK. Credits={Credits}", balOp.Data?.TotalCredits);
-var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\luisNino.jpg";
+logger.LogInformation(
+"[RUN {RunId}] [STEP 1] Balance OK. Credits={Credits}. ElapsedMs={ElapsedMs}",
+runId, balOp.Data?.TotalCredits, sw.ElapsedMilliseconds);
+var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\donalTrump.webp";
+var fileName = Path.GetFileName(imagePath);
+var fileExt = Path.GetExtension(imagePath);
+var contentType = GuessContentType(fileExt);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 2] Upload image START. Path={ImagePath} FileName={FileName} Ext={Ext} ContentType={ContentType} Exists={Exists} SizeBytes={SizeBytes}",
+runId,
+imagePath,
+fileName,
+fileExt,
+contentType,
+File.Exists(imagePath),
+File.Exists(imagePath) ? new FileInfo(imagePath).Length : -1);
+if (!File.Exists(imagePath))
+{
+logger.LogError("[RUN {RunId}] [STEP 2] Upload image ABORT. File does not exist. Path={ImagePath}", runId, imagePath);
+return;
+}
 await using var imgStream = File.OpenRead(imagePath);
 var upOp = await imageClient.UploadAsync(
 imgStream,
-fileName: Path.GetFileName(imagePath),
-contentType: "image/jpeg");
+fileName: fileName,
+contentType: contentType);
 if (!upOp.IsSuccessful || upOp.Data is null)
 {
-logger.LogError("UploadImage failed: {Error}", upOp.Error ?? "unknown");
+logger.LogError(
+"[RUN {RunId}] [STEP 2] Upload FAILED. Error={Error}. PayloadNull={PayloadNull}. ElapsedMs={ElapsedMs}",
+runId, upOp.Error ?? "unknown", upOp.Data is null, sw.ElapsedMilliseconds);
 return;
 }
 var imgId = upOp.Data.ImgId;
-logger.LogInformation("Image uploaded. ImgId={ImgId}", imgId);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 2] Upload OK. ImgId={ImgId}. ElapsedMs={ElapsedMs}",
+runId, imgId, sw.ElapsedMilliseconds);
 var i2vReq = new ImageToVideo
 {
 ImgId = imgId,
@@ -1017,25 +1037,47 @@ Prompt = "adult guy speaking directly to camera, serious style, expressive mouth
 NegativePrompt = "blurry, distorted face, artifacts",
 Seed = 0
 };
+logger.LogInformation(
+"[RUN {RunId}] [STEP 3] I2V Submit START. ImgId={ImgId} Duration={Duration} Model={Model} Quality={Quality} Seed={Seed} PromptLen={PromptLen} NegPromptLen={NegPromptLen}",
+runId,
+i2vReq.ImgId,
+i2vReq.Duration,
+i2vReq.Model,
+i2vReq.Quality,
+i2vReq.Seed,
+i2vReq.Prompt?.Length ?? 0,
+i2vReq.NegativePrompt?.Length ?? 0);
 var i2vSubmitOp = await imageToVideoClient.SubmitAsync(i2vReq);
 if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
 {
-logger.LogError("SubmitImageToVideo failed: {Error}", i2vSubmitOp.Error ?? "unknown");
+logger.LogError(
+"[RUN {RunId}] [STEP 3] I2V Submit FAILED. Error={Error}. PayloadNull={PayloadNull}. ElapsedMs={ElapsedMs}",
+runId, i2vSubmitOp.Error ?? "unknown", i2vSubmitOp.Data is null, sw.ElapsedMilliseconds);
 return;
 }
 var jobId = i2vSubmitOp.Data.JobId;
-logger.LogInformation("Image-to-Video submitted. JobId={JobId}", jobId);
-GenerationStatus? finalStatus = null;
+logger.LogInformation(
+"[RUN {RunId}] [STEP 3] I2V Submit OK. JobId={JobId}. ElapsedMs={ElapsedMs}",
+runId, jobId, sw.ElapsedMilliseconds);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 4] Poll I2V status START. JobId={JobId} MaxAttempts={MaxAttempts} DelaySec={DelaySec}",
+runId, jobId, 60, 2);
+JobStatus? finalStatus = null;
 for (var attempt = 1; attempt <= 60; attempt++)
 {
+var attemptSw = Stopwatch.StartNew();
 var stOp = await videoJobQueryClient.GetStatusAsync(jobId);
 if (!stOp.IsSuccessful || stOp.Data is null)
 {
-logger.LogWarning("GetStatus attempt {Attempt} failed: {Error}", attempt, stOp.Error ?? "unknown");
+logger.LogWarning(
+"[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} FAILED. Error={Error}. PayloadNull={PayloadNull}. AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
+runId, attempt, stOp.Error ?? "unknown", stOp.Data is null, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
 }
 else
 {
-logger.LogInformation("[I2V] attempt={Attempt} state={State}", attempt, stOp.Data.State);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} OK. State={State} IsTerminal={IsTerminal} AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
+runId, attempt, stOp.Data.State, stOp.Data.IsTerminal, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
 if (stOp.Data.IsTerminal)
 {
 finalStatus = stOp.Data;
@@ -1044,42 +1086,57 @@ break;
 }
 await Task.Delay(TimeSpan.FromSeconds(2));
 }
-if(finalStatus is null)
+if (finalStatus is null)
 {
+logger.LogError(
+"[RUN {RunId}] [STEP 4] I2V Status polling TIMEOUT. JobId={JobId}. ElapsedMs={ElapsedMs}",
+runId, jobId, sw.ElapsedMilliseconds);
 return;
 }
-if (finalStatus is null || finalStatus.State != JobState.Succeeded)
+if (finalStatus.State != JobState.Succeeded)
 {
-logger.LogError("I2V job did not succeed. JobId={JobId} State={State}", jobId, finalStatus.State);
+logger.LogError(
+"[RUN {RunId}] [STEP 4] I2V job NOT SUCCEEDED. JobId={JobId} FinalState={State} ElapsedMs={ElapsedMs}",
+runId, jobId, finalStatus.State, sw.ElapsedMilliseconds);
 return;
 }
+logger.LogInformation(
+"[RUN {RunId}] [STEP 4] I2V job SUCCEEDED. JobId={JobId} ElapsedMs={ElapsedMs}",
+runId, jobId, sw.ElapsedMilliseconds);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 5] Get I2V result START. JobId={JobId}",
+runId, jobId);
 var resOp = await videoJobQueryClient.GetResultAsync(jobId);
 if (!resOp.IsSuccessful || resOp.Data is null)
 {
-logger.LogError("GetGenerationResult failed: {Error}", resOp.Error ?? "unknown");
+logger.LogError(
+"[RUN {RunId}] [STEP 5] Get result FAILED. JobId={JobId} Error={Error} PayloadNull={PayloadNull} ElapsedMs={ElapsedMs}",
+runId, jobId, resOp.Error ?? "unknown", resOp.Data is null, sw.ElapsedMilliseconds);
 return;
 }
+var resultJson = SafeSerialize(resOp.Data);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 5] Get result OK. JobId={JobId} ResultJsonLen={Len} ElapsedMs={ElapsedMs}",
+runId, jobId, resultJson.Length, sw.ElapsedMilliseconds);
 long? videoMediaId = TryGetVideoMediaIdFromKnownModel(resOp.Data);
 if (videoMediaId is null || videoMediaId <= 0)
 {
-var raw = SafeSerialize(resOp.Data);
-videoMediaId = TryExtractMediaIdFromJson(raw);
+videoMediaId = TryExtractMediaIdFromJson(resultJson);
 logger.LogInformation(
-"MediaId extraction: VideoMediaId={VideoMediaId} (from json fallback)",
-videoMediaId ?? 0);
+"[RUN {RunId}] [STEP 5] MediaId extraction (fallback) VideoMediaId={VideoMediaId}",
+runId, videoMediaId ?? 0);
 }
 if (videoMediaId is null || videoMediaId <= 0)
 {
-var raw = SafeSerialize(resOp.Data);
 logger.LogError(
-"Cannot proceed to LipSync because no VideoMediaId could be extracted from result. " +
-"JobId={JobId}. ResultJson={ResultJson}",
-jobId,
-raw);
+"[RUN {RunId}] [STEP 5] Cannot proceed: VideoMediaId NOT FOUND. JobId={JobId}. ResultJson={ResultJson}",
+runId, jobId, resultJson);
 return;
 }
-logger.LogInformation("Using VideoMediaId={VideoMediaId} for LipSync (NOT JobId={JobId}).", videoMediaId, jobId);
-var lipReq = new LipSync
+logger.LogInformation(
+"[RUN {RunId}] [STEP 5] Using VideoMediaId={VideoMediaId} for LipSync (NOT JobId={JobId}).",
+runId, videoMediaId, jobId);
+var lipReq = new VideoLipSync
 {
 VideoMediaId = videoMediaId.Value,
 SourceVideoId = null,
@@ -1087,15 +1144,27 @@ AudioMediaId = null,
 LipSyncTtsSpeakerId = "auto",
 LipSyncTtsContent = "¡Hola Vancouver! Soy Goku. No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
 };
+logger.LogInformation(
+"[RUN {RunId}] [STEP 6] LipSync Submit START. VideoMediaId={VideoMediaId} Speaker={Speaker} ContentLen={ContentLen} HasAudioMediaId={HasAudioMediaId} HasSourceVideoId={HasSourceVideoId}",
+runId,
+lipReq.VideoMediaId,
+lipReq.LipSyncTtsSpeakerId,
+lipReq.LipSyncTtsContent?.Length ?? 0,
+lipReq.AudioMediaId.HasValue && lipReq.AudioMediaId.Value > 0,
+lipReq.SourceVideoId.HasValue && lipReq.SourceVideoId.Value > 0);
 var lipOp = await lipSyncClient.SubmitAsync(lipReq);
 if (!lipOp.IsSuccessful)
 {
-logger.LogError("LipSync submit failed: {Error}", lipOp.Error ?? "unknown");
+logger.LogError(
+"[RUN {RunId}] [STEP 6] LipSync Submit FAILED. Error={Error}. ElapsedMs={ElapsedMs}",
+runId, lipOp.Error ?? "unknown", sw.ElapsedMilliseconds);
 return;
 }
-logger.LogInformation("LipSync submitted OK. JobId={LipJobId}", lipOp.Data?.JobId);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 6] LipSync Submit OK. LipJobId={LipJobId}. TotalElapsedMs={ElapsedMs}",
+runId, lipOp.Data?.JobId, sw.ElapsedMilliseconds);
 }
-private static long? TryGetVideoMediaIdFromKnownModel(Generation result)
+private static long? TryGetVideoMediaIdFromKnownModel(JobResult result)
 {
 return null;
 }
@@ -1167,6 +1236,18 @@ return true;
 }
 return false;
 }
+private static string GuessContentType(string ext)
+{
+ext = (ext ?? string.Empty).Trim().ToLowerInvariant();
+return ext switch
+{
+".jpg" or ".jpeg" => "image/jpeg",
+".png" => "image/png",
+".webp" => "image/webp",
+".gif" => "image/gif",
+_ => "application/octet-stream"
+};
+}
 }
 }
 
@@ -1183,7 +1264,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3dad7f1ed0b6a3152f5a1a098f4efa26bd51f16")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2657,7 +2738,7 @@ private readonly HttpClient _http = httpClient;
 private readonly PixVerseOptions _opt = options.Value;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
-public async Task<Operation<Balance>> GetAsync(CancellationToken ct = default)
+public async Task<Operation<AccountCredits>> GetAsync(CancellationToken ct = default)
 {
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START PixVerse.CheckBalance", runId);
@@ -2667,7 +2748,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-1 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-1 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<Balance>(null, configError);
+return _error.Fail<AccountCredits>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-2 Build endpoint. Path={Path}", runId, Api.BalancePath);
 var endpoint = BuildEndpoint(Api.BalancePath);
@@ -2685,41 +2766,41 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-6 Response received. StatusCod
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-6 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<Balance>(null, $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<AccountCredits>(null, $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-7 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(linkedCts.Token);
 _logger.LogDebug("[RUN {RunId}] STEP PV-BAL-7 BodyLength={Length}", runId, json?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-8 Deserialize envelope", runId);
-var env = TryDeserialize<Envelope<Balance>>(json);
+var env = TryDeserialize<Envelope<AccountCredits>>(json);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-8 FAILED Envelope is null", runId);
-return _error.Fail<Balance>(null, "Invalid balance response (null).");
+return _error.Fail<AccountCredits>(null, "Invalid balance response (null).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-9 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-9 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<Balance>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<AccountCredits>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-9 FAILED Resp is null", runId);
-return _error.Fail<Balance>(null, "Invalid balance payload (Resp null).");
+return _error.Fail<AccountCredits>(null, "Invalid balance payload (Resp null).");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS PixVerse.CheckBalance", runId);
-return Operation<Balance>.Success(env.Resp, env.ErrMsg);
+return Operation<AccountCredits>.Success(env.Resp, env.ErrMsg);
 }
 catch (OperationCanceledException ex) when (!ct.IsCancellationRequested)
 {
 _logger.LogError(ex, "[RUN {RunId}] TIMEOUT CheckBalance after {Timeout}", runId, _opt.HttpTimeout);
-return _error.Fail<Balance>(ex, $"Balance check timed out after {_opt.HttpTimeout}");
+return _error.Fail<AccountCredits>(ex, $"Balance check timed out after {_opt.HttpTimeout}");
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED CheckBalance", runId);
-return _error.Fail<Balance>(ex, "Balance check failed");
+return _error.Fail<AccountCredits>(ex, "Balance check failed");
 }
 }
 }
@@ -2749,7 +2830,7 @@ ILogger<ImageClient> logger
 private readonly HttpClient _http = httpClient;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
-public async Task<Operation<UploadImage>> UploadAsync(
+public async Task<Operation<ImageResult>> UploadAsync(
 Stream imageStream,
 string fileName,
 string contentType,
@@ -2765,30 +2846,30 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-1 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-1 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<UploadImage>(null, configError);
+return _error.Fail<ImageResult>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-2 Validate inputs", runId);
 if (imageStream is null)
-return _error.Business<UploadImage>("imageStream cannot be null.");
+return _error.Business<ImageResult>("imageStream cannot be null.");
 if (!imageStream.CanRead)
-return _error.Business<UploadImage>("imageStream must be readable.");
+return _error.Business<ImageResult>("imageStream must be readable.");
 if (string.IsNullOrWhiteSpace(fileName))
-return _error.Business<UploadImage>("fileName cannot be null or empty.");
+return _error.Business<ImageResult>("fileName cannot be null or empty.");
 if (string.IsNullOrWhiteSpace(contentType))
-return _error.Business<UploadImage>("contentType cannot be null or empty.");
+return _error.Business<ImageResult>("contentType cannot be null or empty.");
 if (!Api.AllowedImageMimeTypes.Contains(contentType))
-return _error.Business<UploadImage>(
+return _error.Business<ImageResult>(
 $"Unsupported contentType '{contentType}'. Allowed: image/jpeg, image/jpg, image/png, image/webp");
 var ext = Path.GetExtension(fileName);
 if (string.IsNullOrWhiteSpace(ext) || !Api.AllowedExtensions.Contains(ext))
-return _error.Business<UploadImage>(
+return _error.Business<ImageResult>(
 $"Unsupported file extension '{ext}'. Allowed: .png, .webp, .jpeg, .jpg");
 if (imageStream.CanSeek)
 {
 const long maxBytes = 20L * 1024L * 1024L;
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-3 Validate size (seekable). MaxBytes={MaxBytes}", runId, maxBytes);
 if (imageStream.Length > maxBytes)
-return _error.Business<UploadImage>("Image file size must be < 20MB.");
+return _error.Business<ImageResult>("Image file size must be < 20MB.");
 imageStream.Position = 0;
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-4 Build endpoint. Path={Path}", runId, Api.UploadImagePath);
@@ -2807,39 +2888,39 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-8 Response received. StatusCod
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-8 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<UploadImage>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<ImageResult>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-9 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
 _logger.LogDebug("[RUN {RunId}] STEP PV-UPF-9 BodyLength={Length}", runId, json?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-10 Deserialize envelope", runId);
-var env = JsonSerializer.Deserialize<Envelope<UploadImage>>(json, JsonOpts);
+var env = JsonSerializer.Deserialize<Envelope<ImageResult>>(json, JsonOpts);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-10 FAILED Envelope is null", runId);
-return _error.Fail<UploadImage>(null, "Invalid upload response (null).");
+return _error.Fail<ImageResult>(null, "Invalid upload response (null).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-11 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-11 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<UploadImage>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<ImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-11 FAILED Resp is null", runId);
-return _error.Fail<UploadImage>(null, "Invalid upload payload (Resp null).");
+return _error.Fail<ImageResult>(null, "Invalid upload payload (Resp null).");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS UploadImage (file)", runId);
-return Operation<UploadImage>.Success(env.Resp, env.ErrMsg);
+return Operation<ImageResult>.Success(env.Resp, env.ErrMsg);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (file)", runId);
-return _error.Fail<UploadImage>(ex, "Upload image failed");
+return _error.Fail<ImageResult>(ex, "Upload image failed");
 }
 }
-public async Task<Operation<UploadImage>> UploadAsync(string imageUrl, CancellationToken ct = default)
+public async Task<Operation<ImageResult>> UploadAsync(string imageUrl, CancellationToken ct = default)
 {
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
@@ -2849,14 +2930,14 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-1 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-1 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<UploadImage>(null, configError);
+return _error.Fail<ImageResult>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-2 Validate inputs", runId);
 if (string.IsNullOrWhiteSpace(imageUrl))
-return _error.Business<UploadImage>("imageUrl cannot be null or empty.");
+return _error.Business<ImageResult>("imageUrl cannot be null or empty.");
 if (!Uri.TryCreate(imageUrl, UriKind.Absolute, out var uri) ||
 (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
-return _error.Business<UploadImage>("imageUrl must be a valid http/https absolute URL.");
+return _error.Business<ImageResult>("imageUrl must be a valid http/https absolute URL.");
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-3 Build endpoint. Path={Path}", runId, Api.UploadImagePath);
 var endpoint = BuildEndpoint(Api.UploadImagePath);
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-4 Build multipart form", runId);
@@ -2873,36 +2954,36 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-7 Response received. StatusCod
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<UploadImage>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<ImageResult>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-8 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
 _logger.LogDebug("[RUN {RunId}] STEP PV-UPU-8 BodyLength={Length}", runId, json?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-9 Deserialize envelope", runId);
-var env = JsonSerializer.Deserialize<Envelope<UploadImage>>(json, JsonOpts);
+var env = JsonSerializer.Deserialize<Envelope<ImageResult>>(json, JsonOpts);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-9 FAILED Envelope is null", runId);
-return _error.Fail<UploadImage>(null, "Invalid upload response (null).");
+return _error.Fail<ImageResult>(null, "Invalid upload response (null).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<UploadImage>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<ImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-10 FAILED Resp is null", runId);
-return _error.Fail<UploadImage>(null, "Invalid upload payload (Resp null).");
+return _error.Fail<ImageResult>(null, "Invalid upload payload (Resp null).");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS UploadImage (url)", runId);
-return Operation<UploadImage>.Success(env.Resp, env.ErrMsg);
+return Operation<ImageResult>.Success(env.Resp, env.ErrMsg);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (url)", runId);
-return _error.Fail<UploadImage>(ex, "Upload image failed");
+return _error.Fail<ImageResult>(ex, "Upload image failed");
 }
 }
 }
@@ -2932,7 +3013,7 @@ ILogger<ImageClient> logger
 private readonly HttpClient _http = httpClient;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
-public async Task<Operation<JobSubmitted>> SubmitAsync(
+public async Task<Operation<JobReceipt>> SubmitAsync(
 ImageToVideo request,
 CancellationToken ct = default)
 {
@@ -2946,7 +3027,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-2 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-2 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<JobSubmitted>(null, configError);
+return _error.Fail<JobReceipt>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-3 Build endpoint. Path={Path}", runId, Api.ImageToVideoPath);
 var endpoint = BuildEndpoint(Api.ImageToVideoPath);
@@ -2965,7 +3046,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-7 Response received. StatusCod
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<JobSubmitted>(null, $"SubmitImageToVideo failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<JobReceipt>(null, $"SubmitImageToVideo failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-8 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
@@ -2975,32 +3056,32 @@ var env = JsonSerializer.Deserialize<Envelope<I2VSubmitResp>>(json, JsonOpts);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-9 FAILED Envelope is null", runId);
-return _error.Fail<JobSubmitted>(null, "Invalid ImageToVideo response (null).");
+return _error.Fail<JobReceipt>(null, "Invalid ImageToVideo response (null).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<JobReceipt>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null || env.Resp.VideoId == 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-return _error.Fail<JobSubmitted>(null, "Invalid ImageToVideo response (missing Resp.video_id).");
+return _error.Fail<JobReceipt>(null, "Invalid ImageToVideo response (missing Resp.video_id).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-var submitted = new JobSubmitted
+var submitted = new JobReceipt
 {
 JobId = env.Resp.VideoId,
 Message = env.ErrMsg
 };
 _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitImageToVideo. JobId={JobId}", runId, submitted.JobId);
-return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
+return Operation<JobReceipt>.Success(submitted, env.ErrMsg);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitImageToVideo", runId);
-return _error.Fail<JobSubmitted>(ex, "SubmitImageToVideo failed");
+return _error.Fail<JobReceipt>(ex, "SubmitImageToVideo failed");
 }
 }
 }
@@ -3033,14 +3114,14 @@ private readonly PixVerseOptions _opt = options.Value;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
 private readonly IVideoJobQueryClient _videoJobQueryClient = videoJobQueryClient;
-public async Task<Operation<Generation>> WaitForCompletionAsync(long jobId, CancellationToken ct = default)
+public async Task<Operation<JobResult>> WaitForCompletionAsync(long jobId, CancellationToken ct = default)
 {
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START WaitForCompletion. JobId={JobId}", runId, jobId);
 if (jobId == 0)
 {
 _logger.LogWarning("[RUN {RunId}] WaitForCompletion aborted: jobId=0", runId);
-return _error.Business<Generation>("jobId cannot be null or empty.");
+return _error.Business<JobResult>("jobId cannot be null or empty.");
 }
 _logger.LogInformation(
 "[RUN {RunId}] STEP PV-POLL-0 Polling settings. Attempts={Attempts} Interval={Interval}",
@@ -3055,12 +3136,12 @@ var st = await _videoJobQueryClient.GetStatusAsync(jobId, ct);
 if (!st.IsSuccessful)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-POLL-1 Status call failed. Poll={Poll}/{Max} JobId={JobId}", runId, i + 1, _opt.MaxPollingAttempts, jobId);
-return st.ConvertTo<Generation>();
+return st.ConvertTo<JobResult>();
 }
 if (st.Data is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-POLL-2 Invalid status payload (null). Poll={Poll}/{Max} JobId={JobId}", runId, i + 1, _opt.MaxPollingAttempts, jobId);
-return _error.Fail<Generation>(null, "Invalid status payload (null).");
+return _error.Fail<JobResult>(null, "Invalid status payload (null).");
 }
 _logger.LogInformation(
 "[RUN {RunId}] STEP PV-POLL-3 Status received. State={State} IsTerminal={IsTerminal} Poll={Poll}/{Max} JobId={JobId}",
@@ -3074,7 +3155,7 @@ return await _videoJobQueryClient.GetResultAsync(jobId, ct);
 }
 var msg = $"Job ended with terminal state: {st.Data.State}.";
 _logger.LogWarning("[RUN {RunId}] STEP PV-POLL-4 Terminal!=Succeeded. {Message} JobId={JobId}", runId, msg, jobId);
-return Operation<Generation>.Success(new Generation
+return Operation<JobResult>.Success(new JobResult
 {
 RawJobId = jobId,
 RawStatus = (int)st.Data.State
@@ -3085,7 +3166,7 @@ runId, _opt.PollingInterval, i + 1, _opt.MaxPollingAttempts, jobId);
 await Task.Delay(_opt.PollingInterval, ct);
 }
 _logger.LogError("[RUN {RunId}] FAILED WaitForCompletion: Polling timed out. JobId={JobId}", runId, jobId);
-return _error.Fail<Generation>(null, "Polling timed out.");
+return _error.Fail<JobResult>(null, "Polling timed out.");
 }
 }
 }
@@ -3118,8 +3199,8 @@ private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
 private const int MaxBodyLogChars = 4000;
 private const int MaxPayloadLogChars = 4000;
-public async Task<Operation<JobSubmitted>> SubmitAsync(
-LipSync request,
+public async Task<Operation<JobReceipt>> SubmitAsync(
+VideoLipSync request,
 CancellationToken ct = default)
 {
 var runId = NewRunId();
@@ -3158,7 +3239,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-LS-2 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-LS-2 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<JobSubmitted>(null, configError);
+return _error.Fail<JobReceipt>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-3 Build endpoint. Path={Path}", runId, Api.LipSyncPath);
 var endpoint = BuildEndpoint(Api.LipSyncPath);
@@ -3216,7 +3297,7 @@ runId,
 endpoint,
 traceId ?? "(null)"
 );
-return _error.Fail<JobSubmitted>(tex, "SubmitLipSync failed (timeout).");
+return _error.Fail<JobReceipt>(tex, "SubmitLipSync failed (timeout).");
 }
 catch (OperationCanceledException ocex) when (ct.IsCancellationRequested)
 {
@@ -3228,7 +3309,7 @@ runId,
 endpoint,
 traceId ?? "(null)"
 );
-return _error.Fail<JobSubmitted>(ocex, "SubmitLipSync canceled.");
+return _error.Fail<JobReceipt>(ocex, "SubmitLipSync canceled.");
 }
 _logger.LogInformation(
 "[RUN {RunId}] STEP PV-LS-7 Response received. StatusCode={StatusCode} Reason={Reason} ElapsedMs={ElapsedMs}",
@@ -3280,14 +3361,14 @@ var msg =
 $"SubmitLipSync failed. HTTP {(int)res.StatusCode}. " +
 $"Reason={res.ReasonPhrase}. TraceId={traceId}. " +
 $"Body(truncated)={Truncate(body, 500)}";
-return _error.Fail<JobSubmitted>(null, msg);
+return _error.Fail<JobReceipt>(null, msg);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-10 Deserialize envelope", runId);
 var env = JsonSerializer.Deserialize<Envelope<SubmitResp>>(body, JsonOpts);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-LS-10 FAILED Envelope is null", runId);
-return _error.Fail<JobSubmitted>(null, "Invalid LipSync response (null envelope).");
+return _error.Fail<JobReceipt>(null, "Invalid LipSync response (null envelope).");
 }
 _logger.LogInformation(
 "[RUN {RunId}] STEP PV-LS-11 Validate envelope. ErrCode={ErrCode} ErrMsg={ErrMsg}",
@@ -3303,7 +3384,7 @@ runId,
 env.ErrCode,
 env.ErrMsg
 );
-return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<JobReceipt>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null || env.Resp.VideoId == 0)
 {
@@ -3312,10 +3393,10 @@ _logger.LogWarning(
 runId,
 env.Resp?.VideoId ?? 0
 );
-return _error.Fail<JobSubmitted>(null, "Invalid LipSync response (missing Resp.video_id).");
+return _error.Fail<JobReceipt>(null, "Invalid LipSync response (missing Resp.video_id).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-12 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-var submitted = new JobSubmitted
+var submitted = new JobReceipt
 {
 JobId = env.Resp.VideoId,
 Message = env.ErrMsg
@@ -3326,12 +3407,12 @@ runId,
 submitted.JobId,
 traceId ?? "(null)"
 );
-return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
+return Operation<JobReceipt>.Success(submitted, env.ErrMsg);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitLipSync (exception)", runId);
-return _error.Fail<JobSubmitted>(ex, "SubmitLipSync failed");
+return _error.Fail<JobReceipt>(ex, "SubmitLipSync failed");
 }
 }
 private static string Truncate(string? value, int maxChars)
@@ -3442,7 +3523,7 @@ ILogger<ImageClient> logger
 private readonly HttpClient _http = httpClient;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
-public async Task<Operation<JobSubmitted>> SubmitTAsync(
+public async Task<Operation<JobReceipt>> SubmitTAsync(
 TextToVideo request,
 CancellationToken ct = default)
 {
@@ -3456,7 +3537,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-2 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-2 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<JobSubmitted>(null, configError);
+return _error.Fail<JobReceipt>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-3 Build endpoint. Path={Path}", runId, Api.TextToVideoPath);
 var endpoint = BuildEndpoint(Api.TextToVideoPath);
@@ -3475,7 +3556,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-7 Response received. StatusCod
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<JobSubmitted>(null, $"Submit failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<JobReceipt>(null, $"Submit failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-8 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
@@ -3485,32 +3566,32 @@ var env = JsonSerializer.Deserialize<Envelope<SubmitResp>>(json, JsonOpts);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-9 FAILED Envelope is null", runId);
-return _error.Fail<JobSubmitted>(null, "Invalid submit response (null).");
+return _error.Fail<JobReceipt>(null, "Invalid submit response (null).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<JobReceipt>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null || env.Resp.VideoId == 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-T2V-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-return _error.Fail<JobSubmitted>(null, "Invalid submit response (missing Resp.video_id).");
+return _error.Fail<JobReceipt>(null, "Invalid submit response (missing Resp.video_id).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-T2V-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-var submitted = new JobSubmitted
+var submitted = new JobReceipt
 {
 JobId = env.Resp.VideoId,
 Message = env.ErrMsg
 };
 _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitTextToVideo. JobId={JobId}", runId, submitted.JobId);
-return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
+return Operation<JobReceipt>.Success(submitted, env.ErrMsg);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitTextToVideo", runId);
-return _error.Fail<JobSubmitted>(ex, "Submit failed");
+return _error.Fail<JobReceipt>(ex, "Submit failed");
 }
 }
 }
@@ -3541,8 +3622,8 @@ ILogger<ImageClient> logger
 private readonly HttpClient _http = httpClient;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
-public async Task<Operation<JobSubmitted>> SubmitAsync(
-Transition request,
+public async Task<Operation<JobReceipt>> SubmitAsync(
+VideoTransition request,
 CancellationToken ct = default)
 {
 var runId = NewRunId();
@@ -3555,7 +3636,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-TR-2 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-TR-2 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<JobSubmitted>(null, configError);
+return _error.Fail<JobReceipt>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-3 Build endpoint. Path={Path}", runId, Api.TransitionPath);
 var endpoint = BuildEndpoint(Api.TransitionPath);
@@ -3574,7 +3655,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-TR-7 Response received. StatusCode
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-TR-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<JobSubmitted>(null, $"SubmitTransition failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<JobReceipt>(null, $"SubmitTransition failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-8 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
@@ -3584,32 +3665,32 @@ var env = JsonSerializer.Deserialize<Envelope<I2VSubmitResp>>(json, JsonOpts);
 if (env is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-TR-9 FAILED Envelope is null", runId);
-return _error.Fail<JobSubmitted>(null, "Invalid Transition response (null).");
+return _error.Fail<JobReceipt>(null, "Invalid Transition response (null).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-TR-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<JobReceipt>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null || env.Resp.VideoId == 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-TR-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-return _error.Fail<JobSubmitted>(null, "Invalid Transition response (missing Resp.video_id).");
+return _error.Fail<JobReceipt>(null, "Invalid Transition response (missing Resp.video_id).");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-TR-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-var submitted = new JobSubmitted
+var submitted = new JobReceipt
 {
 JobId = env.Resp.VideoId,
 Message = env.ErrMsg
 };
 _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitTransition. JobId={JobId}", runId, submitted.JobId);
-return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
+return Operation<JobReceipt>.Success(submitted, env.ErrMsg);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitTransition", runId);
-return _error.Fail<JobSubmitted>(ex, "SubmitTransition failed");
+return _error.Fail<JobReceipt>(ex, "SubmitTransition failed");
 }
 }
 }
@@ -3771,7 +3852,7 @@ private readonly HttpClient _http = httpClient;
 private readonly PixVerseOptions _opt = options.Value;
 private readonly IErrorHandler _error = errorHandler;
 private readonly ILogger<ImageClient> _logger = logger;
-public async Task<Operation<GenerationStatus>> GetStatusAsync(long jobId, CancellationToken ct = default)
+public async Task<Operation<JobStatus>> GetStatusAsync(long jobId, CancellationToken ct = default)
 {
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START GetGenerationStatus. JobId={JobId}", runId, jobId);
@@ -3781,7 +3862,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-ST-1 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-ST-1 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<GenerationStatus>(null, configError);
+return _error.Fail<JobStatus>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-2 Build endpoint. JobId={JobId}", runId, jobId);
 var endpoint = BuildEndpoint(Api.StatusPath + Uri.EscapeDataString(jobId.ToString()));
@@ -3794,46 +3875,46 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-ST-5 Response received. StatusCode
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-ST-5 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<GenerationStatus>(null, $"Status failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<JobStatus>(null, $"Status failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-6 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
 _logger.LogDebug("[RUN {RunId}] STEP PV-ST-6 BodyLength={Length}", runId, json?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-7 Try deserialize envelope", runId);
-var env = TryDeserialize<Envelope<GenerationStatus>>(json);
+var env = TryDeserialize<Envelope<JobStatus>>(json);
 if (env is not null)
 {
 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-8 Envelope parsed. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-ST-8 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<GenerationStatus>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<JobStatus>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-ST-8 FAILED Resp is null", runId);
-return _error.Fail<GenerationStatus>(null, "Invalid status payload (Resp null).");
+return _error.Fail<JobStatus>(null, "Invalid status payload (Resp null).");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS GetGenerationStatus (envelope)", runId);
-return Operation<GenerationStatus>.Success(env.Resp, env.ErrMsg);
+return Operation<JobStatus>.Success(env.Resp, env.ErrMsg);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-ST-9 Envelope parse failed. Fallback to raw status model", runId);
-var status = JsonSerializer.Deserialize<GenerationStatus>(json, JsonOpts);
+var status = JsonSerializer.Deserialize<JobStatus>(json, JsonOpts);
 if (status is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-ST-9 FAILED Status model is null", runId);
-return _error.Fail<GenerationStatus>(null, "Invalid status payload");
+return _error.Fail<JobStatus>(null, "Invalid status payload");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS GetGenerationStatus (raw)", runId);
-return Operation<GenerationStatus>.Success(status);
+return Operation<JobStatus>.Success(status);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED GetGenerationStatus. JobId={JobId}", runId, jobId);
-return _error.Fail<GenerationStatus>(ex, "Status check failed");
+return _error.Fail<JobStatus>(ex, "Status check failed");
 }
 }
-public async Task<Operation<Generation>> GetResultAsync(long jobId, CancellationToken ct = default)
+public async Task<Operation<JobResult>> GetResultAsync(long jobId, CancellationToken ct = default)
 {
 var runId = NewRunId();
 _logger.LogInformation("[RUN {RunId}] START GetGenerationResult. JobId={JobId}", runId, jobId);
@@ -3843,7 +3924,7 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-RS-1 Validate config", runId);
 if (!TryValidateConfig(out var configError))
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-1 FAILED Config invalid: {Error}", runId, configError);
-return _error.Fail<Generation>(null, configError);
+return _error.Fail<JobResult>(null, configError);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-2 Build endpoint. JobId={JobId}", runId, jobId);
 var endpoint = BuildEndpoint(Api.ResultPath + Uri.EscapeDataString(jobId.ToString()));
@@ -3856,43 +3937,43 @@ _logger.LogInformation("[RUN {RunId}] STEP PV-RS-5 Response received. StatusCode
 if (!res.IsSuccessStatusCode)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-5 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-return _error.Fail<Generation>(null, $"Result failed. HTTP {(int)res.StatusCode}");
+return _error.Fail<JobResult>(null, $"Result failed. HTTP {(int)res.StatusCode}");
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-6 Read response body", runId);
 var json = await res.Content.ReadAsStringAsync(ct);
 _logger.LogDebug("[RUN {RunId}] STEP PV-RS-6 BodyLength={Length}", runId, json?.Length ?? 0);
 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-7 Try deserialize envelope", runId);
-var env = TryDeserialize<Envelope<Generation>>(json);
+var env = TryDeserialize<Envelope<JobResult>>(json);
 if (env is not null)
 {
 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-8 Envelope parsed. ErrCode={ErrCode}", runId, env.ErrCode);
 if (env.ErrCode != 0)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-8 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-return _error.Fail<Generation>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+return _error.Fail<JobResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
 }
 if (env.Resp is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-8 FAILED Resp is null", runId);
-return _error.Fail<Generation>(null, "Invalid result payload (Resp null).");
+return _error.Fail<JobResult>(null, "Invalid result payload (Resp null).");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS GetGenerationResult (envelope)", runId);
-return Operation<Generation>.Success(env.Resp, env.ErrMsg);
+return Operation<JobResult>.Success(env.Resp, env.ErrMsg);
 }
 _logger.LogInformation("[RUN {RunId}] STEP PV-RS-9 Envelope parse failed. Fallback to raw result model", runId);
-var result = JsonSerializer.Deserialize<Generation>(json, JsonOpts);
+var result = JsonSerializer.Deserialize<JobResult>(json, JsonOpts);
 if (result is null)
 {
 _logger.LogWarning("[RUN {RunId}] STEP PV-RS-9 FAILED Result model is null", runId);
-return _error.Fail<Generation>(null, "Invalid result payload");
+return _error.Fail<JobResult>(null, "Invalid result payload");
 }
 _logger.LogInformation("[RUN {RunId}] SUCCESS GetGenerationResult (raw)", runId);
-return Operation<Generation>.Success(result);
+return Operation<JobResult>.Success(result);
 }
 catch (Exception ex)
 {
 _logger.LogError(ex, "[RUN {RunId}] FAILED GetGenerationResult. JobId={JobId}", runId, jobId);
-return _error.Fail<Generation>(ex, "Result check failed");
+return _error.Fail<JobResult>(ex, "Result check failed");
 }
 }
 }

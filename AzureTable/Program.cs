@@ -4,6 +4,7 @@ using Application.PixVerse.Response;
 using Bootstrapper;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AzureTable
@@ -31,42 +32,79 @@ namespace AzureTable
             var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
             var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
 
-            logger.LogInformation("=== START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===");
+            var runId = Guid.NewGuid().ToString("N")[..8];
+            var sw = Stopwatch.StartNew();
+
+            logger.LogInformation("[RUN {RunId}] === START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===", runId);
+            logger.LogInformation("[RUN {RunId}] ArgsCount={ArgsCount}", runId, args?.Length ?? 0);
 
             // -------------------------------------------------
-            // 1) Check balance
+            // STEP 1) Check balance
             // -------------------------------------------------
+            logger.LogInformation("[RUN {RunId}] [STEP 1] Checking balance...", runId);
+
             var balOp = await balanceClient.GetAsync();
             if (!balOp.IsSuccessful)
             {
-                logger.LogError("Balance failed: {Error}", balOp.Error ?? "unknown");
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 1] Balance FAILED. Error={Error}. ElapsedMs={ElapsedMs}",
+                    runId, balOp.Error ?? "unknown", sw.ElapsedMilliseconds);
                 return;
             }
 
-            logger.LogInformation("Balance OK. Credits={Credits}", balOp.Data?.TotalCredits);
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 1] Balance OK. Credits={Credits}. ElapsedMs={ElapsedMs}",
+                runId, balOp.Data?.TotalCredits, sw.ElapsedMilliseconds);
 
             // -------------------------------------------------
-            // 2) Upload image
+            // STEP 2) Upload image
             // -------------------------------------------------
-            var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\luisNino.jpg"; // AJUSTA
+            var imagePath = @"E:\Marketing-Logs\PixVerse\Inputs\donalTrump.webp"; // AJUSTA
+            var fileName = Path.GetFileName(imagePath);
+            var fileExt = Path.GetExtension(imagePath);
+
+            // IMPORTANT: your file is .webp but you were sending "image/jpeg".
+            // Log it explicitly to prevent silent API rejection or server-side mismatch.
+            var contentType = GuessContentType(fileExt);
+
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 2] Upload image START. Path={ImagePath} FileName={FileName} Ext={Ext} ContentType={ContentType} Exists={Exists} SizeBytes={SizeBytes}",
+                runId,
+                imagePath,
+                fileName,
+                fileExt,
+                contentType,
+                File.Exists(imagePath),
+                File.Exists(imagePath) ? new FileInfo(imagePath).Length : -1);
+
+            if (!File.Exists(imagePath))
+            {
+                logger.LogError("[RUN {RunId}] [STEP 2] Upload image ABORT. File does not exist. Path={ImagePath}", runId, imagePath);
+                return;
+            }
+
             await using var imgStream = File.OpenRead(imagePath);
 
             var upOp = await imageClient.UploadAsync(
                 imgStream,
-                fileName: Path.GetFileName(imagePath),
-                contentType: "image/jpeg");
+                fileName: fileName,
+                contentType: contentType);
 
             if (!upOp.IsSuccessful || upOp.Data is null)
             {
-                logger.LogError("UploadImage failed: {Error}", upOp.Error ?? "unknown");
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 2] Upload FAILED. Error={Error}. PayloadNull={PayloadNull}. ElapsedMs={ElapsedMs}",
+                    runId, upOp.Error ?? "unknown", upOp.Data is null, sw.ElapsedMilliseconds);
                 return;
             }
 
             var imgId = upOp.Data.ImgId;
-            logger.LogInformation("Image uploaded. ImgId={ImgId}", imgId);
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 2] Upload OK. ImgId={ImgId}. ElapsedMs={ElapsedMs}",
+                runId, imgId, sw.ElapsedMilliseconds);
 
             // -------------------------------------------------
-            // 3) Submit Image->Video
+            // STEP 3) Submit Image->Video
             // -------------------------------------------------
             var i2vReq = new ImageToVideo
             {
@@ -79,31 +117,55 @@ namespace AzureTable
                 Seed = 0
             };
 
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 3] I2V Submit START. ImgId={ImgId} Duration={Duration} Model={Model} Quality={Quality} Seed={Seed} PromptLen={PromptLen} NegPromptLen={NegPromptLen}",
+                runId,
+                i2vReq.ImgId,
+                i2vReq.Duration,
+                i2vReq.Model,
+                i2vReq.Quality,
+                i2vReq.Seed,
+                i2vReq.Prompt?.Length ?? 0,
+                i2vReq.NegativePrompt?.Length ?? 0);
+
             var i2vSubmitOp = await imageToVideoClient.SubmitAsync(i2vReq);
             if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
             {
-                logger.LogError("SubmitImageToVideo failed: {Error}", i2vSubmitOp.Error ?? "unknown");
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 3] I2V Submit FAILED. Error={Error}. PayloadNull={PayloadNull}. ElapsedMs={ElapsedMs}",
+                    runId, i2vSubmitOp.Error ?? "unknown", i2vSubmitOp.Data is null, sw.ElapsedMilliseconds);
                 return;
             }
 
             var jobId = i2vSubmitOp.Data.JobId;
-            logger.LogInformation("Image-to-Video submitted. JobId={JobId}", jobId);
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 3] I2V Submit OK. JobId={JobId}. ElapsedMs={ElapsedMs}",
+                runId, jobId, sw.ElapsedMilliseconds);
 
             // -------------------------------------------------
-            // 4) Esperar a que el job termine (status)
+            // STEP 4) Poll job status until terminal
             // -------------------------------------------------
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 4] Poll I2V status START. JobId={JobId} MaxAttempts={MaxAttempts} DelaySec={DelaySec}",
+                runId, jobId, 60, 2);
+
             JobStatus? finalStatus = null;
-
             for (var attempt = 1; attempt <= 60; attempt++)
             {
+                var attemptSw = Stopwatch.StartNew();
                 var stOp = await videoJobQueryClient.GetStatusAsync(jobId);
+
                 if (!stOp.IsSuccessful || stOp.Data is null)
                 {
-                    logger.LogWarning("GetStatus attempt {Attempt} failed: {Error}", attempt, stOp.Error ?? "unknown");
+                    logger.LogWarning(
+                        "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} FAILED. Error={Error}. PayloadNull={PayloadNull}. AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
+                        runId, attempt, stOp.Error ?? "unknown", stOp.Data is null, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
                 }
                 else
                 {
-                    logger.LogInformation("[I2V] attempt={Attempt} state={State}", attempt, stOp.Data.State);
+                    logger.LogInformation(
+                        "[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} OK. State={State} IsTerminal={IsTerminal} AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
+                        runId, attempt, stOp.Data.State, stOp.Data.IsTerminal, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
 
                     if (stOp.Data.IsTerminal)
                     {
@@ -114,94 +176,120 @@ namespace AzureTable
 
                 await Task.Delay(TimeSpan.FromSeconds(2));
             }
-            if(finalStatus is null)
+
+            if (finalStatus is null)
             {
-                return;
-            }
-            if (finalStatus is null || finalStatus.State != JobState.Succeeded)
-            {
-                logger.LogError("I2V job did not succeed. JobId={JobId} State={State}", jobId, finalStatus.State);
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 4] I2V Status polling TIMEOUT. JobId={JobId}. ElapsedMs={ElapsedMs}",
+                    runId, jobId, sw.ElapsedMilliseconds);
                 return;
             }
 
+            if (finalStatus.State != JobState.Succeeded)
+            {
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 4] I2V job NOT SUCCEEDED. JobId={JobId} FinalState={State} ElapsedMs={ElapsedMs}",
+                    runId, jobId, finalStatus.State, sw.ElapsedMilliseconds);
+                return;
+            }
+
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 4] I2V job SUCCEEDED. JobId={JobId} ElapsedMs={ElapsedMs}",
+                runId, jobId, sw.ElapsedMilliseconds);
+
             // -------------------------------------------------
-            // 5) Obtener el RESULT y extraer VideoMediaId
-            //    FIX: aquí está la corrección clave.
+            // STEP 5) Get job result + extract VideoMediaId
             // -------------------------------------------------
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 5] Get I2V result START. JobId={JobId}",
+                runId, jobId);
+
             var resOp = await videoJobQueryClient.GetResultAsync(jobId);
             if (!resOp.IsSuccessful || resOp.Data is null)
             {
-                logger.LogError("GetGenerationResult failed: {Error}", resOp.Error ?? "unknown");
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 5] Get result FAILED. JobId={JobId} Error={Error} PayloadNull={PayloadNull} ElapsedMs={ElapsedMs}",
+                    runId, jobId, resOp.Error ?? "unknown", resOp.Data is null, sw.ElapsedMilliseconds);
                 return;
             }
 
-            // A) Caso ideal: tu modelo YA tiene VideoMediaId (o similar)
-            //    Si tu PixVerseGenerationResult no lo tiene, ver B) parsing por JSON abajo.
+            // Log a small diagnostic preview of the result (avoid huge logs; still enough to debug)
+            var resultJson = SafeSerialize(resOp.Data);
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 5] Get result OK. JobId={JobId} ResultJsonLen={Len} ElapsedMs={ElapsedMs}",
+                runId, jobId, resultJson.Length, sw.ElapsedMilliseconds);
+
+            // A) Known model mapping (if present)
             long? videoMediaId = TryGetVideoMediaIdFromKnownModel(resOp.Data);
 
-            // B) Fallback: si tu implementación expone RawJson, o si puedes re-serializar el objeto,
-            //    intentamos encontrar fields comunes.
+            // B) JSON fallback
             if (videoMediaId is null || videoMediaId <= 0)
             {
-                var raw = SafeSerialize(resOp.Data);
-                videoMediaId = TryExtractMediaIdFromJson(raw);
+                videoMediaId = TryExtractMediaIdFromJson(resultJson);
 
                 logger.LogInformation(
-                    "MediaId extraction: VideoMediaId={VideoMediaId} (from json fallback)",
-                    videoMediaId ?? 0);
+                    "[RUN {RunId}] [STEP 5] MediaId extraction (fallback) VideoMediaId={VideoMediaId}",
+                    runId, videoMediaId ?? 0);
             }
 
             if (videoMediaId is null || videoMediaId <= 0)
             {
-                // Este log es el que te evita “adivinar” y te dice por qué NO puedes seguir.
-                var raw = SafeSerialize(resOp.Data);
                 logger.LogError(
-                    "Cannot proceed to LipSync because no VideoMediaId could be extracted from result. " +
-                    "JobId={JobId}. ResultJson={ResultJson}",
-                    jobId,
-                    raw);
-
+                    "[RUN {RunId}] [STEP 5] Cannot proceed: VideoMediaId NOT FOUND. JobId={JobId}. ResultJson={ResultJson}",
+                    runId, jobId, resultJson);
                 return;
             }
 
-            logger.LogInformation("Using VideoMediaId={VideoMediaId} for LipSync (NOT JobId={JobId}).", videoMediaId, jobId);
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 5] Using VideoMediaId={VideoMediaId} for LipSync (NOT JobId={JobId}).",
+                runId, videoMediaId, jobId);
 
             // -------------------------------------------------
-            // 6) Submit LipSync (TTS) usando video_media_id
+            // STEP 6) Submit LipSync (TTS) using video_media_id
             // -------------------------------------------------
             var lipReq = new VideoLipSync
             {
-                // FIX: usar VideoMediaId (media id), y NO usar SourceVideoId = jobId
                 VideoMediaId = videoMediaId.Value,
                 SourceVideoId = null,
 
-                // TTS (no audio_media_id)
                 AudioMediaId = null,
                 LipSyncTtsSpeakerId = "auto",
                 LipSyncTtsContent = "¡Hola Vancouver! Soy Goku. No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
             };
 
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 6] LipSync Submit START. VideoMediaId={VideoMediaId} Speaker={Speaker} ContentLen={ContentLen} HasAudioMediaId={HasAudioMediaId} HasSourceVideoId={HasSourceVideoId}",
+                runId,
+                lipReq.VideoMediaId,
+                lipReq.LipSyncTtsSpeakerId,
+                lipReq.LipSyncTtsContent?.Length ?? 0,
+                lipReq.AudioMediaId.HasValue && lipReq.AudioMediaId.Value > 0,
+                lipReq.SourceVideoId.HasValue && lipReq.SourceVideoId.Value > 0);
+
             var lipOp = await lipSyncClient.SubmitAsync(lipReq);
 
             if (!lipOp.IsSuccessful)
             {
-                logger.LogError("LipSync submit failed: {Error}", lipOp.Error ?? "unknown");
+                logger.LogError(
+                    "[RUN {RunId}] [STEP 6] LipSync Submit FAILED. Error={Error}. ElapsedMs={ElapsedMs}",
+                    runId, lipOp.Error ?? "unknown", sw.ElapsedMilliseconds);
                 return;
             }
 
-            logger.LogInformation("LipSync submitted OK. JobId={LipJobId}", lipOp.Data?.JobId);
+            logger.LogInformation(
+                "[RUN {RunId}] [STEP 6] LipSync Submit OK. LipJobId={LipJobId}. TotalElapsedMs={ElapsedMs}",
+                runId, lipOp.Data?.JobId, sw.ElapsedMilliseconds);
         }
 
         /// <summary>
-        /// Si tu PixVerseGenerationResult ya contiene algo tipo VideoMediaId, mapea aquí.
-        /// Si no existe, devuelve null y se usa el parsing por JSON.
+        /// If your JobResult model already contains a media id, map it here.
+        /// Otherwise return null so JSON fallback runs.
         /// </summary>
         private static long? TryGetVideoMediaIdFromKnownModel(JobResult result)
         {
-            // AJUSTA esto a TU modelo real si ya existe un campo:
+            // Example (adjust to your real DTO):
             // return result.VideoMediaId;
-            // o return result.Resp?.VideoMediaId;
-            // Por defecto: null (para forzar fallback JSON).
+            // return result.Resp?.VideoMediaId;
             return null;
         }
 
@@ -218,8 +306,7 @@ namespace AzureTable
         }
 
         /// <summary>
-        /// Busca claves comunes en respuestas de APIs: video_media_id, media_id, videoMediaId, etc.
-        /// Devuelve null si no encuentra nada.
+        /// Searches common media id keys recursively: video_media_id, media_id, videoMediaId, etc.
         /// </summary>
         private static long? TryExtractMediaIdFromJson(string json)
         {
@@ -231,7 +318,6 @@ namespace AzureTable
                 using var doc = JsonDocument.Parse(json);
                 var root = doc.RootElement;
 
-                // búsqueda profunda en todo el árbol
                 var candidates = new[]
                 {
                     "video_media_id",
@@ -287,6 +373,20 @@ namespace AzureTable
             }
 
             return false;
+        }
+
+        private static string GuessContentType(string ext)
+        {
+            ext = (ext ?? string.Empty).Trim().ToLowerInvariant();
+
+            return ext switch
+            {
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                ".webp" => "image/webp",
+                ".gif" => "image/gif",
+                _ => "application/octet-stream"
+            };
         }
     }
 }
