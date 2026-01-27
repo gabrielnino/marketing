@@ -1,6 +1,6 @@
 ﻿namespace Application.PixVerse.Response
 { 
-    public sealed class JobSubmitted
+    public sealed class JobReceipt
     {
         public required long JobId { get; init; }
         public string? Message { get; init; }

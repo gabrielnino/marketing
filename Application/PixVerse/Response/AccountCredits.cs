@@ -2,7 +2,7 @@
 
 namespace Application.PixVerse.Response
 {
-    public sealed class Balance
+    public sealed class AccountCredits
     {
         [JsonPropertyName("account_id")]
         public long AccountId { get; init; }

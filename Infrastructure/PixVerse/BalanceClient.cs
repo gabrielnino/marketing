@@ -24,7 +24,7 @@ namespace Infrastructure.PixVerse
         private readonly ILogger<ImageClient> _logger = logger;
 
 
-        public async Task<Operation<Balance>> GetAsync(CancellationToken ct = default)
+        public async Task<Operation<AccountCredits>> GetAsync(CancellationToken ct = default)
         {
             var runId = NewRunId();
             _logger.LogInformation("[RUN {RunId}] START PixVerse.CheckBalance", runId);
@@ -35,7 +35,7 @@ namespace Infrastructure.PixVerse
                 if (!TryValidateConfig(out var configError))
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-1 FAILED Config invalid: {Error}", runId, configError);
-                    return _error.Fail<Balance>(null, configError);
+                    return _error.Fail<AccountCredits>(null, configError);
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-2 Build endpoint. Path={Path}", runId, Api.BalancePath);
@@ -59,7 +59,7 @@ namespace Infrastructure.PixVerse
                 if (!res.IsSuccessStatusCode)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-6 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                    return _error.Fail<Balance>(null, $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
+                    return _error.Fail<AccountCredits>(null, $"PixVerse balance failed. HTTP {(int)res.StatusCode}");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-7 Read response body", runId);
@@ -67,38 +67,38 @@ namespace Infrastructure.PixVerse
                 _logger.LogDebug("[RUN {RunId}] STEP PV-BAL-7 BodyLength={Length}", runId, json?.Length ?? 0);
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-8 Deserialize envelope", runId);
-                var env = TryDeserialize<Envelope<Balance>>(json);
+                var env = TryDeserialize<Envelope<AccountCredits>>(json);
                 if (env is null)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-8 FAILED Envelope is null", runId);
-                    return _error.Fail<Balance>(null, "Invalid balance response (null).");
+                    return _error.Fail<AccountCredits>(null, "Invalid balance response (null).");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-BAL-9 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
                 if (env.ErrCode != 0)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-9 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                    return _error.Fail<Balance>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                    return _error.Fail<AccountCredits>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
                 }
 
                 if (env.Resp is null)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-BAL-9 FAILED Resp is null", runId);
-                    return _error.Fail<Balance>(null, "Invalid balance payload (Resp null).");
+                    return _error.Fail<AccountCredits>(null, "Invalid balance payload (Resp null).");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] SUCCESS PixVerse.CheckBalance", runId);
-                return Operation<Balance>.Success(env.Resp, env.ErrMsg);
+                return Operation<AccountCredits>.Success(env.Resp, env.ErrMsg);
             }
             catch (OperationCanceledException ex) when (!ct.IsCancellationRequested)
             {
                 _logger.LogError(ex, "[RUN {RunId}] TIMEOUT CheckBalance after {Timeout}", runId, _opt.HttpTimeout);
-                return _error.Fail<Balance>(ex, $"Balance check timed out after {_opt.HttpTimeout}");
+                return _error.Fail<AccountCredits>(ex, $"Balance check timed out after {_opt.HttpTimeout}");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "[RUN {RunId}] FAILED CheckBalance", runId);
-                return _error.Fail<Balance>(ex, "Balance check failed");
+                return _error.Fail<AccountCredits>(ex, "Balance check failed");
             }
         }
 

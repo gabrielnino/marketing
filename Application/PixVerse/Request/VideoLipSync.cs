@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Application.PixVerse.Request
 {
-    public sealed class LipSync
+    public sealed class VideoLipSync
     {
         // either source_video_id or video_media_id, not both
         [JsonPropertyName("video_media_id")]
@@ -60,13 +60,13 @@ namespace Application.PixVerse.Request
             }
         }
 
-        public LipSync Normalize()
+        public VideoLipSync Normalize()
         {
             if (string.IsNullOrWhiteSpace(LipSyncTtsContent))
                 return this;
 
             var sanitized = SanitizeToStandardCharacters(LipSyncTtsContent);
-            return new LipSync
+            return new VideoLipSync
             {
                 VideoMediaId = this.VideoMediaId,
                 SourceVideoId = this.SourceVideoId,

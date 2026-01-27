@@ -27,7 +27,7 @@ namespace AzureTable
 
             var imageClient = host.Services.GetRequiredService<IImageClient>();
             var balanceClient = host.Services.GetRequiredService<IBalanceClient>();
-            var generationClient = host.Services.GetRequiredService<IGenerationClient>();
+            var videoJobQueryClient = host.Services.GetRequiredService<IVideoJobQueryClient>();
             var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
             var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
 
@@ -92,11 +92,11 @@ namespace AzureTable
             // -------------------------------------------------
             // 4) Esperar a que el job termine (status)
             // -------------------------------------------------
-            GenerationStatus? finalStatus = null;
+            JobStatus? finalStatus = null;
 
             for (var attempt = 1; attempt <= 60; attempt++)
             {
-                var stOp = await generationClient.GetStatusAsync(jobId);
+                var stOp = await videoJobQueryClient.GetStatusAsync(jobId);
                 if (!stOp.IsSuccessful || stOp.Data is null)
                 {
                     logger.LogWarning("GetStatus attempt {Attempt} failed: {Error}", attempt, stOp.Error ?? "unknown");
@@ -128,7 +128,7 @@ namespace AzureTable
             // 5) Obtener el RESULT y extraer VideoMediaId
             //    FIX: aquí está la corrección clave.
             // -------------------------------------------------
-            var resOp = await generationClient.GetResultAsync(jobId);
+            var resOp = await videoJobQueryClient.GetResultAsync(jobId);
             if (!resOp.IsSuccessful || resOp.Data is null)
             {
                 logger.LogError("GetGenerationResult failed: {Error}", resOp.Error ?? "unknown");
@@ -169,7 +169,7 @@ namespace AzureTable
             // -------------------------------------------------
             // 6) Submit LipSync (TTS) usando video_media_id
             // -------------------------------------------------
-            var lipReq = new LipSync
+            var lipReq = new VideoLipSync
             {
                 // FIX: usar VideoMediaId (media id), y NO usar SourceVideoId = jobId
                 VideoMediaId = videoMediaId.Value,
@@ -181,7 +181,7 @@ namespace AzureTable
                 LipSyncTtsContent = "¡Hola Vancouver! Soy Goku. No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
             };
 
-            var lipOp = await lipSyncClient.SubmitJobAsync(lipReq);
+            var lipOp = await lipSyncClient.SubmitAsync(lipReq);
 
             if (!lipOp.IsSuccessful)
             {
@@ -196,7 +196,7 @@ namespace AzureTable
         /// Si tu PixVerseGenerationResult ya contiene algo tipo VideoMediaId, mapea aquí.
         /// Si no existe, devuelve null y se usa el parsing por JSON.
         /// </summary>
-        private static long? TryGetVideoMediaIdFromKnownModel(Generation result)
+        private static long? TryGetVideoMediaIdFromKnownModel(JobResult result)
         {
             // AJUSTA esto a TU modelo real si ya existe un campo:
             // return result.VideoMediaId;

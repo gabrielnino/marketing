@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Application.PixVerse.Request
 {
-    public sealed class Transition
+    public sealed class VideoTransition
     {
         // -----------------------------
         // Compatibility aliases (FIX)

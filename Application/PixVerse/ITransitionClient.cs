@@ -6,8 +6,8 @@ namespace Application.PixVerse
 {
     public interface ITransitionClient
     {
-        Task<Operation<JobSubmitted>> SubmitTransitionAsync(
-        Transition request,
-        CancellationToken ct = default);
+        Task<Operation<JobReceipt>> SubmitAsync(
+            VideoTransition request,
+            CancellationToken ct = default);
     }
 }

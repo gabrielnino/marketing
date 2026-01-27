@@ -2,7 +2,7 @@
 
 namespace Application.PixVerse.Response
 {
-    public sealed class Generation
+    public sealed class JobResult
     {
 
         [JsonPropertyName("id")]

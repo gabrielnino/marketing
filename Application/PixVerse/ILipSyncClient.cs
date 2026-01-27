@@ -6,9 +6,9 @@ namespace Application.PixVerse
 {
     public interface ILipSyncClient
     {
-        Task<Operation<JobSubmitted>> SubmitJobAsync(
-          LipSync request,
-          CancellationToken ct = default);
+        Task<Operation<JobReceipt>> SubmitAsync(
+            VideoLipSync request,
+            CancellationToken ct = default);
 
     }
 }

@@ -6,8 +6,8 @@ namespace Application.PixVerse
 {
     public interface IImageToVideoClient
     {
-        Task<Operation<JobSubmitted>> SubmitAsync(
-        ImageToVideo request,
-        CancellationToken ct = default);
+        Task<Operation<JobReceipt>> SubmitAsync(
+            ImageToVideo request,
+            CancellationToken ct = default);
     }
 }

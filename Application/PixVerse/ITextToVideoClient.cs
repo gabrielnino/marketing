@@ -6,7 +6,7 @@ namespace Application.PixVerse
 {
     public interface ITextToVideoClient
     {
-        Task<Operation<JobSubmitted>> SubmitTAsync(
+        Task<Operation<JobReceipt>> SubmitTAsync(
             TextToVideo request,
             CancellationToken ct = default);
     }

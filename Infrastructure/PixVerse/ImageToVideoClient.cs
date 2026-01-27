@@ -23,7 +23,7 @@ namespace Infrastructure.PixVerse
           private readonly IErrorHandler _error = errorHandler;
           private readonly ILogger<ImageClient> _logger = logger;
 
-        public async Task<Operation<JobSubmitted>> SubmitAsync(
+        public async Task<Operation<JobReceipt>> SubmitAsync(
             ImageToVideo request,
             CancellationToken ct = default)
         {
@@ -39,7 +39,7 @@ namespace Infrastructure.PixVerse
                 if (!TryValidateConfig(out var configError))
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-2 FAILED Config invalid: {Error}", runId, configError);
-                    return _error.Fail<JobSubmitted>(null, configError);
+                    return _error.Fail<JobReceipt>(null, configError);
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-3 Build endpoint. Path={Path}", runId, Api.ImageToVideoPath);
@@ -63,7 +63,7 @@ namespace Infrastructure.PixVerse
                 if (!res.IsSuccessStatusCode)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                    return _error.Fail<JobSubmitted>(null, $"SubmitImageToVideo failed. HTTP {(int)res.StatusCode}");
+                    return _error.Fail<JobReceipt>(null, $"SubmitImageToVideo failed. HTTP {(int)res.StatusCode}");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-8 Read response body", runId);
@@ -76,36 +76,36 @@ namespace Infrastructure.PixVerse
                 if (env is null)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-9 FAILED Envelope is null", runId);
-                    return _error.Fail<JobSubmitted>(null, "Invalid ImageToVideo response (null).");
+                    return _error.Fail<JobReceipt>(null, "Invalid ImageToVideo response (null).");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
                 if (env.ErrCode != 0)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                    return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                    return _error.Fail<JobReceipt>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
                 }
 
                 if (env.Resp is null || env.Resp.VideoId == 0)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-I2V-10 FAILED Missing Resp.video_id. VideoId={VideoId}", runId, env.Resp?.VideoId ?? 0);
-                    return _error.Fail<JobSubmitted>(null, "Invalid ImageToVideo response (missing Resp.video_id).");
+                    return _error.Fail<JobReceipt>(null, "Invalid ImageToVideo response (missing Resp.video_id).");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-I2V-11 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
-                var submitted = new JobSubmitted
+                var submitted = new JobReceipt
                 {
                     JobId = env.Resp.VideoId,
                     Message = env.ErrMsg
                 };
 
                 _logger.LogInformation("[RUN {RunId}] SUCCESS SubmitImageToVideo. JobId={JobId}", runId, submitted.JobId);
-                return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
+                return Operation<JobReceipt>.Success(submitted, env.ErrMsg);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitImageToVideo", runId);
-                return _error.Fail<JobSubmitted>(ex, "SubmitImageToVideo failed");
+                return _error.Fail<JobReceipt>(ex, "SubmitImageToVideo failed");
             }
         }
     }

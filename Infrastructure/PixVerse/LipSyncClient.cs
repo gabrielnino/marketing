@@ -28,8 +28,8 @@ namespace Infrastructure.PixVerse
         private const int MaxBodyLogChars = 4000;
         private const int MaxPayloadLogChars = 4000;
 
-        public async Task<Operation<JobSubmitted>> SubmitJobAsync(
-            LipSync request,
+        public async Task<Operation<JobReceipt>> SubmitAsync(
+            VideoLipSync request,
             CancellationToken ct = default)
         {
             var runId = NewRunId();
@@ -77,7 +77,7 @@ namespace Infrastructure.PixVerse
                 if (!TryValidateConfig(out var configError))
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-LS-2 FAILED Config invalid: {Error}", runId, configError);
-                    return _error.Fail<JobSubmitted>(null, configError);
+                    return _error.Fail<JobReceipt>(null, configError);
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-3 Build endpoint. Path={Path}", runId, Api.LipSyncPath);
@@ -156,7 +156,7 @@ namespace Infrastructure.PixVerse
                         endpoint,
                         traceId ?? "(null)"
                     );
-                    return _error.Fail<JobSubmitted>(tex, "SubmitLipSync failed (timeout).");
+                    return _error.Fail<JobReceipt>(tex, "SubmitLipSync failed (timeout).");
                 }
                 catch (OperationCanceledException ocex) when (ct.IsCancellationRequested)
                 {
@@ -168,7 +168,7 @@ namespace Infrastructure.PixVerse
                         endpoint,
                         traceId ?? "(null)"
                     );
-                    return _error.Fail<JobSubmitted>(ocex, "SubmitLipSync canceled.");
+                    return _error.Fail<JobReceipt>(ocex, "SubmitLipSync canceled.");
                 }
 
                 _logger.LogInformation(
@@ -231,7 +231,7 @@ namespace Infrastructure.PixVerse
                         $"Reason={res.ReasonPhrase}. TraceId={traceId}. " +
                         $"Body(truncated)={Truncate(body, 500)}";
 
-                    return _error.Fail<JobSubmitted>(null, msg);
+                    return _error.Fail<JobReceipt>(null, msg);
                 }
 
                 // Flujo success: deserializar envelope normal
@@ -241,7 +241,7 @@ namespace Infrastructure.PixVerse
                 if (env is null)
                 {
                     _logger.LogWarning("[RUN {RunId}] STEP PV-LS-10 FAILED Envelope is null", runId);
-                    return _error.Fail<JobSubmitted>(null, "Invalid LipSync response (null envelope).");
+                    return _error.Fail<JobReceipt>(null, "Invalid LipSync response (null envelope).");
                 }
 
                 _logger.LogInformation(
@@ -259,7 +259,7 @@ namespace Infrastructure.PixVerse
                         env.ErrCode,
                         env.ErrMsg
                     );
-                    return _error.Fail<JobSubmitted>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                    return _error.Fail<JobReceipt>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
                 }
 
                 if (env.Resp is null || env.Resp.VideoId == 0)
@@ -269,12 +269,12 @@ namespace Infrastructure.PixVerse
                         runId,
                         env.Resp?.VideoId ?? 0
                     );
-                    return _error.Fail<JobSubmitted>(null, "Invalid LipSync response (missing Resp.video_id).");
+                    return _error.Fail<JobReceipt>(null, "Invalid LipSync response (missing Resp.video_id).");
                 }
 
                 _logger.LogInformation("[RUN {RunId}] STEP PV-LS-12 Build result. VideoId={VideoId}", runId, env.Resp.VideoId);
 
-                var submitted = new JobSubmitted
+                var submitted = new JobReceipt
                 {
                     JobId = env.Resp.VideoId,
                     Message = env.ErrMsg
@@ -287,12 +287,12 @@ namespace Infrastructure.PixVerse
                     traceId ?? "(null)"
                 );
 
-                return Operation<JobSubmitted>.Success(submitted, env.ErrMsg);
+                return Operation<JobReceipt>.Success(submitted, env.ErrMsg);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "[RUN {RunId}] FAILED SubmitLipSync (exception)", runId);
-                return _error.Fail<JobSubmitted>(ex, "SubmitLipSync failed");
+                return _error.Fail<JobReceipt>(ex, "SubmitLipSync failed");
             }
         }
 

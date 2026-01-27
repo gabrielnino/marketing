@@ -1,7 +1,7 @@
 ﻿namespace Application.PixVerse.Response
 {
 
-    public sealed class GenerationStatus
+    public sealed class JobStatus
     {
         public required string JobId { get; init; }
 

@@ -208,7 +208,9 @@ namespace Bootstrapper
                     services.AddSingleton<IBalanceClient, BalanceClient>();
                     services.AddSingleton<ImageClient, ImageClient>();
                     services.AddSingleton<IImageToVideoClient, ImageToVideoClient>();
-                    services.AddSingleton<IGenerationClient, GenerationClient>();
+                    services.AddSingleton<IVideoClient, VideoClient>();
+                    services.AddSingleton<IJobClient, JobClient>();
+                    services.AddSingleton<IVideoJobQueryClient, VideoJobQueryClient>();
                     services.AddSingleton<ILipSyncClient, LipSyncClient>();
                     services.AddSingleton<IImageClient, ImageClient>();
                     

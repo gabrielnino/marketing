@@ -25,7 +25,7 @@ public sealed partial class ImageClient(
     private readonly ILogger<ImageClient> _logger = logger;
 
 
-    public async Task<Operation<UploadImage>> UploadAsync(
+    public async Task<Operation<ImageResult>> UploadAsync(
         Stream imageStream,
         string fileName,
         string contentType,
@@ -42,29 +42,29 @@ public sealed partial class ImageClient(
             if (!TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-1 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<UploadImage>(null, configError);
+                return _error.Fail<ImageResult>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-2 Validate inputs", runId);
             if (imageStream is null)
-                return _error.Business<UploadImage>("imageStream cannot be null.");
+                return _error.Business<ImageResult>("imageStream cannot be null.");
 
             if (!imageStream.CanRead)
-                return _error.Business<UploadImage>("imageStream must be readable.");
+                return _error.Business<ImageResult>("imageStream must be readable.");
 
             if (string.IsNullOrWhiteSpace(fileName))
-                return _error.Business<UploadImage>("fileName cannot be null or empty.");
+                return _error.Business<ImageResult>("fileName cannot be null or empty.");
 
             if (string.IsNullOrWhiteSpace(contentType))
-                return _error.Business<UploadImage>("contentType cannot be null or empty.");
+                return _error.Business<ImageResult>("contentType cannot be null or empty.");
 
             if (!Api.AllowedImageMimeTypes.Contains(contentType))
-                return _error.Business<UploadImage>(
+                return _error.Business<ImageResult>(
                     $"Unsupported contentType '{contentType}'. Allowed: image/jpeg, image/jpg, image/png, image/webp");
 
             var ext = Path.GetExtension(fileName);
             if (string.IsNullOrWhiteSpace(ext) || !Api.AllowedExtensions.Contains(ext))
-                return _error.Business<UploadImage>(
+                return _error.Business<ImageResult>(
                     $"Unsupported file extension '{ext}'. Allowed: .png, .webp, .jpeg, .jpg");
 
             if (imageStream.CanSeek)
@@ -73,7 +73,7 @@ public sealed partial class ImageClient(
                 _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-3 Validate size (seekable). MaxBytes={MaxBytes}", runId, maxBytes);
 
                 if (imageStream.Length > maxBytes)
-                    return _error.Business<UploadImage>("Image file size must be < 20MB.");
+                    return _error.Business<ImageResult>("Image file size must be < 20MB.");
 
                 imageStream.Position = 0;
             }
@@ -100,7 +100,7 @@ public sealed partial class ImageClient(
             if (!res.IsSuccessStatusCode)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-8 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<UploadImage>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<ImageResult>(null, $"UploadImage failed. HTTP {(int)res.StatusCode}");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-9 Read response body", runId);
@@ -108,38 +108,38 @@ public sealed partial class ImageClient(
             _logger.LogDebug("[RUN {RunId}] STEP PV-UPF-9 BodyLength={Length}", runId, json?.Length ?? 0);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-10 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<Envelope<UploadImage>>(json, JsonOpts);
+            var env = JsonSerializer.Deserialize<Envelope<ImageResult>>(json, JsonOpts);
 
             if (env is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-10 FAILED Envelope is null", runId);
-                return _error.Fail<UploadImage>(null, "Invalid upload response (null).");
+                return _error.Fail<ImageResult>(null, "Invalid upload response (null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPF-11 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
             if (env.ErrCode != 0)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-11 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<UploadImage>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                return _error.Fail<ImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
             }
 
             if (env.Resp is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPF-11 FAILED Resp is null", runId);
-                return _error.Fail<UploadImage>(null, "Invalid upload payload (Resp null).");
+                return _error.Fail<ImageResult>(null, "Invalid upload payload (Resp null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] SUCCESS UploadImage (file)", runId);
-            return Operation<UploadImage>.Success(env.Resp, env.ErrMsg);
+            return Operation<ImageResult>.Success(env.Resp, env.ErrMsg);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (file)", runId);
-            return _error.Fail<UploadImage>(ex, "Upload image failed");
+            return _error.Fail<ImageResult>(ex, "Upload image failed");
         }
     }
 
-    public async Task<Operation<UploadImage>> UploadAsync(string imageUrl, CancellationToken ct = default)
+    public async Task<Operation<ImageResult>> UploadAsync(string imageUrl, CancellationToken ct = default)
     {
         var runId = NewRunId();
         _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
@@ -150,16 +150,16 @@ public sealed partial class ImageClient(
             if (!TryValidateConfig(out var configError))
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-1 FAILED Config invalid: {Error}", runId, configError);
-                return _error.Fail<UploadImage>(null, configError);
+                return _error.Fail<ImageResult>(null, configError);
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-2 Validate inputs", runId);
             if (string.IsNullOrWhiteSpace(imageUrl))
-                return _error.Business<UploadImage>("imageUrl cannot be null or empty.");
+                return _error.Business<ImageResult>("imageUrl cannot be null or empty.");
 
             if (!Uri.TryCreate(imageUrl, UriKind.Absolute, out var uri) ||
                 (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
-                return _error.Business<UploadImage>("imageUrl must be a valid http/https absolute URL.");
+                return _error.Business<ImageResult>("imageUrl must be a valid http/https absolute URL.");
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-3 Build endpoint. Path={Path}", runId, Api.UploadImagePath);
             var endpoint = BuildEndpoint(Api.UploadImagePath);
@@ -181,7 +181,7 @@ public sealed partial class ImageClient(
             if (!res.IsSuccessStatusCode)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-7 FAILED Non-success status. StatusCode={StatusCode}", runId, (int)res.StatusCode);
-                return _error.Fail<UploadImage>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
+                return _error.Fail<ImageResult>(null, $"UploadImage (url) failed. HTTP {(int)res.StatusCode}");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-8 Read response body", runId);
@@ -189,34 +189,34 @@ public sealed partial class ImageClient(
             _logger.LogDebug("[RUN {RunId}] STEP PV-UPU-8 BodyLength={Length}", runId, json?.Length ?? 0);
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-9 Deserialize envelope", runId);
-            var env = JsonSerializer.Deserialize<Envelope<UploadImage>>(json, JsonOpts);
+            var env = JsonSerializer.Deserialize<Envelope<ImageResult>>(json, JsonOpts);
 
             if (env is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-9 FAILED Envelope is null", runId);
-                return _error.Fail<UploadImage>(null, "Invalid upload response (null).");
+                return _error.Fail<ImageResult>(null, "Invalid upload response (null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] STEP PV-UPU-10 Validate envelope. ErrCode={ErrCode}", runId, env.ErrCode);
             if (env.ErrCode != 0)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-10 FAILED PixVerse error. ErrCode={ErrCode} ErrMsg={ErrMsg}", runId, env.ErrCode, env.ErrMsg);
-                return _error.Fail<UploadImage>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
+                return _error.Fail<ImageResult>(null, $"PixVerse error {env.ErrCode}: {env.ErrMsg}");
             }
 
             if (env.Resp is null)
             {
                 _logger.LogWarning("[RUN {RunId}] STEP PV-UPU-10 FAILED Resp is null", runId);
-                return _error.Fail<UploadImage>(null, "Invalid upload payload (Resp null).");
+                return _error.Fail<ImageResult>(null, "Invalid upload payload (Resp null).");
             }
 
             _logger.LogInformation("[RUN {RunId}] SUCCESS UploadImage (url)", runId);
-            return Operation<UploadImage>.Success(env.Resp, env.ErrMsg);
+            return Operation<ImageResult>.Success(env.Resp, env.ErrMsg);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "[RUN {RunId}] FAILED UploadImage (url)", runId);
-            return _error.Fail<UploadImage>(ex, "Upload image failed");
+            return _error.Fail<ImageResult>(ex, "Upload image failed");
         }
     }
 }

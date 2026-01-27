@@ -2,7 +2,7 @@
 
 namespace Application.PixVerse.Response
 {
-    public sealed class UploadImage
+    public sealed class ImageResult
     {
         [JsonPropertyName("img_id")]
         public long ImgId { get; init; }
