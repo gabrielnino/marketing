@@ -56,7 +56,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae22fcdbc0b5109bd07967b754ec66cda6e415c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -576,7 +576,7 @@ public DateTimeOffset? CreateTimeUtc { get; init; }
 [JsonPropertyName("modify_time")]
 public DateTimeOffset? ModifyTimeUtc { get; init; }
 [JsonIgnore]
-public string JobId => RawJobId.ToString();
+public long JobId => RawJobId;
 [JsonIgnore]
 public JobState State => RawStatus switch
 {
@@ -979,20 +979,32 @@ try
 using var host = AppHostBuilder.Create(args).Build();
 var logger = host.Services.GetRequiredService<ILogger<Program>>();
 var executionRunning = TryGetExecutionRunning(host.Services) ?? null;
-if(executionRunning is null)
+if (executionRunning is null)
 {
+Log.Error("[RUN {RunId}] ExecutionTracker NOT AVAILABLE. Aborting early. TotalElapsedMs={ElapsedMs}", runId, sw.ElapsedMilliseconds);
 return;
 }
 var logsFolder = Path.Combine(executionRunning.ExecutionRunning, "Logs");
 var logFilePattern = Path.Combine(logsFolder, $"Marketing-{executionRunning.TimeStamp}.log");
 logger.LogInformation("[RUN {RunId}] === START PixVerse IMAGE->VIDEO + LIPSYNC(TTS) (FIXED) ===", runId);
 logger.LogInformation("[RUN {RunId}] ArgsCount={ArgsCount}", runId, args?.Length ?? 0);
+logger.LogInformation("[RUN {RunId}] ExecutionRunning={ExecutionRunning} TimeStamp={TimeStamp}", runId, executionRunning.ExecutionRunning, executionRunning.TimeStamp);
 logger.LogInformation("[RUN {RunId}] LOG FILE TARGET (pattern) => {LogFilePattern}", runId, logFilePattern);
 var imageClient = host.Services.GetRequiredService<IImageClient>();
 var balanceClient = host.Services.GetRequiredService<IBalanceClient>();
 var videoJobQueryClient = host.Services.GetRequiredService<IVideoJobQueryClient>();
 var imageToVideoClient = host.Services.GetRequiredService<IImageToVideoClient>();
 var lipSyncClient = host.Services.GetRequiredService<ILipSyncClient>();
+var videoClient = host.Services.GetRequiredService<IVideoClient>();
+logger.LogInformation(
+"[RUN {RunId}] Resolved services: IImageClient={IImageClientType} IBalanceClient={IBalanceClientType} IVideoJobQueryClient={IVideoJobQueryClientType} IImageToVideoClient={IImageToVideoClientType} ILipSyncClient={ILipSyncClientType} IVideoClient={IVideoClientType}",
+runId,
+imageClient.GetType().FullName,
+balanceClient.GetType().FullName,
+videoJobQueryClient.GetType().FullName,
+imageToVideoClient.GetType().FullName,
+lipSyncClient.GetType().FullName,
+videoClient.GetType().FullName);
 logger.LogInformation("[RUN {RunId}] [STEP 1] Checking balance...", runId);
 var balOp = await balanceClient.GetAsync();
 if (!balOp.IsSuccessful)
@@ -1049,8 +1061,9 @@ Prompt = "adult guy speaking directly to camera, serious style, expressive mouth
 NegativePrompt = "blurry, distorted face, artifacts",
 Seed = 0
 };
+var i2vReqJson = SafeSerialize(i2vReq);
 logger.LogInformation(
-"[RUN {RunId}] [STEP 3] I2V Submit START. ImgId={ImgId} Duration={Duration} Model={Model} Quality={Quality} Seed={Seed} PromptLen={PromptLen} NegPromptLen={NegPromptLen}",
+"[RUN {RunId}] [STEP 3] I2V Submit START. ImgId={ImgId} Duration={Duration} Model={Model} Quality={Quality} Seed={Seed} PromptLen={PromptLen} NegPromptLen={NegPromptLen} ReqJsonLen={ReqJsonLen}",
 runId,
 i2vReq.ImgId,
 i2vReq.Duration,
@@ -1058,7 +1071,9 @@ i2vReq.Model,
 i2vReq.Quality,
 i2vReq.Seed,
 i2vReq.Prompt?.Length ?? 0,
-i2vReq.NegativePrompt?.Length ?? 0);
+i2vReq.NegativePrompt?.Length ?? 0,
+i2vReqJson?.Length ?? 0);
+logger.LogDebug("[RUN {RunId}] [STEP 3] I2V Request JSON => {I2vReqJson}", runId, i2vReqJson);
 var i2vSubmitOp = await imageToVideoClient.SubmitAsync(i2vReq);
 if (!i2vSubmitOp.IsSuccessful || i2vSubmitOp.Data is null)
 {
@@ -1074,30 +1089,8 @@ runId, jobId, sw.ElapsedMilliseconds);
 logger.LogInformation(
 "[RUN {RunId}] [STEP 4] Poll I2V status START. JobId={JobId} MaxAttempts={MaxAttempts} DelaySec={DelaySec}",
 runId, jobId, 60, 2);
-JobStatus? finalStatus = null;
-for (var attempt = 1; attempt <= 60; attempt++)
-{
-var attemptSw = Stopwatch.StartNew();
-var stOp = await videoJobQueryClient.GetStatusAsync(jobId);
-if (!stOp.IsSuccessful || stOp.Data is null)
-{
-logger.LogWarning(
-"[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} FAILED. Error={Error}. PayloadNull={PayloadNull}. AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
-runId, attempt, stOp.Error ?? "unknown", stOp.Data is null, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
-}
-else
-{
-logger.LogInformation(
-"[RUN {RunId}] [STEP 4] I2V Status attempt {Attempt} OK. State={State} IsTerminal={IsTerminal} AttemptMs={AttemptMs} ElapsedMs={ElapsedMs}",
-runId, attempt, stOp.Data.State, stOp.Data.IsTerminal, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
-if (stOp.Data.IsTerminal)
-{
-finalStatus = stOp.Data;
-break;
-}
-}
-await Task.Delay(TimeSpan.FromSeconds(2));
-}
+JobResult? finalStatus = null;
+finalStatus = await GetFinalStatus(runId, sw, logger, videoJobQueryClient, jobId, finalStatus);
 if (finalStatus is null)
 {
 logger.LogError(
@@ -1130,15 +1123,24 @@ var resultJson = SafeSerialize(resOp.Data);
 logger.LogInformation(
 "[RUN {RunId}] [STEP 5] Get result OK. JobId={JobId} ResultJsonLen={Len} ElapsedMs={ElapsedMs}",
 runId, jobId, resultJson.Length, sw.ElapsedMilliseconds);
-long? videoMediaId = TryGetVideoMediaIdFromKnownModel(resOp.Data);
-if (videoMediaId is null || videoMediaId <= 0)
+logger.LogDebug(
+"[RUN {RunId}] [STEP 5] Get result JSON preview (first 800 chars) => {ResultJsonPreview}",
+runId,
+resultJson.Length <= 800 ? resultJson : resultJson[..800]);
+long? videoMediaId = 0;
+logger.LogInformation(
+"[RUN {RunId}] [STEP 5] MediaId extraction START. Initial VideoMediaId={VideoMediaId} (null? {IsNull})",
+runId,
+videoMediaId ?? 0,
+videoMediaId is null);
+if (videoMediaId is null)
 {
 videoMediaId = TryExtractMediaIdFromJson(resultJson);
 logger.LogInformation(
 "[RUN {RunId}] [STEP 5] MediaId extraction (fallback) VideoMediaId={VideoMediaId}",
 runId, videoMediaId ?? 0);
 }
-if (videoMediaId is null || videoMediaId <= 0)
+if (videoMediaId is null)
 {
 logger.LogError(
 "[RUN {RunId}] [STEP 5] Cannot proceed: VideoMediaId NOT FOUND. JobId={JobId}. ResultJson={ResultJson}",
@@ -1150,20 +1152,24 @@ logger.LogInformation(
 runId, videoMediaId, jobId);
 var lipReq = new VideoLipSync
 {
-VideoMediaId = videoMediaId.Value,
-SourceVideoId = null,
-AudioMediaId = null,
+VideoMediaId = 0,
+SourceVideoId = resOp.Data.JobId,
+AudioMediaId = 0,
 LipSyncTtsSpeakerId = "auto",
-LipSyncTtsContent = "¡Hola Vancouver! Soy Goku. No olviden apoyar al Tricolor Fan Club. ¡Vamos con toda!"
+LipSyncTtsContent = "¡Hola Vancouver! Soy gustavo. Voten por abelardo de la aspriella. ¡Vamos con toda!"
 };
+var lipReqJson = SafeSerialize(lipReq);
 logger.LogInformation(
-"[RUN {RunId}] [STEP 6] LipSync Submit START. VideoMediaId={VideoMediaId} Speaker={Speaker} ContentLen={ContentLen} HasAudioMediaId={HasAudioMediaId} HasSourceVideoId={HasSourceVideoId}",
+"[RUN {RunId}] [STEP 6] LipSync Submit START. VideoMediaId={VideoMediaId} SourceVideoId={SourceVideoId} Speaker={Speaker} ContentLen={ContentLen} HasAudioMediaId={HasAudioMediaId} HasSourceVideoId={HasSourceVideoId} ReqJsonLen={ReqJsonLen}",
 runId,
 lipReq.VideoMediaId,
+lipReq.SourceVideoId,
 lipReq.LipSyncTtsSpeakerId,
 lipReq.LipSyncTtsContent?.Length ?? 0,
 lipReq.AudioMediaId.HasValue && lipReq.AudioMediaId.Value > 0,
-lipReq.SourceVideoId.HasValue && lipReq.SourceVideoId.Value > 0);
+lipReq.SourceVideoId.HasValue && lipReq.SourceVideoId.Value > 0,
+lipReqJson?.Length ?? 0);
+logger.LogDebug("[RUN {RunId}] [STEP 6] LipSync Request JSON => {LipReqJson}", runId, lipReqJson);
 var lipOp = await lipSyncClient.SubmitAsync(lipReq);
 if (!lipOp.IsSuccessful)
 {
@@ -1175,6 +1181,37 @@ return;
 logger.LogInformation(
 "[RUN {RunId}] [STEP 6] LipSync Submit OK. LipJobId={LipJobId}. TotalElapsedMs={ElapsedMs}",
 runId, lipOp.Data?.JobId, sw.ElapsedMilliseconds);
+if (lipOp.Data is null)
+{
+logger.LogError(
+"[RUN {RunId}] [STEP 6] LipSync Submit returned success but payload is NULL. Cannot continue. VideoMediaId={VideoMediaId} SourceVideoId={SourceVideoId} TotalElapsedMs={ElapsedMs}",
+runId, videoMediaId ?? 0, lipReq.SourceVideoId, sw.ElapsedMilliseconds);
+return;
+}
+var lipobJobId = lipOp.Data!.JobId;
+logger.LogInformation(
+"[RUN {RunId}] [STEP 7] Poll LipSync status START. LipJobId={LipJobId} MaxAttempts={MaxAttempts} DelaySec={DelaySec}",
+runId, lipobJobId, 60, 2);
+finalStatus = null;
+finalStatus = await GetFinalStatus(runId, sw, logger, videoJobQueryClient, lipobJobId, finalStatus);
+if (finalStatus is null)
+{
+logger.LogError(
+"[RUN {RunId}] [STEP 7] LipSync Status polling TIMEOUT. LipJobId={LipJobId}. TotalElapsedMs={ElapsedMs}",
+runId, lipobJobId, sw.ElapsedMilliseconds);
+return;
+}
+logger.LogInformation(
+"[RUN {RunId}] [STEP 7] LipSync polling END. LipJobId={LipJobId} FinalState={FinalState} TotalElapsedMs={ElapsedMs}",
+runId, lipobJobId, finalStatus.State, sw.ElapsedMilliseconds);
+var outPath = @"E:\Marketing-Logs\PixVerse\Inputs\final_video.mp4";
+logger.LogInformation(
+"[RUN {RunId}] [STEP 8] Download START. JobId={JobId} OutputPath={OutputPath}",
+runId, jobId, outPath);
+await videoClient.DownloadAsync(jobId, outPath);
+logger.LogInformation(
+"[RUN {RunId}] [STEP 8] Download END. JobId={JobId} OutputPath={OutputPath} TotalElapsedMs={ElapsedMs}",
+runId, jobId, outPath, sw.ElapsedMilliseconds);
 }
 catch (Exception ex)
 {
@@ -1186,6 +1223,42 @@ finally
 Log.Information("[RUN {RunId}] Flushing logs. TotalElapsedMs={ElapsedMs}", runId, sw.ElapsedMilliseconds);
 await Log.CloseAndFlushAsync();
 }
+}
+private static async Task<JobResult?> GetFinalStatus(string runId, Stopwatch sw, ILogger<Program> logger, IVideoJobQueryClient videoJobQueryClient, long jobId, JobResult? finalStatus)
+{
+for (var attempt = 1; attempt <= 60; attempt++)
+{
+var attemptSw = Stopwatch.StartNew();
+logger.LogDebug(
+"[RUN {RunId}] [POLL] AttemptStart Attempt={Attempt} JobId={JobId} TotalElapsedMs={ElapsedMs}",
+runId, attempt, jobId, sw.ElapsedMilliseconds);
+var stOp = await videoJobQueryClient.GetResultAsync(jobId);
+if (!stOp.IsSuccessful || stOp.Data is null)
+{
+logger.LogWarning(
+"[RUN {RunId}] [POLL] Attempt {Attempt} FAILED. JobId={JobId} Error={Error}. PayloadNull={PayloadNull}. AttemptMs={AttemptMs} TotalElapsedMs={ElapsedMs}",
+runId, attempt, jobId, stOp.Error ?? "unknown", stOp.Data is null, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
+}
+else
+{
+logger.LogInformation(
+"[RUN {RunId}] [POLL] Attempt {Attempt} OK. JobId={JobId} State={State} RawStatus={RawStatus} AttemptMs={AttemptMs} TotalElapsedMs={ElapsedMs}",
+runId, attempt, jobId, stOp.Data.State, stOp.Data.RawStatus, attemptSw.ElapsedMilliseconds, sw.ElapsedMilliseconds);
+var stJson = SafeSerialize(stOp.Data);
+logger.LogDebug(
+"[RUN {RunId}] [POLL] Attempt {Attempt} Status JSON preview (first 400 chars) => {StatusJsonPreview}",
+runId,
+attempt,
+stJson.Length <= 400 ? stJson : stJson[..400]);
+if (stOp.Data.State == JobState.Succeeded)
+{
+finalStatus = stOp.Data;
+break;
+}
+}
+await Task.Delay(TimeSpan.FromSeconds(2));
+}
+return finalStatus;
 }
 private static ExecutionTracker? TryGetExecutionRunning(IServiceProvider services)
 {
@@ -1293,7 +1366,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de838cb58bd198cd5a1769c6339ce3ee99fdab0a")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1618,7 +1691,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a6036694a81a36388a4082968aface23caafdfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bootstrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1795,7 +1868,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Commands")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a6036694a81a36388a4082968aface23caafdfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Commands")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Commands")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -2746,7 +2819,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae22fcdbc0b5109bd07967b754ec66cda6e415c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -5055,7 +5128,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae22fcdbc0b5109bd07967b754ec66cda6e415c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Services.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -5949,7 +6022,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae22fcdbc0b5109bd07967b754ec66cda6e415c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketing.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -6479,7 +6552,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a6036694a81a36388a4082968aface23caafdfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -7446,7 +7519,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a6036694a81a36388a4082968aface23caafdfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -9788,7 +9861,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502f4d15596fdae06c5415404ecfff15dae9308c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a6036694a81a36388a4082968aface23caafdfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.Abstractions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -10605,7 +10678,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b81d61af8c2399764ff510fb79f6475a95dbbfd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae22fcdbc0b5109bd07967b754ec66cda6e415c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhatsAppSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
