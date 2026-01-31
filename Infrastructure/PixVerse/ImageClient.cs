@@ -142,7 +142,6 @@ public sealed partial class ImageClient(
 
     public async Task<Operation<ImageResult>> UploadAsync(string imageUrl, CancellationToken ct = default)
     {
-        var operation = "PixVerse.PixVerseBase.ImageClient.UploadAsync";
         var runId = NewRunId();
         _logger.LogInformation("[RUN {RunId}] START UploadImage (url). Url={Url}", runId, imageUrl);
 
