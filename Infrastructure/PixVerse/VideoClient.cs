@@ -31,7 +31,6 @@ namespace Infrastructure.PixVerse
             int videoIndex = 0,
             CancellationToken ct = default)
         {
-            var operation = "PixVerse.VideoClient.DownloadAsync";
             var runId = NewRunId();
             _logger.LogInformation(
                 "[RUN {RunId}] START PixVerse.DownloadVideo jobId={JobId} videoIndex={VideoIndex} dest={Dest}",
@@ -125,8 +124,10 @@ namespace Infrastructure.PixVerse
                 // 4) Atomically move temp -> final (best-effort)
                 _logger.LogInformation("[RUN {RunId}] STEP 4: Moving temp to final final={Final}", runId, finalPath);
 
-                if (System.IO.File.Exists(finalPath))
+                if (File.Exists(finalPath))
+                {
                     File.Delete(finalPath);
+                }
 
                 File.Move(tmpPath, finalPath);
 

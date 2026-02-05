@@ -423,12 +423,6 @@ namespace AzureTable
             }
         }
 
-        private static long? TryGetVideoMediaIdFromKnownModel(JobResult result)
-        {
-            // Adjust if your DTO exposes it directly.
-            return null;
-        }
-
         private static string SafeSerialize<T>(T obj)
         {
             try { return JsonSerializer.Serialize(obj); }

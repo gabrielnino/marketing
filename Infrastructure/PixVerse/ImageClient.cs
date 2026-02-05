@@ -24,14 +24,12 @@ public sealed partial class ImageClient(
     private readonly IErrorHandler _error = errorHandler;
     private readonly ILogger<ImageClient> _logger = logger;
 
-
     public async Task<Operation<ImageResult>> UploadAsync(
         Stream imageStream,
         string fileName,
         string contentType,
         CancellationToken ct = default)
     {
-        var operation = "PixVerse.PixVerseBase.ImageClient.UploadAsync";
         var runId = NewRunId();
         _logger.LogInformation(
             "[RUN {RunId}] START UploadImage (file). FileName={FileName} ContentType={ContentType}",
