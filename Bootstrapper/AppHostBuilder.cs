@@ -8,6 +8,7 @@ using Configuration.UrlValidation;
 using Configuration.YouTube;
 using Infrastructure.AzureTables;
 using Infrastructure.PixVerse;
+using Infrastructure.PixVerse.Http;
 using Infrastructure.Result;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -204,15 +205,20 @@ namespace Bootstrapper
                     // -----------------------------
                     services.AddUrlValidation(hostingContext.Configuration);
 
-                    services.AddSingleton<ImageClient, ImageClient>();
-                    services.AddSingleton<IBalanceClient, BalanceClient>();
-                    services.AddSingleton<ImageClient, ImageClient>();
-                    services.AddSingleton<IImageToVideoClient, ImageToVideoClient>();
-                    services.AddSingleton<IVideoClient, VideoClient>();
-                    services.AddSingleton<IJobClient, JobClient>();
-                    services.AddSingleton<IVideoJobQueryClient, VideoJobQueryClient>();
-                    services.AddSingleton<ILipSyncClient, LipSyncClient>();
-                    services.AddSingleton<IImageClient, ImageClient>();
+                    // -----------------------------
+                    // PixVerse Services
+                    // -----------------------------
+                    services.AddHttpClient<IPixVerseRequestHandler, PixVerseRequestHandler>();
+
+                    services.AddTransient<IBalanceClient, BalanceClient>();
+                    services.AddTransient<IImageClient, ImageClient>();
+                    services.AddTransient<IImageToVideoClient, ImageToVideoClient>();
+                    services.AddTransient<IJobClient, JobClient>();
+                    services.AddTransient<ILipSyncClient, LipSyncClient>();
+                    services.AddTransient<ITextToVideoClient, TextToVideoClient>();
+                    services.AddTransient<ITransitionClient, TransitionClient>();
+                    services.AddTransient<IVideoClient, VideoClient>();
+                    services.AddTransient<IVideoJobQueryClient, VideoJobQueryClient>();
                     
                     // -----------------------------
                     // ✅ NEW: YouTube API + viral discoverer
