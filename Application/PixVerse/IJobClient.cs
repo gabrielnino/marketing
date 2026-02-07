@@ -5,8 +5,6 @@ namespace Application.PixVerse
 {
     public interface IJobClient
     {
-        Task<Operation<JobResult>> WaitForCompletionAsync(
-            long jobId,
-            CancellationToken ct = default);
+        Task<Operation<JobResult>> WaitForCompletionAsync(long jobId, CancellationToken ct = default);
     }
 }
