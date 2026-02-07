@@ -1,4 +1,4 @@
-using Application.PixVerse.Response;
+using Application.PixVerse.Http;
 using Application.Result;
 using Configuration.PixVerse;
 using Infrastructure.PixVerse.Constants;

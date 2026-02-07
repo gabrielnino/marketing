@@ -1,4 +1,5 @@
 ﻿using Application.PixVerse;
+using Application.PixVerse.Http;
 using Application.Result;
 using Infrastructure.PixVerse.Http;
 using Microsoft.Extensions.Logging;

@@ -1,9 +1,6 @@
 using Application.Result;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Infrastructure.PixVerse.Http
+namespace Application.PixVerse.Http
 {
     public interface IPixVerseRequestHandler
     {

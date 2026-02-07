@@ -1,4 +1,5 @@
 ﻿using Application.PixVerse;
+using Application.PixVerse.Http;
 using Application.Result;
 using Application.TrackedLinks;
 using Commands;
@@ -208,7 +209,7 @@ namespace Bootstrapper
                     // -----------------------------
                     // PixVerse Services
                     // -----------------------------
-                    services.AddHttpClient<IPixVerseRequestHandler, PixVerseRequestHandler>();
+                    IHttpClientBuilder httpClientBuilder = services.AddHttpClient<IPixVerseRequestHandler, PixVerseRequestHandler>();
 
                     services.AddTransient<IBalanceClient, BalanceClient>();
                     services.AddTransient<IImageClient, ImageClient>();

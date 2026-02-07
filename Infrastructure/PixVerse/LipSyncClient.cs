@@ -1,4 +1,5 @@
 ﻿using Application.PixVerse;
+using Application.PixVerse.Http;
 using Application.PixVerse.Request;
 using Application.PixVerse.Response;
 using Application.Result;
